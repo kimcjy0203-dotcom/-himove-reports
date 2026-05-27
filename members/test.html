@@ -80,8 +80,8 @@
   th { background: transparent; padding: 0 0 10px; text-align: left; font-size: 10px; font-weight: 700; color: #c0ccd8; letter-spacing: 1.5px; text-transform: uppercase; border-bottom: 1px solid rgba(160,190,230,0.2); }
   td { padding: 13px 0; border-bottom: 1px solid rgba(160,190,230,0.15); color: #2a3a50; vertical-align: top; line-height: 1.7; }
   tr:last-child td { border-bottom: none; }
-  .check-row { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 14px; }
-  .chip { background: rgba(255,255,255,0.45); border: 1px solid rgba(160,190,230,0.3); border-radius: 100px; padding: 6px 15px; font-size: 12px; color: #a0b8d0; font-weight: 400; }
+  .check-row { display: flex; flex-wrap: nowrap; gap: 6px; margin-bottom: 14px; }
+  .chip { flex: 1; min-width: 0; text-align: center; background: rgba(255,255,255,0.45); border: 1px solid rgba(160,190,230,0.3); border-radius: 100px; padding: 7px 4px; font-size: 11px; color: #a0b8d0; font-weight: 400; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
   .chip.on { background: rgba(100,155,220,0.15); border-color: rgba(100,155,220,0.45); color: #3a6a9a; font-weight: 700; }
   .note { font-size: 13px; color: #a0b2c8; line-height: 1.8; white-space: pre-line; }
   .stat-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; }

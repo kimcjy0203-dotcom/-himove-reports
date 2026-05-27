@@ -179,15 +179,26 @@
   tr:last-child td { border-bottom: none; }
 
   /* ── 칩 ── */
-  .check-row { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 14px; }
+  .check-row {
+    display: flex;
+    flex-wrap: nowrap;
+    gap: 6px;
+    margin-bottom: 14px;
+  }
   .chip {
+    flex: 1;
+    min-width: 0;
+    text-align: center;
     background: rgba(255,255,255,0.45);
     border: 1px solid rgba(160,190,230,0.3);
     border-radius: 100px;
-    padding: 6px 15px;
-    font-size: 12px;
+    padding: 7px 4px;
+    font-size: 11px;
     color: #a0b8d0;
     font-weight: 400;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
   }
   .chip.on {
     background: rgba(100,155,220,0.15);
