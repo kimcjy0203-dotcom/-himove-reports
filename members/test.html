@@ -84,6 +84,15 @@
   .chip { flex: 1; min-width: 0; text-align: center; background: rgba(255,255,255,0.45); border: 1px solid rgba(160,190,230,0.3); border-radius: 100px; padding: 7px 4px; font-size: 11px; color: #a0b8d0; font-weight: 400; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
   .chip.on { background: rgba(100,155,220,0.15); border-color: rgba(100,155,220,0.45); color: #3a6a9a; font-weight: 700; }
   .note { font-size: 13px; color: #a0b2c8; line-height: 1.8; white-space: pre-line; }
+  .countdown-wrap { background: rgba(255,255,255,0.5); border: 1px solid rgba(255,255,255,0.8); border-radius: 16px; padding: 14px 16px; }
+  .countdown-top { display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px; }
+  .countdown-label { font-size: 11px; font-weight: 700; letter-spacing: 1px; color: #a0b8d0; text-transform: uppercase; }
+  .countdown-days { font-size: 13px; font-weight: 700; color: #3a6a9a; }
+  .countdown-days.urgent { color: #d07070; }
+  .countdown-bar-bg { background: rgba(160,190,230,0.2); border-radius: 100px; height: 6px; overflow: hidden; }
+  .countdown-bar-fill { height: 100%; border-radius: 100px; background: linear-gradient(90deg, rgba(90,154,210,0.6), rgba(120,180,240,0.9)); }
+  .countdown-bar-fill.urgent { background: linear-gradient(90deg, rgba(210,120,110,0.6), rgba(230,150,140,0.9)); }
+  .countdown-sub { font-size: 11px; color: #b0c0d4; margin-top: 7px; }
   .stat-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; }
   .stat-box { background: rgba(255,255,255,0.52); border-radius: 22px; padding: 20px 10px; text-align: center; border: 1px solid rgba(255,255,255,0.8); box-shadow: inset 0 1px 0 rgba(255,255,255,0.95); }
   .stat-box .lbl { font-size: 10px; color: #b0c0d4; margin-bottom: 6px; font-weight: 700; letter-spacing: 0.5px; text-transform: uppercase; }
@@ -148,6 +157,7 @@
 
 <div class="card">
   <div class="card-title green">체성분 현황</div>
+  <div id="inbody-countdown" style="margin-bottom:18px;"></div>
   <div class="stat-grid">
     <div class="stat-box"><div class="lbl">체중</div><div class="val" id="s-weight">-</div><div class="unt">kg</div></div>
     <div class="stat-box"><div class="lbl">체지방량</div><div class="val" id="s-fat">-</div><div class="unt">kg</div></div>
@@ -246,12 +256,40 @@
 
 <script>
 const bodyData = {
-  labels:  ['2월', '3월', '4월', '5월'],
-  weight:  [82.4, 81.8, 80.5, 79.8],
-  fat:     [22.1, 21.6, 20.8, 20.2],
-  muscle:  [33.2, 33.6, 34.1, 34.5],
-  comment: '3개월 동안 체지방이 1.9kg 감소하고 골격근량이 1.3kg 증가했어요. 매우 이상적인 방향으로 체성분이 변화하고 있어요. 이 속도를 유지하면 목표 체성분까지 약 4개월 예상돼요.'
+  labels:       ['2월', '3월', '4월', '5월'],
+  weight:       [82.4, 81.8, 80.5, 79.8],
+  fat:          [22.1, 21.6, 20.8, 20.2],
+  muscle:       [33.2, 33.6, 34.1, 34.5],
+  lastMeasured: '2026-05-01',
+  comment:      '3개월 동안 체지방이 1.9kg 감소하고 골격근량이 1.3kg 증가했어요. 매우 이상적인 방향으로 체성분이 변화하고 있어요. 이 속도를 유지하면 목표 체성분까지 약 4개월 예상돼요.'
 };
+
+/* ── 인바디 카운트다운 ── */
+(function() {
+  const el = document.getElementById('inbody-countdown');
+  if (!bodyData.lastMeasured) { el.style.display = 'none'; return; }
+  const last  = new Date(bodyData.lastMeasured);
+  const next  = new Date(last); next.setDate(next.getDate() + 30);
+  const today = new Date(); today.setHours(0,0,0,0);
+  const daysLeft = Math.ceil((next - today) / 86400000);
+  const elapsed  = 30 - Math.max(daysLeft, 0);
+  const pct      = Math.min(Math.round((elapsed / 30) * 100), 100);
+  const isUrgent = daysLeft <= 5;
+  const isDone   = daysLeft <= 0;
+  const nextStr  = next.toLocaleDateString('ko-KR', { month: 'long', day: 'numeric' });
+  const daysText = isDone ? '측정이 필요해요' : `${daysLeft}일 남음`;
+  el.innerHTML = `
+    <div class="countdown-wrap">
+      <div class="countdown-top">
+        <span class="countdown-label">다음 인바디 측정</span>
+        <span class="countdown-days${isUrgent || isDone ? ' urgent' : ''}">${daysText}</span>
+      </div>
+      <div class="countdown-bar-bg">
+        <div class="countdown-bar-fill${isUrgent || isDone ? ' urgent' : ''}" style="width:${pct}%"></div>
+      </div>
+      <div class="countdown-sub">측정일 기준 30일 주기 &nbsp;·&nbsp; 다음 측정 예정일: ${nextStr}</div>
+    </div>`;
+})();
 
 const last = i => bodyData[i].filter(v => v !== null).at(-1);
 const prev = i => { const d = bodyData[i].filter(v => v !== null); return d.length >= 2 ? d.at(-2) : null; };

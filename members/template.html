@@ -261,6 +261,18 @@
   /* 날짜 라벨 */
   [style*="color:#718096"] { color: #a8bcd0 !important; }
 
+  /* ── 인바디 카운트다운 ── */
+  .countdown-wrap { background: rgba(255,255,255,0.5); border: 1px solid rgba(255,255,255,0.8); border-radius: 16px; padding: 14px 16px; }
+  .countdown-top { display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px; }
+  .countdown-label { font-size: 11px; font-weight: 700; letter-spacing: 1px; color: #a0b8d0; text-transform: uppercase; }
+  .countdown-days { font-size: 13px; font-weight: 700; color: #3a6a9a; }
+  .countdown-days.urgent { color: #d07070; }
+  .countdown-days.done { color: #5a9a7a; }
+  .countdown-bar-bg { background: rgba(160,190,230,0.2); border-radius: 100px; height: 6px; overflow: hidden; }
+  .countdown-bar-fill { height: 100%; border-radius: 100px; background: linear-gradient(90deg, rgba(90,154,210,0.6), rgba(120,180,240,0.9)); transition: width 0.6s ease; }
+  .countdown-bar-fill.urgent { background: linear-gradient(90deg, rgba(210,120,110,0.6), rgba(230,150,140,0.9)); }
+  .countdown-sub { font-size: 11px; color: #b0c0d4; margin-top: 7px; }
+
   /* ── 변화량 뱃지 ── */
   .delta-row { margin-top: 14px; display: flex; gap: 10px; flex-wrap: wrap; }
   .delta-box {
@@ -326,6 +338,7 @@
 
 <div class="card">
   <div class="card-title green">체성분 현황</div>
+  <div id="inbody-countdown" style="margin-bottom:18px;"></div>
   <div class="stat-grid">
     <div class="stat-box"><div class="lbl">체중</div><div class="val" id="s-weight">-</div><div class="unt">kg</div></div>
     <div class="stat-box"><div class="lbl">체지방량</div><div class="val" id="s-fat">-</div><div class="unt">kg</div></div>
@@ -425,12 +438,42 @@
 <script>
 /* ── 체성분 데이터 (트레이너가 업데이트하는 영역) ── */
 const bodyData = {
-  labels:  ['3월', '4월', '5월'],
-  weight:  [null, null, null],
-  fat:     [null, null, null],
-  muscle:  [null, null, null],
-  comment: '체성분 변화 분석 코멘트가 여기에 표시됩니다.'
+  labels:       ['3월', '4월', '5월'],
+  weight:       [null, null, null],
+  fat:          [null, null, null],
+  muscle:       [null, null, null],
+  lastMeasured: null,
+  comment:      '체성분 변화 분석 코멘트가 여기에 표시됩니다.'
 };
+
+/* ── 인바디 카운트다운 ── */
+(function() {
+  const el = document.getElementById('inbody-countdown');
+  if (!bodyData.lastMeasured) { el.style.display = 'none'; return; }
+  const last  = new Date(bodyData.lastMeasured);
+  const next  = new Date(last); next.setDate(next.getDate() + 30);
+  const today = new Date(); today.setHours(0,0,0,0);
+  const daysLeft = Math.ceil((next - today) / 86400000);
+  const elapsed  = 30 - Math.max(daysLeft, 0);
+  const pct      = Math.min(Math.round((elapsed / 30) * 100), 100);
+  const isUrgent = daysLeft <= 5;
+  const isDone   = daysLeft <= 0;
+  const nextStr  = next.toLocaleDateString('ko-KR', { month: 'long', day: 'numeric' });
+  const daysText = isDone  ? '측정이 필요해요' :
+                   isUrgent ? `${daysLeft}일 남음` :
+                              `${daysLeft}일 남음`;
+  el.innerHTML = `
+    <div class="countdown-wrap">
+      <div class="countdown-top">
+        <span class="countdown-label">다음 인바디 측정</span>
+        <span class="countdown-days${isUrgent ? ' urgent' : isDone ? ' done' : ''}">${daysText}</span>
+      </div>
+      <div class="countdown-bar-bg">
+        <div class="countdown-bar-fill${isUrgent ? ' urgent' : ''}" style="width:${pct}%"></div>
+      </div>
+      <div class="countdown-sub">측정일 기준 30일 주기 &nbsp;·&nbsp; 다음 측정 예정일: ${nextStr}</div>
+    </div>`;
+})();
 
 /* ── 현재값 표시 ── */
 const last = i => bodyData[i].filter(v => v !== null).at(-1);
