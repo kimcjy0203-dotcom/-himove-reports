@@ -112,11 +112,10 @@
 
   /* ── 섹션 타입 뱃지 ── */
   .card-title {
-    font-size: 10px;
+    font-size: 13px;
     font-weight: 700;
-    letter-spacing: 2px;
-    text-transform: uppercase;
-    color: #b0c0d8;
+    letter-spacing: 0.5px;
+    color: #7a95b8;
     margin-bottom: 18px;
     display: flex;
     align-items: center;
@@ -134,16 +133,16 @@
     border-radius: 100px;
     padding: 2px 9px;
   }
-  .card-title.blue  { color: #b0c0d8; }
-  .card-title.gold  { color: #b0c0d8; }
-  .card-title.green { color: #b0c0d8; }
+  .card-title.blue  { color: #7a95b8; }
+  .card-title.gold  { color: #7a95b8; }
+  .card-title.green { color: #7a95b8; }
 
   /* ── 메시지 박스 (물방울 느낌) ── */
   .msg {
-    background: rgba(255,255,255,0.55);
-    backdrop-filter: blur(20px);
-    -webkit-backdrop-filter: blur(20px);
-    border: 1px solid rgba(255,255,255,0.8);
+    background: rgba(255,255,255,0.78);
+    backdrop-filter: blur(32px);
+    -webkit-backdrop-filter: blur(32px);
+    border: 1px solid rgba(195,218,255,0.6);
     border-radius: 20px;
     padding: 16px 18px;
     font-size: 14px;
@@ -151,10 +150,10 @@
     color: #2a3a50;
     white-space: pre-line;
     font-weight: 400;
-    box-shadow: inset 0 1px 0 rgba(255,255,255,0.9);
+    box-shadow: 0 4px 20px rgba(100,150,230,0.08), inset 0 1px 0 rgba(255,255,255,1);
   }
-  .msg.gold  { background: rgba(255,255,255,0.55); }
-  .msg.green { background: rgba(255,255,255,0.55); }
+  .msg.gold  { background: rgba(255,255,255,0.78); }
+  .msg.green { background: rgba(255,255,255,0.78); }
 
   /* ── 테이블 ── */
   table { width: 100%; border-collapse: collapse; font-size: 13px; }
@@ -213,12 +212,14 @@
   /* ── 체성분 숫자 ── */
   .stat-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; }
   .stat-box {
-    background: rgba(255,255,255,0.52);
+    background: rgba(255,255,255,0.78);
+    backdrop-filter: blur(32px);
+    -webkit-backdrop-filter: blur(32px);
     border-radius: 22px;
     padding: 20px 10px;
     text-align: center;
-    border: 1px solid rgba(255,255,255,0.8);
-    box-shadow: inset 0 1px 0 rgba(255,255,255,0.95);
+    border: 1px solid rgba(195,218,255,0.6);
+    box-shadow: 0 4px 20px rgba(100,150,230,0.10), inset 0 1px 0 rgba(255,255,255,1);
   }
   .stat-box .lbl { font-size: 10px; color: #b0c0d4; margin-bottom: 6px; font-weight: 700; letter-spacing: 0.5px; text-transform: uppercase; }
   .stat-box .val { font-size: 28px; font-weight: 700; color: #1a2a40; letter-spacing: -1.5px; line-height: 1; }
@@ -275,7 +276,15 @@
 
   /* ── 운동별 피드백 블럭 ── */
   .exercise-grid { display: flex; flex-direction: column; gap: 10px; }
-  .exercise-item { background: rgba(255,255,255,0.5); border: 1px solid rgba(255,255,255,0.8); border-radius: 18px; padding: 16px 18px; }
+  .exercise-item {
+    background: rgba(255,255,255,0.78);
+    backdrop-filter: blur(32px);
+    -webkit-backdrop-filter: blur(32px);
+    border: 1px solid rgba(195,218,255,0.6);
+    border-radius: 20px;
+    padding: 16px 18px;
+    box-shadow: 0 4px 20px rgba(100,150,230,0.10), inset 0 1px 0 rgba(255,255,255,1);
+  }
   .ei-name { font-size: 13px; font-weight: 800; color: #2a3a50; letter-spacing: -0.3px; margin-bottom: 6px; }
   .ei-feedback { font-size: 13px; font-weight: 400; color: #6a80a0; line-height: 1.65; margin-bottom: 6px; }
   .ei-next { font-size: 12px; font-weight: 400; color: #a0b8d0; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
@@ -283,7 +292,18 @@
 
   /* ── 주요 리프트 블럭 ── */
   .lift-grid { display: flex; flex-direction: column; gap: 10px; }
-  .lift-box { background: rgba(255,255,255,0.5); border: 1px solid rgba(255,255,255,0.8); border-radius: 18px; padding: 16px 18px; display: flex; align-items: center; gap: 14px; }
+  .lift-box {
+    background: rgba(255,255,255,0.78);
+    backdrop-filter: blur(32px);
+    -webkit-backdrop-filter: blur(32px);
+    border: 1px solid rgba(195,218,255,0.6);
+    border-radius: 20px;
+    padding: 16px 18px;
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    box-shadow: 0 4px 20px rgba(100,150,230,0.10), inset 0 1px 0 rgba(255,255,255,1);
+  }
   .lb-name { font-size: 13px; font-weight: 800; color: #2a3a50; letter-spacing: -0.3px; width: 62px; flex-shrink: 0; }
   .lb-current { font-size: 24px; font-weight: 700; color: #1a2a40; letter-spacing: -1px; flex: 1; line-height: 1; white-space: nowrap; }
   .lb-current span { font-size: 12px; font-weight: 400; color: #b0c0d4; margin-left: 1px; }
@@ -555,7 +575,7 @@ if (hasData) {
           backgroundColor: 'rgba(90,154,210,0.08)',
           borderWidth: 2.5,
           pointBackgroundColor: 'rgba(90,154,210,1)',
-          pointRadius: 5,
+          pointRadius: 3,
           tension: 0.4,
           fill: true,
           spanGaps: true
@@ -567,7 +587,7 @@ if (hasData) {
           backgroundColor: 'rgba(210,120,110,0.06)',
           borderWidth: 2.5,
           pointBackgroundColor: 'rgba(210,120,110,1)',
-          pointRadius: 5,
+          pointRadius: 3,
           tension: 0.4,
           fill: true,
           spanGaps: true
