@@ -1,196 +1,180 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ko">
 <head>
 <meta charset="UTF-8">
-<title>HiMove Weekly Member Report</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>HiMove 주간 리포트</title>
 <style>
-body { font-family: Arial, sans-serif; line-height: 1.6; color: #222; max-width: 900px; margin: 40px auto; padding: 20px; }
-h1, h2 { color: #1f4e5f; }
-.block { padding: 18px; margin: 16px 0; border-radius: 12px; }
-.member { background: #f3f8fb; border-left: 6px solid #7fb6d6; }
-.ai { background: #f7f7f7; border-left: 6px solid #999; }
-.trainer { background: #fff8ec; border-left: 6px solid #d9a441; }
-table { width: 100%; border-collapse: collapse; margin-top: 10px; }
-th, td { border: 1px solid #ddd; padding: 8px; text-align: left; }
-th { background: #eef4f7; }
-textarea { width: 100%; min-height: 70px; }
-input[type="text"] { width: 100%; padding: 6px; }
-.checks label { margin-right: 12px; display: inline-block; }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: 'Apple SD Gothic Neo', 'Noto Sans KR', sans-serif; background: #f0f4f8; color: #2d3748; padding: 24px 16px; }
+  .header { background: linear-gradient(135deg, #1a3c4e, #2d7d9a); border-radius: 20px; padding: 32px 28px; color: white; margin-bottom: 20px; text-align: center; }
+  .header .logo { font-size: 13px; letter-spacing: 4px; opacity: 0.75; margin-bottom: 8px; }
+  .header h1 { font-size: 26px; font-weight: 700; margin-bottom: 6px; }
+  .header .subtitle { font-size: 14px; opacity: 0.8; }
+  .header .meta { margin-top: 16px; display: flex; justify-content: center; gap: 12px; flex-wrap: wrap; }
+  .header .meta span { background: rgba(255,255,255,0.15); border-radius: 20px; padding: 5px 14px; font-size: 13px; }
+  .card { background: white; border-radius: 16px; padding: 22px; margin-bottom: 16px; box-shadow: 0 2px 12px rgba(0,0,0,0.06); }
+  .card-title { font-size: 12px; font-weight: 700; letter-spacing: 1.5px; margin-bottom: 14px; display: flex; align-items: center; gap: 8px; }
+  .card-title::before { content: ''; width: 4px; height: 16px; border-radius: 2px; display: inline-block; }
+  .card-title.blue { color: #2d7d9a; } .card-title.blue::before { background: #2d7d9a; }
+  .card-title.gold { color: #b8860b; } .card-title.gold::before { background: #d4a017; }
+  .card-title.green { color: #276749; } .card-title.green::before { background: #38a169; }
+  .msg { background: #f7fbfd; border-left: 4px solid #2d7d9a; border-radius: 0 12px 12px 0; padding: 14px 16px; font-size: 14px; line-height: 1.8; white-space: pre-line; }
+  .msg.gold { background: #fffbf0; border-left-color: #d4a017; }
+  .msg.green { background: #f0fff4; border-left-color: #38a169; }
+  table { width: 100%; border-collapse: collapse; font-size: 14px; }
+  th { background: #f0f4f8; padding: 10px 12px; text-align: left; font-size: 12px; font-weight: 600; color: #718096; border-bottom: 2px solid #e2e8f0; }
+  td { padding: 11px 12px; border-bottom: 1px solid #f0f4f8; vertical-align: top; }
+  tr:last-child td { border-bottom: none; }
+  .check-row { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 10px; }
+  .chip { background: #f0f4f8; border-radius: 20px; padding: 5px 13px; font-size: 13px; color: #718096; }
+  .chip.on { background: #2d7d9a; color: white; font-weight: 600; }
+  .note { font-size: 13px; color: #718096; line-height: 1.7; white-space: pre-line; }
+  .stat-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; }
+  .stat-box { background: #f7fbfd; border-radius: 12px; padding: 14px; text-align: center; }
+  .stat-box .lbl { font-size: 11px; color: #718096; margin-bottom: 4px; }
+  .stat-box .val { font-size: 20px; font-weight: 700; color: #1a3c4e; }
+  .stat-box .unt { font-size: 11px; color: #718096; }
+  .sub-label { font-size: 12px; font-weight: 700; margin-bottom: 6px; }
+  .final-card { background: linear-gradient(135deg, #1a3c4e, #2d7d9a); color: white; border-radius: 16px; padding: 24px 22px; margin-bottom: 16px; }
+  .footer { text-align: center; font-size: 12px; color: #a0aec0; margin-top: 8px; padding-bottom: 28px; line-height: 1.8; }
 </style>
 </head>
-
 <body>
 
-<h1>HiMove Weekly Member Report</h1>
+<div class="header">
+  <div class="logo">H I M O V E</div>
+  <h1>주간 회원 리포트</h1>
+  <div class="subtitle">Weekly Member Report</div>
+  <div class="meta">
+    <span>2026년 5월</span>
+    <span>회원명: 홍길동</span>
+    <span>Week 1</span>
+  </div>
+</div>
+
+<div class="card">
+  <div class="card-title gold">이번 주 핵심 메시지</div>
+  <div class="msg gold">이번 주 가장 중요한 메시지를 여기에 작성합니다.</div>
+</div>
+
+<div class="card">
+  <div class="card-title blue">최근 수업 요약</div>
+  <div style="font-size:12px;color:#718096;margin-bottom:10px;">수업일: 2026년 5월 27일</div>
+  <div class="msg">최근 수업에서 진행한 내용을 여기에 작성합니다.</div>
+</div>
+
+<div class="card">
+  <div class="card-title blue">운동별 피드백</div>
+  <table>
+    <tr><th>운동</th><th>피드백</th><th>다음 체크포인트</th></tr>
+    <tr><td>스쿼트</td><td>-</td><td>-</td></tr>
+    <tr><td>데드리프트</td><td>-</td><td>-</td></tr>
+    <tr><td>벤치프레스</td><td>-</td><td>-</td></tr>
+  </table>
+</div>
+
+<div class="card">
+  <div class="card-title blue">주요 리프트 현황</div>
+  <table>
+    <tr><th>종목</th><th>현재 1RM</th><th>목표 1RM</th><th>남은 무게</th></tr>
+    <tr><td>스쿼트</td><td>-</td><td>-</td><td>-</td></tr>
+    <tr><td>데드리프트</td><td>-</td><td>-</td><td>-</td></tr>
+    <tr><td>벤치프레스</td><td>-</td><td>-</td><td>-</td></tr>
+  </table>
+</div>
+
+<div class="card">
+  <div class="card-title green">체성분 현황</div>
+  <div class="stat-grid">
+    <div class="stat-box"><div class="lbl">체중</div><div class="val">-</div><div class="unt">kg</div></div>
+    <div class="stat-box"><div class="lbl">체지방량</div><div class="val">-</div><div class="unt">kg</div></div>
+    <div class="stat-box"><div class="lbl">골격근량</div><div class="val">-</div><div class="unt">kg</div></div>
+  </div>
+</div>
+
+<div class="card">
+  <div class="card-title blue">이번 주 컨디션</div>
+  <div class="check-row">
+    <div class="chip">매우 좋음</div><div class="chip">좋음</div><div class="chip on">보통</div><div class="chip">피곤함</div><div class="chip">매우 피곤함</div>
+  </div>
+  <div class="note">-</div>
+</div>
+
+<div class="card">
+  <div class="card-title blue">수면 품질</div>
+  <div class="check-row">
+    <div class="chip">1 매우 나쁨</div><div class="chip">2 나쁨</div><div class="chip">3 보통</div><div class="chip on">4 좋음</div><div class="chip">5 매우 좋음</div>
+  </div>
+  <div class="note">-</div>
+</div>
+
+<div class="card">
+  <div class="card-title blue">이번 주 트레이닝</div>
+  <div class="check-row">
+    <div class="chip">루틴</div><div class="chip">유산소</div><div class="chip">자유 운동</div><div class="chip">야외 활동</div><div class="chip on">수업</div><div class="chip">휴식</div>
+  </div>
+  <div class="note">-</div>
+</div>
+
+<div class="card">
+  <div class="card-title blue">신체 불편 여부</div>
+  <div class="check-row">
+    <div class="chip on">없음</div><div class="chip">있음</div>
+  </div>
+  <div class="note">-</div>
+</div>
+
+<div class="card">
+  <div class="card-title blue">영양 상태</div>
+  <div class="check-row">
+    <div class="chip">1 매우 나쁨</div><div class="chip">2 나쁨</div><div class="chip on">3 보통</div><div class="chip">4 좋음</div><div class="chip">5 매우 좋음</div>
+  </div>
+  <div class="note">-</div>
+</div>
+
+<div class="card">
+  <div class="card-title green">AI 종합 리뷰</div>
+  <div style="margin-bottom:12px;">
+    <div class="sub-label" style="color:#276749;">✓ 잘 하고 있는 점</div>
+    <div class="msg green">-</div>
+  </div>
+  <div style="margin-bottom:12px;">
+    <div class="sub-label" style="color:#975a16;">⚠ 주의할 점</div>
+    <div class="msg gold">-</div>
+  </div>
+  <div>
+    <div class="sub-label" style="color:#2d7d9a;">→ 권장 사항</div>
+    <div class="msg">-</div>
+  </div>
+</div>
+
+<div class="card">
+  <div class="card-title gold">트레이너 코멘트</div>
+  <div class="msg gold" style="margin-bottom:12px;">이번 주 코멘트를 여기에 작성합니다.</div>
+  <div class="sub-label" style="color:#718096; margin-bottom:6px;">트레이닝 방향</div>
+  <div class="msg">훈련 방향, 운동 방향, 회복 방향, 습관 방향을 여기에 작성합니다.</div>
+</div>
+
+<div class="final-card">
+  <div style="font-size:11px;letter-spacing:2px;opacity:0.7;margin-bottom:10px;">FINAL MESSAGE</div>
+  <div style="font-size:16px;line-height:1.8;font-weight:500;">짧고 따뜻한 응원 메시지를 여기에 작성합니다.</div>
+</div>
+
+<div class="footer">
+  HiMove &nbsp;·&nbsp; 주간 회원 리포트<br>
+  본 리포트는 트레이너와 AI가 함께 작성합니다
+</div>
 
 <!--
-CORE RULES (trainer/AI reference only — not visible to member)
-- Member record comes first.
-- Trainer uses this only for review and next-session reference.
-- Do not diagnose medical conditions.
-- Do not guess injuries or diseases.
-- Do not recommend medicine, treatment, or extreme diets.
-- Use calm, supportive, and practical language.
+CORE RULES (트레이너/AI 전용 — 회원에게 표시되지 않음)
+- 회원 기록이 가장 중요하다
+- 트레이너는 검토 및 다음 수업 참고용으로만 사용한다
+- 의학적 진단을 내리지 않는다
+- 부상이나 질병을 추측하지 않는다
+- 약, 치료, 극단적인 식단을 권장하지 않는다
+- 차분하고 지지적이며 실용적인 언어를 사용한다
 -->
-
-<div class="block member">
-<h2>Weekly Report</h2>
-<p>Year: 2026</p>
-<p>Month: May</p>
-<p>Week: <input type="text"></p>
-<p>Member Name: <input type="text" value="000"></p>
-</div>
-
-<div class="block trainer">
-<h2>Main Message</h2>
-<textarea placeholder="Write the most important message for this member this week."></textarea>
-</div>
-
-<div class="block trainer">
-<h2>Recent Lesson Summary</h2>
-<p>Recent Lesson Date: <input type="text"></p>
-<textarea placeholder="Write main training done in the recent lesson."></textarea>
-</div>
-
-<div class="block ai">
-<h2>Exercise Feedback</h2>
-<table>
-<tr><th>Exercise</th><th>Feedback</th><th>Next Check Point</th></tr>
-<tr><td></td><td></td><td></td></tr>
-<tr><td></td><td></td><td></td></tr>
-<tr><td></td><td></td><td></td></tr>
-</table>
-</div>
-
-<div class="block ai">
-<h2>Main Lift Progress</h2>
-<table>
-<tr><th>Lift</th><th>Current Estimated 1RM</th><th>Goal 1RM</th><th>Remaining</th><th>Comment</th></tr>
-<tr><td>Squat</td><td></td><td></td><td></td><td></td></tr>
-<tr><td>Deadlift</td><td></td><td></td><td></td><td></td></tr>
-<tr><td>Bench Press</td><td></td><td></td><td></td><td></td></tr>
-</table>
-</div>
-
-<div class="block member">
-<h2>Today's Condition</h2>
-<div class="checks">
-<label><input type="checkbox"> Very Good</label>
-<label><input type="checkbox"> Good</label>
-<label><input type="checkbox"> Normal</label>
-<label><input type="checkbox"> Tired</label>
-<label><input type="checkbox"> Very Tired</label>
-</div>
-<textarea placeholder="Note"></textarea>
-</div>
-
-<div class="block member">
-<h2>Training Progress</h2>
-<div class="checks">
-<label><input type="checkbox"> Routine</label>
-<label><input type="checkbox"> Cardio</label>
-<label><input type="checkbox"> Free Workout</label>
-<label><input type="checkbox"> Outdoor Activity</label>
-<label><input type="checkbox"> Lesson</label>
-<label><input type="checkbox"> Rest</label>
-</div>
-<textarea placeholder="Note"></textarea>
-</div>
-
-<div class="block member">
-<h2>Sleep Quality</h2>
-<div class="checks">
-<label><input type="checkbox"> 1 Very Poor</label>
-<label><input type="checkbox"> 2 Poor</label>
-<label><input type="checkbox"> 3 Normal</label>
-<label><input type="checkbox"> 4 Good</label>
-<label><input type="checkbox"> 5 Very Good</label>
-</div>
-<textarea placeholder="Note"></textarea>
-</div>
-
-<div class="block member">
-<h2>Discomfort Check</h2>
-<label><input type="checkbox"> No</label>
-<label><input type="checkbox"> Yes</label>
-<p>Area: <input type="text"></p>
-<textarea placeholder="Note"></textarea>
-</div>
-
-<div class="block member">
-<h2>Nutrition Check</h2>
-<div class="checks">
-<label><input type="checkbox"> 1 Very Poor</label>
-<label><input type="checkbox"> 2 Poor</label>
-<label><input type="checkbox"> 3 Normal</label>
-<label><input type="checkbox"> 4 Good</label>
-<label><input type="checkbox"> 5 Very Good</label>
-</div>
-<textarea placeholder="Note"></textarea>
-</div>
-
-<div class="block member">
-<h2>Message To Trainer</h2>
-<textarea placeholder="Questions, concerns, requests, or personal notes."></textarea>
-</div>
-
-<div class="block ai">
-<h2>AI Overall Review</h2>
-<p><strong>Good Points:</strong></p>
-<textarea></textarea>
-<p><strong>Needs Attention:</strong></p>
-<textarea></textarea>
-<p><strong>Recommended Action:</strong></p>
-<textarea></textarea>
-</div>
-
-<div class="block ai">
-<h2>Recent Lesson Review</h2>
-<p><strong>Good Points From Recent Lesson:</strong></p>
-<textarea></textarea>
-<p><strong>Points To Keep Checking:</strong></p>
-<textarea></textarea>
-</div>
-
-<div class="block ai">
-<h2>Body Composition</h2>
-<table>
-<tr><th>Item</th><th>Current</th><th>Goal</th><th>Difference</th><th>Comment</th></tr>
-<tr><td>Weight</td><td></td><td></td><td></td><td></td></tr>
-<tr><td>Body Fat Mass</td><td></td><td></td><td></td><td></td></tr>
-<tr><td>Skeletal Muscle Mass</td><td></td><td></td><td></td><td></td></tr>
-</table>
-</div>
-
-<div class="block ai">
-<h2>Graph Data Table</h2>
-<table>
-<tr><th>Date</th><th>Body Fat Mass</th><th>Skeletal Muscle Mass</th></tr>
-<tr><td></td><td></td><td></td></tr>
-<tr><td></td><td></td><td></td></tr>
-<tr><td></td><td></td><td></td></tr>
-</table>
-</div>
-
-<div class="block trainer">
-<h2>This Week Comment</h2>
-<textarea></textarea>
-</div>
-
-<div class="block trainer">
-<h2>This Month Comment</h2>
-<textarea></textarea>
-</div>
-
-<div class="block trainer">
-<h2>Training Direction</h2>
-<textarea placeholder="Focus, exercise direction, recovery direction, and habit direction."></textarea>
-</div>
-
-<div class="block trainer">
-<h2>Final Motivation</h2>
-<textarea placeholder="Write one short and warm supportive message."></textarea>
-</div>
 
 </body>
 </html>
