@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>HiMove Weekly Member Report</title>
+<style>
+body { font-family: Arial, sans-serif; line-height: 1.6; color: #222; max-width: 900px; margin: 40px auto; padding: 20px; }
+h1, h2 { color: #1f4e5f; }
+.block { padding: 18px; margin: 16px 0; border-radius: 12px; }
+.member { background: #f3f8fb; border-left: 6px solid #7fb6d6; }
+.ai { background: #f7f7f7; border-left: 6px solid #999; }
+.trainer { background: #fff8ec; border-left: 6px solid #d9a441; }
+table { width: 100%; border-collapse: collapse; margin-top: 10px; }
+th, td { border: 1px solid #ddd; padding: 8px; text-align: left; }
+th { background: #eef4f7; }
+textarea { width: 100%; min-height: 70px; }
+input[type="text"] { width: 100%; padding: 6px; }
+.checks label { margin-right: 12px; display: inline-block; }
+</style>
+</head>
+
+<body>
+
+<h1>HiMove Weekly Member Report</h1>
+
+<!--
+CORE RULES (trainer/AI reference only — not visible to member)
+- Member record comes first.
+- Trainer uses this only for review and next-session reference.
+- Do not diagnose medical conditions.
+- Do not guess injuries or diseases.
+- Do not recommend medicine, treatment, or extreme diets.
+- Use calm, supportive, and practical language.
+-->
+
+<div class="block member">
+<h2>Weekly Report</h2>
+<p>Year: 2026</p>
+<p>Month: May</p>
+<p>Week: <input type="text"></p>
+<p>Member Name: <input type="text" value="000"></p>
+</div>
+
+<div class="block trainer">
+<h2>Main Message</h2>
+<textarea placeholder="Write the most important message for this member this week."></textarea>
+</div>
+
+<div class="block trainer">
+<h2>Recent Lesson Summary</h2>
+<p>Recent Lesson Date: <input type="text"></p>
+<textarea placeholder="Write main training done in the recent lesson."></textarea>
+</div>
+
+<div class="block ai">
+<h2>Exercise Feedback</h2>
+<table>
+<tr><th>Exercise</th><th>Feedback</th><th>Next Check Point</th></tr>
+<tr><td></td><td></td><td></td></tr>
+<tr><td></td><td></td><td></td></tr>
+<tr><td></td><td></td><td></td></tr>
+</table>
+</div>
+
+<div class="block ai">
+<h2>Main Lift Progress</h2>
+<table>
+<tr><th>Lift</th><th>Current Estimated 1RM</th><th>Goal 1RM</th><th>Remaining</th><th>Comment</th></tr>
+<tr><td>Squat</td><td></td><td></td><td></td><td></td></tr>
+<tr><td>Deadlift</td><td></td><td></td><td></td><td></td></tr>
+<tr><td>Bench Press</td><td></td><td></td><td></td><td></td></tr>
+</table>
+</div>
+
+<div class="block member">
+<h2>Today's Condition</h2>
+<div class="checks">
+<label><input type="checkbox"> Very Good</label>
+<label><input type="checkbox"> Good</label>
+<label><input type="checkbox"> Normal</label>
+<label><input type="checkbox"> Tired</label>
+<label><input type="checkbox"> Very Tired</label>
+</div>
+<textarea placeholder="Note"></textarea>
+</div>
+
+<div class="block member">
+<h2>Training Progress</h2>
+<div class="checks">
+<label><input type="checkbox"> Routine</label>
+<label><input type="checkbox"> Cardio</label>
+<label><input type="checkbox"> Free Workout</label>
+<label><input type="checkbox"> Outdoor Activity</label>
+<label><input type="checkbox"> Lesson</label>
+<label><input type="checkbox"> Rest</label>
+</div>
+<textarea placeholder="Note"></textarea>
+</div>
+
+<div class="block member">
+<h2>Sleep Quality</h2>
+<div class="checks">
+<label><input type="checkbox"> 1 Very Poor</label>
+<label><input type="checkbox"> 2 Poor</label>
+<label><input type="checkbox"> 3 Normal</label>
+<label><input type="checkbox"> 4 Good</label>
+<label><input type="checkbox"> 5 Very Good</label>
+</div>
+<textarea placeholder="Note"></textarea>
+</div>
+
+<div class="block member">
+<h2>Discomfort Check</h2>
+<label><input type="checkbox"> No</label>
+<label><input type="checkbox"> Yes</label>
+<p>Area: <input type="text"></p>
+<textarea placeholder="Note"></textarea>
+</div>
+
+<div class="block member">
+<h2>Nutrition Check</h2>
+<div class="checks">
+<label><input type="checkbox"> 1 Very Poor</label>
+<label><input type="checkbox"> 2 Poor</label>
+<label><input type="checkbox"> 3 Normal</label>
+<label><input type="checkbox"> 4 Good</label>
+<label><input type="checkbox"> 5 Very Good</label>
+</div>
+<textarea placeholder="Note"></textarea>
+</div>
+
+<div class="block member">
+<h2>Message To Trainer</h2>
+<textarea placeholder="Questions, concerns, requests, or personal notes."></textarea>
+</div>
+
+<div class="block ai">
+<h2>AI Overall Review</h2>
+<p><strong>Good Points:</strong></p>
+<textarea></textarea>
+<p><strong>Needs Attention:</strong></p>
+<textarea></textarea>
+<p><strong>Recommended Action:</strong></p>
+<textarea></textarea>
+</div>
+
+<div class="block ai">
+<h2>Recent Lesson Review</h2>
+<p><strong>Good Points From Recent Lesson:</strong></p>
+<textarea></textarea>
+<p><strong>Points To Keep Checking:</strong></p>
+<textarea></textarea>
+</div>
+
+<div class="block ai">
+<h2>Body Composition</h2>
+<table>
+<tr><th>Item</th><th>Current</th><th>Goal</th><th>Difference</th><th>Comment</th></tr>
+<tr><td>Weight</td><td></td><td></td><td></td><td></td></tr>
+<tr><td>Body Fat Mass</td><td></td><td></td><td></td><td></td></tr>
+<tr><td>Skeletal Muscle Mass</td><td></td><td></td><td></td><td></td></tr>
+</table>
+</div>
+
+<div class="block ai">
+<h2>Graph Data Table</h2>
+<table>
+<tr><th>Date</th><th>Body Fat Mass</th><th>Skeletal Muscle Mass</th></tr>
+<tr><td></td><td></td><td></td></tr>
+<tr><td></td><td></td><td></td></tr>
+<tr><td></td><td></td><td></td></tr>
+</table>
+</div>
+
+<div class="block trainer">
+<h2>This Week Comment</h2>
+<textarea></textarea>
+</div>
+
+<div class="block trainer">
+<h2>This Month Comment</h2>
+<textarea></textarea>
+</div>
+
+<div class="block trainer">
+<h2>Training Direction</h2>
+<textarea placeholder="Focus, exercise direction, recovery direction, and habit direction."></textarea>
+</div>
+
+<div class="block trainer">
+<h2>Final Motivation</h2>
+<textarea placeholder="Write one short and warm supportive message."></textarea>
+</div>
+
+</body>
+</html>
