@@ -1,0 +1,539 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>HiMove 주간 리포트</title>
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  html { background: #e8f0fb; }
+
+  body {
+    font-family: -apple-system, 'Apple SD Gothic Neo', 'Noto Sans KR', sans-serif;
+    background: #e8f0fb;
+    color: #1a1a2e;
+    max-width: 430px;
+    margin: 0 auto;
+    padding: 40px 18px 72px;
+    position: relative;
+  }
+
+  /* ── 물방울 glow 배경 ── */
+  body::before {
+    content: '';
+    position: fixed;
+    top: -160px; left: 50%;
+    transform: translateX(-50%);
+    width: 600px; height: 600px;
+    background: radial-gradient(circle, #cfe4ff 0%, #edf5ff 45%, transparent 70%);
+    filter: blur(60px);
+    opacity: 0.9;
+    pointer-events: none;
+    z-index: 0;
+  }
+  body::after {
+    content: '';
+    position: fixed;
+    bottom: -100px; right: -80px;
+    width: 380px; height: 380px;
+    background: radial-gradient(circle, #daeeff 0%, transparent 65%);
+    filter: blur(55px);
+    opacity: 0.7;
+    pointer-events: none;
+    z-index: 0;
+  }
+  body > * { position: relative; z-index: 1; }
+
+  /* ── HEADER ── */
+  .header {
+    background: rgba(255,255,255,0.52);
+    backdrop-filter: blur(48px);
+    -webkit-backdrop-filter: blur(48px);
+    border-radius: 32px;
+    padding: 36px 28px 30px;
+    margin-bottom: 18px;
+    border: 1px solid rgba(255,255,255,0.85);
+    box-shadow: 0 8px 48px rgba(100,150,230,0.10), inset 0 1px 0 rgba(255,255,255,0.95);
+    text-align: left;
+  }
+  .header .logo {
+    font-size: 10px;
+    letter-spacing: 5px;
+    color: #9ab0cc;
+    margin-bottom: 12px;
+    font-weight: 500;
+  }
+  .header h1 {
+    font-size: 30px;
+    font-weight: 800;
+    letter-spacing: -0.8px;
+    color: #1a1a2e;
+    margin-bottom: 3px;
+    line-height: 1.1;
+  }
+  .header .subtitle {
+    font-size: 13px;
+    color: #a0b2c8;
+    font-weight: 400;
+    margin-bottom: 20px;
+  }
+  .header .meta { display: flex; flex-wrap: wrap; gap: 8px; }
+  .header .meta span {
+    background: rgba(160,190,230,0.15);
+    border: 1px solid rgba(160,190,230,0.3);
+    border-radius: 100px;
+    padding: 5px 14px;
+    font-size: 12px;
+    color: #5a7a9a;
+    font-weight: 500;
+  }
+
+  /* ── 회원 카드 (기본) ── */
+  .card {
+    background: rgba(255,255,255,0.58);
+    backdrop-filter: blur(48px);
+    -webkit-backdrop-filter: blur(48px);
+    border-radius: 28px;
+    padding: 28px 24px;
+    margin-bottom: 12px;
+    border: 1px solid rgba(255,255,255,0.82);
+    box-shadow: 0 6px 36px rgba(100,150,230,0.08), inset 0 1px 0 rgba(255,255,255,0.95);
+  }
+
+  /* ── 트레이너 카드 ── */
+  .card:has(.card-title.gold),
+  .final-card {
+    background: rgba(232,241,255,0.65);
+    border-color: rgba(180,210,250,0.55);
+    box-shadow: 0 6px 36px rgba(100,150,230,0.10), inset 0 1px 0 rgba(255,255,255,0.9);
+  }
+
+  /* ── 섹션 타입 뱃지 ── */
+  .card-title {
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: #b0c0d8;
+    margin-bottom: 18px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .card-title::before { display: none; }
+  .card-title.gold::after {
+    content: 'TRAINER';
+    font-size: 9px;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    color: #6a9ac4;
+    background: rgba(100,160,220,0.1);
+    border: 1px solid rgba(100,160,220,0.2);
+    border-radius: 100px;
+    padding: 2px 9px;
+  }
+  .card-title.blue  { color: #b0c0d8; }
+  .card-title.gold  { color: #b0c0d8; }
+  .card-title.green { color: #b0c0d8; }
+
+  /* ── 메시지 박스 (물방울 느낌) ── */
+  .msg {
+    background: rgba(255,255,255,0.55);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid rgba(255,255,255,0.8);
+    border-radius: 20px;
+    padding: 16px 18px;
+    font-size: 14px;
+    line-height: 1.9;
+    color: #2a3a50;
+    white-space: pre-line;
+    font-weight: 400;
+    box-shadow: inset 0 1px 0 rgba(255,255,255,0.9);
+  }
+  .msg.gold  { background: rgba(255,255,255,0.55); }
+  .msg.green { background: rgba(255,255,255,0.55); }
+
+  /* ── 테이블 ── */
+  table { width: 100%; border-collapse: collapse; font-size: 13px; }
+  th {
+    background: transparent;
+    padding: 0 0 10px;
+    text-align: left;
+    font-size: 10px;
+    font-weight: 700;
+    color: #c0ccd8;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    border-bottom: 1px solid rgba(160,190,230,0.2);
+  }
+  td {
+    padding: 13px 0;
+    border-bottom: 1px solid rgba(160,190,230,0.15);
+    color: #2a3a50;
+    vertical-align: top;
+    line-height: 1.7;
+  }
+  tr:last-child td { border-bottom: none; }
+
+  /* ── 칩 ── */
+  .check-row {
+    display: flex;
+    flex-wrap: nowrap;
+    gap: 6px;
+    margin-bottom: 14px;
+  }
+  .chip {
+    flex: 1;
+    min-width: 0;
+    text-align: center;
+    background: rgba(255,255,255,0.45);
+    border: 1px solid rgba(160,190,230,0.3);
+    border-radius: 100px;
+    padding: 7px 4px;
+    font-size: 11px;
+    color: #a0b8d0;
+    font-weight: 400;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  .chip.on {
+    background: rgba(100,155,220,0.15);
+    border-color: rgba(100,155,220,0.45);
+    color: #3a6a9a;
+    font-weight: 700;
+  }
+
+  /* ── 노트 ── */
+  .note { font-size: 13px; color: #a0b2c8; line-height: 1.8; white-space: pre-line; }
+
+  /* ── 체성분 숫자 ── */
+  .stat-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; }
+  .stat-box {
+    background: rgba(255,255,255,0.52);
+    border-radius: 22px;
+    padding: 20px 10px;
+    text-align: center;
+    border: 1px solid rgba(255,255,255,0.8);
+    box-shadow: inset 0 1px 0 rgba(255,255,255,0.95);
+  }
+  .stat-box .lbl { font-size: 10px; color: #b0c0d4; margin-bottom: 6px; font-weight: 700; letter-spacing: 0.5px; text-transform: uppercase; }
+  .stat-box .val { font-size: 28px; font-weight: 700; color: #1a2a40; letter-spacing: -1.5px; line-height: 1; }
+  .stat-box .unt { font-size: 11px; color: #b0c0d4; margin-top: 4px; }
+
+  /* ── 서브 레이블 ── */
+  .sub-label { font-size: 10px; font-weight: 700; margin-bottom: 8px; letter-spacing: 1.5px; text-transform: uppercase; color: #b8c8da; }
+
+  /* ── 파이널 카드 ── */
+  .final-card {
+    border-radius: 28px;
+    padding: 32px 26px;
+    margin-bottom: 12px;
+  }
+  .final-card > div:first-child {
+    font-size: 10px;
+    letter-spacing: 2px;
+    color: #8aabcc;
+    margin-bottom: 12px;
+    font-weight: 700;
+  }
+  .final-card > div:last-child {
+    font-size: 16px;
+    line-height: 1.85;
+    font-weight: 500;
+    color: #2a3a50;
+  }
+
+  /* ── 푸터 ── */
+  .footer {
+    text-align: center;
+    font-size: 11px;
+    color: #b0c0d8;
+    margin-top: 10px;
+    padding-bottom: 20px;
+    line-height: 2;
+    letter-spacing: 0.5px;
+  }
+
+  /* 날짜 라벨 */
+  [style*="color:#718096"] { color: #a8bcd0 !important; }
+
+  /* ── 변화량 뱃지 ── */
+  .delta-row { margin-top: 14px; display: flex; gap: 10px; flex-wrap: wrap; }
+  .delta-box {
+    display: flex;
+    flex-direction: column;
+    background: rgba(255,255,255,0.55);
+    border: 1px solid rgba(255,255,255,0.8);
+    border-radius: 14px;
+    padding: 10px 14px;
+    flex: 1;
+    min-width: 80px;
+    text-align: center;
+  }
+  .dlbl { font-size: 10px; color: #b0c0d4; font-weight: 700; letter-spacing: 0.5px; margin-bottom: 4px; }
+  .dval { font-size: 15px; font-weight: 700; color: #2a3a50; }
+  .dval.up   { color: #e07070; }
+  .dval.down { color: #5a9a7a; }
+</style>
+</head>
+<body>
+
+<div class="header">
+  <div class="logo">H I M O V E</div>
+  <h1>주간 회원 리포트</h1>
+  <div class="subtitle">Weekly Member Report</div>
+  <div class="meta">
+    <span>2026년 5월</span>
+    <span>회원명: 김지연</span>
+    <span>Week 1</span>
+  </div>
+</div>
+
+<div class="card">
+  <div class="card-title gold">이번 주 핵심 메시지</div>
+  <div class="msg gold">이번 주 가장 중요한 메시지를 여기에 작성합니다.</div>
+</div>
+
+<div class="card">
+  <div class="card-title blue">최근 수업 요약</div>
+  <div style="font-size:12px;color:#718096;margin-bottom:10px;">수업일: 2026년 5월 27일</div>
+  <div class="msg">최근 수업에서 진행한 내용을 여기에 작성합니다.</div>
+</div>
+
+<div class="card">
+  <div class="card-title blue">운동별 피드백</div>
+  <table>
+    <tr><th>운동</th><th>피드백</th><th>다음 체크포인트</th></tr>
+    <tr><td>스쿼트</td><td>-</td><td>-</td></tr>
+    <tr><td>데드리프트</td><td>-</td><td>-</td></tr>
+    <tr><td>벤치프레스</td><td>-</td><td>-</td></tr>
+  </table>
+</div>
+
+<div class="card">
+  <div class="card-title blue">주요 리프트 현황</div>
+  <table>
+    <tr><th>종목</th><th>현재 1RM</th><th>목표 1RM</th><th>남은 무게</th></tr>
+    <tr><td>스쿼트</td><td>-</td><td>-</td><td>-</td></tr>
+    <tr><td>데드리프트</td><td>-</td><td>-</td><td>-</td></tr>
+    <tr><td>벤치프레스</td><td>-</td><td>-</td><td>-</td></tr>
+  </table>
+</div>
+
+<div class="card">
+  <div class="card-title green">체성분 현황</div>
+  <div class="stat-grid">
+    <div class="stat-box"><div class="lbl">체중</div><div class="val" id="s-weight">-</div><div class="unt">kg</div></div>
+    <div class="stat-box"><div class="lbl">체지방량</div><div class="val" id="s-fat">-</div><div class="unt">kg</div></div>
+    <div class="stat-box"><div class="lbl">골격근량</div><div class="val" id="s-muscle">-</div><div class="unt">kg</div></div>
+  </div>
+  <div class="delta-row" id="delta-row" style="display:none; margin-top:14px; display:flex; gap:10px; flex-wrap:wrap;">
+    <div class="delta-box"><span class="dlbl">체중 변화</span><span class="dval" id="d-weight">-</span></div>
+    <div class="delta-box"><span class="dlbl">체지방 변화</span><span class="dval" id="d-fat">-</span></div>
+    <div class="delta-box"><span class="dlbl">근육 변화</span><span class="dval" id="d-muscle">-</span></div>
+  </div>
+</div>
+
+<div class="card">
+  <div class="card-title green">체성분 변화 추이</div>
+  <div style="position:relative; height:220px; margin-bottom:20px;">
+    <canvas id="bodyChart"></canvas>
+  </div>
+  <div style="margin-bottom:16px;">
+    <div class="sub-label">변화 분석</div>
+    <div class="msg" id="body-comment">체성분 변화에 대한 분석 코멘트가 여기에 표시됩니다.</div>
+  </div>
+</div>
+
+<div class="card">
+  <div class="card-title blue">이번 주 컨디션</div>
+  <div class="check-row">
+    <div class="chip">매우 좋음</div><div class="chip">좋음</div><div class="chip on">보통</div><div class="chip">피곤함</div><div class="chip">매우 피곤함</div>
+  </div>
+  <div class="note">-</div>
+</div>
+
+<div class="card">
+  <div class="card-title blue">수면 품질</div>
+  <div class="check-row">
+    <div class="chip">매우 나쁨</div><div class="chip">나쁨</div><div class="chip">보통</div><div class="chip on">좋음</div><div class="chip">매우 좋음</div>
+  </div>
+  <div class="note">-</div>
+</div>
+
+<div class="card">
+  <div class="card-title blue">이번 주 트레이닝</div>
+  <div class="check-row">
+    <div class="chip">루틴</div><div class="chip">유산소</div><div class="chip">자유 운동</div><div class="chip">야외 활동</div><div class="chip on">수업</div><div class="chip">휴식</div>
+  </div>
+  <div class="note">-</div>
+</div>
+
+<div class="card">
+  <div class="card-title blue">신체 불편 여부</div>
+  <div class="check-row">
+    <div class="chip on">없음</div><div class="chip">있음</div>
+  </div>
+  <div class="note">-</div>
+</div>
+
+<div class="card">
+  <div class="card-title blue">영양 상태</div>
+  <div class="check-row">
+    <div class="chip">매우 나쁨</div><div class="chip">나쁨</div><div class="chip on">보통</div><div class="chip">좋음</div><div class="chip">매우 좋음</div>
+  </div>
+  <div class="note">-</div>
+</div>
+
+<div class="card">
+  <div class="card-title green">AI 종합 리뷰</div>
+  <div style="margin-bottom:12px;">
+    <div class="sub-label" style="color:#276749;">✓ 잘 하고 있는 점</div>
+    <div class="msg green">-</div>
+  </div>
+  <div style="margin-bottom:12px;">
+    <div class="sub-label" style="color:#975a16;">⚠ 주의할 점</div>
+    <div class="msg gold">-</div>
+  </div>
+  <div>
+    <div class="sub-label" style="color:#2d7d9a;">→ 권장 사항</div>
+    <div class="msg">-</div>
+  </div>
+</div>
+
+<div class="card">
+  <div class="card-title gold">트레이너 코멘트</div>
+  <div class="msg gold" style="margin-bottom:12px;">이번 주 코멘트를 여기에 작성합니다.</div>
+  <div class="sub-label" style="color:#718096; margin-bottom:6px;">트레이닝 방향</div>
+  <div class="msg">훈련 방향, 운동 방향, 회복 방향, 습관 방향을 여기에 작성합니다.</div>
+</div>
+
+<div class="final-card">
+  <div style="font-size:11px;letter-spacing:2px;opacity:0.7;margin-bottom:10px;">FINAL MESSAGE</div>
+  <div style="font-size:16px;line-height:1.8;font-weight:500;">짧고 따뜻한 응원 메시지를 여기에 작성합니다.</div>
+</div>
+
+<div class="footer">
+  HiMove &nbsp;·&nbsp; 주간 회원 리포트<br>
+  본 리포트는 트레이너와 AI가 함께 작성합니다
+</div>
+
+<script>
+/* ── 체성분 데이터 (트레이너가 업데이트하는 영역) ── */
+const bodyData = {
+  labels:  ['5월'],
+  weight:  [55],
+  fat:     [10],
+  muscle:  [26],
+  comment: '5월 기준 측정값이에요. 체중 55kg에 체지방률 약 18.2%로 매우 건강한 범위에 있어요. 골격근량 26kg도 체중 대비 적절한 수준이에요. 앞으로 측정이 쌓이면 변화 추이를 그래프로 확인할 수 있어요.'
+};
+
+/* ── 현재값 표시 ── */
+const last = i => bodyData[i].filter(v => v !== null).at(-1);
+const prev = i => { const d = bodyData[i].filter(v => v !== null); return d.length >= 2 ? d.at(-2) : null; };
+
+if (last('weight')) document.getElementById('s-weight').textContent = last('weight');
+if (last('fat'))    document.getElementById('s-fat').textContent    = last('fat');
+if (last('muscle')) document.getElementById('s-muscle').textContent = last('muscle');
+
+/* ── 변화량 ── */
+function setDelta(elId, curr, before) {
+  if (curr === null || before === null) return;
+  const el = document.getElementById(elId);
+  const diff = (curr - before).toFixed(1);
+  const sign = diff > 0 ? '+' : '';
+  el.textContent = sign + diff + ' kg';
+  el.className = 'dval ' + (diff > 0 ? 'up' : diff < 0 ? 'down' : '');
+}
+setDelta('d-weight', last('weight'), prev('weight'));
+setDelta('d-fat',    last('fat'),    prev('fat'));
+setDelta('d-muscle', last('muscle'), prev('muscle'));
+
+/* ── 코멘트 ── */
+document.getElementById('body-comment').textContent = bodyData.comment;
+
+/* ── 차트 ── */
+const hasData = bodyData.fat.some(v => v !== null) || bodyData.muscle.some(v => v !== null);
+if (hasData) {
+  const ctx = document.getElementById('bodyChart').getContext('2d');
+  new Chart(ctx, {
+    type: 'line',
+    data: {
+      labels: bodyData.labels,
+      datasets: [
+        {
+          label: '골격근량',
+          data: bodyData.muscle,
+          borderColor: 'rgba(90,154,210,0.85)',
+          backgroundColor: 'rgba(90,154,210,0.08)',
+          borderWidth: 2.5,
+          pointBackgroundColor: 'rgba(90,154,210,1)',
+          pointRadius: 5,
+          tension: 0.4,
+          fill: true,
+          spanGaps: true
+        },
+        {
+          label: '체지방량',
+          data: bodyData.fat,
+          borderColor: 'rgba(210,120,110,0.75)',
+          backgroundColor: 'rgba(210,120,110,0.06)',
+          borderWidth: 2.5,
+          pointBackgroundColor: 'rgba(210,120,110,1)',
+          pointRadius: 5,
+          tension: 0.4,
+          fill: true,
+          spanGaps: true
+        }
+      ]
+    },
+    options: {
+      responsive: true,
+      maintainAspectRatio: false,
+      plugins: {
+        legend: {
+          labels: {
+            font: { size: 11, family: '-apple-system' },
+            color: '#8aa0ba',
+            boxWidth: 10,
+            usePointStyle: true
+          }
+        },
+        tooltip: { mode: 'index', intersect: false }
+      },
+      scales: {
+        x: {
+          grid: { display: false },
+          ticks: { color: '#b0c0d4', font: { size: 11 } },
+          border: { display: false }
+        },
+        y: {
+          grid: { color: 'rgba(160,190,230,0.12)' },
+          ticks: { color: '#b0c0d4', font: { size: 11 }, callback: v => v + 'kg' },
+          border: { display: false }
+        }
+      }
+    }
+  });
+} else {
+  document.getElementById('bodyChart').parentElement.innerHTML =
+    '<div style="height:100%;display:flex;align-items:center;justify-content:center;color:#c0d0e0;font-size:13px;">데이터가 쌓이면 그래프가 표시됩니다</div>';
+}
+</script>
+
+<!--
+CORE RULES (트레이너/AI 전용 — 회원에게 표시되지 않음)
+- 회원 기록이 가장 중요하다
+- 트레이너는 검토 및 다음 수업 참고용으로만 사용한다
+- 의학적 진단을 내리지 않는다
+- 부상이나 질병을 추측하지 않는다
+- 약, 치료, 극단적인 식단을 권장하지 않는다
+- 차분하고 지지적이며 실용적인 언어를 사용한다
+-->
+
+</body>
+</html>
