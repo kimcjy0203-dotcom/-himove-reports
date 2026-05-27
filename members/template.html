@@ -355,24 +355,8 @@
 </div>
 
 <div class="card">
-  <div class="card-title blue">운동별 피드백</div>
-  <div class="exercise-grid">
-    <div class="exercise-item">
-      <div class="ei-name">스쿼트</div>
-      <div class="ei-feedback">-</div>
-      <div class="ei-next">-</div>
-    </div>
-    <div class="exercise-item">
-      <div class="ei-name">데드리프트</div>
-      <div class="ei-feedback">-</div>
-      <div class="ei-next">-</div>
-    </div>
-    <div class="exercise-item">
-      <div class="ei-name">벤치프레스</div>
-      <div class="ei-feedback">-</div>
-      <div class="ei-next">-</div>
-    </div>
-  </div>
+  <div class="card-title blue">이번 수업 피드백</div>
+  <div class="exercise-grid" id="exercise-feedback"></div>
 </div>
 
 <div class="card">
@@ -496,6 +480,26 @@
 </div>
 
 <script>
+/* ── 수업 피드백 데이터 ── */
+const sessionData = {
+  exercises: []
+  // 형식: { name: '종목명', note: '피드백', next: '다음 체크포인트' }
+};
+
+(function() {
+  const el = document.getElementById('exercise-feedback');
+  if (!sessionData.exercises || sessionData.exercises.length === 0) {
+    el.innerHTML = '<div class="exercise-item"><div class="ei-name">-</div><div class="ei-feedback">수업 후 피드백이 여기에 표시됩니다.</div></div>';
+  } else {
+    el.innerHTML = sessionData.exercises.map(e => `
+      <div class="exercise-item">
+        <div class="ei-name">${e.name}</div>
+        <div class="ei-feedback">${e.note}</div>
+        ${e.next ? `<div class="ei-next">${e.next}</div>` : ''}
+      </div>`).join('');
+  }
+})();
+
 /* ── 체성분 데이터 (트레이너가 업데이트하는 영역) ── */
 const bodyData = {
   labels:       ['3월', '4월', '5월'],

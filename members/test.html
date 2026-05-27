@@ -150,24 +150,8 @@
 </div>
 
 <div class="card">
-  <div class="card-title blue">운동별 피드백</div>
-  <div class="exercise-grid">
-    <div class="exercise-item">
-      <div class="ei-name">스쿼트</div>
-      <div class="ei-feedback">무릎 트래킹 개선됨. 힙 드라이브가 아직 약간 부족해요.</div>
-      <div class="ei-next">힙 드라이브 의식하며 올라오기</div>
-    </div>
-    <div class="exercise-item">
-      <div class="ei-name">데드리프트</div>
-      <div class="ei-feedback">바 경로가 몸에 잘 붙어있어요. 좋아요.</div>
-      <div class="ei-next">잠금 동작에서 과신전 주의</div>
-    </div>
-    <div class="exercise-item">
-      <div class="ei-name">벤치프레스</div>
-      <div class="ei-feedback">좌우 균형이 아직 살짝 불균형해요.</div>
-      <div class="ei-next">약한 쪽 팔 집중 세트 추가</div>
-    </div>
-  </div>
+  <div class="card-title blue">이번 수업 피드백</div>
+  <div class="exercise-grid" id="exercise-feedback"></div>
 </div>
 
 <div class="card">
@@ -291,6 +275,29 @@
 </div>
 
 <script>
+/* ── 수업 피드백 데이터 ── */
+const sessionData = {
+  exercises: [
+    { name: '스쿼트',   note: '무릎 트래킹 개선됨. 힙 드라이브가 아직 약간 부족해요.',  next: '힙 드라이브 의식하며 올라오기' },
+    { name: '데드리프트', note: '바 경로가 몸에 잘 붙어있어요. 좋아요.',               next: '잠금 동작에서 과신전 주의' },
+    { name: '벤치프레스', note: '좌우 균형이 아직 살짝 불균형해요.',                   next: '약한 쪽 팔 집중 세트 추가' }
+  ]
+};
+
+(function() {
+  const el = document.getElementById('exercise-feedback');
+  if (!sessionData.exercises || sessionData.exercises.length === 0) {
+    el.innerHTML = '<div class="exercise-item"><div class="ei-name">-</div><div class="ei-feedback">수업 후 피드백이 여기에 표시됩니다.</div></div>';
+  } else {
+    el.innerHTML = sessionData.exercises.map(e => `
+      <div class="exercise-item">
+        <div class="ei-name">${e.name}</div>
+        <div class="ei-feedback">${e.note}</div>
+        ${e.next ? `<div class="ei-next">${e.next}</div>` : ''}
+      </div>`).join('');
+  }
+})();
+
 const bodyData = {
   labels:       ['2월', '3월', '4월', '5월'],
   weight:       [82.4, 81.8, 80.5, 79.8],
