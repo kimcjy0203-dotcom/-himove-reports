@@ -6,38 +6,238 @@
 <title>HiMove 주간 리포트</title>
 <style>
   * { box-sizing: border-box; margin: 0; padding: 0; }
-  body { font-family: 'Apple SD Gothic Neo', 'Noto Sans KR', sans-serif; background: #f0f4f8; color: #2d3748; padding: 24px 16px; }
-  .header { background: linear-gradient(135deg, #1a3c4e, #2d7d9a); border-radius: 20px; padding: 32px 28px; color: white; margin-bottom: 20px; text-align: center; }
-  .header .logo { font-size: 13px; letter-spacing: 4px; opacity: 0.75; margin-bottom: 8px; }
-  .header h1 { font-size: 26px; font-weight: 700; margin-bottom: 6px; }
-  .header .subtitle { font-size: 14px; opacity: 0.8; }
-  .header .meta { margin-top: 16px; display: flex; justify-content: center; gap: 12px; flex-wrap: wrap; }
-  .header .meta span { background: rgba(255,255,255,0.15); border-radius: 20px; padding: 5px 14px; font-size: 13px; }
-  .card { background: white; border-radius: 16px; padding: 22px; margin-bottom: 16px; box-shadow: 0 2px 12px rgba(0,0,0,0.06); }
-  .card-title { font-size: 12px; font-weight: 700; letter-spacing: 1.5px; margin-bottom: 14px; display: flex; align-items: center; gap: 8px; }
-  .card-title::before { content: ''; width: 4px; height: 16px; border-radius: 2px; display: inline-block; }
-  .card-title.blue { color: #2d7d9a; } .card-title.blue::before { background: #2d7d9a; }
-  .card-title.gold { color: #b8860b; } .card-title.gold::before { background: #d4a017; }
-  .card-title.green { color: #276749; } .card-title.green::before { background: #38a169; }
-  .msg { background: #f7fbfd; border-left: 4px solid #2d7d9a; border-radius: 0 12px 12px 0; padding: 14px 16px; font-size: 14px; line-height: 1.8; white-space: pre-line; }
-  .msg.gold { background: #fffbf0; border-left-color: #d4a017; }
-  .msg.green { background: #f0fff4; border-left-color: #38a169; }
-  table { width: 100%; border-collapse: collapse; font-size: 14px; }
-  th { background: #f0f4f8; padding: 10px 12px; text-align: left; font-size: 12px; font-weight: 600; color: #718096; border-bottom: 2px solid #e2e8f0; }
-  td { padding: 11px 12px; border-bottom: 1px solid #f0f4f8; vertical-align: top; }
+
+  html { background: #edf4ff; }
+
+  body {
+    font-family: -apple-system, 'Apple SD Gothic Neo', 'Noto Sans KR', sans-serif;
+    background: #edf4ff;
+    color: #111;
+    max-width: 430px;
+    margin: 0 auto;
+    padding: 36px 20px 64px;
+    position: relative;
+  }
+
+  /* ── glow blobs ── */
+  body::before {
+    content: '';
+    position: fixed;
+    top: -120px; left: 50%;
+    transform: translateX(-50%);
+    width: 560px; height: 560px;
+    background: radial-gradient(circle, #cfe4ff 0%, transparent 65%);
+    filter: blur(48px);
+    opacity: 0.75;
+    pointer-events: none;
+    z-index: 0;
+  }
+  body::after {
+    content: '';
+    position: fixed;
+    bottom: -80px; right: -60px;
+    width: 340px; height: 340px;
+    background: radial-gradient(circle, #dfefff 0%, transparent 65%);
+    filter: blur(48px);
+    opacity: 0.6;
+    pointer-events: none;
+    z-index: 0;
+  }
+  body > * { position: relative; z-index: 1; }
+
+  /* ── HEADER ── */
+  .header {
+    background: #0c0c0c;
+    border-radius: 28px;
+    padding: 36px 28px 32px;
+    color: white;
+    margin-bottom: 20px;
+    position: relative;
+    overflow: hidden;
+    text-align: left;
+  }
+  .header::before {
+    content: '';
+    position: absolute;
+    top: -60px; right: -60px;
+    width: 220px; height: 220px;
+    background: radial-gradient(circle, rgba(120,170,255,0.18) 0%, transparent 70%);
+    filter: blur(24px);
+    pointer-events: none;
+  }
+  .header .logo {
+    font-size: 10px;
+    letter-spacing: 5px;
+    color: rgba(255,255,255,0.35);
+    margin-bottom: 14px;
+    font-weight: 400;
+  }
+  .header h1 {
+    font-size: 30px;
+    font-weight: 800;
+    letter-spacing: -0.5px;
+    margin-bottom: 4px;
+    line-height: 1.1;
+  }
+  .header .subtitle {
+    font-size: 13px;
+    color: rgba(255,255,255,0.35);
+    font-weight: 400;
+    margin-bottom: 22px;
+  }
+  .header .meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+  .header .meta span {
+    background: rgba(255,255,255,0.07);
+    border: 1px solid rgba(255,255,255,0.11);
+    border-radius: 100px;
+    padding: 5px 13px;
+    font-size: 12px;
+    color: rgba(255,255,255,0.65);
+    font-weight: 400;
+  }
+
+  /* ── CARDS ── */
+  .card {
+    background: rgba(255,255,255,0.72);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border-radius: 28px;
+    padding: 28px 24px;
+    margin-bottom: 14px;
+    border: 1px solid rgba(200,222,255,0.5);
+    box-shadow: 0 4px 32px rgba(100,145,220,0.07);
+  }
+
+  /* 트레이너 카드 */
+  .card:has(.card-title.gold) {
+    background: rgba(243,247,255,0.82);
+  }
+
+  /* ── CARD TITLE ── */
+  .card-title {
+    font-size: 10px;
+    font-weight: 800;
+    letter-spacing: 2.5px;
+    text-transform: uppercase;
+    margin-bottom: 18px;
+    display: flex;
+    align-items: center;
+    gap: 0;
+  }
+  .card-title::before { display: none; }
+  .card-title.blue  { color: #8ab8d4; }
+  .card-title.gold  { color: #c4a55a; }
+  .card-title.green { color: #72b89a; }
+
+  /* ── MESSAGE BOXES ── */
+  .msg {
+    background: rgba(244,249,255,0.85);
+    border: 1px solid rgba(200,222,255,0.4);
+    border-radius: 18px;
+    padding: 16px 18px;
+    font-size: 14px;
+    line-height: 1.9;
+    color: #333;
+    white-space: pre-line;
+    font-weight: 400;
+  }
+  .msg.gold  { background: rgba(255,251,242,0.9);  border-color: rgba(230,210,170,0.35); }
+  .msg.green { background: rgba(242,252,247,0.9);  border-color: rgba(170,220,200,0.35); }
+
+  /* ── TABLES ── */
+  table { width: 100%; border-collapse: collapse; font-size: 13px; }
+  th {
+    background: transparent;
+    padding: 0 0 10px;
+    text-align: left;
+    font-size: 10px;
+    font-weight: 800;
+    color: #bbb;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    border-bottom: 1px solid rgba(0,0,0,0.07);
+  }
+  td {
+    padding: 13px 0;
+    border-bottom: 1px solid rgba(0,0,0,0.05);
+    color: #222;
+    vertical-align: top;
+    line-height: 1.65;
+  }
   tr:last-child td { border-bottom: none; }
-  .check-row { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 10px; }
-  .chip { background: #f0f4f8; border-radius: 20px; padding: 5px 13px; font-size: 13px; color: #718096; }
-  .chip.on { background: #2d7d9a; color: white; font-weight: 600; }
-  .note { font-size: 13px; color: #718096; line-height: 1.7; white-space: pre-line; }
-  .stat-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; }
-  .stat-box { background: #f7fbfd; border-radius: 12px; padding: 14px; text-align: center; }
-  .stat-box .lbl { font-size: 11px; color: #718096; margin-bottom: 4px; }
-  .stat-box .val { font-size: 20px; font-weight: 700; color: #1a3c4e; }
-  .stat-box .unt { font-size: 11px; color: #718096; }
-  .sub-label { font-size: 12px; font-weight: 700; margin-bottom: 6px; }
-  .final-card { background: linear-gradient(135deg, #1a3c4e, #2d7d9a); color: white; border-radius: 16px; padding: 24px 22px; margin-bottom: 16px; }
-  .footer { text-align: center; font-size: 12px; color: #a0aec0; margin-top: 8px; padding-bottom: 28px; line-height: 1.8; }
+
+  /* ── CHIPS ── */
+  .check-row { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 14px; }
+  .chip {
+    background: transparent;
+    border: 1px solid rgba(0,0,0,0.13);
+    border-radius: 100px;
+    padding: 6px 14px;
+    font-size: 12px;
+    color: #bbb;
+    font-weight: 400;
+  }
+  .chip.on {
+    background: #0c0c0c;
+    border-color: #0c0c0c;
+    color: #fff;
+    font-weight: 700;
+  }
+
+  /* ── NOTE ── */
+  .note { font-size: 13px; color: #999; line-height: 1.8; white-space: pre-line; font-weight: 400; }
+
+  /* ── STAT GRID ── */
+  .stat-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; }
+  .stat-box {
+    background: rgba(235,245,255,0.7);
+    border-radius: 20px;
+    padding: 20px 10px;
+    text-align: center;
+    border: 1px solid rgba(200,222,255,0.4);
+  }
+  .stat-box .lbl { font-size: 10px; color: #aaa; margin-bottom: 6px; font-weight: 700; letter-spacing: 0.5px; text-transform: uppercase; }
+  .stat-box .val { font-size: 28px; font-weight: 700; color: #111; letter-spacing: -1px; line-height: 1; }
+  .stat-box .unt { font-size: 11px; color: #bbb; margin-top: 4px; }
+
+  /* ── SUB LABEL ── */
+  .sub-label { font-size: 11px; font-weight: 700; margin-bottom: 8px; letter-spacing: 0.5px; color: #bbb; }
+
+  /* ── FINAL CARD ── */
+  .final-card {
+    background: #0c0c0c;
+    color: white;
+    border-radius: 28px;
+    padding: 34px 28px;
+    margin-bottom: 14px;
+    position: relative;
+    overflow: hidden;
+  }
+  .final-card::before {
+    content: '';
+    position: absolute;
+    top: -50px; right: -50px;
+    width: 200px; height: 200px;
+    background: radial-gradient(circle, rgba(120,170,255,0.22) 0%, transparent 70%);
+    filter: blur(24px);
+    pointer-events: none;
+  }
+
+  /* ── FOOTER ── */
+  .footer {
+    text-align: center;
+    font-size: 11px;
+    color: #c0c8d8;
+    margin-top: 8px;
+    padding-bottom: 20px;
+    line-height: 2;
+    font-weight: 400;
+    letter-spacing: 0.5px;
+  }
 </style>
 </head>
 <body>
