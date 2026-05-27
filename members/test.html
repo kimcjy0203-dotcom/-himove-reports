@@ -93,6 +93,20 @@
   .countdown-bar-fill { height: 100%; border-radius: 100px; background: linear-gradient(90deg, rgba(90,154,210,0.6), rgba(120,180,240,0.9)); }
   .countdown-bar-fill.urgent { background: linear-gradient(90deg, rgba(210,120,110,0.6), rgba(230,150,140,0.9)); }
   .countdown-sub { font-size: 11px; color: #b0c0d4; margin-top: 7px; }
+  .exercise-grid { display: flex; flex-direction: column; gap: 10px; }
+  .exercise-item { background: rgba(255,255,255,0.5); border: 1px solid rgba(255,255,255,0.8); border-radius: 18px; padding: 16px 18px; }
+  .ei-name { font-size: 10px; font-weight: 700; color: #8ab0cc; letter-spacing: 1.5px; text-transform: uppercase; margin-bottom: 8px; }
+  .ei-feedback { font-size: 13px; color: #2a3a50; line-height: 1.65; margin-bottom: 8px; }
+  .ei-next { font-size: 12px; color: #a0b8d0; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+  .ei-next::before { content: '→  '; }
+  .lift-grid { display: flex; flex-direction: column; gap: 10px; }
+  .lift-box { background: rgba(255,255,255,0.5); border: 1px solid rgba(255,255,255,0.8); border-radius: 18px; padding: 16px 18px; display: flex; align-items: center; gap: 14px; }
+  .lb-name { font-size: 10px; font-weight: 700; color: #a0b8d0; letter-spacing: 1px; text-transform: uppercase; width: 52px; flex-shrink: 0; }
+  .lb-current { font-size: 24px; font-weight: 700; color: #1a2a40; letter-spacing: -1px; flex: 1; line-height: 1; white-space: nowrap; }
+  .lb-current span { font-size: 12px; font-weight: 400; color: #b0c0d4; margin-left: 1px; }
+  .lb-meta { display: flex; flex-direction: column; align-items: flex-end; gap: 2px; }
+  .lb-goal { font-size: 11px; color: #b0c0d4; white-space: nowrap; }
+  .lb-gap { font-size: 12px; color: #6a9ac4; font-weight: 700; white-space: nowrap; }
   .stat-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; }
   .stat-box { background: rgba(255,255,255,0.52); border-radius: 22px; padding: 20px 10px; text-align: center; border: 1px solid rgba(255,255,255,0.8); box-shadow: inset 0 1px 0 rgba(255,255,255,0.95); }
   .stat-box .lbl { font-size: 10px; color: #b0c0d4; margin-bottom: 6px; font-weight: 700; letter-spacing: 0.5px; text-transform: uppercase; }
@@ -137,22 +151,44 @@
 
 <div class="card">
   <div class="card-title blue">운동별 피드백</div>
-  <table>
-    <tr><th>운동</th><th>피드백</th><th>다음 체크포인트</th></tr>
-    <tr><td>스쿼트</td><td>무릎 트래킹 개선됨. 힙 드라이브가 아직 약간 부족해요.</td><td>힙 드라이브 의식하며 올라오기</td></tr>
-    <tr><td>데드리프트</td><td>바 경로가 몸에 잘 붙어있어요. 좋아요.</td><td>잠금 동작에서 과신전 주의</td></tr>
-    <tr><td>벤치프레스</td><td>좌우 균형이 아직 살짝 불균형해요.</td><td>약한 쪽 팔 집중 세트 추가</td></tr>
-  </table>
+  <div class="exercise-grid">
+    <div class="exercise-item">
+      <div class="ei-name">스쿼트</div>
+      <div class="ei-feedback">무릎 트래킹 개선됨. 힙 드라이브가 아직 약간 부족해요.</div>
+      <div class="ei-next">힙 드라이브 의식하며 올라오기</div>
+    </div>
+    <div class="exercise-item">
+      <div class="ei-name">데드리프트</div>
+      <div class="ei-feedback">바 경로가 몸에 잘 붙어있어요. 좋아요.</div>
+      <div class="ei-next">잠금 동작에서 과신전 주의</div>
+    </div>
+    <div class="exercise-item">
+      <div class="ei-name">벤치프레스</div>
+      <div class="ei-feedback">좌우 균형이 아직 살짝 불균형해요.</div>
+      <div class="ei-next">약한 쪽 팔 집중 세트 추가</div>
+    </div>
+  </div>
 </div>
 
 <div class="card">
   <div class="card-title blue">주요 리프트 현황</div>
-  <table>
-    <tr><th>종목</th><th>현재 1RM</th><th>목표 1RM</th><th>남은 무게</th></tr>
-    <tr><td>스쿼트</td><td>95 kg</td><td>120 kg</td><td>25 kg</td></tr>
-    <tr><td>데드리프트</td><td>110 kg</td><td>140 kg</td><td>30 kg</td></tr>
-    <tr><td>벤치프레스</td><td>72 kg</td><td>100 kg</td><td>28 kg</td></tr>
-  </table>
+  <div class="lift-grid">
+    <div class="lift-box">
+      <div class="lb-name">스쿼트</div>
+      <div class="lb-current">95<span>kg</span></div>
+      <div class="lb-meta"><div class="lb-goal">목표 120kg</div><div class="lb-gap">−25kg</div></div>
+    </div>
+    <div class="lift-box">
+      <div class="lb-name">데드리프트</div>
+      <div class="lb-current">110<span>kg</span></div>
+      <div class="lb-meta"><div class="lb-goal">목표 140kg</div><div class="lb-gap">−30kg</div></div>
+    </div>
+    <div class="lift-box">
+      <div class="lb-name">벤치프레스</div>
+      <div class="lb-current">72<span>kg</span></div>
+      <div class="lb-meta"><div class="lb-goal">목표 100kg</div><div class="lb-gap">−28kg</div></div>
+    </div>
+  </div>
 </div>
 
 <div class="card">
