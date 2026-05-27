@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>HiMove 주간 리포트 — 테스트</title>
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html { background: #e8f0fb; }
+  body {
+    font-family: -apple-system, 'Apple SD Gothic Neo', 'Noto Sans KR', sans-serif;
+    background: #e8f0fb;
+    color: #1a1a2e;
+    max-width: 430px;
+    margin: 0 auto;
+    padding: 40px 18px 72px;
+    position: relative;
+  }
+  body::before {
+    content: '';
+    position: fixed;
+    top: -160px; left: 50%;
+    transform: translateX(-50%);
+    width: 600px; height: 600px;
+    background: radial-gradient(circle, #cfe4ff 0%, #edf5ff 45%, transparent 70%);
+    filter: blur(60px);
+    opacity: 0.9;
+    pointer-events: none;
+    z-index: 0;
+  }
+  body::after {
+    content: '';
+    position: fixed;
+    bottom: -100px; right: -80px;
+    width: 380px; height: 380px;
+    background: radial-gradient(circle, #daeeff 0%, transparent 65%);
+    filter: blur(55px);
+    opacity: 0.7;
+    pointer-events: none;
+    z-index: 0;
+  }
+  body > * { position: relative; z-index: 1; }
+  .header {
+    background: rgba(255,255,255,0.52);
+    backdrop-filter: blur(48px);
+    -webkit-backdrop-filter: blur(48px);
+    border-radius: 32px;
+    padding: 36px 28px 30px;
+    margin-bottom: 18px;
+    border: 1px solid rgba(255,255,255,0.85);
+    box-shadow: 0 8px 48px rgba(100,150,230,0.10), inset 0 1px 0 rgba(255,255,255,0.95);
+  }
+  .header .logo { font-size: 10px; letter-spacing: 5px; color: #9ab0cc; margin-bottom: 12px; font-weight: 500; }
+  .header h1 { font-size: 30px; font-weight: 800; letter-spacing: -0.8px; color: #1a1a2e; margin-bottom: 3px; line-height: 1.1; }
+  .header .subtitle { font-size: 13px; color: #a0b2c8; font-weight: 400; margin-bottom: 20px; }
+  .header .meta { display: flex; flex-wrap: wrap; gap: 8px; }
+  .header .meta span { background: rgba(160,190,230,0.15); border: 1px solid rgba(160,190,230,0.3); border-radius: 100px; padding: 5px 14px; font-size: 12px; color: #5a7a9a; font-weight: 500; }
+  .card {
+    background: rgba(255,255,255,0.58);
+    backdrop-filter: blur(48px);
+    -webkit-backdrop-filter: blur(48px);
+    border-radius: 28px;
+    padding: 28px 24px;
+    margin-bottom: 12px;
+    border: 1px solid rgba(255,255,255,0.82);
+    box-shadow: 0 6px 36px rgba(100,150,230,0.08), inset 0 1px 0 rgba(255,255,255,0.95);
+  }
+  .card:has(.card-title.gold) { background: rgba(232,241,255,0.65); border-color: rgba(180,210,250,0.55); }
+  .card-title { font-size: 10px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; color: #b0c0d8; margin-bottom: 18px; display: flex; align-items: center; justify-content: space-between; }
+  .card-title::before { display: none; }
+  .card-title.gold::after { content: 'TRAINER'; font-size: 9px; font-weight: 700; letter-spacing: 1.5px; color: #6a9ac4; background: rgba(100,160,220,0.1); border: 1px solid rgba(100,160,220,0.2); border-radius: 100px; padding: 2px 9px; }
+  .card-title.blue  { color: #b0c0d8; }
+  .card-title.gold  { color: #b0c0d8; }
+  .card-title.green { color: #b0c0d8; }
+  .msg { background: rgba(255,255,255,0.55); backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px); border: 1px solid rgba(255,255,255,0.8); border-radius: 20px; padding: 16px 18px; font-size: 14px; line-height: 1.9; color: #2a3a50; white-space: pre-line; font-weight: 400; box-shadow: inset 0 1px 0 rgba(255,255,255,0.9); }
+  .msg.gold  { background: rgba(255,255,255,0.55); }
+  .msg.green { background: rgba(255,255,255,0.55); }
+  table { width: 100%; border-collapse: collapse; font-size: 13px; }
+  th { background: transparent; padding: 0 0 10px; text-align: left; font-size: 10px; font-weight: 700; color: #c0ccd8; letter-spacing: 1.5px; text-transform: uppercase; border-bottom: 1px solid rgba(160,190,230,0.2); }
+  td { padding: 13px 0; border-bottom: 1px solid rgba(160,190,230,0.15); color: #2a3a50; vertical-align: top; line-height: 1.7; }
+  tr:last-child td { border-bottom: none; }
+  .check-row { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 14px; }
+  .chip { background: rgba(255,255,255,0.45); border: 1px solid rgba(160,190,230,0.3); border-radius: 100px; padding: 6px 15px; font-size: 12px; color: #a0b8d0; font-weight: 400; }
+  .chip.on { background: rgba(100,155,220,0.15); border-color: rgba(100,155,220,0.45); color: #3a6a9a; font-weight: 700; }
+  .note { font-size: 13px; color: #a0b2c8; line-height: 1.8; white-space: pre-line; }
+  .stat-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; }
+  .stat-box { background: rgba(255,255,255,0.52); border-radius: 22px; padding: 20px 10px; text-align: center; border: 1px solid rgba(255,255,255,0.8); box-shadow: inset 0 1px 0 rgba(255,255,255,0.95); }
+  .stat-box .lbl { font-size: 10px; color: #b0c0d4; margin-bottom: 6px; font-weight: 700; letter-spacing: 0.5px; text-transform: uppercase; }
+  .stat-box .val { font-size: 28px; font-weight: 700; color: #1a2a40; letter-spacing: -1.5px; line-height: 1; }
+  .stat-box .unt { font-size: 11px; color: #b0c0d4; margin-top: 4px; }
+  .sub-label { font-size: 10px; font-weight: 700; margin-bottom: 8px; letter-spacing: 1.5px; text-transform: uppercase; color: #b8c8da; }
+  .delta-row { margin-top: 14px; display: flex; gap: 10px; flex-wrap: wrap; }
+  .delta-box { display: flex; flex-direction: column; background: rgba(255,255,255,0.55); border: 1px solid rgba(255,255,255,0.8); border-radius: 14px; padding: 10px 14px; flex: 1; min-width: 80px; text-align: center; }
+  .dlbl { font-size: 10px; color: #b0c0d4; font-weight: 700; letter-spacing: 0.5px; margin-bottom: 4px; }
+  .dval { font-size: 15px; font-weight: 700; color: #2a3a50; }
+  .dval.up   { color: #e07070; }
+  .dval.down { color: #5a9a7a; }
+  .final-card { background: rgba(232,241,255,0.65); border: 1px solid rgba(180,210,250,0.55); border-radius: 28px; padding: 32px 26px; margin-bottom: 12px; box-shadow: 0 6px 36px rgba(100,150,230,0.10), inset 0 1px 0 rgba(255,255,255,0.9); }
+  .final-card > div:first-child { font-size: 10px; letter-spacing: 2px; color: #8aabcc; margin-bottom: 12px; font-weight: 700; }
+  .final-card > div:last-child { font-size: 16px; line-height: 1.85; font-weight: 500; color: #2a3a50; }
+  .footer { text-align: center; font-size: 11px; color: #b0c0d8; margin-top: 10px; padding-bottom: 20px; line-height: 2; letter-spacing: 0.5px; }
+</style>
+</head>
+<body>
+
+<div class="header">
+  <div class="logo">H I M O V E</div>
+  <h1>주간 회원 리포트</h1>
+  <div class="subtitle">Weekly Member Report</div>
+  <div class="meta">
+    <span>2026년 5월</span>
+    <span>회원명: 테스트 회원</span>
+    <span>Week 3</span>
+  </div>
+</div>
+
+<div class="card">
+  <div class="card-title gold">이번 주 핵심 메시지</div>
+  <div class="msg gold">이번 주는 하체 근력이 눈에 띄게 성장했어요. 스쿼트 자세가 많이 안정됐고, 무릎 트래킹도 개선되고 있어요. 이 흐름을 유지하는 게 가장 중요해요.</div>
+</div>
+
+<div class="card">
+  <div class="card-title blue">최근 수업 요약</div>
+  <div style="font-size:12px;color:#a8bcd0;margin-bottom:10px;">수업일: 2026년 5월 25일</div>
+  <div class="msg">하체 위주로 진행했어요. 스쿼트 워밍업 후 본 세트 4x6 (80kg), 루마니안 데드리프트 3x10 (60kg), 레그프레스 3x12로 마무리했어요. 코어 안정화 운동도 15분 추가했고, 전반적으로 컨디션이 좋아서 강도를 조금 올렸어요.</div>
+</div>
+
+<div class="card">
+  <div class="card-title blue">운동별 피드백</div>
+  <table>
+    <tr><th>운동</th><th>피드백</th><th>다음 체크포인트</th></tr>
+    <tr><td>스쿼트</td><td>무릎 트래킹 개선됨. 힙 드라이브가 아직 약간 부족해요.</td><td>힙 드라이브 의식하며 올라오기</td></tr>
+    <tr><td>데드리프트</td><td>바 경로가 몸에 잘 붙어있어요. 좋아요.</td><td>잠금 동작에서 과신전 주의</td></tr>
+    <tr><td>벤치프레스</td><td>좌우 균형이 아직 살짝 불균형해요.</td><td>약한 쪽 팔 집중 세트 추가</td></tr>
+  </table>
+</div>
+
+<div class="card">
+  <div class="card-title blue">주요 리프트 현황</div>
+  <table>
+    <tr><th>종목</th><th>현재 1RM</th><th>목표 1RM</th><th>남은 무게</th></tr>
+    <tr><td>스쿼트</td><td>95 kg</td><td>120 kg</td><td>25 kg</td></tr>
+    <tr><td>데드리프트</td><td>110 kg</td><td>140 kg</td><td>30 kg</td></tr>
+    <tr><td>벤치프레스</td><td>72 kg</td><td>100 kg</td><td>28 kg</td></tr>
+  </table>
+</div>
+
+<div class="card">
+  <div class="card-title green">체성분 현황</div>
+  <div class="stat-grid">
+    <div class="stat-box"><div class="lbl">체중</div><div class="val" id="s-weight">-</div><div class="unt">kg</div></div>
+    <div class="stat-box"><div class="lbl">체지방량</div><div class="val" id="s-fat">-</div><div class="unt">kg</div></div>
+    <div class="stat-box"><div class="lbl">골격근량</div><div class="val" id="s-muscle">-</div><div class="unt">kg</div></div>
+  </div>
+  <div class="delta-row">
+    <div class="delta-box"><span class="dlbl">체중 변화</span><span class="dval" id="d-weight">-</span></div>
+    <div class="delta-box"><span class="dlbl">체지방 변화</span><span class="dval" id="d-fat">-</span></div>
+    <div class="delta-box"><span class="dlbl">근육 변화</span><span class="dval" id="d-muscle">-</span></div>
+  </div>
+</div>
+
+<div class="card">
+  <div class="card-title green">체성분 변화 추이</div>
+  <div style="position:relative; height:220px; margin-bottom:20px;">
+    <canvas id="bodyChart"></canvas>
+  </div>
+  <div>
+    <div class="sub-label">변화 분석</div>
+    <div class="msg" id="body-comment">-</div>
+  </div>
+</div>
+
+<div class="card">
+  <div class="card-title blue">이번 주 컨디션</div>
+  <div class="check-row">
+    <div class="chip">매우 좋음</div><div class="chip on">좋음</div><div class="chip">보통</div><div class="chip">피곤함</div><div class="chip">매우 피곤함</div>
+  </div>
+  <div class="note">업무가 많았지만 운동하면서 오히려 스트레스가 풀렸어요.</div>
+</div>
+
+<div class="card">
+  <div class="card-title blue">수면 품질</div>
+  <div class="check-row">
+    <div class="chip">1 매우 나쁨</div><div class="chip">2 나쁨</div><div class="chip">3 보통</div><div class="chip on">4 좋음</div><div class="chip">5 매우 좋음</div>
+  </div>
+  <div class="note">평균 7시간, 잠드는 데 오래 걸리는 날이 있었어요.</div>
+</div>
+
+<div class="card">
+  <div class="card-title blue">이번 주 트레이닝</div>
+  <div class="check-row">
+    <div class="chip on">루틴</div><div class="chip">유산소</div><div class="chip">자유 운동</div><div class="chip">야외 활동</div><div class="chip on">수업</div><div class="chip">휴식</div>
+  </div>
+  <div class="note">월, 수 개인 루틴 / 목요일 트레이너 수업</div>
+</div>
+
+<div class="card">
+  <div class="card-title blue">신체 불편 여부</div>
+  <div class="check-row">
+    <div class="chip">없음</div><div class="chip on">있음</div>
+  </div>
+  <div class="note">왼쪽 무릎 — 스쿼트 후 약간 뻐근함. 통증은 아니고 피로감 느낌.</div>
+</div>
+
+<div class="card">
+  <div class="card-title blue">영양 상태</div>
+  <div class="check-row">
+    <div class="chip">1 매우 나쁨</div><div class="chip">2 나쁨</div><div class="chip">3 보통</div><div class="chip on">4 좋음</div><div class="chip">5 매우 좋음</div>
+  </div>
+  <div class="note">단백질 섭취 꾸준히 지켜지고 있어요. 수분이 좀 부족한 것 같아요.</div>
+</div>
+
+<div class="card">
+  <div class="card-title green">AI 종합 리뷰</div>
+  <div style="margin-bottom:14px;">
+    <div class="sub-label">✓ 잘 하고 있는 점</div>
+    <div class="msg green">루틴 출석률이 3주 연속 100%예요. 단백질 섭취 습관도 안정적으로 자리 잡혔고, 수업 집중도도 높아요.</div>
+  </div>
+  <div style="margin-bottom:14px;">
+    <div class="sub-label">⚠ 주의할 점</div>
+    <div class="msg gold">왼쪽 무릎 피로감이 반복되고 있어요. 스쿼트 볼륨을 갑자기 올리지 않도록 주의하고, 운동 후 아이싱을 습관화해보세요.</div>
+  </div>
+  <div>
+    <div class="sub-label">→ 권장 사항</div>
+    <div class="msg">이번 주 수분 섭취량을 하루 2L 이상으로 늘려보세요. 수면의 질이 근육 회복에 직접적인 영향을 줘요.</div>
+  </div>
+</div>
+
+<div class="card">
+  <div class="card-title gold">트레이너 코멘트</div>
+  <div class="msg gold" style="margin-bottom:16px;">이번 주 스쿼트에서 눈에 띄는 변화가 있었어요. 3주 전과 비교하면 자세 안정성이 확실히 올라왔어요. 본인도 느끼셨죠? 이 속도면 연말 목표 충분히 가능해요.</div>
+  <div class="sub-label" style="margin-bottom:8px;">트레이닝 방향</div>
+  <div class="msg">하체 볼륨 유지하면서 상체 균형을 맞춰가는 방향으로 진행할게요. 왼쪽 무릎은 다음 수업에서 확인하고, 필요하면 보조 운동을 추가해요.</div>
+</div>
+
+<div class="final-card">
+  <div>FINAL MESSAGE</div>
+  <div>꾸준함이 쌓이고 있어요. 본인이 느끼는 것보다 훨씬 많이 성장하고 있어요. 이번 주도 수고하셨어요.</div>
+</div>
+
+<div class="footer">
+  HiMove &nbsp;·&nbsp; 주간 회원 리포트<br>
+  본 리포트는 트레이너와 AI가 함께 작성합니다
+</div>
+
+<script>
+const bodyData = {
+  labels:  ['2월', '3월', '4월', '5월'],
+  weight:  [82.4, 81.8, 80.5, 79.8],
+  fat:     [22.1, 21.6, 20.8, 20.2],
+  muscle:  [33.2, 33.6, 34.1, 34.5],
+  comment: '3개월 동안 체지방이 1.9kg 감소하고 골격근량이 1.3kg 증가했어요. 매우 이상적인 방향으로 체성분이 변화하고 있어요. 이 속도를 유지하면 목표 체성분까지 약 4개월 예상돼요.'
+};
+
+const last = i => bodyData[i].filter(v => v !== null).at(-1);
+const prev = i => { const d = bodyData[i].filter(v => v !== null); return d.length >= 2 ? d.at(-2) : null; };
+
+document.getElementById('s-weight').textContent = last('weight');
+document.getElementById('s-fat').textContent    = last('fat');
+document.getElementById('s-muscle').textContent = last('muscle');
+
+function setDelta(elId, curr, before) {
+  if (curr === null || before === null) return;
+  const el = document.getElementById(elId);
+  const diff = (curr - before).toFixed(1);
+  const sign = diff > 0 ? '+' : '';
+  el.textContent = sign + diff + ' kg';
+  el.className = 'dval ' + (diff > 0 ? 'up' : diff < 0 ? 'down' : '');
+}
+setDelta('d-weight', last('weight'), prev('weight'));
+setDelta('d-fat',    last('fat'),    prev('fat'));
+setDelta('d-muscle', last('muscle'), prev('muscle'));
+
+document.getElementById('body-comment').textContent = bodyData.comment;
+
+const ctx = document.getElementById('bodyChart').getContext('2d');
+new Chart(ctx, {
+  type: 'line',
+  data: {
+    labels: bodyData.labels,
+    datasets: [
+      {
+        label: '골격근량',
+        data: bodyData.muscle,
+        borderColor: 'rgba(90,154,210,0.85)',
+        backgroundColor: 'rgba(90,154,210,0.08)',
+        borderWidth: 2.5,
+        pointBackgroundColor: 'rgba(90,154,210,1)',
+        pointRadius: 5,
+        tension: 0.4,
+        fill: true,
+        spanGaps: true
+      },
+      {
+        label: '체지방량',
+        data: bodyData.fat,
+        borderColor: 'rgba(210,120,110,0.75)',
+        backgroundColor: 'rgba(210,120,110,0.06)',
+        borderWidth: 2.5,
+        pointBackgroundColor: 'rgba(210,120,110,1)',
+        pointRadius: 5,
+        tension: 0.4,
+        fill: true,
+        spanGaps: true
+      }
+    ]
+  },
+  options: {
+    responsive: true,
+    maintainAspectRatio: false,
+    plugins: {
+      legend: { labels: { font: { size: 11, family: '-apple-system' }, color: '#8aa0ba', boxWidth: 10, usePointStyle: true } },
+      tooltip: { mode: 'index', intersect: false }
+    },
+    scales: {
+      x: { grid: { display: false }, ticks: { color: '#b0c0d4', font: { size: 11 } }, border: { display: false } },
+      y: { grid: { color: 'rgba(160,190,230,0.12)' }, ticks: { color: '#b0c0d4', font: { size: 11 }, callback: v => v + 'kg' }, border: { display: false } }
+    }
+  }
+});
+</script>
+
+<!--
+CORE RULES (트레이너/AI 전용 — 회원에게 표시되지 않음)
+- 회원 기록이 가장 중요하다
+- 트레이너는 검토 및 다음 수업 참고용으로만 사용한다
+- 의학적 진단을 내리지 않는다
+- 부상이나 질병을 추측하지 않는다
+- 약, 치료, 극단적인 식단을 권장하지 않는다
+- 차분하고 지지적이며 실용적인 언어를 사용한다
+-->
+
+</body>
+</html>
