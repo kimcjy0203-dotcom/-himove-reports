@@ -148,6 +148,25 @@
   .final-card > div:first-child { font-size: 10px; letter-spacing: 2px; color: #8aabcc; margin-bottom: 12px; font-weight: 700; }
   .final-card > div:last-child { font-size: 16px; line-height: 1.85; font-weight: 500; color: #2a3a50; }
   .footer { text-align: center; font-size: 11px; color: #b0c0d8; margin-top: 10px; padding-bottom: 20px; line-height: 2; letter-spacing: 0.5px; }
+  /* ── 운동 목적 배지 ── */
+  .purpose-badges { margin-top: 12px; display: flex; flex-wrap: wrap; gap: 6px; }
+  .pb { display: inline-block; padding: 3px 11px; border-radius: 20px; font-size: 11px; font-weight: 700; }
+  /* ── 목표 블록 ── */
+  .goal-block {
+    background: rgba(255,255,255,0.52); backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px);
+    padding: 11px 14px; border-radius: 14px; margin-bottom: 8px;
+    border: 1px solid rgba(255,255,255,0.82); border-left-width: 3px;
+    box-shadow: 0 3px 14px rgba(100,150,230,0.07), inset 0 1px 0 rgba(255,255,255,0.9);
+  }
+  .goal-block-label { font-size: 9px; font-weight: 800; letter-spacing: 1.5px; text-transform: uppercase; margin-bottom: 3px; }
+  .goal-block-text  { font-size: 13px; font-weight: 600; color: #2a3a50; }
+  .goal-block-period { font-size: 11px; color: #a0b2c8; margin-top: 3px; }
+  .gb-short { border-left-color: rgba(76,175,80,0.7); }
+  .gb-short .goal-block-label { color: #4caf50; }
+  .gb-mid   { border-left-color: rgba(33,150,243,0.7); }
+  .gb-mid   .goal-block-label { color: #2196f3; }
+  .gb-long  { border-left-color: rgba(156,39,176,0.7); }
+  .gb-long  .goal-block-label { color: #9c27b0; }
 </style>
 </head>
 <body>
@@ -160,7 +179,10 @@
     <span>Week 3</span>
     <span>테스트 회원</span>
   </div>
+  <div id="purpose-badges" class="purpose-badges"></div>
 </div>
+
+<div class="card" id="goals-card" style="display:none;"></div>
 
 <div class="card">
   <div class="card-title gold">이번 주 핵심 메시지</div>
@@ -369,6 +391,49 @@
 </div>
 
 <script>
+/* ── 회원 목적 · 목표 데이터 ── */
+const memberData = {
+  purposes: [
+    { label: '체중감량', bg: '#fff3e0', color: '#e65100' },
+    { label: '근력강화', bg: '#e3f2fd', color: '#1565c0' },
+    { label: '체력향상', bg: '#fffde7', color: '#f57f17' }
+  ],
+  goals: {
+    short: { text: '이번 달 체중 1kg 감량',    period: '2026년 5월 ~ 6월' },
+    mid:   { text: '골격근량 35kg 달성',         period: '2026년 7월까지'   },
+    long:  { text: '체지방률 18% · 체중 75kg',  period: '2026년 연말'      }
+  }
+};
+
+(function() {
+  const el = document.getElementById('purpose-badges');
+  if (!memberData.purposes || !memberData.purposes.length) return;
+  el.innerHTML = memberData.purposes.map(p =>
+    `<span class="pb" style="background:${p.bg};color:${p.color}">${p.label}</span>`
+  ).join('');
+})();
+
+(function() {
+  const card = document.getElementById('goals-card');
+  const g = memberData.goals;
+  if (!g) return;
+  const items = [
+    { key: 'short', label: '단기 목표', cls: 'gb-short' },
+    { key: 'mid',   label: '중기 목표', cls: 'gb-mid'   },
+    { key: 'long',  label: '장기 목표', cls: 'gb-long'  }
+  ];
+  const html = items.map(it => {
+    const d = g[it.key];
+    if (!d || !d.text) return '';
+    return `<div class="goal-block ${it.cls}">
+      <div class="goal-block-label">${it.label}</div>
+      <div class="goal-block-text">${d.text}</div>
+      ${d.period ? `<div class="goal-block-period">📅 ${d.period}</div>` : ''}
+    </div>`;
+  }).join('');
+  if (html.trim()) { card.innerHTML = html; card.style.display = ''; }
+})();
+
 /* ── 수업 피드백 데이터 ── */
 const sessionData = {
   exercises: [
