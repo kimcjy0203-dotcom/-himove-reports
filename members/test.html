@@ -118,6 +118,21 @@
   .dval { font-size: 15px; font-weight: 700; color: #2a3a50; }
   .dval.up   { color: #e07070; }
   .dval.down { color: #5a9a7a; }
+  /* ── 주간 트레이닝 블럭 ── */
+  .training-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; margin-bottom: 14px; }
+  .training-block { background: rgba(255,255,255,0.45); border: 1px solid rgba(160,190,230,0.3); border-radius: 18px; padding: 18px 8px 16px; text-align: center; font-size: 12px; color: #a0b8d0; font-weight: 500; }
+  .training-block.on { background: rgba(100,155,220,0.12); border-color: rgba(100,155,220,0.4); color: #3a6a9a; font-weight: 700; box-shadow: 0 3px 14px rgba(100,150,230,0.10), inset 0 1px 0 rgba(255,255,255,0.9); }
+  /* ── 바디맵 ── */
+  .body-map-container { display: flex; gap: 8px; justify-content: center; margin-bottom: 4px; }
+  .body-map-wrap { display: flex; flex-direction: column; align-items: center; flex: 1; }
+  .body-map-svg { width: 100%; max-width: 155px; display: block; }
+  .body-map-lbl { font-size: 10px; font-weight: 700; letter-spacing: 1.5px; color: #b8c8da; text-align: center; margin-top: 6px; }
+  .muscle-area { cursor: pointer; transition: filter 0.15s; }
+  .muscle-area:active { filter: brightness(1.2); }
+  .muscle-popup { position: fixed; background: rgba(255,255,255,0.97); backdrop-filter: blur(24px); -webkit-backdrop-filter: blur(24px); border: 1px solid rgba(195,218,255,0.8); border-radius: 18px; padding: 14px 16px 12px; box-shadow: 0 10px 40px rgba(100,150,230,0.2); z-index: 200; min-width: 160px; max-width: 200px; }
+  .popup-close { position: absolute; top: 9px; right: 13px; font-size: 17px; color: #b0c0d4; cursor: pointer; line-height: 1; }
+  .popup-name { font-size: 13px; font-weight: 800; color: #2a3a50; margin-bottom: 8px; padding-right: 18px; }
+  .popup-exercises { font-size: 12px; color: #6a80a0; line-height: 1.9; }
   .final-card { background: rgba(232,241,255,0.65); border: 1px solid rgba(180,210,250,0.55); border-radius: 28px; padding: 32px 26px; margin-bottom: 12px; box-shadow: 0 6px 36px rgba(100,150,230,0.10), inset 0 1px 0 rgba(255,255,255,0.9); }
   .final-card > div:first-child { font-size: 10px; letter-spacing: 2px; color: #8aabcc; margin-bottom: 12px; font-weight: 700; }
   .final-card > div:last-child { font-size: 16px; line-height: 1.85; font-weight: 500; color: #2a3a50; }
@@ -128,11 +143,11 @@
 
 <div class="header">
   <h1>himove</h1>
-  <div class="subtitle">주간 회원 리포트</div>
+  <div class="subtitle">테스트 회원 주간 리포트</div>
   <div class="meta">
     <span>2026년 5월</span>
-    <span>회원명: 테스트 회원</span>
     <span>Week 3</span>
+    <span>테스트 회원</span>
   </div>
 </div>
 
@@ -217,10 +232,83 @@
 
 <div class="card">
   <div class="card-title blue">이번 주 트레이닝</div>
-  <div class="check-row">
-    <div class="chip on">루틴</div><div class="chip">유산소</div><div class="chip">자유 운동</div><div class="chip">야외 활동</div><div class="chip on">수업</div><div class="chip">휴식</div>
+  <div class="training-grid">
+    <div class="training-block on">루틴</div>
+    <div class="training-block">유산소</div>
+    <div class="training-block">자유 운동</div>
+    <div class="training-block">야외 활동</div>
+    <div class="training-block on">수업</div>
+    <div class="training-block">휴식</div>
   </div>
   <div class="note">월, 수 개인 루틴 / 목요일 트레이너 수업</div>
+</div>
+
+<div class="card">
+  <div class="card-title blue">오늘의 운동 부위</div>
+  <div class="body-map-container">
+    <div class="body-map-wrap">
+      <svg class="body-map-svg" viewBox="0 0 90 242" xmlns="http://www.w3.org/2000/svg">
+        <!-- 앞면 실루엣 -->
+        <ellipse cx="45" cy="14" rx="13" ry="14" fill="rgba(215,228,242,0.35)" stroke="rgba(175,200,225,0.45)" stroke-width="0.7"/>
+        <rect x="41" y="27" width="8" height="7" rx="3" fill="rgba(215,228,242,0.35)" stroke="rgba(175,200,225,0.45)" stroke-width="0.7"/>
+        <rect x="23" y="32" width="44" height="76" rx="14" fill="rgba(215,228,242,0.35)" stroke="rgba(175,200,225,0.45)" stroke-width="0.7"/>
+        <rect x="8"  y="35" width="13" height="50" rx="6" fill="rgba(215,228,242,0.35)" stroke="rgba(175,200,225,0.45)" stroke-width="0.7"/>
+        <rect x="69" y="35" width="13" height="50" rx="6" fill="rgba(215,228,242,0.35)" stroke="rgba(175,200,225,0.45)" stroke-width="0.7"/>
+        <rect x="10" y="87" width="10" height="34" rx="5" fill="rgba(215,228,242,0.35)" stroke="rgba(175,200,225,0.45)" stroke-width="0.7"/>
+        <rect x="70" y="87" width="10" height="34" rx="5" fill="rgba(215,228,242,0.35)" stroke="rgba(175,200,225,0.45)" stroke-width="0.7"/>
+        <rect x="24" y="108" width="19" height="56" rx="9" fill="rgba(215,228,242,0.35)" stroke="rgba(175,200,225,0.45)" stroke-width="0.7"/>
+        <rect x="47" y="108" width="19" height="56" rx="9" fill="rgba(215,228,242,0.35)" stroke="rgba(175,200,225,0.45)" stroke-width="0.7"/>
+        <rect x="25" y="165" width="17" height="52" rx="8" fill="rgba(215,228,242,0.35)" stroke="rgba(175,200,225,0.45)" stroke-width="0.7"/>
+        <rect x="48" y="165" width="17" height="52" rx="8" fill="rgba(215,228,242,0.35)" stroke="rgba(175,200,225,0.45)" stroke-width="0.7"/>
+        <!-- 근육 영역 — 앞 -->
+        <ellipse class="muscle-area" data-muscle="shoulders" cx="16" cy="43" rx="10" ry="7" fill="rgba(210,224,238,0.55)" stroke="rgba(175,200,225,0.6)" stroke-width="1"/>
+        <ellipse class="muscle-area" data-muscle="shoulders" cx="74" cy="43" rx="10" ry="7" fill="rgba(210,224,238,0.55)" stroke="rgba(175,200,225,0.6)" stroke-width="1"/>
+        <rect class="muscle-area" data-muscle="chest" x="27" y="37" width="36" height="26" rx="9" fill="rgba(210,224,238,0.55)" stroke="rgba(175,200,225,0.6)" stroke-width="1"/>
+        <rect class="muscle-area" data-muscle="biceps" x="10" y="50" width="10" height="24" rx="5" fill="rgba(210,224,238,0.55)" stroke="rgba(175,200,225,0.6)" stroke-width="1"/>
+        <rect class="muscle-area" data-muscle="biceps" x="70" y="50" width="10" height="24" rx="5" fill="rgba(210,224,238,0.55)" stroke="rgba(175,200,225,0.6)" stroke-width="1"/>
+        <rect class="muscle-area" data-muscle="abs" x="31" y="62" width="28" height="46" rx="9" fill="rgba(210,224,238,0.55)" stroke="rgba(175,200,225,0.6)" stroke-width="1"/>
+        <rect class="muscle-area" data-muscle="quads" x="25" y="110" width="16" height="50" rx="7" fill="rgba(210,224,238,0.55)" stroke="rgba(175,200,225,0.6)" stroke-width="1"/>
+        <rect class="muscle-area" data-muscle="quads" x="49" y="110" width="16" height="50" rx="7" fill="rgba(210,224,238,0.55)" stroke="rgba(175,200,225,0.6)" stroke-width="1"/>
+        <rect class="muscle-area" data-muscle="calves" x="26" y="167" width="15" height="46" rx="7" fill="rgba(210,224,238,0.55)" stroke="rgba(175,200,225,0.6)" stroke-width="1"/>
+        <rect class="muscle-area" data-muscle="calves" x="49" y="167" width="15" height="46" rx="7" fill="rgba(210,224,238,0.55)" stroke="rgba(175,200,225,0.6)" stroke-width="1"/>
+      </svg>
+      <div class="body-map-lbl">앞</div>
+    </div>
+    <div class="body-map-wrap">
+      <svg class="body-map-svg" viewBox="0 0 90 242" xmlns="http://www.w3.org/2000/svg">
+        <!-- 뒷면 실루엣 (동일 윤곽) -->
+        <ellipse cx="45" cy="14" rx="13" ry="14" fill="rgba(215,228,242,0.35)" stroke="rgba(175,200,225,0.45)" stroke-width="0.7"/>
+        <rect x="41" y="27" width="8" height="7" rx="3" fill="rgba(215,228,242,0.35)" stroke="rgba(175,200,225,0.45)" stroke-width="0.7"/>
+        <rect x="23" y="32" width="44" height="76" rx="14" fill="rgba(215,228,242,0.35)" stroke="rgba(175,200,225,0.45)" stroke-width="0.7"/>
+        <rect x="8"  y="35" width="13" height="50" rx="6" fill="rgba(215,228,242,0.35)" stroke="rgba(175,200,225,0.45)" stroke-width="0.7"/>
+        <rect x="69" y="35" width="13" height="50" rx="6" fill="rgba(215,228,242,0.35)" stroke="rgba(175,200,225,0.45)" stroke-width="0.7"/>
+        <rect x="10" y="87" width="10" height="34" rx="5" fill="rgba(215,228,242,0.35)" stroke="rgba(175,200,225,0.45)" stroke-width="0.7"/>
+        <rect x="70" y="87" width="10" height="34" rx="5" fill="rgba(215,228,242,0.35)" stroke="rgba(175,200,225,0.45)" stroke-width="0.7"/>
+        <rect x="24" y="108" width="19" height="56" rx="9" fill="rgba(215,228,242,0.35)" stroke="rgba(175,200,225,0.45)" stroke-width="0.7"/>
+        <rect x="47" y="108" width="19" height="56" rx="9" fill="rgba(215,228,242,0.35)" stroke="rgba(175,200,225,0.45)" stroke-width="0.7"/>
+        <rect x="25" y="165" width="17" height="52" rx="8" fill="rgba(215,228,242,0.35)" stroke="rgba(175,200,225,0.45)" stroke-width="0.7"/>
+        <rect x="48" y="165" width="17" height="52" rx="8" fill="rgba(215,228,242,0.35)" stroke="rgba(175,200,225,0.45)" stroke-width="0.7"/>
+        <!-- 근육 영역 — 뒤 -->
+        <rect class="muscle-area" data-muscle="traps" x="30" y="36" width="30" height="15" rx="6" fill="rgba(210,224,238,0.55)" stroke="rgba(175,200,225,0.6)" stroke-width="1"/>
+        <rect class="muscle-area" data-muscle="back" x="25" y="50" width="18" height="52" rx="8" fill="rgba(210,224,238,0.55)" stroke="rgba(175,200,225,0.6)" stroke-width="1"/>
+        <rect class="muscle-area" data-muscle="back" x="47" y="50" width="18" height="52" rx="8" fill="rgba(210,224,238,0.55)" stroke="rgba(175,200,225,0.6)" stroke-width="1"/>
+        <rect class="muscle-area" data-muscle="triceps" x="10" y="50" width="10" height="24" rx="5" fill="rgba(210,224,238,0.55)" stroke="rgba(175,200,225,0.6)" stroke-width="1"/>
+        <rect class="muscle-area" data-muscle="triceps" x="70" y="50" width="10" height="24" rx="5" fill="rgba(210,224,238,0.55)" stroke="rgba(175,200,225,0.6)" stroke-width="1"/>
+        <ellipse class="muscle-area" data-muscle="glutes" cx="37" cy="116" rx="13" ry="11" fill="rgba(210,224,238,0.55)" stroke="rgba(175,200,225,0.6)" stroke-width="1"/>
+        <ellipse class="muscle-area" data-muscle="glutes" cx="53" cy="116" rx="13" ry="11" fill="rgba(210,224,238,0.55)" stroke="rgba(175,200,225,0.6)" stroke-width="1"/>
+        <rect class="muscle-area" data-muscle="hamstrings" x="25" y="128" width="16" height="48" rx="7" fill="rgba(210,224,238,0.55)" stroke="rgba(175,200,225,0.6)" stroke-width="1"/>
+        <rect class="muscle-area" data-muscle="hamstrings" x="49" y="128" width="16" height="48" rx="7" fill="rgba(210,224,238,0.55)" stroke="rgba(175,200,225,0.6)" stroke-width="1"/>
+        <rect class="muscle-area" data-muscle="calves" x="26" y="178" width="15" height="38" rx="7" fill="rgba(210,224,238,0.55)" stroke="rgba(175,200,225,0.6)" stroke-width="1"/>
+        <rect class="muscle-area" data-muscle="calves" x="49" y="178" width="15" height="38" rx="7" fill="rgba(210,224,238,0.55)" stroke="rgba(175,200,225,0.6)" stroke-width="1"/>
+      </svg>
+      <div class="body-map-lbl">뒤</div>
+    </div>
+  </div>
+  <div id="muscle-popup" class="muscle-popup" style="display:none;">
+    <span class="popup-close" id="popup-close-btn">×</span>
+    <div class="popup-name"></div>
+    <div class="popup-exercises"></div>
+  </div>
 </div>
 
 <div class="card">
@@ -279,7 +367,8 @@ const sessionData = {
     { name: '스쿼트',   note: '무릎 트래킹 개선됨. 힙 드라이브가 아직 약간 부족해요.',  next: '힙 드라이브 의식하며 올라오기' },
     { name: '데드리프트', note: '바 경로가 몸에 잘 붙어있어요. 좋아요.',               next: '잠금 동작에서 과신전 주의' },
     { name: '벤치프레스', note: '좌우 균형이 아직 살짝 불균형해요.',                   next: '약한 쪽 팔 집중 세트 추가' }
-  ]
+  ],
+  musclesWorked: ['quads', 'hamstrings', 'glutes', 'calves', 'abs']
 };
 
 (function() {
@@ -353,6 +442,58 @@ setDelta('d-muscle', last('muscle'), prev('muscle'));
 
 document.getElementById('body-comment').textContent = bodyData.comment;
 
+/* ── 바디맵 ── */
+const muscleData = {
+  shoulders:  { name: '어깨 (삼각근)',  exercises: ['오버헤드 프레스', '레터럴 레이즈', '페이스 풀'] },
+  chest:      { name: '가슴 (대흉근)',  exercises: ['벤치프레스', '덤벨 플라이', '푸시업'] },
+  biceps:     { name: '이두 (이두근)',  exercises: ['바벨 컬', '해머 컬', '케이블 컬'] },
+  triceps:    { name: '삼두 (삼두근)',  exercises: ['트라이셉 딥스', '오버헤드 익스텐션', '클로즈그립 벤치'] },
+  abs:        { name: '복근',           exercises: ['플랭크', '크런치', '레그 레이즈'] },
+  back:       { name: '등 (광배근)',    exercises: ['풀업', '바벨 로우', '랫 풀다운'] },
+  traps:      { name: '승모근',         exercises: ['바벨 슈러그', '페이스 풀', '업라이트 로우'] },
+  quads:      { name: '대퇴사두근',    exercises: ['스쿼트', '레그 프레스', '런지'] },
+  hamstrings: { name: '햄스트링',       exercises: ['루마니안 데드리프트', '레그 컬', '굿모닝'] },
+  glutes:     { name: '둔근',           exercises: ['힙 스러스트', '불가리안 스플릿 스쿼트', '케이블 킥백'] },
+  calves:     { name: '종아리',         exercises: ['카프 레이즈', '시티드 카프 레이즈', '점프 로프'] }
+};
+
+(function() {
+  const worked = new Set(sessionData.musclesWorked || []);
+  const aC = 'rgba(90,154,210,0.45)', aS = 'rgba(60,130,200,0.9)';
+  const iC = 'rgba(210,224,238,0.55)', iS = 'rgba(175,200,225,0.6)';
+  document.querySelectorAll('.muscle-area').forEach(el => {
+    const m = el.dataset.muscle;
+    if (worked.has(m)) {
+      el.setAttribute('fill', aC); el.setAttribute('stroke', aS); el.setAttribute('stroke-width', '1.5');
+    } else {
+      el.setAttribute('fill', iC); el.setAttribute('stroke', iS); el.setAttribute('stroke-width', '1');
+    }
+  });
+  const popup = document.getElementById('muscle-popup');
+  let last = null;
+  document.getElementById('popup-close-btn').addEventListener('click', e => { e.stopPropagation(); popup.style.display = 'none'; last = null; });
+  document.querySelectorAll('.muscle-area').forEach(el => {
+    el.addEventListener('click', function(e) {
+      e.stopPropagation();
+      const m = this.dataset.muscle, data = muscleData[m];
+      if (!data) return;
+      if (last === m && popup.style.display !== 'none') { popup.style.display = 'none'; last = null; return; }
+      last = m;
+      popup.querySelector('.popup-name').textContent = data.name;
+      popup.querySelector('.popup-exercises').innerHTML = data.exercises.map(x => '· ' + x).join('<br>');
+      popup.style.display = 'block';
+      const r = this.getBoundingClientRect();
+      const pw = 175;
+      let left = r.left + r.width / 2 - pw / 2;
+      left = Math.max(10, Math.min(left, window.innerWidth - pw - 10));
+      popup.style.left = left + 'px';
+      const ph = 50 + data.exercises.length * 24;
+      popup.style.top = (r.top > ph + 20 ? r.top - ph - 10 : r.bottom + 10) + 'px';
+    });
+  });
+  document.addEventListener('click', () => { popup.style.display = 'none'; last = null; });
+})();
+
 const ctx = document.getElementById('bodyChart').getContext('2d');
 new Chart(ctx, {
   type: 'line',
@@ -369,7 +510,8 @@ new Chart(ctx, {
         pointRadius: 3,
         tension: 0.4,
         fill: true,
-        spanGaps: true
+        spanGaps: true,
+        yAxisID: 'y'
       },
       {
         label: '체지방량',
@@ -381,7 +523,21 @@ new Chart(ctx, {
         pointRadius: 3,
         tension: 0.4,
         fill: true,
-        spanGaps: true
+        spanGaps: true,
+        yAxisID: 'y'
+      },
+      {
+        label: '체중',
+        data: bodyData.weight,
+        borderColor: 'rgba(90,175,130,0.8)',
+        backgroundColor: 'rgba(90,175,130,0.04)',
+        borderWidth: 2,
+        pointBackgroundColor: 'rgba(90,175,130,1)',
+        pointRadius: 3,
+        tension: 0.4,
+        fill: false,
+        spanGaps: true,
+        yAxisID: 'y1'
       }
     ]
   },
@@ -394,7 +550,8 @@ new Chart(ctx, {
     },
     scales: {
       x: { grid: { display: false }, ticks: { color: '#b0c0d4', font: { size: 11 } }, border: { display: false } },
-      y: { grid: { color: 'rgba(160,190,230,0.12)' }, ticks: { color: '#b0c0d4', font: { size: 11 }, callback: v => v + 'kg' }, border: { display: false } }
+      y:  { position: 'left',  grid: { color: 'rgba(160,190,230,0.12)' }, ticks: { color: '#b0c0d4', font: { size: 11 }, callback: v => v + 'kg' }, border: { display: false } },
+      y1: { position: 'right', grid: { drawOnChartArea: false }, ticks: { color: '#90c8a8', font: { size: 11 }, callback: v => v + 'kg' }, border: { display: false } }
     }
   }
 });
