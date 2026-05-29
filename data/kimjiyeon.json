@@ -1,0 +1,58 @@
+{
+  "name": "김지연",
+  "month": "2026년 5월",
+  "purposes": ["체중감량", "건강관리"],
+  "goals": {
+    "short": { "text": "", "period": "" },
+    "mid":   { "text": "", "period": "" },
+    "long":  { "text": "", "period": "" }
+  },
+  "cardio": { "age": 36, "restingHR": 60 },
+  "orm": { "weight": 50, "reps": 8, "goal": "근비대" },
+  "weeks": [
+    {
+      "week": 1, "label": "1주차", "date": "5/5",
+      "mainMessage": "이번 주 코멘트를 여기에 작성합니다.",
+      "summary": {
+        "date": "2026년 5월 5일",
+        "items": []
+      },
+      "exercises": [],
+      "lifts": [],
+      "bodyData": {
+        "labels":  ["5월"],
+        "weight":  [55],
+        "fat":     [10],
+        "muscle":  [26],
+        "lastMeasured": null,
+        "comment": "5월 기준 측정값이에요. 앞으로 측정이 쌓이면 변화 추이를 그래프로 확인할 수 있어요."
+      },
+      "condition": "보통", "conditionNote": "-",
+      "sleep": "좋음",    "sleepNote": "-",
+      "stress": "보통",
+      "pain": "없음",     "painNote": "-",
+      "nutrition": "보통", "nutritionNote": "-",
+      "review": { "good": "-", "caution": "-", "suggest": "-" },
+      "trainerComment":   "이번 주 코멘트를 여기에 작성합니다.",
+      "trainerDirection": "훈련 방향을 여기에 작성합니다.",
+      "finalMessage":     "짧고 따뜻한 응원 메시지를 여기에 작성합니다.",
+      "musclesWorked": [],
+      "weeklyRoutine": {
+        "weekKey": "2026-W19-jy",
+        "note": "",
+        "days": [
+          { "day": "월", "workout": "-", "rest": false },
+          { "day": "화", "workout": "-", "rest": false },
+          { "day": "수", "workout": "-", "rest": false },
+          { "day": "목", "workout": "-", "rest": false },
+          { "day": "금", "workout": "-", "rest": false },
+          { "day": "토", "workout": "-", "rest": false },
+          { "day": "일", "workout": "-", "rest": false }
+        ]
+      }
+    },
+    { "week": 2, "label": "2주차", "date": "5/12" },
+    { "week": 3, "label": "3주차", "date": "5/19" },
+    { "week": 4, "label": "4주차", "date": "5/26" }
+  ]
+}
