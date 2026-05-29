@@ -255,14 +255,14 @@ tr:last-child td { border-bottom: none; }
     <div class="ti-group">
       <label>무게</label>
       <div class="ti-row">
-        <input class="ti-input" type="number" id="orm-weight" min="1" max="500" value="40" style="font-size:14px">
+        <input class="ti-input" type="number" id="orm-weight" min="1" max="500" value="50" style="font-size:14px">
         <span class="ti-unit">kg</span>
       </div>
     </div>
     <div class="ti-group">
       <label>횟수</label>
       <div class="ti-row">
-        <input class="ti-input" type="number" id="orm-reps" min="1" max="30" value="10" style="font-size:14px">
+        <input class="ti-input" type="number" id="orm-reps" min="1" max="30" value="8" style="font-size:14px">
         <span class="ti-unit">회</span>
       </div>
     </div>
@@ -439,8 +439,8 @@ const ORM_ZONES = [
   { name: '근지구력', pctLo: 0.50, pctHi: 0.67, repsLo: 12, repsHi: 20 },
 ];
 function calcORM() {
-  const w    = parseFloat(document.getElementById('orm-weight').value) || 40;
-  const reps = parseInt(document.getElementById('orm-reps').value) || 10;
+  const w    = parseFloat(document.getElementById('orm-weight').value) || 50;
+  const reps = parseInt(document.getElementById('orm-reps').value) || 8;
   const goal = document.getElementById('orm-goal').value;
   const orm  = Math.round(w * (1 + reps / 30));
   const rows = ORM_ZONES.map(z => {
