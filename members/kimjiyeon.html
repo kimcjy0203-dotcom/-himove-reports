@@ -233,14 +233,14 @@ tr:last-child td { border-bottom: none; }
     <div class="ti-group">
       <label>나이</label>
       <div class="ti-row">
-        <input class="ti-input" type="number" id="input-age" min="10" max="80" value="30">
+        <input class="ti-input" type="number" id="input-age" min="10" max="80" value="36">
         <span class="ti-unit">세</span>
       </div>
     </div>
     <div class="ti-group">
       <label>안정시 심박수</label>
       <div class="ti-row">
-        <input class="ti-input" type="number" id="input-rest-hr" min="40" max="100" value="65">
+        <input class="ti-input" type="number" id="input-rest-hr" min="40" max="100" value="60">
         <span class="ti-unit">bpm</span>
       </div>
     </div>
@@ -410,8 +410,8 @@ const ZONES = [
   { label: 'Zone 5', pctLo: 0.90, pctHi: 1.00, color: '#ab47bc', desc: '최대 강도'   },
 ];
 function calcZones() {
-  const age    = parseInt(document.getElementById('input-age').value) || 30;
-  const restHR = parseInt(document.getElementById('input-rest-hr').value) || 65;
+  const age    = parseInt(document.getElementById('input-age').value) || 36;
+  const restHR = parseInt(document.getElementById('input-rest-hr').value) || 60;
   const maxHR  = Math.round(207 - 0.7 * age);
   const hrr    = maxHR - restHR;
   document.getElementById('cardio-zone-meta').innerHTML =
