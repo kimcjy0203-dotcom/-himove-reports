@@ -151,18 +151,27 @@
   /* ── 운동 목적 그리드 ── */
   .purpose-grid {
     margin-top: 14px;
-    display: grid; grid-template-columns: 1fr 1fr;
+    display: flex; flex-wrap: nowrap;
     gap: 7px;
   }
   .purpose-chip {
-    display: flex; align-items: center; gap: 8px;
-    padding: 9px 13px; border-radius: 14px;
+    flex: 1; min-width: 0;
+    display: flex; align-items: center; gap: 6px;
+    padding: 9px 10px; border-radius: 14px;
     font-size: 12px; font-weight: 700;
     backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px);
     border: 1px solid rgba(255,255,255,0.75);
     box-shadow: 0 2px 10px rgba(100,150,230,0.09), inset 0 1px 0 rgba(255,255,255,0.9);
+    white-space: nowrap; overflow: hidden;
   }
-  .purpose-chip-icon { font-size: 17px; line-height: 1; flex-shrink: 0; }
+  .purpose-chip-icon { font-size: 15px; line-height: 1; flex-shrink: 0; }
+  /* ── 수업 요약 리스트 ── */
+  .summary-list { display: flex; flex-direction: column; }
+  .summary-item { display: flex; gap: 8px; padding: 10px 0; border-bottom: 1px solid rgba(160,190,230,0.15); align-items: baseline; }
+  .summary-item:last-child { border-bottom: none; padding-bottom: 0; }
+  .si-name   { font-size: 12px; font-weight: 800; color: #3a6a9a; min-width: 80px; flex-shrink: 0; }
+  .si-sep    { font-size: 12px; color: #c0d0e0; flex-shrink: 0; }
+  .si-detail { font-size: 13px; color: #2a3a50; line-height: 1.6; }
 
   /* ── 장중단기 타임라인 ── */
   .goal-timeline { position: relative; padding-left: 32px; margin-top: 2px; }
@@ -225,10 +234,10 @@
   <div class="msg gold">이번 주는 하체 근력이 눈에 띄게 성장했어요. 스쿼트 자세가 많이 안정됐고, 무릎 트래킹도 개선되고 있어요. 이 흐름을 유지하는 게 가장 중요해요.</div>
 </div>
 
-<div class="card">
+<div class="card" id="session-summary-card">
   <div class="card-title blue">최근 수업 요약</div>
-  <div style="font-size:12px;color:#a8bcd0;margin-bottom:10px;">수업일: 2026년 5월 25일</div>
-  <div class="msg">하체 위주로 진행했어요. 스쿼트 워밍업 후 본 세트 4x6 (80kg), 루마니안 데드리프트 3x10 (60kg), 레그프레스 3x12로 마무리했어요. 코어 안정화 운동도 15분 추가했고, 전반적으로 컨디션이 좋아서 강도를 조금 올렸어요.</div>
+  <div id="session-summary-date" style="font-size:12px;color:#a8bcd0;margin-bottom:12px;"></div>
+  <div class="summary-list" id="session-summary-list"></div>
 </div>
 
 <div class="card">
@@ -491,6 +500,15 @@ const memberData = {
 
 /* ── 수업 피드백 데이터 ── */
 const sessionData = {
+  summary: {
+    date: '2026년 5월 25일',
+    items: [
+      { name: '스쿼트',             detail: '본 세트 4×6 (80kg) · 힙 드라이브 포커스' },
+      { name: '루마니안 데드리프트', detail: '3×10 (60kg) · 바 경로 몸에 밀착' },
+      { name: '레그프레스',          detail: '3×12 · 마무리 세트' },
+      { name: '코어 안정화',         detail: '15분 · 컨디션 좋아 강도 소폭 상향' }
+    ]
+  },
   exercises: [
     { name: '스쿼트',   note: '무릎 트래킹 개선됨. 힙 드라이브가 아직 약간 부족해요.',  next: '힙 드라이브 의식하며 올라오기' },
     { name: '데드리프트', note: '바 경로가 몸에 잘 붙어있어요. 좋아요.',               next: '잠금 동작에서 과신전 주의' },
@@ -511,6 +529,19 @@ const sessionData = {
     ]
   }
 };
+
+(function() {
+  const s = sessionData.summary;
+  if (!s) return;
+  document.getElementById('session-summary-date').textContent = s.date ? `수업일: ${s.date}` : '';
+  document.getElementById('session-summary-list').innerHTML = (s.items || []).map(item =>
+    `<div class="summary-item">
+      <span class="si-name">${item.name}</span>
+      <span class="si-sep">=</span>
+      <span class="si-detail">${item.detail}</span>
+    </div>`
+  ).join('');
+})();
 
 (function() {
   const el = document.getElementById('exercise-feedback');
