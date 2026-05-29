@@ -255,25 +255,61 @@
     letter-spacing: 0.5px;
   }
 
-  /* ── 운동 목적 배지 ── */
-  .purpose-badges { margin-top: 12px; display: flex; flex-wrap: wrap; gap: 6px; }
-  .pb { display: inline-block; padding: 3px 11px; border-radius: 20px; font-size: 11px; font-weight: 700; }
-  /* ── 목표 블록 ── */
-  .goal-block {
+  /* ── 운동 목적 그리드 ── */
+  .purpose-grid {
+    margin-top: 14px;
+    display: grid; grid-template-columns: 1fr 1fr;
+    gap: 7px;
+  }
+  .purpose-chip {
+    display: flex; align-items: center; gap: 8px;
+    padding: 9px 13px; border-radius: 14px;
+    font-size: 12px; font-weight: 700;
+    backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px);
+    border: 1px solid rgba(255,255,255,0.75);
+    box-shadow: 0 2px 10px rgba(100,150,230,0.09), inset 0 1px 0 rgba(255,255,255,0.9);
+  }
+  .purpose-chip-icon { font-size: 17px; line-height: 1; flex-shrink: 0; }
+
+  /* ── 장중단기 타임라인 ── */
+  .goal-timeline { position: relative; padding-left: 32px; margin-top: 2px; }
+  .goal-timeline::before {
+    content: ''; position: absolute; left: 10px; top: 10px; bottom: 10px; width: 2px;
+    background: linear-gradient(to bottom, rgba(76,175,80,0.6), rgba(33,150,243,0.6), rgba(156,39,176,0.6));
+    border-radius: 2px;
+  }
+  .gt-item { position: relative; margin-bottom: 10px; }
+  .gt-item:last-child { margin-bottom: 0; }
+  .gt-dot {
+    position: absolute; left: -26px; top: 12px;
+    width: 12px; height: 12px; border-radius: 50%;
+    border: 2px solid rgba(255,255,255,0.9);
+  }
+  .gt-card {
     background: rgba(255,255,255,0.52); backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px);
-    padding: 11px 14px; border-radius: 14px; margin-bottom: 8px;
-    border: 1px solid rgba(255,255,255,0.82); border-left-width: 3px;
+    padding: 11px 14px; border-radius: 14px;
+    border: 1px solid rgba(255,255,255,0.82);
     box-shadow: 0 3px 14px rgba(100,150,230,0.07), inset 0 1px 0 rgba(255,255,255,0.9);
   }
-  .goal-block-label { font-size: 9px; font-weight: 800; letter-spacing: 1.5px; text-transform: uppercase; margin-bottom: 3px; }
-  .goal-block-text  { font-size: 13px; font-weight: 600; color: #2a3a50; }
-  .goal-block-period { font-size: 11px; color: #a0b2c8; margin-top: 3px; }
-  .gb-short { border-left-color: rgba(76,175,80,0.7); }
-  .gb-short .goal-block-label { color: #4caf50; }
-  .gb-mid   { border-left-color: rgba(33,150,243,0.7); }
-  .gb-mid   .goal-block-label { color: #2196f3; }
-  .gb-long  { border-left-color: rgba(156,39,176,0.7); }
-  .gb-long  .goal-block-label { color: #9c27b0; }
+  .gt-header { display: flex; align-items: center; gap: 7px; margin-bottom: 4px; }
+  .gt-badge {
+    font-size: 9px; font-weight: 800; letter-spacing: 1.2px; text-transform: uppercase;
+    padding: 2px 8px; border-radius: 20px;
+  }
+  .gt-period { font-size: 11px; color: #a0b2c8; margin-left: auto; }
+  .gt-text   { font-size: 13px; font-weight: 600; color: #2a3a50; line-height: 1.5; }
+
+  .gt-short .gt-dot  { background: rgba(76,175,80,0.85); box-shadow: 0 0 0 2px rgba(76,175,80,0.3); }
+  .gt-short .gt-card { border-left: 3px solid rgba(76,175,80,0.6); }
+  .gt-short .gt-badge{ background: rgba(76,175,80,0.12); color: #2e7d32; }
+
+  .gt-mid .gt-dot   { background: rgba(33,150,243,0.85); box-shadow: 0 0 0 2px rgba(33,150,243,0.3); }
+  .gt-mid .gt-card  { border-left: 3px solid rgba(33,150,243,0.6); }
+  .gt-mid .gt-badge { background: rgba(33,150,243,0.10); color: #1565c0; }
+
+  .gt-long .gt-dot   { background: rgba(156,39,176,0.8); box-shadow: 0 0 0 2px rgba(156,39,176,0.25); }
+  .gt-long .gt-card  { border-left: 3px solid rgba(156,39,176,0.55); }
+  .gt-long .gt-badge { background: rgba(156,39,176,0.09); color: #6a1b9a; }
 
   /* 날짜 라벨 */
   [style*="color:#718096"] { color: #a8bcd0 !important; }
@@ -380,7 +416,7 @@
     <span>Week 1</span>
     <span>김지연</span>
   </div>
-  <div id="purpose-badges" class="purpose-badges"></div>
+  <div id="purpose-grid" class="purpose-grid"></div>
 </div>
 
 <div class="card" id="goals-card" style="display:none;"></div>
@@ -592,12 +628,21 @@
 </div>
 
 <script>
+/* ── 운동 목적 메타 ── */
+const PURPOSE_META = {
+  '체중감량': { bg: 'rgba(255,243,224,0.85)', color: '#e65100', icon: '🔥' },
+  '근육증가': { bg: 'rgba(232,245,233,0.85)', color: '#2e7d32', icon: '💪' },
+  '근력강화': { bg: 'rgba(227,242,253,0.85)', color: '#1565c0', icon: '⚡' },
+  '체력향상': { bg: 'rgba(255,253,231,0.85)', color: '#f57f17', icon: '🏃' },
+  '건강관리': { bg: 'rgba(243,229,245,0.85)', color: '#6a1b9a', icon: '❤️' },
+  '재활/회복':{ bg: 'rgba(252,228,236,0.85)', color: '#880e4f', icon: '🌱' },
+  '자세교정': { bg: 'rgba(224,247,250,0.85)', color: '#006064', icon: '🎯' },
+  '유지':     { bg: 'rgba(245,245,245,0.85)', color: '#616161', icon: '⚖️' },
+};
+
 /* ── 회원 목적 · 목표 데이터 ── */
 const memberData = {
-  purposes: [
-    { label: '체중감량', bg: '#fff3e0', color: '#e65100' },
-    { label: '건강관리', bg: '#f3e5f5', color: '#6a1b9a' }
-  ],
+  purposes: ['체중감량', '건강관리'],
   goals: {
     short: { text: '',  period: '' },
     mid:   { text: '',  period: '' },
@@ -606,11 +651,14 @@ const memberData = {
 };
 
 (function() {
-  const el = document.getElementById('purpose-badges');
-  if (!memberData.purposes || !memberData.purposes.length) return;
-  el.innerHTML = memberData.purposes.map(p =>
-    `<span class="pb" style="background:${p.bg};color:${p.color}">${p.label}</span>`
-  ).join('');
+  const el = document.getElementById('purpose-grid');
+  if (!memberData.purposes || !memberData.purposes.length) { el.style.display = 'none'; return; }
+  el.innerHTML = memberData.purposes.map(label => {
+    const m = PURPOSE_META[label] || { bg: 'rgba(240,240,240,0.85)', color: '#555', icon: '•' };
+    return `<div class="purpose-chip" style="background:${m.bg};color:${m.color}">
+      <span class="purpose-chip-icon">${m.icon}</span><span>${label}</span>
+    </div>`;
+  }).join('');
 })();
 
 (function() {
@@ -618,20 +666,29 @@ const memberData = {
   const g = memberData.goals;
   if (!g) return;
   const items = [
-    { key: 'short', label: '단기 목표', cls: 'gb-short' },
-    { key: 'mid',   label: '중기 목표', cls: 'gb-mid'   },
-    { key: 'long',  label: '장기 목표', cls: 'gb-long'  }
+    { key: 'short', badge: 'SHORT', label: '단기 목표', cls: 'gt-short' },
+    { key: 'mid',   badge: 'MID',   label: '중기 목표', cls: 'gt-mid'   },
+    { key: 'long',  badge: 'LONG',  label: '장기 목표', cls: 'gt-long'  }
   ];
-  const html = items.map(it => {
+  const timeline = items.map(it => {
     const d = g[it.key];
     if (!d || !d.text) return '';
-    return `<div class="goal-block ${it.cls}">
-      <div class="goal-block-label">${it.label}</div>
-      <div class="goal-block-text">${d.text}</div>
-      ${d.period ? `<div class="goal-block-period">📅 ${d.period}</div>` : ''}
+    return `<div class="gt-item ${it.cls}">
+      <div class="gt-dot"></div>
+      <div class="gt-card">
+        <div class="gt-header">
+          <span class="gt-badge">${it.badge}</span>
+          <span style="font-size:12px;font-weight:700;color:#4a6a8a">${it.label}</span>
+          ${d.period ? `<span class="gt-period">📅 ${d.period}</span>` : ''}
+        </div>
+        <div class="gt-text">${d.text}</div>
+      </div>
     </div>`;
   }).join('');
-  if (html.trim()) { card.innerHTML = html; card.style.display = ''; }
+  if (timeline.trim()) {
+    card.innerHTML = `<div class="card-title blue">목표</div><div class="goal-timeline">${timeline}</div>`;
+    card.style.display = '';
+  }
 })();
 
 /* ── 수업 피드백 데이터 ── */
