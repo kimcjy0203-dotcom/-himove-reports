@@ -122,7 +122,13 @@ function planBadge(w) {
   const total  = lesson + self;
   if (!total) return '';
   const parts = [lesson ? `레슨 ${lesson}` : '', self ? `자율 ${self}` : ''].filter(Boolean).join(' · ');
-  return `<span class="badge" style="background:rgba(100,150,210,0.1);color:#4a7aa8">📅 주 ${total}회 (${parts})</span>`;
+  return `<span class="badge" style="background:rgba(100,150,210,0.1);color:#4a7aa8">계획 ${total}회 (${parts})</span>`;
+}
+
+function actualBadge(w) {
+  const dates = w.sessionDates;
+  if (!dates?.length) return '';
+  return `<span class="badge" style="background:rgba(80,180,120,0.12);color:#2e7d52;font-weight:800">✓ 실제 ${dates.length}회</span>`;
 }
 
 function renderWeek(w) {
@@ -132,6 +138,7 @@ function renderWeek(w) {
 
   const mainBadges = [
     planBadge(w),
+    actualBadge(w),
     badge('컨디션', w.condition, COND),
     badge('수면', w.sleep, SLEEP),
     badge('스트레스', w.stress, STRESS),
