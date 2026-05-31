@@ -267,6 +267,10 @@ tr:last-child td { border-bottom: none; }
   <div class="card" id="goals-card" style="display:none"></div>
   <div class="week-nav" id="week-nav"></div>
   <div id="week-panels"></div>
+  <div class="card" id="cardio-guide-card" style="display:none">
+    <div class="card-title blue">유산소 강도 가이드</div>
+    <div class="zone-table" id="member-zone-table" style="margin-top:8px;gap:5px"></div>
+  </div>
   <div class="card trainer-only" style="padding:0;overflow:hidden">
     <button class="tool-toggle" onclick="this.classList.toggle('open');this.nextElementSibling.classList.toggle('hidden')">
       유산소 심박 존 <span class="tool-arrow">▾</span>
@@ -499,6 +503,18 @@ function init(data) {
   ageEl.addEventListener('input', calcZones);
   restEl.addEventListener('input', calcZones);
   calcZones();
+
+  /* 회원용 유산소 강도 가이드 */
+  if (cardio?.age && cardio?.restingHR) {
+    const _max = Math.round(207 - 0.7 * cardio.age);
+    const _hrr = _max - cardio.restingHR;
+    document.getElementById('member-zone-table').innerHTML = ZONES.map(z => {
+      const lo = Math.round(z.pctLo * _hrr + cardio.restingHR);
+      const hi = Math.round(z.pctHi * _hrr + cardio.restingHR);
+      return `<div class="zone-row"><div class="zone-dot" style="background:${z.color}"></div><div class="zone-label" style="color:${z.color}">${z.label}</div><div class="zone-range">${lo}–${hi}<span>bpm</span></div><div class="zone-desc">${z.desc}</div></div>`;
+    }).join('');
+    document.getElementById('cardio-guide-card').style.display = 'block';
+  }
 
   /* 1RM */
   const wEl   = document.getElementById('orm-weight');
