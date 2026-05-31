@@ -267,17 +267,6 @@ tr:last-child td { border-bottom: none; }
   <div class="card" id="goals-card" style="display:none"></div>
   <div class="week-nav" id="week-nav"></div>
   <div id="week-panels"></div>
-  <div class="card" id="cardio-guide-card" style="display:none">
-    <div class="card-title blue">유산소 강도 가이드</div>
-    <div style="display:flex;align-items:center;gap:8px;margin:8px 0 4px">
-      <span style="font-size:11px;color:#a0b8d0;white-space:nowrap">오늘 안정시 심박수</span>
-      <input id="member-rhr-input" type="number" min="40" max="120"
-        style="width:56px;background:rgba(255,255,255,0.6);border:1px solid rgba(160,190,230,0.4);border-radius:8px;padding:4px 6px;font-size:13px;font-weight:700;color:#2a3a50;text-align:center;outline:none;font-family:inherit">
-      <span style="font-size:11px;color:#a0b8d0">bpm</span>
-    </div>
-    <div id="member-zone-formula" style="font-size:10px;color:#c0d0e0;margin-bottom:10px;padding:0 2px"></div>
-    <div class="zone-table" id="member-zone-table" style="gap:5px"></div>
-  </div>
   <div class="card trainer-only" style="padding:0;overflow:hidden">
     <button class="tool-toggle" onclick="this.classList.toggle('open');this.nextElementSibling.classList.toggle('hidden')">
       유산소 심박 존 <span class="tool-arrow">▾</span>
@@ -360,6 +349,12 @@ const ZONES = [
   { label: 'Zone 3', pctLo: 0.70, pctHi: 0.80, color: '#ffa726', desc: '유산소 능력' },
   { label: 'Zone 4', pctLo: 0.80, pctHi: 0.90, color: '#ef5350', desc: '역치 훈련'   },
   { label: 'Zone 5', pctLo: 0.90, pctHi: 1.00, color: '#ab47bc', desc: '최대 강도'   },
+];
+const TRAIN_GOALS = [
+  { name: '스트렝스',   reps: '1–5회',  pctLo: 0.85, pctHi: 1.00, rpe: '9–10', tut: '2-1-1' },
+  { name: '근력',      reps: '5–8회',  pctLo: 0.75, pctHi: 0.85, rpe: '7–9',  tut: '2-1-1' },
+  { name: '근지구력',   reps: '12–20회', pctLo: 0.55, pctHi: 0.70, rpe: '5–7',  tut: '3-1-2' },
+  { name: '심폐지구력', reps: '20회+',  pctLo: 0.40, pctHi: 0.55, rpe: '4–6',  tut: '1-0-1' },
 ];
 const ORM_ZONES = [
   { name: '최대근력', pctLo: 0.90, pctHi: 1.00, repsLo: 1,  repsHi: 3  },
@@ -511,25 +506,6 @@ function init(data) {
   restEl.addEventListener('input', calcZones);
   calcZones();
 
-  /* 회원용 유산소 강도 가이드 */
-  if (cardio?.age) {
-    const memberRhrEl = document.getElementById('member-rhr-input');
-    memberRhrEl.value = cardio.restingHR || 65;
-    const maxHR = Math.round(207 - 0.7 * cardio.age);
-    function renderMemberZones() {
-      const rhr = parseInt(memberRhrEl.value) || 65;
-      const hrr = maxHR - rhr;
-      document.getElementById('member-zone-formula').textContent = `최대 심박수 ${maxHR} bpm · 심박 여유도 ${hrr} bpm (카르보넨 공식)`;
-      document.getElementById('member-zone-table').innerHTML = ZONES.map(z => {
-        const lo = Math.round(z.pctLo * hrr + rhr);
-        const hi = Math.round(z.pctHi * hrr + rhr);
-        return `<div class="zone-row"><div class="zone-dot" style="background:${z.color}"></div><div class="zone-label" style="color:${z.color}">${z.label}</div><div class="zone-range">${lo}–${hi}<span>bpm</span></div><div class="zone-desc">${z.desc}</div></div>`;
-      }).join('');
-    }
-    memberRhrEl.addEventListener('input', renderMemberZones);
-    renderMemberZones();
-    document.getElementById('cardio-guide-card').style.display = 'block';
-  }
 
   /* 1RM */
   const wEl   = document.getElementById('orm-weight');
@@ -671,6 +647,8 @@ function init(data) {
     return `<div class="week-panel" data-idx="${idx}">
       <div class="card"><div class="card-title gold">이번 주 핵심 메시지</div><div class="msg gold">${w.mainMessage}</div></div>
       <div class="card"><div class="card-title blue">수업 내용</div><div class="sub-label">요약</div><div style="font-size:12px;color:#a8bcd0;margin-bottom:12px">수업일: ${w.summary?.date||''}</div><div class="summary-list">${summaryItems}</div>${HR}<div class="sub-label">운동 피드백</div><div class="exercise-grid">${exItems}</div></div>
+      ${collapsible('운동 처방 가이드', 'blue', '<div style="display:flex;align-items:center;gap:8px;margin-bottom:8px"><span style="font-size:11px;color:#a0b8d0;white-space:nowrap">기준 중량 (1RM)</span><input id="train-kg-'+idx+'" type="number" min="1" max="500" value="60" style="width:52px;background:rgba(255,255,255,0.6);border:1px solid rgba(160,190,230,0.4);border-radius:8px;padding:4px 6px;font-size:13px;font-weight:700;color:#2a3a50;text-align:center;outline:none;font-family:inherit"><span style="font-size:11px;color:#a0b8d0">kg</span></div><div id="train-table-'+idx+'"></div>')}
+      ${collapsible('유산소 강도 가이드', 'blue', '<div style="display:flex;align-items:center;gap:8px;margin-bottom:4px"><span style="font-size:11px;color:#a0b8d0;white-space:nowrap">오늘 안정시 심박수</span><input id="card-rhr-'+idx+'" type="number" min="40" max="120" style="width:52px;background:rgba(255,255,255,0.6);border:1px solid rgba(160,190,230,0.4);border-radius:8px;padding:4px 6px;font-size:13px;font-weight:700;color:#2a3a50;text-align:center;outline:none;font-family:inherit"><span style="font-size:11px;color:#a0b8d0">bpm</span></div><div id="card-formula-'+idx+'" style="font-size:10px;color:#c0d0e0;margin-bottom:8px;padding:0 2px"></div><div id="card-zones-'+idx+'" style="display:flex;flex-direction:column;gap:5px"></div>')}
       <div class="card"><div class="card-title blue">운동 현황</div><div class="sub-label">주요 리프트</div><div class="lift-grid">${liftItems}</div>${HR}<div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:10px"><div class="sub-label" style="margin-bottom:0">이번 주 트레이닝</div><span class="wk-count" id="wk-count-${idx}">주 0회</span></div><div class="weekly-cal" id="weekly-cal-${idx}">${calDays}</div><div class="note">${r.note||''}</div>${HR}<div class="sub-label">운동 부위</div><div class="body-map-container" id="body-map-${idx}"><div class="body-map-wrap">${FRONT_SVG}<div class="body-map-lbl">앞</div></div><div class="body-map-wrap">${BACK_SVG}<div class="body-map-lbl">뒤</div></div></div></div>
       ${collapsible('이번 주 상태', 'blue', `<div id="ds-${idx}"><div style="font-size:11px;color:#a0b8d0;font-weight:600;margin-bottom:14px">📅 오늘 ${new Date().toLocaleDateString('ko-KR',{month:'long',day:'numeric'})} 기준 — 매일 초기화</div><div class="sub-label"><span class="dot" style="background:#f4a07e"></span>컨디션</div>${miniSum('condition',['매우 좋음','좋음','보통','피곤함','매우 피곤함'])}<div class="check-row">${dailyChips('condition',['매우 좋음','좋음','보통','피곤함','매우 피곤함'])}</div>${HR}<div class="sub-label"><span class="dot" style="background:#a78bde"></span>수면</div>${miniSum('sleep',['매우 나쁨','나쁨','보통','좋음','매우 좋음'])}<div class="check-row">${dailyChips('sleep',['매우 나쁨','나쁨','보통','좋음','매우 좋음'])}</div>${HR}<div class="sub-label"><span class="dot" style="background:#6dc99c"></span>신체 불편</div>${miniSum('pain',['없음','있음'])}<div class="check-row">${dailyChips('pain',['없음','있음'])}</div>${HR}<div class="sub-label"><span class="dot" style="background:#f0c96a"></span>영양 상태</div>${miniSum('nutrition',['매우 나쁨','나쁨','보통','좋음','매우 좋음'])}<div class="check-row">${dailyChips('nutrition',['매우 나쁨','나쁨','보통','좋음','매우 좋음'])}</div></div>`)}
       ${collapsible('체성분', 'green', `${buildCountdown(bd.lastMeasured)}<div class="stat-grid" style="margin-top:${bd.lastMeasured?'14px':'0'}"><div class="stat-box"><div class="lbl">체중</div><div class="val">${lW??'—'}</div><div class="unt">kg</div></div><div class="stat-box"><div class="lbl">체지방량</div><div class="val">${lF??'—'}</div><div class="unt">kg</div></div><div class="stat-box"><div class="lbl">골격근량</div><div class="val">${lM??'—'}</div><div class="unt">kg</div></div></div><div class="delta-row"><div class="delta-box"><span class="dlbl">체중 변화</span><span class="dval ${dW.cls}">${dW.text}</span></div><div class="delta-box"><span class="dlbl">체지방 변화</span><span class="dval ${dF.cls}">${dF.text}</span></div><div class="delta-box"><span class="dlbl">근육 변화</span><span class="dval ${dM.cls}">${dM.text}</span></div></div>${HR}<div class="sub-label">변화 추이</div><div style="position:relative;height:220px;margin-bottom:14px"><canvas id="bodyChart-${idx}"></canvas></div><div class="msg">${bd.comment}</div>`)}
@@ -684,6 +662,50 @@ function init(data) {
   const panelEl = document.getElementById('week-panels');
   navEl.innerHTML   = weeks.map((w,i) => `<button class="wt-btn${!w.mainMessage?' empty':''}${i===0?' active':''}" data-idx="${i}"><span class="wt-week">${w.label}</span><span class="wt-date">${!w.mainMessage?'미입력':w.date}</span></button>`).join('');
   panelEl.innerHTML = weeks.map((w,i) => buildPanel(w,i)).join('');
+
+  /* 운동 처방 가이드 + 유산소 강도 가이드 초기화 */
+  const TG_THINPUT = `width:52px;background:rgba(255,255,255,0.6);border:1px solid rgba(160,190,230,0.4);border-radius:8px;padding:3px 5px;font-size:11px;font-weight:700;color:#2a3a50;text-align:center;outline:none;font-family:inherit`;
+  const TG_ROW = `display:grid;grid-template-columns:56px 44px 1fr 36px 44px;align-items:center;gap:4px;padding:5px 8px;background:rgba(255,255,255,0.45);border-radius:9px;border:1px solid rgba(255,255,255,0.75)`;
+  const TG_HDR = `display:grid;grid-template-columns:56px 44px 1fr 36px 44px;gap:4px;padding:2px 8px;font-size:9px;font-weight:700;color:#b0c8e0;letter-spacing:0.4px;text-transform:uppercase`;
+  weeks.forEach((w, idx) => {
+    const kgEl = document.getElementById('train-kg-' + idx);
+    if (kgEl) {
+      function renderTrain(i) {
+        const kg = parseFloat(document.getElementById('train-kg-' + i).value) || 60;
+        const tbl = document.getElementById('train-table-' + i);
+        tbl.innerHTML = '<div style="' + TG_HDR + '"><span>목표</span><span>횟수</span><span style="text-align:center">중량</span><span>RPE</span><span>TUT</span></div>'
+          + TRAIN_GOALS.map(g => {
+              const lo = Math.round(kg * g.pctLo), hi = Math.round(kg * g.pctHi);
+              return '<div style="' + TG_ROW + '"><span style="font-size:11px;font-weight:700;color:#3a5a80">' + g.name + '</span>'
+                + '<span style="font-size:10px;color:#8aa8c8">' + g.reps + '</span>'
+                + '<span style="font-size:11px;font-weight:700;color:#1a2a40;text-align:center">' + lo + '–' + hi + '<span style="font-size:9px;color:#b0c0d4;margin-left:2px">kg</span></span>'
+                + '<span style="font-size:10px;color:#8aa8c8">' + g.rpe + '</span>'
+                + '<span style="font-size:10px;color:#8aa8c8">' + g.tut + '</span></div>';
+            }).join('');
+      }
+      kgEl.addEventListener('input', () => renderTrain(idx));
+      renderTrain(idx);
+    }
+    if (cardio?.age) {
+      const rhrEl = document.getElementById('card-rhr-' + idx);
+      if (rhrEl) {
+        const maxHR = Math.round(207 - 0.7 * cardio.age);
+        rhrEl.value = cardio.restingHR || 65;
+        function renderZones(i) {
+          const rhr = parseInt(document.getElementById('card-rhr-' + i).value) || 65;
+          const hrr = maxHR - rhr;
+          document.getElementById('card-formula-' + i).textContent = '최대 심박수 ' + maxHR + ' bpm · 심박 여유도 ' + hrr + ' bpm (카르보넨 공식)';
+          document.getElementById('card-zones-' + i).innerHTML = ZONES.map(z => {
+            const lo = Math.round(z.pctLo * hrr + rhr), hi = Math.round(z.pctHi * hrr + rhr);
+            return '<div class="zone-row"><div class="zone-dot" style="background:' + z.color + '"></div><div class="zone-label" style="color:' + z.color + '">' + z.label + '</div><div class="zone-range">' + lo + '–' + hi + '<span>bpm</span></div><div class="zone-desc">' + z.desc + '</div></div>';
+          }).join('');
+        }
+        rhrEl.addEventListener('input', () => renderZones(idx));
+        renderZones(idx);
+      }
+    }
+  });
+
   navEl.querySelectorAll('.wt-btn').forEach(btn => btn.addEventListener('click', function(){ switchWeek(parseInt(this.dataset.idx)); }));
   switchWeek(0);
 
