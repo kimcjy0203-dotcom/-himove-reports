@@ -83,6 +83,10 @@ body > * { position: relative; z-index: 1; }
 .mc-purpose-chip {
   padding: 3px 10px; border-radius: 20px; font-size: 11px; font-weight: 700; white-space: nowrap;
 }
+.mc-status { display: flex; gap: 6px; margin-top: 10px; align-items: center; }
+.mc-status-chip { font-size: 10px; font-weight: 700; padding: 3px 9px; border-radius: 20px; background: rgba(255,255,255,0.6); border: 1px solid rgba(160,190,230,0.3); color: #6a9ac4; }
+.mc-comment { font-size: 12px; color: #6a8aaa; margin-top: 8px; line-height: 1.6; padding: 8px 10px; background: rgba(255,255,255,0.5); border-radius: 10px; border-left: 2px solid rgba(100,155,220,0.3); }
+.mc-inbody { font-size: 10px; font-weight: 700; color: #e07060; background: rgba(230,100,80,0.08); border: 1px solid rgba(230,100,80,0.2); border-radius: 20px; padding: 3px 9px; margin-left: auto; }
 
 .empty-card {
   background: rgba(255,255,255,0.4); border-radius: 24px; padding: 40px 24px;
@@ -128,9 +132,21 @@ function currentWeekIdx(weeks) {
   return 0;
 }
 
+const CONDITION_COLOR = { '매우 좋음':'#5aaa7a','좋음':'#6aaa8a','보통':'#8aaac8','피곤함':'#c8944a','매우 피곤함':'#c06050' };
+const SLEEP_COLOR     = { '매우 좋음':'#5aaa7a','좋음':'#6aaa8a','보통':'#8aaac8','나쁨':'#c8944a','매우 나쁨':'#c06050' };
+
+function calcInbody(lastMeasured) {
+  if (!lastMeasured) return null;
+  const next = new Date(lastMeasured);
+  next.setDate(next.getDate() + 14);
+  const days = Math.ceil((next - new Date()) / 86400000);
+  return days;
+}
+
 function renderCard(member, data) {
   const weeks  = data.weeks || [];
   const curIdx = currentWeekIdx(weeks);
+  const cur    = weeks[curIdx] || {};
   const avatar = data.name?.[0] || '?';
 
   const weekPills = weeks.map((w, i) => {
@@ -148,6 +164,21 @@ function renderCard(member, data) {
     return `<span class="mc-purpose-chip" style="background:${m.bg};color:${m.color}">${m.icon} ${p}</span>`;
   }).join('');
 
+  const statusChips = [
+    cur.condition ? `<span class="mc-status-chip" style="color:${CONDITION_COLOR[cur.condition]||'#8aaac8'}">컨디션 ${cur.condition}</span>` : '',
+    cur.sleep     ? `<span class="mc-status-chip" style="color:${SLEEP_COLOR[cur.sleep]||'#8aaac8'}">수면 ${cur.sleep}</span>` : '',
+    cur.pain      ? `<span class="mc-status-chip">불편 ${cur.pain}</span>` : '',
+  ].filter(Boolean).join('');
+
+  const lastMeasured = cur.bodyData?.lastMeasured;
+  const daysLeft = calcInbody(lastMeasured);
+  const inbodyBadge = daysLeft !== null
+    ? `<span class="mc-inbody">${daysLeft <= 0 ? '인바디 측정 필요' : `인바디 D-${daysLeft}`}</span>`
+    : '';
+
+  const comment = cur.memberComment
+    ? `<div class="mc-comment">💬 ${cur.memberComment}</div>` : '';
+
   return `<a class="member-card" href="report.html?id=${member.id}">
     <div class="mc-top">
       <div class="mc-avatar">${avatar}</div>
@@ -158,6 +189,8 @@ function renderCard(member, data) {
       <span class="mc-arrow">›</span>
     </div>
     <div class="mc-week-row">${weekPills}</div>
+    ${statusChips ? `<div class="mc-status">${statusChips}${inbodyBadge}</div>` : ''}
+    ${comment}
     ${purposes ? `<div class="mc-purposes">${purposes}</div>` : ''}
   </a>`;
 }
