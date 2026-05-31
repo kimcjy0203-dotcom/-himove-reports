@@ -129,7 +129,96 @@
         ]
       }
     },
-    { "week": 3, "label": "3주차", "date": "6/15" },
-    { "week": 4, "label": "4주차", "date": "6/22" }
+    { "week": 3, "label": "3주차", "date": "6/15",
+      "mainMessage": "",
+      "summary": { "date": "", "items": [] },
+      "exercises": [], "lifts": [],
+      "bodyData": { "labels": [], "weight": [], "fat": [], "muscle": [], "lastMeasured": null, "comment": "" },
+      "condition": "보통", "conditionNote": "",
+      "sleep": "보통",    "sleepNote": "",
+      "stress": "보통",
+      "pain": "없음",     "painNote": "",
+      "nutrition": "보통", "nutritionNote": "",
+      "review": { "good": "", "caution": "", "suggest": "" },
+      "trainerComment": "", "trainerDirection": "",
+      "finalMessage": "", "nextSessionMemo": "",
+      "musclesWorked": [],
+      "weeklyRoutine": {
+        "weekKey": "2026-W25-mj",
+        "note": "⚠️ 시험 주간 — 개인 운동 가볍게. 무리 금물. 컨디션 최우선.",
+        "days": [
+          { "day": "월", "workout": "개인-최종복습", "rest": false, "plan": [
+              { "name": "[ 워밍업 ] 흉추 가동성 루틴", "sets": 1, "reps": 1, "weight": "5분" },
+              { "name": "스쿼트", "sets": 2, "reps": 10, "weight": "가볍게" },
+              { "name": "루마니안 데드리프트", "sets": 2, "reps": 10, "weight": "가볍게" },
+              { "name": "벤트오버 로우", "sets": 2, "reps": 10, "weight": "가볍게" },
+              { "name": "덤벨 숄더 프레스", "sets": 2, "reps": 10, "weight": "가볍게" },
+              { "name": "렛 풀다운", "sets": 2, "reps": 10, "weight": "가볍게" },
+              { "name": "덤벨 바이셉 컬", "sets": 2, "reps": 10, "weight": "가볍게" },
+              { "name": "트라이셉 로프 풀다운", "sets": 2, "reps": 10, "weight": "가볍게" }
+            ]},
+          { "day": "화", "workout": "레슨", "rest": false },
+          { "day": "수", "workout": "개인-컨디션", "rest": false, "plan": [
+              { "name": "가벼운 유산소", "sets": 1, "reps": 1, "weight": "20~30분 걷기" },
+              { "name": "전신 스트레칭", "sets": 1, "reps": 1, "weight": "10분" },
+              { "name": "흉추 가동성 루틴", "sets": 1, "reps": 1, "weight": "가볍게" }
+            ]},
+          { "day": "목", "workout": "레슨", "rest": false },
+          { "day": "금", "workout": "자율", "rest": false, "plan": [
+              { "name": "시험 전날 — 가볍게 산책 또는 충분한 휴식", "sets": 1, "reps": 1, "weight": "-" }
+            ]},
+          { "day": "토", "workout": "자율", "rest": false, "plan": [
+              { "name": "가벼운 산책 또는 휴식", "sets": 1, "reps": 1, "weight": "30분" }
+            ]},
+          { "day": "일", "workout": "휴식", "rest": true }
+        ]
+      }
+    },
+    { "week": 4, "label": "4주차", "date": "6/22",
+      "mainMessage": "",
+      "summary": { "date": "", "items": [] },
+      "exercises": [], "lifts": [],
+      "bodyData": { "labels": [], "weight": [], "fat": [], "muscle": [], "lastMeasured": null, "comment": "" },
+      "condition": "보통", "conditionNote": "",
+      "sleep": "보통",    "sleepNote": "",
+      "stress": "보통",
+      "pain": "없음",     "painNote": "",
+      "nutrition": "보통", "nutritionNote": "",
+      "review": { "good": "", "caution": "", "suggest": "" },
+      "trainerComment": "", "trainerDirection": "",
+      "finalMessage": "", "nextSessionMemo": "",
+      "musclesWorked": [],
+      "weeklyRoutine": {
+        "weekKey": "2026-W26-mj",
+        "note": "시험 후 — 체중감량 본격 루틴 시작. 강도 점진적으로 올리기.",
+        "days": [
+          { "day": "월", "workout": "개인-하체", "rest": false, "plan": [
+              { "name": "[ 워밍업 ] 흉추 가동성 루틴", "sets": 1, "reps": 1, "weight": "5분" },
+              { "name": "고블릿 스쿼트", "sets": 3, "reps": 12, "weight": "-" },
+              { "name": "루마니안 데드리프트", "sets": 3, "reps": 10, "weight": "-" },
+              { "name": "힙 스러스트", "sets": 3, "reps": 12, "weight": "-" },
+              { "name": "레그 프레스", "sets": 3, "reps": 12, "weight": "-" },
+              { "name": "트레드밀 경사 걷기", "sets": 1, "reps": 1, "weight": "20분" }
+            ]},
+          { "day": "화", "workout": "레슨", "rest": false },
+          { "day": "수", "workout": "개인-상체", "rest": false, "plan": [
+              { "name": "[ 워밍업 ] 흉추 가동성 루틴", "sets": 1, "reps": 1, "weight": "5분" },
+              { "name": "벤트오버 바벨 로우", "sets": 3, "reps": 10, "weight": "-" },
+              { "name": "렛 풀다운", "sets": 3, "reps": 12, "weight": "-" },
+              { "name": "덤벨 숄더 프레스", "sets": 3, "reps": 12, "weight": "-" },
+              { "name": "케이블 체스트 플라이", "sets": 3, "reps": 12, "weight": "-" },
+              { "name": "트레드밀 경사 걷기", "sets": 1, "reps": 1, "weight": "25분" }
+            ]},
+          { "day": "목", "workout": "레슨", "rest": false },
+          { "day": "금", "workout": "자율", "rest": false, "plan": [
+              { "name": "가벼운 산책 또는 휴식", "sets": 1, "reps": 1, "weight": "30분" }
+            ]},
+          { "day": "토", "workout": "자율", "rest": false, "plan": [
+              { "name": "가벼운 산책 또는 휴식", "sets": 1, "reps": 1, "weight": "30분" }
+            ]},
+          { "day": "일", "workout": "휴식", "rest": true }
+        ]
+      }
+    }
   ]
 }
