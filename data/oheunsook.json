@@ -1,50 +1,113 @@
 {
   "name": "오은숙",
   "month": "2026년 5월",
-  "purposes": ["체중감량", "건강관리"],
+  "purposes": [
+    "체중감량",
+    "건강관리"
+  ],
   "goals": {
-    "short": { "text": "허리 안정화 및 기초 체력 향상 — 코어 강화와 바른 자세 습관 만들기", "period": "1개월" },
-    "mid":   { "text": "체중 감량 — 꾸준한 운동 루틴 정착으로 자연스러운 체중 감소", "period": "3개월" },
-    "long":  { "text": "혼자 운동할 수 있는 상태 — 독립적인 운동 습관 완성 및 목표 체중 달성", "period": "6개월" }
+    "short": {
+      "text": "허리 안정화 및 기초 체력 향상 — 코어 강화와 바른 자세 습관 만들기",
+      "period": "1개월"
+    },
+    "mid": {
+      "text": "체중 감량 — 꾸준한 운동 루틴 정착으로 자연스러운 체중 감소",
+      "period": "3개월"
+    },
+    "long": {
+      "text": "혼자 운동할 수 있는 상태 — 독립적인 운동 습관 완성 및 목표 체중 달성",
+      "period": "6개월"
+    }
   },
   "bodyGoals": {
-    "weight": { "start": 61.8, "goal": 55.0 },
-    "muscle": { "start": 20.3, "goal": 22.0 },
-    "fat":    { "start": 24.1, "goal": 16.0 }
+    "weight": {
+      "start": 61.8,
+      "goal": 55.0
+    },
+    "muscle": {
+      "start": 20.3,
+      "goal": 22.0
+    },
+    "fat": {
+      "start": 24.1,
+      "goal": 16.0
+    }
   },
-  "cardio": { "age": 40, "restingHR": 65 },
-  "orm": { "weight": 40, "reps": 10, "goal": "근비대" },
+  "cardio": {
+    "age": 40,
+    "restingHR": 65
+  },
+  "orm": {
+    "weight": 40,
+    "reps": 10,
+    "goal": "근비대"
+  },
   "weeks": [
     {
-      "week": 1, "label": "1주차", "date": "5/26",
+      "week": 1,
+      "label": "1주차",
+      "date": "5/26",
       "mainMessage": "힘든 컨디션에도 나와주셔서 정말 수고하셨어요. 3일간 수면 부족에도 운동을 마친 것 자체가 대단합니다. 이번 주는 몸을 다치지 않게 가볍게 시작하는 데 집중했어요.",
       "summary": {
         "date": "2026년 5월 26일",
         "items": [
-          { "name": "힙브릿지", "detail": "3세트 × 10회" },
-          { "name": "싱글 레그 힙힌지", "detail": "3세트 × 20회" },
-          { "name": "흉추 에어플레인 (벽)", "detail": "3세트 × 20회" }
+          {
+            "name": "힙브릿지",
+            "detail": "3세트 × 10회"
+          },
+          {
+            "name": "싱글 레그 힙힌지",
+            "detail": "3세트 × 20회"
+          },
+          {
+            "name": "흉추 에어플레인 (벽)",
+            "detail": "3세트 × 20회"
+          }
         ]
       },
       "exercises": [
-        { "name": "힙브릿지", "note": "허리 통증 있어 중량 없이 자체중량으로 진행. 둔근 수축에 집중.", "next": "통증 개선되면 밴드 추가" },
-        { "name": "싱글 레그 힙힌지", "note": "균형 잡기 위주. 무릎이 흔들리지 않도록 코어 잡기.", "next": "안정되면 덤벨 추가" },
-        { "name": "흉추 에어플레인 (벽)", "note": "흉추 가동성 확보 운동. 허리 대신 등 위쪽을 쓰는 느낌에 집중.", "next": "동일 유지" }
+        {
+          "name": "힙브릿지",
+          "note": "허리 통증 있어 중량 없이 자체중량으로 진행. 둔근 수축에 집중.",
+          "next": "통증 개선되면 밴드 추가"
+        },
+        {
+          "name": "싱글 레그 힙힌지",
+          "note": "균형 잡기 위주. 무릎이 흔들리지 않도록 코어 잡기.",
+          "next": "안정되면 덤벨 추가"
+        },
+        {
+          "name": "흉추 에어플레인 (벽)",
+          "note": "흉추 가동성 확보 운동. 허리 대신 등 위쪽을 쓰는 느낌에 집중.",
+          "next": "동일 유지"
+        }
       ],
       "lifts": [],
       "bodyData": {
-        "labels":  ["5/26"],
-        "weight":  [61.8],
-        "fat":     [24.1],
-        "muscle":  [20.3],
+        "labels": [
+          "5/26"
+        ],
+        "weight": [
+          61.8
+        ],
+        "fat": [
+          24.1
+        ],
+        "muscle": [
+          20.3
+        ],
         "lastMeasured": "2026-05-26",
         "comment": "5월 시작 측정값이에요. 목표까지 체중 -6.8kg, 체지방 -8.1kg 남았어요. 꾸준히 하면 충분히 가능한 목표예요!"
       },
-      "condition": "피로", "conditionNote": "3일 수면 부족으로 컨디션 매우 저조",
-      "sleep": "나쁨",    "sleepNote": "3일 연속 수면 불량",
+      "condition": "보통",
+      "conditionNote": "허리 통증",
+      "sleep": "나쁨",
+      "sleepNote": "3일 연속 수면 불량",
       "stress": "보통",
-      "pain": "있음",     "painNote": "허리 통증",
-      "nutrition": "보통", "nutritionNote": "",
+      "pain": "있음",
+      "painNote": "허리 통증",
+      "nutrition": "보통",
+      "nutritionNote": "",
       "review": {
         "good": "힘든 컨디션에도 출석. 포기하지 않는 의지가 인상적이에요.",
         "caution": "허리 통증 — 데드리프트, 스쿼트 등 척추 압박 운동은 당분간 제한.",
@@ -54,112 +117,455 @@
       "trainerDirection": "당분간 허리 부담 최소화. 코어 안정화 + 하체 후면 위주로 진행. 통증 상태 매 세션 체크.",
       "nextSessionMemo": "허리 통증 상태 재확인 / 힙브릿지 → 밴드 추가 가능한지 체크 / 수면 개선 여부 확인",
       "finalMessage": "힘든 날 나와주셔서 감사해요. 이런 날이 쌓여서 진짜 변화가 생깁니다. 다음 주도 기다릴게요!",
-      "musclesWorked": ["glutes", "hamstrings", "back"],
+      "musclesWorked": [
+        "glutes",
+        "hamstrings",
+        "back"
+      ],
       "weeklyRoutine": {
         "weekKey": "2026-W22-es",
         "note": "허리 통증 주의. 레슨(화목) + 개인(월수금) + 자율(토) 구조",
         "days": [
-          { "day": "월", "workout": "개인-글루트", "rest": false, "plan": [
-              { "name": "힙브릿지", "sets": 3, "reps": 15, "weight": "-" },
-              { "name": "싱글 레그 힙힌지", "sets": 3, "reps": 15, "weight": "양쪽" },
-              { "name": "사이드 라잉 클램", "sets": 3, "reps": 20, "weight": "양쪽" },
-              { "name": "흉추 에어플레인 (벽)", "sets": 3, "reps": 20, "weight": "-" }
-            ]},
-          { "day": "화", "workout": "레슨-하체", "rest": false, "plan": [
-              { "name": "힙 스러스트", "sets": 3, "reps": 12, "weight": "-" },
-              { "name": "루마니안 데드리프트", "sets": 3, "reps": 10, "weight": "가벼운 중량" },
-              { "name": "불가리안 스플릿 스쿼트", "sets": 3, "reps": 10, "weight": "양쪽" },
-              { "name": "데드버그", "sets": 3, "reps": 10, "weight": "-" },
-              { "name": "플랭크", "sets": 3, "reps": 1, "weight": "30초" }
-            ]},
-          { "day": "수", "workout": "개인-상체", "rest": false, "plan": [
-              { "name": "밴드 로우", "sets": 3, "reps": 15, "weight": "-" },
-              { "name": "덤벨 숄더 프레스", "sets": 3, "reps": 12, "weight": "-" },
-              { "name": "푸시업", "sets": 3, "reps": 10, "weight": "-" },
-              { "name": "트레드밀 빠른 걷기", "sets": 1, "reps": 1, "weight": "30분" }
-            ]},
-          { "day": "목", "workout": "레슨-상체", "rest": false, "plan": [
-              { "name": "시티드 케이블 로우", "sets": 3, "reps": 12, "weight": "-" },
-              { "name": "덤벨 숄더 프레스", "sets": 3, "reps": 12, "weight": "-" },
-              { "name": "케이블 풀다운", "sets": 3, "reps": 12, "weight": "-" },
-              { "name": "마운틴 클라이머", "sets": 3, "reps": 20, "weight": "-" },
-              { "name": "흉추 에어플레인 (벽)", "sets": 3, "reps": 20, "weight": "-" }
-            ]},
-          { "day": "금", "workout": "개인-전신", "rest": false, "plan": [
-              { "name": "고블릿 스쿼트", "sets": 3, "reps": 12, "weight": "-" },
-              { "name": "힙브릿지", "sets": 3, "reps": 15, "weight": "-" },
-              { "name": "덤벨 로우", "sets": 3, "reps": 12, "weight": "-" },
-              { "name": "마운틴 클라이머", "sets": 3, "reps": 20, "weight": "-" },
-              { "name": "플랭크", "sets": 3, "reps": 1, "weight": "30초" }
-            ]},
-          { "day": "토", "workout": "자율운동", "rest": false, "plan": [
-              { "name": "산책 or 등산 or 스트레칭", "sets": 1, "reps": 1, "weight": "30~60분" }
-            ]},
-          { "day": "일", "workout": "휴식", "rest": true }
+          {
+            "day": "월",
+            "workout": "개인-글루트",
+            "rest": false,
+            "plan": [
+              {
+                "name": "힙브릿지",
+                "sets": 3,
+                "reps": 15,
+                "weight": "-"
+              },
+              {
+                "name": "싱글 레그 힙힌지",
+                "sets": 3,
+                "reps": 15,
+                "weight": "양쪽"
+              },
+              {
+                "name": "사이드 라잉 클램",
+                "sets": 3,
+                "reps": 20,
+                "weight": "양쪽"
+              },
+              {
+                "name": "흉추 에어플레인 (벽)",
+                "sets": 3,
+                "reps": 20,
+                "weight": "-"
+              }
+            ]
+          },
+          {
+            "day": "화",
+            "workout": "레슨-하체",
+            "rest": false,
+            "plan": [
+              {
+                "name": "힙 스러스트",
+                "sets": 3,
+                "reps": 12,
+                "weight": "-"
+              },
+              {
+                "name": "루마니안 데드리프트",
+                "sets": 3,
+                "reps": 10,
+                "weight": "가벼운 중량"
+              },
+              {
+                "name": "불가리안 스플릿 스쿼트",
+                "sets": 3,
+                "reps": 10,
+                "weight": "양쪽"
+              },
+              {
+                "name": "데드버그",
+                "sets": 3,
+                "reps": 10,
+                "weight": "-"
+              },
+              {
+                "name": "플랭크",
+                "sets": 3,
+                "reps": 1,
+                "weight": "30초"
+              }
+            ]
+          },
+          {
+            "day": "수",
+            "workout": "개인-상체",
+            "rest": false,
+            "plan": [
+              {
+                "name": "밴드 로우",
+                "sets": 3,
+                "reps": 15,
+                "weight": "-"
+              },
+              {
+                "name": "덤벨 숄더 프레스",
+                "sets": 3,
+                "reps": 12,
+                "weight": "-"
+              },
+              {
+                "name": "푸시업",
+                "sets": 3,
+                "reps": 10,
+                "weight": "-"
+              },
+              {
+                "name": "트레드밀 빠른 걷기",
+                "sets": 1,
+                "reps": 1,
+                "weight": "30분"
+              }
+            ]
+          },
+          {
+            "day": "목",
+            "workout": "레슨-상체",
+            "rest": false,
+            "plan": [
+              {
+                "name": "시티드 케이블 로우",
+                "sets": 3,
+                "reps": 12,
+                "weight": "-"
+              },
+              {
+                "name": "덤벨 숄더 프레스",
+                "sets": 3,
+                "reps": 12,
+                "weight": "-"
+              },
+              {
+                "name": "케이블 풀다운",
+                "sets": 3,
+                "reps": 12,
+                "weight": "-"
+              },
+              {
+                "name": "마운틴 클라이머",
+                "sets": 3,
+                "reps": 20,
+                "weight": "-"
+              },
+              {
+                "name": "흉추 에어플레인 (벽)",
+                "sets": 3,
+                "reps": 20,
+                "weight": "-"
+              }
+            ]
+          },
+          {
+            "day": "금",
+            "workout": "개인-전신",
+            "rest": false,
+            "plan": [
+              {
+                "name": "고블릿 스쿼트",
+                "sets": 3,
+                "reps": 12,
+                "weight": "-"
+              },
+              {
+                "name": "힙브릿지",
+                "sets": 3,
+                "reps": 15,
+                "weight": "-"
+              },
+              {
+                "name": "덤벨 로우",
+                "sets": 3,
+                "reps": 12,
+                "weight": "-"
+              },
+              {
+                "name": "마운틴 클라이머",
+                "sets": 3,
+                "reps": 20,
+                "weight": "-"
+              },
+              {
+                "name": "플랭크",
+                "sets": 3,
+                "reps": 1,
+                "weight": "30초"
+              }
+            ]
+          },
+          {
+            "day": "토",
+            "workout": "자율운동",
+            "rest": false,
+            "plan": [
+              {
+                "name": "산책 or 등산 or 스트레칭",
+                "sets": 1,
+                "reps": 1,
+                "weight": "30~60분"
+              }
+            ]
+          },
+          {
+            "day": "일",
+            "workout": "휴식",
+            "rest": true
+          }
         ]
-      }
+      },
+      "memberComment": "힘들어서 안나오려 했는데 나오니 운동 하게됨"
     },
     {
-      "week": 2, "label": "2주차", "date": "6/1",
+      "week": 2,
+      "label": "2주차",
+      "date": "6/1",
       "mainMessage": "2주차 내용을 입력해주세요.",
-      "summary": { "date": "", "items": [] },
+      "summary": {
+        "date": "",
+        "items": []
+      },
       "exercises": [],
       "lifts": [],
-      "bodyData": { "labels": [], "weight": [], "fat": [], "muscle": [], "lastMeasured": null, "comment": "" },
-      "condition": "보통", "conditionNote": "",
-      "sleep": "보통",    "sleepNote": "",
+      "bodyData": {
+        "labels": [],
+        "weight": [],
+        "fat": [],
+        "muscle": [],
+        "lastMeasured": null,
+        "comment": ""
+      },
+      "condition": "보통",
+      "conditionNote": "",
+      "sleep": "보통",
+      "sleepNote": "",
       "stress": "보통",
-      "pain": "없음",     "painNote": "",
-      "nutrition": "보통", "nutritionNote": "",
-      "review": { "good": "", "caution": "", "suggest": "" },
-      "trainerComment": "", "trainerDirection": "",
-      "finalMessage": "", "nextSessionMemo": "",
+      "pain": "없음",
+      "painNote": "",
+      "nutrition": "보통",
+      "nutritionNote": "",
+      "review": {
+        "good": "",
+        "caution": "",
+        "suggest": ""
+      },
+      "trainerComment": "",
+      "trainerDirection": "",
+      "finalMessage": "",
+      "nextSessionMemo": "",
       "musclesWorked": [],
       "weeklyRoutine": {
         "weekKey": "2026-W23-es",
         "note": "레슨(화목) + 개인(월수금) + 자율(토) 구조",
         "days": [
-          { "day": "월", "workout": "개인-글루트", "rest": false, "plan": [
-              { "name": "힙브릿지", "sets": 3, "reps": 15, "weight": "-" },
-              { "name": "싱글 레그 힙힌지", "sets": 3, "reps": 15, "weight": "양쪽" },
-              { "name": "사이드 라잉 클램", "sets": 3, "reps": 20, "weight": "양쪽" },
-              { "name": "흉추 에어플레인 (벽)", "sets": 3, "reps": 20, "weight": "-" }
-            ]},
-          { "day": "화", "workout": "레슨-하체", "rest": false, "plan": [
-              { "name": "힙 스러스트", "sets": 3, "reps": 12, "weight": "-" },
-              { "name": "루마니안 데드리프트", "sets": 3, "reps": 10, "weight": "-" },
-              { "name": "불가리안 스플릿 스쿼트", "sets": 3, "reps": 10, "weight": "양쪽" },
-              { "name": "데드버그", "sets": 3, "reps": 10, "weight": "-" },
-              { "name": "플랭크", "sets": 3, "reps": 1, "weight": "30초" }
-            ]},
-          { "day": "수", "workout": "개인-상체", "rest": false, "plan": [
-              { "name": "밴드 로우", "sets": 3, "reps": 15, "weight": "-" },
-              { "name": "덤벨 숄더 프레스", "sets": 3, "reps": 12, "weight": "-" },
-              { "name": "푸시업", "sets": 3, "reps": 10, "weight": "-" },
-              { "name": "트레드밀 빠른 걷기", "sets": 1, "reps": 1, "weight": "30분" }
-            ]},
-          { "day": "목", "workout": "레슨-상체", "rest": false, "plan": [
-              { "name": "시티드 케이블 로우", "sets": 3, "reps": 12, "weight": "-" },
-              { "name": "덤벨 숄더 프레스", "sets": 3, "reps": 12, "weight": "-" },
-              { "name": "케이블 풀다운", "sets": 3, "reps": 12, "weight": "-" },
-              { "name": "마운틴 클라이머", "sets": 3, "reps": 20, "weight": "-" },
-              { "name": "흉추 에어플레인 (벽)", "sets": 3, "reps": 20, "weight": "-" }
-            ]},
-          { "day": "금", "workout": "개인-전신", "rest": false, "plan": [
-              { "name": "고블릿 스쿼트", "sets": 3, "reps": 12, "weight": "-" },
-              { "name": "힙브릿지", "sets": 3, "reps": 15, "weight": "-" },
-              { "name": "덤벨 로우", "sets": 3, "reps": 12, "weight": "-" },
-              { "name": "마운틴 클라이머", "sets": 3, "reps": 20, "weight": "-" },
-              { "name": "플랭크", "sets": 3, "reps": 1, "weight": "30초" }
-            ]},
-          { "day": "토", "workout": "자율운동", "rest": false, "plan": [
-              { "name": "산책 or 등산 or 스트레칭", "sets": 1, "reps": 1, "weight": "30~60분" }
-            ]},
-          { "day": "일", "workout": "휴식", "rest": true }
+          {
+            "day": "월",
+            "workout": "개인-글루트",
+            "rest": false,
+            "plan": [
+              {
+                "name": "힙브릿지",
+                "sets": 3,
+                "reps": 15,
+                "weight": "-"
+              },
+              {
+                "name": "싱글 레그 힙힌지",
+                "sets": 3,
+                "reps": 15,
+                "weight": "양쪽"
+              },
+              {
+                "name": "사이드 라잉 클램",
+                "sets": 3,
+                "reps": 20,
+                "weight": "양쪽"
+              },
+              {
+                "name": "흉추 에어플레인 (벽)",
+                "sets": 3,
+                "reps": 20,
+                "weight": "-"
+              }
+            ]
+          },
+          {
+            "day": "화",
+            "workout": "레슨-하체",
+            "rest": false,
+            "plan": [
+              {
+                "name": "힙 스러스트",
+                "sets": 3,
+                "reps": 12,
+                "weight": "-"
+              },
+              {
+                "name": "루마니안 데드리프트",
+                "sets": 3,
+                "reps": 10,
+                "weight": "-"
+              },
+              {
+                "name": "불가리안 스플릿 스쿼트",
+                "sets": 3,
+                "reps": 10,
+                "weight": "양쪽"
+              },
+              {
+                "name": "데드버그",
+                "sets": 3,
+                "reps": 10,
+                "weight": "-"
+              },
+              {
+                "name": "플랭크",
+                "sets": 3,
+                "reps": 1,
+                "weight": "30초"
+              }
+            ]
+          },
+          {
+            "day": "수",
+            "workout": "개인-상체",
+            "rest": false,
+            "plan": [
+              {
+                "name": "밴드 로우",
+                "sets": 3,
+                "reps": 15,
+                "weight": "-"
+              },
+              {
+                "name": "덤벨 숄더 프레스",
+                "sets": 3,
+                "reps": 12,
+                "weight": "-"
+              },
+              {
+                "name": "푸시업",
+                "sets": 3,
+                "reps": 10,
+                "weight": "-"
+              },
+              {
+                "name": "트레드밀 빠른 걷기",
+                "sets": 1,
+                "reps": 1,
+                "weight": "30분"
+              }
+            ]
+          },
+          {
+            "day": "목",
+            "workout": "레슨-상체",
+            "rest": false,
+            "plan": [
+              {
+                "name": "시티드 케이블 로우",
+                "sets": 3,
+                "reps": 12,
+                "weight": "-"
+              },
+              {
+                "name": "덤벨 숄더 프레스",
+                "sets": 3,
+                "reps": 12,
+                "weight": "-"
+              },
+              {
+                "name": "케이블 풀다운",
+                "sets": 3,
+                "reps": 12,
+                "weight": "-"
+              },
+              {
+                "name": "마운틴 클라이머",
+                "sets": 3,
+                "reps": 20,
+                "weight": "-"
+              },
+              {
+                "name": "흉추 에어플레인 (벽)",
+                "sets": 3,
+                "reps": 20,
+                "weight": "-"
+              }
+            ]
+          },
+          {
+            "day": "금",
+            "workout": "개인-전신",
+            "rest": false,
+            "plan": [
+              {
+                "name": "고블릿 스쿼트",
+                "sets": 3,
+                "reps": 12,
+                "weight": "-"
+              },
+              {
+                "name": "힙브릿지",
+                "sets": 3,
+                "reps": 15,
+                "weight": "-"
+              },
+              {
+                "name": "덤벨 로우",
+                "sets": 3,
+                "reps": 12,
+                "weight": "-"
+              },
+              {
+                "name": "마운틴 클라이머",
+                "sets": 3,
+                "reps": 20,
+                "weight": "-"
+              },
+              {
+                "name": "플랭크",
+                "sets": 3,
+                "reps": 1,
+                "weight": "30초"
+              }
+            ]
+          },
+          {
+            "day": "토",
+            "workout": "자율운동",
+            "rest": false,
+            "plan": [
+              {
+                "name": "산책 or 등산 or 스트레칭",
+                "sets": 1,
+                "reps": 1,
+                "weight": "30~60분"
+              }
+            ]
+          },
+          {
+            "day": "일",
+            "workout": "휴식",
+            "rest": true
+          }
         ]
       }
     },
-    { "week": 3, "label": "3주차", "date": "6/8" },
-    { "week": 4, "label": "4주차", "date": "6/15" }
+    {
+      "week": 3,
+      "label": "3주차",
+      "date": "6/8"
+    },
+    {
+      "week": 4,
+      "label": "4주차",
+      "date": "6/15"
+    }
   ]
 }
