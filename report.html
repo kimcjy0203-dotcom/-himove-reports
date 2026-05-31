@@ -508,6 +508,7 @@ function init(data) {
   function switchWeek(idx) {
     document.querySelectorAll('.wt-btn').forEach((b, i) => b.classList.toggle('active', i === idx));
     document.querySelectorAll('.week-panel').forEach((p, i) => p.classList.toggle('active', i === idx));
+    initDailyStatus(idx);
     const w = weeks[idx];
     if (w && w.bodyData && !activeChart[idx]) {
       const canvas = document.getElementById(`bodyChart-${idx}`);
@@ -561,6 +562,29 @@ function init(data) {
     </div>`;
   }
 
+  const todayKey = new Date().toISOString().slice(0,10); // "2026-05-31"
+  function dailyChips(field, opts) {
+    return opts.map(o => `<div class="chip daily-chip" data-field="${field}" data-value="${o}">${o}</div>`).join('');
+  }
+  function initDailyStatus(idx) {
+    const sec = document.getElementById(`ds-${idx}`);
+    if (!sec) return;
+    const sk = `daily-status-${todayKey}-${idx}`;
+    const saved = JSON.parse(localStorage.getItem(sk) || '{}');
+    sec.querySelectorAll('.daily-chip').forEach(chip => {
+      chip.classList.toggle('on', saved[chip.dataset.field] === chip.dataset.value);
+      chip.onclick = () => {
+        const f = chip.dataset.field, v = chip.dataset.value;
+        const cur = JSON.parse(localStorage.getItem(sk) || '{}');
+        cur[f] = cur[f] === v ? null : v;
+        localStorage.setItem(sk, JSON.stringify(cur));
+        sec.querySelectorAll(`.daily-chip[data-field="${f}"]`).forEach(c =>
+          c.classList.toggle('on', c.dataset.value === cur[f])
+        );
+      };
+    });
+  }
+
   function buildPanel(w, idx) {
     if (!w.mainMessage) return `<div class="week-panel" data-idx="${idx}"><div class="week-empty"><div class="we-num">${w.week}주차</div><div class="we-msg">아직 입력 전입니다.<br>수업 후 트레이너가 업데이트해요.</div></div></div>`;
     const bd = w.bodyData;
@@ -590,14 +614,15 @@ function init(data) {
       const dayDate = weekStart ? new Date(weekStart.getTime() + i*86400000) : null;
       const dateNum = dayDate ? dayDate.getDate() : '';
       const isToday = dayDate && dayDate.getTime() === today.getTime();
-      return `<div class="cal-day${d.rest?' rest-day':''}${isToday?' today':''}" data-idx="${i}" data-cal="${calKey}" data-day="${d.day}" data-workout="${d.workout||''}" data-plan='${JSON.stringify(d.plan||[])}' data-istoday="${isToday?'1':'0'}" data-isrest="${d.rest?'1':'0'}"><div class="cd-weekday">${d.day}</div>${dateNum?`<div class="cd-date">${dateNum}</div>`:''}<div class="cd-workout">${d.workout}</div><div class="cd-check">✓</div></div>`;
+      const workoutShort = d.rest ? '휴식' : (d.workout||'').split('-')[0] || '-';
+      return `<div class="cal-day${d.rest?' rest-day':''}${isToday?' today':''}" data-idx="${i}" data-cal="${calKey}" data-day="${d.day}" data-workout="${d.workout||''}" data-plan='${JSON.stringify(d.plan||[])}' data-istoday="${isToday?'1':'0'}" data-isrest="${d.rest?'1':'0'}"><div class="cd-weekday">${d.day}</div>${dateNum?`<div class="cd-date">${dateNum}</div>`:''}<div class="cd-workout">${workoutShort}</div><div class="cd-check">✓</div></div>`;
     }).join('');
     const HR = '<hr style="border:none;border-top:1px solid rgba(160,190,230,0.2);margin:20px 0">';
     return `<div class="week-panel" data-idx="${idx}">
       <div class="card"><div class="card-title gold">이번 주 핵심 메시지</div><div class="msg gold">${w.mainMessage}</div></div>
       <div class="card"><div class="card-title blue">수업 내용</div><div class="sub-label">요약</div><div style="font-size:12px;color:#a8bcd0;margin-bottom:12px">수업일: ${w.summary?.date||''}</div><div class="summary-list">${summaryItems}</div>${HR}<div class="sub-label">운동 피드백</div><div class="exercise-grid">${exItems}</div></div>
       <div class="card"><div class="card-title blue">운동 현황</div><div class="sub-label">주요 리프트</div><div class="lift-grid">${liftItems}</div>${HR}<div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:10px"><div class="sub-label" style="margin-bottom:0">이번 주 트레이닝</div><span class="wk-count" id="wk-count-${idx}">주 0회</span></div><div class="weekly-cal" id="weekly-cal-${idx}">${calDays}</div><div class="note">${r.note||''}</div>${HR}<div class="sub-label">운동 부위</div><div class="body-map-container" id="body-map-${idx}"><div class="body-map-wrap">${FRONT_SVG}<div class="body-map-lbl">앞</div></div><div class="body-map-wrap">${BACK_SVG}<div class="body-map-lbl">뒤</div></div></div></div>
-      ${collapsible('이번 주 상태', 'blue', `<div class="sub-label"><span class="dot" style="background:#f4a07e"></span>컨디션</div>${miniSum('condition',['매우 좋음','좋음','보통','피곤함','매우 피곤함'])}<div class="check-row">${chips(['매우 좋음','좋음','보통','피곤함','매우 피곤함'],w.condition)}</div><div class="note">${w.conditionNote||''}</div>${HR}<div class="sub-label"><span class="dot" style="background:#a78bde"></span>수면</div>${miniSum('sleep',['매우 나쁨','나쁨','보통','좋음','매우 좋음'])}<div class="check-row">${chips(['매우 나쁨','나쁨','보통','좋음','매우 좋음'],w.sleep)}</div><div class="note">${w.sleepNote||''}</div>${HR}<div class="sub-label"><span class="dot" style="background:#6dc99c"></span>신체 불편</div>${miniSum('pain',['없음','있음'])}<div class="check-row">${chips(['없음','있음'],w.pain)}</div><div class="note">${w.painNote||''}</div>${HR}<div class="sub-label"><span class="dot" style="background:#f0c96a"></span>영양 상태</div>${miniSum('nutrition',['매우 나쁨','나쁨','보통','좋음','매우 좋음'])}<div class="check-row">${chips(['매우 나쁨','나쁨','보통','좋음','매우 좋음'],w.nutrition)}</div><div class="note">${w.nutritionNote||''}</div>`)}
+      ${collapsible('이번 주 상태', 'blue', `<div id="ds-${idx}"><div style="font-size:11px;color:#a0b8d0;font-weight:600;margin-bottom:14px">📅 오늘 ${new Date().toLocaleDateString('ko-KR',{month:'long',day:'numeric'})} 기준 — 매일 초기화</div><div class="sub-label"><span class="dot" style="background:#f4a07e"></span>컨디션</div>${miniSum('condition',['매우 좋음','좋음','보통','피곤함','매우 피곤함'])}<div class="check-row">${dailyChips('condition',['매우 좋음','좋음','보통','피곤함','매우 피곤함'])}</div>${HR}<div class="sub-label"><span class="dot" style="background:#a78bde"></span>수면</div>${miniSum('sleep',['매우 나쁨','나쁨','보통','좋음','매우 좋음'])}<div class="check-row">${dailyChips('sleep',['매우 나쁨','나쁨','보통','좋음','매우 좋음'])}</div>${HR}<div class="sub-label"><span class="dot" style="background:#6dc99c"></span>신체 불편</div>${miniSum('pain',['없음','있음'])}<div class="check-row">${dailyChips('pain',['없음','있음'])}</div>${HR}<div class="sub-label"><span class="dot" style="background:#f0c96a"></span>영양 상태</div>${miniSum('nutrition',['매우 나쁨','나쁨','보통','좋음','매우 좋음'])}<div class="check-row">${dailyChips('nutrition',['매우 나쁨','나쁨','보통','좋음','매우 좋음'])}</div></div>`)}
       ${collapsible('체성분', 'green', `${buildCountdown(bd.lastMeasured)}<div class="stat-grid" style="margin-top:${bd.lastMeasured?'14px':'0'}"><div class="stat-box"><div class="lbl">체중</div><div class="val">${lW??'—'}</div><div class="unt">kg</div></div><div class="stat-box"><div class="lbl">체지방량</div><div class="val">${lF??'—'}</div><div class="unt">kg</div></div><div class="stat-box"><div class="lbl">골격근량</div><div class="val">${lM??'—'}</div><div class="unt">kg</div></div></div><div class="delta-row"><div class="delta-box"><span class="dlbl">체중 변화</span><span class="dval ${dW.cls}">${dW.text}</span></div><div class="delta-box"><span class="dlbl">체지방 변화</span><span class="dval ${dF.cls}">${dF.text}</span></div><div class="delta-box"><span class="dlbl">근육 변화</span><span class="dval ${dM.cls}">${dM.text}</span></div></div>${HR}<div class="sub-label">변화 추이</div><div style="position:relative;height:220px;margin-bottom:14px"><canvas id="bodyChart-${idx}"></canvas></div><div class="msg">${bd.comment}</div>`)}
       ${isMember ? '' : collapsible('트레이너 평가', 'gold', `<div style="margin-bottom:14px"><div class="sub-label">✓ 잘 하고 있는 점</div><div class="msg green">${w.review.good}</div></div><div style="margin-bottom:14px"><div class="sub-label">⚠ 주의할 점</div><div class="msg gold">${w.review.caution}</div></div><div style="margin-bottom:20px"><div class="sub-label">→ 권장 사항</div><div class="msg">${w.review.suggest}</div></div>${HR}<div class="sub-label">코멘트</div><div class="msg gold" style="margin-bottom:16px">${w.trainerComment}</div><div class="sub-label">트레이닝 방향</div><div class="msg">${w.trainerDirection}</div>`)}
       ${!isMember && w.nextSessionMemo ? `<div class="card" style="border-left:3px solid rgba(200,160,90,0.5)"><div class="card-title gold">다음 수업 준비<span class="memo-badge">TRAINER</span></div><div class="note">${w.nextSessionMemo}</div></div>` : ''}
