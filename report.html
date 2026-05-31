@@ -71,7 +71,7 @@ body > * { position: relative; z-index: 1; }
   margin-bottom: 18px; display: flex; align-items: center; justify-content: space-between;
 }
 .card-title.gold::after {
-  content: 'TRAINER'; font-size: 9px; font-weight: 700; letter-spacing: 1.5px; color: #6a9ac4;
+  content: '트레이너'; font-size: 9px; font-weight: 700; letter-spacing: 0.5px; color: #6a9ac4;
   background: rgba(100,160,220,0.1); border: 1px solid rgba(100,160,220,0.2);
   border-radius: 100px; padding: 2px 9px;
 }
@@ -422,9 +422,9 @@ function init(data) {
 
   const goalsCard = document.getElementById('goals-card');
   const goalItems = [
-    { key: 'short', badge: 'SHORT', label: '단기 목표', cls: 'gt-short' },
-    { key: 'mid',   badge: 'MID',   label: '중기 목표', cls: 'gt-mid'   },
-    { key: 'long',  badge: 'LONG',  label: '장기 목표', cls: 'gt-long'  }
+    { key: 'short', badge: '단기', label: '단기 목표', cls: 'gt-short' },
+    { key: 'mid',   badge: '중기', label: '중기 목표', cls: 'gt-mid'   },
+    { key: 'long',  badge: '장기', label: '장기 목표', cls: 'gt-long'  }
   ];
   const timeline = goalItems.map(it => {
     const d = goals[it.key]; if (!d || !d.text) return '';
@@ -625,8 +625,8 @@ function init(data) {
       ${collapsible('이번 주 상태', 'blue', `<div id="ds-${idx}"><div style="font-size:11px;color:#a0b8d0;font-weight:600;margin-bottom:14px">📅 오늘 ${new Date().toLocaleDateString('ko-KR',{month:'long',day:'numeric'})} 기준 — 매일 초기화</div><div class="sub-label"><span class="dot" style="background:#f4a07e"></span>컨디션</div>${miniSum('condition',['매우 좋음','좋음','보통','피곤함','매우 피곤함'])}<div class="check-row">${dailyChips('condition',['매우 좋음','좋음','보통','피곤함','매우 피곤함'])}</div>${HR}<div class="sub-label"><span class="dot" style="background:#a78bde"></span>수면</div>${miniSum('sleep',['매우 나쁨','나쁨','보통','좋음','매우 좋음'])}<div class="check-row">${dailyChips('sleep',['매우 나쁨','나쁨','보통','좋음','매우 좋음'])}</div>${HR}<div class="sub-label"><span class="dot" style="background:#6dc99c"></span>신체 불편</div>${miniSum('pain',['없음','있음'])}<div class="check-row">${dailyChips('pain',['없음','있음'])}</div>${HR}<div class="sub-label"><span class="dot" style="background:#f0c96a"></span>영양 상태</div>${miniSum('nutrition',['매우 나쁨','나쁨','보통','좋음','매우 좋음'])}<div class="check-row">${dailyChips('nutrition',['매우 나쁨','나쁨','보통','좋음','매우 좋음'])}</div></div>`)}
       ${collapsible('체성분', 'green', `${buildCountdown(bd.lastMeasured)}<div class="stat-grid" style="margin-top:${bd.lastMeasured?'14px':'0'}"><div class="stat-box"><div class="lbl">체중</div><div class="val">${lW??'—'}</div><div class="unt">kg</div></div><div class="stat-box"><div class="lbl">체지방량</div><div class="val">${lF??'—'}</div><div class="unt">kg</div></div><div class="stat-box"><div class="lbl">골격근량</div><div class="val">${lM??'—'}</div><div class="unt">kg</div></div></div><div class="delta-row"><div class="delta-box"><span class="dlbl">체중 변화</span><span class="dval ${dW.cls}">${dW.text}</span></div><div class="delta-box"><span class="dlbl">체지방 변화</span><span class="dval ${dF.cls}">${dF.text}</span></div><div class="delta-box"><span class="dlbl">근육 변화</span><span class="dval ${dM.cls}">${dM.text}</span></div></div>${HR}<div class="sub-label">변화 추이</div><div style="position:relative;height:220px;margin-bottom:14px"><canvas id="bodyChart-${idx}"></canvas></div><div class="msg">${bd.comment}</div>`)}
       ${isMember ? '' : collapsible('트레이너 평가', 'gold', `<div style="margin-bottom:14px"><div class="sub-label">✓ 잘 하고 있는 점</div><div class="msg green">${w.review.good}</div></div><div style="margin-bottom:14px"><div class="sub-label">⚠ 주의할 점</div><div class="msg gold">${w.review.caution}</div></div><div style="margin-bottom:20px"><div class="sub-label">→ 권장 사항</div><div class="msg">${w.review.suggest}</div></div>${HR}<div class="sub-label">코멘트</div><div class="msg gold" style="margin-bottom:16px">${w.trainerComment}</div><div class="sub-label">트레이닝 방향</div><div class="msg">${w.trainerDirection}</div>`)}
-      ${!isMember && w.nextSessionMemo ? `<div class="card" style="border-left:3px solid rgba(200,160,90,0.5)"><div class="card-title gold">다음 수업 준비<span class="memo-badge">TRAINER</span></div><div class="note">${w.nextSessionMemo}</div></div>` : ''}
-      <div class="final-card"><div>FINAL MESSAGE</div><div>${w.finalMessage}</div></div>
+      ${!isMember && w.nextSessionMemo ? `<div class="card" style="border-left:3px solid rgba(200,160,90,0.5)"><div class="card-title gold">다음 수업 준비<span class="memo-badge">트레이너</span></div><div class="note">${w.nextSessionMemo}</div></div>` : ''}
+      <div class="final-card"><div>마무리 메시지</div><div>${w.finalMessage}</div></div>
     </div>`;
   }
 
