@@ -269,7 +269,14 @@ tr:last-child td { border-bottom: none; }
   <div id="week-panels"></div>
   <div class="card" id="cardio-guide-card" style="display:none">
     <div class="card-title blue">유산소 강도 가이드</div>
-    <div class="zone-table" id="member-zone-table" style="margin-top:8px;gap:5px"></div>
+    <div style="display:flex;align-items:center;gap:8px;margin:8px 0 4px">
+      <span style="font-size:11px;color:#a0b8d0;white-space:nowrap">오늘 안정시 심박수</span>
+      <input id="member-rhr-input" type="number" min="40" max="120"
+        style="width:56px;background:rgba(255,255,255,0.6);border:1px solid rgba(160,190,230,0.4);border-radius:8px;padding:4px 6px;font-size:13px;font-weight:700;color:#2a3a50;text-align:center;outline:none;font-family:inherit">
+      <span style="font-size:11px;color:#a0b8d0">bpm</span>
+    </div>
+    <div id="member-zone-formula" style="font-size:10px;color:#c0d0e0;margin-bottom:10px;padding:0 2px"></div>
+    <div class="zone-table" id="member-zone-table" style="gap:5px"></div>
   </div>
   <div class="card trainer-only" style="padding:0;overflow:hidden">
     <button class="tool-toggle" onclick="this.classList.toggle('open');this.nextElementSibling.classList.toggle('hidden')">
@@ -505,14 +512,22 @@ function init(data) {
   calcZones();
 
   /* 회원용 유산소 강도 가이드 */
-  if (cardio?.age && cardio?.restingHR) {
-    const _max = Math.round(207 - 0.7 * cardio.age);
-    const _hrr = _max - cardio.restingHR;
-    document.getElementById('member-zone-table').innerHTML = ZONES.map(z => {
-      const lo = Math.round(z.pctLo * _hrr + cardio.restingHR);
-      const hi = Math.round(z.pctHi * _hrr + cardio.restingHR);
-      return `<div class="zone-row"><div class="zone-dot" style="background:${z.color}"></div><div class="zone-label" style="color:${z.color}">${z.label}</div><div class="zone-range">${lo}–${hi}<span>bpm</span></div><div class="zone-desc">${z.desc}</div></div>`;
-    }).join('');
+  if (cardio?.age) {
+    const memberRhrEl = document.getElementById('member-rhr-input');
+    memberRhrEl.value = cardio.restingHR || 65;
+    const maxHR = Math.round(207 - 0.7 * cardio.age);
+    function renderMemberZones() {
+      const rhr = parseInt(memberRhrEl.value) || 65;
+      const hrr = maxHR - rhr;
+      document.getElementById('member-zone-formula').textContent = `최대 심박수 ${maxHR} bpm · 심박 여유도 ${hrr} bpm (카르보넨 공식)`;
+      document.getElementById('member-zone-table').innerHTML = ZONES.map(z => {
+        const lo = Math.round(z.pctLo * hrr + rhr);
+        const hi = Math.round(z.pctHi * hrr + rhr);
+        return `<div class="zone-row"><div class="zone-dot" style="background:${z.color}"></div><div class="zone-label" style="color:${z.color}">${z.label}</div><div class="zone-range">${lo}–${hi}<span>bpm</span></div><div class="zone-desc">${z.desc}</div></div>`;
+      }).join('');
+    }
+    memberRhrEl.addEventListener('input', renderMemberZones);
+    renderMemberZones();
     document.getElementById('cardio-guide-card').style.display = 'block';
   }
 
