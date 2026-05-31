@@ -18,8 +18,17 @@
     {
       "week": 1, "label": "1주차", "date": "6/1",
       "mainMessage": "",
-      "summary": { "date": "", "items": [] },
-      "exercises": [],
+      "summary": {
+        "date": "지난 수업 (2026년 5월 28일)",
+        "items": [
+          { "name": "폼롤러 캣카우 + 흉추 회전", "detail": "흉추 가동성 워밍업" },
+          { "name": "네발기기 흉추 회전", "detail": "3세트 × 10회 / 손 귀 옆, 양쪽" },
+          { "name": "에어플레인 흉추파트 (벽)", "detail": "3세트 × 15회" }
+        ]
+      },
+      "exercises": [
+        { "name": "흉추 가동성 루틴", "note": "전반적으로 많이 향상됨. 아직 타이트한 부위 일부 남아있어 워밍업으로 꾸준히 유지 필요.", "next": "개인 운동 시 매회 워밍업으로 포함" }
+      ],
       "lifts": [],
       "bodyData": {
         "labels":  ["5/18"],
@@ -37,23 +46,29 @@
       "review": { "good": "", "caution": "", "suggest": "" },
       "trainerComment": "", "trainerDirection": "",
       "finalMessage": "", "nextSessionMemo": "",
-      "musclesWorked": [],
+      "musclesWorked": ["back", "shoulders"],
       "weeklyRoutine": {
         "weekKey": "2026-W23-mj",
-        "note": "레슨(화목) + 개인(월수) + 자율 또는 휴식(금~일) 구조. 허리·무릎 주의.",
+        "note": "구술 실기 시험 대비 — 개인 운동은 종목 학습 위주. 흉추 가동성 워밍업 매회 포함.",
         "days": [
-          { "day": "월", "workout": "개인-하체", "rest": false, "plan": [
-              { "name": "힙브릿지", "sets": 3, "reps": 15, "weight": "-" },
-              { "name": "밴드 사이드 워크", "sets": 3, "reps": 15, "weight": "양쪽" },
-              { "name": "데드버그", "sets": 3, "reps": 10, "weight": "-" },
-              { "name": "흉추 에어플레인 (벽)", "sets": 3, "reps": 15, "weight": "-" }
+          { "day": "월", "workout": "개인-하체종목", "rest": false, "plan": [
+              { "name": "[ 워밍업 ] 폼롤러 흉추 회전", "sets": 1, "reps": 1, "weight": "5분" },
+              { "name": "[ 워밍업 ] 네발기기 흉추 회전", "sets": 3, "reps": 10, "weight": "양쪽" },
+              { "name": "[ 워밍업 ] 에어플레인 (벽)", "sets": 3, "reps": 15, "weight": "-" },
+              { "name": "스쿼트 (고블릿)", "sets": 3, "reps": 12, "weight": "-" },
+              { "name": "루마니안 데드리프트", "sets": 3, "reps": 10, "weight": "-" },
+              { "name": "힙 스러스트", "sets": 3, "reps": 12, "weight": "-" },
+              { "name": "레그 프레스", "sets": 3, "reps": 12, "weight": "-" }
             ]},
           { "day": "화", "workout": "레슨", "rest": false },
-          { "day": "수", "workout": "개인-상체", "rest": false, "plan": [
-              { "name": "밴드 로우", "sets": 3, "reps": 15, "weight": "-" },
+          { "day": "수", "workout": "개인-상체종목", "rest": false, "plan": [
+              { "name": "[ 워밍업 ] 폼롤러 흉추 회전", "sets": 1, "reps": 1, "weight": "5분" },
+              { "name": "[ 워밍업 ] 에어플레인 (벽)", "sets": 3, "reps": 15, "weight": "-" },
+              { "name": "벤트오버 바벨 로우", "sets": 3, "reps": 10, "weight": "-" },
+              { "name": "렛 풀다운", "sets": 3, "reps": 12, "weight": "-" },
               { "name": "덤벨 숄더 프레스", "sets": 3, "reps": 12, "weight": "-" },
-              { "name": "케이블 풀다운", "sets": 3, "reps": 12, "weight": "-" },
-              { "name": "트레드밀 걷기", "sets": 1, "reps": 1, "weight": "20분 저강도" }
+              { "name": "덤벨 벤치프레스", "sets": 3, "reps": 12, "weight": "-" },
+              { "name": "트레드밀 걷기", "sets": 1, "reps": 1, "weight": "20분" }
             ]},
           { "day": "목", "workout": "레슨", "rest": false },
           { "day": "금", "workout": "자율", "rest": false, "plan": [
@@ -82,20 +97,26 @@
       "musclesWorked": [],
       "weeklyRoutine": {
         "weekKey": "2026-W24-mj",
-        "note": "레슨(화목) + 개인(월수) 구조",
+        "note": "구술 실기 시험 대비 2주차 — 지난 주 종목 복습 + 새 종목 추가",
         "days": [
-          { "day": "월", "workout": "개인-하체", "rest": false, "plan": [
-              { "name": "힙브릿지", "sets": 3, "reps": 15, "weight": "-" },
-              { "name": "밴드 사이드 워크", "sets": 3, "reps": 15, "weight": "양쪽" },
-              { "name": "데드버그", "sets": 3, "reps": 10, "weight": "-" },
-              { "name": "흉추 에어플레인 (벽)", "sets": 3, "reps": 15, "weight": "-" }
+          { "day": "월", "workout": "개인-하체종목", "rest": false, "plan": [
+              { "name": "[ 워밍업 ] 폼롤러 흉추 회전", "sets": 1, "reps": 1, "weight": "5분" },
+              { "name": "[ 워밍업 ] 네발기기 흉추 회전", "sets": 3, "reps": 10, "weight": "양쪽" },
+              { "name": "레그 프레스", "sets": 3, "reps": 12, "weight": "-" },
+              { "name": "레그 익스텐션", "sets": 3, "reps": 12, "weight": "-" },
+              { "name": "레그 컬 (라잉)", "sets": 3, "reps": 12, "weight": "-" },
+              { "name": "힙 어브덕션 머신", "sets": 3, "reps": 15, "weight": "-" },
+              { "name": "카프 레이즈", "sets": 3, "reps": 15, "weight": "-" }
             ]},
           { "day": "화", "workout": "레슨", "rest": false },
-          { "day": "수", "workout": "개인-상체", "rest": false, "plan": [
-              { "name": "밴드 로우", "sets": 3, "reps": 15, "weight": "-" },
-              { "name": "덤벨 숄더 프레스", "sets": 3, "reps": 12, "weight": "-" },
-              { "name": "케이블 풀다운", "sets": 3, "reps": 12, "weight": "-" },
-              { "name": "트레드밀 걷기", "sets": 1, "reps": 1, "weight": "20분 저강도" }
+          { "day": "수", "workout": "개인-상체종목", "rest": false, "plan": [
+              { "name": "[ 워밍업 ] 폼롤러 흉추 회전", "sets": 1, "reps": 1, "weight": "5분" },
+              { "name": "케이블 체스트 플라이", "sets": 3, "reps": 12, "weight": "-" },
+              { "name": "덤벨 바이셉 컬", "sets": 3, "reps": 12, "weight": "-" },
+              { "name": "트라이셉 로프 풀다운", "sets": 3, "reps": 12, "weight": "-" },
+              { "name": "케이블 사이드 레터럴 레이즈", "sets": 3, "reps": 15, "weight": "-" },
+              { "name": "페이스 풀", "sets": 3, "reps": 15, "weight": "-" },
+              { "name": "트레드밀 걷기", "sets": 1, "reps": 1, "weight": "20분" }
             ]},
           { "day": "목", "workout": "레슨", "rest": false },
           { "day": "금", "workout": "자율", "rest": false, "plan": [
