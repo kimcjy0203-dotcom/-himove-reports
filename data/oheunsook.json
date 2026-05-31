@@ -160,39 +160,7 @@
           {
             "day": "화",
             "workout": "레슨-하체",
-            "rest": false,
-            "plan": [
-              {
-                "name": "힙 스러스트",
-                "sets": 3,
-                "reps": 12,
-                "weight": "-"
-              },
-              {
-                "name": "루마니안 데드리프트",
-                "sets": 3,
-                "reps": 10,
-                "weight": "가벼운 중량"
-              },
-              {
-                "name": "불가리안 스플릿 스쿼트",
-                "sets": 3,
-                "reps": 10,
-                "weight": "양쪽"
-              },
-              {
-                "name": "데드버그",
-                "sets": 3,
-                "reps": 10,
-                "weight": "-"
-              },
-              {
-                "name": "플랭크",
-                "sets": 3,
-                "reps": 1,
-                "weight": "30초"
-              }
-            ]
+            "rest": false
           },
           {
             "day": "수",
@@ -228,39 +196,7 @@
           {
             "day": "목",
             "workout": "레슨-상체",
-            "rest": false,
-            "plan": [
-              {
-                "name": "시티드 케이블 로우",
-                "sets": 3,
-                "reps": 12,
-                "weight": "-"
-              },
-              {
-                "name": "덤벨 숄더 프레스",
-                "sets": 3,
-                "reps": 12,
-                "weight": "-"
-              },
-              {
-                "name": "케이블 풀다운",
-                "sets": 3,
-                "reps": 12,
-                "weight": "-"
-              },
-              {
-                "name": "마운틴 클라이머",
-                "sets": 3,
-                "reps": 20,
-                "weight": "-"
-              },
-              {
-                "name": "흉추 에어플레인 (벽)",
-                "sets": 3,
-                "reps": 20,
-                "weight": "-"
-              }
-            ]
+            "rest": false
           },
           {
             "day": "금",
@@ -397,39 +333,7 @@
           {
             "day": "화",
             "workout": "레슨-하체",
-            "rest": false,
-            "plan": [
-              {
-                "name": "힙 스러스트",
-                "sets": 3,
-                "reps": 12,
-                "weight": "-"
-              },
-              {
-                "name": "루마니안 데드리프트",
-                "sets": 3,
-                "reps": 10,
-                "weight": "-"
-              },
-              {
-                "name": "불가리안 스플릿 스쿼트",
-                "sets": 3,
-                "reps": 10,
-                "weight": "양쪽"
-              },
-              {
-                "name": "데드버그",
-                "sets": 3,
-                "reps": 10,
-                "weight": "-"
-              },
-              {
-                "name": "플랭크",
-                "sets": 3,
-                "reps": 1,
-                "weight": "30초"
-              }
-            ]
+            "rest": false
           },
           {
             "day": "수",
@@ -465,39 +369,7 @@
           {
             "day": "목",
             "workout": "레슨-상체",
-            "rest": false,
-            "plan": [
-              {
-                "name": "시티드 케이블 로우",
-                "sets": 3,
-                "reps": 12,
-                "weight": "-"
-              },
-              {
-                "name": "덤벨 숄더 프레스",
-                "sets": 3,
-                "reps": 12,
-                "weight": "-"
-              },
-              {
-                "name": "케이블 풀다운",
-                "sets": 3,
-                "reps": 12,
-                "weight": "-"
-              },
-              {
-                "name": "마운틴 클라이머",
-                "sets": 3,
-                "reps": 20,
-                "weight": "-"
-              },
-              {
-                "name": "흉추 에어플레인 (벽)",
-                "sets": 3,
-                "reps": 20,
-                "weight": "-"
-              }
-            ]
+            "rest": false
           },
           {
             "day": "금",
