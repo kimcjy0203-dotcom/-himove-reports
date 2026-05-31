@@ -1,0 +1,114 @@
+{
+  "name": "김문진",
+  "month": "2026년 6월",
+  "purposes": ["체중감량", "근력강화", "체력향상", "건강관리", "자세교정"],
+  "goals": {
+    "short": { "text": "2~4kg 체중 감량 — 꾸준한 운동 습관 정착 및 생활 활동량 증가", "period": "1~2개월" },
+    "mid":   { "text": "6~8kg 체중 감량 — 체지방 35% 아래 달성 및 근력 향상", "period": "4~5개월" },
+    "long":  { "text": "10~15kg 체중 감량 — 건강한 체성분 완성 및 자립적 운동 능력 확보", "period": "12개월" }
+  },
+  "bodyGoals": {
+    "weight": { "start": 84.3, "goal": 69.0 },
+    "muscle": { "start": 29.5, "goal": 30.0 },
+    "fat":    { "start": 31.4, "goal": 26.0 }
+  },
+  "cardio": { "age": 52, "restingHR": 65 },
+  "orm": { "weight": 40, "reps": 10, "goal": "근비대" },
+  "weeks": [
+    {
+      "week": 1, "label": "1주차", "date": "6/1",
+      "mainMessage": "",
+      "summary": { "date": "", "items": [] },
+      "exercises": [],
+      "lifts": [],
+      "bodyData": {
+        "labels":  ["5/18"],
+        "weight":  [84.3],
+        "fat":     [31.4],
+        "muscle":  [29.5],
+        "lastMeasured": "2026-05-18",
+        "comment": "5월 18일 측정 기준이에요. 목표까지 체중 -15.3kg, 체지방 -5.4kg 남았어요. 꾸준히 하면 충분히 가능합니다!"
+      },
+      "condition": "보통", "conditionNote": "",
+      "sleep": "보통",    "sleepNote": "",
+      "stress": "보통",
+      "pain": "없음",     "painNote": "",
+      "nutrition": "보통", "nutritionNote": "",
+      "review": { "good": "", "caution": "", "suggest": "" },
+      "trainerComment": "", "trainerDirection": "",
+      "finalMessage": "", "nextSessionMemo": "",
+      "musclesWorked": [],
+      "weeklyRoutine": {
+        "weekKey": "2026-W23-mj",
+        "note": "레슨(화목) + 개인(월수) + 자율 또는 휴식(금~일) 구조. 허리·무릎 주의.",
+        "days": [
+          { "day": "월", "workout": "개인-하체", "rest": false, "plan": [
+              { "name": "힙브릿지", "sets": 3, "reps": 15, "weight": "-" },
+              { "name": "밴드 사이드 워크", "sets": 3, "reps": 15, "weight": "양쪽" },
+              { "name": "데드버그", "sets": 3, "reps": 10, "weight": "-" },
+              { "name": "흉추 에어플레인 (벽)", "sets": 3, "reps": 15, "weight": "-" }
+            ]},
+          { "day": "화", "workout": "레슨", "rest": false },
+          { "day": "수", "workout": "개인-상체", "rest": false, "plan": [
+              { "name": "밴드 로우", "sets": 3, "reps": 15, "weight": "-" },
+              { "name": "덤벨 숄더 프레스", "sets": 3, "reps": 12, "weight": "-" },
+              { "name": "케이블 풀다운", "sets": 3, "reps": 12, "weight": "-" },
+              { "name": "트레드밀 걷기", "sets": 1, "reps": 1, "weight": "20분 저강도" }
+            ]},
+          { "day": "목", "workout": "레슨", "rest": false },
+          { "day": "금", "workout": "자율", "rest": false, "plan": [
+              { "name": "가벼운 산책 또는 휴식", "sets": 1, "reps": 1, "weight": "30분" }
+            ]},
+          { "day": "토", "workout": "자율", "rest": false, "plan": [
+              { "name": "가벼운 산책 또는 휴식", "sets": 1, "reps": 1, "weight": "30분" }
+            ]},
+          { "day": "일", "workout": "휴식", "rest": true }
+        ]
+      }
+    },
+    { "week": 2, "label": "2주차", "date": "6/8",
+      "mainMessage": "",
+      "summary": { "date": "", "items": [] },
+      "exercises": [], "lifts": [],
+      "bodyData": { "labels": [], "weight": [], "fat": [], "muscle": [], "lastMeasured": null, "comment": "" },
+      "condition": "보통", "conditionNote": "",
+      "sleep": "보통",    "sleepNote": "",
+      "stress": "보통",
+      "pain": "없음",     "painNote": "",
+      "nutrition": "보통", "nutritionNote": "",
+      "review": { "good": "", "caution": "", "suggest": "" },
+      "trainerComment": "", "trainerDirection": "",
+      "finalMessage": "", "nextSessionMemo": "",
+      "musclesWorked": [],
+      "weeklyRoutine": {
+        "weekKey": "2026-W24-mj",
+        "note": "레슨(화목) + 개인(월수) 구조",
+        "days": [
+          { "day": "월", "workout": "개인-하체", "rest": false, "plan": [
+              { "name": "힙브릿지", "sets": 3, "reps": 15, "weight": "-" },
+              { "name": "밴드 사이드 워크", "sets": 3, "reps": 15, "weight": "양쪽" },
+              { "name": "데드버그", "sets": 3, "reps": 10, "weight": "-" },
+              { "name": "흉추 에어플레인 (벽)", "sets": 3, "reps": 15, "weight": "-" }
+            ]},
+          { "day": "화", "workout": "레슨", "rest": false },
+          { "day": "수", "workout": "개인-상체", "rest": false, "plan": [
+              { "name": "밴드 로우", "sets": 3, "reps": 15, "weight": "-" },
+              { "name": "덤벨 숄더 프레스", "sets": 3, "reps": 12, "weight": "-" },
+              { "name": "케이블 풀다운", "sets": 3, "reps": 12, "weight": "-" },
+              { "name": "트레드밀 걷기", "sets": 1, "reps": 1, "weight": "20분 저강도" }
+            ]},
+          { "day": "목", "workout": "레슨", "rest": false },
+          { "day": "금", "workout": "자율", "rest": false, "plan": [
+              { "name": "가벼운 산책 또는 휴식", "sets": 1, "reps": 1, "weight": "30분" }
+            ]},
+          { "day": "토", "workout": "자율", "rest": false, "plan": [
+              { "name": "가벼운 산책 또는 휴식", "sets": 1, "reps": 1, "weight": "30분" }
+            ]},
+          { "day": "일", "workout": "휴식", "rest": true }
+        ]
+      }
+    },
+    { "week": 3, "label": "3주차", "date": "6/15" },
+    { "week": 4, "label": "4주차", "date": "6/22" }
+  ]
+}
