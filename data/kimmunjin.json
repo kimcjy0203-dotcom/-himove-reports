@@ -1,6 +1,6 @@
 {
   "name": "김문진",
-  "month": "2026년 6월",
+  "month": "2026년 5~6월",
   "purposes": ["체중감량", "근력강화", "체력향상", "건강관리", "자세교정"],
   "goals": {
     "short": { "text": "2~4kg 체중 감량 — 꾸준한 운동 습관 정착 및 생활 활동량 증가", "period": "1~2개월" },
@@ -16,10 +16,10 @@
   "orm": { "weight": 40, "reps": 10, "goal": "근비대" },
   "weeks": [
     {
-      "week": 1, "label": "1주차", "date": "6/1",
-      "mainMessage": "",
+      "week": 0, "label": "5월 마지막주", "date": "5/26",
+      "mainMessage": "5월 마지막 수업 수고하셨어요! 흉추 가동성이 많이 좋아지고 있어요. 아직 타이트한 부위가 조금 남아있으니 매 운동 전 워밍업으로 꾸준히 이어가요.",
       "summary": {
-        "date": "지난 수업 (2026년 5월 28일)",
+        "date": "2026년 5월 28일",
         "items": [
           { "name": "폼롤러 캣카우 + 흉추 회전", "detail": "흉추 가동성 워밍업" },
           { "name": "네발기기 흉추 회전", "detail": "3세트 × 10회 / 손 귀 옆, 양쪽" },
@@ -43,10 +43,42 @@
       "stress": "보통",
       "pain": "없음",     "painNote": "",
       "nutrition": "보통", "nutritionNote": "",
+      "review": { "good": "흉추 가동성 꾸준히 향상 중. 집중력 좋음.", "caution": "타이트한 부위 아직 남아있으니 워밍업 절대 스킵 금지.", "suggest": "개인 운동 시 흉추 워밍업 5분 먼저 하고 시작하기." },
+      "trainerComment": "흉추 가동성이 좋아지면 어깨·허리 부담이 훨씬 줄어들어요. 이 흐름 잘 유지해봐요!",
+      "trainerDirection": "6월부터 구술 실기 시험 대비 — 개인 운동에서 웨이트 종목 학습 병행.",
+      "finalMessage": "5월 한 달 수고하셨어요! 6월엔 시험도 잘 마무리하고 운동도 함께 이어가요 💪",
+      "nextSessionMemo": "",
+      "musclesWorked": ["back", "shoulders"],
+      "weeklyRoutine": {
+        "weekKey": "2026-W22-mj",
+        "note": "5월 마지막 주",
+        "days": [
+          { "day": "월", "workout": "-", "rest": false },
+          { "day": "화", "workout": "-", "rest": false },
+          { "day": "수", "workout": "레슨", "rest": false },
+          { "day": "목", "workout": "-", "rest": false },
+          { "day": "금", "workout": "-", "rest": false },
+          { "day": "토", "workout": "자율", "rest": false },
+          { "day": "일", "workout": "휴식", "rest": true }
+        ]
+      }
+    },
+    {
+      "week": 1, "label": "1주차", "date": "6/1",
+      "mainMessage": "",
+      "summary": { "date": "", "items": [] },
+      "exercises": [],
+      "lifts": [],
+      "bodyData": { "labels": [], "weight": [], "fat": [], "muscle": [], "lastMeasured": null, "comment": "" },
+      "condition": "보통", "conditionNote": "",
+      "sleep": "보통",    "sleepNote": "",
+      "stress": "보통",
+      "pain": "없음",     "painNote": "",
+      "nutrition": "보통", "nutritionNote": "",
       "review": { "good": "", "caution": "", "suggest": "" },
       "trainerComment": "", "trainerDirection": "",
       "finalMessage": "", "nextSessionMemo": "",
-      "musclesWorked": ["back", "shoulders"],
+      "musclesWorked": [],
       "weeklyRoutine": {
         "weekKey": "2026-W23-mj",
         "note": "구술 실기 시험 대비 — 개인 운동은 종목 학습 위주. 흉추 가동성 워밍업 매회 포함.",
