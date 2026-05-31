@@ -1,29 +1,71 @@
 {
   "name": "김문진",
   "month": "2026년 5~6월",
-  "purposes": ["체중감량", "근력강화", "체력향상", "건강관리", "자세교정"],
+  "purposes": [
+    "체중감량",
+    "근력강화",
+    "체력향상",
+    "건강관리",
+    "자세교정"
+  ],
   "goals": {
-    "short": { "text": "2~4kg 체중 감량 — 꾸준한 운동 습관 정착 및 생활 활동량 증가", "period": "1~2개월" },
-    "mid":   { "text": "6~8kg 체중 감량 — 체지방 35% 아래 달성 및 근력 향상", "period": "4~5개월" },
-    "long":  { "text": "10~15kg 체중 감량 — 건강한 체성분 완성 및 자립적 운동 능력 확보", "period": "12개월" }
+    "short": {
+      "text": "전체 관절 가동범위 향상 + 2~4kg 체중 감량 — 견관절·흉추·고관절·발목 가동성 개선",
+      "period": "1~2개월"
+    },
+    "mid": {
+      "text": "6~8kg 체중 감량 + 가동성 기반 근력 강화 — 체지방 35% 아래 달성",
+      "period": "4~5개월"
+    },
+    "long": {
+      "text": "10~15kg 체중 감량 — 건강한 체성분 완성 및 자립적 운동 능력 확보",
+      "period": "12개월"
+    }
   },
   "bodyGoals": {
-    "weight": { "start": 84.3, "goal": 69.0 },
-    "muscle": { "start": 29.5, "goal": 30.0 },
-    "fat":    { "start": 31.4, "goal": 26.0 }
+    "weight": {
+      "start": 84.3,
+      "goal": 69.0
+    },
+    "muscle": {
+      "start": 29.5,
+      "goal": 30.0
+    },
+    "fat": {
+      "start": 31.4,
+      "goal": 26.0
+    }
   },
-  "cardio": { "age": 52, "restingHR": 65 },
-  "orm": { "weight": 40, "reps": 10, "goal": "근비대" },
+  "cardio": {
+    "age": 52,
+    "restingHR": 65
+  },
+  "orm": {
+    "weight": 40,
+    "reps": 10,
+    "goal": "근비대"
+  },
   "weeks": [
     {
-      "week": 0, "label": "5월 마지막주", "date": "5/26",
+      "week": 0,
+      "label": "5월 마지막주",
+      "date": "5/26",
       "mainMessage": "전체적으로 가동성이 많이 향상되었어요! 골반·요추 안정성이 잘 잡히면서 흉추 움직임의 질이 확실히 올라가고 있어요. 다음 단계로 넘어갈 준비가 되고 있습니다.",
       "summary": {
         "date": "2026년 5월 28일",
         "items": [
-          { "name": "폼롤러 캣카우 + 흉추 회전", "detail": "견관절 굴곡 끝범위에서 긴장 풀고 호흡으로 유지" },
-          { "name": "네발기기 흉추 회전", "detail": "3세트 × 10회 / 손 귀 옆, 양쪽 / 골반·요추 잠금 유지" },
-          { "name": "흉추 에어플레인 (벽)", "detail": "3세트 × 15회 / 지지 다리 안정성 확인" }
+          {
+            "name": "폼롤러 캣카우 + 흉추 회전",
+            "detail": "견관절 굴곡 끝범위에서 긴장 풀고 호흡으로 유지"
+          },
+          {
+            "name": "네발기기 흉추 회전",
+            "detail": "3세트 × 10회 / 손 귀 옆, 양쪽 / 골반·요추 잠금 유지"
+          },
+          {
+            "name": "흉추 에어플레인 (벽)",
+            "detail": "3세트 × 15회 / 지지 다리 안정성 확인"
+          }
         ]
       },
       "exercises": [
@@ -45,18 +87,30 @@
       ],
       "lifts": [],
       "bodyData": {
-        "labels":  ["5/18"],
-        "weight":  [84.3],
-        "fat":     [31.4],
-        "muscle":  [29.5],
+        "labels": [
+          "5/18"
+        ],
+        "weight": [
+          84.3
+        ],
+        "fat": [
+          31.4
+        ],
+        "muscle": [
+          29.5
+        ],
         "lastMeasured": "2026-05-18",
         "comment": "5월 18일 측정 기준이에요. 목표까지 체중 -15.3kg, 체지방 -5.4kg 남았어요. 꾸준히 하면 충분히 가능합니다!"
       },
-      "condition": "보통", "conditionNote": "",
-      "sleep": "보통",    "sleepNote": "",
+      "condition": "보통",
+      "conditionNote": "",
+      "sleep": "보통",
+      "sleepNote": "",
       "stress": "보통",
-      "pain": "없음",     "painNote": "",
-      "nutrition": "보통", "nutritionNote": "",
+      "pain": "없음",
+      "painNote": "",
+      "nutrition": "보통",
+      "nutritionNote": "",
       "review": {
         "good": "골반·요추 안정성이 잘 잡혀 흉추 고립 움직임의 질이 크게 향상됨. 지시 사항을 몸으로 바로 반영하는 능력이 뛰어남.",
         "caution": "흉추 움직임이 좋아진 만큼 일상에서의 자세 유지도 중요. 장시간 앉아있는 환경에서 굽은 자세 주의.",
@@ -66,207 +120,713 @@
       "trainerDirection": "6월 — 밴드 부하 추가 네발기기 흉추 회전 + 케이블로 새로운 흉추 부하 도입. 구술 실기 시험 대비 개인 운동 병행.",
       "nextSessionMemo": "밴드 추가한 네발기기 흉추 회전 테스트 / 케이블 흉추 회전 또는 TRX 활용 새 동작 도입 / 허리·무릎 상태 확인 / 시험 준비 상황 체크 / 6월 레슨 상·하체 번갈아 구성 시작",
       "finalMessage": "5월 한 달 꾸준히 오셔서 정말 감사해요. 몸이 좋아지는 게 직접 느껴지고 있을 거예요. 6월엔 시험도 잘 마무리하시고, 운동도 함께 더 멋지게 이어가봐요. 항상 응원하고 있어요 💪",
-      "musclesWorked": ["back", "shoulders"],
+      "musclesWorked": [
+        "back",
+        "shoulders"
+      ],
       "weeklyRoutine": {
         "weekKey": "2026-W22-mj",
         "note": "5월 마지막 주",
         "days": [
-          { "day": "월", "workout": "-", "rest": false },
-          { "day": "화", "workout": "-", "rest": false },
-          { "day": "수", "workout": "레슨", "rest": false },
-          { "day": "목", "workout": "-", "rest": false },
-          { "day": "금", "workout": "-", "rest": false },
-          { "day": "토", "workout": "자율", "rest": false },
-          { "day": "일", "workout": "휴식", "rest": true }
+          {
+            "day": "월",
+            "workout": "-",
+            "rest": false
+          },
+          {
+            "day": "화",
+            "workout": "-",
+            "rest": false
+          },
+          {
+            "day": "수",
+            "workout": "레슨",
+            "rest": false
+          },
+          {
+            "day": "목",
+            "workout": "-",
+            "rest": false
+          },
+          {
+            "day": "금",
+            "workout": "-",
+            "rest": false
+          },
+          {
+            "day": "토",
+            "workout": "자율",
+            "rest": false
+          },
+          {
+            "day": "일",
+            "workout": "휴식",
+            "rest": true
+          }
         ]
       }
     },
     {
-      "week": 1, "label": "1주차", "date": "6/1",
+      "week": 1,
+      "label": "1주차",
+      "date": "6/1",
       "mainMessage": "",
-      "summary": { "date": "", "items": [] },
+      "summary": {
+        "date": "",
+        "items": []
+      },
       "exercises": [],
       "lifts": [],
-      "bodyData": { "labels": [], "weight": [], "fat": [], "muscle": [], "lastMeasured": null, "comment": "" },
-      "condition": "보통", "conditionNote": "",
-      "sleep": "보통",    "sleepNote": "",
+      "bodyData": {
+        "labels": [],
+        "weight": [],
+        "fat": [],
+        "muscle": [],
+        "lastMeasured": null,
+        "comment": ""
+      },
+      "condition": "보통",
+      "conditionNote": "",
+      "sleep": "보통",
+      "sleepNote": "",
       "stress": "보통",
-      "pain": "없음",     "painNote": "",
-      "nutrition": "보통", "nutritionNote": "",
-      "review": { "good": "", "caution": "", "suggest": "" },
-      "trainerComment": "", "trainerDirection": "",
-      "finalMessage": "", "nextSessionMemo": "",
+      "pain": "없음",
+      "painNote": "",
+      "nutrition": "보통",
+      "nutritionNote": "",
+      "review": {
+        "good": "",
+        "caution": "",
+        "suggest": ""
+      },
+      "trainerComment": "",
+      "trainerDirection": "",
+      "finalMessage": "",
+      "nextSessionMemo": "",
       "musclesWorked": [],
       "weeklyRoutine": {
         "weekKey": "2026-W23-mj",
-        "note": "구술 실기 시험 대비 — 개인 운동은 종목 학습 위주. 흉추 가동성 워밍업 매회 포함.",
+        "note": "가동성 기초 + 시험 준비 병행. 4대 관절 순환 루틴 시작.",
         "days": [
-          { "day": "월", "workout": "개인-하체종목", "rest": false, "plan": [
-              { "name": "[ 워밍업 ] 폼롤러 흉추 회전", "sets": 1, "reps": 1, "weight": "5분" },
-              { "name": "[ 워밍업 ] 네발기기 흉추 회전", "sets": 3, "reps": 10, "weight": "양쪽" },
-              { "name": "[ 워밍업 ] 에어플레인 (벽)", "sets": 3, "reps": 15, "weight": "-" },
-              { "name": "스쿼트 (고블릿)", "sets": 3, "reps": 12, "weight": "-" },
-              { "name": "루마니안 데드리프트", "sets": 3, "reps": 10, "weight": "-" },
-              { "name": "힙 스러스트", "sets": 3, "reps": 12, "weight": "-" },
-              { "name": "레그 프레스", "sets": 3, "reps": 12, "weight": "-" }
-            ]},
-          { "day": "화", "workout": "레슨", "rest": false },
-          { "day": "수", "workout": "개인-상체종목", "rest": false, "plan": [
-              { "name": "[ 워밍업 ] 폼롤러 흉추 회전", "sets": 1, "reps": 1, "weight": "5분" },
-              { "name": "[ 워밍업 ] 에어플레인 (벽)", "sets": 3, "reps": 15, "weight": "-" },
-              { "name": "벤트오버 바벨 로우", "sets": 3, "reps": 10, "weight": "-" },
-              { "name": "렛 풀다운", "sets": 3, "reps": 12, "weight": "-" },
-              { "name": "덤벨 숄더 프레스", "sets": 3, "reps": 12, "weight": "-" },
-              { "name": "덤벨 벤치프레스", "sets": 3, "reps": 12, "weight": "-" },
-              { "name": "트레드밀 걷기", "sets": 1, "reps": 1, "weight": "20분" }
-            ]},
-          { "day": "목", "workout": "레슨", "rest": false },
-          { "day": "금", "workout": "자율", "rest": false, "plan": [
-              { "name": "가벼운 산책 또는 휴식", "sets": 1, "reps": 1, "weight": "30분" }
-            ]},
-          { "day": "토", "workout": "자율", "rest": false, "plan": [
-              { "name": "가벼운 산책 또는 휴식", "sets": 1, "reps": 1, "weight": "30분" }
-            ]},
-          { "day": "일", "workout": "휴식", "rest": true }
+          {
+            "day": "월",
+            "workout": "개인-발목·고관절",
+            "rest": false,
+            "plan": [
+              {
+                "name": "[ 흉추 워밍업 ] 폼롤러 캣카우",
+                "sets": 1,
+                "reps": 1,
+                "weight": "3분"
+              },
+              {
+                "name": "발목 CARs (시계방향·반시계)",
+                "sets": 3,
+                "reps": 10,
+                "weight": "양쪽"
+              },
+              {
+                "name": "발목 배측굴곡 스트레칭 (벽)",
+                "sets": 3,
+                "reps": 1,
+                "weight": "30초 유지"
+              },
+              {
+                "name": "고관절 CARs",
+                "sets": 3,
+                "reps": 8,
+                "weight": "양쪽"
+              },
+              {
+                "name": "90/90 고관절 스트레칭",
+                "sets": 3,
+                "reps": 1,
+                "weight": "60초 유지"
+              },
+              {
+                "name": "사이드 런지",
+                "sets": 3,
+                "reps": 10,
+                "weight": "양쪽"
+              }
+            ]
+          },
+          {
+            "day": "화",
+            "workout": "레슨",
+            "rest": false
+          },
+          {
+            "day": "수",
+            "workout": "개인-견관절·흉추",
+            "rest": false,
+            "plan": [
+              {
+                "name": "[ 흉추 워밍업 ] 네발기기 흉추 회전",
+                "sets": 3,
+                "reps": 10,
+                "weight": "양쪽"
+              },
+              {
+                "name": "견관절 CARs",
+                "sets": 3,
+                "reps": 5,
+                "weight": "양쪽 천천히"
+              },
+              {
+                "name": "월 슬라이드 (벽 슬라이드)",
+                "sets": 3,
+                "reps": 12,
+                "weight": "-"
+              },
+              {
+                "name": "밴드 풀 어파트",
+                "sets": 3,
+                "reps": 15,
+                "weight": "-"
+              },
+              {
+                "name": "흉추 에어플레인 (벽)",
+                "sets": 3,
+                "reps": 15,
+                "weight": "-"
+              },
+              {
+                "name": "트레드밀 걷기",
+                "sets": 1,
+                "reps": 1,
+                "weight": "20분"
+              }
+            ]
+          },
+          {
+            "day": "목",
+            "workout": "레슨",
+            "rest": false
+          },
+          {
+            "day": "금",
+            "workout": "자율",
+            "rest": false,
+            "plan": [
+              {
+                "name": "가벼운 산책 또는 휴식",
+                "sets": 1,
+                "reps": 1,
+                "weight": "30분"
+              }
+            ]
+          },
+          {
+            "day": "토",
+            "workout": "자율",
+            "rest": false,
+            "plan": [
+              {
+                "name": "가벼운 산책 또는 휴식",
+                "sets": 1,
+                "reps": 1,
+                "weight": "30분"
+              }
+            ]
+          },
+          {
+            "day": "일",
+            "workout": "휴식",
+            "rest": true
+          }
         ]
       }
     },
-    { "week": 2, "label": "2주차", "date": "6/8",
+    {
+      "week": 2,
+      "label": "2주차",
+      "date": "6/8",
       "mainMessage": "",
-      "summary": { "date": "", "items": [] },
-      "exercises": [], "lifts": [],
-      "bodyData": { "labels": [], "weight": [], "fat": [], "muscle": [], "lastMeasured": null, "comment": "" },
-      "condition": "보통", "conditionNote": "",
-      "sleep": "보통",    "sleepNote": "",
+      "summary": {
+        "date": "",
+        "items": []
+      },
+      "exercises": [],
+      "lifts": [],
+      "bodyData": {
+        "labels": [],
+        "weight": [],
+        "fat": [],
+        "muscle": [],
+        "lastMeasured": null,
+        "comment": ""
+      },
+      "condition": "보통",
+      "conditionNote": "",
+      "sleep": "보통",
+      "sleepNote": "",
       "stress": "보통",
-      "pain": "없음",     "painNote": "",
-      "nutrition": "보통", "nutritionNote": "",
-      "review": { "good": "", "caution": "", "suggest": "" },
-      "trainerComment": "", "trainerDirection": "",
-      "finalMessage": "", "nextSessionMemo": "",
+      "pain": "없음",
+      "painNote": "",
+      "nutrition": "보통",
+      "nutritionNote": "",
+      "review": {
+        "good": "",
+        "caution": "",
+        "suggest": ""
+      },
+      "trainerComment": "",
+      "trainerDirection": "",
+      "finalMessage": "",
+      "nextSessionMemo": "",
       "musclesWorked": [],
       "weeklyRoutine": {
         "weekKey": "2026-W24-mj",
-        "note": "구술 실기 시험 대비 2주차 — 지난 주 종목 복습 + 새 종목 추가",
+        "note": "가동성 심화 + 시험 종목 학습 병행.",
         "days": [
-          { "day": "월", "workout": "개인-하체종목", "rest": false, "plan": [
-              { "name": "[ 워밍업 ] 폼롤러 흉추 회전", "sets": 1, "reps": 1, "weight": "5분" },
-              { "name": "[ 워밍업 ] 네발기기 흉추 회전", "sets": 3, "reps": 10, "weight": "양쪽" },
-              { "name": "레그 프레스", "sets": 3, "reps": 12, "weight": "-" },
-              { "name": "레그 익스텐션", "sets": 3, "reps": 12, "weight": "-" },
-              { "name": "레그 컬 (라잉)", "sets": 3, "reps": 12, "weight": "-" },
-              { "name": "힙 어브덕션 머신", "sets": 3, "reps": 15, "weight": "-" },
-              { "name": "카프 레이즈", "sets": 3, "reps": 15, "weight": "-" }
-            ]},
-          { "day": "화", "workout": "레슨", "rest": false },
-          { "day": "수", "workout": "개인-상체종목", "rest": false, "plan": [
-              { "name": "[ 워밍업 ] 폼롤러 흉추 회전", "sets": 1, "reps": 1, "weight": "5분" },
-              { "name": "케이블 체스트 플라이", "sets": 3, "reps": 12, "weight": "-" },
-              { "name": "덤벨 바이셉 컬", "sets": 3, "reps": 12, "weight": "-" },
-              { "name": "트라이셉 로프 풀다운", "sets": 3, "reps": 12, "weight": "-" },
-              { "name": "케이블 사이드 레터럴 레이즈", "sets": 3, "reps": 15, "weight": "-" },
-              { "name": "페이스 풀", "sets": 3, "reps": 15, "weight": "-" },
-              { "name": "트레드밀 걷기", "sets": 1, "reps": 1, "weight": "20분" }
-            ]},
-          { "day": "목", "workout": "레슨", "rest": false },
-          { "day": "금", "workout": "자율", "rest": false, "plan": [
-              { "name": "가벼운 산책 또는 휴식", "sets": 1, "reps": 1, "weight": "30분" }
-            ]},
-          { "day": "토", "workout": "자율", "rest": false, "plan": [
-              { "name": "가벼운 산책 또는 휴식", "sets": 1, "reps": 1, "weight": "30분" }
-            ]},
-          { "day": "일", "workout": "휴식", "rest": true }
+          {
+            "day": "월",
+            "workout": "개인-고관절·하체",
+            "rest": false,
+            "plan": [
+              {
+                "name": "[ 흉추 워밍업 ] 폼롤러 + 에어플레인",
+                "sets": 1,
+                "reps": 1,
+                "weight": "5분"
+              },
+              {
+                "name": "힙 써클 (고관절 원 그리기)",
+                "sets": 3,
+                "reps": 8,
+                "weight": "양쪽"
+              },
+              {
+                "name": "피전 포즈 스트레칭",
+                "sets": 3,
+                "reps": 1,
+                "weight": "60초 양쪽"
+              },
+              {
+                "name": "루마니안 데드리프트",
+                "sets": 3,
+                "reps": 10,
+                "weight": "-"
+              },
+              {
+                "name": "고블릿 스쿼트 (깊이 집중)",
+                "sets": 3,
+                "reps": 10,
+                "weight": "-"
+              },
+              {
+                "name": "카프 레이즈 (발목 강화)",
+                "sets": 3,
+                "reps": 15,
+                "weight": "-"
+              }
+            ]
+          },
+          {
+            "day": "화",
+            "workout": "레슨",
+            "rest": false
+          },
+          {
+            "day": "수",
+            "workout": "개인-견관절·상체",
+            "rest": false,
+            "plan": [
+              {
+                "name": "[ 흉추 워밍업 ] 네발기기 흉추 회전 (밴드)",
+                "sets": 3,
+                "reps": 10,
+                "weight": "양쪽"
+              },
+              {
+                "name": "견관절 CARs",
+                "sets": 3,
+                "reps": 5,
+                "weight": "양쪽"
+              },
+              {
+                "name": "밴드 로우",
+                "sets": 3,
+                "reps": 12,
+                "weight": "-"
+              },
+              {
+                "name": "덤벨 숄더 프레스",
+                "sets": 3,
+                "reps": 12,
+                "weight": "-"
+              },
+              {
+                "name": "렛 풀다운",
+                "sets": 3,
+                "reps": 12,
+                "weight": "-"
+              },
+              {
+                "name": "트레드밀 걷기",
+                "sets": 1,
+                "reps": 1,
+                "weight": "20분"
+              }
+            ]
+          },
+          {
+            "day": "목",
+            "workout": "레슨",
+            "rest": false
+          },
+          {
+            "day": "금",
+            "workout": "자율",
+            "rest": false,
+            "plan": [
+              {
+                "name": "가벼운 산책 또는 휴식",
+                "sets": 1,
+                "reps": 1,
+                "weight": "30분"
+              }
+            ]
+          },
+          {
+            "day": "토",
+            "workout": "자율",
+            "rest": false,
+            "plan": [
+              {
+                "name": "가벼운 산책 또는 휴식",
+                "sets": 1,
+                "reps": 1,
+                "weight": "30분"
+              }
+            ]
+          },
+          {
+            "day": "일",
+            "workout": "휴식",
+            "rest": true
+          }
         ]
       }
     },
-    { "week": 3, "label": "3주차", "date": "6/15",
+    {
+      "week": 3,
+      "label": "3주차",
+      "date": "6/15",
       "mainMessage": "",
-      "summary": { "date": "", "items": [] },
-      "exercises": [], "lifts": [],
-      "bodyData": { "labels": [], "weight": [], "fat": [], "muscle": [], "lastMeasured": null, "comment": "" },
-      "condition": "보통", "conditionNote": "",
-      "sleep": "보통",    "sleepNote": "",
+      "summary": {
+        "date": "",
+        "items": []
+      },
+      "exercises": [],
+      "lifts": [],
+      "bodyData": {
+        "labels": [],
+        "weight": [],
+        "fat": [],
+        "muscle": [],
+        "lastMeasured": null,
+        "comment": ""
+      },
+      "condition": "보통",
+      "conditionNote": "",
+      "sleep": "보통",
+      "sleepNote": "",
       "stress": "보통",
-      "pain": "없음",     "painNote": "",
-      "nutrition": "보통", "nutritionNote": "",
-      "review": { "good": "", "caution": "", "suggest": "" },
-      "trainerComment": "", "trainerDirection": "",
-      "finalMessage": "", "nextSessionMemo": "",
+      "pain": "없음",
+      "painNote": "",
+      "nutrition": "보통",
+      "nutritionNote": "",
+      "review": {
+        "good": "",
+        "caution": "",
+        "suggest": ""
+      },
+      "trainerComment": "",
+      "trainerDirection": "",
+      "finalMessage": "",
+      "nextSessionMemo": "",
       "musclesWorked": [],
       "weeklyRoutine": {
         "weekKey": "2026-W25-mj",
-        "note": "⚠️ 시험 주간 — 개인 운동 가볍게. 무리 금물. 컨디션 최우선.",
+        "note": "시험 주간 — 가동성 루틴 가볍게 유지. 컨디션 최우선.",
         "days": [
-          { "day": "월", "workout": "개인-최종복습", "rest": false, "plan": [
-              { "name": "[ 워밍업 ] 흉추 가동성 루틴", "sets": 1, "reps": 1, "weight": "5분" },
-              { "name": "스쿼트", "sets": 2, "reps": 10, "weight": "가볍게" },
-              { "name": "루마니안 데드리프트", "sets": 2, "reps": 10, "weight": "가볍게" },
-              { "name": "벤트오버 로우", "sets": 2, "reps": 10, "weight": "가볍게" },
-              { "name": "덤벨 숄더 프레스", "sets": 2, "reps": 10, "weight": "가볍게" },
-              { "name": "렛 풀다운", "sets": 2, "reps": 10, "weight": "가볍게" },
-              { "name": "덤벨 바이셉 컬", "sets": 2, "reps": 10, "weight": "가볍게" },
-              { "name": "트라이셉 로프 풀다운", "sets": 2, "reps": 10, "weight": "가볍게" }
-            ]},
-          { "day": "화", "workout": "레슨", "rest": false },
-          { "day": "수", "workout": "개인-컨디션", "rest": false, "plan": [
-              { "name": "가벼운 유산소", "sets": 1, "reps": 1, "weight": "20~30분 걷기" },
-              { "name": "전신 스트레칭", "sets": 1, "reps": 1, "weight": "10분" },
-              { "name": "흉추 가동성 루틴", "sets": 1, "reps": 1, "weight": "가볍게" }
-            ]},
-          { "day": "목", "workout": "레슨", "rest": false },
-          { "day": "금", "workout": "자율", "rest": false, "plan": [
-              { "name": "시험 전날 — 가볍게 산책 또는 충분한 휴식", "sets": 1, "reps": 1, "weight": "-" }
-            ]},
-          { "day": "토", "workout": "자율", "rest": false, "plan": [
-              { "name": "가벼운 산책 또는 휴식", "sets": 1, "reps": 1, "weight": "30분" }
-            ]},
-          { "day": "일", "workout": "휴식", "rest": true }
+          {
+            "day": "월",
+            "workout": "개인-전체가동성",
+            "rest": false,
+            "plan": [
+              {
+                "name": "발목 CARs",
+                "sets": 2,
+                "reps": 8,
+                "weight": "양쪽"
+              },
+              {
+                "name": "고관절 CARs + 90/90",
+                "sets": 2,
+                "reps": 8,
+                "weight": "양쪽"
+              },
+              {
+                "name": "네발기기 흉추 회전",
+                "sets": 2,
+                "reps": 8,
+                "weight": "양쪽"
+              },
+              {
+                "name": "견관절 CARs + 월 슬라이드",
+                "sets": 2,
+                "reps": 10,
+                "weight": "-"
+              },
+              {
+                "name": "전신 스트레칭",
+                "sets": 1,
+                "reps": 1,
+                "weight": "10분"
+              }
+            ]
+          },
+          {
+            "day": "화",
+            "workout": "레슨",
+            "rest": false
+          },
+          {
+            "day": "수",
+            "workout": "개인-컨디션",
+            "rest": false,
+            "plan": [
+              {
+                "name": "가벼운 유산소 걷기",
+                "sets": 1,
+                "reps": 1,
+                "weight": "20~30분"
+              },
+              {
+                "name": "전신 스트레칭",
+                "sets": 1,
+                "reps": 1,
+                "weight": "10분"
+              },
+              {
+                "name": "흉추 가동성 루틴",
+                "sets": 1,
+                "reps": 1,
+                "weight": "가볍게"
+              }
+            ]
+          },
+          {
+            "day": "목",
+            "workout": "레슨",
+            "rest": false
+          },
+          {
+            "day": "금",
+            "workout": "자율",
+            "rest": false,
+            "plan": [
+              {
+                "name": "시험 전날 — 가볍게 산책 또는 충분한 휴식",
+                "sets": 1,
+                "reps": 1,
+                "weight": "-"
+              }
+            ]
+          },
+          {
+            "day": "토",
+            "workout": "자율",
+            "rest": false,
+            "plan": [
+              {
+                "name": "가벼운 산책 또는 휴식",
+                "sets": 1,
+                "reps": 1,
+                "weight": "30분"
+              }
+            ]
+          },
+          {
+            "day": "일",
+            "workout": "휴식",
+            "rest": true
+          }
         ]
       }
     },
-    { "week": 4, "label": "4주차", "date": "6/22",
+    {
+      "week": 4,
+      "label": "4주차",
+      "date": "6/22",
       "mainMessage": "",
-      "summary": { "date": "", "items": [] },
-      "exercises": [], "lifts": [],
-      "bodyData": { "labels": [], "weight": [], "fat": [], "muscle": [], "lastMeasured": null, "comment": "" },
-      "condition": "보통", "conditionNote": "",
-      "sleep": "보통",    "sleepNote": "",
+      "summary": {
+        "date": "",
+        "items": []
+      },
+      "exercises": [],
+      "lifts": [],
+      "bodyData": {
+        "labels": [],
+        "weight": [],
+        "fat": [],
+        "muscle": [],
+        "lastMeasured": null,
+        "comment": ""
+      },
+      "condition": "보통",
+      "conditionNote": "",
+      "sleep": "보통",
+      "sleepNote": "",
       "stress": "보통",
-      "pain": "없음",     "painNote": "",
-      "nutrition": "보통", "nutritionNote": "",
-      "review": { "good": "", "caution": "", "suggest": "" },
-      "trainerComment": "", "trainerDirection": "",
-      "finalMessage": "", "nextSessionMemo": "",
+      "pain": "없음",
+      "painNote": "",
+      "nutrition": "보통",
+      "nutritionNote": "",
+      "review": {
+        "good": "",
+        "caution": "",
+        "suggest": ""
+      },
+      "trainerComment": "",
+      "trainerDirection": "",
+      "finalMessage": "",
+      "nextSessionMemo": "",
       "musclesWorked": [],
       "weeklyRoutine": {
         "weekKey": "2026-W26-mj",
-        "note": "시험 후 — 체중감량 본격 루틴 시작. 강도 점진적으로 올리기.",
+        "note": "시험 후 — 가동성 + 체중감량 본격 루틴 전환.",
         "days": [
-          { "day": "월", "workout": "개인-하체", "rest": false, "plan": [
-              { "name": "[ 워밍업 ] 흉추 가동성 루틴", "sets": 1, "reps": 1, "weight": "5분" },
-              { "name": "고블릿 스쿼트", "sets": 3, "reps": 12, "weight": "-" },
-              { "name": "루마니안 데드리프트", "sets": 3, "reps": 10, "weight": "-" },
-              { "name": "힙 스러스트", "sets": 3, "reps": 12, "weight": "-" },
-              { "name": "레그 프레스", "sets": 3, "reps": 12, "weight": "-" },
-              { "name": "트레드밀 경사 걷기", "sets": 1, "reps": 1, "weight": "20분" }
-            ]},
-          { "day": "화", "workout": "레슨", "rest": false },
-          { "day": "수", "workout": "개인-상체", "rest": false, "plan": [
-              { "name": "[ 워밍업 ] 흉추 가동성 루틴", "sets": 1, "reps": 1, "weight": "5분" },
-              { "name": "벤트오버 바벨 로우", "sets": 3, "reps": 10, "weight": "-" },
-              { "name": "렛 풀다운", "sets": 3, "reps": 12, "weight": "-" },
-              { "name": "덤벨 숄더 프레스", "sets": 3, "reps": 12, "weight": "-" },
-              { "name": "케이블 체스트 플라이", "sets": 3, "reps": 12, "weight": "-" },
-              { "name": "트레드밀 경사 걷기", "sets": 1, "reps": 1, "weight": "25분" }
-            ]},
-          { "day": "목", "workout": "레슨", "rest": false },
-          { "day": "금", "workout": "자율", "rest": false, "plan": [
-              { "name": "가벼운 산책 또는 휴식", "sets": 1, "reps": 1, "weight": "30분" }
-            ]},
-          { "day": "토", "workout": "자율", "rest": false, "plan": [
-              { "name": "가벼운 산책 또는 휴식", "sets": 1, "reps": 1, "weight": "30분" }
-            ]},
-          { "day": "일", "workout": "휴식", "rest": true }
+          {
+            "day": "월",
+            "workout": "개인-하체·발목",
+            "rest": false,
+            "plan": [
+              {
+                "name": "[ 워밍업 ] 발목 CARs + 고관절 CARs",
+                "sets": 1,
+                "reps": 1,
+                "weight": "5분"
+              },
+              {
+                "name": "고블릿 스쿼트 (깊이 집중)",
+                "sets": 3,
+                "reps": 12,
+                "weight": "-"
+              },
+              {
+                "name": "루마니안 데드리프트",
+                "sets": 3,
+                "reps": 10,
+                "weight": "-"
+              },
+              {
+                "name": "힙 스러스트",
+                "sets": 3,
+                "reps": 12,
+                "weight": "-"
+              },
+              {
+                "name": "발목 배측굴곡 스트레칭",
+                "sets": 3,
+                "reps": 1,
+                "weight": "30초"
+              },
+              {
+                "name": "트레드밀 경사 걷기",
+                "sets": 1,
+                "reps": 1,
+                "weight": "20분"
+              }
+            ]
+          },
+          {
+            "day": "화",
+            "workout": "레슨",
+            "rest": false
+          },
+          {
+            "day": "수",
+            "workout": "개인-상체·견관절",
+            "rest": false,
+            "plan": [
+              {
+                "name": "[ 워밍업 ] 견관절 CARs + 흉추 에어플레인",
+                "sets": 1,
+                "reps": 1,
+                "weight": "5분"
+              },
+              {
+                "name": "벤트오버 바벨 로우",
+                "sets": 3,
+                "reps": 10,
+                "weight": "-"
+              },
+              {
+                "name": "렛 풀다운",
+                "sets": 3,
+                "reps": 12,
+                "weight": "-"
+              },
+              {
+                "name": "덤벨 숄더 프레스",
+                "sets": 3,
+                "reps": 12,
+                "weight": "-"
+              },
+              {
+                "name": "밴드 풀 어파트",
+                "sets": 3,
+                "reps": 15,
+                "weight": "-"
+              },
+              {
+                "name": "트레드밀 경사 걷기",
+                "sets": 1,
+                "reps": 1,
+                "weight": "25분"
+              }
+            ]
+          },
+          {
+            "day": "목",
+            "workout": "레슨",
+            "rest": false
+          },
+          {
+            "day": "금",
+            "workout": "자율",
+            "rest": false,
+            "plan": [
+              {
+                "name": "가벼운 산책 또는 휴식",
+                "sets": 1,
+                "reps": 1,
+                "weight": "30분"
+              }
+            ]
+          },
+          {
+            "day": "토",
+            "workout": "자율",
+            "rest": false,
+            "plan": [
+              {
+                "name": "가벼운 산책 또는 휴식",
+                "sets": 1,
+                "reps": 1,
+                "weight": "30분"
+              }
+            ]
+          },
+          {
+            "day": "일",
+            "workout": "휴식",
+            "rest": true
+          }
         ]
       }
     }
