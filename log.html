@@ -114,12 +114,24 @@ function goalRow(bodyGoals, currentWeight) {
   return pills.length ? `<div class="goal-row">${pills.join('')}</div>` : '';
 }
 
+function planBadge(w) {
+  const days = w.weeklyRoutine?.days || [];
+  if (!days.length) return '';
+  const lesson = days.filter(d => d.workout?.includes('레슨')).length;
+  const self   = days.filter(d => !d.rest && d.workout && !['', '-', '휴식'].includes(d.workout) && !d.workout.includes('레슨')).length;
+  const total  = lesson + self;
+  if (!total) return '';
+  const parts = [lesson ? `레슨 ${lesson}` : '', self ? `자율 ${self}` : ''].filter(Boolean).join(' · ');
+  return `<span class="badge" style="background:rgba(100,150,210,0.1);color:#4a7aa8">📅 주 ${total}회 (${parts})</span>`;
+}
+
 function renderWeek(w) {
   const hasData = w.condition || w.summary?.date || w.memberComment;
   const bd = w.bodyData || {};
   const lastW = (bd.weight || []).filter(v => v != null).at(-1);
 
   const mainBadges = [
+    planBadge(w),
     badge('컨디션', w.condition, COND),
     badge('수면', w.sleep, SLEEP),
     badge('스트레스', w.stress, STRESS),
