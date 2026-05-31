@@ -123,6 +123,10 @@ tr:last-child td { border-bottom: none; }
 .lb-meta { display: flex; flex-direction: column; align-items: flex-end; gap: 2px; }
 .lb-goal { font-size: 11px; color: #b0c0d4; }
 .lb-gap { font-size: 12px; font-weight: 700; color: #6a9ac4; }
+.lb-timer { font-size: 10px; font-weight: 700; border-radius: 6px; padding: 2px 6px; white-space: nowrap; margin-top: 2px; }
+.lb-timer.ready  { background: rgba(80,180,100,0.12); color: #2e7d52; }
+.lb-timer.soon   { background: rgba(255,160,50,0.12); color: #c06010; }
+.lb-timer.waiting{ background: rgba(100,150,210,0.10); color: #5a7aa8; }
 .weekly-cal { display: grid; grid-template-columns: repeat(7, 1fr); gap: 5px; margin-bottom: 14px; }
 .cal-day { background: rgba(255,255,255,0.45); border: 1px solid rgba(160,190,230,0.3); border-radius: 14px; padding: 12px 4px 10px; text-align: center; cursor: pointer; user-select: none; }
 .cd-weekday { font-size: 10px; font-weight: 700; color: #b0c0d4; letter-spacing: 0.5px; margin-bottom: 1px; }
@@ -624,7 +628,17 @@ function init(data) {
     const exBase = (w.summary?.items||[]).map(it=>it.name);
     const exAll = exBase.length ? exBase : (w.exercises||[]).map(e=>e.name);
     const exItems = exAll.map(name => { const fb = exMap[name]; return `<div class="exercise-item"><div class="ei-name">${name}</div>${fb ? `<div class="ei-feedback">${fb.note}</div>${fb.next?`<div class="ei-next">${fb.next}</div>`:''}` : `<div class="ei-feedback" style="color:#c8d8e8;font-style:italic">피드백 작성 전</div>`}</div>`; }).join('') || '<div class="exercise-item"><div class="ei-name">—</div><div class="ei-feedback">수업 내용을 입력해 주세요.</div></div>';
-    const liftItems = (w.lifts||[]).map(l=>`<div class="lift-box"><div class="lb-name">${l.name}</div><div class="lb-current">${l.current}<span>kg</span></div><div class="lb-meta"><div class="lb-goal">목표 ${l.goal}kg</div><div class="lb-gap">−${l.goal-l.current}kg</div></div></div>`).join('') || '<div style="font-size:13px;color:#c0d0e0;padding:4px 0">리프트 데이터를 입력해 주세요.</div>';
+    function liftTimer(l) {
+      if (!l.lastIncrease || !l.intervalWeeks) return '';
+      const last = new Date(l.lastIncrease); last.setHours(0,0,0,0);
+      const next = new Date(last.getTime() + l.intervalWeeks * 7 * 86400000);
+      const today = new Date(); today.setHours(0,0,0,0);
+      const diff = Math.round((next - today) / 86400000);
+      if (diff <= 0) return `<div class="lb-timer ready">증량 타이밍! 🔥</div>`;
+      if (diff <= 7) return `<div class="lb-timer soon">D-${diff} 증량 예정</div>`;
+      return `<div class="lb-timer waiting">D-${diff} 증량 예정</div>`;
+    }
+    const liftItems = (w.lifts||[]).map(l=>`<div class="lift-box"><div class="lb-name">${l.name}</div><div class="lb-current">${l.current}<span>kg</span></div><div class="lb-meta"><div class="lb-goal">목표 ${l.goal}kg</div><div class="lb-gap">−${l.goal-l.current}kg</div>${liftTimer(l)}</div></div>`).join('') || '<div style="font-size:13px;color:#c0d0e0;padding:4px 0">리프트 데이터를 입력해 주세요.</div>';
     const r = w.weeklyRoutine, calKey = `hm_${r.weekKey}_${idx}`;
     const today = new Date(); today.setHours(0,0,0,0);
     function parseWeekStart(dateStr) {

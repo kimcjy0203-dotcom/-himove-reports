@@ -86,9 +86,9 @@
         }
       ],
       "lifts": [
-        { "name": "스모 데드리프트", "current": 90, "goal": 110 },
-        { "name": "스쿼트", "current": 60, "goal": 80 },
-        { "name": "OHP", "current": 30, "goal": 40 }
+        { "name": "스모 데드리프트", "current": 90, "goal": 110, "lastIncrease": "2026-05-28", "intervalWeeks": 3 },
+        { "name": "스쿼트", "current": 60, "goal": 80, "lastIncrease": "2026-05-28", "intervalWeeks": 3 },
+        { "name": "OHP", "current": 30, "goal": 40, "lastIncrease": "2026-05-28", "intervalWeeks": 3 }
       ],
       "bodyData": {
         "labels": [
@@ -181,9 +181,9 @@
       },
       "exercises": [],
       "lifts": [
-        { "name": "스모 데드리프트", "current": 90, "goal": 110 },
-        { "name": "스쿼트", "current": 60, "goal": 80 },
-        { "name": "OHP", "current": 30, "goal": 40 }
+        { "name": "스모 데드리프트", "current": 90, "goal": 110, "lastIncrease": "2026-05-28", "intervalWeeks": 3 },
+        { "name": "스쿼트", "current": 60, "goal": 80, "lastIncrease": "2026-05-28", "intervalWeeks": 3 },
+        { "name": "OHP", "current": 30, "goal": 40, "lastIncrease": "2026-05-28", "intervalWeeks": 3 }
       ],
       "bodyData": {
         "labels": [],
@@ -357,9 +357,9 @@
       },
       "exercises": [],
       "lifts": [
-        { "name": "스모 데드리프트", "current": 90, "goal": 110 },
-        { "name": "스쿼트", "current": 60, "goal": 80 },
-        { "name": "OHP", "current": 30, "goal": 40 }
+        { "name": "스모 데드리프트", "current": 90, "goal": 110, "lastIncrease": "2026-05-28", "intervalWeeks": 3 },
+        { "name": "스쿼트", "current": 60, "goal": 80, "lastIncrease": "2026-05-28", "intervalWeeks": 3 },
+        { "name": "OHP", "current": 30, "goal": 40, "lastIncrease": "2026-05-28", "intervalWeeks": 3 }
       ],
       "bodyData": {
         "labels": [],
@@ -533,9 +533,9 @@
       },
       "exercises": [],
       "lifts": [
-        { "name": "스모 데드리프트", "current": 90, "goal": 110 },
-        { "name": "스쿼트", "current": 60, "goal": 80 },
-        { "name": "OHP", "current": 30, "goal": 40 }
+        { "name": "스모 데드리프트", "current": 90, "goal": 110, "lastIncrease": "2026-05-28", "intervalWeeks": 3 },
+        { "name": "스쿼트", "current": 60, "goal": 80, "lastIncrease": "2026-05-28", "intervalWeeks": 3 },
+        { "name": "OHP", "current": 30, "goal": 40, "lastIncrease": "2026-05-28", "intervalWeeks": 3 }
       ],
       "bodyData": {
         "labels": [],
@@ -685,9 +685,9 @@
       },
       "exercises": [],
       "lifts": [
-        { "name": "스모 데드리프트", "current": 90, "goal": 110 },
-        { "name": "스쿼트", "current": 60, "goal": 80 },
-        { "name": "OHP", "current": 30, "goal": 40 }
+        { "name": "스모 데드리프트", "current": 90, "goal": 110, "lastIncrease": "2026-05-28", "intervalWeeks": 3 },
+        { "name": "스쿼트", "current": 60, "goal": 80, "lastIncrease": "2026-05-28", "intervalWeeks": 3 },
+        { "name": "OHP", "current": 30, "goal": 40, "lastIncrease": "2026-05-28", "intervalWeeks": 3 }
       ],
       "bodyData": {
         "labels": [],
