@@ -8,142 +8,174 @@
 * { box-sizing: border-box; margin: 0; padding: 0; }
 body {
   font-family: -apple-system, 'Apple SD Gothic Neo', 'Noto Sans KR', sans-serif;
-  background: #f0f4f8; color: #1a2a3a;
-  max-width: 600px; margin: 0 auto; padding: 32px 18px 64px;
+  background: #eef2f8; color: #1a2a3a;
+  max-width: 640px; margin: 0 auto; padding: 28px 16px 64px;
 }
-h1 { font-size: 22px; font-weight: 800; color: #1a2a40; letter-spacing: -1px; margin-bottom: 4px; }
-.sub { font-size: 12px; color: #a0b8d0; margin-bottom: 28px; }
+h1 { font-size: 20px; font-weight: 800; color: #1a2a40; letter-spacing: -0.8px; }
+.page-sub { font-size: 11px; color: #a0b8d0; margin-top: 3px; margin-bottom: 24px; }
 
-.member-block { margin-bottom: 32px; }
-.member-name {
-  font-size: 13px; font-weight: 800; color: #3a6a9a;
-  letter-spacing: 0.3px; text-transform: uppercase;
-  border-bottom: 2px solid rgba(100,150,210,0.2);
-  padding-bottom: 6px; margin-bottom: 12px;
+.member-block { background: white; border-radius: 16px; margin-bottom: 16px; overflow: hidden; border: 1px solid rgba(160,190,230,0.2); }
+
+.member-header {
+  padding: 14px 16px 12px;
+  border-bottom: 1px solid rgba(160,190,230,0.15);
 }
-.entry {
-  background: white; border-radius: 12px;
-  padding: 12px 14px; margin-bottom: 8px;
-  border: 1px solid rgba(160,190,230,0.2);
+.mh-top { display: flex; align-items: center; justify-content: space-between; margin-bottom: 8px; }
+.mh-name { font-size: 15px; font-weight: 800; color: #1a2a40; }
+.mh-month { font-size: 11px; color: #a0b8d0; }
+.goal-row { display: flex; gap: 10px; flex-wrap: wrap; }
+.goal-pill {
+  font-size: 10px; color: #6a8aa8;
+  background: rgba(100,150,210,0.07);
+  border: 1px solid rgba(100,150,210,0.15);
+  border-radius: 20px; padding: 3px 8px;
+  display: flex; align-items: center; gap: 4px;
 }
-.entry-empty { opacity: 0.4; }
-.entry-header {
-  display: flex; align-items: baseline; gap: 8px; margin-bottom: 6px;
+.goal-pill .curr { font-weight: 700; color: #2a4a6a; }
+.goal-pill .arrow { color: #b0c8e0; }
+.goal-pill .goal { font-weight: 700; color: #4a7aa8; }
+.goal-pill .rem { color: #e06060; font-weight: 700; }
+
+.week-row {
+  padding: 8px 16px;
+  border-bottom: 1px solid rgba(160,190,230,0.1);
 }
-.entry-date { font-size: 13px; font-weight: 700; color: #1a2a40; }
-.entry-week { font-size: 11px; color: #a0b8d0; }
-.entry-stats {
-  font-size: 11px; color: #7a95b0;
-  display: flex; gap: 10px; flex-wrap: wrap; margin-bottom: 5px;
+.week-row:last-child { border-bottom: none; }
+.week-row.empty { opacity: 0.35; }
+.wr-main { display: flex; align-items: center; gap: 6px; flex-wrap: wrap; }
+.wr-label { font-size: 11px; font-weight: 700; color: #3a5a80; min-width: 52px; }
+.wr-date { font-size: 10px; color: #b0c8e0; min-width: 30px; }
+.badges { display: flex; gap: 4px; flex-wrap: wrap; flex: 1; }
+.badge {
+  font-size: 9px; font-weight: 700; letter-spacing: 0.2px;
+  border-radius: 5px; padding: 2px 5px; white-space: nowrap;
 }
-.entry-stats span { display: flex; align-items: center; gap: 3px; }
-.dot { width: 6px; height: 6px; border-radius: 50%; flex-shrink: 0; }
-.note { font-size: 12px; color: #5a7a9a; margin-bottom: 5px; font-style: italic; }
-.comment {
-  font-size: 12px; color: #3a5a7a;
-  background: rgba(100,150,210,0.06); border-radius: 6px;
-  padding: 5px 8px; margin-bottom: 5px;
+.badge-weight { font-size: 10px; font-weight: 700; color: #3a5a80; margin-left: auto; white-space: nowrap; }
+.wr-detail { margin-top: 5px; display: flex; flex-direction: column; gap: 3px; padding-left: 2px; }
+.wr-comment { font-size: 11px; color: #4a6a8a; background: rgba(100,150,210,0.06); border-radius: 5px; padding: 3px 7px; }
+.wr-exercises { font-size: 10px; color: #7a9ab8; line-height: 1.6; }
+.wr-memo {
+  font-size: 10px; color: #7a6030;
+  background: rgba(220,160,60,0.08); border-left: 2px solid rgba(220,160,60,0.4);
+  border-radius: 0 5px 5px 0; padding: 3px 7px;
 }
-.exercises { display: flex; flex-direction: column; gap: 2px; }
-.ex-row { font-size: 11px; color: #6a8aa8; padding-left: 2px; }
-.ex-row::before { content: '· '; color: #b0c8e0; }
-.body-stats {
-  display: flex; gap: 12px; margin-top: 5px;
-  font-size: 11px; color: #8aa8c8;
-}
-.body-stats strong { color: #3a5a80; font-weight: 700; }
-.empty-msg { font-size: 11px; color: #c0d0e0; padding: 2px 0; }
-#loading { text-align: center; padding: 60px 0; color: #a0b8d0; font-size: 14px; }
+
+#loading { text-align: center; padding: 48px 0; color: #a0b8d0; font-size: 13px; }
 </style>
 </head>
 <body>
 <h1>himove</h1>
-<div class="sub" id="updated"></div>
-<div id="loading">불러오는 중…</div>
+<div class="page-sub" id="page-sub">불러오는 중…</div>
+<div id="loading">⋯</div>
 <div id="log"></div>
 
 <script>
-const COND_COLOR = { '좋음': '#6abf69', '매우 좋음': '#4caf50', '보통': '#ffa726', '피곤함': '#ef5350', '피로': '#ef5350', '매우 피곤함': '#e53935' };
-const SLEEP_COLOR = { '좋음': '#6abf69', '매우 좋음': '#4caf50', '보통': '#ffa726', '나쁨': '#ef5350', '매우 나쁨': '#e53935' };
+const COND = {
+  '매우 좋음': ['#e8f5e9','#2e7d32'], '좋음': ['#e8f5e9','#388e3c'],
+  '보통': ['#fff8e1','#f57c00'], '피곤함': ['#fce4ec','#c62828'],
+  '피로': ['#fce4ec','#c62828'], '매우 피곤함': ['#fce4ec','#b71c1c'],
+};
+const SLEEP = {
+  '매우 좋음': ['#e8f5e9','#2e7d32'], '좋음': ['#e8f5e9','#388e3c'],
+  '보통': ['#fff8e1','#f57c00'], '나쁨': ['#fce4ec','#c62828'],
+  '매우 나쁨': ['#fce4ec','#b71c1c'],
+};
+const STRESS = {
+  '낮음': ['#e8f5e9','#388e3c'], '보통': ['#fff8e1','#f57c00'],
+  '높음': ['#fce4ec','#c62828'], '매우 높음': ['#fce4ec','#b71c1c'],
+};
 
-function dot(color) {
-  return `<span class="dot" style="background:${color||'#c0d0e0'}"></span>`;
+function badge(label, val, map) {
+  if (!val) return '';
+  const [bg, color] = map[val] || ['#f0f4f8', '#7a95b0'];
+  return `<span class="badge" style="background:${bg};color:${color}">${label} ${val}</span>`;
 }
 
-function renderEntry(w) {
-  const hasData = w.condition || w.summary?.date || w.memberComment || w.conditionNote;
-  if (!hasData) {
-    return `<div class="entry entry-empty">
-      <div class="entry-header">
-        <span class="entry-week">${w.label}</span>
-        <span class="empty-msg">기록 없음</span>
-      </div>
-    </div>`;
-  }
+function painBadge(pain, note) {
+  if (!pain || pain === '없음') return '';
+  const tip = note ? ` (${note})` : '';
+  return `<span class="badge" style="background:#fce4ec;color:#c62828">⚠ 통증${tip}</span>`;
+}
 
-  const statsHtml = [
-    w.condition && `<span>${dot(COND_COLOR[w.condition])}컨디션 ${w.condition}</span>`,
-    w.sleep     && `<span>${dot(SLEEP_COLOR[w.sleep])}수면 ${w.sleep}</span>`,
-    w.stress    && `<span>${dot('#ab47bc')}스트레스 ${w.stress}</span>`,
-    w.pain && w.pain !== '없음' && `<span>${dot('#ef5350')}통증 ${w.pain}</span>`,
+function goalRow(bodyGoals, currentWeight) {
+  if (!bodyGoals) return '';
+  const pills = [];
+  const wg = bodyGoals.weight;
+  if (wg) {
+    const curr = currentWeight ?? wg.start;
+    const rem = (curr - wg.goal).toFixed(1);
+    pills.push(`<div class="goal-pill">체중 <span class="curr">${curr}kg</span><span class="arrow">→</span><span class="goal">${wg.goal}kg</span>${rem > 0 ? `<span class="rem">-${rem}kg 남음</span>` : '<span style="color:#388e3c;font-weight:700">달성!</span>'}</div>`);
+  }
+  const mg = bodyGoals.muscle;
+  if (mg) {
+    const diff = (mg.goal - mg.start).toFixed(1);
+    pills.push(`<div class="goal-pill">골격근 목표 <span class="goal">${mg.goal}kg</span>${diff > 0 ? `<span class="rem">+${diff}kg</span>` : ''}</div>`);
+  }
+  return pills.length ? `<div class="goal-row">${pills.join('')}</div>` : '';
+}
+
+function renderWeek(w) {
+  const hasData = w.condition || w.summary?.date || w.memberComment;
+  const bd = w.bodyData || {};
+  const lastW = (bd.weight || []).filter(v => v != null).at(-1);
+
+  const mainBadges = [
+    badge('컨디션', w.condition, COND),
+    badge('수면', w.sleep, SLEEP),
+    badge('스트레스', w.stress, STRESS),
+    painBadge(w.pain, w.conditionNote),
+    w.nutrition && w.nutrition !== '보통' ? badge('영양', w.nutrition, SLEEP) : '',
   ].filter(Boolean).join('');
 
-  const noteHtml    = w.conditionNote ? `<div class="note">${w.conditionNote}</div>` : '';
-  const commentHtml = w.memberComment ? `<div class="comment">💬 ${w.memberComment}</div>` : '';
+  const weightHtml = lastW ? `<span class="badge-weight">${lastW}kg</span>` : '';
 
-  const items = w.summary?.items || [];
-  const exHtml = items.length
-    ? `<div class="exercises">${items.map(it => `<div class="ex-row">${it.name} <span style="color:#b0c8e0">${it.detail}</span></div>`).join('')}</div>`
-    : '';
+  const items = (w.summary?.items || []).map(it => it.name).join(' · ');
+  const exHtml = items ? `<div class="wr-exercises">· ${items}</div>` : '';
+  const commentHtml = w.memberComment ? `<div class="wr-comment">💬 ${w.memberComment}</div>` : '';
+  const memoHtml = w.nextSessionMemo ? `<div class="wr-memo">📌 다음 수업: ${w.nextSessionMemo}</div>` : '';
 
-  const bd = w.bodyData;
-  const lW = bd?.weight?.filter(v=>v!=null).at(-1);
-  const lF = bd?.fat?.filter(v=>v!=null).at(-1);
-  const lM = bd?.muscle?.filter(v=>v!=null).at(-1);
-  const bodyHtml = lW
-    ? `<div class="body-stats"><span>체중 <strong>${lW}kg</strong></span><span>체지방 <strong>${lF}kg</strong></span><span>골격근 <strong>${lM}kg</strong></span></div>`
-    : '';
+  const hasDetail = commentHtml || exHtml || memoHtml;
 
-  return `<div class="entry">
-    <div class="entry-header">
-      <span class="entry-date">${w.summary?.date || w.label}</span>
-      <span class="entry-week">${w.summary?.date ? w.label : ''}</span>
+  return `<div class="week-row${hasData ? '' : ' empty'}">
+    <div class="wr-main">
+      <span class="wr-label">${w.label}</span>
+      <span class="wr-date">${w.date || ''}</span>
+      <div class="badges">${mainBadges || (hasData ? '' : '<span style="font-size:10px;color:#c8d8e8">미입력</span>')}</div>
+      ${weightHtml}
     </div>
-    ${statsHtml ? `<div class="entry-stats">${statsHtml}</div>` : ''}
-    ${noteHtml}${commentHtml}${exHtml}${bodyHtml}
+    ${hasDetail ? `<div class="wr-detail">${commentHtml}${exHtml}${memoHtml}</div>` : ''}
   </div>`;
 }
 
 function renderMember(member, data) {
-  const weeks = (data.weeks || []).slice().reverse();
-  const entries = weeks.map(renderEntry).join('');
-  return `<div class="member-block">
-    <div class="member-name">${data.name}</div>
-    ${entries}
+  const weeks = data.weeks || [];
+  const latestW = weeks.flatMap(w => (w.bodyData?.weight || []).filter(v => v != null)).at(-1);
+  const header = `<div class="member-header">
+    <div class="mh-top">
+      <span class="mh-name">${data.name}</span>
+      <span class="mh-month">${data.month || ''}</span>
+    </div>
+    ${goalRow(data.bodyGoals, latestW)}
   </div>`;
+  return `<div class="member-block">${header}${weeks.map(renderWeek).join('')}</div>`;
 }
 
 fetch(`data/members.json?v=${Date.now()}`)
   .then(r => r.json())
   .then(members => Promise.all(
     members.map(m =>
-      fetch(`data/${m.id}.json?v=${Date.now()}`)
-        .then(r => r.json())
-        .then(data => ({ member: m, data }))
-        .catch(() => null)
+      fetch(`data/${m.id}.json?v=${Date.now()}`).then(r => r.json()).then(data => ({ member: m, data })).catch(() => null)
     )
   ))
   .then(results => {
     document.getElementById('loading').style.display = 'none';
     const valid = results.filter(Boolean);
-    document.getElementById('updated').textContent = `${valid.length}명 · ${new Date().toLocaleDateString('ko-KR', { month: 'long', day: 'numeric', hour: '2-digit', minute: '2-digit' })} 기준`;
+    document.getElementById('page-sub').textContent =
+      `${valid.length}명 · ${new Date().toLocaleDateString('ko-KR', { month: 'long', day: 'numeric', hour: '2-digit', minute: '2-digit' })} 기준`;
     document.getElementById('log').innerHTML = valid
-      .map(({ member, data }) => renderMember(member, data))
-      .join('');
+      .map(({ member, data }) => renderMember(member, data)).join('');
   })
-  .catch(() => {
-    document.getElementById('loading').textContent = '불러오기 실패';
-  });
+  .catch(() => { document.getElementById('loading').textContent = '불러오기 실패'; });
 </script>
 </body>
 </html>
