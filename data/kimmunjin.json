@@ -85,7 +85,11 @@
           "next": "케이블 또는 다른 도구로 새로운 방식의 흉추 부하 전달 도입"
         }
       ],
-      "lifts": [],
+      "lifts": [
+        { "name": "스모 데드리프트", "current": 90, "goal": 110 },
+        { "name": "스쿼트", "current": 60, "goal": 80 },
+        { "name": "OHP", "current": 30, "goal": 40 }
+      ],
       "bodyData": {
         "labels": [
           "5/18"
@@ -176,7 +180,11 @@
         "items": []
       },
       "exercises": [],
-      "lifts": [],
+      "lifts": [
+        { "name": "스모 데드리프트", "current": 90, "goal": 110 },
+        { "name": "스쿼트", "current": 60, "goal": 80 },
+        { "name": "OHP", "current": 30, "goal": 40 }
+      ],
       "bodyData": {
         "labels": [],
         "weight": [],
@@ -348,7 +356,11 @@
         "items": []
       },
       "exercises": [],
-      "lifts": [],
+      "lifts": [
+        { "name": "스모 데드리프트", "current": 90, "goal": 110 },
+        { "name": "스쿼트", "current": 60, "goal": 80 },
+        { "name": "OHP", "current": 30, "goal": 40 }
+      ],
       "bodyData": {
         "labels": [],
         "weight": [],
@@ -520,7 +532,11 @@
         "items": []
       },
       "exercises": [],
-      "lifts": [],
+      "lifts": [
+        { "name": "스모 데드리프트", "current": 90, "goal": 110 },
+        { "name": "스쿼트", "current": 60, "goal": 80 },
+        { "name": "OHP", "current": 30, "goal": 40 }
+      ],
       "bodyData": {
         "labels": [],
         "weight": [],
@@ -668,7 +684,11 @@
         "items": []
       },
       "exercises": [],
-      "lifts": [],
+      "lifts": [
+        { "name": "스모 데드리프트", "current": 90, "goal": 110 },
+        { "name": "스쿼트", "current": 60, "goal": 80 },
+        { "name": "OHP", "current": 30, "goal": 40 }
+      ],
       "bodyData": {
         "labels": [],
         "weight": [],
