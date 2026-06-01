@@ -1,0 +1,214 @@
+{
+  "name": "김서영",
+  "month": "2026년 6월",
+  "purposes": ["근육증가", "근력강화", "자세교정"],
+  "goals": {
+    "short": {
+      "text": "허리 안정화 + 자세 인식 개선 — 코어 기초 완성 및 올바른 정렬 습관 만들기",
+      "period": "1개월"
+    },
+    "mid": {
+      "text": "자세교정 심화 + 기초 근력 구축 — 일상에서 바른 자세 유지",
+      "period": "3개월"
+    },
+    "long": {
+      "text": "자세 유지 + 근력·근육량 향상 — 스스로 관리할 수 있는 몸 만들기",
+      "period": "6개월+"
+    }
+  },
+  "bodyGoals": null,
+  "cardio": { "age": 25, "restingHR": 81 },
+  "orm": { "weight": 20, "reps": 10, "goal": "근비대" },
+  "quotes": [
+    "자세 하나가 바뀌면 인상이 바뀌고, 인상이 바뀌면 인생이 바뀐다.",
+    "매일 조금씩 더 곧게. 그게 전부다.",
+    "코어가 강해질수록 세상이 더 단단하게 느껴진다.",
+    "25살에 자기 몸을 관리하는 사람은 평생 그 혜택을 누린다.",
+    "완벽한 자세는 한 번에 오지 않는다. 매일 의식하는 사람만이 얻는다.",
+    "근육은 거짓말하지 않는다. 꾸준히 자극한 만큼 돌아온다.",
+    "오늘의 허리 관리가 10년 후의 나를 만든다.",
+    "강한 코어는 강한 삶의 기반이다.",
+    "자세를 바로잡는 건 몸을 바로잡는 게 아니라 습관을 바로잡는 것이다.",
+    "오늘 나온 것만으로도 내일의 나에게 선물을 준 것이다."
+  ],
+  "weeks": [
+    {
+      "week": 1,
+      "label": "1주차",
+      "date": "6/1",
+      "mainMessage": "",
+      "summary": { "date": "", "items": [] },
+      "exercises": [],
+      "lifts": [],
+      "bodyData": { "labels": [], "weight": [], "fat": [], "muscle": [], "lastMeasured": null, "comment": "인바디 측정 후 업데이트 예정이에요." },
+      "condition": "보통", "conditionNote": "", "sleep": "보통", "sleepNote": "", "stress": "보통",
+      "pain": "있음", "painNote": "허리 통증",
+      "nutrition": "보통", "nutritionNote": "",
+      "review": { "good": "", "caution": "", "suggest": "" },
+      "trainerComment": "", "trainerDirection": "", "finalMessage": "", "nextSessionMemo": "",
+      "musclesWorked": [],
+      "weeklyRoutine": {
+        "weekKey": "2026-W23-ky",
+        "note": "🎯 1주차: 자세 인식 + 기초 코어 — 허리 부담 없이 안전하게 시작",
+        "days": [
+          {
+            "day": "월", "workout": "개인-코어기초 (집)", "rest": false,
+            "plan": [
+              { "name": "고양이-소 자세", "sets": 3, "reps": 10, "weight": "-" },
+              { "name": "버드독", "sets": 3, "reps": 10, "weight": "양쪽" },
+              { "name": "플랭크", "sets": 3, "reps": 1, "weight": "20초" },
+              { "name": "힙브릿지", "sets": 3, "reps": 15, "weight": "-" }
+            ]
+          },
+          { "day": "화", "workout": "레슨", "rest": false },
+          { "day": "수", "workout": "휴식", "rest": true },
+          { "day": "목", "workout": "레슨", "rest": false },
+          {
+            "day": "금", "workout": "개인-자세교정 (집)", "rest": false,
+            "plan": [
+              { "name": "벽 기대기 자세교정", "sets": 3, "reps": 1, "weight": "1분" },
+              { "name": "흉추 회전 스트레칭", "sets": 3, "reps": 10, "weight": "양쪽" },
+              { "name": "힙브릿지", "sets": 3, "reps": 15, "weight": "-" },
+              { "name": "데드버그", "sets": 3, "reps": 10, "weight": "양쪽" }
+            ]
+          },
+          { "day": "토", "workout": "휴식", "rest": true },
+          { "day": "일", "workout": "휴식", "rest": true }
+        ]
+      }
+    },
+    {
+      "week": 2,
+      "label": "2주차",
+      "date": "6/8",
+      "mainMessage": "",
+      "summary": { "date": "", "items": [] },
+      "exercises": [],
+      "lifts": [],
+      "bodyData": { "labels": [], "weight": [], "fat": [], "muscle": [], "lastMeasured": null, "comment": "" },
+      "condition": "보통", "conditionNote": "", "sleep": "보통", "sleepNote": "", "stress": "보통",
+      "pain": "있음", "painNote": "허리 통증",
+      "nutrition": "보통", "nutritionNote": "",
+      "review": { "good": "", "caution": "", "suggest": "" },
+      "trainerComment": "", "trainerDirection": "", "finalMessage": "", "nextSessionMemo": "",
+      "musclesWorked": [],
+      "weeklyRoutine": {
+        "weekKey": "2026-W24-ky",
+        "note": "🎯 2주차: 코어 강화 + 흉추 가동성 확보",
+        "days": [
+          {
+            "day": "월", "workout": "개인-코어강화 (집)", "rest": false,
+            "plan": [
+              { "name": "버드독", "sets": 3, "reps": 12, "weight": "양쪽" },
+              { "name": "플랭크", "sets": 3, "reps": 1, "weight": "30초" },
+              { "name": "사이드 플랭크", "sets": 3, "reps": 1, "weight": "20초 양쪽" },
+              { "name": "힙브릿지 싱글레그", "sets": 3, "reps": 10, "weight": "양쪽" }
+            ]
+          },
+          { "day": "화", "workout": "레슨", "rest": false },
+          { "day": "수", "workout": "휴식", "rest": true },
+          { "day": "목", "workout": "레슨", "rest": false },
+          {
+            "day": "금", "workout": "개인-흉추가동성 (집)", "rest": false,
+            "plan": [
+              { "name": "폼롤러 흉추 이완 (수건 말아서 대체 가능)", "sets": 3, "reps": 1, "weight": "1분" },
+              { "name": "네발기기 흉추 회전", "sets": 3, "reps": 10, "weight": "양쪽" },
+              { "name": "고양이-소 자세", "sets": 3, "reps": 12, "weight": "-" },
+              { "name": "데드버그", "sets": 3, "reps": 12, "weight": "양쪽" }
+            ]
+          },
+          { "day": "토", "workout": "휴식", "rest": true },
+          { "day": "일", "workout": "휴식", "rest": true }
+        ]
+      }
+    },
+    {
+      "week": 3,
+      "label": "3주차",
+      "date": "6/15",
+      "mainMessage": "",
+      "summary": { "date": "", "items": [] },
+      "exercises": [],
+      "lifts": [],
+      "bodyData": { "labels": [], "weight": [], "fat": [], "muscle": [], "lastMeasured": null, "comment": "" },
+      "condition": "보통", "conditionNote": "", "sleep": "보통", "sleepNote": "", "stress": "보통",
+      "pain": "있음", "painNote": "허리 통증",
+      "nutrition": "보통", "nutritionNote": "",
+      "review": { "good": "", "caution": "", "suggest": "" },
+      "trainerComment": "", "trainerDirection": "", "finalMessage": "", "nextSessionMemo": "",
+      "musclesWorked": [],
+      "weeklyRoutine": {
+        "weekKey": "2026-W25-ky",
+        "note": "🎯 3주차: 균형·안정성 훈련 + 자세 유지 시간 늘리기",
+        "days": [
+          {
+            "day": "월", "workout": "개인-균형훈련 (집)", "rest": false,
+            "plan": [
+              { "name": "한 발 서기", "sets": 3, "reps": 1, "weight": "30초 양쪽" },
+              { "name": "버드독 (느리게 5초 유지)", "sets": 3, "reps": 8, "weight": "양쪽" },
+              { "name": "플랭크", "sets": 3, "reps": 1, "weight": "40초" },
+              { "name": "힙브릿지 싱글레그", "sets": 3, "reps": 12, "weight": "양쪽" }
+            ]
+          },
+          { "day": "화", "workout": "레슨", "rest": false },
+          { "day": "수", "workout": "휴식", "rest": true },
+          { "day": "목", "workout": "레슨", "rest": false },
+          {
+            "day": "금", "workout": "개인-복합자세 (집)", "rest": false,
+            "plan": [
+              { "name": "네발기기 흉추 회전", "sets": 3, "reps": 12, "weight": "양쪽" },
+              { "name": "사이드 플랭크", "sets": 3, "reps": 1, "weight": "30초 양쪽" },
+              { "name": "글루트 브릿지 마치", "sets": 3, "reps": 10, "weight": "-" },
+              { "name": "전신 스트레칭", "sets": 1, "reps": 1, "weight": "10분" }
+            ]
+          },
+          { "day": "토", "workout": "휴식", "rest": true },
+          { "day": "일", "workout": "휴식", "rest": true }
+        ]
+      }
+    },
+    {
+      "week": 4,
+      "label": "4주차",
+      "date": "6/22",
+      "mainMessage": "",
+      "summary": { "date": "", "items": [] },
+      "exercises": [],
+      "lifts": [],
+      "bodyData": { "labels": [], "weight": [], "fat": [], "muscle": [], "lastMeasured": null, "comment": "" },
+      "condition": "보통", "conditionNote": "", "sleep": "보통", "sleepNote": "", "stress": "보통",
+      "pain": "있음", "painNote": "허리 통증",
+      "nutrition": "보통", "nutritionNote": "",
+      "review": { "good": "", "caution": "", "suggest": "" },
+      "trainerComment": "", "trainerDirection": "", "finalMessage": "", "nextSessionMemo": "",
+      "musclesWorked": [],
+      "weeklyRoutine": {
+        "weekKey": "2026-W26-ky",
+        "note": "🎯 4주차: 기초 근력 도입 + 1개월 자세 점검",
+        "days": [
+          {
+            "day": "월", "workout": "개인-근력기초 (집)", "rest": false,
+            "plan": [
+              { "name": "스쿼트 (자세 집중)", "sets": 3, "reps": 12, "weight": "-" },
+              { "name": "푸쉬업 (무릎 or 벽)", "sets": 3, "reps": 10, "weight": "-" },
+              { "name": "플랭크", "sets": 3, "reps": 1, "weight": "45초" },
+              { "name": "힙브릿지", "sets": 3, "reps": 15, "weight": "-" }
+            ]
+          },
+          { "day": "화", "workout": "레슨", "rest": false },
+          { "day": "수", "workout": "휴식", "rest": true },
+          { "day": "목", "workout": "레슨 + 인바디 측정 권장", "rest": false },
+          {
+            "day": "금", "workout": "개인-마무리점검 (집)", "rest": false,
+            "plan": [
+              { "name": "1주차 루틴 전체 반복", "sets": 3, "reps": 10, "weight": "변화 체감" },
+              { "name": "전신 스트레칭", "sets": 1, "reps": 1, "weight": "15분" }
+            ]
+          },
+          { "day": "토", "workout": "휴식", "rest": true },
+          { "day": "일", "workout": "휴식", "rest": true }
+        ]
+      }
+    }
+  ]
+}
