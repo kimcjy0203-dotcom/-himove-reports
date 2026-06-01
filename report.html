@@ -541,30 +541,39 @@ function init(data) {
     const w = weeks[idx];
     if (w && w.bodyData && !activeChart[idx]) {
       const canvas = document.getElementById(`bodyChart-${idx}`);
+      const canvas2 = document.getElementById(`bodyChart2-${idx}`);
       if (canvas) {
         const bd = w.bodyData;
-        const yVals  = [...(bd.muscle||[]), ...(bd.fat||[])].filter(v => v != null);
-        const y1Vals = (bd.weight||[]).filter(v => v != null);
-        const yMin  = yVals.length  ? Math.floor(Math.min(...yVals))  - 2 : 0;
-        const yMax  = yVals.length  ? Math.ceil(Math.max(...yVals))   + 2 : 30;
-        const y1Min = y1Vals.length ? Math.floor(Math.min(...y1Vals)) - 2 : 40;
-        const y1Max = y1Vals.length ? Math.ceil(Math.max(...y1Vals))  + 2 : 100;
-        const fmt   = v => Number.isInteger(v) ? v + 'kg' : parseFloat(v).toFixed(1) + 'kg';
-        activeChart[idx] = new Chart(canvas.getContext('2d'), {
-          type: 'line',
-          data: { labels: bd.labels, datasets: [
-            { label: '골격근량', data: bd.muscle, borderColor: 'rgba(90,154,210,0.85)', backgroundColor: 'rgba(90,154,210,0.08)', borderWidth: 2.5, pointBackgroundColor: 'rgba(90,154,210,1)', pointRadius: 3, tension: 0.4, fill: true,  spanGaps: true, yAxisID: 'y'  },
-            { label: '체지방량', data: bd.fat,    borderColor: 'rgba(210,120,110,0.75)', backgroundColor: 'rgba(210,120,110,0.06)', borderWidth: 2.5, pointBackgroundColor: 'rgba(210,120,110,1)', pointRadius: 3, tension: 0.4, fill: true,  spanGaps: true, yAxisID: 'y'  },
-            { label: '체중',     data: bd.weight, borderColor: 'rgba(90,175,130,0.8)',   backgroundColor: 'rgba(90,175,130,0.04)',  borderWidth: 2,   pointBackgroundColor: 'rgba(90,175,130,1)',   pointRadius: 3, tension: 0.4, fill: false, spanGaps: true, yAxisID: 'y1' }
-          ]},
-          options: { responsive: true, maintainAspectRatio: false,
-            plugins: { legend: { labels: { font: { size: 11 }, color: '#8aa0ba', boxWidth: 10, usePointStyle: true } }, tooltip: { mode: 'index', intersect: false } },
-            scales: {
-              x:  { grid: { display: false }, ticks: { color: '#b0c0d4', font: { size: 11 } }, border: { display: false } },
-              y:  { position: 'left',  min: yMin,  max: yMax,  grid: { color: 'rgba(160,190,230,0.12)' }, ticks: { color: '#b0c0d4', font: { size: 11 }, callback: fmt }, border: { display: false } },
-              y1: { position: 'right', min: y1Min, max: y1Max, grid: { drawOnChartArea: false },           ticks: { color: '#90c8a8', font: { size: 11 }, callback: fmt }, border: { display: false } }
+        const fmt = v => parseFloat(v).toFixed(1) + 'kg';
+        const chartOpts = (datasets, vals) => {
+          const mn = vals.length ? Math.floor(Math.min(...vals)) - 1 : 0;
+          const mx = vals.length ? Math.ceil(Math.max(...vals))  + 1 : 30;
+          return {
+            type: 'line',
+            data: { labels: bd.labels, datasets },
+            options: { responsive: true, maintainAspectRatio: false,
+              plugins: { legend: { labels: { font: { size: 11 }, color: '#8aa0ba', boxWidth: 10, usePointStyle: true } }, tooltip: { mode: 'index', intersect: false } },
+              scales: {
+                x: { grid: { display: false }, ticks: { color: '#b0c0d4', font: { size: 11 } }, border: { display: false } },
+                y: { min: mn, max: mx, grid: { color: 'rgba(160,190,230,0.12)' }, ticks: { color: '#b0c0d4', font: { size: 11 }, callback: fmt }, border: { display: false } }
+              }
             }
-          }
+          };
+        };
+        const wVals = (bd.weight||[]).filter(v=>v!=null);
+        const cVals = [...(bd.muscle||[]),...(bd.fat||[])].filter(v=>v!=null);
+        activeChart[idx] = new Chart(canvas.getContext('2d'), chartOpts(
+          [{ label: '체중', data: bd.weight, borderColor: 'rgba(90,175,130,0.8)', backgroundColor: 'rgba(90,175,130,0.08)', borderWidth: 2.5, pointBackgroundColor: 'rgba(90,175,130,1)', pointRadius: 4, tension: 0.4, fill: true, spanGaps: true }],
+          wVals
+        ));
+        if (canvas2) new Chart(canvas2.getContext('2d'), chartOpts(
+          [
+            { label: '골격근량', data: bd.muscle, borderColor: 'rgba(90,154,210,0.85)', backgroundColor: 'rgba(90,154,210,0.08)', borderWidth: 2.5, pointBackgroundColor: 'rgba(90,154,210,1)', pointRadius: 4, tension: 0.4, fill: true, spanGaps: true },
+            { label: '체지방량', data: bd.fat,    borderColor: 'rgba(210,120,110,0.75)', backgroundColor: 'rgba(210,120,110,0.06)', borderWidth: 2.5, pointBackgroundColor: 'rgba(210,120,110,1)', pointRadius: 4, tension: 0.4, fill: true, spanGaps: true }
+          ],
+          cVals
+        ));
+        activeChart[idx] = activeChart[idx]; // keep reference
         });
       }
     }
@@ -672,7 +681,7 @@ function init(data) {
       ${collapsible('유산소 강도 가이드', 'blue', '<div style="display:flex;align-items:center;gap:8px;margin-bottom:4px"><span style="font-size:11px;color:#a0b8d0;white-space:nowrap">오늘 안정시 심박수</span><input id="card-rhr-'+idx+'" type="number" min="40" max="120" style="width:52px;background:rgba(255,255,255,0.6);border:1px solid rgba(160,190,230,0.4);border-radius:8px;padding:4px 6px;font-size:13px;font-weight:700;color:#2a3a50;text-align:center;outline:none;font-family:inherit"><span style="font-size:11px;color:#a0b8d0">bpm</span></div><div id="card-formula-'+idx+'" style="font-size:10px;color:#c0d0e0;margin-bottom:8px;padding:0 2px"></div><div id="card-zones-'+idx+'" style="display:flex;flex-direction:column;gap:5px"></div>')}
       <div class="card"><div class="card-title blue">운동 현황</div><div class="sub-label">주요 리프트</div><div class="lift-grid">${liftItems}</div>${HR}<div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:10px"><div class="sub-label" style="margin-bottom:0">이번 주 트레이닝</div><span class="wk-count" id="wk-count-${idx}">주 0회</span></div><div class="weekly-cal" id="weekly-cal-${idx}">${calDays}</div><div class="note">${r.note||''}</div>${HR}<div class="sub-label">운동 부위</div><div class="body-map-container" id="body-map-${idx}"><div class="body-map-wrap">${FRONT_SVG}<div class="body-map-lbl">앞</div></div><div class="body-map-wrap">${BACK_SVG}<div class="body-map-lbl">뒤</div></div></div></div>
       ${collapsible('이번 주 상태', 'blue', `<div id="ds-${idx}"><div style="font-size:11px;color:#a0b8d0;font-weight:600;margin-bottom:14px">📅 오늘 ${new Date().toLocaleDateString('ko-KR',{month:'long',day:'numeric'})} 기준 — 매일 초기화</div><div class="sub-label"><span class="dot" style="background:#f4a07e"></span>컨디션</div>${miniSum('condition',['매우 좋음','좋음','보통','피곤함','매우 피곤함'])}<div class="check-row">${dailyChips('condition',['매우 좋음','좋음','보통','피곤함','매우 피곤함'])}</div>${HR}<div class="sub-label"><span class="dot" style="background:#a78bde"></span>수면</div>${miniSum('sleep',['매우 나쁨','나쁨','보통','좋음','매우 좋음'])}<div class="check-row">${dailyChips('sleep',['매우 나쁨','나쁨','보통','좋음','매우 좋음'])}</div>${HR}<div class="sub-label"><span class="dot" style="background:#6dc99c"></span>신체 불편</div>${miniSum('pain',['없음','있음'])}<div class="check-row">${dailyChips('pain',['없음','있음'])}</div>${HR}<div class="sub-label"><span class="dot" style="background:#f0c96a"></span>영양 상태</div>${miniSum('nutrition',['매우 나쁨','나쁨','보통','좋음','매우 좋음'])}<div class="check-row">${dailyChips('nutrition',['매우 나쁨','나쁨','보통','좋음','매우 좋음'])}</div></div>`)}
-      ${collapsible('체성분', 'green', `${buildCountdown(bd.lastMeasured)}<div class="stat-grid" style="margin-top:${bd.lastMeasured?'14px':'0'}"><div class="stat-box"><div class="lbl">체중</div><div class="val">${lW??'—'}</div><div class="unt">kg</div></div><div class="stat-box"><div class="lbl">체지방량</div><div class="val">${lF??'—'}</div><div class="unt">kg</div></div><div class="stat-box"><div class="lbl">골격근량</div><div class="val">${lM??'—'}</div><div class="unt">kg</div></div></div><div class="delta-row"><div class="delta-box"><span class="dlbl">체중 변화</span><span class="dval ${dW.cls}">${dW.text}</span></div><div class="delta-box"><span class="dlbl">체지방 변화</span><span class="dval ${dF.cls}">${dF.text}</span></div><div class="delta-box"><span class="dlbl">근육 변화</span><span class="dval ${dM.cls}">${dM.text}</span></div></div>${HR}<div class="sub-label">변화 추이</div><div style="position:relative;height:220px;margin-bottom:14px"><canvas id="bodyChart-${idx}"></canvas></div><div class="msg">${bd.comment}</div>`)}
+      ${collapsible('체성분', 'green', `${buildCountdown(bd.lastMeasured)}<div class="stat-grid" style="margin-top:${bd.lastMeasured?'14px':'0'}"><div class="stat-box"><div class="lbl">체중</div><div class="val">${lW??'—'}</div><div class="unt">kg</div></div><div class="stat-box"><div class="lbl">체지방량</div><div class="val">${lF??'—'}</div><div class="unt">kg</div></div><div class="stat-box"><div class="lbl">골격근량</div><div class="val">${lM??'—'}</div><div class="unt">kg</div></div></div><div class="delta-row"><div class="delta-box"><span class="dlbl">체중 변화</span><span class="dval ${dW.cls}">${dW.text}</span></div><div class="delta-box"><span class="dlbl">체지방 변화</span><span class="dval ${dF.cls}">${dF.text}</span></div><div class="delta-box"><span class="dlbl">근육 변화</span><span class="dval ${dM.cls}">${dM.text}</span></div></div>${HR}<div class="sub-label">변화 추이</div><div style="font-size:10px;font-weight:700;color:#90c8a8;letter-spacing:0.5px;margin-bottom:4px">체중</div><div style="position:relative;height:130px;margin-bottom:12px"><canvas id="bodyChart-${idx}"></canvas></div><div style="font-size:10px;font-weight:700;color:#7aaad4;letter-spacing:0.5px;margin-bottom:4px">골격근량 · 체지방량</div><div style="position:relative;height:130px;margin-bottom:14px"><canvas id="bodyChart2-${idx}"></canvas></div><div class="msg">${bd.comment}</div>`)}
       ${(w.review?.good || w.review?.caution || w.review?.suggest || w.trainerComment) ? collapsible('트레이너 평가', 'gold', `<div style="margin-bottom:14px"><div class="sub-label">✓ 잘 하고 있는 점</div><div class="msg green">${w.review.good}</div></div><div style="margin-bottom:14px"><div class="sub-label" style="color:#e05050">⚠ 주의할 점</div><div class="msg gold">${w.review.caution}</div></div><div style="margin-bottom:14px"><div class="sub-label">→ 권장 사항</div><div class="msg">${w.review.suggest}</div></div>${w.trainerComment ? `${HR}<div class="sub-label">트레이너 코멘트</div><div class="msg gold">${w.trainerComment}</div>` : ''}${!isMember && w.trainerDirection ? `${HR}<div class="sub-label">트레이닝 방향</div><div class="msg">${w.trainerDirection}</div>` : ''}`) : ''}
       ${!isMember && w.nextSessionMemo ? `<div class="card" style="border-left:3px solid rgba(200,160,90,0.5)"><div class="card-title gold">다음 수업 준비<span class="memo-badge">트레이너</span></div><div class="note">${w.nextSessionMemo}</div></div>` : ''}
       <div class="final-card"><div>오늘의 명언</div><div>${(()=>{ if(!data.quotes?.length) return w.finalMessage||''; const d=new Date(); const day=Math.floor((d-(new Date(d.getFullYear(),0,0)))/864e5); return '"' + data.quotes[day%data.quotes.length] + '"'; })()}</div></div>
