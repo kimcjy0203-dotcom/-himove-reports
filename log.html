@@ -15,7 +15,21 @@ body {
   max-width: 640px; margin: 0 auto; padding: 24px 16px 64px;
 }
 h1 { font-size: 20px; font-weight: 800; color: #1a2a40; letter-spacing: -0.8px; }
-.page-sub { font-size: 11px; color: #a0b8d0; margin-top: 3px; margin-bottom: 24px; }
+.page-sub { font-size: 11px; color: #a0b8d0; margin-top: 3px; margin-bottom: 14px; }
+.search-wrap { position: relative; margin-bottom: 20px; }
+.search-input {
+  width: 100%; background: white; border: 1px solid rgba(160,190,230,0.4);
+  border-radius: 12px; padding: 10px 16px 10px 38px;
+  font-size: 14px; color: #1a2a40; outline: none; font-family: inherit;
+}
+.search-input:focus { border-color: #5aaae8; box-shadow: 0 0 0 3px rgba(90,170,232,0.1); }
+.search-icon { position: absolute; left: 13px; top: 50%; transform: translateY(-50%); font-size: 14px; color: #a0b8d0; pointer-events: none; }
+.search-clear {
+  position: absolute; right: 12px; top: 50%; transform: translateY(-50%);
+  font-size: 16px; color: #b0c8e0; cursor: pointer; display: none;
+  background: none; border: none; line-height: 1;
+}
+.member-block.hidden { display: none; }
 
 .member-block { background: white; border-radius: 16px; margin-bottom: 16px; overflow: hidden; border: 1px solid rgba(160,190,230,0.2); }
 
@@ -75,6 +89,11 @@ h1 { font-size: 20px; font-weight: 800; color: #1a2a40; letter-spacing: -0.8px; 
 <body>
 <h1>himove</h1>
 <div class="page-sub" id="page-sub">불러오는 중…</div>
+<div class="search-wrap">
+  <span class="search-icon">🔍</span>
+  <input class="search-input" id="search-input" type="text" placeholder="회원 이름 검색…" oninput="handleSearch(this.value)">
+  <button class="search-clear" id="search-clear" onclick="clearSearch()">✕</button>
+</div>
 <div id="loading">⋯</div>
 <div id="log"></div>
 
@@ -169,7 +188,7 @@ function renderMember(member, data) {
   </div>`;
 
   const weeks = (data.weeks||[]).slice().reverse();
-  return `<div class="member-block">${header}${weeks.map(renderWeek).join('')}</div>`;
+  return `<div class="member-block" data-name="${data.name}">${header}${weeks.map(renderWeek).join('')}</div>`;
 }
 
 fetch(`data/members.json?v=${Date.now()}`)
@@ -188,6 +207,32 @@ fetch(`data/members.json?v=${Date.now()}`)
       .map(({member, data}) => renderMember(member, data)).join('');
   })
   .catch(() => { document.getElementById('loading').textContent = '불러오기 실패'; });
+function handleSearch(val) {
+  const q = val.trim();
+  document.getElementById('search-clear').style.display = q ? 'block' : 'none';
+  const blocks = document.querySelectorAll('.member-block');
+  const log = document.getElementById('log');
+  if (!q) {
+    blocks.forEach(b => { b.classList.remove('hidden'); log.prepend(b); });
+    // 원래 순서 복원
+    [...blocks].reverse().forEach(b => log.prepend(b));
+    return;
+  }
+  const matched = [], rest = [];
+  blocks.forEach(b => {
+    const name = b.dataset.name || '';
+    name.includes(q) ? matched.push(b) : rest.push(b);
+  });
+  matched.forEach(b => { b.classList.remove('hidden'); log.prepend(b); });
+  rest.forEach(b => b.classList.add('hidden'));
+}
+
+function clearSearch() {
+  const input = document.getElementById('search-input');
+  input.value = '';
+  handleSearch('');
+  input.focus();
+}
 </script>
 </body>
 </html>
