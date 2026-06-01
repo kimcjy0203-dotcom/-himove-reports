@@ -591,7 +591,10 @@ function init(data) {
   function miniSum(key, opts) {
     const cnt = {};
     opts.forEach(o => cnt[o] = 0);
-    weeks.forEach(wk => { if (wk[key]) cnt[wk[key]] = (cnt[wk[key]] || 0) + 1; });
+    weeks.forEach(wk => {
+      if ((wk.mainMessage || wk.sessionDates?.length) && wk[key])
+        cnt[wk[key]] = (cnt[wk[key]] || 0) + 1;
+    });
     const parts = opts.filter(o => cnt[o] > 0).map(o => `<b>${o} ${cnt[o]}</b>`).join('');
     return parts ? `<div class="mini-sum">${parts}</div>` : '';
   }
