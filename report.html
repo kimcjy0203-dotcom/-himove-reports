@@ -346,6 +346,7 @@ tr:last-child td { border-bottom: none; }
       <div id="orm-result"></div>
     </div>
   </div>
+  <div id="quote-section"></div>
   <div class="footer">HiMove &nbsp;·&nbsp; 월간 회원 리포트<br>본 리포트는 트레이너와 AI가 함께 작성합니다</div>
 </div>
 
@@ -714,7 +715,6 @@ function init(data) {
       ${collapsible('체성분', 'green', `${buildCountdown(bd.lastMeasured)}<div class="stat-grid" style="margin-top:${bd.lastMeasured?'14px':'0'}"><div class="stat-box"><div class="lbl">체중</div><div class="val">${lW??'—'}</div><div class="unt">kg</div></div><div class="stat-box"><div class="lbl">체지방량</div><div class="val">${lF??'—'}</div><div class="unt">kg</div></div><div class="stat-box"><div class="lbl">골격근량</div><div class="val">${lM??'—'}</div><div class="unt">kg</div></div></div><div class="delta-row"><div class="delta-box"><span class="dlbl">체중 변화</span><span class="dval ${dW.cls}">${dW.text}</span></div><div class="delta-box"><span class="dlbl">체지방 변화</span><span class="dval ${dF.cls}">${dF.text}</span></div><div class="delta-box"><span class="dlbl">근육 변화</span><span class="dval ${dM.cls}">${dM.text}</span></div></div>${HR}<div class="sub-label">변화 추이</div><div style="font-size:10px;font-weight:700;color:#90c8a8;letter-spacing:0.5px;margin-bottom:4px">체중</div><div style="position:relative;height:130px;margin-bottom:12px"><canvas id="bodyChart-${idx}"></canvas></div><div style="font-size:10px;font-weight:700;color:#7aaad4;letter-spacing:0.5px;margin-bottom:4px">골격근량 · 체지방량</div><div style="position:relative;height:130px;margin-bottom:14px"><canvas id="bodyChart2-${idx}"></canvas></div><div class="msg">${bd.comment}</div>`)}
       ${(w.review?.good || w.review?.caution || w.review?.suggest || w.trainerComment) ? collapsible('트레이너 평가', 'gold', `<div style="margin-bottom:14px"><div class="sub-label">✓ 잘 하고 있는 점</div><div class="msg green">${w.review.good}</div></div><div style="margin-bottom:14px"><div class="sub-label" style="color:#e05050">⚠ 주의할 점</div><div class="msg gold">${w.review.caution}</div></div><div style="margin-bottom:14px"><div class="sub-label">→ 권장 사항</div><div class="msg">${w.review.suggest}</div></div>${w.trainerComment ? `${HR}<div class="sub-label">트레이너 코멘트</div><div class="msg gold">${w.trainerComment}</div>` : ''}${!isMember && w.trainerDirection ? `${HR}<div class="sub-label">트레이닝 방향</div><div class="msg">${w.trainerDirection}</div>` : ''}`) : ''}
       ${!isMember && w.nextSessionMemo ? `<div class="card" style="border-left:3px solid rgba(200,160,90,0.5)"><div class="card-title gold">다음 수업 준비<span class="memo-badge">트레이너</span></div><div class="note">${w.nextSessionMemo}</div></div>` : ''}
-      <div class="final-card"><div>오늘의 명언</div><div>${(()=>{ if(!data.quotes?.length) return w.finalMessage||''; const d=new Date(); const day=Math.floor((d-(new Date(d.getFullYear(),0,0)))/864e5); return '"' + data.quotes[day%data.quotes.length] + '"'; })()}</div></div>
     </div>`;
   }
 
@@ -893,6 +893,19 @@ function init(data) {
         </div>`;
       mssEl.appendChild(card);
     });
+  }
+
+  /* 오늘의 명언 — 항상 맨 아래 */
+  const quoteText = (() => {
+    if (data.quotes?.length) {
+      const day = Math.floor((new Date() - new Date(new Date().getFullYear(), 0, 0)) / 864e5);
+      return '"' + data.quotes[day % data.quotes.length] + '"';
+    }
+    return weeks[0]?.finalMessage || '';
+  })();
+  if (quoteText) {
+    document.getElementById('quote-section').innerHTML =
+      `<div class="final-card"><div>오늘의 명언</div><div>${quoteText}</div></div>`;
   }
 }
 
