@@ -11,191 +11,253 @@
 * { box-sizing: border-box; margin: 0; padding: 0; }
 body {
   font-family: -apple-system, 'Apple SD Gothic Neo', 'Noto Sans KR', sans-serif;
-  background: #eef2f8; color: #1a2a3a;
-  max-width: 640px; margin: 0 auto; padding: 28px 16px 64px;
+  background: #eef2f8; color: #1a2a3a; font-size: 12px;
 }
-h1 { font-size: 20px; font-weight: 800; color: #1a2a40; letter-spacing: -0.8px; }
-.page-sub { font-size: 11px; color: #a0b8d0; margin-top: 3px; margin-bottom: 24px; }
+.page-header {
+  padding: 20px 20px 12px;
+  background: #eef2f8;
+  position: sticky; top: 0; z-index: 100;
+  border-bottom: 1px solid rgba(160,190,230,0.2);
+}
+.page-header h1 { font-size: 18px; font-weight: 800; color: #1a2a40; letter-spacing: -0.5px; }
+.page-sub { font-size: 10px; color: #a0b8d0; margin-top: 2px; }
 
-.member-block { background: white; border-radius: 16px; margin-bottom: 16px; overflow: hidden; border: 1px solid rgba(160,190,230,0.2); }
+/* 테이블 래퍼 */
+.table-wrap { overflow-x: auto; padding: 16px 0 40px; }
+table { border-collapse: separate; border-spacing: 0; min-width: 100%; }
 
-.member-header {
-  padding: 14px 16px 12px;
-  border-bottom: 1px solid rgba(160,190,230,0.15);
+/* 헤더 */
+thead th {
+  position: sticky; top: 64px; z-index: 50;
+  background: #eef2f8; padding: 10px 12px 8px;
+  text-align: left; white-space: nowrap;
 }
-.mh-top { display: flex; align-items: center; justify-content: space-between; margin-bottom: 8px; }
-.mh-name { font-size: 15px; font-weight: 800; color: #1a2a40; }
-.mh-month { font-size: 11px; color: #a0b8d0; }
-.goal-row { display: flex; gap: 10px; flex-wrap: wrap; }
-.goal-pill {
-  font-size: 10px; color: #6a8aa8;
-  background: rgba(100,150,210,0.07);
-  border: 1px solid rgba(100,150,210,0.15);
-  border-radius: 20px; padding: 3px 8px;
-  display: flex; align-items: center; gap: 4px;
+thead th:first-child {
+  position: sticky; left: 0; z-index: 60;
+  width: 72px; min-width: 72px;
 }
-.goal-pill .curr { font-weight: 700; color: #2a4a6a; }
-.goal-pill .arrow { color: #b0c8e0; }
-.goal-pill .goal { font-weight: 700; color: #4a7aa8; }
-.goal-pill .rem { color: #e06060; font-weight: 700; }
 
-.week-row {
-  padding: 8px 16px;
-  border-bottom: 1px solid rgba(160,190,230,0.1);
+/* 회원 헤더 카드 */
+.member-header-cell {
+  background: white; border-radius: 12px; padding: 10px 12px;
+  border: 1px solid rgba(160,190,230,0.25);
+  min-width: 200px; max-width: 220px;
 }
-.week-row:last-child { border-bottom: none; }
-.week-row.empty { opacity: 0.35; }
-.wr-main { display: flex; align-items: center; gap: 6px; flex-wrap: wrap; }
-.wr-label { font-size: 11px; font-weight: 700; color: #3a5a80; min-width: 52px; }
-.wr-date { font-size: 10px; color: #b0c8e0; min-width: 30px; }
-.badges { display: flex; gap: 4px; flex-wrap: wrap; flex: 1; }
+.mh-name { font-size: 14px; font-weight: 800; color: #1a2a40; margin-bottom: 4px; }
+.mh-month { font-size: 10px; color: #a0b8d0; margin-bottom: 8px; }
+.progress-wrap { display: flex; align-items: center; gap: 6px; }
+.progress-bar {
+  flex: 1; height: 6px; background: rgba(160,190,230,0.25);
+  border-radius: 10px; overflow: hidden;
+}
+.progress-fill { height: 100%; border-radius: 10px; background: linear-gradient(90deg, #5aaae8, #3a8fd4); }
+.progress-text { font-size: 10px; font-weight: 700; color: #4a7ab0; white-space: nowrap; }
+
+/* 주차 라벨 열 */
+.week-label-cell {
+  position: sticky; left: 0; z-index: 10;
+  background: #eef2f8; padding: 8px 10px;
+  vertical-align: top;
+}
+.wl-inner {
+  background: white; border-radius: 8px; padding: 6px 8px;
+  border: 1px solid rgba(160,190,230,0.2); text-align: center;
+}
+.wl-label { font-size: 10px; font-weight: 700; color: #4a7ab0; }
+.wl-date  { font-size: 9px; color: #b0c8e0; margin-top: 1px; }
+
+/* 주차 데이터 셀 */
+td.data-cell { padding: 8px 6px; vertical-align: top; }
+.cell-inner {
+  background: white; border-radius: 10px; padding: 10px 11px;
+  border: 1px solid rgba(160,190,230,0.2);
+  min-width: 200px; max-width: 220px;
+  min-height: 60px;
+}
+.cell-inner.empty { opacity: 0.4; text-align: center; padding: 14px; }
+.cell-empty-msg { font-size: 10px; color: #c0d0e0; }
+
+/* 뱃지 */
+.badges { display: flex; flex-wrap: wrap; gap: 3px; margin-bottom: 6px; }
 .badge {
-  font-size: 9px; font-weight: 700; letter-spacing: 0.2px;
-  border-radius: 5px; padding: 2px 5px; white-space: nowrap;
+  font-size: 9px; font-weight: 700; border-radius: 4px;
+  padding: 1px 5px; white-space: nowrap;
 }
-.badge-weight { font-size: 10px; font-weight: 700; color: #3a5a80; margin-left: auto; white-space: nowrap; }
-.wr-detail { margin-top: 5px; display: flex; flex-direction: column; gap: 3px; padding-left: 2px; }
-.wr-comment { font-size: 11px; color: #4a6a8a; background: rgba(100,150,210,0.06); border-radius: 5px; padding: 3px 7px; }
-.wr-exercises { font-size: 10px; color: #7a9ab8; line-height: 1.6; }
-.wr-memo {
-  font-size: 10px; color: #7a6030;
-  background: rgba(220,160,60,0.08); border-left: 2px solid rgba(220,160,60,0.4);
-  border-radius: 0 5px 5px 0; padding: 3px 7px;
-}
+.badge-pain { background: #fce4ec; color: #c62828; }
+.badge-weight { font-size: 10px; font-weight: 700; color: #3a5a80; }
 
-#loading { text-align: center; padding: 48px 0; color: #a0b8d0; font-size: 13px; }
+/* 계획/실제 */
+.session-row { display: flex; gap: 4px; margin-bottom: 5px; flex-wrap: wrap; }
+.s-badge { font-size: 9px; font-weight: 700; border-radius: 4px; padding: 1px 6px; }
+.s-plan   { background: rgba(100,150,210,0.1); color: #4a7aa8; }
+.s-actual { background: rgba(80,180,120,0.12); color: #2e7d52; }
+
+/* 운동 목록 */
+.ex-list { font-size: 10px; color: #7a9ab8; margin-bottom: 5px; line-height: 1.7; }
+.ex-list::before { content: ''; }
+
+/* 회원 코멘트 */
+.comment { font-size: 10px; color: #4a6a8a; background: rgba(100,150,210,0.06); border-radius: 5px; padding: 3px 6px; margin-bottom: 5px; }
+
+/* 다음 수업 메모 */
+.memo {
+  font-size: 10px; color: #7a5020;
+  background: rgba(220,160,60,0.08);
+  border-left: 2px solid rgba(220,160,60,0.45);
+  border-radius: 0 5px 5px 0;
+  padding: 4px 7px; margin-top: 5px;
+  line-height: 1.6;
+}
+.memo-label { font-size: 9px; font-weight: 700; color: #b07030; margin-bottom: 2px; }
+
+#loading { text-align: center; padding: 60px 0; color: #a0b8d0; font-size: 13px; }
 </style>
 </head>
 <body>
-<h1>himove</h1>
-<div class="page-sub" id="page-sub">불러오는 중…</div>
+<div class="page-header">
+  <h1>himove</h1>
+  <div class="page-sub" id="page-sub">불러오는 중…</div>
+</div>
 <div id="loading">⋯</div>
-<div id="log"></div>
+<div class="table-wrap" id="table-wrap" style="display:none">
+  <table id="log-table"></table>
+</div>
 
 <script>
-const COND = {
-  '매우 좋음': ['#e8f5e9','#2e7d32'], '좋음': ['#e8f5e9','#388e3c'],
-  '보통': ['#fff8e1','#f57c00'], '피곤함': ['#fce4ec','#c62828'],
-  '피로': ['#fce4ec','#c62828'], '매우 피곤함': ['#fce4ec','#b71c1c'],
+const COND_MAP = {
+  '매우 좋음':['#e8f5e9','#2e7d32'], '좋음':['#e8f5e9','#388e3c'],
+  '보통':['#fff8e1','#f57c00'], '피곤함':['#fce4ec','#c62828'],
+  '피로':['#fce4ec','#c62828'], '매우 피곤함':['#fce4ec','#b71c1c'],
 };
-const SLEEP = {
-  '매우 좋음': ['#e8f5e9','#2e7d32'], '좋음': ['#e8f5e9','#388e3c'],
-  '보통': ['#fff8e1','#f57c00'], '나쁨': ['#fce4ec','#c62828'],
-  '매우 나쁨': ['#fce4ec','#b71c1c'],
+const SLEEP_MAP = {
+  '매우 좋음':['#e8f5e9','#2e7d32'], '좋음':['#e8f5e9','#388e3c'],
+  '보통':['#fff8e1','#f57c00'], '나쁨':['#fce4ec','#c62828'],
+  '매우 나쁨':['#fce4ec','#b71c1c'],
 };
-const STRESS = {
-  '낮음': ['#e8f5e9','#388e3c'], '보통': ['#fff8e1','#f57c00'],
-  '높음': ['#fce4ec','#c62828'], '매우 높음': ['#fce4ec','#b71c1c'],
+const STRESS_MAP = {
+  '낮음':['#e8f5e9','#388e3c'], '보통':['#fff8e1','#f57c00'],
+  '높음':['#fce4ec','#c62828'], '매우 높음':['#fce4ec','#b71c1c'],
 };
 
-function badge(label, val, map) {
+function badge(val, map) {
   if (!val) return '';
-  const [bg, color] = map[val] || ['#f0f4f8', '#7a95b0'];
-  return `<span class="badge" style="background:${bg};color:${color}">${label} ${val}</span>`;
-}
-
-function painBadge(pain, note) {
-  if (!pain || pain === '없음') return '';
-  const tip = note ? ` (${note})` : '';
-  return `<span class="badge" style="background:#fce4ec;color:#c62828">⚠ 통증${tip}</span>`;
-}
-
-function goalRow(bodyGoals, currentWeight) {
-  if (!bodyGoals) return '';
-  const pills = [];
-  const wg = bodyGoals.weight;
-  if (wg) {
-    const curr = currentWeight ?? wg.start;
-    const rem = (curr - wg.goal).toFixed(1);
-    pills.push(`<div class="goal-pill">체중 <span class="curr">${curr}kg</span><span class="arrow">→</span><span class="goal">${wg.goal}kg</span>${rem > 0 ? `<span class="rem">-${rem}kg 남음</span>` : '<span style="color:#388e3c;font-weight:700">달성!</span>'}</div>`);
-  }
-  const mg = bodyGoals.muscle;
-  if (mg) {
-    const diff = (mg.goal - mg.start).toFixed(1);
-    pills.push(`<div class="goal-pill">골격근 목표 <span class="goal">${mg.goal}kg</span>${diff > 0 ? `<span class="rem">+${diff}kg</span>` : ''}</div>`);
-  }
-  return pills.length ? `<div class="goal-row">${pills.join('')}</div>` : '';
+  const [bg, color] = map[val] || ['#f0f4f8','#7a95b0'];
+  return `<span class="badge" style="background:${bg};color:${color}">${val}</span>`;
 }
 
 function planBadge(w) {
   const days = w.weeklyRoutine?.days || [];
-  if (!days.length) return '';
   const lesson = days.filter(d => d.workout?.includes('레슨')).length;
-  const self   = days.filter(d => !d.rest && d.workout && !['', '-', '휴식'].includes(d.workout) && !d.workout.includes('레슨')).length;
+  const self   = days.filter(d => !d.rest && d.workout && !['','-','휴식'].includes(d.workout) && !d.workout.includes('레슨')).length;
   const total  = lesson + self;
   if (!total) return '';
-  const parts = [lesson ? `레슨 ${lesson}` : '', self ? `자율 ${self}` : ''].filter(Boolean).join(' · ');
-  return `<span class="badge" style="background:rgba(100,150,210,0.1);color:#4a7aa8">계획 ${total}회 (${parts})</span>`;
+  return `<span class="s-badge s-plan">계획 ${total}회</span>`;
 }
 
 function actualBadge(w) {
-  const dates = w.sessionDates;
-  if (!dates?.length) return '';
-  return `<span class="badge" style="background:rgba(80,180,120,0.12);color:#2e7d52;font-weight:800">✓ 실제 ${dates.length}회</span>`;
+  const n = w.sessionDates?.length;
+  if (!n) return '';
+  return `<span class="s-badge s-actual">✓ 실제 ${n}회</span>`;
 }
 
-function renderWeek(w) {
-  const hasData = w.condition || w.summary?.date || w.memberComment;
-  const bd = w.bodyData || {};
-  const lastW = (bd.weight || []).filter(v => v != null).at(-1);
+function renderCell(w) {
+  const hasData = w.mainMessage || w.summary?.date || w.memberComment || w.sessionDates?.length;
+  if (!hasData) {
+    return `<div class="cell-inner empty"><div class="cell-empty-msg">미입력</div></div>`;
+  }
 
-  const mainBadges = [
-    planBadge(w),
-    actualBadge(w),
-    badge('컨디션', w.condition, COND),
-    badge('수면', w.sleep, SLEEP),
-    badge('스트레스', w.stress, STRESS),
-    painBadge(w.pain, w.conditionNote),
-    w.nutrition && w.nutrition !== '보통' ? badge('영양', w.nutrition, SLEEP) : '',
+  const bd = w.bodyData || {};
+  const lastW = (bd.weight||[]).filter(v=>v!=null).at(-1);
+
+  const badges = [
+    badge(w.condition, COND_MAP),
+    badge(w.sleep, SLEEP_MAP),
+    badge(w.stress, STRESS_MAP),
+    (w.pain && w.pain !== '없음') ? `<span class="badge badge-pain">⚠ ${w.conditionNote||'통증'}</span>` : '',
+    lastW ? `<span class="badge-weight">${lastW}kg</span>` : '',
   ].filter(Boolean).join('');
 
-  const weightHtml = lastW ? `<span class="badge-weight">${lastW}kg</span>` : '';
+  const sessions = [planBadge(w), actualBadge(w)].filter(Boolean).join('');
 
-  const items = (w.summary?.items || []).map(it => it.name).join(' · ');
-  const exHtml = items ? `<div class="wr-exercises">· ${items}</div>` : '';
-  const commentHtml = w.memberComment ? `<div class="wr-comment">💬 ${w.memberComment}</div>` : '';
-  const memoHtml = w.nextSessionMemo ? `<div class="wr-memo">📌 다음 수업: ${w.nextSessionMemo}</div>` : '';
+  const items = (w.summary?.items||[]).map(it=>it.name).join(' · ');
+  const exHtml = items ? `<div class="ex-list">· ${items}</div>` : '';
 
-  const hasDetail = commentHtml || exHtml || memoHtml;
+  const commentHtml = w.memberComment
+    ? `<div class="comment">💬 ${w.memberComment}</div>` : '';
 
-  return `<div class="week-row${hasData ? '' : ' empty'}">
-    <div class="wr-main">
-      <span class="wr-label">${w.label}</span>
-      <span class="wr-date">${w.date || ''}</span>
-      <div class="badges">${mainBadges || (hasData ? '' : '<span style="font-size:10px;color:#c8d8e8">미입력</span>')}</div>
-      ${weightHtml}
-    </div>
-    ${hasDetail ? `<div class="wr-detail">${commentHtml}${exHtml}${memoHtml}</div>` : ''}
+  // 다음 수업 메모 — 짧게 처리
+  const memoText = w.nextSessionMemo
+    ? w.nextSessionMemo.split('/')[0].trim() + (w.nextSessionMemo.includes('/') ? ' …' : '')
+    : '';
+  const memoHtml = memoText
+    ? `<div class="memo"><div class="memo-label">📌 다음 수업</div>${memoText}</div>` : '';
+
+  return `<div class="cell-inner">
+    ${sessions ? `<div class="session-row">${sessions}</div>` : ''}
+    ${badges ? `<div class="badges">${badges}</div>` : ''}
+    ${commentHtml}${exHtml}${memoHtml}
   </div>`;
 }
 
-function renderMember(member, data) {
-  const weeks = data.weeks || [];
-  const latestW = weeks.flatMap(w => (w.bodyData?.weight || []).filter(v => v != null)).at(-1);
-  const header = `<div class="member-header">
-    <div class="mh-top">
-      <span class="mh-name">${data.name}</span>
-      <span class="mh-month">${data.month || ''}</span>
+function memberHeaderCell(data) {
+  const s = data.sessions || {};
+  const total = s.total || 0;
+  const done  = s.completed || 0;
+  const pct   = total ? Math.round(done / total * 100) : 0;
+  return `<div class="member-header-cell">
+    <div class="mh-name">${data.name}</div>
+    <div class="mh-month">${data.month || ''}</div>
+    <div class="progress-wrap">
+      <div class="progress-bar"><div class="progress-fill" style="width:${pct}%"></div></div>
+      <div class="progress-text">${done}/${total}회</div>
     </div>
-    ${goalRow(data.bodyGoals, latestW)}
   </div>`;
-  return `<div class="member-block">${header}${weeks.map(renderWeek).join('')}</div>`;
 }
 
 fetch(`data/members.json?v=${Date.now()}`)
   .then(r => r.json())
   .then(members => Promise.all(
     members.map(m =>
-      fetch(`data/${m.id}.json?v=${Date.now()}`).then(r => r.json()).then(data => ({ member: m, data })).catch(() => null)
+      fetch(`data/${m.id}.json?v=${Date.now()}`).then(r=>r.json()).then(data=>({member:m,data})).catch(()=>null)
     )
   ))
   .then(results => {
-    document.getElementById('loading').style.display = 'none';
     const valid = results.filter(Boolean);
+    document.getElementById('loading').style.display = 'none';
+    document.getElementById('table-wrap').style.display = 'block';
     document.getElementById('page-sub').textContent =
-      `${valid.length}명 · ${new Date().toLocaleDateString('ko-KR', { month: 'long', day: 'numeric', hour: '2-digit', minute: '2-digit' })} 기준`;
-    document.getElementById('log').innerHTML = valid
-      .map(({ member, data }) => renderMember(member, data)).join('');
+      `${valid.length}명 · ${new Date().toLocaleDateString('ko-KR',{month:'long',day:'numeric',hour:'2-digit',minute:'2-digit'})} 기준`;
+
+    const maxWeeks = Math.max(...valid.map(v => v.data.weeks?.length || 0));
+
+    let thead = '<thead><tr><th></th>' +
+      valid.map(({data}) => `<th>${memberHeaderCell(data)}</th>`).join('') +
+      '</tr></thead>';
+
+    let tbody = '<tbody>';
+    for (let wi = 0; wi < maxWeeks; wi++) {
+      // 첫 번째 회원의 week 라벨 기준
+      const sampleWeek = valid.find(v => v.data.weeks?.[wi])?.data.weeks[wi];
+      const label = sampleWeek?.label || `${wi+1}주차`;
+      const date  = sampleWeek?.date  || '';
+
+      tbody += `<tr>
+        <td class="week-label-cell">
+          <div class="wl-inner">
+            <div class="wl-label">${label}</div>
+            ${date ? `<div class="wl-date">${date}</div>` : ''}
+          </div>
+        </td>`;
+
+      for (const {data} of valid) {
+        const w = data.weeks?.[wi];
+        tbody += `<td class="data-cell">${w ? renderCell(w) : '<div class="cell-inner empty"><div class="cell-empty-msg">—</div></div>'}</td>`;
+      }
+      tbody += '</tr>';
+    }
+    tbody += '</tbody>';
+
+    document.getElementById('log-table').innerHTML = thead + tbody;
   })
   .catch(() => { document.getElementById('loading').textContent = '불러오기 실패'; });
 </script>

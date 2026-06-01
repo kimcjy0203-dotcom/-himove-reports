@@ -619,5 +619,9 @@
         ]
       }
     }
-  ]
+  ],
+  "sessions": {
+    "total": 30,
+    "completed": 17
+  }
 }
