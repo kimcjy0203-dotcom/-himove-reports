@@ -543,6 +543,13 @@ function init(data) {
       const canvas = document.getElementById(`bodyChart-${idx}`);
       if (canvas) {
         const bd = w.bodyData;
+        const yVals  = [...(bd.muscle||[]), ...(bd.fat||[])].filter(v => v != null);
+        const y1Vals = (bd.weight||[]).filter(v => v != null);
+        const yMin  = yVals.length  ? Math.floor(Math.min(...yVals))  - 2 : 0;
+        const yMax  = yVals.length  ? Math.ceil(Math.max(...yVals))   + 2 : 30;
+        const y1Min = y1Vals.length ? Math.floor(Math.min(...y1Vals)) - 2 : 40;
+        const y1Max = y1Vals.length ? Math.ceil(Math.max(...y1Vals))  + 2 : 100;
+        const fmt   = v => Number.isInteger(v) ? v + 'kg' : parseFloat(v).toFixed(1) + 'kg';
         activeChart[idx] = new Chart(canvas.getContext('2d'), {
           type: 'line',
           data: { labels: bd.labels, datasets: [
@@ -554,8 +561,8 @@ function init(data) {
             plugins: { legend: { labels: { font: { size: 11 }, color: '#8aa0ba', boxWidth: 10, usePointStyle: true } }, tooltip: { mode: 'index', intersect: false } },
             scales: {
               x:  { grid: { display: false }, ticks: { color: '#b0c0d4', font: { size: 11 } }, border: { display: false } },
-              y:  { position: 'left',  grid: { color: 'rgba(160,190,230,0.12)' }, ticks: { color: '#b0c0d4', font: { size: 11 }, callback: v => v + 'kg' }, border: { display: false } },
-              y1: { position: 'right', grid: { drawOnChartArea: false }, ticks: { color: '#90c8a8', font: { size: 11 }, callback: v => v + 'kg' }, border: { display: false } }
+              y:  { position: 'left',  min: yMin,  max: yMax,  grid: { color: 'rgba(160,190,230,0.12)' }, ticks: { color: '#b0c0d4', font: { size: 11 }, callback: fmt }, border: { display: false } },
+              y1: { position: 'right', min: y1Min, max: y1Max, grid: { drawOnChartArea: false },           ticks: { color: '#90c8a8', font: { size: 11 }, callback: fmt }, border: { display: false } }
             }
           }
         });
