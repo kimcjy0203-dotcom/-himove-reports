@@ -460,5 +460,49 @@
   "sessions": {
     "total": 30,
     "completed": 3
-  }
+  },
+  "monthlySummary": [
+    {
+      "year": 2026,
+      "month": 5,
+      "label": "2026년 5월",
+      "sessions": 3,
+      "bodyChange": {
+        "weight": {
+          "start": 61.8,
+          "end": 61.8,
+          "change": 0.0
+        },
+        "muscle": {
+          "start": 20.3,
+          "end": 20.3,
+          "change": 0.0
+        },
+        "fat": {
+          "start": 24.1,
+          "end": 24.1,
+          "change": 0.0
+        }
+      },
+      "condition": {
+        "피로": 1,
+        "좋음": 1,
+        "보통": 1
+      },
+      "sleep": {
+        "나쁨": 2,
+        "보통": 1
+      },
+      "stress": {
+        "보통": 2,
+        "높음": 1
+      },
+      "topExercises": [
+        "힙브릿지",
+        "싱글 레그 힙힌지",
+        "흉추 에어플레인 (벽)"
+      ],
+      "autoComment": "3회 출석 · 체중 유지 · 수면 개선이 필요해요 · 주력 운동: 힙브릿지, 싱글 레그 힙힌지, 흉추 에어플레인 (벽)"
+    }
+  ]
 }

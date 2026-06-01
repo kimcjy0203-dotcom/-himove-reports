@@ -255,6 +255,31 @@ tr:last-child td { border-bottom: none; }
 .ozl-row.target .ozl-weight { color: #0d47a1; }
 .ozl-row.target .ozl-reps { color: #1565c0; }
 .target-badge { font-size: 9px; font-weight: 800; background: rgba(33,150,243,0.12); color: #1565c0; border-radius: 20px; padding: 2px 7px; letter-spacing: 0.5px; }
+.ms-section-title { font-size: 10px; font-weight: 700; color: #a0b8d0; letter-spacing: 1.5px; text-transform: uppercase; padding: 14px 4px 6px; }
+.ms-card { background: rgba(255,255,255,0.45); border-radius: 18px; overflow: hidden; margin-bottom: 8px; border: 1px solid rgba(160,190,230,0.22); }
+.ms-toggle { width: 100%; background: none; border: none; cursor: pointer; display: flex; align-items: center; justify-content: space-between; padding: 14px 18px; }
+.ms-toggle-left { display: flex; align-items: center; gap: 10px; }
+.ms-label { font-size: 13px; font-weight: 800; color: #2a3a50; }
+.ms-count { font-size: 11px; color: #8aaac8; font-weight: 600; }
+.ms-arrow { font-size: 10px; color: #b0c4d8; transition: transform 0.2s; display: inline-block; }
+.ms-toggle.open .ms-arrow { transform: rotate(180deg); }
+.ms-body { padding: 0 18px 16px; display: none; }
+.ms-body.open { display: block; }
+.ms-stat-row { display: flex; gap: 8px; margin-bottom: 12px; }
+.ms-stat { flex: 1; background: rgba(255,255,255,0.6); border-radius: 12px; padding: 10px 12px; border: 1px solid rgba(195,218,255,0.4); }
+.ms-stat-label { font-size: 9px; font-weight: 700; color: #a0b8d0; letter-spacing: 0.5px; text-transform: uppercase; margin-bottom: 4px; }
+.ms-stat-val { font-size: 15px; font-weight: 800; color: #2a3a50; letter-spacing: -0.5px; line-height: 1.1; }
+.ms-stat-val span { font-size: 10px; font-weight: 400; color: #b0c0d4; margin-left: 1px; }
+.ms-stat-change { font-size: 11px; font-weight: 700; margin-top: 3px; }
+.ms-stat-change.neg { color: #3a8a6a; }
+.ms-stat-change.pos { color: #c04a4a; }
+.ms-stat-change.zero { color: #a0b8d0; }
+.ms-sub-label { font-size: 10px; font-weight: 700; color: #a0b8d0; margin-bottom: 5px; }
+.ms-dist { display: flex; gap: 6px; margin-bottom: 10px; flex-wrap: wrap; }
+.ms-dist-chip { font-size: 10px; font-weight: 700; padding: 3px 9px; border-radius: 20px; border: 1px solid rgba(160,190,230,0.3); background: rgba(255,255,255,0.5); color: #5a7a9a; }
+.ms-exercises { display: flex; flex-wrap: wrap; gap: 5px; margin-bottom: 10px; }
+.ms-ex-chip { font-size: 10px; font-weight: 700; padding: 3px 9px; border-radius: 20px; background: rgba(100,155,220,0.08); border: 1px solid rgba(100,155,220,0.2); color: #4a7aa8; }
+.ms-comment { font-size: 12px; color: #5a7a9a; line-height: 1.7; background: rgba(232,241,255,0.5); border-radius: 12px; padding: 10px 14px; border: 1px solid rgba(180,210,250,0.3); }
 </style>
 </head>
 <body>
@@ -274,6 +299,7 @@ tr:last-child td { border-bottom: none; }
   <div class="card" id="goals-card" style="display:none"></div>
   <div class="week-nav" id="week-nav"></div>
   <div id="week-panels"></div>
+  <div id="monthly-summary-section"></div>
   <div class="card trainer-only" style="padding:0;overflow:hidden">
     <button class="tool-toggle" onclick="this.classList.toggle('open');this.nextElementSibling.classList.toggle('hidden')">
       유산소 심박 존 <span class="tool-arrow">▾</span>
@@ -812,6 +838,62 @@ function init(data) {
     });
   });
   document.addEventListener('click',()=>{popup.style.display='none';lastMuscle=null;});
+
+  /* 월간 요약 */
+  const mssEl = document.getElementById('monthly-summary-section');
+  const summaries = (data.monthlySummary || []).slice().reverse();
+  if (summaries.length) {
+    const titleEl = document.createElement('div');
+    titleEl.className = 'ms-section-title';
+    titleEl.textContent = '월간 요약';
+    mssEl.appendChild(titleEl);
+
+    summaries.forEach((ms, idx) => {
+      const isOpen = idx === 0;
+      const bc = ms.bodyChange || {};
+      const w = bc.weight || {}, m = bc.muscle || {}, f = bc.fat || {};
+
+      const fmtChange = (val, invert) => {
+        if (val === null || val === undefined) return '';
+        const cls = val === 0 ? 'zero' : (val < 0 ? (invert ? 'pos' : 'neg') : (invert ? 'neg' : 'pos'));
+        const sign = val > 0 ? '+' : '';
+        return `<div class="ms-stat-change ${cls}">${sign}${val}kg</div>`;
+      };
+
+      const distHtml = obj => Object.entries(obj || {})
+        .map(([k, v]) => `<span class="ms-dist-chip">${k} ${v}회</span>`).join('');
+
+      const exHtml = arr => (arr || [])
+        .map(e => `<span class="ms-ex-chip">${e}</span>`).join('');
+
+      const statRow = (w.start !== null && w.start !== undefined) ? `
+        <div class="ms-stat-row">
+          <div class="ms-stat"><div class="ms-stat-label">체중</div><div class="ms-stat-val">${w.end}<span>kg</span></div>${fmtChange(w.change, false)}</div>
+          ${m.start !== null && m.start !== undefined ? `<div class="ms-stat"><div class="ms-stat-label">골격근량</div><div class="ms-stat-val">${m.end}<span>kg</span></div>${fmtChange(m.change, true)}</div>` : ''}
+          ${f.start !== null && f.start !== undefined ? `<div class="ms-stat"><div class="ms-stat-label">체지방량</div><div class="ms-stat-val">${f.end}<span>kg</span></div>${fmtChange(f.change, false)}</div>` : ''}
+        </div>` : '';
+
+      const condDist  = Object.keys(ms.condition||{}).length  ? `<div class="ms-sub-label">컨디션</div><div class="ms-dist">${distHtml(ms.condition)}</div>` : '';
+      const sleepDist = Object.keys(ms.sleep||{}).length     ? `<div class="ms-sub-label">수면</div><div class="ms-dist">${distHtml(ms.sleep)}</div>` : '';
+      const exList    = (ms.topExercises||[]).length          ? `<div class="ms-sub-label">주요 운동</div><div class="ms-exercises">${exHtml(ms.topExercises)}</div>` : '';
+
+      const card = document.createElement('div');
+      card.className = 'ms-card';
+      card.innerHTML = `
+        <button class="ms-toggle${isOpen ? ' open' : ''}" onclick="this.classList.toggle('open');this.nextElementSibling.classList.toggle('open')">
+          <div class="ms-toggle-left">
+            <span class="ms-label">${ms.label}</span>
+            <span class="ms-count">${ms.sessions}회 수업</span>
+          </div>
+          <span class="ms-arrow">▾</span>
+        </button>
+        <div class="ms-body${isOpen ? ' open' : ''}">
+          ${statRow}${condDist}${sleepDist}${exList}
+          <div class="ms-comment">${ms.autoComment}</div>
+        </div>`;
+      mssEl.appendChild(card);
+    });
+  }
 }
 
 /* ── 운동 계획 팝업 ── */

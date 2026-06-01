@@ -983,5 +983,45 @@
   "sessions": {
     "total": 30,
     "completed": 1
-  }
+  },
+  "monthlySummary": [
+    {
+      "year": 2026,
+      "month": 5,
+      "label": "2026년 5월",
+      "sessions": 1,
+      "bodyChange": {
+        "weight": {
+          "start": 84.3,
+          "end": 84.3,
+          "change": 0.0
+        },
+        "muscle": {
+          "start": 29.5,
+          "end": 29.5,
+          "change": 0.0
+        },
+        "fat": {
+          "start": 31.4,
+          "end": 31.4,
+          "change": 0.0
+        }
+      },
+      "condition": {
+        "보통": 1
+      },
+      "sleep": {
+        "보통": 1
+      },
+      "stress": {
+        "보통": 1
+      },
+      "topExercises": [
+        "폼롤러 캣카우 + 흉추 회전",
+        "네발기기 흉추 회전",
+        "흉추 에어플레인 (벽)"
+      ],
+      "autoComment": "1회 출석 · 체중 유지 · 주력 운동: 폼롤러 캣카우 + 흉추 회전, 네발기기 흉추 회전, 흉추 에어플레인 (벽)"
+    }
+  ]
 }
