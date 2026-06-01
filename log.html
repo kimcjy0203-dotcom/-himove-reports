@@ -11,182 +11,165 @@
 * { box-sizing: border-box; margin: 0; padding: 0; }
 body {
   font-family: -apple-system, 'Apple SD Gothic Neo', 'Noto Sans KR', sans-serif;
-  background: #eef2f8; color: #1a2a3a; font-size: 12px;
+  background: #eef2f8; color: #1a2a3a;
+  max-width: 640px; margin: 0 auto; padding: 24px 16px 64px;
 }
+h1 { font-size: 20px; font-weight: 800; color: #1a2a40; letter-spacing: -0.8px; }
+.page-sub { font-size: 11px; color: #a0b8d0; margin-top: 3px; margin-bottom: 24px; }
 
-/* 헤더 */
-.page-header { padding: 20px 16px 12px; border-bottom: 1px solid rgba(160,190,230,0.2); }
-.page-header h1 { font-size: 18px; font-weight: 800; color: #1a2a40; letter-spacing: -0.5px; }
-.page-sub { font-size: 10px; color: #a0b8d0; margin-top: 2px; }
+.member-block { background: white; border-radius: 16px; margin-bottom: 16px; overflow: hidden; border: 1px solid rgba(160,190,230,0.2); }
 
-/* 메인 컨테이너 — 가로 스크롤 */
-.log-wrap { overflow-x: auto; padding: 16px; }
-.log-inner { display: inline-block; min-width: 100%; }
-
-/* 회원 헤더 행 */
-.members-row { display: flex; gap: 8px; margin-bottom: 12px; padding-left: 80px; }
-.member-col-header {
-  width: 200px; flex-shrink: 0;
-  background: white; border-radius: 12px; padding: 12px 14px;
-  border: 1px solid rgba(160,190,230,0.25);
+.member-header { padding: 14px 16px 12px; border-bottom: 1px solid rgba(160,190,230,0.15); }
+.mh-top { display: flex; align-items: center; justify-content: space-between; margin-bottom: 8px; }
+.mh-name { font-size: 15px; font-weight: 800; color: #1a2a40; }
+.mh-month { font-size: 11px; color: #a0b8d0; }
+.goal-row { display: flex; gap: 10px; flex-wrap: wrap; margin-bottom: 8px; }
+.goal-pill {
+  font-size: 10px; color: #6a8aa8;
+  background: rgba(100,150,210,0.07); border: 1px solid rgba(100,150,210,0.15);
+  border-radius: 20px; padding: 3px 8px; display: flex; align-items: center; gap: 4px;
 }
-.mch-name { font-size: 14px; font-weight: 800; color: #1a2a40; margin-bottom: 3px; }
-.mch-month { font-size: 10px; color: #a0b8d0; margin-bottom: 8px; }
-.progress-wrap { display: flex; align-items: center; gap: 6px; }
-.progress-bar { flex: 1; height: 5px; background: rgba(160,190,230,0.25); border-radius: 10px; overflow: hidden; }
+.goal-pill .curr { font-weight: 700; color: #2a4a6a; }
+.goal-pill .rem  { color: #e06060; font-weight: 700; }
+.progress-wrap { display: flex; align-items: center; gap: 8px; }
+.progress-bar  { flex: 1; height: 5px; background: rgba(160,190,230,0.25); border-radius: 10px; overflow: hidden; }
 .progress-fill { height: 100%; border-radius: 10px; background: linear-gradient(90deg, #5aaae8, #3a8fd4); }
 .progress-text { font-size: 10px; font-weight: 700; color: #4a7ab0; white-space: nowrap; }
 
-/* 주차 섹션 */
-.week-section { margin-bottom: 8px; }
-.week-toggle {
-  display: flex; align-items: center; gap: 10px;
-  width: 100%; background: none; border: none;
-  padding: 8px 12px 8px 0; cursor: pointer;
-  text-align: left; font-family: inherit;
-}
-.week-toggle-label {
-  width: 72px; flex-shrink: 0;
-  background: white; border-radius: 8px; padding: 6px 8px;
-  border: 1px solid rgba(160,190,230,0.25); text-align: center;
-}
-.wtl-label { font-size: 10px; font-weight: 700; color: #4a7ab0; }
-.wtl-date  { font-size: 9px; color: #b0c8e0; margin-top: 1px; }
-.week-toggle-arrow { font-size: 12px; color: #a0b8d0; transition: transform 0.2s; }
-.week-toggle-arrow.open { transform: rotate(180deg); }
-.week-toggle-summary { display: flex; gap: 4px; flex-wrap: wrap; flex: 1; }
+.week-row { padding: 10px 16px; border-bottom: 1px solid rgba(160,190,230,0.1); }
+.week-row:last-child { border-bottom: none; }
+.week-row.empty { opacity: 0.35; }
 
-/* 주차 행 (회원별 셀) */
-.week-row { display: flex; gap: 8px; padding-left: 80px; margin-top: 4px; }
-.week-row.hidden { display: none; }
+.wr-top { display: flex; align-items: center; gap: 8px; flex-wrap: wrap; margin-bottom: 4px; }
+.wr-label { font-size: 11px; font-weight: 700; color: #3a5a80; min-width: 52px; }
+.wr-date  { font-size: 10px; color: #b0c8e0; }
+.badges { display: flex; gap: 4px; flex-wrap: wrap; }
+.badge { font-size: 9px; font-weight: 700; border-radius: 5px; padding: 2px 6px; white-space: nowrap; }
+.badge-pain { background: #fce4ec; color: #c62828; }
+.badge-weight { font-size: 10px; font-weight: 700; color: #3a5a80; }
 
-/* 셀 */
-.cell {
-  width: 200px; flex-shrink: 0;
-  background: white; border-radius: 10px; padding: 12px 14px;
-  border: 1px solid rgba(160,190,230,0.2);
-}
-.cell.empty { opacity: 0.35; display: flex; align-items: center; justify-content: center; min-height: 50px; }
-.cell-empty-msg { font-size: 10px; color: #c0d0e0; }
-
-/* 셀 내부 요소 */
-.session-row { display: flex; gap: 4px; margin-bottom: 6px; flex-wrap: wrap; }
 .s-badge { font-size: 9px; font-weight: 700; border-radius: 4px; padding: 2px 6px; }
 .s-plan   { background: rgba(100,150,210,0.1); color: #4a7aa8; }
 .s-actual { background: rgba(80,180,120,0.12); color: #2e7d52; }
 
-.badges { display: flex; gap: 3px; flex-wrap: wrap; margin-bottom: 6px; }
-.badge { font-size: 9px; font-weight: 700; border-radius: 4px; padding: 2px 5px; white-space: nowrap; }
-.badge-pain { background: #fce4ec; color: #c62828; }
+.wr-detail { margin-top: 8px; display: flex; flex-direction: column; gap: 6px; }
 
-.weight-val { font-size: 11px; font-weight: 700; color: #3a5a80; margin-bottom: 4px; }
-
-.comment {
-  font-size: 11px; color: #4a6a8a; line-height: 1.6;
-  background: rgba(100,150,210,0.06); border-radius: 5px;
-  padding: 4px 7px; margin-bottom: 6px;
+.wr-comment {
+  font-size: 12px; color: #3a5a7a; line-height: 1.7;
+  background: rgba(100,150,210,0.06); border-radius: 6px; padding: 6px 10px;
 }
 
-.ex-list { font-size: 11px; color: #6a8aaa; line-height: 1.7; margin-bottom: 6px; }
+.wr-exercises { font-size: 11px; color: #6a8aaa; line-height: 1.8; }
 
-.memo {
-  font-size: 11px; color: #6a4010; line-height: 1.6;
+.wr-memo {
+  font-size: 11px; color: #6a4010; line-height: 1.7;
   background: rgba(220,160,60,0.08);
   border-left: 2px solid rgba(220,160,60,0.5);
-  border-radius: 0 6px 6px 0;
-  padding: 5px 8px; margin-top: 4px;
+  border-radius: 0 6px 6px 0; padding: 6px 10px;
 }
-.memo-label { font-size: 9px; font-weight: 700; color: #b07030; margin-bottom: 3px; }
+.wr-memo-label { font-size: 9px; font-weight: 700; color: #b07030; margin-bottom: 3px; }
 
-#loading { text-align: center; padding: 60px; color: #a0b8d0; font-size: 13px; }
+#loading { text-align: center; padding: 48px 0; color: #a0b8d0; font-size: 13px; }
 </style>
 </head>
 <body>
-<div class="page-header">
-  <h1>himove</h1>
-  <div class="page-sub" id="page-sub">불러오는 중…</div>
-</div>
+<h1>himove</h1>
+<div class="page-sub" id="page-sub">불러오는 중…</div>
 <div id="loading">⋯</div>
-<div class="log-wrap" id="log-wrap" style="display:none">
-  <div class="log-inner" id="log-inner"></div>
-</div>
+<div id="log"></div>
 
 <script>
-const COND_MAP = {
+const COND = {
   '매우 좋음':['#e8f5e9','#2e7d32'],'좋음':['#e8f5e9','#388e3c'],
   '보통':['#fff8e1','#f57c00'],'피곤함':['#fce4ec','#c62828'],
   '피로':['#fce4ec','#c62828'],'매우 피곤함':['#fce4ec','#b71c1c'],
 };
-const SLEEP_MAP = {
+const SLEEP = {
   '매우 좋음':['#e8f5e9','#2e7d32'],'좋음':['#e8f5e9','#388e3c'],
   '보통':['#fff8e1','#f57c00'],'나쁨':['#fce4ec','#c62828'],'매우 나쁨':['#fce4ec','#b71c1c'],
 };
-const STRESS_MAP = {
+const STRESS = {
   '낮음':['#e8f5e9','#388e3c'],'보통':['#fff8e1','#f57c00'],
   '높음':['#fce4ec','#c62828'],'매우 높음':['#fce4ec','#b71c1c'],
 };
 
-function badge(val, map) {
+function badge(label, val, map) {
   if (!val) return '';
   const [bg, color] = map[val] || ['#f0f4f8','#7a95b0'];
-  return `<span class="badge" style="background:${bg};color:${color}">${val}</span>`;
+  return `<span class="badge" style="background:${bg};color:${color}">${label} ${val}</span>`;
 }
 
-function renderCell(w) {
+function renderWeek(w) {
   const hasData = w.mainMessage || w.summary?.date || w.memberComment || w.sessionDates?.length;
-  if (!hasData) return `<div class="cell empty"><span class="cell-empty-msg">미입력</span></div>`;
 
-  const days = w.weeklyRoutine?.days || [];
+  const days   = w.weeklyRoutine?.days || [];
   const lesson = days.filter(d => d.workout?.includes('레슨')).length;
   const self   = days.filter(d => !d.rest && d.workout && !['','-','휴식'].includes(d.workout) && !d.workout.includes('레슨')).length;
   const total  = lesson + self;
   const actual = w.sessionDates?.length || 0;
 
-  const sessionHtml = (total || actual) ? `<div class="session-row">
-    ${total  ? `<span class="s-badge s-plan">계획 ${total}회</span>` : ''}
-    ${actual ? `<span class="s-badge s-actual">✓ 실제 ${actual}회</span>` : ''}
-  </div>` : '';
-
-  const badgesHtml = [
-    badge(w.condition, COND_MAP),
-    badge(w.sleep, SLEEP_MAP),
-    badge(w.stress, STRESS_MAP),
-    (w.pain && w.pain !== '없음') ? `<span class="badge badge-pain">⚠ ${w.conditionNote||'통증'}</span>` : '',
+  const sessionBadges = [
+    total  ? `<span class="s-badge s-plan">계획 ${total}회 (레슨 ${lesson}·자율 ${self})</span>` : '',
+    actual ? `<span class="s-badge s-actual">✓ 실제 ${actual}회</span>` : '',
   ].filter(Boolean).join('');
 
   const bd = w.bodyData || {};
   const lastW = (bd.weight||[]).filter(v=>v!=null).at(-1);
-  const weightHtml = lastW ? `<div class="weight-val">체중 ${lastW}kg</div>` : '';
+
+  const badgeHtml = [
+    badge('컨디션', w.condition, COND),
+    badge('수면', w.sleep, SLEEP),
+    badge('스트레스', w.stress, STRESS),
+    (w.pain && w.pain !== '없음') ? `<span class="badge badge-pain">⚠ ${w.conditionNote||'통증'}</span>` : '',
+    lastW ? `<span class="badge-weight">${lastW}kg</span>` : '',
+  ].filter(Boolean).join('');
 
   const commentHtml = w.memberComment
-    ? `<div class="comment">💬 ${w.memberComment}</div>` : '';
+    ? `<div class="wr-comment">💬 ${w.memberComment}</div>` : '';
 
-  const items = (w.summary?.items||[]).map(it => `· ${it.name}`).join('<br>');
-  const exHtml = items ? `<div class="ex-list">${items}</div>` : '';
+  const items = (w.summary?.items||[]).map(it => `· ${it.name}　${it.detail}`).join('<br>');
+  const exHtml = items ? `<div class="wr-exercises">${items}</div>` : '';
 
   const memoHtml = w.nextSessionMemo
-    ? `<div class="memo"><div class="memo-label">📌 다음 수업</div>${w.nextSessionMemo}</div>` : '';
+    ? `<div class="wr-memo"><div class="wr-memo-label">📌 다음 수업 체크</div>${w.nextSessionMemo}</div>` : '';
 
-  return `<div class="cell">
-    ${sessionHtml}
-    ${badgesHtml ? `<div class="badges">${badgesHtml}</div>` : ''}
-    ${weightHtml}
-    ${commentHtml}
-    ${exHtml}
-    ${memoHtml}
+  const hasDetail = commentHtml || exHtml || memoHtml;
+
+  return `<div class="week-row${hasData ? '' : ' empty'}">
+    <div class="wr-top">
+      <span class="wr-label">${w.label}</span>
+      <span class="wr-date">${w.date||''}</span>
+      ${sessionBadges ? `<div class="badges">${sessionBadges}</div>` : ''}
+    </div>
+    ${badgeHtml ? `<div class="badges">${badgeHtml}</div>` : ''}
+    ${hasDetail ? `<div class="wr-detail">${commentHtml}${exHtml}${memoHtml}</div>` : ''}
   </div>`;
 }
 
-function buildSummaryBadges(allWeekData, wi) {
-  const active = allWeekData.filter(d => d && (d.mainMessage || d.sessionDates?.length));
-  if (!active.length) return '<span style="font-size:10px;color:#c0d0e0">기록 없음</span>';
-  const conditions = active.map(d => d.condition).filter(Boolean);
-  const pains = active.filter(d => d.pain && d.pain !== '없음').length;
-  const cond = conditions[0];
-  const [bg,color] = cond ? (COND_MAP[cond]||['#f0f4f8','#888']) : ['#f0f4f8','#aaa'];
-  return `${cond ? `<span class="badge" style="background:${bg};color:${color}">${cond}</span>` : ''}
-    ${pains ? `<span class="badge badge-pain">⚠ 통증 ${pains}명</span>` : ''}
-    <span style="font-size:10px;color:#a0b8d0">${active.length}명 기록</span>`;
+function renderMember(member, data) {
+  const s = data.sessions || {};
+  const pct = s.total ? Math.round((s.completed||0)/s.total*100) : 0;
+
+  const bg = data.bodyGoals;
+  const latestW = (data.weeks||[]).flatMap(w=>(w.bodyData?.weight||[]).filter(v=>v!=null)).at(-1);
+  let goalHtml = '';
+  if (bg?.weight) {
+    const curr = latestW ?? bg.weight.start;
+    const rem  = (curr - bg.weight.goal).toFixed(1);
+    goalHtml = `<div class="goal-row"><div class="goal-pill">체중 <span class="curr">${curr}kg</span> → ${bg.weight.goal}kg${rem>0?`<span class="rem"> -${rem}kg 남음</span>`:' ✓'}</div></div>`;
+  }
+
+  const header = `<div class="member-header">
+    <div class="mh-top"><span class="mh-name">${data.name}</span><span class="mh-month">${data.month||''}</span></div>
+    ${goalHtml}
+    <div class="progress-wrap">
+      <div class="progress-bar"><div class="progress-fill" style="width:${pct}%"></div></div>
+      <div class="progress-text">${s.completed||0} / ${s.total||0}회 진행</div>
+    </div>
+  </div>`;
+
+  const weeks = (data.weeks||[]).slice().reverse();
+  return `<div class="member-block">${header}${weeks.map(renderWeek).join('')}</div>`;
 }
 
 fetch(`data/members.json?v=${Date.now()}`)
@@ -197,71 +180,14 @@ fetch(`data/members.json?v=${Date.now()}`)
     )
   ))
   .then(results => {
-    const valid = results.filter(Boolean);
     document.getElementById('loading').style.display = 'none';
-    document.getElementById('log-wrap').style.display = 'block';
+    const valid = results.filter(Boolean);
     document.getElementById('page-sub').textContent =
       `${valid.length}명 · ${new Date().toLocaleDateString('ko-KR',{month:'long',day:'numeric',hour:'2-digit',minute:'2-digit'})} 기준`;
-
-    // 회원 헤더
-    const membersRow = `<div class="members-row">` +
-      valid.map(({data}) => {
-        const s = data.sessions || {};
-        const pct = s.total ? Math.round((s.completed||0)/s.total*100) : 0;
-        return `<div class="member-col-header">
-          <div class="mch-name">${data.name}</div>
-          <div class="mch-month">${data.month||''}</div>
-          <div class="progress-wrap">
-            <div class="progress-bar"><div class="progress-fill" style="width:${pct}%"></div></div>
-            <div class="progress-text">${s.completed||0}/${s.total||0}회</div>
-          </div>
-        </div>`;
-      }).join('') + `</div>`;
-
-    // 최근 3주차 (역순 — 최신이 위)
-    const maxWeeks = Math.max(...valid.map(v => v.data.weeks?.length || 0));
-    const startIdx = Math.max(0, maxWeeks - 3);
-    const weekIndices = [];
-    for (let i = startIdx; i < maxWeeks; i++) weekIndices.push(i);
-
-    const weekSections = weekIndices.map((wi, sectionIdx) => {
-      const sampleWeek = valid.find(v => v.data.weeks?.[wi])?.data.weeks[wi];
-      const label = sampleWeek?.label || `${wi+1}주차`;
-      const date  = sampleWeek?.date  || '';
-      const allWeekData = valid.map(v => v.data.weeks?.[wi] || null);
-      const isOpen = sectionIdx === weekIndices.length - 1; // 마지막(최신)은 기본 오픈
-
-      const summaryBadges = buildSummaryBadges(allWeekData, wi);
-
-      const cells = valid.map(({data}) => {
-        const w = data.weeks?.[wi];
-        return w ? renderCell(w) : `<div class="cell empty"><span class="cell-empty-msg">—</span></div>`;
-      }).join('');
-
-      return `<div class="week-section">
-        <button class="week-toggle" onclick="toggleWeek(this)">
-          <div class="week-toggle-label">
-            <div class="wtl-label">${label}</div>
-            ${date ? `<div class="wtl-date">${date}</div>` : ''}
-          </div>
-          <div class="week-toggle-summary">${summaryBadges}</div>
-          <span class="week-toggle-arrow${isOpen?' open':''}">▾</span>
-        </button>
-        <div class="week-row${isOpen?'':' hidden'}">${cells}</div>
-      </div>`;
-    });
-
-    document.getElementById('log-inner').innerHTML = membersRow + weekSections.join('');
+    document.getElementById('log').innerHTML = valid
+      .map(({member, data}) => renderMember(member, data)).join('');
   })
   .catch(() => { document.getElementById('loading').textContent = '불러오기 실패'; });
-
-function toggleWeek(btn) {
-  const row = btn.nextElementSibling;
-  const arrow = btn.querySelector('.week-toggle-arrow');
-  const isHidden = row.classList.contains('hidden');
-  row.classList.toggle('hidden', !isHidden);
-  arrow.classList.toggle('open', !isHidden);
-}
 </script>
 </body>
 </html>
