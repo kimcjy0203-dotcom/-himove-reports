@@ -75,11 +75,31 @@
         ]
       },
       "exercises": [
-        { "name": "고블릿 스쿼트", "note": "속도 조절 필요. 무릎 방향을 1세트 후 스스로 인지함.", "next": "무릎이 발끝 방향 유지되는지 매 세트 체크" },
-        { "name": "힙런지", "note": "무게중심 뒤로 많이 이동 (앞발 8:뒷발 2). 벽 짚고 진행으로 변경.", "next": "벽 지지로 균형 익힌 뒤 점진적으로 자립" },
-        { "name": "와이드 바운스 스쿼트", "note": "속도 조절 잘 됨. 힘들 때 허리 무너짐 확인.", "next": "허리 중립 유지 우선 — 힘들면 횟수 줄이기" },
-        { "name": "힙브릿지 & 암 로우", "note": "고관절 완전 신전 안 됨. 상체 집중 시 하체 무너짐.", "next": "하체 고정 먼저 확인 후 상체 움직임 추가" },
-        { "name": "에어바이크", "note": "다리 뻗는 힘 부족. 좌우 불균형으로 한 방향 회전.", "next": "좌우 균등한 힘 의식하며 천천히 연습" }
+        {
+          "name": "고블릿 스쿼트",
+          "note": "속도 조절 필요. 무릎 방향을 1세트 후 스스로 인지함.",
+          "next": "무릎이 발끝 방향 유지되는지 매 세트 체크"
+        },
+        {
+          "name": "힙런지",
+          "note": "무게중심 뒤로 많이 이동 (앞발 8:뒷발 2). 벽 짚고 진행으로 변경.",
+          "next": "벽 지지로 균형 익힌 뒤 점진적으로 자립"
+        },
+        {
+          "name": "와이드 바운스 스쿼트",
+          "note": "속도 조절 잘 됨. 힘들 때 허리 무너짐 확인.",
+          "next": "허리 중립 유지 우선 — 힘들면 횟수 줄이기"
+        },
+        {
+          "name": "힙브릿지 & 암 로우",
+          "note": "고관절 완전 신전 안 됨. 상체 집중 시 하체 무너짐.",
+          "next": "하체 고정 먼저 확인 후 상체 움직임 추가"
+        },
+        {
+          "name": "에어바이크",
+          "note": "다리 뻗는 힘 부족. 좌우 불균형으로 한 방향 회전.",
+          "next": "좌우 균등한 힘 의식하며 천천히 연습"
+        }
       ],
       "lifts": [],
       "bodyData": {
@@ -123,98 +143,116 @@
         "days": [
           {
             "day": "월",
-            "workout": "개인-유산소+코어",
-            "rest": false,
-            "plan": [
-              {
-                "name": "트레드밀 걷기 (경사 2%)",
-                "sets": 1,
-                "reps": 1,
-                "weight": "30분"
-              },
-              {
-                "name": "플랭크",
-                "sets": 3,
-                "reps": 1,
-                "weight": "30초"
-              },
-              {
-                "name": "힙브릿지",
-                "sets": 3,
-                "reps": 15,
-                "weight": "-"
-              },
-              {
-                "name": "데드버그",
-                "sets": 3,
-                "reps": 10,
-                "weight": "양쪽"
-              }
-            ]
-          },
-          {
-            "day": "화",
             "workout": "레슨",
             "rest": false
           },
           {
-            "day": "수",
+            "day": "화",
             "workout": "휴식",
             "rest": true
           },
           {
+            "day": "수",
+            "workout": "레슨",
+            "rest": false
+          },
+          {
             "day": "목",
-            "workout": "개인-전신기초",
+            "workout": "휴식",
+            "rest": true
+          },
+          {
+            "day": "금",
+            "workout": "개인-하체+코어",
             "rest": false,
             "plan": [
               {
                 "name": "고블릿 스쿼트",
                 "sets": 3,
-                "reps": 12,
-                "weight": "-"
+                "reps": 15,
+                "weight": "4kg"
               },
               {
-                "name": "덤벨 런지",
+                "name": "힙런지 (벽 지지)",
                 "sets": 3,
                 "reps": 10,
                 "weight": "양쪽"
               },
               {
-                "name": "덤벨 로우",
+                "name": "와이드 바운스 스쿼트",
                 "sets": 3,
-                "reps": 12,
+                "reps": 10,
                 "weight": "-"
               },
               {
-                "name": "숄더 프레스",
+                "name": "힙브릿지 & 암 로우",
                 "sets": 3,
-                "reps": 12,
+                "reps": 10,
+                "weight": "-"
+              },
+              {
+                "name": "에어바이크",
+                "sets": 3,
+                "reps": 10,
                 "weight": "-"
               }
             ]
           },
           {
-            "day": "금",
-            "workout": "휴식",
-            "rest": true
-          },
-          {
             "day": "토",
-            "workout": "자율",
+            "workout": "개인-유산소+스트레칭",
             "rest": false,
             "plan": [
               {
-                "name": "가벼운 산책",
+                "name": "유산소 Zone 2 (트레드밀/사이클)",
                 "sets": 1,
                 "reps": 1,
-                "weight": "30분"
+                "weight": "40분"
+              },
+              {
+                "name": "전신 스트레칭",
+                "sets": 1,
+                "reps": 1,
+                "weight": "10~15분"
               }
             ]
           },
           {
             "day": "일",
-            "workout": "휴식",
-            "rest": true
+            "workout": "개인-상체",
+            "rest": false,
+            "plan": [
+              {
+                "name": "루마니안 데드리프트",
+                "sets": 3,
+                "reps": 15,
+                "weight": "20kg"
+              },
+              {
+                "name": "스탠딩 푸쉬업",
+                "sets": 3,
+                "reps": 10,
+                "weight": "-"
+              },
+              {
+                "name": "렛풀다운",
+                "sets": 3,
+                "reps": 15,
+                "weight": "12.5kg"
+              },
+              {
+                "name": "체스트 프레스",
+                "sets": 3,
+                "reps": 15,
+                "weight": "가능한 중량"
+              },
+              {
+                "name": "에어바이크",
+                "sets": 3,
+                "reps": 10,
+                "weight": "-"
+              }
+            ]
           }
         ]
       },
@@ -266,92 +304,116 @@
         "days": [
           {
             "day": "월",
-            "workout": "개인-유산소+코어",
-            "rest": false,
-            "plan": [
-              {
-                "name": "트레드밀 (경사 3%, 빠른 구간 5분 포함)",
-                "sets": 1,
-                "reps": 1,
-                "weight": "35분"
-              },
-              {
-                "name": "크런치",
-                "sets": 3,
-                "reps": 20,
-                "weight": "-"
-              },
-              {
-                "name": "싱글 레그 힙브릿지",
-                "sets": 3,
-                "reps": 10,
-                "weight": "양쪽"
-              }
-            ]
-          },
-          {
-            "day": "화",
             "workout": "레슨",
             "rest": false
           },
           {
-            "day": "수",
+            "day": "화",
             "workout": "휴식",
             "rest": true
           },
           {
+            "day": "수",
+            "workout": "레슨",
+            "rest": false
+          },
+          {
             "day": "목",
-            "workout": "개인-하체근력",
+            "workout": "휴식",
+            "rest": true
+          },
+          {
+            "day": "금",
+            "workout": "개인-하체+코어",
             "rest": false,
             "plan": [
               {
-                "name": "덤벨 스쿼트",
+                "name": "고블릿 스쿼트",
                 "sets": 3,
-                "reps": 12,
-                "weight": "지난주보다 +2kg"
+                "reps": 15,
+                "weight": "4kg"
               },
               {
-                "name": "루마니안 데드리프트",
+                "name": "힙런지 (벽 지지)",
+                "sets": 3,
+                "reps": 10,
+                "weight": "양쪽"
+              },
+              {
+                "name": "와이드 바운스 스쿼트",
                 "sets": 3,
                 "reps": 10,
                 "weight": "-"
               },
               {
-                "name": "레그 프레스",
+                "name": "힙브릿지 & 암 로우",
                 "sets": 3,
-                "reps": 15,
+                "reps": 10,
                 "weight": "-"
               },
               {
-                "name": "카프 레이즈",
+                "name": "에어바이크",
                 "sets": 3,
-                "reps": 20,
+                "reps": 10,
                 "weight": "-"
-              }
-            ]
-          },
-          {
-            "day": "금",
-            "workout": "자율",
-            "rest": false,
-            "plan": [
-              {
-                "name": "가벼운 산책 (선택)",
-                "sets": 1,
-                "reps": 1,
-                "weight": "20~30분"
               }
             ]
           },
           {
             "day": "토",
-            "workout": "자율",
-            "rest": false
+            "workout": "개인-유산소+스트레칭",
+            "rest": false,
+            "plan": [
+              {
+                "name": "유산소 Zone 2 (트레드밀/사이클)",
+                "sets": 1,
+                "reps": 1,
+                "weight": "40분"
+              },
+              {
+                "name": "전신 스트레칭",
+                "sets": 1,
+                "reps": 1,
+                "weight": "10~15분"
+              }
+            ]
           },
           {
             "day": "일",
-            "workout": "휴식",
-            "rest": true
+            "workout": "개인-상체",
+            "rest": false,
+            "plan": [
+              {
+                "name": "루마니안 데드리프트",
+                "sets": 3,
+                "reps": 15,
+                "weight": "20kg"
+              },
+              {
+                "name": "스탠딩 푸쉬업",
+                "sets": 3,
+                "reps": 10,
+                "weight": "-"
+              },
+              {
+                "name": "렛풀다운",
+                "sets": 3,
+                "reps": 15,
+                "weight": "12.5kg"
+              },
+              {
+                "name": "체스트 프레스",
+                "sets": 3,
+                "reps": 15,
+                "weight": "가능한 중량"
+              },
+              {
+                "name": "에어바이크",
+                "sets": 3,
+                "reps": 10,
+                "weight": "-"
+              }
+            ]
           }
         ]
       }
@@ -400,98 +462,116 @@
         "days": [
           {
             "day": "월",
-            "workout": "개인-인터벌유산소",
-            "rest": false,
-            "plan": [
-              {
-                "name": "트레드밀 워밍업",
-                "sets": 1,
-                "reps": 1,
-                "weight": "5분"
-              },
-              {
-                "name": "인터벌 (빠르게 1분 + 천천히 1분)",
-                "sets": 10,
-                "reps": 1,
-                "weight": "반복"
-              },
-              {
-                "name": "쿨다운",
-                "sets": 1,
-                "reps": 1,
-                "weight": "5분"
-              },
-              {
-                "name": "플랭크",
-                "sets": 3,
-                "reps": 1,
-                "weight": "45초"
-              }
-            ]
-          },
-          {
-            "day": "화",
             "workout": "레슨",
             "rest": false
           },
           {
-            "day": "수",
+            "day": "화",
             "workout": "휴식",
             "rest": true
           },
           {
+            "day": "수",
+            "workout": "레슨",
+            "rest": false
+          },
+          {
             "day": "목",
-            "workout": "개인-전신복합",
+            "workout": "휴식",
+            "rest": true
+          },
+          {
+            "day": "금",
+            "workout": "개인-하체+코어",
             "rest": false,
             "plan": [
               {
-                "name": "데드리프트",
+                "name": "고블릿 스쿼트",
                 "sets": 3,
-                "reps": 8,
-                "weight": "-"
+                "reps": 15,
+                "weight": "4kg"
               },
               {
-                "name": "벤트오버 로우",
+                "name": "힙런지 (벽 지지)",
+                "sets": 3,
+                "reps": 10,
+                "weight": "양쪽"
+              },
+              {
+                "name": "와이드 바운스 스쿼트",
                 "sets": 3,
                 "reps": 10,
                 "weight": "-"
               },
               {
-                "name": "덤벨 숄더 프레스",
+                "name": "힙브릿지 & 암 로우",
                 "sets": 3,
-                "reps": 12,
+                "reps": 10,
                 "weight": "-"
               },
               {
-                "name": "플랭크",
+                "name": "에어바이크",
                 "sets": 3,
-                "reps": 1,
-                "weight": "45초"
-              }
-            ]
-          },
-          {
-            "day": "금",
-            "workout": "자율",
-            "rest": false,
-            "plan": [
-              {
-                "name": "가벼운 유산소 또는 스트레칭",
-                "sets": 1,
-                "reps": 1,
-                "weight": "20분"
+                "reps": 10,
+                "weight": "-"
               }
             ]
           },
           {
             "day": "토",
-            "workout": "자율",
-            "rest": false
+            "workout": "개인-유산소+스트레칭",
+            "rest": false,
+            "plan": [
+              {
+                "name": "유산소 Zone 2 (트레드밀/사이클)",
+                "sets": 1,
+                "reps": 1,
+                "weight": "40분"
+              },
+              {
+                "name": "전신 스트레칭",
+                "sets": 1,
+                "reps": 1,
+                "weight": "10~15분"
+              }
+            ]
           },
           {
             "day": "일",
-            "workout": "휴식",
-            "rest": true
+            "workout": "개인-상체",
+            "rest": false,
+            "plan": [
+              {
+                "name": "루마니안 데드리프트",
+                "sets": 3,
+                "reps": 15,
+                "weight": "20kg"
+              },
+              {
+                "name": "스탠딩 푸쉬업",
+                "sets": 3,
+                "reps": 10,
+                "weight": "-"
+              },
+              {
+                "name": "렛풀다운",
+                "sets": 3,
+                "reps": 15,
+                "weight": "12.5kg"
+              },
+              {
+                "name": "체스트 프레스",
+                "sets": 3,
+                "reps": 15,
+                "weight": "가능한 중량"
+              },
+              {
+                "name": "에어바이크",
+                "sets": 3,
+                "reps": 10,
+                "weight": "-"
+              }
+            ]
           }
         ]
       }
@@ -540,78 +620,116 @@
         "days": [
           {
             "day": "월",
-            "workout": "개인-유산소",
+            "workout": "레슨",
+            "rest": false
+          },
+          {
+            "day": "화",
+            "workout": "휴식",
+            "rest": true
+          },
+          {
+            "day": "수",
+            "workout": "레슨",
+            "rest": false
+          },
+          {
+            "day": "목",
+            "workout": "휴식",
+            "rest": true
+          },
+          {
+            "day": "금",
+            "workout": "개인-하체+코어",
             "rest": false,
             "plan": [
               {
-                "name": "트레드밀 꾸준히",
+                "name": "고블릿 스쿼트",
+                "sets": 3,
+                "reps": 15,
+                "weight": "4kg"
+              },
+              {
+                "name": "힙런지 (벽 지지)",
+                "sets": 3,
+                "reps": 10,
+                "weight": "양쪽"
+              },
+              {
+                "name": "와이드 바운스 스쿼트",
+                "sets": 3,
+                "reps": 10,
+                "weight": "-"
+              },
+              {
+                "name": "힙브릿지 & 암 로우",
+                "sets": 3,
+                "reps": 10,
+                "weight": "-"
+              },
+              {
+                "name": "에어바이크",
+                "sets": 3,
+                "reps": 10,
+                "weight": "-"
+              }
+            ]
+          },
+          {
+            "day": "토",
+            "workout": "개인-유산소+스트레칭",
+            "rest": false,
+            "plan": [
+              {
+                "name": "유산소 Zone 2 (트레드밀/사이클)",
                 "sets": 1,
                 "reps": 1,
                 "weight": "40분"
               },
               {
-                "name": "코어 마무리 (플랭크 + 크런치)",
-                "sets": 3,
+                "name": "전신 스트레칭",
+                "sets": 1,
                 "reps": 1,
-                "weight": "각 30초"
+                "weight": "10~15분"
               }
             ]
-          },
-          {
-            "day": "화",
-            "workout": "레슨 + 인바디 측정 권장",
-            "rest": false
-          },
-          {
-            "day": "수",
-            "workout": "휴식",
-            "rest": true
-          },
-          {
-            "day": "목",
-            "workout": "개인-전신점검",
-            "rest": false,
-            "plan": [
-              {
-                "name": "3주차 동작 전 반복",
-                "sets": 3,
-                "reps": 10,
-                "weight": "무게 5% 증량 시도"
-              },
-              {
-                "name": "데드리프트",
-                "sets": 3,
-                "reps": 8,
-                "weight": "+2.5kg"
-              },
-              {
-                "name": "벤트오버 로우",
-                "sets": 3,
-                "reps": 10,
-                "weight": "+2kg"
-              },
-              {
-                "name": "덤벨 숄더 프레스",
-                "sets": 3,
-                "reps": 12,
-                "weight": "+1kg"
-              }
-            ]
-          },
-          {
-            "day": "금",
-            "workout": "휴식",
-            "rest": true
-          },
-          {
-            "day": "토",
-            "workout": "자율",
-            "rest": false
           },
           {
             "day": "일",
-            "workout": "휴식",
-            "rest": true
+            "workout": "개인-상체",
+            "rest": false,
+            "plan": [
+              {
+                "name": "루마니안 데드리프트",
+                "sets": 3,
+                "reps": 15,
+                "weight": "20kg"
+              },
+              {
+                "name": "스탠딩 푸쉬업",
+                "sets": 3,
+                "reps": 10,
+                "weight": "-"
+              },
+              {
+                "name": "렛풀다운",
+                "sets": 3,
+                "reps": 15,
+                "weight": "12.5kg"
+              },
+              {
+                "name": "체스트 프레스",
+                "sets": 3,
+                "reps": 15,
+                "weight": "가능한 중량"
+              },
+              {
+                "name": "에어바이크",
+                "sets": 3,
+                "reps": 10,
+                "weight": "-"
+              }
+            ]
           }
         ]
       }
