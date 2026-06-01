@@ -21,7 +21,7 @@
     "muscle": { "start": 22.1, "goal": 22.5 },
     "fat":    { "start": 22.7, "goal": 15.0 }
   },
-  "cardio": { "age": 37, "restingHR": 70 },
+  "cardio": { "age": 37, "restingHR": 58 },
   "orm": { "weight": 30, "reps": 12, "goal": "근비대" },
   "weeks": [
     {
