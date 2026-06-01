@@ -1,0 +1,236 @@
+{
+  "name": "권서영",
+  "month": "2026년 6월",
+  "purposes": ["체중감량", "체력향상", "건강관리"],
+  "goals": {
+    "short": {
+      "text": "PT 외 주 1회 개인 운동 참여 — 혼자서도 운동하는 첫 습관 만들기",
+      "period": "1개월"
+    },
+    "mid": {
+      "text": "개인 운동 습관화 — 주 1회 이상 참여해도 피로하지 않은 체력 만들기",
+      "period": "3개월"
+    },
+    "long": {
+      "text": "바지 사이즈 감소 — 목표 체중 52kg 달성으로 체형 변화 실현",
+      "period": "6개월+"
+    }
+  },
+  "bodyGoals": {
+    "weight": { "start": 65.7, "goal": 52.0 },
+    "muscle": { "start": 22.0, "goal": null },
+    "fat":    { "start": 25.1, "goal": null }
+  },
+  "cardio": {
+    "age": 26,
+    "restingHR": 65
+  },
+  "orm": {
+    "weight": 40,
+    "reps": 10,
+    "goal": "근비대"
+  },
+  "sessions": {
+    "total": 50,
+    "completed": 49
+  },
+  "weeks": [
+    {
+      "week": 1,
+      "label": "1주차",
+      "date": "6/2",
+      "mainMessage": "",
+      "summary": { "date": "", "items": [] },
+      "exercises": [],
+      "lifts": [],
+      "bodyData": {
+        "labels": [],
+        "weight": [],
+        "fat": [],
+        "muscle": [],
+        "lastMeasured": null,
+        "comment": ""
+      },
+      "condition": "보통",
+      "conditionNote": "",
+      "sleep": "보통",
+      "sleepNote": "",
+      "stress": "보통",
+      "pain": "없음",
+      "painNote": "",
+      "nutrition": "보통",
+      "nutritionNote": "",
+      "review": { "good": "", "caution": "", "suggest": "" },
+      "trainerComment": "",
+      "trainerDirection": "",
+      "nextSessionMemo": "",
+      "finalMessage": "",
+      "musclesWorked": [],
+      "weeklyRoutine": {
+        "weekKey": "2026-W23-kwonseolyeong",
+        "note": "",
+        "days": [
+          { "day": "월", "workout": "-", "rest": false },
+          { "day": "화", "workout": "-", "rest": false },
+          { "day": "수", "workout": "-", "rest": false },
+          { "day": "목", "workout": "-", "rest": false },
+          { "day": "금", "workout": "-", "rest": false },
+          { "day": "토", "workout": "-", "rest": false },
+          { "day": "일", "workout": "-", "rest": true }
+        ],
+        "plan": []
+      }
+    },
+    {
+      "week": 2,
+      "label": "2주차",
+      "date": "6/8",
+      "mainMessage": "",
+      "summary": { "date": "", "items": [] },
+      "exercises": [],
+      "lifts": [],
+      "bodyData": {
+        "labels": [],
+        "weight": [],
+        "fat": [],
+        "muscle": [],
+        "lastMeasured": null,
+        "comment": ""
+      },
+      "condition": "보통",
+      "conditionNote": "",
+      "sleep": "보통",
+      "sleepNote": "",
+      "stress": "보통",
+      "pain": "없음",
+      "painNote": "",
+      "nutrition": "보통",
+      "nutritionNote": "",
+      "review": { "good": "", "caution": "", "suggest": "" },
+      "trainerComment": "",
+      "trainerDirection": "",
+      "nextSessionMemo": "",
+      "finalMessage": "",
+      "musclesWorked": [],
+      "weeklyRoutine": {
+        "weekKey": "2026-W24-kwonseolyeong",
+        "note": "",
+        "days": [
+          { "day": "월", "workout": "-", "rest": false },
+          { "day": "화", "workout": "-", "rest": false },
+          { "day": "수", "workout": "-", "rest": false },
+          { "day": "목", "workout": "-", "rest": false },
+          { "day": "금", "workout": "-", "rest": false },
+          { "day": "토", "workout": "-", "rest": false },
+          { "day": "일", "workout": "-", "rest": true }
+        ],
+        "plan": []
+      }
+    },
+    {
+      "week": 3,
+      "label": "3주차",
+      "date": "6/15",
+      "mainMessage": "",
+      "summary": { "date": "", "items": [] },
+      "exercises": [],
+      "lifts": [],
+      "bodyData": {
+        "labels": [],
+        "weight": [],
+        "fat": [],
+        "muscle": [],
+        "lastMeasured": null,
+        "comment": ""
+      },
+      "condition": "보통",
+      "conditionNote": "",
+      "sleep": "보통",
+      "sleepNote": "",
+      "stress": "보통",
+      "pain": "없음",
+      "painNote": "",
+      "nutrition": "보통",
+      "nutritionNote": "",
+      "review": { "good": "", "caution": "", "suggest": "" },
+      "trainerComment": "",
+      "trainerDirection": "",
+      "nextSessionMemo": "",
+      "finalMessage": "",
+      "musclesWorked": [],
+      "weeklyRoutine": {
+        "weekKey": "2026-W25-kwonseolyeong",
+        "note": "",
+        "days": [
+          { "day": "월", "workout": "-", "rest": false },
+          { "day": "화", "workout": "-", "rest": false },
+          { "day": "수", "workout": "-", "rest": false },
+          { "day": "목", "workout": "-", "rest": false },
+          { "day": "금", "workout": "-", "rest": false },
+          { "day": "토", "workout": "-", "rest": false },
+          { "day": "일", "workout": "-", "rest": true }
+        ],
+        "plan": []
+      }
+    },
+    {
+      "week": 4,
+      "label": "4주차",
+      "date": "6/22",
+      "mainMessage": "",
+      "summary": { "date": "", "items": [] },
+      "exercises": [],
+      "lifts": [],
+      "bodyData": {
+        "labels": [],
+        "weight": [],
+        "fat": [],
+        "muscle": [],
+        "lastMeasured": null,
+        "comment": ""
+      },
+      "condition": "보통",
+      "conditionNote": "",
+      "sleep": "보통",
+      "sleepNote": "",
+      "stress": "보통",
+      "pain": "없음",
+      "painNote": "",
+      "nutrition": "보통",
+      "nutritionNote": "",
+      "review": { "good": "", "caution": "", "suggest": "" },
+      "trainerComment": "",
+      "trainerDirection": "",
+      "nextSessionMemo": "",
+      "finalMessage": "",
+      "musclesWorked": [],
+      "weeklyRoutine": {
+        "weekKey": "2026-W26-kwonseolyeong",
+        "note": "",
+        "days": [
+          { "day": "월", "workout": "-", "rest": false },
+          { "day": "화", "workout": "-", "rest": false },
+          { "day": "수", "workout": "-", "rest": false },
+          { "day": "목", "workout": "-", "rest": false },
+          { "day": "금", "workout": "-", "rest": false },
+          { "day": "토", "workout": "-", "rest": false },
+          { "day": "일", "workout": "-", "rest": true }
+        ],
+        "plan": []
+      }
+    }
+  ],
+  "quotes": [
+    "50회를 채운 몸은 이미 달라져 있어요. 이제 그 몸을 유지하는 건 당신 차례예요.",
+    "운동 습관이 생기면 살이 빠지는 게 아니라, 살이 찔 수가 없어요.",
+    "바지가 헐렁해지는 날이 반드시 와요. 오늘도 그 날에 한 걸음 더 가까워졌어요.",
+    "주 1회가 주 2회가 되고, 주 2회가 일상이 돼요.",
+    "체중계 숫자보다 계단이 가뿐해지는 느낌이 더 정직한 성과예요.",
+    "힘든 날 나온 게 제일 잘한 거예요.",
+    "PT가 끝나도 몸은 기억해요. 오늘까지 쌓은 것들을.",
+    "목표 체중 52kg, 지금 이 운동들이 거기까지 데려다줄 거예요.",
+    "작은 꾸준함이 큰 변화를 만들어요.",
+    "오늘의 1회가 내일의 습관을 만들어요."
+  ],
+  "monthlySummary": []
+}
