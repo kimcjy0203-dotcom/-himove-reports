@@ -37,6 +37,7 @@ h1 { font-size: 20px; font-weight: 800; color: #1a2a40; letter-spacing: -0.8px; 
 .mh-top { display: flex; align-items: center; justify-content: space-between; margin-bottom: 8px; }
 .mh-name { font-size: 15px; font-weight: 800; color: #1a2a40; }
 .mh-month { font-size: 11px; color: #a0b8d0; }
+.mh-report-btn { font-size: 10px; font-weight: 700; color: #5aaae8; background: rgba(90,170,232,0.09); border: 1px solid rgba(90,170,232,0.25); border-radius: 20px; padding: 3px 10px; text-decoration: none; white-space: nowrap; }
 .goal-row { display: flex; gap: 10px; flex-wrap: wrap; margin-bottom: 8px; }
 .goal-pill {
   font-size: 10px; color: #6a8aa8;
@@ -179,7 +180,7 @@ function renderMember(member, data) {
   }
 
   const header = `<div class="member-header">
-    <div class="mh-top"><span class="mh-name">${data.name}</span><span class="mh-month">${data.month||''}</span></div>
+    <div class="mh-top"><span class="mh-name">${data.name}</span><span class="mh-month">${data.month||''}</span><a class="mh-report-btn" href="report.html?token=${member.token}" target="_blank">리포트 →</a></div>
     ${goalHtml}
     <div class="progress-wrap">
       <div class="progress-bar"><div class="progress-fill" style="width:${pct}%"></div></div>
