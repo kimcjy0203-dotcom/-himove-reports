@@ -35,7 +35,7 @@
   },
   "cardio": {
     "age": 40,
-    "restingHR": 65
+    "restingHR": 57
   },
   "orm": {
     "weight": 40,
@@ -274,11 +274,19 @@
       "exercises": [],
       "lifts": [],
       "bodyData": {
-        "labels": [],
-        "weight": [],
-        "fat": [],
-        "muscle": [],
-        "lastMeasured": null,
+        "labels": [
+          "6/2"
+        ],
+        "weight": [
+          64.3
+        ],
+        "fat": [
+          23.6
+        ],
+        "muscle": [
+          22.0
+        ],
+        "lastMeasured": "2026-06-02",
         "comment": ""
       },
       "condition": "보통",
@@ -432,7 +440,10 @@
             "rest": true
           }
         ]
-      }
+      },
+      "sessionDates": [
+        "2026-06-02"
+      ]
     },
     {
       "week": 3,
