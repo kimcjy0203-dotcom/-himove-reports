@@ -448,7 +448,7 @@ function init(data) {
       const barsHtml = bars.map(b => {
         const total = Math.abs(b.g - b.s);
         const moved = b.invert ? b.s - b.val : b.val - b.s;
-        const pct = Math.min(Math.max(Math.round((moved / total) * 100), 0), 100);
+        const pct = total === 0 ? 0 : Math.min(Math.max(Math.round((moved / total) * 100), 0), 100);
         return `<div class="goal-bar-item">
           <div class="goal-bar-label"><span>${b.label}</span><span class="goal-bar-pct">${pct}%</span></div>
           <div class="goal-bar-bg"><div class="goal-bar-fill" style="width:${pct}%;background:${b.color}"></div></div>
