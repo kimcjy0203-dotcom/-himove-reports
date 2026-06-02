@@ -300,52 +300,6 @@ tr:last-child td { border-bottom: none; }
   <div class="week-nav" id="week-nav"></div>
   <div id="week-panels"></div>
   <div id="monthly-summary-section"></div>
-  <div class="card" style="padding:0;overflow:hidden">
-    <button class="tool-toggle" onclick="this.classList.toggle('open');this.nextElementSibling.classList.toggle('hidden')">
-      유산소 심박 존 <span class="tool-arrow">▾</span>
-    </button>
-    <div class="tool-body hidden">
-      <div class="tool-inputs" style="margin-bottom:10px">
-        <div class="ti-group">
-          <label>나이</label>
-          <div class="ti-row"><input class="ti-input" type="number" id="input-age" min="10" max="80" style="font-size:13px;padding:6px 8px"><span class="ti-unit">세</span></div>
-        </div>
-        <div class="ti-group">
-          <label>안정시 심박수</label>
-          <div class="ti-row"><input class="ti-input" type="number" id="input-rest-hr" min="40" max="100" style="font-size:13px;padding:6px 8px"><span class="ti-unit">bpm</span></div>
-        </div>
-      </div>
-      <div id="cardio-zone-meta" class="zone-meta"></div>
-      <div class="zone-table" id="zone-table" style="margin-top:8px;gap:5px"></div>
-    </div>
-  </div>
-  <div class="card" style="padding:0;overflow:hidden">
-    <button class="tool-toggle" onclick="this.classList.toggle('open');this.nextElementSibling.classList.toggle('hidden')">
-      1RM 추정 & 운동 처방 <span class="tool-arrow">▾</span>
-    </button>
-    <div class="tool-body hidden">
-      <div class="orm-inputs" style="margin-bottom:10px">
-        <div class="ti-group">
-          <label>무게</label>
-          <div class="ti-row"><input class="ti-input" type="number" id="orm-weight" min="1" max="500" style="font-size:13px;padding:6px 8px"><span class="ti-unit">kg</span></div>
-        </div>
-        <div class="ti-group">
-          <label>횟수</label>
-          <div class="ti-row"><input class="ti-input" type="number" id="orm-reps" min="1" max="30" style="font-size:13px;padding:6px 8px"><span class="ti-unit">회</span></div>
-        </div>
-        <div class="ti-group" style="flex:0.8">
-          <label>목적</label>
-          <select class="ti-input" id="orm-goal" style="font-size:12px;padding:6px 6px;cursor:pointer">
-            <option value="최대근력">최대근력</option>
-            <option value="근력">근력</option>
-            <option value="근비대">근비대</option>
-            <option value="근지구력">근지구력</option>
-          </select>
-        </div>
-      </div>
-      <div id="orm-result"></div>
-    </div>
-  </div>
   <div id="quote-section"></div>
   <div class="footer">HiMove &nbsp;·&nbsp; 월간 회원 리포트<br>본 리포트는 트레이너와 AI가 함께 작성합니다</div>
 </div>
@@ -519,48 +473,6 @@ function init(data) {
       goalsCard.after(pgCard);
     }
   }
-
-  /* 유산소 존 */
-  const ageEl   = document.getElementById('input-age');
-  const restEl  = document.getElementById('input-rest-hr');
-  ageEl.value   = cardio?.age      || 30;
-  restEl.value  = cardio?.restingHR || 65;
-  function calcZones() {
-    const age = parseInt(ageEl.value) || 30;
-    const rhr = parseInt(restEl.value) || 65;
-    const max = Math.round(207 - 0.7 * age);
-    const hrr = max - rhr;
-    document.getElementById('cardio-zone-meta').innerHTML = `최대 심박수 <b>${max}</b> bpm &nbsp;·&nbsp; 심박 여유도 <b>${hrr}</b> bpm`;
-    document.getElementById('zone-table').innerHTML = ZONES.map(z => {
-      const lo = Math.round(z.pctLo * hrr + rhr), hi = Math.round(z.pctHi * hrr + rhr);
-      return `<div class="zone-row"><div class="zone-dot" style="background:${z.color}"></div><div class="zone-label" style="color:${z.color}">${z.label}</div><div class="zone-range">${lo}–${hi}<span>bpm</span></div><div class="zone-desc">${z.desc}</div></div>`;
-    }).join('');
-  }
-  ageEl.addEventListener('input', calcZones);
-  restEl.addEventListener('input', calcZones);
-  calcZones();
-
-
-  /* 1RM */
-  const wEl   = document.getElementById('orm-weight');
-  const rEl   = document.getElementById('orm-reps');
-  const gEl   = document.getElementById('orm-goal');
-  wEl.value   = orm?.weight || 60;
-  rEl.value   = orm?.reps   || 8;
-  gEl.value   = orm?.goal   || '근비대';
-  function calcORM() {
-    const w = parseFloat(wEl.value) || 60, reps = parseInt(rEl.value) || 8, goal = gEl.value;
-    const est = Math.round(w * (1 + reps / 30));
-    document.getElementById('orm-result').innerHTML = `<div class="orm-result-card">
-      <div class="orm-1rm-val">${est}<span>kg</span></div>
-      <div class="orm-1rm-sub">추정 1RM (${w}kg × ${reps}회 기준)</div>
-      <div class="orm-zone-list">${ORM_ZONES.map(z => {
-        const lo = Math.round(z.pctLo * est), hi = Math.round(z.pctHi * est), isTgt = z.name === goal;
-        return `<div class="ozl-row${isTgt ? ' target' : ''}"><span class="ozl-name">${z.name}</span><span class="ozl-weight">${lo}–${hi} kg</span><span class="ozl-reps">${z.repsLo}–${z.repsHi}회</span>${isTgt ? '<span class="target-badge">현재 목적</span>' : ''}</div>`;
-      }).join('')}</div></div>`;
-  }
-  wEl.addEventListener('input', calcORM); rEl.addEventListener('input', calcORM); gEl.addEventListener('change', calcORM);
-  calcORM();
 
   /* 주차 탭 & 패널 */
   let activeChart = {};
