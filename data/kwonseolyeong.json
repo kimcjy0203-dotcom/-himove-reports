@@ -18,8 +18,8 @@
   },
   "bodyGoals": {
     "weight": { "start": 65.7, "goal": 52.0 },
-    "muscle": { "start": 22.0, "goal": null },
-    "fat":    { "start": 25.1, "goal": null }
+    "muscle": { "start": 22.0, "goal": 22.5 },
+    "fat":    { "start": 25.1, "goal": 13.0 }
   },
   "cardio": {
     "age": 26,
@@ -44,12 +44,12 @@
       "exercises": [],
       "lifts": [],
       "bodyData": {
-        "labels": [],
-        "weight": [],
-        "fat": [],
-        "muscle": [],
-        "lastMeasured": null,
-        "comment": ""
+        "labels": ["6/2"],
+        "weight": [65.7],
+        "fat": [25.1],
+        "muscle": [22.0],
+        "lastMeasured": "2026-06-02",
+        "comment": "6월 시작 측정값이에요. 목표까지 체중 -13.7kg, 체지방 -12.1kg 남았어요. 꾸준히 하면 충분히 가능한 목표예요!"
       },
       "condition": "보통",
       "conditionNote": "",
