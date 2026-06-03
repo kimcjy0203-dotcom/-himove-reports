@@ -139,46 +139,69 @@
         "glutes"
       ],
       "weeklyRoutine": {
-        "weekKey": "2026-W23-kwonseolyeong",
-        "note": "",
+        "weekKey": "2026-W23-seo",
+        "note": "🎯 1주차: 레슨 자세 교정 집중 · 개인 운동 루틴 시작\n월/수/금 중 2일 선택 — 하체 1회 + 상체 1회",
         "days": [
           {
             "day": "월",
-            "workout": "-",
-            "rest": false
+            "workout": "개인 (하체 or 상체)",
+            "rest": false,
+            "plan": [
+              {
+                "name": "밴드 루틴 참고",
+                "sets": 3,
+                "reps": 15,
+                "weight": "-"
+              }
+            ]
           },
           {
             "day": "화",
-            "workout": "-",
+            "workout": "레슨",
             "rest": false
           },
           {
             "day": "수",
-            "workout": "-",
-            "rest": false
+            "workout": "개인 (하체 or 상체)",
+            "rest": false,
+            "plan": [
+              {
+                "name": "밴드 루틴 참고",
+                "sets": 3,
+                "reps": 15,
+                "weight": "-"
+              }
+            ]
           },
           {
             "day": "목",
-            "workout": "-",
+            "workout": "레슨",
             "rest": false
           },
           {
             "day": "금",
-            "workout": "-",
-            "rest": false
+            "workout": "개인 (하체 or 상체)",
+            "rest": false,
+            "plan": [
+              {
+                "name": "밴드 루틴 참고",
+                "sets": 3,
+                "reps": 15,
+                "weight": "-"
+              }
+            ]
           },
           {
             "day": "토",
-            "workout": "-",
-            "rest": false
+            "workout": "휴식",
+            "rest": true
           },
           {
             "day": "일",
-            "workout": "-",
+            "workout": "휴식",
             "rest": true
           }
-        ],
-        "plan": []
+        ]
       },
       "sessionDates": [
         "2026-06-02"
@@ -223,46 +246,69 @@
       "finalMessage": "",
       "musclesWorked": [],
       "weeklyRoutine": {
-        "weekKey": "2026-W24-kwonseolyeong",
-        "note": "",
+        "weekKey": "2026-W24-seo",
+        "note": "🎯 2주차: 스쿼트 복압 완성 · 개인 운동 빈도 유지\n월/수/금 중 2일 선택 — 하체 1회 + 상체 1회",
         "days": [
           {
             "day": "월",
-            "workout": "-",
-            "rest": false
+            "workout": "개인 (하체 or 상체)",
+            "rest": false,
+            "plan": [
+              {
+                "name": "밴드 루틴 참고",
+                "sets": 3,
+                "reps": 15,
+                "weight": "-"
+              }
+            ]
           },
           {
             "day": "화",
-            "workout": "-",
+            "workout": "레슨",
             "rest": false
           },
           {
             "day": "수",
-            "workout": "-",
-            "rest": false
+            "workout": "개인 (하체 or 상체)",
+            "rest": false,
+            "plan": [
+              {
+                "name": "밴드 루틴 참고",
+                "sets": 3,
+                "reps": 15,
+                "weight": "-"
+              }
+            ]
           },
           {
             "day": "목",
-            "workout": "-",
+            "workout": "레슨",
             "rest": false
           },
           {
             "day": "금",
-            "workout": "-",
-            "rest": false
+            "workout": "개인 (하체 or 상체)",
+            "rest": false,
+            "plan": [
+              {
+                "name": "밴드 루틴 참고",
+                "sets": 3,
+                "reps": 15,
+                "weight": "-"
+              }
+            ]
           },
           {
             "day": "토",
-            "workout": "-",
-            "rest": false
+            "workout": "휴식",
+            "rest": true
           },
           {
             "day": "일",
-            "workout": "-",
+            "workout": "휴식",
             "rest": true
           }
-        ],
-        "plan": []
+        ]
       }
     },
     {
@@ -304,46 +350,69 @@
       "finalMessage": "",
       "musclesWorked": [],
       "weeklyRoutine": {
-        "weekKey": "2026-W25-kwonseolyeong",
-        "note": "",
+        "weekKey": "2026-W25-seo",
+        "note": "🎯 3주차: 스플릿 스쿼트 왼다리 안정성 UP\n월/수/금 중 2일 선택 — 하체 1회 + 상체 1회",
         "days": [
           {
             "day": "월",
-            "workout": "-",
-            "rest": false
+            "workout": "개인 (하체 or 상체)",
+            "rest": false,
+            "plan": [
+              {
+                "name": "밴드 루틴 참고",
+                "sets": 3,
+                "reps": 15,
+                "weight": "-"
+              }
+            ]
           },
           {
             "day": "화",
-            "workout": "-",
+            "workout": "레슨",
             "rest": false
           },
           {
             "day": "수",
-            "workout": "-",
-            "rest": false
+            "workout": "개인 (하체 or 상체)",
+            "rest": false,
+            "plan": [
+              {
+                "name": "밴드 루틴 참고",
+                "sets": 3,
+                "reps": 15,
+                "weight": "-"
+              }
+            ]
           },
           {
             "day": "목",
-            "workout": "-",
+            "workout": "레슨",
             "rest": false
           },
           {
             "day": "금",
-            "workout": "-",
-            "rest": false
+            "workout": "개인 (하체 or 상체)",
+            "rest": false,
+            "plan": [
+              {
+                "name": "밴드 루틴 참고",
+                "sets": 3,
+                "reps": 15,
+                "weight": "-"
+              }
+            ]
           },
           {
             "day": "토",
-            "workout": "-",
-            "rest": false
+            "workout": "휴식",
+            "rest": true
           },
           {
             "day": "일",
-            "workout": "-",
+            "workout": "휴식",
             "rest": true
           }
-        ],
-        "plan": []
+        ]
       }
     },
     {
@@ -385,46 +454,69 @@
       "finalMessage": "",
       "musclesWorked": [],
       "weeklyRoutine": {
-        "weekKey": "2026-W26-kwonseolyeong",
-        "note": "",
+        "weekKey": "2026-W26-seo",
+        "note": "🎯 4주차: 한 달 마무리 · 자세 점검\n월/수/금 중 2일 선택 — 하체 1회 + 상체 1회",
         "days": [
           {
             "day": "월",
-            "workout": "-",
-            "rest": false
+            "workout": "개인 (하체 or 상체)",
+            "rest": false,
+            "plan": [
+              {
+                "name": "밴드 루틴 참고",
+                "sets": 3,
+                "reps": 15,
+                "weight": "-"
+              }
+            ]
           },
           {
             "day": "화",
-            "workout": "-",
+            "workout": "레슨",
             "rest": false
           },
           {
             "day": "수",
-            "workout": "-",
-            "rest": false
+            "workout": "개인 (하체 or 상체)",
+            "rest": false,
+            "plan": [
+              {
+                "name": "밴드 루틴 참고",
+                "sets": 3,
+                "reps": 15,
+                "weight": "-"
+              }
+            ]
           },
           {
             "day": "목",
-            "workout": "-",
+            "workout": "레슨",
             "rest": false
           },
           {
             "day": "금",
-            "workout": "-",
-            "rest": false
+            "workout": "개인 (하체 or 상체)",
+            "rest": false,
+            "plan": [
+              {
+                "name": "밴드 루틴 참고",
+                "sets": 3,
+                "reps": 15,
+                "weight": "-"
+              }
+            ]
           },
           {
             "day": "토",
-            "workout": "-",
-            "rest": false
+            "workout": "휴식",
+            "rest": true
           },
           {
             "day": "일",
-            "workout": "-",
+            "workout": "휴식",
             "rest": true
           }
-        ],
-        "plan": []
+        ]
       }
     }
   ],
