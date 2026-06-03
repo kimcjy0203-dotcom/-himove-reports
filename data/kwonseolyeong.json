@@ -1,7 +1,11 @@
 {
   "name": "권서영",
   "month": "2026년 6월",
-  "purposes": ["체중감량", "체력향상", "건강관리"],
+  "purposes": [
+    "체중감량",
+    "체력향상",
+    "건강관리"
+  ],
   "goals": {
     "short": {
       "text": "PT 외 주 1회 개인 운동 참여 — 혼자서도 운동하는 첫 습관 만들기",
@@ -17,9 +21,18 @@
     }
   },
   "bodyGoals": {
-    "weight": { "start": 65.7, "goal": 52.0 },
-    "muscle": { "start": 22.0, "goal": 22.5 },
-    "fat":    { "start": 25.1, "goal": 13.0 }
+    "weight": {
+      "start": 65.7,
+      "goal": 52.0
+    },
+    "muscle": {
+      "start": 22.0,
+      "goal": 22.5
+    },
+    "fat": {
+      "start": 25.1,
+      "goal": 13.0
+    }
   },
   "cardio": {
     "age": 26,
@@ -39,15 +52,67 @@
       "week": 1,
       "label": "1주차",
       "date": "6/2",
-      "mainMessage": "",
-      "summary": { "date": "", "items": [] },
-      "exercises": [],
+      "mainMessage": "하체 3종 세트로 탄탄하게! 스쿼트 자세 교정 + 스플릿 스쿼트 안정성이 이번 주 핵심이에요. 숙제 3가지 꼭 해오세요.",
+      "summary": {
+        "date": "2026년 6월 2일",
+        "items": [
+          {
+            "name": "하이바 스쿼트",
+            "detail": "3세트 × 10회 / 20kg"
+          },
+          {
+            "name": "코삭 스쿼트",
+            "detail": "3세트 × 10회 / 4kg"
+          },
+          {
+            "name": "불가리안 스플릿 스쿼트",
+            "detail": "3세트 × 10회 / 4kg"
+          },
+          {
+            "name": "힙쓰러스트 (숙제)",
+            "detail": "3세트 × 15회"
+          },
+          {
+            "name": "힙 어덕션 (숙제)",
+            "detail": "3세트 × 15회"
+          },
+          {
+            "name": "레그 익스텐션 (숙제)",
+            "detail": "3세트 × 15회"
+          }
+        ]
+      },
+      "exercises": [
+        {
+          "name": "하이바 스쿼트",
+          "note": "· 내려갈 때 턱이 들림<br>· 복압 유지 더 신경 쓰기",
+          "next": "숨 들이쉬고 복압 잡은 뒤 내려가기 — 턱은 살짝 당긴 상태 유지"
+        },
+        {
+          "name": "코삭 스쿼트",
+          "note": "· 척추가 구부러지는 경향<br>· 엉덩이가 무릎 높이보다 내려가지 않음",
+          "next": "척추 세운 채 천천히 — 엉덩이가 무릎 높이에 올 때까지 깊이 조절"
+        },
+        {
+          "name": "불가리안 스플릿 스쿼트",
+          "note": "· 중량 든 쪽 어깨가 내려감<br>· 왼다리 안정성 부족",
+          "next": "어깨 수평 의식하며 — 왼발 착지 시 발 전체로 바닥 누르기"
+        }
+      ],
       "lifts": [],
       "bodyData": {
-        "labels": ["6/2"],
-        "weight": [65.7],
-        "fat": [25.1],
-        "muscle": [22.0],
+        "labels": [
+          "6/2"
+        ],
+        "weight": [
+          65.7
+        ],
+        "fat": [
+          25.1
+        ],
+        "muscle": [
+          22.0
+        ],
         "lastMeasured": "2026-06-02",
         "comment": "6월 시작 측정값이에요. 목표까지 체중 -13.7kg, 체지방 -12.1kg 남았어요. 꾸준히 하면 충분히 가능한 목표예요!"
       },
@@ -60,33 +125,74 @@
       "painNote": "",
       "nutrition": "보통",
       "nutritionNote": "",
-      "review": { "good": "", "caution": "", "suggest": "" },
-      "trainerComment": "",
+      "review": {
+        "good": "하이바 스쿼트 20kg 깔끔하게 수행 — 중량 다루는 감각이 안정적이에요.",
+        "caution": "복압 유지가 핵심 — 숨 참고 내려가면 허리 보호가 되고 힘이 더 잘 전달돼요. 매 세트 첫 동작에서 의식적으로 복압 먼저 잡기.",
+        "suggest": "왼다리 안정성 보강 — 한발 서기 30초씩 매일 연습하면 스플릿 스쿼트 균형이 빠르게 잡혀요."
+      },
+      "trainerComment": "스쿼트 중량 유지하면서 자세 교정 포인트 두 가지만 기억해요 — 복압이랑 턱! 코삭이랑 스플릿은 아직 자세 잡는 단계니까 천천히 깊이 가는 게 맞아요. 숙제 3가지 꼭 해오세요, 다음 주 체크할게요.",
       "trainerDirection": "",
-      "nextSessionMemo": "",
+      "nextSessionMemo": "숙제 3종 확인 (힙쓰러스트·힙 어덕션·레그 익스텐션) / 코삭 스쿼트 깊이 재점검 / 스플릿 스쿼트 왼다리 안정성",
       "finalMessage": "",
-      "musclesWorked": [],
+      "musclesWorked": [
+        "quads",
+        "glutes"
+      ],
       "weeklyRoutine": {
         "weekKey": "2026-W23-kwonseolyeong",
         "note": "",
         "days": [
-          { "day": "월", "workout": "-", "rest": false },
-          { "day": "화", "workout": "-", "rest": false },
-          { "day": "수", "workout": "-", "rest": false },
-          { "day": "목", "workout": "-", "rest": false },
-          { "day": "금", "workout": "-", "rest": false },
-          { "day": "토", "workout": "-", "rest": false },
-          { "day": "일", "workout": "-", "rest": true }
+          {
+            "day": "월",
+            "workout": "-",
+            "rest": false
+          },
+          {
+            "day": "화",
+            "workout": "-",
+            "rest": false
+          },
+          {
+            "day": "수",
+            "workout": "-",
+            "rest": false
+          },
+          {
+            "day": "목",
+            "workout": "-",
+            "rest": false
+          },
+          {
+            "day": "금",
+            "workout": "-",
+            "rest": false
+          },
+          {
+            "day": "토",
+            "workout": "-",
+            "rest": false
+          },
+          {
+            "day": "일",
+            "workout": "-",
+            "rest": true
+          }
         ],
         "plan": []
-      }
+      },
+      "sessionDates": [
+        "2026-06-02"
+      ]
     },
     {
       "week": 2,
       "label": "2주차",
       "date": "6/8",
       "mainMessage": "",
-      "summary": { "date": "", "items": [] },
+      "summary": {
+        "date": "",
+        "items": []
+      },
       "exercises": [],
       "lifts": [],
       "bodyData": {
@@ -106,7 +212,11 @@
       "painNote": "",
       "nutrition": "보통",
       "nutritionNote": "",
-      "review": { "good": "", "caution": "", "suggest": "" },
+      "review": {
+        "good": "",
+        "caution": "",
+        "suggest": ""
+      },
       "trainerComment": "",
       "trainerDirection": "",
       "nextSessionMemo": "",
@@ -116,13 +226,41 @@
         "weekKey": "2026-W24-kwonseolyeong",
         "note": "",
         "days": [
-          { "day": "월", "workout": "-", "rest": false },
-          { "day": "화", "workout": "-", "rest": false },
-          { "day": "수", "workout": "-", "rest": false },
-          { "day": "목", "workout": "-", "rest": false },
-          { "day": "금", "workout": "-", "rest": false },
-          { "day": "토", "workout": "-", "rest": false },
-          { "day": "일", "workout": "-", "rest": true }
+          {
+            "day": "월",
+            "workout": "-",
+            "rest": false
+          },
+          {
+            "day": "화",
+            "workout": "-",
+            "rest": false
+          },
+          {
+            "day": "수",
+            "workout": "-",
+            "rest": false
+          },
+          {
+            "day": "목",
+            "workout": "-",
+            "rest": false
+          },
+          {
+            "day": "금",
+            "workout": "-",
+            "rest": false
+          },
+          {
+            "day": "토",
+            "workout": "-",
+            "rest": false
+          },
+          {
+            "day": "일",
+            "workout": "-",
+            "rest": true
+          }
         ],
         "plan": []
       }
@@ -132,7 +270,10 @@
       "label": "3주차",
       "date": "6/15",
       "mainMessage": "",
-      "summary": { "date": "", "items": [] },
+      "summary": {
+        "date": "",
+        "items": []
+      },
       "exercises": [],
       "lifts": [],
       "bodyData": {
@@ -152,7 +293,11 @@
       "painNote": "",
       "nutrition": "보통",
       "nutritionNote": "",
-      "review": { "good": "", "caution": "", "suggest": "" },
+      "review": {
+        "good": "",
+        "caution": "",
+        "suggest": ""
+      },
       "trainerComment": "",
       "trainerDirection": "",
       "nextSessionMemo": "",
@@ -162,13 +307,41 @@
         "weekKey": "2026-W25-kwonseolyeong",
         "note": "",
         "days": [
-          { "day": "월", "workout": "-", "rest": false },
-          { "day": "화", "workout": "-", "rest": false },
-          { "day": "수", "workout": "-", "rest": false },
-          { "day": "목", "workout": "-", "rest": false },
-          { "day": "금", "workout": "-", "rest": false },
-          { "day": "토", "workout": "-", "rest": false },
-          { "day": "일", "workout": "-", "rest": true }
+          {
+            "day": "월",
+            "workout": "-",
+            "rest": false
+          },
+          {
+            "day": "화",
+            "workout": "-",
+            "rest": false
+          },
+          {
+            "day": "수",
+            "workout": "-",
+            "rest": false
+          },
+          {
+            "day": "목",
+            "workout": "-",
+            "rest": false
+          },
+          {
+            "day": "금",
+            "workout": "-",
+            "rest": false
+          },
+          {
+            "day": "토",
+            "workout": "-",
+            "rest": false
+          },
+          {
+            "day": "일",
+            "workout": "-",
+            "rest": true
+          }
         ],
         "plan": []
       }
@@ -178,7 +351,10 @@
       "label": "4주차",
       "date": "6/22",
       "mainMessage": "",
-      "summary": { "date": "", "items": [] },
+      "summary": {
+        "date": "",
+        "items": []
+      },
       "exercises": [],
       "lifts": [],
       "bodyData": {
@@ -198,7 +374,11 @@
       "painNote": "",
       "nutrition": "보통",
       "nutritionNote": "",
-      "review": { "good": "", "caution": "", "suggest": "" },
+      "review": {
+        "good": "",
+        "caution": "",
+        "suggest": ""
+      },
       "trainerComment": "",
       "trainerDirection": "",
       "nextSessionMemo": "",
@@ -208,13 +388,41 @@
         "weekKey": "2026-W26-kwonseolyeong",
         "note": "",
         "days": [
-          { "day": "월", "workout": "-", "rest": false },
-          { "day": "화", "workout": "-", "rest": false },
-          { "day": "수", "workout": "-", "rest": false },
-          { "day": "목", "workout": "-", "rest": false },
-          { "day": "금", "workout": "-", "rest": false },
-          { "day": "토", "workout": "-", "rest": false },
-          { "day": "일", "workout": "-", "rest": true }
+          {
+            "day": "월",
+            "workout": "-",
+            "rest": false
+          },
+          {
+            "day": "화",
+            "workout": "-",
+            "rest": false
+          },
+          {
+            "day": "수",
+            "workout": "-",
+            "rest": false
+          },
+          {
+            "day": "목",
+            "workout": "-",
+            "rest": false
+          },
+          {
+            "day": "금",
+            "workout": "-",
+            "rest": false
+          },
+          {
+            "day": "토",
+            "workout": "-",
+            "rest": false
+          },
+          {
+            "day": "일",
+            "workout": "-",
+            "rest": true
+          }
         ],
         "plan": []
       }
