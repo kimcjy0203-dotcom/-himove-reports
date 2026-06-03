@@ -256,11 +256,19 @@
       "exercises": [],
       "lifts": [],
       "bodyData": {
-        "labels": [],
-        "weight": [],
-        "fat": [],
-        "muscle": [],
-        "lastMeasured": null,
+        "labels": [
+          "6/2"
+        ],
+        "weight": [
+          64.3
+        ],
+        "fat": [
+          23.6
+        ],
+        "muscle": [
+          22.0
+        ],
+        "lastMeasured": "2026-06-02",
         "comment": ""
       },
       "condition": "보통",
@@ -415,7 +423,9 @@
           }
         ]
       },
-      "sessionDates": [],
+      "sessionDates": [
+        "2026-06-02"
+      ],
       "memberComment": ""
     },
     {
