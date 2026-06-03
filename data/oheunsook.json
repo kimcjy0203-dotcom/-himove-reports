@@ -49,27 +49,40 @@
     {
       "week": 1,
       "label": "1주차",
-      "date": "5/26",
-      "mainMessage": "",
+      "date": "6/1",
+      "mainMessage": "루마니안 데드리프트, 바벨 로우, 덤벨 로우 — 세 가지 모두 자세가 좋았어요! 등을 제대로 쓰고 있다는 증거입니다. 이 느낌 기억해두세요.",
       "summary": {
-        "date": "",
-        "items": []
+        "date": "2026년 6월 2일",
+        "items": [
+          {
+            "name": "루마니안 데드리프트",
+            "detail": "3세트 × 15회 / 25kg"
+          },
+          {
+            "name": "바벨 로우",
+            "detail": "3세트 × 12회 / 10kg"
+          },
+          {
+            "name": "덤벨 로우",
+            "detail": "3세트"
+          }
+        ]
       },
       "exercises": [
         {
-          "name": "힙브릿지",
-          "note": "· 허리 통증으로 자체 무게로만 진행<br>· 엉덩이 조이는 느낌에 집중",
-          "next": "통증 줄면 밴드 추가"
+          "name": "루마니안 데드리프트",
+          "note": "· 광배근 수축 끝까지 유지<br>· 내려갈 때 텐션 유지 잘 됨<br>· 자세 좋음",
+          "next": "내려갈 때 등 펴는 긴장감 그대로 유지 — 이 느낌이 핵심이에요"
         },
         {
-          "name": "싱글 레그 힙힌지",
-          "note": "· 균형 잡기 위주로 진행<br>· 무릎 흔들리지 않게 배에 힘 유지",
-          "next": "안정되면 덤벨 추가"
+          "name": "바벨 로우",
+          "note": "· 자세 좋음<br>· 바가 허벅지 앞 라인을 스치듯 올라와야 광배 아래까지 수축 전달",
+          "next": "허벅지 앞 라인을 바가 스치듯 — 바가 몸에서 멀어지면 등 자극이 줄어요"
         },
         {
-          "name": "흉추 에어플레인 (벽)",
-          "note": "· 허리 대신 등 위쪽을 쓰는 느낌에 집중<br>· 움직임 범위 점점 늘어나는 중",
-          "next": "동일 유지"
+          "name": "덤벨 로우",
+          "note": "· 자세 좋음<br>· 덤벨이 허벅지 옆 라인을 스치는 느낌 유지",
+          "next": "허벅지 옆 스치는 느낌 그대로 — 바벨 로우와 같은 원리예요"
         }
       ],
       "lifts": [],
@@ -87,7 +100,7 @@
           22.0
         ],
         "lastMeasured": "2026-06-02",
-        "comment": "6월 시작 측정값이에요."
+        "comment": ""
       },
       "condition": "보통",
       "conditionNote": "",
@@ -99,21 +112,20 @@
       "nutrition": "보통",
       "nutritionNote": "",
       "review": {
-        "good": "",
-        "caution": "",
-        "suggest": ""
+        "good": "세 운동 모두 자세가 안정적이에요 — 특히 루마니안 데드리프트 내려갈 때 텐션 유지가 인상적이었어요.",
+        "caution": "바·덤벨이 몸에서 멀어지지 않도록 — 허벅지 라인을 스치는 느낌이 유지될수록 등 아래까지 자극이 전달돼요.",
+        "suggest": "운동 후 오른쪽 허벅지 당김 있으면 바로 말해주세요 — 루마니안 데드리프트 강도 조절이 필요할 수 있어요."
       },
-      "trainerComment": "",
+      "trainerComment": "세 가지 운동 전부 자세가 좋았어요! 허벅지 라인 스치는 피드백만 계속 기억해두면 돼요. 등 운동 감각이 잘 잡혀가고 있어요.",
       "trainerDirection": "",
-      "nextSessionMemo": "",
-      "finalMessage": "힘든 날 나와주셔서 감사해요. 이런 날이 쌓여서 진짜 변화가 생깁니다. 다음 주도 기다릴게요!",
+      "nextSessionMemo": "허벅지 라인 스치는 느낌 재확인 / 오른쪽 허벅지 당김 여부 체크 / 덤벨 로우 중량·횟수 확인",
+      "finalMessage": "",
       "musclesWorked": [
-        "glutes",
-        "hamstrings",
-        "back"
+        "back",
+        "glutes"
       ],
       "weeklyRoutine": {
-        "weekKey": "2026-W22-es",
+        "weekKey": "2026-W23-es",
         "note": "🎯 1주차: 등 운동 자세 잡기 · 루틴 시작",
         "days": [
           {
@@ -246,47 +258,20 @@
         ]
       },
       "memberComment": "",
-      "sessionDates": []
+      "sessionDates": [
+        "2026-06-02"
+      ]
     },
     {
       "week": 2,
       "label": "2주차",
-      "date": "6/1",
-      "mainMessage": "루마니안 데드리프트, 바벨 로우, 덤벨 로우 — 세 가지 모두 자세가 좋았어요! 등을 제대로 쓰고 있다는 증거입니다. 이 느낌 기억해두세요.",
+      "date": "6/8",
+      "mainMessage": "",
       "summary": {
-        "date": "2026년 6월 2일",
-        "items": [
-          {
-            "name": "루마니안 데드리프트",
-            "detail": "3세트 × 15회 / 25kg"
-          },
-          {
-            "name": "바벨 로우",
-            "detail": "3세트 × 12회 / 10kg"
-          },
-          {
-            "name": "덤벨 로우",
-            "detail": "3세트"
-          }
-        ]
+        "date": "",
+        "items": []
       },
-      "exercises": [
-        {
-          "name": "루마니안 데드리프트",
-          "note": "· 광배근 수축 끝까지 유지<br>· 내려갈 때 텐션 유지 잘 됨<br>· 자세 좋음",
-          "next": "내려갈 때 등 펴는 긴장감 그대로 유지 — 이 느낌이 핵심이에요"
-        },
-        {
-          "name": "바벨 로우",
-          "note": "· 자세 좋음<br>· 바가 허벅지 앞 라인을 스치듯 올라와야 광배 아래까지 수축 전달",
-          "next": "허벅지 앞 라인을 바가 스치듯 — 바가 몸에서 멀어지면 등 자극이 줄어요"
-        },
-        {
-          "name": "덤벨 로우",
-          "note": "· 자세 좋음<br>· 덤벨이 허벅지 옆 라인을 스치는 느낌 유지",
-          "next": "허벅지 옆 스치는 느낌 그대로 — 바벨 로우와 같은 원리예요"
-        }
-      ],
+      "exercises": [],
       "lifts": [],
       "bodyData": {
         "labels": [
@@ -314,21 +299,18 @@
       "nutrition": "보통",
       "nutritionNote": "",
       "review": {
-        "good": "세 운동 모두 자세가 안정적이에요 — 특히 루마니안 데드리프트 내려갈 때 텐션 유지가 인상적이었어요.",
-        "caution": "바·덤벨이 몸에서 멀어지지 않도록 — 허벅지 라인을 스치는 느낌이 유지될수록 등 아래까지 자극이 전달돼요.",
-        "suggest": "운동 후 오른쪽 허벅지 당김 있으면 바로 말해주세요 — 루마니안 데드리프트 강도 조절이 필요할 수 있어요."
+        "good": "",
+        "caution": "",
+        "suggest": ""
       },
-      "trainerComment": "세 가지 운동 전부 자세가 좋았어요! 허벅지 라인 스치는 피드백만 계속 기억해두면 돼요. 등 운동 감각이 잘 잡혀가고 있어요.",
+      "trainerComment": "",
       "trainerDirection": "",
       "finalMessage": "",
-      "nextSessionMemo": "허벅지 라인 스치는 느낌 재확인 / 오른쪽 허벅지 당김 여부 체크 / 덤벨 로우 중량·횟수 확인",
-      "musclesWorked": [
-        "back",
-        "glutes"
-      ],
+      "nextSessionMemo": "",
+      "musclesWorked": [],
       "weeklyRoutine": {
-        "weekKey": "2026-W23-es",
-        "note": "🎯 2주차: 루마니안 데드리프트·로우 강도 유지 · 개인 운동 3회 채우기",
+        "weekKey": "2026-W24-es",
+        "note": "🎯 2주차: 중량 유지 · 허벅지 라인 스치는 느낌 체화",
         "days": [
           {
             "day": "월",
@@ -459,15 +441,13 @@
           }
         ]
       },
-      "sessionDates": [
-        "2026-06-02"
-      ],
+      "sessionDates": [],
       "memberComment": ""
     },
     {
       "week": 3,
       "label": "3주차",
-      "date": "6/8",
+      "date": "6/15",
       "bodyData": {
         "labels": [],
         "weight": [],
@@ -499,8 +479,8 @@
       "nextSessionMemo": "",
       "memberComment": "",
       "weeklyRoutine": {
-        "weekKey": "2026-W24-es",
-        "note": "🎯 3주차: 중량 5% 증가 도전 · 허벅지 라인 스치는 느낌 체화",
+        "weekKey": "2026-W25-es",
+        "note": "🎯 3주차: 중량 5% 증가 도전",
         "days": [
           {
             "day": "월",
@@ -635,7 +615,7 @@
     {
       "week": 4,
       "label": "4주차",
-      "date": "6/15",
+      "date": "6/22",
       "bodyData": {
         "labels": [],
         "weight": [],
@@ -667,7 +647,7 @@
       "nextSessionMemo": "",
       "memberComment": "",
       "weeklyRoutine": {
-        "weekKey": "2026-W25-es",
+        "weekKey": "2026-W26-es",
         "note": "🎯 4주차: 한 달 마무리 · 인바디 재측정 · 61kg 목표 확인",
         "days": [
           {
