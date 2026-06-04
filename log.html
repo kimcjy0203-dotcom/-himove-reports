@@ -122,7 +122,25 @@ function badge(label, val, map) {
 }
 
 function renderWeek(w) {
-  const hasData = w.mainMessage || w.summary?.date || w.memberComment || w.sessionDates?.length;
+  // localStorage 회원 체크인 데이터 읽기
+  const wk = `hm-week-${w.weeklyRoutine?.weekKey}`;
+  const checkins = JSON.parse(localStorage.getItem(wk) || '{}');
+  function getCounts(field) {
+    const cnt = {};
+    Object.values(checkins).forEach(day => {
+      if (day[field]) cnt[day[field]] = (cnt[day[field]] || 0) + 1;
+    });
+    return cnt;
+  }
+  function countBadges(field, map) {
+    const cnt = getCounts(field);
+    return Object.entries(cnt).map(([k,v]) => {
+      const [bg, color] = map[k] || ['#f0f4f8','#7a95b0'];
+      return `<span class="badge" style="background:${bg};color:${color}">${k} ${v}</span>`;
+    }).join('');
+  }
+  const hasCheckins = Object.keys(checkins).length > 0;
+  const hasData = w.mainMessage || w.summary?.date || w.memberComment || w.sessionDates?.length || hasCheckins;
 
   const days   = w.weeklyRoutine?.days || [];
   const lesson = days.filter(d => d.workout?.includes('레슨')).length;
@@ -138,13 +156,23 @@ function renderWeek(w) {
   const bd = w.bodyData || {};
   const lastW = (bd.weight||[]).filter(v=>v!=null).at(-1);
 
-  const badgeHtml = [
+  // 트레이너 입력 뱃지
+  const trainerBadges = [
     badge('컨디션', w.condition, COND),
     badge('수면', w.sleep, SLEEP),
     badge('스트레스', w.stress, STRESS),
     (w.pain && w.pain !== '없음') ? `<span class="badge badge-pain">⚠ ${w.conditionNote||'통증'}</span>` : '',
     lastW ? `<span class="badge-weight">${lastW}kg</span>` : '',
   ].filter(Boolean).join('');
+
+  // 회원 체크인 뱃지 (localStorage 누적)
+  const checkinBadges = [
+    countBadges('condition', COND),
+    countBadges('sleep', SLEEP),
+  ].filter(Boolean).join('');
+
+  const badgeHtml = trainerBadges || checkinBadges
+    ? `${trainerBadges}${checkinBadges ? `<span style="font-size:9px;color:#b0c0d4;margin:0 4px">│</span>${checkinBadges}` : ''}` : '';
 
   const commentHtml = w.memberComment
     ? `<div class="wr-comment">💬 ${w.memberComment}</div>` : '';
