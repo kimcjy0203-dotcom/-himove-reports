@@ -597,6 +597,12 @@ function init(data) {
         const cur = JSON.parse(localStorage.getItem(sk) || '{}');
         cur[f] = ta.value;
         localStorage.setItem(sk, JSON.stringify(cur));
+        // 주간 키에도 메모 저장 → 세션 로그 반영
+        const wd = JSON.parse(localStorage.getItem(wk) || '{}');
+        if (!wd[todayKey]) wd[todayKey] = {};
+        if (ta.value.trim()) wd[todayKey][f] = ta.value.trim();
+        else delete wd[todayKey][f];
+        localStorage.setItem(wk, JSON.stringify(wd));
       });
     });
   }
