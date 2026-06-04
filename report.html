@@ -633,7 +633,7 @@ function init(data) {
 
   const navEl   = document.getElementById('week-nav');
   const panelEl = document.getElementById('week-panels');
-  navEl.innerHTML   = weeks.map((w,i) => `<button class="wt-btn${!w.mainMessage?' empty':''}${i===0?' active':''}" data-idx="${i}"><span class="wt-week">${w.label}</span><span class="wt-date">${!w.mainMessage?'미입력':w.date}</span></button>`).join('');
+  navEl.innerHTML   = weeks.map((w,i) => w.mainMessage ? `<button class="wt-btn${i===0?' active':''}" data-idx="${i}"><span class="wt-week">${w.label}</span><span class="wt-date">${w.date}</span></button>` : '').join('');
   panelEl.innerHTML = weeks.map((w,i) => buildPanel(w,i)).join('');
 
   /* 운동 처방 가이드 + 유산소 강도 가이드 초기화 */
