@@ -131,8 +131,8 @@
         "suggest": "왼다리 안정성 보강 — 한발 서기 30초씩 매일 연습하면 스플릿 스쿼트 균형이 빠르게 잡혀요."
       },
       "trainerComment": "스쿼트 중량 유지하면서 자세 교정 포인트 두 가지만 기억해요 — 복압이랑 턱! 코삭이랑 스플릿은 아직 자세 잡는 단계니까 천천히 깊이 가는 게 맞아요. 숙제 3가지 꼭 해오세요, 다음 주 체크할게요.",
-      "trainerDirection": "",
-      "nextSessionMemo": "숙제 3종 확인 (힙쓰러스트·힙 어덕션·레그 익스텐션) / 코삭 스쿼트 깊이 재점검 / 스플릿 스쿼트 왼다리 안정성",
+      "trainerDirection": "월=개인하체(A/B 교대) · 화목=레슨(하체↔상체 교대) · 수=개인상체(가슴↔등 교대)\n하체 A: 하이바스쿼트·스플릿·레그익스텐션·힙어덕션·힙쓰러스트\n하체 B: 코삭스쿼트·RDL·레그컬·레그익스텐션·힙쓰러스트",
+      "nextSessionMemo": "6/4(목) 레슨 — 가슴+삼두\n벤치프레스 20kg×10 / 덤벨 벤치프레스 6kg / 체스트 프레스 머신 / 딥스 / 삼두 번갈아 (킥백·오버헤드·케이블 푸쉬다운)\n\n다음 레슨(화): 등 운동 예정",
       "finalMessage": "",
       "musclesWorked": [
         "quads",
@@ -140,15 +140,39 @@
       ],
       "weeklyRoutine": {
         "weekKey": "2026-W23-seo",
-        "note": "🎯 1주차: 레슨 자세 교정 집중 · 개인 운동 루틴 시작\n월/수/금 중 2일 선택 — 하체 1회 + 상체 1회",
+        "note": "🎯 1주차: 화=하체 레슨 · 목=가슴 레슨 · 월=개인하체 · 수=개인상체",
         "days": [
           {
             "day": "월",
-            "workout": "개인 (하체 or 상체)",
+            "workout": "개인-하체(A)",
             "rest": false,
             "plan": [
               {
-                "name": "밴드 루틴 참고",
+                "name": "하이바 스쿼트",
+                "sets": 3,
+                "reps": 10,
+                "weight": "20kg"
+              },
+              {
+                "name": "불가리안 스플릿 스쿼트",
+                "sets": 3,
+                "reps": 10,
+                "weight": "4kg"
+              },
+              {
+                "name": "레그 익스텐션",
+                "sets": 3,
+                "reps": 15,
+                "weight": "-"
+              },
+              {
+                "name": "힙 어덕션",
+                "sets": 3,
+                "reps": 15,
+                "weight": "-"
+              },
+              {
+                "name": "힙쓰러스트",
                 "sets": 3,
                 "reps": 15,
                 "weight": "-"
@@ -157,39 +181,55 @@
           },
           {
             "day": "화",
-            "workout": "레슨",
+            "workout": "레슨-하체",
             "rest": false
           },
           {
             "day": "수",
-            "workout": "개인 (하체 or 상체)",
+            "workout": "개인-가슴",
             "rest": false,
             "plan": [
               {
-                "name": "밴드 루틴 참고",
+                "name": "벤치프레스",
                 "sets": 3,
-                "reps": 15,
+                "reps": 10,
+                "weight": "20kg"
+              },
+              {
+                "name": "덤벨 벤치프레스",
+                "sets": 3,
+                "reps": 10,
+                "weight": "6kg"
+              },
+              {
+                "name": "체스트 프레스 머신",
+                "sets": 3,
+                "reps": 12,
+                "weight": "-"
+              },
+              {
+                "name": "딥스",
+                "sets": 3,
+                "reps": 10,
+                "weight": "-"
+              },
+              {
+                "name": "삼두 (킥백/오버헤드/케이블 번갈아)",
+                "sets": 3,
+                "reps": 12,
                 "weight": "-"
               }
             ]
           },
           {
             "day": "목",
-            "workout": "레슨",
+            "workout": "레슨-가슴",
             "rest": false
           },
           {
             "day": "금",
-            "workout": "개인 (하체 or 상체)",
-            "rest": false,
-            "plan": [
-              {
-                "name": "밴드 루틴 참고",
-                "sets": 3,
-                "reps": 15,
-                "weight": "-"
-              }
-            ]
+            "workout": "휴식",
+            "rest": true
           },
           {
             "day": "토",
@@ -247,15 +287,39 @@
       "musclesWorked": [],
       "weeklyRoutine": {
         "weekKey": "2026-W24-seo",
-        "note": "🎯 2주차: 스쿼트 복압 완성 · 개인 운동 빈도 유지\n월/수/금 중 2일 선택 — 하체 1회 + 상체 1회",
+        "note": "🎯 2주차: 화=등 레슨 · 목=하체 레슨 · 월=개인하체 · 수=개인상체",
         "days": [
           {
             "day": "월",
-            "workout": "개인 (하체 or 상체)",
+            "workout": "개인-하체(B)",
             "rest": false,
             "plan": [
               {
-                "name": "밴드 루틴 참고",
+                "name": "코삭 스쿼트",
+                "sets": 3,
+                "reps": 10,
+                "weight": "4kg"
+              },
+              {
+                "name": "루마니안 데드리프트",
+                "sets": 3,
+                "reps": 12,
+                "weight": "20kg"
+              },
+              {
+                "name": "레그 컬",
+                "sets": 3,
+                "reps": 15,
+                "weight": "-"
+              },
+              {
+                "name": "레그 익스텐션",
+                "sets": 3,
+                "reps": 15,
+                "weight": "-"
+              },
+              {
+                "name": "힙쓰러스트",
                 "sets": 3,
                 "reps": 15,
                 "weight": "-"
@@ -264,39 +328,55 @@
           },
           {
             "day": "화",
-            "workout": "레슨",
+            "workout": "레슨-등",
             "rest": false
           },
           {
             "day": "수",
-            "workout": "개인 (하체 or 상체)",
+            "workout": "개인-등",
             "rest": false,
             "plan": [
               {
-                "name": "밴드 루틴 참고",
+                "name": "루마니안 데드리프트",
+                "sets": 3,
+                "reps": 12,
+                "weight": "20kg"
+              },
+              {
+                "name": "바벨 로우 or 덤벨 로우",
+                "sets": 3,
+                "reps": 10,
+                "weight": "-"
+              },
+              {
+                "name": "백익스텐션 or 백익스텐션 로우",
                 "sets": 3,
                 "reps": 15,
+                "weight": "-"
+              },
+              {
+                "name": "시티드로우 or 해머 시티드로우",
+                "sets": 3,
+                "reps": 12,
+                "weight": "-"
+              },
+              {
+                "name": "렛풀다운 or 어시스트 풀업",
+                "sets": 3,
+                "reps": 12,
                 "weight": "-"
               }
             ]
           },
           {
             "day": "목",
-            "workout": "레슨",
+            "workout": "레슨-하체",
             "rest": false
           },
           {
             "day": "금",
-            "workout": "개인 (하체 or 상체)",
-            "rest": false,
-            "plan": [
-              {
-                "name": "밴드 루틴 참고",
-                "sets": 3,
-                "reps": 15,
-                "weight": "-"
-              }
-            ]
+            "workout": "휴식",
+            "rest": true
           },
           {
             "day": "토",
@@ -351,15 +431,39 @@
       "musclesWorked": [],
       "weeklyRoutine": {
         "weekKey": "2026-W25-seo",
-        "note": "🎯 3주차: 스플릿 스쿼트 왼다리 안정성 UP\n월/수/금 중 2일 선택 — 하체 1회 + 상체 1회",
+        "note": "🎯 3주차: 화=가슴 레슨 · 목=등 레슨 · 월=개인하체 · 수=개인상체",
         "days": [
           {
             "day": "월",
-            "workout": "개인 (하체 or 상체)",
+            "workout": "개인-하체(A)",
             "rest": false,
             "plan": [
               {
-                "name": "밴드 루틴 참고",
+                "name": "하이바 스쿼트",
+                "sets": 3,
+                "reps": 10,
+                "weight": "20kg"
+              },
+              {
+                "name": "불가리안 스플릿 스쿼트",
+                "sets": 3,
+                "reps": 10,
+                "weight": "4kg"
+              },
+              {
+                "name": "레그 익스텐션",
+                "sets": 3,
+                "reps": 15,
+                "weight": "-"
+              },
+              {
+                "name": "힙 어덕션",
+                "sets": 3,
+                "reps": 15,
+                "weight": "-"
+              },
+              {
+                "name": "힙쓰러스트",
                 "sets": 3,
                 "reps": 15,
                 "weight": "-"
@@ -368,39 +472,55 @@
           },
           {
             "day": "화",
-            "workout": "레슨",
+            "workout": "레슨-가슴",
             "rest": false
           },
           {
             "day": "수",
-            "workout": "개인 (하체 or 상체)",
+            "workout": "개인-가슴",
             "rest": false,
             "plan": [
               {
-                "name": "밴드 루틴 참고",
+                "name": "벤치프레스",
                 "sets": 3,
-                "reps": 15,
+                "reps": 10,
+                "weight": "20kg"
+              },
+              {
+                "name": "덤벨 벤치프레스",
+                "sets": 3,
+                "reps": 10,
+                "weight": "6kg"
+              },
+              {
+                "name": "체스트 프레스 머신",
+                "sets": 3,
+                "reps": 12,
+                "weight": "-"
+              },
+              {
+                "name": "딥스",
+                "sets": 3,
+                "reps": 10,
+                "weight": "-"
+              },
+              {
+                "name": "삼두 (킥백/오버헤드/케이블 번갈아)",
+                "sets": 3,
+                "reps": 12,
                 "weight": "-"
               }
             ]
           },
           {
             "day": "목",
-            "workout": "레슨",
+            "workout": "레슨-등",
             "rest": false
           },
           {
             "day": "금",
-            "workout": "개인 (하체 or 상체)",
-            "rest": false,
-            "plan": [
-              {
-                "name": "밴드 루틴 참고",
-                "sets": 3,
-                "reps": 15,
-                "weight": "-"
-              }
-            ]
+            "workout": "휴식",
+            "rest": true
           },
           {
             "day": "토",
@@ -455,15 +575,39 @@
       "musclesWorked": [],
       "weeklyRoutine": {
         "weekKey": "2026-W26-seo",
-        "note": "🎯 4주차: 한 달 마무리 · 자세 점검\n월/수/금 중 2일 선택 — 하체 1회 + 상체 1회",
+        "note": "🎯 4주차: 화=하체 레슨 · 목=가슴 레슨 · 월=개인하체 · 수=개인상체",
         "days": [
           {
             "day": "월",
-            "workout": "개인 (하체 or 상체)",
+            "workout": "개인-하체(B)",
             "rest": false,
             "plan": [
               {
-                "name": "밴드 루틴 참고",
+                "name": "코삭 스쿼트",
+                "sets": 3,
+                "reps": 10,
+                "weight": "4kg"
+              },
+              {
+                "name": "루마니안 데드리프트",
+                "sets": 3,
+                "reps": 12,
+                "weight": "20kg"
+              },
+              {
+                "name": "레그 컬",
+                "sets": 3,
+                "reps": 15,
+                "weight": "-"
+              },
+              {
+                "name": "레그 익스텐션",
+                "sets": 3,
+                "reps": 15,
+                "weight": "-"
+              },
+              {
+                "name": "힙쓰러스트",
                 "sets": 3,
                 "reps": 15,
                 "weight": "-"
@@ -472,39 +616,55 @@
           },
           {
             "day": "화",
-            "workout": "레슨",
+            "workout": "레슨-하체",
             "rest": false
           },
           {
             "day": "수",
-            "workout": "개인 (하체 or 상체)",
+            "workout": "개인-등",
             "rest": false,
             "plan": [
               {
-                "name": "밴드 루틴 참고",
+                "name": "루마니안 데드리프트",
+                "sets": 3,
+                "reps": 12,
+                "weight": "20kg"
+              },
+              {
+                "name": "바벨 로우 or 덤벨 로우",
+                "sets": 3,
+                "reps": 10,
+                "weight": "-"
+              },
+              {
+                "name": "백익스텐션 or 백익스텐션 로우",
                 "sets": 3,
                 "reps": 15,
+                "weight": "-"
+              },
+              {
+                "name": "시티드로우 or 해머 시티드로우",
+                "sets": 3,
+                "reps": 12,
+                "weight": "-"
+              },
+              {
+                "name": "렛풀다운 or 어시스트 풀업",
+                "sets": 3,
+                "reps": 12,
                 "weight": "-"
               }
             ]
           },
           {
             "day": "목",
-            "workout": "레슨",
+            "workout": "레슨-가슴",
             "rest": false
           },
           {
             "day": "금",
-            "workout": "개인 (하체 or 상체)",
-            "rest": false,
-            "plan": [
-              {
-                "name": "밴드 루틴 참고",
-                "sets": 3,
-                "reps": 15,
-                "weight": "-"
-              }
-            ]
+            "workout": "휴식",
+            "rest": true
           },
           {
             "day": "토",

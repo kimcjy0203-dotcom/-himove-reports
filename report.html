@@ -536,8 +536,8 @@ function init(data) {
 
   function collapsible(title, color, content, open=false) {
     return `<div class="card" style="padding:0;overflow:hidden">
-      <button class="tool-toggle${open?'':''}" onclick="this.classList.toggle('open');this.nextElementSibling.classList.toggle('hidden')" style="color:${color==='gold'?'#9a7a40':color==='green'?'#3a8a6a':'#7a95b8'}">
-        ${title} <span class="tool-arrow"${open?' style="transform:rotate(180deg)"':''}>▾</span>
+      <button class="tool-toggle${open?' open':''}" onclick="this.classList.toggle('open');this.nextElementSibling.classList.toggle('hidden')" style="color:${color==='gold'?'#9a7a40':color==='green'?'#3a8a6a':'#7a95b8'}">
+        ${title} <span class="tool-arrow">▾</span>
       </button>
       <div class="tool-body${open?'':' hidden'}">${content}</div>
     </div>`;
