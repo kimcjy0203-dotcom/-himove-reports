@@ -157,7 +157,8 @@ function renderWeek(w) {
 
   const hasDetail = commentHtml || exHtml || memoHtml;
 
-  return `<div class="week-row${hasData ? '' : ' empty'}">
+  if (!hasData) return '';
+  return `<div class="week-row">
     <div class="wr-top">
       <span class="wr-label">${w.label}</span>
       <span class="wr-date">${w.date||''}</span>
