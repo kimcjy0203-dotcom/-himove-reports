@@ -1,7 +1,11 @@
 {
   "name": "유지원",
   "month": "2026년 6월",
-  "purposes": ["체중감량", "근육증가", "자세교정"],
+  "purposes": [
+    "체중감량",
+    "근육증가",
+    "자세교정"
+  ],
   "goals": {
     "short": {
       "text": "하루 -256kcal 손실 · 액상과당/밀가루 줄이기 · 섭취 칼로리 1400kcal 유지",
@@ -17,166 +21,570 @@
     }
   },
   "bodyGoals": {
-    "weight": { "start": 69.2, "goal": 65.0 },
-    "muscle": { "start": 26.1, "goal": 27.1 },
-    "fat":    { "start": 21.5, "goal": 16.5 }
+    "weight": {
+      "start": 69.2,
+      "goal": 65.0
+    },
+    "muscle": {
+      "start": 26.1,
+      "goal": 27.1
+    },
+    "fat": {
+      "start": 21.5,
+      "goal": 16.5
+    }
   },
-  "cardio": { "age": 30, "restingHR": 60 },
-  "orm": { "weight": 0, "reps": 0, "goal": "근비대" },
+  "cardio": {
+    "age": 30,
+    "restingHR": 60
+  },
+  "orm": {
+    "weight": 0,
+    "reps": 0,
+    "goal": "근비대"
+  },
   "weeks": [
     {
-      "week": 1, "label": "1주차", "date": "6/1",
-      "mainMessage": "",
-      "summary": { "date": "", "items": [] },
-      "exercises": [],
+      "week": 1,
+      "label": "1주차",
+      "date": "6/1",
+      "mainMessage": "첫 레슨 수고하셨어요! 오늘 목표를 함께 정리했으니 이제 그 방향으로 한 발씩 나아가면 됩니다. 존2 유산소 30분, 잘 하셨어요 💪",
+      "summary": {
+        "date": "2026년 6월 4일",
+        "items": [
+          {
+            "name": "목표 설정 상담",
+            "detail": "단기 · 중기 · 장기"
+          },
+          {
+            "name": "존2 유산소",
+            "detail": "30분"
+          },
+          {
+            "name": "스트레칭 및 가동성 운동",
+            "detail": "전신 + 가동성"
+          }
+        ]
+      },
+      "exercises": [
+        {
+          "name": "목표 설정 상담",
+          "note": "· 단기: 하루 -256kcal 손실 · 액상과당/밀가루 줄이기 · 섭취 1400kcal<br>· 중기: 1개월 1kg 감량 (7700kcal 적자)<br>· 장기: 11월까지 5kg · 삼두·어깨·부유방·복부·허리 라인",
+          "next": "목표를 매일 떠올리기 — 작은 선택들이 쌓여 11월의 몸을 만들어요"
+        },
+        {
+          "name": "존2 유산소",
+          "note": "· Zone 2 강도로 30분 완주<br>· 최대 심박수 60-70% 구간 유지",
+          "next": "유산소는 근력 운동 후 최소 20분 이상 꾸준히"
+        },
+        {
+          "name": "스트레칭 및 가동성 운동",
+          "note": "· 전신 스트레칭 + 관절 가동성 운동<br>· 이상근 스트레칭 포함",
+          "next": "매 운동 마무리마다 스트레칭 — 이상근 특히 챙기기"
+        }
+      ],
       "lifts": [],
       "bodyData": {
-        "labels": ["5/18", "6/4"],
-        "weight": [69.6, 69.2],
-        "fat":    [22.5, 21.5],
-        "muscle": [25.7, 26.1],
+        "labels": [
+          "5/18",
+          "6/4"
+        ],
+        "weight": [
+          69.6,
+          69.2
+        ],
+        "fat": [
+          22.5,
+          21.5
+        ],
+        "muscle": [
+          25.7,
+          26.1
+        ],
         "lastMeasured": "2026-06-04",
         "comment": "5/18 대비 체중 -0.4kg · 지방 -1.0kg · 근육 +0.4kg — 이미 좋은 방향이에요! 11월 65kg까지 같이 만들어봐요 💪"
       },
-      "condition": "보통", "conditionNote": "", "sleep": "보통", "sleepNote": "",
-      "stress": "보통", "pain": "없음", "painNote": "", "nutrition": "보통", "nutritionNote": "",
-      "review": { "good": "", "caution": "", "suggest": "" },
-      "trainerComment": "", "trainerDirection": "", "finalMessage": "", "nextSessionMemo": "",
+      "condition": "보통",
+      "conditionNote": "아침에 속이 불편함",
+      "sleep": "보통",
+      "sleepNote": "",
+      "stress": "보통",
+      "pain": "없음",
+      "painNote": "",
+      "nutrition": "보통",
+      "nutritionNote": "",
+      "review": {
+        "good": "아파도 목요일 수업 참석 · 목표 의식이 뚜렷함 · 존2 유산소 30분 완주",
+        "caution": "",
+        "suggest": ""
+      },
+      "trainerComment": "첫 레슨인데 목표가 뚜렷하고 의지가 강하네요! 드레스 예쁘게 입는 그날까지 같이 만들어봐요. 존2 유산소 30분 잘 하셨어요 — 이걸 꾸준히 쌓아가는 게 핵심이에요 💪",
+      "trainerDirection": "지방 감량 집중 — 삼두·어깨·부유방 라인 관리. 기초대사량 1387kcal + 활동칼로리 기준 하루 1400kcal 목표. 이상근 주의 (엉덩이 저림 발생 시 강도 조절).",
+      "finalMessage": "",
+      "nextSessionMemo": "존2 유산소 습관 확인 / 섭취 칼로리 1400kcal 실천 여부 / 다음 레슨: 상체 (삼두·어깨) 루틴 시작",
       "musclesWorked": [],
       "weeklyRoutine": {
         "weekKey": "2026-W23-yw",
         "note": "🎯 1주차: 레슨 2회 + 개인 1-2회 · 하루 1400kcal 목표 · 액상과당 줄이기",
         "days": [
-          { "day": "월", "workout": "휴식", "rest": true },
-          { "day": "화", "workout": "레슨", "rest": false },
-          { "day": "수", "workout": "개인-유산소+코어", "rest": false,
+          {
+            "day": "월",
+            "workout": "휴식",
+            "rest": true
+          },
+          {
+            "day": "화",
+            "workout": "레슨",
+            "rest": false
+          },
+          {
+            "day": "수",
+            "workout": "개인-유산소+코어",
+            "rest": false,
             "plan": [
-              { "name": "유산소 Zone 2 (사이클/트레드밀)", "sets": 1, "reps": 1, "weight": "30분" },
-              { "name": "플랭크", "sets": 3, "reps": 1, "weight": "40초" },
-              { "name": "전신 스트레칭", "sets": 1, "reps": 1, "weight": "10분" }
+              {
+                "name": "유산소 Zone 2 (사이클/트레드밀)",
+                "sets": 1,
+                "reps": 1,
+                "weight": "30분"
+              },
+              {
+                "name": "플랭크",
+                "sets": 3,
+                "reps": 1,
+                "weight": "40초"
+              },
+              {
+                "name": "전신 스트레칭",
+                "sets": 1,
+                "reps": 1,
+                "weight": "10분"
+              }
             ]
           },
-          { "day": "목", "workout": "레슨", "rest": false },
-          { "day": "금", "workout": "개인-상체+유산소", "rest": false,
+          {
+            "day": "목",
+            "workout": "레슨",
+            "rest": false
+          },
+          {
+            "day": "금",
+            "workout": "개인-상체+유산소",
+            "rest": false,
             "plan": [
-              { "name": "삼두 딥스 or 케이블 푸쉬다운", "sets": 3, "reps": 15, "weight": "-" },
-              { "name": "덤벨 숄더 프레스", "sets": 3, "reps": 12, "weight": "-" },
-              { "name": "유산소 Zone 2", "sets": 1, "reps": 1, "weight": "20분" }
+              {
+                "name": "삼두 딥스 or 케이블 푸쉬다운",
+                "sets": 3,
+                "reps": 15,
+                "weight": "-"
+              },
+              {
+                "name": "덤벨 숄더 프레스",
+                "sets": 3,
+                "reps": 12,
+                "weight": "-"
+              },
+              {
+                "name": "유산소 Zone 2",
+                "sets": 1,
+                "reps": 1,
+                "weight": "20분"
+              }
             ]
           },
-          { "day": "토", "workout": "휴식", "rest": true },
-          { "day": "일", "workout": "휴식", "rest": true }
+          {
+            "day": "토",
+            "workout": "휴식",
+            "rest": true
+          },
+          {
+            "day": "일",
+            "workout": "휴식",
+            "rest": true
+          }
         ]
       },
-      "sessionDates": []
+      "sessionDates": [
+        "2026-06-04"
+      ]
     },
     {
-      "week": 2, "label": "2주차", "date": "6/8",
-      "mainMessage": "", "summary": { "date": "", "items": [] }, "exercises": [], "lifts": [],
-      "bodyData": { "labels": [], "weight": [], "fat": [], "muscle": [], "lastMeasured": null, "comment": "" },
-      "condition": "보통", "conditionNote": "", "sleep": "보통", "sleepNote": "",
-      "stress": "보통", "pain": "없음", "painNote": "", "nutrition": "보통", "nutritionNote": "",
-      "review": { "good": "", "caution": "", "suggest": "" },
-      "trainerComment": "", "trainerDirection": "", "finalMessage": "", "nextSessionMemo": "",
+      "week": 2,
+      "label": "2주차",
+      "date": "6/8",
+      "mainMessage": "",
+      "summary": {
+        "date": "",
+        "items": []
+      },
+      "exercises": [],
+      "lifts": [],
+      "bodyData": {
+        "labels": [],
+        "weight": [],
+        "fat": [],
+        "muscle": [],
+        "lastMeasured": null,
+        "comment": ""
+      },
+      "condition": "보통",
+      "conditionNote": "",
+      "sleep": "보통",
+      "sleepNote": "",
+      "stress": "보통",
+      "pain": "없음",
+      "painNote": "",
+      "nutrition": "보통",
+      "nutritionNote": "",
+      "review": {
+        "good": "",
+        "caution": "",
+        "suggest": ""
+      },
+      "trainerComment": "",
+      "trainerDirection": "",
+      "finalMessage": "",
+      "nextSessionMemo": "",
       "musclesWorked": [],
       "weeklyRoutine": {
         "weekKey": "2026-W24-yw",
         "note": "🎯 2주차: 루틴 유지 · 유산소 35분으로 늘리기 · 1400kcal 유지",
         "days": [
-          { "day": "월", "workout": "휴식", "rest": true },
-          { "day": "화", "workout": "레슨", "rest": false },
-          { "day": "수", "workout": "개인-유산소+코어", "rest": false,
+          {
+            "day": "월",
+            "workout": "휴식",
+            "rest": true
+          },
+          {
+            "day": "화",
+            "workout": "레슨",
+            "rest": false
+          },
+          {
+            "day": "수",
+            "workout": "개인-유산소+코어",
+            "rest": false,
             "plan": [
-              { "name": "유산소 Zone 2", "sets": 1, "reps": 1, "weight": "35분" },
-              { "name": "플랭크", "sets": 3, "reps": 1, "weight": "45초" },
-              { "name": "데드버그", "sets": 3, "reps": 10, "weight": "-" }
+              {
+                "name": "유산소 Zone 2",
+                "sets": 1,
+                "reps": 1,
+                "weight": "35분"
+              },
+              {
+                "name": "플랭크",
+                "sets": 3,
+                "reps": 1,
+                "weight": "45초"
+              },
+              {
+                "name": "데드버그",
+                "sets": 3,
+                "reps": 10,
+                "weight": "-"
+              }
             ]
           },
-          { "day": "목", "workout": "레슨", "rest": false },
-          { "day": "금", "workout": "개인-상체+유산소", "rest": false,
+          {
+            "day": "목",
+            "workout": "레슨",
+            "rest": false
+          },
+          {
+            "day": "금",
+            "workout": "개인-상체+유산소",
+            "rest": false,
             "plan": [
-              { "name": "삼두 딥스 or 케이블 푸쉬다운", "sets": 3, "reps": 15, "weight": "-" },
-              { "name": "덤벨 숄더 프레스", "sets": 3, "reps": 12, "weight": "-" },
-              { "name": "덤벨 킥백", "sets": 3, "reps": 12, "weight": "-" },
-              { "name": "유산소 Zone 2", "sets": 1, "reps": 1, "weight": "20분" }
+              {
+                "name": "삼두 딥스 or 케이블 푸쉬다운",
+                "sets": 3,
+                "reps": 15,
+                "weight": "-"
+              },
+              {
+                "name": "덤벨 숄더 프레스",
+                "sets": 3,
+                "reps": 12,
+                "weight": "-"
+              },
+              {
+                "name": "덤벨 킥백",
+                "sets": 3,
+                "reps": 12,
+                "weight": "-"
+              },
+              {
+                "name": "유산소 Zone 2",
+                "sets": 1,
+                "reps": 1,
+                "weight": "20분"
+              }
             ]
           },
-          { "day": "토", "workout": "휴식", "rest": true },
-          { "day": "일", "workout": "휴식", "rest": true }
+          {
+            "day": "토",
+            "workout": "휴식",
+            "rest": true
+          },
+          {
+            "day": "일",
+            "workout": "휴식",
+            "rest": true
+          }
         ]
       },
       "sessionDates": []
     },
     {
-      "week": 3, "label": "3주차", "date": "6/15",
-      "mainMessage": "", "summary": { "date": "", "items": [] }, "exercises": [], "lifts": [],
-      "bodyData": { "labels": [], "weight": [], "fat": [], "muscle": [], "lastMeasured": null, "comment": "" },
-      "condition": "보통", "conditionNote": "", "sleep": "보통", "sleepNote": "",
-      "stress": "보통", "pain": "없음", "painNote": "", "nutrition": "보통", "nutritionNote": "",
-      "review": { "good": "", "caution": "", "suggest": "" },
-      "trainerComment": "", "trainerDirection": "", "finalMessage": "", "nextSessionMemo": "",
+      "week": 3,
+      "label": "3주차",
+      "date": "6/15",
+      "mainMessage": "",
+      "summary": {
+        "date": "",
+        "items": []
+      },
+      "exercises": [],
+      "lifts": [],
+      "bodyData": {
+        "labels": [],
+        "weight": [],
+        "fat": [],
+        "muscle": [],
+        "lastMeasured": null,
+        "comment": ""
+      },
+      "condition": "보통",
+      "conditionNote": "",
+      "sleep": "보통",
+      "sleepNote": "",
+      "stress": "보통",
+      "pain": "없음",
+      "painNote": "",
+      "nutrition": "보통",
+      "nutritionNote": "",
+      "review": {
+        "good": "",
+        "caution": "",
+        "suggest": ""
+      },
+      "trainerComment": "",
+      "trainerDirection": "",
+      "finalMessage": "",
+      "nextSessionMemo": "",
       "musclesWorked": [],
       "weeklyRoutine": {
         "weekKey": "2026-W25-yw",
         "note": "🎯 3주차: 강도 UP · 삼두/어깨 루틴 추가 · 인터벌 도입",
         "days": [
-          { "day": "월", "workout": "휴식", "rest": true },
-          { "day": "화", "workout": "레슨", "rest": false },
-          { "day": "수", "workout": "개인-유산소+코어", "rest": false,
+          {
+            "day": "월",
+            "workout": "휴식",
+            "rest": true
+          },
+          {
+            "day": "화",
+            "workout": "레슨",
+            "rest": false
+          },
+          {
+            "day": "수",
+            "workout": "개인-유산소+코어",
+            "rest": false,
             "plan": [
-              { "name": "인터벌 (사이클 1분 빠르게-2분 보통)", "sets": 5, "reps": 1, "weight": "15분" },
-              { "name": "유산소 Zone 2", "sets": 1, "reps": 1, "weight": "20분" },
-              { "name": "플랭크", "sets": 3, "reps": 1, "weight": "50초" }
+              {
+                "name": "인터벌 (사이클 1분 빠르게-2분 보통)",
+                "sets": 5,
+                "reps": 1,
+                "weight": "15분"
+              },
+              {
+                "name": "유산소 Zone 2",
+                "sets": 1,
+                "reps": 1,
+                "weight": "20분"
+              },
+              {
+                "name": "플랭크",
+                "sets": 3,
+                "reps": 1,
+                "weight": "50초"
+              }
             ]
           },
-          { "day": "목", "workout": "레슨", "rest": false },
-          { "day": "금", "workout": "개인-상체+유산소", "rest": false,
+          {
+            "day": "목",
+            "workout": "레슨",
+            "rest": false
+          },
+          {
+            "day": "금",
+            "workout": "개인-상체+유산소",
+            "rest": false,
             "plan": [
-              { "name": "삼두 딥스", "sets": 3, "reps": 12, "weight": "-" },
-              { "name": "케이블 푸쉬다운", "sets": 3, "reps": 15, "weight": "-" },
-              { "name": "덤벨 숄더 프레스", "sets": 3, "reps": 12, "weight": "-" },
-              { "name": "유산소 Zone 2", "sets": 1, "reps": 1, "weight": "20분" }
+              {
+                "name": "삼두 딥스",
+                "sets": 3,
+                "reps": 12,
+                "weight": "-"
+              },
+              {
+                "name": "케이블 푸쉬다운",
+                "sets": 3,
+                "reps": 15,
+                "weight": "-"
+              },
+              {
+                "name": "덤벨 숄더 프레스",
+                "sets": 3,
+                "reps": 12,
+                "weight": "-"
+              },
+              {
+                "name": "유산소 Zone 2",
+                "sets": 1,
+                "reps": 1,
+                "weight": "20분"
+              }
             ]
           },
-          { "day": "토", "workout": "휴식", "rest": true },
-          { "day": "일", "workout": "휴식", "rest": true }
+          {
+            "day": "토",
+            "workout": "휴식",
+            "rest": true
+          },
+          {
+            "day": "일",
+            "workout": "휴식",
+            "rest": true
+          }
         ]
       },
       "sessionDates": []
     },
     {
-      "week": 4, "label": "4주차", "date": "6/22",
-      "mainMessage": "", "summary": { "date": "", "items": [] }, "exercises": [], "lifts": [],
-      "bodyData": { "labels": [], "weight": [], "fat": [], "muscle": [], "lastMeasured": null, "comment": "" },
-      "condition": "보통", "conditionNote": "", "sleep": "보통", "sleepNote": "",
-      "stress": "보통", "pain": "없음", "painNote": "", "nutrition": "보통", "nutritionNote": "",
-      "review": { "good": "", "caution": "", "suggest": "" },
-      "trainerComment": "", "trainerDirection": "", "finalMessage": "", "nextSessionMemo": "",
+      "week": 4,
+      "label": "4주차",
+      "date": "6/22",
+      "mainMessage": "",
+      "summary": {
+        "date": "",
+        "items": []
+      },
+      "exercises": [],
+      "lifts": [],
+      "bodyData": {
+        "labels": [],
+        "weight": [],
+        "fat": [],
+        "muscle": [],
+        "lastMeasured": null,
+        "comment": ""
+      },
+      "condition": "보통",
+      "conditionNote": "",
+      "sleep": "보통",
+      "sleepNote": "",
+      "stress": "보통",
+      "pain": "없음",
+      "painNote": "",
+      "nutrition": "보통",
+      "nutritionNote": "",
+      "review": {
+        "good": "",
+        "caution": "",
+        "suggest": ""
+      },
+      "trainerComment": "",
+      "trainerDirection": "",
+      "finalMessage": "",
+      "nextSessionMemo": "",
       "musclesWorked": [],
       "weeklyRoutine": {
         "weekKey": "2026-W26-yw",
         "note": "🎯 4주차: 1개월 마무리 · 인바디 재측정 · 1kg 감량 확인",
         "days": [
-          { "day": "월", "workout": "휴식", "rest": true },
-          { "day": "화", "workout": "레슨", "rest": false },
-          { "day": "수", "workout": "개인-유산소+코어", "rest": false,
+          {
+            "day": "월",
+            "workout": "휴식",
+            "rest": true
+          },
+          {
+            "day": "화",
+            "workout": "레슨",
+            "rest": false
+          },
+          {
+            "day": "수",
+            "workout": "개인-유산소+코어",
+            "rest": false,
             "plan": [
-              { "name": "인터벌 (사이클)", "sets": 6, "reps": 1, "weight": "18분" },
-              { "name": "유산소 Zone 2", "sets": 1, "reps": 1, "weight": "20분" },
-              { "name": "플랭크", "sets": 3, "reps": 1, "weight": "60초" }
+              {
+                "name": "인터벌 (사이클)",
+                "sets": 6,
+                "reps": 1,
+                "weight": "18분"
+              },
+              {
+                "name": "유산소 Zone 2",
+                "sets": 1,
+                "reps": 1,
+                "weight": "20분"
+              },
+              {
+                "name": "플랭크",
+                "sets": 3,
+                "reps": 1,
+                "weight": "60초"
+              }
             ]
           },
-          { "day": "목", "workout": "레슨", "rest": false },
-          { "day": "금", "workout": "개인-상체+인바디", "rest": false,
+          {
+            "day": "목",
+            "workout": "레슨",
+            "rest": false
+          },
+          {
+            "day": "금",
+            "workout": "개인-상체+인바디",
+            "rest": false,
             "plan": [
-              { "name": "인바디 측정", "sets": 1, "reps": 1, "weight": "-" },
-              { "name": "삼두 딥스", "sets": 3, "reps": 12, "weight": "-" },
-              { "name": "케이블 푸쉬다운", "sets": 3, "reps": 15, "weight": "-" },
-              { "name": "덤벨 숄더 프레스", "sets": 3, "reps": 12, "weight": "-" }
+              {
+                "name": "인바디 측정",
+                "sets": 1,
+                "reps": 1,
+                "weight": "-"
+              },
+              {
+                "name": "삼두 딥스",
+                "sets": 3,
+                "reps": 12,
+                "weight": "-"
+              },
+              {
+                "name": "케이블 푸쉬다운",
+                "sets": 3,
+                "reps": 15,
+                "weight": "-"
+              },
+              {
+                "name": "덤벨 숄더 프레스",
+                "sets": 3,
+                "reps": 12,
+                "weight": "-"
+              }
             ]
           },
-          { "day": "토", "workout": "휴식", "rest": true },
-          { "day": "일", "workout": "휴식", "rest": true }
+          {
+            "day": "토",
+            "workout": "휴식",
+            "rest": true
+          },
+          {
+            "day": "일",
+            "workout": "휴식",
+            "rest": true
+          }
         ]
       },
       "sessionDates": []
@@ -194,5 +602,8 @@
     "1387kcal가 내 기준점이다. 오늘도 그 위에서 시작한다.",
     "부유방도, 복부도, 꾸준함 앞에서는 달라진다."
   ],
-  "sessions": { "total": 0, "completed": 0 }
+  "sessions": {
+    "total": 20,
+    "completed": 13
+  }
 }
