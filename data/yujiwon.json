@@ -248,77 +248,60 @@
       "musclesWorked": [],
       "weeklyRoutine": {
         "weekKey": "2026-W24-yw",
-        "note": "🎯 2주차: 루틴 유지 · 유산소 35분으로 늘리기 · 1400kcal 유지",
+        "note": "🎯 2주차: 월-하체1(레슨) · 화-상체가슴(개인) · 목-상체등(레슨) · 금-하체2(개인)",
         "days": [
           {
             "day": "월",
+            "workout": "레슨-하체1",
+            "rest": false,
+            "plan": [
+              { "name": "스미스 머신 스쿼트", "sets": 3, "reps": 12, "weight": "-" },
+              { "name": "힙런지 or 리버스 런지 + 덤벨 킥백", "sets": 3, "reps": 12, "weight": "-" },
+              { "name": "코삭 스쿼트 + 오버헤드 트라이셉스 익스텐션", "sets": 3, "reps": 12, "weight": "-" },
+              { "name": "레그 프레스", "sets": 3, "reps": 15, "weight": "-" },
+              { "name": "힙 어브덕션", "sets": 3, "reps": 15, "weight": "-" }
+            ]
+          },
+          {
+            "day": "화",
+            "workout": "개인-상체가슴",
+            "rest": false,
+            "plan": [
+              { "name": "푸쉬업플러스 or 스탠딩 푸쉬업", "sets": 3, "reps": 15, "weight": "-" },
+              { "name": "체스트 프레스", "sets": 3, "reps": 12, "weight": "-" },
+              { "name": "어시스트 딥스", "sets": 3, "reps": 12, "weight": "-" },
+              { "name": "사이드 레터럴 레이즈", "sets": 3, "reps": 15, "weight": "-" },
+              { "name": "덤벨 킥백 or 오버헤드 트라이셉스 익스텐션", "sets": 3, "reps": 15, "weight": "-" }
+            ]
+          },
+          {
+            "day": "수",
             "workout": "휴식",
             "rest": true
           },
           {
-            "day": "화",
-            "workout": "레슨",
-            "rest": false
-          },
-          {
-            "day": "수",
-            "workout": "개인-유산소+코어",
+            "day": "목",
+            "workout": "레슨-상체등",
             "rest": false,
             "plan": [
-              {
-                "name": "유산소 Zone 2",
-                "sets": 1,
-                "reps": 1,
-                "weight": "35분"
-              },
-              {
-                "name": "플랭크",
-                "sets": 3,
-                "reps": 1,
-                "weight": "45초"
-              },
-              {
-                "name": "데드버그",
-                "sets": 3,
-                "reps": 10,
-                "weight": "-"
-              }
+              { "name": "루마니안 데드리프트", "sets": 3, "reps": 12, "weight": "-" },
+              { "name": "백익스텐션 + 인앤아웃 스쿼트", "sets": 3, "reps": 15, "weight": "-" },
+              { "name": "바벨 로우 + 점프 스쿼트", "sets": 3, "reps": 12, "weight": "-" },
+              { "name": "렛풀다운 or 어시스트 풀업", "sets": 3, "reps": 12, "weight": "-" },
+              { "name": "시티드 로우 or 해머 시티드 로우", "sets": 3, "reps": 15, "weight": "-" }
             ]
           },
           {
-            "day": "목",
-            "workout": "레슨",
-            "rest": false
-          },
-          {
             "day": "금",
-            "workout": "개인-상체+유산소",
+            "workout": "개인-하체2",
             "rest": false,
             "plan": [
-              {
-                "name": "삼두 딥스 or 케이블 푸쉬다운",
-                "sets": 3,
-                "reps": 15,
-                "weight": "-"
-              },
-              {
-                "name": "덤벨 숄더 프레스",
-                "sets": 3,
-                "reps": 12,
-                "weight": "-"
-              },
-              {
-                "name": "덤벨 킥백",
-                "sets": 3,
-                "reps": 12,
-                "weight": "-"
-              },
-              {
-                "name": "유산소 Zone 2",
-                "sets": 1,
-                "reps": 1,
-                "weight": "20분"
-              }
+              { "name": "힙런지", "sets": 3, "reps": 12, "weight": "-" },
+              { "name": "고블릿 스쿼트 + 케이블 푸쉬다운", "sets": 3, "reps": 12, "weight": "-" },
+              { "name": "브이스쿼트 + 덤벨 킥백", "sets": 3, "reps": 12, "weight": "-" },
+              { "name": "힙쓰러스트", "sets": 3, "reps": 15, "weight": "-" },
+              { "name": "레그 익스텐션", "sets": 3, "reps": 15, "weight": "-" },
+              { "name": "힙 어덕션", "sets": 3, "reps": 15, "weight": "-" }
             ]
           },
           {
@@ -375,77 +358,60 @@
       "musclesWorked": [],
       "weeklyRoutine": {
         "weekKey": "2026-W25-yw",
-        "note": "🎯 3주차: 강도 UP · 삼두/어깨 루틴 추가 · 인터벌 도입",
+        "note": "🎯 3주차: 월-하체1(레슨) · 화-상체등(개인) · 목-상체가슴(레슨) · 금-하체2(개인)",
         "days": [
           {
             "day": "월",
+            "workout": "레슨-하체1",
+            "rest": false,
+            "plan": [
+              { "name": "스미스 머신 스쿼트", "sets": 3, "reps": 12, "weight": "-" },
+              { "name": "힙런지 or 리버스 런지 + 덤벨 킥백", "sets": 3, "reps": 12, "weight": "-" },
+              { "name": "코삭 스쿼트 + 오버헤드 트라이셉스 익스텐션", "sets": 3, "reps": 12, "weight": "-" },
+              { "name": "레그 프레스", "sets": 3, "reps": 15, "weight": "-" },
+              { "name": "힙 어브덕션", "sets": 3, "reps": 15, "weight": "-" }
+            ]
+          },
+          {
+            "day": "화",
+            "workout": "개인-상체등",
+            "rest": false,
+            "plan": [
+              { "name": "루마니안 데드리프트", "sets": 3, "reps": 12, "weight": "-" },
+              { "name": "백익스텐션 + 인앤아웃 스쿼트", "sets": 3, "reps": 15, "weight": "-" },
+              { "name": "바벨 로우 + 점프 스쿼트", "sets": 3, "reps": 12, "weight": "-" },
+              { "name": "렛풀다운 or 어시스트 풀업", "sets": 3, "reps": 12, "weight": "-" },
+              { "name": "시티드 로우 or 해머 시티드 로우", "sets": 3, "reps": 15, "weight": "-" }
+            ]
+          },
+          {
+            "day": "수",
             "workout": "휴식",
             "rest": true
           },
           {
-            "day": "화",
-            "workout": "레슨",
-            "rest": false
-          },
-          {
-            "day": "수",
-            "workout": "개인-유산소+코어",
+            "day": "목",
+            "workout": "레슨-상체가슴",
             "rest": false,
             "plan": [
-              {
-                "name": "인터벌 (사이클 1분 빠르게-2분 보통)",
-                "sets": 5,
-                "reps": 1,
-                "weight": "15분"
-              },
-              {
-                "name": "유산소 Zone 2",
-                "sets": 1,
-                "reps": 1,
-                "weight": "20분"
-              },
-              {
-                "name": "플랭크",
-                "sets": 3,
-                "reps": 1,
-                "weight": "50초"
-              }
+              { "name": "푸쉬업플러스 or 스탠딩 푸쉬업", "sets": 3, "reps": 15, "weight": "-" },
+              { "name": "체스트 프레스", "sets": 3, "reps": 12, "weight": "-" },
+              { "name": "어시스트 딥스", "sets": 3, "reps": 12, "weight": "-" },
+              { "name": "사이드 레터럴 레이즈", "sets": 3, "reps": 15, "weight": "-" },
+              { "name": "덤벨 킥백 or 오버헤드 트라이셉스 익스텐션", "sets": 3, "reps": 15, "weight": "-" }
             ]
           },
           {
-            "day": "목",
-            "workout": "레슨",
-            "rest": false
-          },
-          {
             "day": "금",
-            "workout": "개인-상체+유산소",
+            "workout": "개인-하체2",
             "rest": false,
             "plan": [
-              {
-                "name": "삼두 딥스",
-                "sets": 3,
-                "reps": 12,
-                "weight": "-"
-              },
-              {
-                "name": "케이블 푸쉬다운",
-                "sets": 3,
-                "reps": 15,
-                "weight": "-"
-              },
-              {
-                "name": "덤벨 숄더 프레스",
-                "sets": 3,
-                "reps": 12,
-                "weight": "-"
-              },
-              {
-                "name": "유산소 Zone 2",
-                "sets": 1,
-                "reps": 1,
-                "weight": "20분"
-              }
+              { "name": "힙런지", "sets": 3, "reps": 12, "weight": "-" },
+              { "name": "고블릿 스쿼트 + 케이블 푸쉬다운", "sets": 3, "reps": 12, "weight": "-" },
+              { "name": "브이스쿼트 + 덤벨 킥백", "sets": 3, "reps": 12, "weight": "-" },
+              { "name": "힙쓰러스트", "sets": 3, "reps": 15, "weight": "-" },
+              { "name": "레그 익스텐션", "sets": 3, "reps": 15, "weight": "-" },
+              { "name": "힙 어덕션", "sets": 3, "reps": 15, "weight": "-" }
             ]
           },
           {
@@ -502,77 +468,60 @@
       "musclesWorked": [],
       "weeklyRoutine": {
         "weekKey": "2026-W26-yw",
-        "note": "🎯 4주차: 1개월 마무리 · 인바디 재측정 · 1kg 감량 확인",
+        "note": "🎯 4주차: 월-하체1(레슨) · 화-상체가슴(개인) · 목-상체등(레슨) · 금-하체2(개인)",
         "days": [
           {
             "day": "월",
+            "workout": "레슨-하체1",
+            "rest": false,
+            "plan": [
+              { "name": "스미스 머신 스쿼트", "sets": 3, "reps": 12, "weight": "-" },
+              { "name": "힙런지 or 리버스 런지 + 덤벨 킥백", "sets": 3, "reps": 12, "weight": "-" },
+              { "name": "코삭 스쿼트 + 오버헤드 트라이셉스 익스텐션", "sets": 3, "reps": 12, "weight": "-" },
+              { "name": "레그 프레스", "sets": 3, "reps": 15, "weight": "-" },
+              { "name": "힙 어브덕션", "sets": 3, "reps": 15, "weight": "-" }
+            ]
+          },
+          {
+            "day": "화",
+            "workout": "개인-상체가슴",
+            "rest": false,
+            "plan": [
+              { "name": "푸쉬업플러스 or 스탠딩 푸쉬업", "sets": 3, "reps": 15, "weight": "-" },
+              { "name": "체스트 프레스", "sets": 3, "reps": 12, "weight": "-" },
+              { "name": "어시스트 딥스", "sets": 3, "reps": 12, "weight": "-" },
+              { "name": "사이드 레터럴 레이즈", "sets": 3, "reps": 15, "weight": "-" },
+              { "name": "덤벨 킥백 or 오버헤드 트라이셉스 익스텐션", "sets": 3, "reps": 15, "weight": "-" }
+            ]
+          },
+          {
+            "day": "수",
             "workout": "휴식",
             "rest": true
           },
           {
-            "day": "화",
-            "workout": "레슨",
-            "rest": false
-          },
-          {
-            "day": "수",
-            "workout": "개인-유산소+코어",
+            "day": "목",
+            "workout": "레슨-상체등",
             "rest": false,
             "plan": [
-              {
-                "name": "인터벌 (사이클)",
-                "sets": 6,
-                "reps": 1,
-                "weight": "18분"
-              },
-              {
-                "name": "유산소 Zone 2",
-                "sets": 1,
-                "reps": 1,
-                "weight": "20분"
-              },
-              {
-                "name": "플랭크",
-                "sets": 3,
-                "reps": 1,
-                "weight": "60초"
-              }
+              { "name": "루마니안 데드리프트", "sets": 3, "reps": 12, "weight": "-" },
+              { "name": "백익스텐션 + 인앤아웃 스쿼트", "sets": 3, "reps": 15, "weight": "-" },
+              { "name": "바벨 로우 + 점프 스쿼트", "sets": 3, "reps": 12, "weight": "-" },
+              { "name": "렛풀다운 or 어시스트 풀업", "sets": 3, "reps": 12, "weight": "-" },
+              { "name": "시티드 로우 or 해머 시티드 로우", "sets": 3, "reps": 15, "weight": "-" }
             ]
           },
           {
-            "day": "목",
-            "workout": "레슨",
-            "rest": false
-          },
-          {
             "day": "금",
-            "workout": "개인-상체+인바디",
+            "workout": "개인-하체2",
             "rest": false,
             "plan": [
-              {
-                "name": "인바디 측정",
-                "sets": 1,
-                "reps": 1,
-                "weight": "-"
-              },
-              {
-                "name": "삼두 딥스",
-                "sets": 3,
-                "reps": 12,
-                "weight": "-"
-              },
-              {
-                "name": "케이블 푸쉬다운",
-                "sets": 3,
-                "reps": 15,
-                "weight": "-"
-              },
-              {
-                "name": "덤벨 숄더 프레스",
-                "sets": 3,
-                "reps": 12,
-                "weight": "-"
-              }
+              { "name": "힙런지", "sets": 3, "reps": 12, "weight": "-" },
+              { "name": "고블릿 스쿼트 + 케이블 푸쉬다운", "sets": 3, "reps": 12, "weight": "-" },
+              { "name": "브이스쿼트 + 덤벨 킥백", "sets": 3, "reps": 12, "weight": "-" },
+              { "name": "힙쓰러스트", "sets": 3, "reps": 15, "weight": "-" },
+              { "name": "레그 익스텐션", "sets": 3, "reps": 15, "weight": "-" },
+              { "name": "힙 어덕션", "sets": 3, "reps": 15, "weight": "-" }
             ]
           },
           {
