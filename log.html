@@ -101,6 +101,31 @@ h1 { font-size: 20px; font-weight: 800; color: #1a2a40; letter-spacing: -0.8px; 
 <div id="log"></div>
 
 <script>
+// 회원 체크인 링크 수신 처리
+(function() {
+  const ci = new URLSearchParams(window.location.search).get('ci');
+  if (!ci) return;
+  try {
+    const d = JSON.parse(decodeURIComponent(escape(atob(ci))));
+    if (d.wk && d.d) {
+      const key = `hm-week-${d.wk}`;
+      const wd  = JSON.parse(localStorage.getItem(key) || '{}');
+      if (!wd[d.d]) wd[d.d] = {};
+      if (d.c)  wd[d.d].condition      = d.c;
+      if (d.s)  wd[d.d].sleep          = d.s;
+      if (d.p)  wd[d.d].pain           = d.p;
+      if (d.n)  wd[d.d].nutrition      = d.n;
+      if (d.cn) wd[d.d].condition_note = d.cn;
+      if (d.sn) wd[d.d].sleep_note     = d.sn;
+      if (d.pn) wd[d.d].pain_note      = d.pn;
+      localStorage.setItem(key, JSON.stringify(wd));
+    }
+    const url = new URL(window.location);
+    url.searchParams.delete('ci');
+    window.history.replaceState({}, '', url);
+  } catch(e) {}
+})();
+
 const COND = {
   '매우 좋음':['#e8f5e9','#2e7d32'],'좋음':['#e8f5e9','#388e3c'],
   '보통':['#fff8e1','#f57c00'],'피곤함':['#fce4ec','#c62828'],

@@ -366,7 +366,9 @@ const BACK_SVG = `<svg class="body-map-svg" viewBox="0 0 90 218" xmlns="http://w
 const params   = new URLSearchParams(window.location.search);
 const isMember = params.get('mode') === 'member' || !!params.get('token');
 
+let currentMemberId = null;
 function loadMember(memberId) {
+  currentMemberId = memberId;
   fetch(`data/${memberId}.json?v=${Date.now()}`)
     .then(r => { if (!r.ok) throw new Error(); return r.json(); })
     .then(data => {
@@ -678,7 +680,23 @@ function init(data) {
       if (cur.pain)      lines.push(`신체 불편: ${cur.pain}${today.pain_note ? ' — ' + today.pain_note : ''}`);
       if (cur.nutrition) lines.push(`영양: ${cur.nutrition}${today.nutrition_note ? ' — ' + today.nutrition_note : ''}`);
       if (!lines.length) { alert('먼저 오늘 상태를 체크해주세요!'); return; }
-      const text = `[himove 오늘 상태 — ${new Date().toLocaleDateString('ko-KR',{month:'long',day:'numeric'})}]\n` + lines.join('\n');
+      // 세션 로그 자동 업데이트 링크 생성
+      const ciData = {
+        id: currentMemberId,
+        wk: w.weeklyRoutine?.weekKey,
+        d: todayKey,
+        c: cur.condition || '',
+        s: cur.sleep    || '',
+        p: cur.pain     || '',
+        n: cur.nutrition|| '',
+        cn: today.condition_note || '',
+        sn: today.sleep_note     || '',
+        pn: today.pain_note      || '',
+      };
+      const ciParam = btoa(unescape(encodeURIComponent(JSON.stringify(ciData))));
+      const base    = window.location.href.split('?')[0].replace(/[^/]*$/, '');
+      const logUrl  = `${base}log.html?ci=${ciParam}`;
+      const text = `[himove 체크인 — ${data.name} ${new Date().toLocaleDateString('ko-KR',{month:'long',day:'numeric'})}]\n` + lines.join('\n') + `\n\n📋 로그 업데이트: ${logUrl}`;
       if (navigator.share) {
         navigator.share({ text }).catch(() => {});
       } else {
