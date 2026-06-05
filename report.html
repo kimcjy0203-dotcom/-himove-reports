@@ -288,6 +288,7 @@ tr:last-child td { border-bottom: none; }
     <div class="subtitle" id="report-subtitle"></div>
     <div class="meta" id="report-meta"></div>
     <div id="purpose-grid" class="purpose-grid"></div>
+    <div id="monthly-progress"></div>
   </div>
   <div class="card" id="goals-card" style="display:none"></div>
   <div class="week-nav" id="week-nav"></div>
@@ -443,9 +444,25 @@ function init(data) {
   }
   const monthCount = calcMonthlyCount();
   const monthLabel = new Date().toLocaleDateString('ko-KR', {month: 'long'});
-  document.getElementById('report-meta').innerHTML =
-    `<span>${month}</span><span>${name}</span>` +
-    (monthCount > 0 ? `<span style="background:rgba(90,154,210,0.15);border-color:rgba(90,154,210,0.4);color:#3a6a9a;font-weight:700">${monthLabel} ${monthCount}회 완료</span>` : '');
+  document.getElementById('report-meta').innerHTML = `<span>${month}</span><span>${name}</span>`;
+
+  /* 이번 달 목표 횟수 (weeklyRoutine 비휴식일 합산) */
+  const monthGoal = weeks.reduce((sum, w) => sum + (w.weeklyRoutine?.days||[]).filter(d=>!d.rest).length, 0);
+  const pct = monthGoal > 0 ? Math.min(Math.round((monthCount / monthGoal) * 100), 100) : 0;
+  const progressEl = document.getElementById('monthly-progress');
+  if (progressEl && monthGoal > 0) {
+    progressEl.innerHTML = `
+      <div style="margin-top:18px;padding-top:16px;border-top:1px solid rgba(160,190,230,0.2)">
+        <div style="display:flex;justify-content:space-between;align-items:baseline;margin-bottom:8px">
+          <span style="font-size:12px;font-weight:700;color:#7a95b8;letter-spacing:0.3px">${monthLabel} 운동</span>
+          <span style="font-size:18px;font-weight:800;color:#1a2a40;letter-spacing:-0.5px">${monthCount}<span style="font-size:11px;font-weight:500;color:#b0c0d4;margin-left:3px">/ ${monthGoal}회</span></span>
+        </div>
+        <div style="background:rgba(160,190,230,0.18);border-radius:100px;height:7px;overflow:hidden">
+          <div style="height:100%;border-radius:100px;background:linear-gradient(90deg,rgba(90,154,210,0.75),rgba(120,190,245,0.95));width:${pct}%;transition:width 1s ease"></div>
+        </div>
+        <div style="font-size:10px;color:#b0c0d4;margin-top:5px;text-align:right;font-weight:600">${pct}% 달성</div>
+      </div>`;
+  }
 
   const pgEl = document.getElementById('purpose-grid');
   if (purposes && purposes.length) {
