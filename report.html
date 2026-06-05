@@ -679,11 +679,22 @@ function init(data) {
       if (cur.sleep)     lines.push(`수면: ${cur.sleep}${today.sleep_note ? ' — ' + today.sleep_note : ''}`);
       if (cur.pain)      lines.push(`신체 불편: ${cur.pain}${today.pain_note ? ' — ' + today.pain_note : ''}`);
       if (cur.nutrition) lines.push(`영양: ${cur.nutrition}${today.nutrition_note ? ' — ' + today.nutrition_note : ''}`);
+      // 이번 주 운동 완료 기록 읽기
+      const weekKey  = weeks[idx]?.weeklyRoutine?.weekKey;
+      const calKey   = `hm_${weekKey}_${idx}`;
+      const calDays  = weeks[idx]?.weeklyRoutine?.days || [];
+      const checked  = JSON.parse(localStorage.getItem(calKey) || '[]');
+      const doneList = checked
+        .map(di => calDays[di])
+        .filter(d => d && !d.rest)
+        .map(d => d.day);
+      if (doneList.length) lines.push(`운동 완료: ${doneList.join(' · ')}`);
+
       if (!lines.length) { alert('먼저 오늘 상태를 체크해주세요!'); return; }
       // 세션 로그 자동 업데이트 링크 생성
       const ciData = {
         id: currentMemberId,
-        wk: weeks[idx]?.weeklyRoutine?.weekKey,
+        wk: weekKey,
         d: todayKey,
         c: cur.condition || '',
         s: cur.sleep    || '',
@@ -692,6 +703,7 @@ function init(data) {
         cn: today.condition_note || '',
         sn: today.sleep_note     || '',
         pn: today.pain_note      || '',
+        wouts: doneList,
       };
       const ciParam = btoa(unescape(encodeURIComponent(JSON.stringify(ciData))));
       const base    = window.location.href.split('?')[0].replace(/[^/]*$/, '');

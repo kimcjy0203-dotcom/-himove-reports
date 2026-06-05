@@ -118,6 +118,7 @@ h1 { font-size: 20px; font-weight: 800; color: #1a2a40; letter-spacing: -0.8px; 
       if (d.cn) wd[d.d].condition_note = d.cn;
       if (d.sn) wd[d.d].sleep_note     = d.sn;
       if (d.pn) wd[d.d].pain_note      = d.pn;
+      if (d.wouts?.length) wd._workouts = d.wouts;
       localStorage.setItem(key, JSON.stringify(wd));
     }
     const url = new URL(window.location);
@@ -191,9 +192,13 @@ function renderWeek(w) {
   ].filter(Boolean).join('');
 
   // 회원 체크인 뱃지 (localStorage 누적)
+  const workoutBadge = checkins._workouts?.length
+    ? `<span class="badge" style="background:#e8f5e9;color:#2e7d32">운동 ${checkins._workouts.join(' · ')} ✓</span>`
+    : '';
   const checkinBadges = [
     countBadges('condition', COND),
     countBadges('sleep', SLEEP),
+    workoutBadge,
   ].filter(Boolean).join('');
 
   const badgeHtml = trainerBadges || checkinBadges
