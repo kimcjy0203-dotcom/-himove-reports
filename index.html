@@ -100,6 +100,40 @@ body > * { position: relative; z-index: 1; }
 @keyframes spin { to { transform: rotate(360deg); } }
 
 .footer { text-align: center; font-size: 11px; color: #b0c0d8; margin-top: 16px; line-height: 2; }
+
+.check-card {
+  background: rgba(255,255,255,0.58); backdrop-filter: blur(48px); -webkit-backdrop-filter: blur(48px);
+  border-radius: 20px; padding: 6px 16px; margin-bottom: 18px;
+  border: 1px solid rgba(255,255,255,0.82);
+  box-shadow: 0 4px 24px rgba(100,150,230,0.07), inset 0 1px 0 rgba(255,255,255,0.95);
+}
+.check-header-row {
+  display: flex; align-items: center; gap: 8px;
+  padding: 8px 0 6px; border-bottom: 1px solid rgba(160,190,230,0.2);
+}
+.check-header-row span {
+  font-size: 9px; font-weight: 700; letter-spacing: 0.5px; color: #b0c0d4; text-transform: uppercase;
+}
+.chk-name-col { min-width: 50px; }
+.chk-date-col { min-width: 34px; }
+.chk-fields-col { display: flex; gap: 4px; margin-left: auto; }
+.check-row {
+  display: flex; align-items: center; gap: 8px;
+  padding: 8px 0; border-bottom: 1px solid rgba(160,190,230,0.12);
+}
+.check-row:last-child { border-bottom: none; }
+.chk-name { font-size: 13px; font-weight: 700; color: #1a2a40; min-width: 50px; }
+.chk-date { font-size: 11px; color: #a0b8d0; min-width: 34px; }
+.chk-fields { display: flex; gap: 4px; margin-left: auto; }
+.cf {
+  font-size: 10px; font-weight: 700; padding: 2px 7px; border-radius: 20px; white-space: nowrap;
+}
+.cf.ok  { background: rgba(90,170,122,0.13); color: #3a8a5a; border: 1px solid rgba(90,170,122,0.28); }
+.cf.bad { background: rgba(224,112,96,0.12);  color: #c05040; border: 1px solid rgba(224,112,96,0.28); }
+.check-all-ok {
+  text-align: center; padding: 14px 0; font-size: 13px; color: #5aaa7a; font-weight: 700;
+}
+.check-no-session { font-size: 11px; color: #b0c4d8; }
 </style>
 </head>
 <body>
@@ -107,6 +141,11 @@ body > * { position: relative; z-index: 1; }
 <div class="header">
   <h1>himove</h1>
   <div class="sub" id="member-count">불러오는 중...</div>
+</div>
+
+<div class="section-label">세션 체크</div>
+<div id="check-panel">
+  <div class="empty-card"><div class="spinner"></div>확인 중...</div>
 </div>
 
 <div class="section-label">등록 회원</div>
@@ -137,6 +176,53 @@ function currentWeekIdx(weeks) {
 
 const CONDITION_COLOR = { '매우 좋음':'#5aaa7a','좋음':'#6aaa8a','보통':'#8aaac8','피곤함':'#c8944a','매우 피곤함':'#c06050' };
 const SLEEP_COLOR     = { '매우 좋음':'#5aaa7a','좋음':'#6aaa8a','보통':'#8aaac8','나쁨':'#c8944a','매우 나쁨':'#c06050' };
+
+function renderCheckPanel(results) {
+  const rows = results.map(({ data }) => {
+    const weeks = data.weeks || [];
+    let lastWeek = null, lastDate = '-';
+    for (let i = weeks.length - 1; i >= 0; i--) {
+      if (weeks[i].sessionDates?.length > 0) {
+        lastWeek = weeks[i];
+        const d = weeks[i].sessionDates.at(-1);
+        lastDate = d ? d.slice(5).replace('-', '/') : '-';
+        break;
+      }
+    }
+    if (!lastWeek) return `<div class="check-row">
+      <span class="chk-name">${data.name}</span>
+      <span class="chk-date check-no-session">세션없음</span>
+      <div class="chk-fields"></div>
+    </div>`;
+
+    const fields = [
+      { label: '운동', ok: (lastWeek.exercises?.length || 0) > 0 },
+      { label: '잘한점', ok: !!lastWeek.review?.good },
+      { label: '코멘트', ok: !!lastWeek.trainerComment },
+    ];
+    const tags = fields.map(f =>
+      `<span class="cf ${f.ok ? 'ok' : 'bad'}">${f.ok ? '✓' : '!'} ${f.label}</span>`
+    ).join('');
+    return `<div class="check-row">
+      <span class="chk-name">${data.name}</span>
+      <span class="chk-date">${lastDate}</span>
+      <div class="chk-fields">${tags}</div>
+    </div>`;
+  });
+
+  const header = `<div class="check-header-row">
+    <span class="chk-name-col">이름</span>
+    <span class="chk-date-col">세션</span>
+    <div class="chk-fields-col">
+      <span style="min-width:46px;text-align:center">운동</span>
+      <span style="min-width:52px;text-align:center">잘한점</span>
+      <span style="min-width:58px;text-align:center">코멘트</span>
+    </div>
+  </div>`;
+
+  document.getElementById('check-panel').innerHTML =
+    `<div class="check-card">${header}${rows.join('')}</div>`;
+}
 
 function calcInbody(lastMeasured) {
   if (!lastMeasured) return null;
@@ -213,6 +299,7 @@ fetch(`data/members.json?v=${Date.now()}`)
   })
   .then(results => {
     const valid = results.filter(Boolean);
+    renderCheckPanel(valid);
     document.getElementById('member-list').innerHTML = valid.length
       ? valid.map(({ member, data }) => renderCard(member, data)).join('')
       : '<div class="empty-card">등록된 회원이 없습니다.</div>';
