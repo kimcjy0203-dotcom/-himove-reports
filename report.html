@@ -417,18 +417,41 @@ function init(data) {
   /* 헤더 */
   if (!isMember) document.getElementById('report-subtitle').textContent = `${name} 월간 리포트`;
 
-  /* 이번 달 누적 운동 횟수 (트레이너 기록 sessionDates 기준) */
+  /* 이번 달 누적 운동 횟수 (sessionDates + 캘린더 체크, 날짜 중복 제거) */
   function calcMonthlyCount() {
     const now = new Date();
     const cy = now.getFullYear(), cm = now.getMonth();
     const allDates = new Set();
-    weeks.forEach(w => {
+    weeks.forEach((w, idx) => {
+      // 트레이너 기록
       (w.sessionDates || []).forEach(d => {
         const dt = new Date(d);
         if (dt.getFullYear() === cy && dt.getMonth() === cm) allDates.add(d);
       });
+      // 회원 캘린더 체크 (날짜로 deduplicate)
+      const r = w.weeklyRoutine;
+      if (!r?.weekKey || !w.date?.includes('/')) return;
+      const [mm, dd] = w.date.split('/').map(Number);
+      const weekStart = new Date(cy, mm - 1, dd);
+      const checked = JSON.parse(localStorage.getItem(`hm_${r.weekKey}_${idx}`) || '[]');
+      checked.forEach(di => {
+        if (r.days?.[di]?.rest) return;
+        const dayDate = new Date(weekStart.getTime() + di * 86400000);
+        if (dayDate.getFullYear() === cy && dayDate.getMonth() === cm)
+          allDates.add(dayDate.toISOString().slice(0, 10));
+      });
     });
     return allDates.size;
+  }
+  function refreshMonthlyCount() {
+    const cnt = calcMonthlyCount();
+    const pct = monthGoal > 0 ? Math.min(Math.round((cnt / monthGoal) * 100), 100) : 0;
+    const numEl = document.querySelector('#monthly-progress .month-num');
+    const barEl = document.querySelector('#monthly-progress .month-bar');
+    const pctEl = document.querySelector('#monthly-progress .month-pct');
+    if (numEl) numEl.textContent = cnt;
+    if (barEl) barEl.style.width = pct + '%';
+    if (pctEl) pctEl.textContent = pct + '% 달성';
   }
   const monthCount = calcMonthlyCount();
   const monthLabel = new Date().toLocaleDateString('ko-KR', {month: 'long'});
@@ -443,12 +466,12 @@ function init(data) {
       <div style="margin-top:18px;padding-top:16px;border-top:1px solid rgba(160,190,230,0.2)">
         <div style="display:flex;justify-content:space-between;align-items:baseline;margin-bottom:8px">
           <span style="font-size:12px;font-weight:700;color:#7a95b8;letter-spacing:0.3px">${monthLabel} 운동</span>
-          <span style="font-size:18px;font-weight:800;color:#1a2a40;letter-spacing:-0.5px">${monthCount}<span style="font-size:11px;font-weight:500;color:#b0c0d4;margin-left:3px">/ ${monthGoal}회</span></span>
+          <span style="font-size:18px;font-weight:800;color:#1a2a40;letter-spacing:-0.5px"><span class="month-num">${monthCount}</span><span style="font-size:11px;font-weight:500;color:#b0c0d4;margin-left:3px">/ ${monthGoal}회</span></span>
         </div>
         <div style="background:rgba(160,190,230,0.18);border-radius:100px;height:7px;overflow:hidden">
-          <div style="height:100%;border-radius:100px;background:linear-gradient(90deg,rgba(90,154,210,0.75),rgba(120,190,245,0.95));width:${pct}%;transition:width 1s ease"></div>
+          <div class="month-bar" style="height:100%;border-radius:100px;background:linear-gradient(90deg,rgba(90,154,210,0.75),rgba(120,190,245,0.95));width:${pct}%;transition:width 1s ease"></div>
         </div>
-        <div style="font-size:10px;color:#b0c0d4;margin-top:5px;text-align:right;font-weight:600">${pct}% 달성</div>
+        <div class="month-pct" style="font-size:10px;color:#b0c0d4;margin-top:5px;text-align:right;font-weight:600">${pct}% 달성</div>
       </div>`;
   }
 
@@ -790,7 +813,7 @@ function init(data) {
     const calKey = cal.querySelector('.cal-day')?.dataset.cal;
     if (!calKey) return;
     let checked = JSON.parse(localStorage.getItem(calKey)||'[]');
-    function renderCal(){ cal.querySelectorAll('.cal-day').forEach((el,i)=>el.classList.toggle('checked',checked.includes(i))); const ci=parseInt(cal.id.replace('weekly-cal-','')); const ce=document.getElementById(`wk-count-${ci}`); if(ce) ce.textContent=`주 ${checked.length}회`; }
+    function renderCal(){ cal.querySelectorAll('.cal-day').forEach((el,i)=>el.classList.toggle('checked',checked.includes(i))); const ci=parseInt(cal.id.replace('weekly-cal-','')); const ce=document.getElementById(`wk-count-${ci}`); if(ce) ce.textContent=`주 ${checked.length}회`; refreshMonthlyCount(); }
     renderCal();
 
     // 오늘 미체크 알림
