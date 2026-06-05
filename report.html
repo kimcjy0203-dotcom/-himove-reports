@@ -415,7 +415,37 @@ function init(data) {
 
   /* 헤더 */
   if (!isMember) document.getElementById('report-subtitle').textContent = `${name} 월간 리포트`;
-  document.getElementById('report-meta').innerHTML = `<span>${month}</span><span>${name}</span>`;
+
+  /* 이번 달 누적 운동 횟수 */
+  function calcMonthlyCount() {
+    const now = new Date();
+    const cy = now.getFullYear(), cm = now.getMonth();
+    const allDates = new Set();
+    weeks.forEach((w, idx) => {
+      // 트레이너 기록 세션
+      (w.sessionDates || []).forEach(d => {
+        const dt = new Date(d);
+        if (dt.getFullYear() === cy && dt.getMonth() === cm) allDates.add(d);
+      });
+      // 회원 캘린더 체크
+      const r = w.weeklyRoutine;
+      if (!r?.weekKey || !w.date?.includes('/')) return;
+      const [mm, dd] = w.date.split('/').map(Number);
+      const weekStart = new Date(cy, mm - 1, dd);
+      const checked = JSON.parse(localStorage.getItem(`hm_${r.weekKey}_${idx}`) || '[]');
+      checked.forEach(di => {
+        const dayDate = new Date(weekStart.getTime() + di * 86400000);
+        if (dayDate.getFullYear() === cy && dayDate.getMonth() === cm && !r.days?.[di]?.rest)
+          allDates.add(dayDate.toISOString().slice(0, 10));
+      });
+    });
+    return allDates.size;
+  }
+  const monthCount = calcMonthlyCount();
+  const monthLabel = new Date().toLocaleDateString('ko-KR', {month: 'long'});
+  document.getElementById('report-meta').innerHTML =
+    `<span>${month}</span><span>${name}</span>` +
+    (monthCount > 0 ? `<span style="background:rgba(90,154,210,0.15);border-color:rgba(90,154,210,0.4);color:#3a6a9a;font-weight:700">${monthLabel} ${monthCount}회 완료</span>` : '');
 
   const pgEl = document.getElementById('purpose-grid');
   if (purposes && purposes.length) {
