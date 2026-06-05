@@ -683,7 +683,7 @@ function init(data) {
       // 세션 로그 자동 업데이트 링크 생성
       const ciData = {
         id: currentMemberId,
-        wk: w.weeklyRoutine?.weekKey,
+        wk: weeks[idx]?.weeklyRoutine?.weekKey,
         d: todayKey,
         c: cur.condition || '',
         s: cur.sleep    || '',
