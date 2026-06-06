@@ -105,11 +105,11 @@
         "comment": "5/18 대비 체중 -0.4kg · 지방 -1.0kg · 근육 +0.4kg — 이미 좋은 방향이에요! 11월 65kg까지 같이 만들어봐요 💪"
       },
       "condition": "보통",
-      "conditionNote": "아침에 속이 불편함",
+      "conditionNote": "첫 상담 — 단기/중기/장기 목표 설정 / 아침에 속 불편함 / 월요일 수업 불참",
       "sleep": "보통",
       "sleepNote": "",
       "stress": "보통",
-      "pain": "없음",
+      "pain": "있음",
       "painNote": "",
       "nutrition": "보통",
       "nutritionNote": "",
@@ -255,11 +255,36 @@
             "workout": "레슨-하체1",
             "rest": false,
             "plan": [
-              { "name": "스미스 머신 스쿼트", "sets": 3, "reps": 12, "weight": "-" },
-              { "name": "힙런지 or 리버스 런지 + 덤벨 킥백", "sets": 3, "reps": 12, "weight": "-" },
-              { "name": "코삭 스쿼트 + 오버헤드 트라이셉스 익스텐션", "sets": 3, "reps": 12, "weight": "-" },
-              { "name": "레그 프레스", "sets": 3, "reps": 15, "weight": "-" },
-              { "name": "힙 어브덕션", "sets": 3, "reps": 15, "weight": "-" }
+              {
+                "name": "스미스 머신 스쿼트",
+                "sets": 3,
+                "reps": 12,
+                "weight": "-"
+              },
+              {
+                "name": "힙런지 or 리버스 런지 + 덤벨 킥백",
+                "sets": 3,
+                "reps": 12,
+                "weight": "-"
+              },
+              {
+                "name": "코삭 스쿼트 + 오버헤드 트라이셉스 익스텐션",
+                "sets": 3,
+                "reps": 12,
+                "weight": "-"
+              },
+              {
+                "name": "레그 프레스",
+                "sets": 3,
+                "reps": 15,
+                "weight": "-"
+              },
+              {
+                "name": "힙 어브덕션",
+                "sets": 3,
+                "reps": 15,
+                "weight": "-"
+              }
             ]
           },
           {
@@ -267,11 +292,36 @@
             "workout": "개인-상체가슴",
             "rest": false,
             "plan": [
-              { "name": "푸쉬업플러스 or 스탠딩 푸쉬업", "sets": 3, "reps": 15, "weight": "-" },
-              { "name": "체스트 프레스", "sets": 3, "reps": 12, "weight": "-" },
-              { "name": "어시스트 딥스", "sets": 3, "reps": 12, "weight": "-" },
-              { "name": "사이드 레터럴 레이즈", "sets": 3, "reps": 15, "weight": "-" },
-              { "name": "덤벨 킥백 or 오버헤드 트라이셉스 익스텐션", "sets": 3, "reps": 15, "weight": "-" }
+              {
+                "name": "푸쉬업플러스 or 스탠딩 푸쉬업",
+                "sets": 3,
+                "reps": 15,
+                "weight": "-"
+              },
+              {
+                "name": "체스트 프레스",
+                "sets": 3,
+                "reps": 12,
+                "weight": "-"
+              },
+              {
+                "name": "어시스트 딥스",
+                "sets": 3,
+                "reps": 12,
+                "weight": "-"
+              },
+              {
+                "name": "사이드 레터럴 레이즈",
+                "sets": 3,
+                "reps": 15,
+                "weight": "-"
+              },
+              {
+                "name": "덤벨 킥백 or 오버헤드 트라이셉스 익스텐션",
+                "sets": 3,
+                "reps": 15,
+                "weight": "-"
+              }
             ]
           },
           {
@@ -284,11 +334,36 @@
             "workout": "레슨-상체등",
             "rest": false,
             "plan": [
-              { "name": "루마니안 데드리프트", "sets": 3, "reps": 12, "weight": "-" },
-              { "name": "백익스텐션 + 인앤아웃 스쿼트", "sets": 3, "reps": 15, "weight": "-" },
-              { "name": "바벨 로우 + 점프 스쿼트", "sets": 3, "reps": 12, "weight": "-" },
-              { "name": "렛풀다운 or 어시스트 풀업", "sets": 3, "reps": 12, "weight": "-" },
-              { "name": "시티드 로우 or 해머 시티드 로우", "sets": 3, "reps": 15, "weight": "-" }
+              {
+                "name": "루마니안 데드리프트",
+                "sets": 3,
+                "reps": 12,
+                "weight": "-"
+              },
+              {
+                "name": "백익스텐션 + 인앤아웃 스쿼트",
+                "sets": 3,
+                "reps": 15,
+                "weight": "-"
+              },
+              {
+                "name": "바벨 로우 + 점프 스쿼트",
+                "sets": 3,
+                "reps": 12,
+                "weight": "-"
+              },
+              {
+                "name": "렛풀다운 or 어시스트 풀업",
+                "sets": 3,
+                "reps": 12,
+                "weight": "-"
+              },
+              {
+                "name": "시티드 로우 or 해머 시티드 로우",
+                "sets": 3,
+                "reps": 15,
+                "weight": "-"
+              }
             ]
           },
           {
@@ -296,12 +371,42 @@
             "workout": "개인-하체2",
             "rest": false,
             "plan": [
-              { "name": "힙런지", "sets": 3, "reps": 12, "weight": "-" },
-              { "name": "고블릿 스쿼트 + 케이블 푸쉬다운", "sets": 3, "reps": 12, "weight": "-" },
-              { "name": "브이스쿼트 + 덤벨 킥백", "sets": 3, "reps": 12, "weight": "-" },
-              { "name": "힙쓰러스트", "sets": 3, "reps": 15, "weight": "-" },
-              { "name": "레그 익스텐션", "sets": 3, "reps": 15, "weight": "-" },
-              { "name": "힙 어덕션", "sets": 3, "reps": 15, "weight": "-" }
+              {
+                "name": "힙런지",
+                "sets": 3,
+                "reps": 12,
+                "weight": "-"
+              },
+              {
+                "name": "고블릿 스쿼트 + 케이블 푸쉬다운",
+                "sets": 3,
+                "reps": 12,
+                "weight": "-"
+              },
+              {
+                "name": "브이스쿼트 + 덤벨 킥백",
+                "sets": 3,
+                "reps": 12,
+                "weight": "-"
+              },
+              {
+                "name": "힙쓰러스트",
+                "sets": 3,
+                "reps": 15,
+                "weight": "-"
+              },
+              {
+                "name": "레그 익스텐션",
+                "sets": 3,
+                "reps": 15,
+                "weight": "-"
+              },
+              {
+                "name": "힙 어덕션",
+                "sets": 3,
+                "reps": 15,
+                "weight": "-"
+              }
             ]
           },
           {
@@ -365,11 +470,36 @@
             "workout": "레슨-하체1",
             "rest": false,
             "plan": [
-              { "name": "스미스 머신 스쿼트", "sets": 3, "reps": 12, "weight": "-" },
-              { "name": "힙런지 or 리버스 런지 + 덤벨 킥백", "sets": 3, "reps": 12, "weight": "-" },
-              { "name": "코삭 스쿼트 + 오버헤드 트라이셉스 익스텐션", "sets": 3, "reps": 12, "weight": "-" },
-              { "name": "레그 프레스", "sets": 3, "reps": 15, "weight": "-" },
-              { "name": "힙 어브덕션", "sets": 3, "reps": 15, "weight": "-" }
+              {
+                "name": "스미스 머신 스쿼트",
+                "sets": 3,
+                "reps": 12,
+                "weight": "-"
+              },
+              {
+                "name": "힙런지 or 리버스 런지 + 덤벨 킥백",
+                "sets": 3,
+                "reps": 12,
+                "weight": "-"
+              },
+              {
+                "name": "코삭 스쿼트 + 오버헤드 트라이셉스 익스텐션",
+                "sets": 3,
+                "reps": 12,
+                "weight": "-"
+              },
+              {
+                "name": "레그 프레스",
+                "sets": 3,
+                "reps": 15,
+                "weight": "-"
+              },
+              {
+                "name": "힙 어브덕션",
+                "sets": 3,
+                "reps": 15,
+                "weight": "-"
+              }
             ]
           },
           {
@@ -377,11 +507,36 @@
             "workout": "개인-상체등",
             "rest": false,
             "plan": [
-              { "name": "루마니안 데드리프트", "sets": 3, "reps": 12, "weight": "-" },
-              { "name": "백익스텐션 + 인앤아웃 스쿼트", "sets": 3, "reps": 15, "weight": "-" },
-              { "name": "바벨 로우 + 점프 스쿼트", "sets": 3, "reps": 12, "weight": "-" },
-              { "name": "렛풀다운 or 어시스트 풀업", "sets": 3, "reps": 12, "weight": "-" },
-              { "name": "시티드 로우 or 해머 시티드 로우", "sets": 3, "reps": 15, "weight": "-" }
+              {
+                "name": "루마니안 데드리프트",
+                "sets": 3,
+                "reps": 12,
+                "weight": "-"
+              },
+              {
+                "name": "백익스텐션 + 인앤아웃 스쿼트",
+                "sets": 3,
+                "reps": 15,
+                "weight": "-"
+              },
+              {
+                "name": "바벨 로우 + 점프 스쿼트",
+                "sets": 3,
+                "reps": 12,
+                "weight": "-"
+              },
+              {
+                "name": "렛풀다운 or 어시스트 풀업",
+                "sets": 3,
+                "reps": 12,
+                "weight": "-"
+              },
+              {
+                "name": "시티드 로우 or 해머 시티드 로우",
+                "sets": 3,
+                "reps": 15,
+                "weight": "-"
+              }
             ]
           },
           {
@@ -394,11 +549,36 @@
             "workout": "레슨-상체가슴",
             "rest": false,
             "plan": [
-              { "name": "푸쉬업플러스 or 스탠딩 푸쉬업", "sets": 3, "reps": 15, "weight": "-" },
-              { "name": "체스트 프레스", "sets": 3, "reps": 12, "weight": "-" },
-              { "name": "어시스트 딥스", "sets": 3, "reps": 12, "weight": "-" },
-              { "name": "사이드 레터럴 레이즈", "sets": 3, "reps": 15, "weight": "-" },
-              { "name": "덤벨 킥백 or 오버헤드 트라이셉스 익스텐션", "sets": 3, "reps": 15, "weight": "-" }
+              {
+                "name": "푸쉬업플러스 or 스탠딩 푸쉬업",
+                "sets": 3,
+                "reps": 15,
+                "weight": "-"
+              },
+              {
+                "name": "체스트 프레스",
+                "sets": 3,
+                "reps": 12,
+                "weight": "-"
+              },
+              {
+                "name": "어시스트 딥스",
+                "sets": 3,
+                "reps": 12,
+                "weight": "-"
+              },
+              {
+                "name": "사이드 레터럴 레이즈",
+                "sets": 3,
+                "reps": 15,
+                "weight": "-"
+              },
+              {
+                "name": "덤벨 킥백 or 오버헤드 트라이셉스 익스텐션",
+                "sets": 3,
+                "reps": 15,
+                "weight": "-"
+              }
             ]
           },
           {
@@ -406,12 +586,42 @@
             "workout": "개인-하체2",
             "rest": false,
             "plan": [
-              { "name": "힙런지", "sets": 3, "reps": 12, "weight": "-" },
-              { "name": "고블릿 스쿼트 + 케이블 푸쉬다운", "sets": 3, "reps": 12, "weight": "-" },
-              { "name": "브이스쿼트 + 덤벨 킥백", "sets": 3, "reps": 12, "weight": "-" },
-              { "name": "힙쓰러스트", "sets": 3, "reps": 15, "weight": "-" },
-              { "name": "레그 익스텐션", "sets": 3, "reps": 15, "weight": "-" },
-              { "name": "힙 어덕션", "sets": 3, "reps": 15, "weight": "-" }
+              {
+                "name": "힙런지",
+                "sets": 3,
+                "reps": 12,
+                "weight": "-"
+              },
+              {
+                "name": "고블릿 스쿼트 + 케이블 푸쉬다운",
+                "sets": 3,
+                "reps": 12,
+                "weight": "-"
+              },
+              {
+                "name": "브이스쿼트 + 덤벨 킥백",
+                "sets": 3,
+                "reps": 12,
+                "weight": "-"
+              },
+              {
+                "name": "힙쓰러스트",
+                "sets": 3,
+                "reps": 15,
+                "weight": "-"
+              },
+              {
+                "name": "레그 익스텐션",
+                "sets": 3,
+                "reps": 15,
+                "weight": "-"
+              },
+              {
+                "name": "힙 어덕션",
+                "sets": 3,
+                "reps": 15,
+                "weight": "-"
+              }
             ]
           },
           {
@@ -475,11 +685,36 @@
             "workout": "레슨-하체1",
             "rest": false,
             "plan": [
-              { "name": "스미스 머신 스쿼트", "sets": 3, "reps": 12, "weight": "-" },
-              { "name": "힙런지 or 리버스 런지 + 덤벨 킥백", "sets": 3, "reps": 12, "weight": "-" },
-              { "name": "코삭 스쿼트 + 오버헤드 트라이셉스 익스텐션", "sets": 3, "reps": 12, "weight": "-" },
-              { "name": "레그 프레스", "sets": 3, "reps": 15, "weight": "-" },
-              { "name": "힙 어브덕션", "sets": 3, "reps": 15, "weight": "-" }
+              {
+                "name": "스미스 머신 스쿼트",
+                "sets": 3,
+                "reps": 12,
+                "weight": "-"
+              },
+              {
+                "name": "힙런지 or 리버스 런지 + 덤벨 킥백",
+                "sets": 3,
+                "reps": 12,
+                "weight": "-"
+              },
+              {
+                "name": "코삭 스쿼트 + 오버헤드 트라이셉스 익스텐션",
+                "sets": 3,
+                "reps": 12,
+                "weight": "-"
+              },
+              {
+                "name": "레그 프레스",
+                "sets": 3,
+                "reps": 15,
+                "weight": "-"
+              },
+              {
+                "name": "힙 어브덕션",
+                "sets": 3,
+                "reps": 15,
+                "weight": "-"
+              }
             ]
           },
           {
@@ -487,11 +722,36 @@
             "workout": "개인-상체가슴",
             "rest": false,
             "plan": [
-              { "name": "푸쉬업플러스 or 스탠딩 푸쉬업", "sets": 3, "reps": 15, "weight": "-" },
-              { "name": "체스트 프레스", "sets": 3, "reps": 12, "weight": "-" },
-              { "name": "어시스트 딥스", "sets": 3, "reps": 12, "weight": "-" },
-              { "name": "사이드 레터럴 레이즈", "sets": 3, "reps": 15, "weight": "-" },
-              { "name": "덤벨 킥백 or 오버헤드 트라이셉스 익스텐션", "sets": 3, "reps": 15, "weight": "-" }
+              {
+                "name": "푸쉬업플러스 or 스탠딩 푸쉬업",
+                "sets": 3,
+                "reps": 15,
+                "weight": "-"
+              },
+              {
+                "name": "체스트 프레스",
+                "sets": 3,
+                "reps": 12,
+                "weight": "-"
+              },
+              {
+                "name": "어시스트 딥스",
+                "sets": 3,
+                "reps": 12,
+                "weight": "-"
+              },
+              {
+                "name": "사이드 레터럴 레이즈",
+                "sets": 3,
+                "reps": 15,
+                "weight": "-"
+              },
+              {
+                "name": "덤벨 킥백 or 오버헤드 트라이셉스 익스텐션",
+                "sets": 3,
+                "reps": 15,
+                "weight": "-"
+              }
             ]
           },
           {
@@ -504,11 +764,36 @@
             "workout": "레슨-상체등",
             "rest": false,
             "plan": [
-              { "name": "루마니안 데드리프트", "sets": 3, "reps": 12, "weight": "-" },
-              { "name": "백익스텐션 + 인앤아웃 스쿼트", "sets": 3, "reps": 15, "weight": "-" },
-              { "name": "바벨 로우 + 점프 스쿼트", "sets": 3, "reps": 12, "weight": "-" },
-              { "name": "렛풀다운 or 어시스트 풀업", "sets": 3, "reps": 12, "weight": "-" },
-              { "name": "시티드 로우 or 해머 시티드 로우", "sets": 3, "reps": 15, "weight": "-" }
+              {
+                "name": "루마니안 데드리프트",
+                "sets": 3,
+                "reps": 12,
+                "weight": "-"
+              },
+              {
+                "name": "백익스텐션 + 인앤아웃 스쿼트",
+                "sets": 3,
+                "reps": 15,
+                "weight": "-"
+              },
+              {
+                "name": "바벨 로우 + 점프 스쿼트",
+                "sets": 3,
+                "reps": 12,
+                "weight": "-"
+              },
+              {
+                "name": "렛풀다운 or 어시스트 풀업",
+                "sets": 3,
+                "reps": 12,
+                "weight": "-"
+              },
+              {
+                "name": "시티드 로우 or 해머 시티드 로우",
+                "sets": 3,
+                "reps": 15,
+                "weight": "-"
+              }
             ]
           },
           {
@@ -516,12 +801,42 @@
             "workout": "개인-하체2",
             "rest": false,
             "plan": [
-              { "name": "힙런지", "sets": 3, "reps": 12, "weight": "-" },
-              { "name": "고블릿 스쿼트 + 케이블 푸쉬다운", "sets": 3, "reps": 12, "weight": "-" },
-              { "name": "브이스쿼트 + 덤벨 킥백", "sets": 3, "reps": 12, "weight": "-" },
-              { "name": "힙쓰러스트", "sets": 3, "reps": 15, "weight": "-" },
-              { "name": "레그 익스텐션", "sets": 3, "reps": 15, "weight": "-" },
-              { "name": "힙 어덕션", "sets": 3, "reps": 15, "weight": "-" }
+              {
+                "name": "힙런지",
+                "sets": 3,
+                "reps": 12,
+                "weight": "-"
+              },
+              {
+                "name": "고블릿 스쿼트 + 케이블 푸쉬다운",
+                "sets": 3,
+                "reps": 12,
+                "weight": "-"
+              },
+              {
+                "name": "브이스쿼트 + 덤벨 킥백",
+                "sets": 3,
+                "reps": 12,
+                "weight": "-"
+              },
+              {
+                "name": "힙쓰러스트",
+                "sets": 3,
+                "reps": 15,
+                "weight": "-"
+              },
+              {
+                "name": "레그 익스텐션",
+                "sets": 3,
+                "reps": 15,
+                "weight": "-"
+              },
+              {
+                "name": "힙 어덕션",
+                "sets": 3,
+                "reps": 15,
+                "weight": "-"
+              }
             ]
           },
           {
