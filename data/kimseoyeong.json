@@ -20,7 +20,20 @@
       "period": "6개월+"
     }
   },
-  "bodyGoals": null,
+  "bodyGoals": {
+    "weight": {
+      "start": 52.2,
+      "goal": 50.2
+    },
+    "muscle": {
+      "start": 23.0,
+      "goal": 23.5
+    },
+    "fat": {
+      "start": 10.3,
+      "goal": 9.0
+    }
+  },
   "cardio": {
     "age": 25,
     "restingHR": 81
@@ -114,11 +127,19 @@
       ],
       "lifts": [],
       "bodyData": {
-        "labels": [],
-        "weight": [],
-        "fat": [],
-        "muscle": [],
-        "lastMeasured": null,
+        "labels": [
+          "6/2"
+        ],
+        "weight": [
+          52.2
+        ],
+        "fat": [
+          10.3
+        ],
+        "muscle": [
+          23.0
+        ],
+        "lastMeasured": "2026-06-02",
         "comment": "인바디 측정 후 업데이트 예정이에요."
       },
       "condition": "보통",
