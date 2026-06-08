@@ -1,0 +1,1133 @@
+{
+  "name": "테스트회원",
+  "month": "2026년 6월",
+  "purposes": [
+    "체지방 감량",
+    "근육 증량",
+    "체형 개선",
+    "건강관리"
+  ],
+  "goals": {
+    "short": {
+      "text": "주 3회 출석 유지 + 체지방 20% 이하 달성",
+      "period": "1개월"
+    },
+    "mid": {
+      "text": "골격근량 표준 중간(21.5kg) 달성 + 체중 54kg",
+      "period": "3개월"
+    },
+    "long": {
+      "text": "체지방 18% · 체중 52kg · 근육 22kg 달성",
+      "period": "6개월+"
+    }
+  },
+  "bodyGoals": {
+    "weight": {
+      "start": 62.0,
+      "goal": 52.0
+    },
+    "muscle": {
+      "start": 18.5,
+      "goal": 22.0
+    },
+    "fat": {
+      "start": 18.6,
+      "goal": 9.4
+    }
+  },
+  "cardio": {
+    "age": 34,
+    "restingHR": 62
+  },
+  "orm": {
+    "weight": 65,
+    "reps": 5,
+    "goal": "근비대·근력"
+  },
+  "weeks": [
+    {
+      "week": 1,
+      "label": "1주차",
+      "date": "6/1",
+      "mainMessage": "이번 주도 스쿼트 65kg 완벽하게 소화! 하체 근력이 확실히 올라오고 있어요. 상체 당기기 자세도 안정됐습니다.",
+      "summaries": [
+        {
+          "sessionDate": "2026-06-02",
+          "date": "2026년 6월 2일",
+          "items": [
+            {
+              "name": "스쿼트",
+              "detail": "5세트 × 5회 / 65kg"
+            },
+            {
+              "name": "루마니안 데드리프트",
+              "detail": "3세트 × 8회 / 60kg"
+            },
+            {
+              "name": "레그프레스",
+              "detail": "3세트 × 12회 / 100kg"
+            },
+            {
+              "name": "힙 스러스트",
+              "detail": "3세트 × 15회 / 80kg"
+            }
+          ]
+        },
+        {
+          "sessionDate": "2026-06-04",
+          "date": "2026년 6월 4일",
+          "items": [
+            {
+              "name": "랫풀다운",
+              "detail": "3세트 × 10회 / 45kg"
+            },
+            {
+              "name": "케이블 로우",
+              "detail": "3세트 × 12회 / 35kg"
+            },
+            {
+              "name": "덤벨 숄더 프레스",
+              "detail": "3세트 × 12회 / 8kg"
+            },
+            {
+              "name": "케이블 트라이셉스 익스텐션",
+              "detail": "3세트 × 15회 / 15kg"
+            }
+          ]
+        }
+      ],
+      "exercises": [
+        {
+          "name": "스쿼트",
+          "note": "· 65kg 5×5 안정적으로 수행<br>· 하강 시 골반 중립 유지 잘 됨<br>· 무릎과 발끝 방향 일치",
+          "next": "67.5kg 도전 준비 됐어요 — 다음 주 시도해봐요"
+        },
+        {
+          "name": "루마니안 데드리프트",
+          "note": "· 60kg 8회 깔끔하게 수행<br>· 등 라인 유지 안정적",
+          "next": "엉덩이가 뒤로 빠지는 느낌 더 과장되게 — 햄스트링 스트레치 극대화"
+        },
+        {
+          "name": "레그프레스",
+          "note": "· 100kg 12회 완주<br>· 무릎이 안으로 모이지 않고 좋음",
+          "next": "발판 위치 어깨 너비보다 살짝 넓게 — 둔근 자극이 더 잘 옴"
+        },
+        {
+          "name": "힙 스러스트",
+          "note": "· 80kg 15회, 상단에서 둔근 수축 잘 됨<br>· 허리가 과신전되지 않도록 잘 조절",
+          "next": "상단에서 2초 정지 — 둔근 자극을 더 오래 유지해요"
+        },
+        {
+          "name": "랫풀다운",
+          "note": "· 45kg 10회, 광배근으로 당기는 감각 좋음<br>· 손목이 꺾이지 않고 안정적",
+          "next": "팔꿈치를 가슴 쪽으로 끌어당기는 느낌 — 광배 수축이 더 깊어져요"
+        },
+        {
+          "name": "케이블 로우",
+          "note": "· 35kg 12회, 양쪽 날개뼈 사이 수축 잘 됨<br>· 몸통 흔들림 최소화",
+          "next": "당길 때 명치를 살짝 내밀어보세요 — 등 아래까지 자극이 와요"
+        }
+      ],
+      "lifts": [
+        {
+          "name": "스쿼트",
+          "current": 67.5,
+          "goal": 80,
+          "unit": "kg",
+          "intervalWeeks": 4,
+          "lastIncrease": "2026-06-23"
+        },
+        {
+          "name": "루마니안 데드리프트",
+          "current": 62.5,
+          "goal": 75,
+          "unit": "kg",
+          "intervalWeeks": 4,
+          "lastIncrease": "2026-06-23"
+        },
+        {
+          "name": "레그프레스",
+          "current": 100,
+          "goal": 120,
+          "unit": "kg",
+          "intervalWeeks": 3,
+          "lastIncrease": "2026-05-12"
+        }
+      ],
+      "bodyData": {
+        "labels": [
+          "4/3",
+          "4/28",
+          "5/12",
+          "5/26",
+          "6/2"
+        ],
+        "weight": [
+          62.0,
+          60.5,
+          58.5,
+          57.0,
+          55.5
+        ],
+        "fat": [
+          18.6,
+          17.7,
+          15.7,
+          13.4,
+          11.5
+        ],
+        "muscle": [
+          18.5,
+          19.0,
+          19.8,
+          20.4,
+          21.0
+        ],
+        "lastMeasured": "2026-06-02",
+        "comment": "3개월 연속 감소세 유지 중"
+      },
+      "condition": "좋음",
+      "conditionNote": "",
+      "sleep": "좋음",
+      "sleepNote": "",
+      "stress": "낮음",
+      "pain": "없음",
+      "painNote": "",
+      "nutrition": "좋음",
+      "nutritionNote": "",
+      "review": {
+        "good": "스쿼트 65kg 5×5 완성 — 3개월 전 40kg에서 시작한 게 믿기지 않아요. 지속적인 증량이 이루어지고 있어요.",
+        "caution": "상체 운동 볼륨을 하체와 균형 맞추기 — 당기기 패턴 충분히 쌓아야 상체 라인도 살아요.",
+        "suggest": "주 1회 이상 단백질 보충 체크 — 근육 증량 속도가 충분히 유지되고 있는지 확인해요."
+      },
+      "trainerComment": "이번 주 하체·상체 모두 완벽하게 소화했어요! 체성분 변화가 눈에 보이기 시작하는 시점이에요. 지금 이 루틴 그대로 유지하면 목표 체지방률 달성이 현실이에요.",
+      "trainerDirection": "하체 증량 지속 (2주마다 2.5kg) + 상체 당기기 볼륨 증가",
+      "nextSessionMemo": "스쿼트 67.5kg 도전 / 상체 당기기 중량 소폭 증가 / 컨디션 체크",
+      "finalMessage": "",
+      "musclesWorked": [
+        "quads",
+        "hamstrings",
+        "glutes",
+        "back",
+        "shoulders",
+        "triceps"
+      ],
+      "sessionDates": [
+        "2026-06-02",
+        "2026-06-04"
+      ],
+      "memberComment": "",
+      "weeklyRoutine": {
+        "weekKey": "2026-W23-tm",
+        "note": "🎯 1주차: 근력 유지 + 지방 연소 루틴",
+        "days": [
+          {
+            "day": "월",
+            "workout": "레슨-하체",
+            "rest": false
+          },
+          {
+            "day": "화",
+            "workout": "유산소 30분",
+            "rest": false,
+            "plan": [
+              {
+                "name": "인터벌 워킹",
+                "sets": 1,
+                "reps": 1,
+                "weight": "30분"
+              },
+              {
+                "name": "힙브릿지",
+                "sets": 3,
+                "reps": 20,
+                "weight": "-"
+              }
+            ]
+          },
+          {
+            "day": "수",
+            "workout": "레슨-상체",
+            "rest": false
+          },
+          {
+            "day": "목",
+            "workout": "개인-코어",
+            "rest": false,
+            "plan": [
+              {
+                "name": "플랭크",
+                "sets": 3,
+                "reps": 1,
+                "weight": "60초"
+              },
+              {
+                "name": "러시안 트위스트",
+                "sets": 3,
+                "reps": 20,
+                "weight": "6kg"
+              },
+              {
+                "name": "레그 레이즈",
+                "sets": 3,
+                "reps": 15,
+                "weight": "-"
+              }
+            ]
+          },
+          {
+            "day": "금",
+            "workout": "유산소 30분",
+            "rest": false,
+            "plan": [
+              {
+                "name": "트레드밀 빠른 걷기",
+                "sets": 1,
+                "reps": 1,
+                "weight": "30분"
+              }
+            ]
+          },
+          {
+            "day": "토",
+            "workout": "자율운동",
+            "rest": false,
+            "plan": [
+              {
+                "name": "산책 or 스트레칭",
+                "sets": 1,
+                "reps": 1,
+                "weight": "40분+"
+              }
+            ]
+          },
+          {
+            "day": "일",
+            "workout": "휴식",
+            "rest": true
+          }
+        ]
+      }
+    },
+    {
+      "week": 2,
+      "label": "2주차",
+      "date": "6/8",
+      "mainMessage": "3개월 인바디 체크 결과 — 체지방 30%→18%! 목표 수치 달성이에요. 근육도 표준 중간까지 올라왔습니다. 정말 대단해요!",
+      "summaries": [
+        {
+          "sessionDate": "2026-06-08",
+          "date": "2026년 6월 8일",
+          "items": [
+            {
+              "name": "스쿼트",
+              "detail": "5세트 × 5회 / 65kg"
+            },
+            {
+              "name": "레그프레스",
+              "detail": "3세트 × 15회 / 100kg"
+            },
+            {
+              "name": "플랭크",
+              "detail": "3세트 × 60초"
+            },
+            {
+              "name": "러시안 트위스트",
+              "detail": "3세트 × 20회 / 6kg"
+            }
+          ]
+        },
+        {
+          "sessionDate": "2026-06-10",
+          "date": "2026년 6월 10일",
+          "items": [
+            {
+              "name": "케이블 로우",
+              "detail": "3세트 × 12회 / 38kg"
+            },
+            {
+              "name": "랫풀다운",
+              "detail": "3세트 × 10회 / 47.5kg"
+            },
+            {
+              "name": "덤벨 플라이",
+              "detail": "3세트 × 12회 / 7kg"
+            },
+            {
+              "name": "케이블 트라이셉스 익스텐션",
+              "detail": "3세트 × 15회 / 17.5kg"
+            }
+          ]
+        }
+      ],
+      "exercises": [
+        {
+          "name": "스쿼트",
+          "note": "· 65kg 5×5 이번 주도 안정적<br>· 하강 속도 조절 더 좋아짐",
+          "next": "67.5kg 다음 주 도전 준비 — 이미 몸이 적응 완료됐어요"
+        },
+        {
+          "name": "플랭크",
+          "note": "· 60초 3세트 완주 — 3개월 전 20초도 힘들었던 것과 비교됩니다<br>· 몸통 일직선 유지 안정적",
+          "next": "다음 주부터 75초로 증가 도전"
+        },
+        {
+          "name": "러시안 트위스트",
+          "note": "· 6kg 20회 양쪽 깔끔하게<br>· 몸통 회전 선도 잘 됨",
+          "next": "7kg으로 올려도 될 것 같아요 — 동작이 너무 쉬워졌어요"
+        },
+        {
+          "name": "케이블 로우",
+          "note": "· 38kg 12회, 중량 올렸는데도 자세 유지 좋음<br>· 날개뼈 수축 명확해짐",
+          "next": "40kg 도전 준비 — 등 근력 확실히 올라오고 있어요"
+        },
+        {
+          "name": "랫풀다운",
+          "note": "· 47.5kg 10회, 새 최고 중량<br>· 광배 수축이 이전보다 선명해짐",
+          "next": "50kg 도전 다음 주 — 지금 컨디션이면 충분히 가능해요"
+        }
+      ],
+      "lifts": [
+        {
+          "name": "스쿼트",
+          "current": 67.5,
+          "goal": 80,
+          "unit": "kg",
+          "intervalWeeks": 4,
+          "lastIncrease": "2026-06-23"
+        },
+        {
+          "name": "루마니안 데드리프트",
+          "current": 62.5,
+          "goal": 75,
+          "unit": "kg",
+          "intervalWeeks": 4,
+          "lastIncrease": "2026-06-08"
+        },
+        {
+          "name": "레그프레스",
+          "current": 100,
+          "goal": 120,
+          "unit": "kg",
+          "intervalWeeks": 3,
+          "lastIncrease": "2026-05-12"
+        }
+      ],
+      "bodyData": {
+        "labels": [
+          "4/3",
+          "4/28",
+          "5/12",
+          "5/26",
+          "6/2",
+          "6/8"
+        ],
+        "weight": [
+          62.0,
+          60.5,
+          58.5,
+          57.0,
+          55.5,
+          54.0
+        ],
+        "fat": [
+          18.6,
+          17.7,
+          15.7,
+          13.4,
+          11.5,
+          9.7
+        ],
+        "muscle": [
+          18.5,
+          19.0,
+          19.8,
+          20.4,
+          21.0,
+          21.5
+        ],
+        "lastMeasured": "2026-06-08",
+        "comment": "체지방 30%→18% 달성 · 근육 표준 이하→표준 중간 달성"
+      },
+      "condition": "좋음",
+      "conditionNote": "3개월 목표 달성 — 컨디션 최고",
+      "sleep": "좋음",
+      "sleepNote": "",
+      "stress": "낮음",
+      "pain": "없음",
+      "painNote": "",
+      "nutrition": "좋음",
+      "nutritionNote": "",
+      "review": {
+        "good": "3개월 만에 체지방 30%→18% 달성! 골격근량도 18.5kg→21.5kg으로 표준 중간에 진입했어요. 꾸준함이 만들어낸 결과예요.",
+        "caution": "체중 감량보다 체성분 개선에 계속 집중 — 체중 숫자보다 근육-지방 비율이 훨씬 중요해요.",
+        "suggest": "3개월 목표 달성 축하해요! 다음 목표로 체중 52kg · 체지방 18% 유지 · 근육 22kg을 향해 달려봐요."
+      },
+      "trainerComment": "3개월 동안 정말 수고 많았어요! 체지방 12% 감소, 근육 3kg 증가 — 이건 정말 대단한 결과예요. 앞으로 6개월 목표도 충분히 달성할 수 있어요!",
+      "trainerDirection": "현재 루틴 유지 + 상체 볼륨 점진적 증가 + 유산소 강도 소폭 조정",
+      "nextSessionMemo": "스쿼트 67.5kg / 랫풀다운 50kg 도전 / 새 3개월 목표 설정",
+      "finalMessage": "",
+      "musclesWorked": [
+        "quads",
+        "glutes",
+        "abs",
+        "back",
+        "triceps"
+      ],
+      "sessionDates": [
+        "2026-06-08",
+        "2026-06-10"
+      ],
+      "memberComment": "3개월 되니 몸이 확 달라진 것 같아요",
+      "weeklyRoutine": {
+        "weekKey": "2026-W24-tm",
+        "note": "🎯 2주차: 목표 달성 확인 · 다음 단계 준비",
+        "days": [
+          {
+            "day": "월",
+            "workout": "레슨-하체",
+            "rest": false
+          },
+          {
+            "day": "화",
+            "workout": "유산소 35분",
+            "rest": false,
+            "plan": [
+              {
+                "name": "인터벌 조깅",
+                "sets": 1,
+                "reps": 1,
+                "weight": "35분"
+              },
+              {
+                "name": "힙브릿지",
+                "sets": 3,
+                "reps": 20,
+                "weight": "-"
+              }
+            ]
+          },
+          {
+            "day": "수",
+            "workout": "레슨-상체",
+            "rest": false
+          },
+          {
+            "day": "목",
+            "workout": "개인-코어",
+            "rest": false,
+            "plan": [
+              {
+                "name": "플랭크",
+                "sets": 3,
+                "reps": 1,
+                "weight": "75초"
+              },
+              {
+                "name": "러시안 트위스트",
+                "sets": 3,
+                "reps": 20,
+                "weight": "7kg"
+              },
+              {
+                "name": "레그 레이즈",
+                "sets": 3,
+                "reps": 15,
+                "weight": "-"
+              }
+            ]
+          },
+          {
+            "day": "금",
+            "workout": "유산소 30분",
+            "rest": false,
+            "plan": [
+              {
+                "name": "트레드밀 조깅",
+                "sets": 1,
+                "reps": 1,
+                "weight": "30분"
+              }
+            ]
+          },
+          {
+            "day": "토",
+            "workout": "자율운동",
+            "rest": false,
+            "plan": [
+              {
+                "name": "산책 or 등산",
+                "sets": 1,
+                "reps": 1,
+                "weight": "40분+"
+              }
+            ]
+          },
+          {
+            "day": "일",
+            "workout": "휴식",
+            "rest": true
+          }
+        ]
+      }
+    },
+    {
+      "week": 3,
+      "label": "3주차",
+      "date": "6/15",
+      "mainMessage": "이번 주 스쿼트 67.5kg 첫 시도 성공! 상체 당기기 중량도 모두 올렸어요. 체성분 유지하면서 근력 계속 올라가는 중이에요.",
+      "summaries": [
+        {
+          "sessionDate": "2026-06-16",
+          "date": "2026년 6월 16일",
+          "items": [
+            {
+              "name": "스쿼트",
+              "detail": "5세트 × 5회 / 67.5kg"
+            },
+            {
+              "name": "레그 컬",
+              "detail": "3세트 × 15회 / 30kg"
+            },
+            {
+              "name": "힙 스러스트",
+              "detail": "3세트 × 15회 / 80kg"
+            }
+          ]
+        },
+        {
+          "sessionDate": "2026-06-19",
+          "date": "2026년 6월 19일",
+          "items": [
+            {
+              "name": "벤치프레스",
+              "detail": "3세트 × 10회 / 35kg"
+            },
+            {
+              "name": "케이블 트라이셉스 익스텐션",
+              "detail": "3세트 × 15회 / 17.5kg"
+            },
+            {
+              "name": "덤벨 플라이",
+              "detail": "3세트 × 12회 / 7kg"
+            }
+          ]
+        }
+      ],
+      "exercises": [
+        {
+          "name": "스쿼트",
+          "note": "· 67.5kg 5×5 첫 시도 성공<br>· 마지막 세트 살짝 힘들었지만 자세 유지",
+          "next": "2주 더 이 중량 안정화 후 70kg 도전"
+        },
+        {
+          "name": "힙 스러스트",
+          "note": "· 80kg 15회 상단 수축 완벽<br>· 허리 개입 없이 순수 둔근으로 수행",
+          "next": "85kg 도전 준비 완료"
+        },
+        {
+          "name": "벤치프레스",
+          "note": "· 35kg 10회 안정적<br>· 가슴 라인이 살아나고 있어요",
+          "next": "37.5kg 다음 세션 시도"
+        }
+      ],
+      "lifts": [
+        {
+          "name": "스쿼트",
+          "current": 67.5,
+          "goal": 80,
+          "unit": "kg",
+          "intervalWeeks": 4,
+          "lastIncrease": "2026-06-16"
+        },
+        {
+          "name": "루마니안 데드리프트",
+          "current": 62.5,
+          "goal": 75,
+          "unit": "kg",
+          "intervalWeeks": 4,
+          "lastIncrease": "2026-06-08"
+        },
+        {
+          "name": "레그프레스",
+          "current": 100,
+          "goal": 120,
+          "unit": "kg",
+          "intervalWeeks": 3,
+          "lastIncrease": "2026-05-12"
+        }
+      ],
+      "bodyData": {
+        "labels": [
+          "4/3",
+          "4/28",
+          "5/12",
+          "5/26",
+          "6/2",
+          "6/8"
+        ],
+        "weight": [
+          62.0,
+          60.5,
+          58.5,
+          57.0,
+          55.5,
+          54.0
+        ],
+        "fat": [
+          18.6,
+          17.7,
+          15.7,
+          13.4,
+          11.5,
+          9.7
+        ],
+        "muscle": [
+          18.5,
+          19.0,
+          19.8,
+          20.4,
+          21.0,
+          21.5
+        ],
+        "lastMeasured": "2026-06-08",
+        "comment": ""
+      },
+      "condition": "좋음",
+      "conditionNote": "",
+      "sleep": "좋음",
+      "sleepNote": "",
+      "stress": "낮음",
+      "pain": "없음",
+      "painNote": "",
+      "nutrition": "좋음",
+      "nutritionNote": "",
+      "review": {
+        "good": "스쿼트 신기록 67.5kg! 3주 연속 전신 컨디션 최고 상태예요. 운동 일관성이 정말 모범적이에요.",
+        "caution": "새 중량 첫 주는 볼륨보다 자세에 집중 — 무게보다 감각이 먼저예요.",
+        "suggest": "수면과 영양이 이 결과를 만들었어요. 단백질 섭취 계속 유지해주세요."
+      },
+      "trainerComment": "이번 주 신기록! 스쿼트 67.5kg 성공, 상체도 모든 중량 올렸어요. 이 페이스면 6개월 목표 훨씬 일찍 달성할 수 있어요.",
+      "trainerDirection": "근력 증가 페이스 유지 · 유산소 주 2회 꾸준히",
+      "nextSessionMemo": "스쿼트 67.5kg 2차 / 힙 스러스트 85kg / 벤치프레스 37.5kg",
+      "finalMessage": "",
+      "musclesWorked": [
+        "quads",
+        "glutes",
+        "hamstrings",
+        "chest",
+        "triceps"
+      ],
+      "sessionDates": [
+        "2026-06-16",
+        "2026-06-19"
+      ],
+      "memberComment": "",
+      "weeklyRoutine": {
+        "weekKey": "2026-W25-tm",
+        "note": "🎯 3주차: 신기록 안정화 · 볼륨 유지",
+        "days": [
+          {
+            "day": "월",
+            "workout": "레슨-하체",
+            "rest": false
+          },
+          {
+            "day": "화",
+            "workout": "유산소 35분",
+            "rest": false,
+            "plan": [
+              {
+                "name": "인터벌 조깅",
+                "sets": 1,
+                "reps": 1,
+                "weight": "35분"
+              }
+            ]
+          },
+          {
+            "day": "수",
+            "workout": "개인-코어",
+            "rest": false,
+            "plan": [
+              {
+                "name": "플랭크",
+                "sets": 3,
+                "reps": 1,
+                "weight": "75초"
+              },
+              {
+                "name": "러시안 트위스트",
+                "sets": 3,
+                "reps": 20,
+                "weight": "7kg"
+              }
+            ]
+          },
+          {
+            "day": "목",
+            "workout": "레슨-상체",
+            "rest": false
+          },
+          {
+            "day": "금",
+            "workout": "유산소 30분",
+            "rest": false,
+            "plan": [
+              {
+                "name": "트레드밀 조깅",
+                "sets": 1,
+                "reps": 1,
+                "weight": "30분"
+              }
+            ]
+          },
+          {
+            "day": "토",
+            "workout": "자율운동",
+            "rest": false,
+            "plan": [
+              {
+                "name": "산책 or 스트레칭",
+                "sets": 1,
+                "reps": 1,
+                "weight": "40분+"
+              }
+            ]
+          },
+          {
+            "day": "일",
+            "workout": "휴식",
+            "rest": true
+          }
+        ]
+      }
+    },
+    {
+      "week": 4,
+      "label": "4주차",
+      "date": "6/22",
+      "mainMessage": "6월 마무리! 스쿼트 67.5kg 안정화, 상체 전 종목 중량 증가. 3개월 완주를 진심으로 축하해요.",
+      "summaries": [
+        {
+          "sessionDate": "2026-06-23",
+          "date": "2026년 6월 23일",
+          "items": [
+            {
+              "name": "스쿼트",
+              "detail": "5세트 × 5회 / 67.5kg"
+            },
+            {
+              "name": "루마니안 데드리프트",
+              "detail": "3세트 × 8회 / 62.5kg"
+            },
+            {
+              "name": "레그프레스",
+              "detail": "3세트 × 15회 / 100kg"
+            }
+          ]
+        },
+        {
+          "sessionDate": "2026-06-25",
+          "date": "2026년 6월 25일",
+          "items": [
+            {
+              "name": "케이블 로우",
+              "detail": "3세트 × 12회 / 38kg"
+            },
+            {
+              "name": "랫풀다운",
+              "detail": "3세트 × 10회 / 47.5kg"
+            },
+            {
+              "name": "플랭크",
+              "detail": "3세트 × 75초"
+            },
+            {
+              "name": "러시안 트위스트",
+              "detail": "3세트 × 20회 / 7kg"
+            }
+          ]
+        }
+      ],
+      "exercises": [
+        {
+          "name": "스쿼트",
+          "note": "· 67.5kg 2주째 안정화 완료<br>· 5세트 모두 깔끔하게 수행",
+          "next": "7월 첫 주 70kg 도전 준비 완료"
+        },
+        {
+          "name": "케이블 로우",
+          "note": "· 38kg 12회, 이번 시즌 최고 중량<br>· 등 두께가 살아나고 있어요",
+          "next": "40kg 7월 첫 세션에 도전"
+        },
+        {
+          "name": "플랭크",
+          "note": "· 75초 3세트 완주 — 4월 20초에서 75초로 성장<br>· 코어 안정성이 완전히 달라졌어요",
+          "next": "90초 도전 준비 — 다음 달 목표"
+        }
+      ],
+      "lifts": [
+        {
+          "name": "스쿼트",
+          "current": 67.5,
+          "goal": 80,
+          "unit": "kg",
+          "intervalWeeks": 4,
+          "lastIncrease": "2026-06-16"
+        },
+        {
+          "name": "루마니안 데드리프트",
+          "current": 62.5,
+          "goal": 75,
+          "unit": "kg",
+          "intervalWeeks": 4,
+          "lastIncrease": "2026-06-08"
+        },
+        {
+          "name": "레그프레스",
+          "current": 100,
+          "goal": 120,
+          "unit": "kg",
+          "intervalWeeks": 3,
+          "lastIncrease": "2026-05-12"
+        }
+      ],
+      "bodyData": {
+        "labels": [
+          "4/3",
+          "4/28",
+          "5/12",
+          "5/26",
+          "6/2",
+          "6/8"
+        ],
+        "weight": [
+          62.0,
+          60.5,
+          58.5,
+          57.0,
+          55.5,
+          54.0
+        ],
+        "fat": [
+          18.6,
+          17.7,
+          15.7,
+          13.4,
+          11.5,
+          9.7
+        ],
+        "muscle": [
+          18.5,
+          19.0,
+          19.8,
+          20.4,
+          21.0,
+          21.5
+        ],
+        "lastMeasured": "2026-06-08",
+        "comment": ""
+      },
+      "condition": "좋음",
+      "conditionNote": "",
+      "sleep": "좋음",
+      "sleepNote": "",
+      "stress": "보통",
+      "pain": "없음",
+      "painNote": "",
+      "nutrition": "좋음",
+      "nutritionNote": "",
+      "review": {
+        "good": "6월 4주 개근 달성! 하체·상체 모든 종목 중량 또는 반복수 향상. 꾸준함이 가져다 준 결과예요.",
+        "caution": "7월에는 휴식일을 더 잘 지켜주세요 — 성장은 쉬는 날에도 이루어져요.",
+        "suggest": "3개월 완주 기념으로 7월 새 목표를 같이 세워봐요. 이미 기초가 완성됐으니 더 재밌어질 거예요!"
+      },
+      "trainerComment": "6월 완주! 3개월 만에 이만큼 바뀌었다는 게 정말 자랑스러워요. 7월에도 이 기세 유지해봅시다!",
+      "trainerDirection": "7월: 스쿼트 70kg / 랫풀다운 50kg / 근육 22kg 도달",
+      "nextSessionMemo": "7월 목표 설정 미팅 / 스쿼트 70kg 도전 / 상체 당기기 중량 업",
+      "finalMessage": "3개월 정말 수고했어요 — 지금 이 몸은 당신이 매일 만들어온 결과예요 ✨",
+      "musclesWorked": [
+        "quads",
+        "hamstrings",
+        "glutes",
+        "back",
+        "abs"
+      ],
+      "sessionDates": [
+        "2026-06-23",
+        "2026-06-25"
+      ],
+      "memberComment": "몸이 가벼워진 느낌이에요!",
+      "weeklyRoutine": {
+        "weekKey": "2026-W26-tm",
+        "note": "🎯 4주차: 6월 마무리 · 7월 준비",
+        "days": [
+          {
+            "day": "월",
+            "workout": "레슨-하체",
+            "rest": false
+          },
+          {
+            "day": "화",
+            "workout": "유산소 35분",
+            "rest": false,
+            "plan": [
+              {
+                "name": "인터벌 조깅",
+                "sets": 1,
+                "reps": 1,
+                "weight": "35분"
+              }
+            ]
+          },
+          {
+            "day": "수",
+            "workout": "휴식",
+            "rest": true
+          },
+          {
+            "day": "목",
+            "workout": "레슨-상체+코어",
+            "rest": false
+          },
+          {
+            "day": "금",
+            "workout": "유산소 30분",
+            "rest": false,
+            "plan": [
+              {
+                "name": "트레드밀 조깅",
+                "sets": 1,
+                "reps": 1,
+                "weight": "30분"
+              }
+            ]
+          },
+          {
+            "day": "토",
+            "workout": "자율운동",
+            "rest": false,
+            "plan": [
+              {
+                "name": "산책 or 등산",
+                "sets": 1,
+                "reps": 1,
+                "weight": "40분+"
+              }
+            ]
+          },
+          {
+            "day": "일",
+            "workout": "휴식",
+            "rest": true
+          }
+        ]
+      }
+    }
+  ],
+  "quotes": [
+    "몸이 기억하는 건 숫자가 아니라 꾸준함이다.",
+    "오늘의 힘든 운동이 내일의 쉬운 일상을 만든다.",
+    "체중은 결과다. 오늘의 노력이 원인이다.",
+    "완벽한 몸이 아니라, 강한 몸을 만든다.",
+    "근육은 하루아침에 생기지 않는다. 매일 쌓인다.",
+    "숫자에 집착하지 마라. 변화를 느껴라.",
+    "운동을 빠진 날보다 나온 날을 세어라.",
+    "가장 힘든 세트가 가장 중요한 세트다.",
+    "나는 오늘도 어제보다 강해졌다.",
+    "결과는 반드시 온다. 꾸준함을 믿어라."
+  ],
+  "sessions": {
+    "total": 30,
+    "completed": 24
+  },
+  "monthlySummary": [
+    {
+      "year": 2026,
+      "month": 4,
+      "label": "2026년 4월",
+      "sessions": 8,
+      "bodyChange": {
+        "weight": {
+          "start": 62.0,
+          "end": 60.5,
+          "change": -1.5
+        },
+        "muscle": {
+          "start": 18.5,
+          "end": 19.0,
+          "change": 0.5
+        },
+        "fat": {
+          "start": 18.6,
+          "end": 17.7,
+          "change": -0.9
+        }
+      },
+      "condition": {
+        "좋음": 4,
+        "보통": 4
+      },
+      "sleep": {
+        "좋음": 3,
+        "보통": 5
+      },
+      "stress": {
+        "보통": 6,
+        "낮음": 2
+      },
+      "topExercises": [
+        "스쿼트",
+        "레그프레스",
+        "랫풀다운",
+        "케이블 로우",
+        "플랭크"
+      ],
+      "autoComment": "8회 출석 · 체중 1.5kg 감소 · 근육 0.5kg 증가 · 주력 운동: 스쿼트, 레그프레스, 랫풀다운"
+    },
+    {
+      "year": 2026,
+      "month": 5,
+      "label": "2026년 5월",
+      "sessions": 9,
+      "bodyChange": {
+        "weight": {
+          "start": 60.5,
+          "end": 57.0,
+          "change": -3.5
+        },
+        "muscle": {
+          "start": 19.0,
+          "end": 20.4,
+          "change": 1.4
+        },
+        "fat": {
+          "start": 17.7,
+          "end": 13.4,
+          "change": -4.3
+        }
+      },
+      "condition": {
+        "좋음": 6,
+        "보통": 3
+      },
+      "sleep": {
+        "좋음": 5,
+        "보통": 4
+      },
+      "stress": {
+        "낮음": 5,
+        "보통": 4
+      },
+      "topExercises": [
+        "스쿼트",
+        "루마니안 데드리프트",
+        "케이블 로우",
+        "힙 스러스트",
+        "플랭크"
+      ],
+      "autoComment": "9회 출석 · 체중 3.5kg 감소 · 근육 1.4kg 증가 · 주력 운동: 스쿼트, 루마니안 데드리프트, 케이블 로우"
+    }
+  ]
+}
