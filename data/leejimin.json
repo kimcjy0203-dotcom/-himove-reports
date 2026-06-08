@@ -254,18 +254,18 @@
         ],
         "weight": [
           55.5,
-          null
+          54.7
         ],
         "fat": [
           20.5,
-          null
+          20.6
         ],
         "muscle": [
           18.6,
           18.1
         ],
         "lastMeasured": "2026-06-08",
-        "comment": "6/8 골격근량만 측정 — 체중·체지방 추후 업데이트"
+        "comment": ""
       },
       "condition": "보통",
       "conditionNote": "컨디션 난조",
