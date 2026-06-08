@@ -1,0 +1,236 @@
+{
+  "name": "형혜진",
+  "month": "2026년 6월",
+  "purposes": ["체중감량", "근력강화", "체력향상", "재활회복", "자세교정"],
+  "goals": {
+    "short": {
+      "text": "통밀빵 2조각 이하 + 카페 단음료 끊기 + 유산소 30분 이상",
+      "period": "매일"
+    },
+    "mid": {
+      "text": "3개월 안에 6kg 감량 (73.4→67kg)",
+      "period": "3개월"
+    },
+    "long": {
+      "text": "목표 체중 63kg 달성",
+      "period": "6개월+"
+    }
+  },
+  "bodyGoals": {
+    "weight": { "start": 73.4, "goal": 63.0 },
+    "muscle": { "start": 28.0, "goal": 29.0 },
+    "fat":    { "start": 22.9, "goal": 12.0 }
+  },
+  "cardio": { "age": 35, "restingHR": 55 },
+  "orm": { "weight": 0, "reps": 0, "goal": "자세교정·재활" },
+  "weeks": [
+    {
+      "week": 1,
+      "label": "1주차",
+      "date": "6/1",
+      "mainMessage": "",
+      "summaries": [],
+      "exercises": [],
+      "lifts": [],
+      "bodyData": {
+        "labels": ["6/8"],
+        "weight": [73.4],
+        "fat":    [22.9],
+        "muscle": [28.0],
+        "lastMeasured": "2026-06-08",
+        "comment": "PT 시작 인바디"
+      },
+      "condition": "", "conditionNote": "",
+      "sleep": "", "sleepNote": "",
+      "stress": "",
+      "pain": "있음", "painNote": "양무릎 반월상연골파열 / 발목 불안정 / 허리 뻐근 / 버섯목",
+      "nutrition": "", "nutritionNote": "",
+      "review": { "good": "", "caution": "", "suggest": "" },
+      "trainerComment": "",
+      "trainerDirection": "",
+      "nextSessionMemo": "",
+      "finalMessage": "",
+      "musclesWorked": [],
+      "sessionDates": [],
+      "memberComment": "",
+      "weeklyRoutine": {
+        "weekKey": "2026-W23-hj",
+        "note": "🎯 1주차: 기초 평가 · 관절 안정화 시작",
+        "days": [
+          { "day": "월", "workout": "레슨", "rest": false },
+          { "day": "화", "workout": "유산소 30분", "rest": false, "plan": [
+            { "name": "빠른 걷기 (저충격)", "sets": 1, "reps": 1, "weight": "30분" },
+            { "name": "캣카우 (목·허리 풀기)", "sets": 3, "reps": 10, "weight": "-" }
+          ]},
+          { "day": "수", "workout": "휴식 or 스트레칭", "rest": false, "plan": [
+            { "name": "목·어깨 스트레칭", "sets": 3, "reps": 1, "weight": "1분" },
+            { "name": "발목 원 그리기", "sets": 3, "reps": 10, "weight": "양쪽" }
+          ]},
+          { "day": "목", "workout": "레슨", "rest": false },
+          { "day": "금", "workout": "유산소 30분", "rest": false, "plan": [
+            { "name": "빠른 걷기", "sets": 1, "reps": 1, "weight": "30분" }
+          ]},
+          { "day": "토", "workout": "자율운동", "rest": false, "plan": [
+            { "name": "산책", "sets": 1, "reps": 1, "weight": "30분+" }
+          ]},
+          { "day": "일", "workout": "휴식", "rest": true }
+        ]
+      }
+    },
+    {
+      "week": 2,
+      "label": "2주차",
+      "date": "6/8",
+      "mainMessage": "",
+      "summaries": [],
+      "exercises": [],
+      "lifts": [],
+      "bodyData": { "labels": [], "weight": [], "fat": [], "muscle": [], "lastMeasured": null, "comment": "" },
+      "condition": "", "conditionNote": "",
+      "sleep": "", "sleepNote": "",
+      "stress": "",
+      "pain": "없음", "painNote": "",
+      "nutrition": "", "nutritionNote": "",
+      "review": { "good": "", "caution": "", "suggest": "" },
+      "trainerComment": "",
+      "trainerDirection": "",
+      "nextSessionMemo": "",
+      "finalMessage": "",
+      "musclesWorked": [],
+      "sessionDates": [],
+      "memberComment": "",
+      "weeklyRoutine": {
+        "weekKey": "2026-W24-hj",
+        "note": "🎯 2주차: 자세교정 시작 · 코어 활성화",
+        "days": [
+          { "day": "월", "workout": "레슨", "rest": false },
+          { "day": "화", "workout": "유산소 30분", "rest": false, "plan": [
+            { "name": "빠른 걷기", "sets": 1, "reps": 1, "weight": "30분" },
+            { "name": "캣카우", "sets": 3, "reps": 10, "weight": "-" }
+          ]},
+          { "day": "수", "workout": "개인-코어", "rest": false, "plan": [
+            { "name": "데드버그", "sets": 3, "reps": 10, "weight": "-" },
+            { "name": "힙브릿지", "sets": 3, "reps": 15, "weight": "-" },
+            { "name": "발목 강화 (한발 서기)", "sets": 3, "reps": 1, "weight": "30초" }
+          ]},
+          { "day": "목", "workout": "레슨", "rest": false },
+          { "day": "금", "workout": "유산소 30분", "rest": false, "plan": [
+            { "name": "빠른 걷기", "sets": 1, "reps": 1, "weight": "30분" }
+          ]},
+          { "day": "토", "workout": "자율운동", "rest": false, "plan": [
+            { "name": "산책 or 스트레칭", "sets": 1, "reps": 1, "weight": "30분+" }
+          ]},
+          { "day": "일", "workout": "휴식", "rest": true }
+        ]
+      }
+    },
+    {
+      "week": 3,
+      "label": "3주차",
+      "date": "6/15",
+      "mainMessage": "",
+      "summaries": [],
+      "exercises": [],
+      "lifts": [],
+      "bodyData": { "labels": [], "weight": [], "fat": [], "muscle": [], "lastMeasured": null, "comment": "" },
+      "condition": "", "conditionNote": "",
+      "sleep": "", "sleepNote": "",
+      "stress": "",
+      "pain": "없음", "painNote": "",
+      "nutrition": "", "nutritionNote": "",
+      "review": { "good": "", "caution": "", "suggest": "" },
+      "trainerComment": "",
+      "trainerDirection": "",
+      "nextSessionMemo": "",
+      "finalMessage": "",
+      "musclesWorked": [],
+      "sessionDates": [],
+      "memberComment": "",
+      "weeklyRoutine": {
+        "weekKey": "2026-W25-hj",
+        "note": "🎯 3주차: 강도 소폭 증가 · 유산소 35분",
+        "days": [
+          { "day": "월", "workout": "레슨", "rest": false },
+          { "day": "화", "workout": "유산소 35분", "rest": false, "plan": [
+            { "name": "빠른 걷기", "sets": 1, "reps": 1, "weight": "35분" },
+            { "name": "캣카우", "sets": 3, "reps": 10, "weight": "-" }
+          ]},
+          { "day": "수", "workout": "개인-코어", "rest": false, "plan": [
+            { "name": "데드버그", "sets": 3, "reps": 12, "weight": "-" },
+            { "name": "힙브릿지", "sets": 3, "reps": 20, "weight": "-" },
+            { "name": "사이드 플랭크", "sets": 3, "reps": 1, "weight": "20초" }
+          ]},
+          { "day": "목", "workout": "레슨", "rest": false },
+          { "day": "금", "workout": "유산소 35분", "rest": false, "plan": [
+            { "name": "빠른 걷기", "sets": 1, "reps": 1, "weight": "35분" }
+          ]},
+          { "day": "토", "workout": "자율운동", "rest": false, "plan": [
+            { "name": "산책", "sets": 1, "reps": 1, "weight": "40분+" }
+          ]},
+          { "day": "일", "workout": "휴식", "rest": true }
+        ]
+      }
+    },
+    {
+      "week": 4,
+      "label": "4주차",
+      "date": "6/22",
+      "mainMessage": "",
+      "summaries": [],
+      "exercises": [],
+      "lifts": [],
+      "bodyData": { "labels": [], "weight": [], "fat": [], "muscle": [], "lastMeasured": null, "comment": "" },
+      "condition": "", "conditionNote": "",
+      "sleep": "", "sleepNote": "",
+      "stress": "",
+      "pain": "없음", "painNote": "",
+      "nutrition": "", "nutritionNote": "",
+      "review": { "good": "", "caution": "", "suggest": "" },
+      "trainerComment": "",
+      "trainerDirection": "",
+      "nextSessionMemo": "",
+      "finalMessage": "",
+      "musclesWorked": [],
+      "sessionDates": [],
+      "memberComment": "",
+      "weeklyRoutine": {
+        "weekKey": "2026-W26-hj",
+        "note": "🎯 4주차: 1개월 마무리 · 인바디 재측정",
+        "days": [
+          { "day": "월", "workout": "레슨", "rest": false },
+          { "day": "화", "workout": "유산소 40분", "rest": false, "plan": [
+            { "name": "빠른 걷기 or 가벼운 조깅", "sets": 1, "reps": 1, "weight": "40분" },
+            { "name": "캣카우", "sets": 3, "reps": 10, "weight": "-" }
+          ]},
+          { "day": "수", "workout": "개인-코어", "rest": false, "plan": [
+            { "name": "데드버그", "sets": 3, "reps": 12, "weight": "-" },
+            { "name": "힙브릿지 (싱글레그)", "sets": 3, "reps": 12, "weight": "양쪽" },
+            { "name": "발목 강화", "sets": 3, "reps": 1, "weight": "30초" }
+          ]},
+          { "day": "목", "workout": "레슨", "rest": false },
+          { "day": "금", "workout": "유산소 40분", "rest": false, "plan": [
+            { "name": "빠른 걷기", "sets": 1, "reps": 1, "weight": "40분" }
+          ]},
+          { "day": "토", "workout": "자율운동", "rest": false, "plan": [
+            { "name": "산책 or 등산", "sets": 1, "reps": 1, "weight": "40분+" }
+          ]},
+          { "day": "일", "workout": "휴식", "rest": true }
+        ]
+      }
+    }
+  ],
+  "quotes": [
+    "나온 것 자체가 이미 절반이에요.",
+    "오늘 30분이 내일의 몸을 만든다.",
+    "몸이 기억하는 건 숫자가 아니라 꾸준함이다.",
+    "어깨를 펴면 자신감도 함께 올라온다.",
+    "6kg은 목표가 아니라 결과다. 과정에 집중해요.",
+    "재활도 운동이에요. 아끼는 만큼 강해진다.",
+    "몸의 신호에 귀 기울이는 것도 실력이에요.",
+    "작은 습관 하나가 체형을 바꾼다.",
+    "오늘 덜 먹은 것이 내일의 에너지가 된다.",
+    "완벽하지 않아도 된다. 어제보다 나아지기만 하면."
+  ],
+  "sessions": { "total": 10, "completed": 0 },
+  "monthlySummary": []
+}
