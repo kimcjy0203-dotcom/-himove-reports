@@ -776,7 +776,14 @@ function init(data) {
 
   const navEl   = document.getElementById('week-nav');
   const panelEl = document.getElementById('week-panels');
-  navEl.innerHTML   = weeks.map((w,i) => `<button class="wt-btn${!w.mainMessage?' empty':''}${i===0?' active':''}" data-idx="${i}"><span class="wt-week">${w.label}</span><span class="wt-date">${!w.mainMessage?'미입력':w.date}</span></button>`).join('');
+  const todayStr = new Date().toLocaleDateString('ko-KR',{month:'numeric',day:'numeric'}).replace(/\s/g,'').replace('월','\/').replace('일','');
+  const _year = new Date().getFullYear();
+  function _parseWkDate(s){ if(!s||!s.includes('/')) return null; const [m,d]=s.split('/'); try{return new Date(_year,+m-1,+d);}catch(e){return null;} }
+  const _today = new Date(); _today.setHours(0,0,0,0);
+  const _wkStarts = weeks.map(w=>_parseWkDate(w.date));
+  let defaultIdx = 0;
+  for(let i=_wkStarts.length-1;i>=0;i--){ if(_wkStarts[i] && _today >= _wkStarts[i]){ defaultIdx=i; break; } }
+  navEl.innerHTML   = weeks.map((w,i) => `<button class="wt-btn${!w.mainMessage?' empty':''}${i===defaultIdx?' active':''}" data-idx="${i}"><span class="wt-week">${w.label}</span><span class="wt-date">${!w.mainMessage?'미입력':w.date}</span></button>`).join('');
   panelEl.innerHTML = weeks.map((w,i) => buildPanel(w,i)).join('');
 
   /* 운동 처방 가이드 + 유산소 강도 가이드 초기화 */
@@ -837,7 +844,7 @@ function init(data) {
   });
 
   navEl.querySelectorAll('.wt-btn').forEach(btn => btn.addEventListener('click', function(){ switchWeek(parseInt(this.dataset.idx)); }));
-  switchWeek(0);
+  switchWeek(defaultIdx);
 
   /* 달력 */
   document.querySelectorAll('.weekly-cal').forEach(cal => {
