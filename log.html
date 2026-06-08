@@ -166,7 +166,7 @@ function renderWeek(w) {
     }).join('');
   }
   const hasCheckins = Object.keys(checkins).length > 0;
-  const hasData = w.mainMessage || w.summary?.date || w.memberComment || w.sessionDates?.length || hasCheckins;
+  const hasData = w.mainMessage || w.summary?.date || w.summaries?.length || w.memberComment || w.sessionDates?.length || hasCheckins;
 
   const days   = w.weeklyRoutine?.days || [];
   const lesson = days.filter(d => d.workout?.includes('레슨')).length;
@@ -217,7 +217,8 @@ function renderWeek(w) {
   const memberNoteHtml = memberNotes
     ? `<div class="wr-comment" style="margin-top:6px;color:#5a7a9a">📝 ${latestDate ? latestDate.slice(5).replace('-','/') + ' ' : ''}${memberNotes}</div>` : '';
 
-  const items = (w.summary?.items||[]).map(it => `· ${it.name}　${it.detail}`).join('<br>');
+  const allItems = (w.summaries||[]).flatMap(s=>s.items||[]).concat(w.summary?.items||[]);
+  const items = allItems.map(it => `· ${it.name}　${it.detail}`).join('<br>');
   const exHtml = items ? `<div class="wr-exercises">${items}</div>` : '';
 
   const memoHtml = w.nextSessionMemo
