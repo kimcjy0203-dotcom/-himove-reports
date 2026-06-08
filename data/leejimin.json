@@ -1,0 +1,712 @@
+{
+  "name": "이지민",
+  "month": "2026년 6월",
+  "purposes": [
+    "체중감량",
+    "근육증가",
+    "근력강화",
+    "체력향상",
+    "건강관리",
+    "자세교정"
+  ],
+  "goals": {
+    "short": {
+      "text": "하루 칼로리 299 적자 실천 + 가슴 스트레칭 매일 (캣카우)",
+      "period": "1개월"
+    },
+    "mid": {
+      "text": "8월 드레스 투어까지 52-53kg 달성",
+      "period": "2개월"
+    },
+    "long": {
+      "text": "본식까지 47kg 달성 — 팔뚝·허벅지·뱃살 제거",
+      "period": "6개월+"
+    }
+  },
+  "bodyGoals": {
+    "weight": {
+      "start": 55.5,
+      "goal": 47.0
+    },
+    "muscle": {
+      "start": 18.6,
+      "goal": 20.0
+    },
+    "fat": {
+      "start": 20.5,
+      "goal": 11.0
+    }
+  },
+  "cardio": {
+    "age": 32,
+    "restingHR": 70
+  },
+  "orm": {
+    "weight": 0,
+    "reps": 0,
+    "goal": "자세교정·근력강화"
+  },
+  "weeks": [
+    {
+      "week": 1,
+      "label": "1주차",
+      "date": "6/1",
+      "mainMessage": "",
+      "summaries": [],
+      "exercises": [],
+      "lifts": [],
+      "bodyData": {
+        "labels": [
+          "5/27"
+        ],
+        "weight": [
+          55.5
+        ],
+        "fat": [
+          20.5
+        ],
+        "muscle": [
+          18.6
+        ],
+        "lastMeasured": "2026-05-27",
+        "comment": "PT 시작 전 기초 인바디"
+      },
+      "condition": "보통",
+      "conditionNote": "",
+      "sleep": "보통",
+      "sleepNote": "",
+      "stress": "보통",
+      "pain": "없음",
+      "painNote": "",
+      "nutrition": "보통",
+      "nutritionNote": "",
+      "review": {
+        "good": "",
+        "caution": "",
+        "suggest": ""
+      },
+      "trainerComment": "",
+      "trainerDirection": "",
+      "nextSessionMemo": "",
+      "finalMessage": "",
+      "musclesWorked": [],
+      "sessionDates": [],
+      "memberComment": "",
+      "weeklyRoutine": {
+        "weekKey": "2026-W23-lj",
+        "note": "🎯 1주차: 루틴 시작 · 기초 체력 확인",
+        "days": [
+          {
+            "day": "월",
+            "workout": "레슨",
+            "rest": false
+          },
+          {
+            "day": "화",
+            "workout": "유산소 30분",
+            "rest": false,
+            "plan": [
+              {
+                "name": "빠른 걷기 or 트레드밀",
+                "sets": 1,
+                "reps": 1,
+                "weight": "30분"
+              },
+              {
+                "name": "캣카우 (가슴 스트레칭)",
+                "sets": 3,
+                "reps": 10,
+                "weight": "-"
+              }
+            ]
+          },
+          {
+            "day": "수",
+            "workout": "개인-하체",
+            "rest": false,
+            "plan": [
+              {
+                "name": "스쿼트",
+                "sets": 3,
+                "reps": 15,
+                "weight": "-"
+              },
+              {
+                "name": "런지",
+                "sets": 3,
+                "reps": 12,
+                "weight": "양쪽"
+              },
+              {
+                "name": "힙브릿지",
+                "sets": 3,
+                "reps": 15,
+                "weight": "-"
+              }
+            ]
+          },
+          {
+            "day": "목",
+            "workout": "레슨",
+            "rest": false
+          },
+          {
+            "day": "금",
+            "workout": "개인-전신",
+            "rest": false,
+            "plan": [
+              {
+                "name": "푸쉬업 플러스",
+                "sets": 3,
+                "reps": 10,
+                "weight": "-"
+              },
+              {
+                "name": "스쿼트",
+                "sets": 3,
+                "reps": 15,
+                "weight": "-"
+              },
+              {
+                "name": "플랭크",
+                "sets": 3,
+                "reps": 1,
+                "weight": "30초"
+              }
+            ]
+          },
+          {
+            "day": "토",
+            "workout": "자율운동",
+            "rest": false,
+            "plan": [
+              {
+                "name": "산책 or 스트레칭",
+                "sets": 1,
+                "reps": 1,
+                "weight": "30분+"
+              }
+            ]
+          },
+          {
+            "day": "일",
+            "workout": "휴식",
+            "rest": true
+          }
+        ]
+      }
+    },
+    {
+      "week": 2,
+      "label": "2주차",
+      "date": "6/8",
+      "mainMessage": "푸쉬업 플러스·암 익스텐션·오버헤드 트라이셉스 — 상체 근육 재건의 시작이에요. 손바닥으로 바닥을 밀어내는 그 느낌, 꼭 기억해두세요!",
+      "summaries": [
+        {
+          "sessionDate": "2026-06-08",
+          "date": "2026년 6월 8일",
+          "items": [
+            {
+              "name": "고양이&소자세 (벽)",
+              "detail": "워밍업"
+            },
+            {
+              "name": "가슴 스트레칭",
+              "detail": "워밍업"
+            },
+            {
+              "name": "푸쉬업 플러스",
+              "detail": "3세트 × 10회"
+            },
+            {
+              "name": "암 익스텐션",
+              "detail": "3세트"
+            },
+            {
+              "name": "오버헤드 트라이셉스 익스텐션",
+              "detail": "3세트 / 2kg"
+            }
+          ]
+        }
+      ],
+      "exercises": [
+        {
+          "name": "푸쉬업 플러스",
+          "note": "· 손 가슴 옆 라인에 두고 손바닥 전체로 밀어내기<br>· 올라가서 몸 전체 일직선 유지<br>· 내려갈 때 10-20% 미는 힘 남기기",
+          "next": "손바닥이 바닥을 밀어내는 감각이 핵심이에요 — 내려갈 때도 그 힘을 끝까지 유지해요"
+        },
+        {
+          "name": "암 익스텐션",
+          "note": "· 엎드려서 팔 아래로 뻗어 내리기<br>· 팔꿈치 편 상태로 위아래 움직이기<br>· 오른쪽 팔꿈치 접히지 않도록 주의",
+          "next": "오른쪽 팔꿈치가 자꾸 접히려 해요 — 의식적으로 쭉 펴는 느낌으로 유지해요"
+        },
+        {
+          "name": "오버헤드 트라이셉스 익스텐션",
+          "note": "· 머리 위 2kg 든 상태에서 팔꿈치 90도로 내렸다 펴기<br>· 어깨 관절이 따라 움직이지 않도록 고정",
+          "next": "어깨가 함께 움직이면 삼두 자극이 줄어요 — 어깨를 먼저 잠근 후 팔꿈치만 움직여요"
+        }
+      ],
+      "lifts": [],
+      "bodyData": {
+        "labels": [
+          "5/27",
+          "6/8"
+        ],
+        "weight": [
+          55.5,
+          null
+        ],
+        "fat": [
+          20.5,
+          null
+        ],
+        "muscle": [
+          18.6,
+          18.1
+        ],
+        "lastMeasured": "2026-06-08",
+        "comment": "6/8 골격근량만 측정 — 체중·체지방 추후 업데이트"
+      },
+      "condition": "보통",
+      "conditionNote": "컨디션 난조",
+      "sleep": "보통",
+      "sleepNote": "",
+      "stress": "보통",
+      "pain": "있음",
+      "painNote": "",
+      "nutrition": "보통",
+      "nutritionNote": "",
+      "review": {
+        "good": "첫 수업인데 집중력이 좋았어요 — 특히 푸쉬업 플러스에서 밀어내는 힘을 잘 이해하셨어요.",
+        "caution": "오른쪽 팔꿈치가 접히는 습관 주의 — 암 익스텐션과 트라이셉스 운동 때 특히 의식해요.",
+        "suggest": "가슴 스트레칭(캣카우)을 매일 1-2분 꾸준히 하면 자세가 빠르게 달라져요. 드레스 라인에 직접 영향 줘요!"
+      },
+      "trainerComment": "처음이라 낯설었을 텐데 잘 따라와 주셨어요! 오른쪽 팔꿈치만 계속 체크하면 팔뚝 라인이 예쁘게 잡힐 거예요.",
+      "trainerDirection": "상체 자세교정 우선 — 푸쉬업 플러스 10회 3세트 완성 후 무게/횟수 단계적 증가",
+      "nextSessionMemo": "오른쪽 팔꿈치 과신전 재확인 / 암 익스텐션 횟수 늘리기 / 컨디션 체크",
+      "finalMessage": "",
+      "musclesWorked": [
+        "chest",
+        "triceps"
+      ],
+      "sessionDates": [
+        "2026-06-08"
+      ],
+      "memberComment": "",
+      "weeklyRoutine": {
+        "weekKey": "2026-W24-lj",
+        "note": "🎯 2주차: 상체 자세 잡기 · 팔뚝 라인 시작",
+        "days": [
+          {
+            "day": "월",
+            "workout": "레슨-상체",
+            "rest": false
+          },
+          {
+            "day": "화",
+            "workout": "유산소 30분",
+            "rest": false,
+            "plan": [
+              {
+                "name": "빠른 걷기 or 트레드밀",
+                "sets": 1,
+                "reps": 1,
+                "weight": "30분"
+              },
+              {
+                "name": "캣카우 (가슴 스트레칭)",
+                "sets": 3,
+                "reps": 10,
+                "weight": "-"
+              }
+            ]
+          },
+          {
+            "day": "수",
+            "workout": "개인-하체",
+            "rest": false,
+            "plan": [
+              {
+                "name": "스쿼트",
+                "sets": 3,
+                "reps": 15,
+                "weight": "-"
+              },
+              {
+                "name": "런지",
+                "sets": 3,
+                "reps": 12,
+                "weight": "양쪽"
+              },
+              {
+                "name": "힙브릿지",
+                "sets": 3,
+                "reps": 15,
+                "weight": "-"
+              }
+            ]
+          },
+          {
+            "day": "목",
+            "workout": "레슨-하체",
+            "rest": false
+          },
+          {
+            "day": "금",
+            "workout": "개인-전신",
+            "rest": false,
+            "plan": [
+              {
+                "name": "푸쉬업 플러스",
+                "sets": 3,
+                "reps": 10,
+                "weight": "-"
+              },
+              {
+                "name": "스쿼트",
+                "sets": 3,
+                "reps": 15,
+                "weight": "-"
+              },
+              {
+                "name": "플랭크",
+                "sets": 3,
+                "reps": 1,
+                "weight": "30초"
+              },
+              {
+                "name": "캣카우",
+                "sets": 3,
+                "reps": 10,
+                "weight": "-"
+              }
+            ]
+          },
+          {
+            "day": "토",
+            "workout": "자율운동",
+            "rest": false,
+            "plan": [
+              {
+                "name": "산책 or 스트레칭",
+                "sets": 1,
+                "reps": 1,
+                "weight": "30분+"
+              }
+            ]
+          },
+          {
+            "day": "일",
+            "workout": "휴식",
+            "rest": true
+          }
+        ]
+      }
+    },
+    {
+      "week": 3,
+      "label": "3주차",
+      "date": "6/15",
+      "mainMessage": "",
+      "summaries": [],
+      "exercises": [],
+      "lifts": [],
+      "bodyData": {
+        "labels": [],
+        "weight": [],
+        "fat": [],
+        "muscle": [],
+        "lastMeasured": null,
+        "comment": ""
+      },
+      "condition": "보통",
+      "conditionNote": "",
+      "sleep": "보통",
+      "sleepNote": "",
+      "stress": "보통",
+      "pain": "없음",
+      "painNote": "",
+      "nutrition": "보통",
+      "nutritionNote": "",
+      "review": {
+        "good": "",
+        "caution": "",
+        "suggest": ""
+      },
+      "trainerComment": "",
+      "trainerDirection": "",
+      "nextSessionMemo": "",
+      "finalMessage": "",
+      "musclesWorked": [],
+      "sessionDates": [],
+      "memberComment": "",
+      "weeklyRoutine": {
+        "weekKey": "2026-W25-lj",
+        "note": "🎯 3주차: 강도 소폭 증가 · 하체 루틴 추가",
+        "days": [
+          {
+            "day": "월",
+            "workout": "레슨-상체",
+            "rest": false
+          },
+          {
+            "day": "화",
+            "workout": "유산소 35분",
+            "rest": false,
+            "plan": [
+              {
+                "name": "빠른 걷기 or 가벼운 조깅",
+                "sets": 1,
+                "reps": 1,
+                "weight": "35분"
+              },
+              {
+                "name": "캣카우",
+                "sets": 3,
+                "reps": 10,
+                "weight": "-"
+              }
+            ]
+          },
+          {
+            "day": "수",
+            "workout": "개인-하체",
+            "rest": false,
+            "plan": [
+              {
+                "name": "스쿼트",
+                "sets": 3,
+                "reps": 15,
+                "weight": "-"
+              },
+              {
+                "name": "런지",
+                "sets": 3,
+                "reps": 12,
+                "weight": "양쪽"
+              },
+              {
+                "name": "힙브릿지 (싱글 레그)",
+                "sets": 3,
+                "reps": 12,
+                "weight": "양쪽"
+              }
+            ]
+          },
+          {
+            "day": "목",
+            "workout": "레슨-하체",
+            "rest": false
+          },
+          {
+            "day": "금",
+            "workout": "개인-전신",
+            "rest": false,
+            "plan": [
+              {
+                "name": "푸쉬업 플러스",
+                "sets": 3,
+                "reps": 12,
+                "weight": "-"
+              },
+              {
+                "name": "스쿼트",
+                "sets": 3,
+                "reps": 15,
+                "weight": "-"
+              },
+              {
+                "name": "플랭크",
+                "sets": 3,
+                "reps": 1,
+                "weight": "40초"
+              }
+            ]
+          },
+          {
+            "day": "토",
+            "workout": "자율운동",
+            "rest": false,
+            "plan": [
+              {
+                "name": "산책 or 자전거",
+                "sets": 1,
+                "reps": 1,
+                "weight": "40분+"
+              }
+            ]
+          },
+          {
+            "day": "일",
+            "workout": "휴식",
+            "rest": true
+          }
+        ]
+      }
+    },
+    {
+      "week": 4,
+      "label": "4주차",
+      "date": "6/22",
+      "mainMessage": "",
+      "summaries": [],
+      "exercises": [],
+      "lifts": [],
+      "bodyData": {
+        "labels": [],
+        "weight": [],
+        "fat": [],
+        "muscle": [],
+        "lastMeasured": null,
+        "comment": ""
+      },
+      "condition": "보통",
+      "conditionNote": "",
+      "sleep": "보통",
+      "sleepNote": "",
+      "stress": "보통",
+      "pain": "없음",
+      "painNote": "",
+      "nutrition": "보통",
+      "nutritionNote": "",
+      "review": {
+        "good": "",
+        "caution": "",
+        "suggest": ""
+      },
+      "trainerComment": "",
+      "trainerDirection": "",
+      "nextSessionMemo": "",
+      "finalMessage": "",
+      "musclesWorked": [],
+      "sessionDates": [],
+      "memberComment": "",
+      "weeklyRoutine": {
+        "weekKey": "2026-W26-lj",
+        "note": "🎯 4주차: 한 달 마무리 · 인바디 재측정 · 52-53kg 중간 목표 확인",
+        "days": [
+          {
+            "day": "월",
+            "workout": "레슨-상체",
+            "rest": false
+          },
+          {
+            "day": "화",
+            "workout": "유산소 40분",
+            "rest": false,
+            "plan": [
+              {
+                "name": "인터벌 워킹 (1분 빠름/2분 보통)",
+                "sets": 1,
+                "reps": 1,
+                "weight": "40분"
+              },
+              {
+                "name": "캣카우",
+                "sets": 3,
+                "reps": 10,
+                "weight": "-"
+              }
+            ]
+          },
+          {
+            "day": "수",
+            "workout": "개인-하체",
+            "rest": false,
+            "plan": [
+              {
+                "name": "스쿼트",
+                "sets": 3,
+                "reps": 15,
+                "weight": "-"
+              },
+              {
+                "name": "런지",
+                "sets": 3,
+                "reps": 15,
+                "weight": "양쪽"
+              },
+              {
+                "name": "힙브릿지",
+                "sets": 3,
+                "reps": 20,
+                "weight": "-"
+              }
+            ]
+          },
+          {
+            "day": "목",
+            "workout": "레슨-하체",
+            "rest": false
+          },
+          {
+            "day": "금",
+            "workout": "개인-전신",
+            "rest": false,
+            "plan": [
+              {
+                "name": "푸쉬업 플러스",
+                "sets": 3,
+                "reps": 12,
+                "weight": "-"
+              },
+              {
+                "name": "스쿼트",
+                "sets": 3,
+                "reps": 15,
+                "weight": "-"
+              },
+              {
+                "name": "플랭크",
+                "sets": 3,
+                "reps": 1,
+                "weight": "45초"
+              },
+              {
+                "name": "캣카우",
+                "sets": 3,
+                "reps": 10,
+                "weight": "-"
+              }
+            ]
+          },
+          {
+            "day": "토",
+            "workout": "자율운동",
+            "rest": false,
+            "plan": [
+              {
+                "name": "산책 or 스트레칭",
+                "sets": 1,
+                "reps": 1,
+                "weight": "40분+"
+              }
+            ]
+          },
+          {
+            "day": "일",
+            "workout": "휴식",
+            "rest": true
+          }
+        ]
+      }
+    }
+  ],
+  "quotes": [
+    "결혼식 날의 나는 지금 이 순간 만들어지고 있다.",
+    "드레스가 몸에 맞는 게 아니라, 내 몸이 드레스를 빛내는 것이다.",
+    "완벽하지 않아도 된다. 어제보다 더 나아지기만 하면 된다.",
+    "꾸준함이 재능을 이긴다.",
+    "오늘 나온 것 자체가 이미 절반의 성공이다.",
+    "작은 변화가 모여 큰 차이를 만든다.",
+    "힘든 하루를 이긴 나는, 더 강한 나다.",
+    "가장 예쁜 날을 위해, 오늘도 한 걸음.",
+    "운동을 빠진 날보다 나온 날을 세어라.",
+    "오늘의 땀이 그날의 빛이 된다."
+  ],
+  "sessions": {
+    "total": 30,
+    "completed": 10
+  },
+  "monthlySummary": []
+}
