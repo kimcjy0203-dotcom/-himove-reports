@@ -32,14 +32,7 @@
       "summaries": [],
       "exercises": [],
       "lifts": [],
-      "bodyData": {
-        "labels": ["6/8"],
-        "weight": [73.4],
-        "fat":    [22.9],
-        "muscle": [28.0],
-        "lastMeasured": "2026-06-08",
-        "comment": "PT 시작 인바디"
-      },
+      "bodyData": { "labels": [], "weight": [], "fat": [], "muscle": [], "lastMeasured": null, "comment": "" },
       "condition": "", "conditionNote": "",
       "sleep": "", "sleepNote": "",
       "stress": "",
@@ -85,7 +78,14 @@
       "summaries": [],
       "exercises": [],
       "lifts": [],
-      "bodyData": { "labels": [], "weight": [], "fat": [], "muscle": [], "lastMeasured": null, "comment": "" },
+      "bodyData": {
+        "labels": ["6/8"],
+        "weight": [73.4],
+        "fat":    [22.9],
+        "muscle": [28.0],
+        "lastMeasured": "2026-06-08",
+        "comment": "PT 시작 인바디"
+      },
       "condition": "", "conditionNote": "",
       "sleep": "", "sleepNote": "",
       "stress": "",
