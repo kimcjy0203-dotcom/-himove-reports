@@ -106,7 +106,9 @@ h1 { font-size: 20px; font-weight: 800; color: #1a2a40; letter-spacing: -0.8px; 
   const ci = new URLSearchParams(window.location.search).get('ci');
   if (!ci) return;
   try {
-    const d = JSON.parse(decodeURIComponent(escape(atob(ci))));
+    const b64 = ci.replace(/-/g,'+').replace(/_/g,'/');
+    const b64p = b64 + '='.repeat((4 - b64.length % 4) % 4);
+    const d = JSON.parse(decodeURIComponent(escape(atob(b64p))));
     if (d.wk && d.d) {
       const key = `hm-week-${d.wk}`;
       const wd  = JSON.parse(localStorage.getItem(key) || '{}');

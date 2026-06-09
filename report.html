@@ -716,7 +716,7 @@ function init(data) {
         wouts: doneList,
         wm: wmText,
       };
-      const ciParam = btoa(unescape(encodeURIComponent(JSON.stringify(ciData))));
+      const ciParam = btoa(unescape(encodeURIComponent(JSON.stringify(ciData)))).replace(/\+/g,'-').replace(/\//g,'_').replace(/=/g,'');
       const base    = window.location.href.split('?')[0].replace(/[^/]*$/, '');
       const logUrl  = `${base}log.html?ci=${ciParam}`;
       const text = `[himove 체크인 — ${data.name} ${new Date().toLocaleDateString('ko-KR',{month:'long',day:'numeric'})}]\n` + lines.join('\n') + `\n\n📋 로그 업데이트: ${logUrl}`;
