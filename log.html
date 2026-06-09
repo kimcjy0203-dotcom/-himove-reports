@@ -120,6 +120,7 @@ h1 { font-size: 20px; font-weight: 800; color: #1a2a40; letter-spacing: -0.8px; 
       if (d.pn) wd[d.d].pain_note      = d.pn;
       if (d.wouts?.length) wd._workouts = d.wouts;
       localStorage.setItem(key, JSON.stringify(wd));
+      if (d.wm) localStorage.setItem(`hm-wmemo-${d.wk}`, d.wm);
     }
     const url = new URL(window.location);
     url.searchParams.delete('ci');
@@ -149,8 +150,10 @@ function badge(label, val, map) {
 
 function renderWeek(w) {
   // localStorage 회원 체크인 데이터 읽기
-  const wk = `hm-week-${w.weeklyRoutine?.weekKey}`;
+  const wk    = `hm-week-${w.weeklyRoutine?.weekKey}`;
+  const wmKey = `hm-wmemo-${w.weeklyRoutine?.weekKey}`;
   const checkins = JSON.parse(localStorage.getItem(wk) || '{}');
+  const wmText   = (localStorage.getItem(wmKey) || '').trim();
   function getCounts(field) {
     const cnt = {};
     Object.values(checkins).forEach(day => {
@@ -165,7 +168,7 @@ function renderWeek(w) {
       return `<span class="badge" style="background:${bg};color:${color}">${k} ${v}</span>`;
     }).join('');
   }
-  const hasCheckins = Object.keys(checkins).length > 0;
+  const hasCheckins = Object.keys(checkins).length > 0 || !!wmText;
   const hasData = w.mainMessage || w.summary?.date || w.summaries?.length || w.memberComment || w.sessionDates?.length || hasCheckins;
 
   const days   = w.weeklyRoutine?.days || [];
@@ -217,6 +220,9 @@ function renderWeek(w) {
   const memberNoteHtml = memberNotes
     ? `<div class="wr-comment" style="margin-top:6px;color:#5a7a9a">📝 ${latestDate ? latestDate.slice(5).replace('-','/') + ' ' : ''}${memberNotes}</div>` : '';
 
+  const wmHtml = wmText
+    ? `<div class="wr-comment" style="margin-top:6px;color:#3a7a5a;white-space:pre-line">✏️ 개인운동: ${wmText}</div>` : '';
+
   const allItems = (w.summaries||[]).flatMap(s=>s.items||[]).concat(w.summary?.items||[]);
   const items = allItems.map(it => `· ${it.name}　${it.detail}`).join('<br>');
   const exHtml = items ? `<div class="wr-exercises">${items}</div>` : '';
@@ -224,7 +230,7 @@ function renderWeek(w) {
   const memoHtml = w.nextSessionMemo
     ? `<div class="wr-memo"><div class="wr-memo-label">📌 다음 수업 체크</div>${w.nextSessionMemo}</div>` : '';
 
-  const hasDetail = commentHtml || memberNoteHtml || exHtml || memoHtml;
+  const hasDetail = commentHtml || memberNoteHtml || wmHtml || exHtml || memoHtml;
 
   if (!hasData) return '';
   return `<div class="week-row">
@@ -234,7 +240,7 @@ function renderWeek(w) {
       ${sessionBadges ? `<div class="badges">${sessionBadges}</div>` : ''}
     </div>
     ${badgeHtml ? `<div class="badges">${badgeHtml}</div>` : ''}
-    ${hasDetail ? `<div class="wr-detail">${commentHtml}${memberNoteHtml}${exHtml}${memoHtml}</div>` : ''}
+    ${hasDetail ? `<div class="wr-detail">${commentHtml}${memberNoteHtml}${wmHtml}${exHtml}${memoHtml}</div>` : ''}
   </div>`;
 }
 
