@@ -26,12 +26,12 @@
       "goal": 50.2
     },
     "muscle": {
-      "start": 23.0,
+      "start": 23,
       "goal": 23.5
     },
     "fat": {
       "start": 10.3,
-      "goal": 9.0
+      "goal": 9
     }
   },
   "cardio": {
@@ -137,7 +137,7 @@
           10.3
         ],
         "muscle": [
-          23.0
+          23
         ],
         "lastMeasured": "2026-06-02",
         "comment": "인바디 측정 후 업데이트 예정이에요."
@@ -401,13 +401,13 @@
         "lastMeasured": null,
         "comment": ""
       },
-      "condition": "",
+      "condition": "좋음",
       "conditionNote": "",
-      "sleep": "",
+      "sleep": "좋음",
       "sleepNote": "",
       "stress": "",
       "pain": "있음",
-      "painNote": "허리 통증",
+      "painNote": "근육통!!",
       "nutrition": "보통",
       "nutritionNote": "",
       "review": {
@@ -526,6 +526,7 @@
         ]
       },
       "sessionDates": [
+        "2026-06-09",
         "2026-06-08"
       ],
       "summaries": [
@@ -551,7 +552,8 @@
             }
           ]
         }
-      ]
+      ],
+      "memberComment": "폼롤러, 데드버그, 버드독"
     },
     {
       "week": 3,
