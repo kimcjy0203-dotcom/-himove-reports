@@ -26,15 +26,15 @@
   "bodyGoals": {
     "weight": {
       "start": 55.5,
-      "goal": 47.0
+      "goal": 47
     },
     "muscle": {
       "start": 18.6,
-      "goal": 20.0
+      "goal": 20
     },
     "fat": {
       "start": 20.5,
-      "goal": 11.0
+      "goal": 11
     }
   },
   "cardio": {
@@ -313,13 +313,13 @@
         "lastMeasured": "2026-06-08",
         "comment": ""
       },
-      "condition": "",
-      "conditionNote": "컨디션 난조",
-      "sleep": "",
-      "sleepNote": "",
+      "condition": "보통",
+      "conditionNote": "약간의 생리통이슈가 있어요ㅠㅠ",
+      "sleep": "나쁨",
+      "sleepNote": "제가 원래 수면의 질이 안좋아요ㅠㅠ 깊게 못자는편입니다",
       "stress": "",
       "pain": "있음",
-      "painNote": "",
+      "painNote": "월요일 운동하고서 근육통이 있어요..ㅎㅎ",
       "nutrition": "보통",
       "nutritionNote": "",
       "review": {
@@ -343,7 +343,7 @@
         "2026-06-10",
         "2026-06-08"
       ],
-      "memberComment": "",
+      "memberComment": "오늘 밤에 일단 스트레칭을 해보겠습니당",
       "weeklyRoutine": {
         "weekKey": "2026-W24-lj",
         "note": "🎯 2주차: 상체 자세 잡기 · 팔뚝 라인 시작",
