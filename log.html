@@ -407,8 +407,7 @@ function savePat() {
   const v = document.getElementById('pat-input').value.trim();
   if (!v) return;
   localStorage.setItem('hm_gh_pat', v);
-  document.getElementById('pat-setup').style.display = 'none';
-  alert('저장됐어요! 이제 체크인 링크를 클릭하면 자동으로 반영됩니다.');
+  location.reload();
 }
 
 function handleSearch(val) {
