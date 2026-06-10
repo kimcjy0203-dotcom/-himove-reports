@@ -610,7 +610,7 @@ function init(data) {
   function initDailyStatus(idx) {
     const sec = document.getElementById(`ds-${idx}`);
     if (!sec) return;
-    const sk    = `daily-status-${todayKey}-${idx}`;
+    const sk    = `daily-status-${currentMemberId}-${todayKey}-${idx}`;
     const wk    = `hm-week-${weeks[idx]?.weeklyRoutine?.weekKey || idx}`;
     const wmKey = `hm-wmemo-${weeks[idx]?.weeklyRoutine?.weekKey || idx}`;
     const saved    = JSON.parse(localStorage.getItem(sk) || '{}');
