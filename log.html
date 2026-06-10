@@ -290,15 +290,25 @@ function renderWeek(w) {
   const commentHtml = w.memberComment
     ? `<div class="wr-comment">💬 ${w.memberComment}</div>` : '';
 
-  // 회원이 오늘 남긴 메모 (localStorage)
+  // JSON에 저장된 체크인 상세 메모 표시 (영구 저장 후에도 보임)
+  const jsonNoteLines = [
+    w.conditionNote?.trim() ? `컨디션: ${w.conditionNote}` : '',
+    w.sleepNote?.trim()     ? `수면: ${w.sleepNote}` : '',
+    w.painNote?.trim()      ? `신체 불편: ${w.painNote}` : '',
+    w.nutritionNote?.trim() ? `영양: ${w.nutritionNote}` : '',
+  ].filter(Boolean);
+  const jsonNoteHtml = jsonNoteLines.length
+    ? `<div class="wr-comment" style="color:#5a7a9a;white-space:pre-line">📝 ${jsonNoteLines.join('\n')}</div>` : '';
+
+  // 회원이 오늘 남긴 메모 (localStorage — 같은 브라우저에서 바로 볼 때)
   const NOTE_LABELS = {condition_note:'컨디션', sleep_note:'수면', pain_note:'신체 불편', nutrition_note:'영양'};
   const latestDate = Object.keys(checkins).sort().at(-1);
   const latestDay = latestDate ? checkins[latestDate] : {};
   const memberNotes = Object.entries(NOTE_LABELS)
     .filter(([k]) => latestDay[k]?.trim())
-    .map(([k, label]) => `${label}: ${latestDay[k]}`).join(' · ');
-  const memberNoteHtml = memberNotes
-    ? `<div class="wr-comment" style="margin-top:6px;color:#5a7a9a">📝 ${latestDate ? latestDate.slice(5).replace('-','/') + ' ' : ''}${memberNotes}</div>` : '';
+    .map(([k, label]) => `${label}: ${latestDay[k]}`).join('\n');
+  const memberNoteHtml = memberNotes && !jsonNoteHtml
+    ? `<div class="wr-comment" style="margin-top:6px;color:#5a7a9a;white-space:pre-line">📝 ${memberNotes}</div>` : '';
 
   const wmHtml = wmText
     ? `<div class="wr-comment" style="margin-top:6px;color:#3a7a5a;white-space:pre-line">✏️ 개인운동: ${wmText}</div>` : '';
@@ -310,7 +320,7 @@ function renderWeek(w) {
   const memoHtml = w.nextSessionMemo
     ? `<div class="wr-memo"><div class="wr-memo-label">📌 다음 수업 체크</div>${w.nextSessionMemo}</div>` : '';
 
-  const hasDetail = commentHtml || memberNoteHtml || wmHtml || exHtml || memoHtml;
+  const hasDetail = commentHtml || jsonNoteHtml || memberNoteHtml || wmHtml || exHtml || memoHtml;
 
   if (!hasData) return '';
   return `<div class="week-row">
@@ -319,8 +329,9 @@ function renderWeek(w) {
       <span class="wr-date">${w.date||''}</span>
       ${sessionBadges ? `<div class="badges">${sessionBadges}</div>` : ''}
     </div>
+    ${(w.sessionDates||[]).length ? `<div class="badges">${w.sessionDates.map(d=>`<span class="s-badge s-actual">${d.slice(5).replace('-','/')}</span>`).join('')}</div>` : ''}
     ${badgeHtml ? `<div class="badges">${badgeHtml}</div>` : ''}
-    ${hasDetail ? `<div class="wr-detail">${commentHtml}${memberNoteHtml}${wmHtml}${exHtml}${memoHtml}</div>` : ''}
+    ${hasDetail ? `<div class="wr-detail">${commentHtml}${jsonNoteHtml}${memberNoteHtml}${wmHtml}${exHtml}${memoHtml}</div>` : ''}
   </div>`;
 }
 
