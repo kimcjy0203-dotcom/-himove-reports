@@ -108,7 +108,8 @@ window._ci = null;
   const ci = new URLSearchParams(window.location.search).get('ci');
   if (!ci) return;
   try {
-    const b64 = ci.replace(/-/g,'+').replace(/_/g,'/');
+    // 구형 링크(공백으로 깨진 +) + 신형 URL-safe(-/_) 모두 처리
+    const b64 = ci.replace(/ /g,'+').replace(/-/g,'+').replace(/_/g,'/');
     const b64p = b64 + '='.repeat((4 - b64.length % 4) % 4);
     const d = JSON.parse(decodeURIComponent(escape(atob(b64p))));
     window._ci = d; // 브라우저 무관하게 이번 페이지 로드에서 항상 사용
