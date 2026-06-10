@@ -350,11 +350,13 @@ function renderMember(member, data) {
   return `<div class="member-block" data-name="${data.name}">${header}${weeks.map(renderWeek).join('')}</div>`;
 }
 
-fetch(`data/members.json?v=${Date.now()}`)
-  .then(r => r.json())
+const RAW = `https://raw.githubusercontent.com/${GH_OWNER}/${GH_REPO}/main`;
+const fetchData = url => fetch(`${url}?v=${Date.now()}`).then(r=>r.json());
+
+fetchData(`${RAW}/data/members.json`)
   .then(members => Promise.all(
     members.map(m =>
-      fetch(`data/${m.id}.json?v=${Date.now()}`).then(r=>r.json()).then(data=>({member:m,data})).catch(()=>null)
+      fetchData(`${RAW}/data/${m.id}.json`).then(data=>({member:m,data})).catch(()=>null)
     )
   ))
   .then(results => {
@@ -384,8 +386,7 @@ fetch(`data/members.json?v=${Date.now()}`)
           banner.innerHTML = ok
             ? `✅ ${memberName}님 체크인 저장 완료 · ${parts.join(' · ')}`
             : `⚠️ ${memberName}님 체크인 수신 (저장 실패 — 화면에는 표시) · ${parts.join(' · ')}`;
-          // 저장 성공 시 페이지 새로고침으로 반영
-          if (ok) setTimeout(() => location.href = location.pathname, 1500);
+          if (ok) setTimeout(() => location.href = location.pathname, 2500);
         });
       } else {
         // 토큰 없음 — 화면 표시만
