@@ -158,7 +158,8 @@ async function saveCheckinToGitHub(ci) {
     const res = await fetch(apiBase, { headers: { Authorization: `token ${GH_TOKEN}`, Accept: 'application/vnd.github+json' } });
     if (!res.ok) throw new Error(`GET 실패: ${res.status}`);
     const { content, sha } = await res.json();
-    const data = JSON.parse(decodeURIComponent(escape(atob(content.replace(/\n/g, '')))));
+    const bytes = Uint8Array.from(atob(content.replace(/\n/g, '')), c => c.charCodeAt(0));
+    const data = JSON.parse(new TextDecoder().decode(bytes));
 
     // 해당 주차 찾기
     const week = data.weeks?.find(w => w.weeklyRoutine?.weekKey === ci.wk);
@@ -175,7 +176,9 @@ async function saveCheckinToGitHub(ci) {
     if (!week.sessionDates) week.sessionDates = [];
     if (!week.sessionDates.includes(ci.d)) week.sessionDates.unshift(ci.d);
 
-    const updated = btoa(unescape(encodeURIComponent(JSON.stringify(data, null, 2))));
+    const jsonBytes = new TextEncoder().encode(JSON.stringify(data, null, 2));
+    let binary = ''; jsonBytes.forEach(b => binary += String.fromCharCode(b));
+    const updated = btoa(binary);
     const putRes = await fetch(apiBase, {
       method: 'PUT',
       headers: { Authorization: `token ${GH_TOKEN}`, Accept: 'application/vnd.github+json', 'Content-Type': 'application/json' },
