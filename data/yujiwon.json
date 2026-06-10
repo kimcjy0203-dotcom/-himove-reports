@@ -232,12 +232,33 @@
       "week": 2,
       "label": "2주차",
       "date": "6/8",
-      "mainMessage": "",
+      "mainMessage": "스쿼트·힙런지·레그 프레스 — 하체 기초 근력의 뼈대를 다지는 주차예요. 동작을 크게, 깊게 가져가는 게 이번 달의 핵심이에요!",
       "summary": {
         "date": "",
         "items": []
       },
-      "exercises": [],
+      "exercises": [
+        {
+          "name": "스미스 머신 스쿼트",
+          "note": "· 중량 낮추고 동작 크게, 더 깊게 앉기<br>· 가동범위 확보가 우선",
+          "next": "깊이 앉는 느낌이 안정되면 중량을 단계적으로 올려요"
+        },
+        {
+          "name": "케이블 푸시다운",
+          "note": "· 라인이 얼굴에서 멀어지지 않도록<br>· 펴 내렸을 때 팔 전체 각도 수직 유지",
+          "next": "내릴 때 팔꿈치가 옆구리에 고정된 느낌으로 — 팔꿈치가 흔들리면 삼두 자극이 분산돼요"
+        },
+        {
+          "name": "힙런지 + 덤벨 킥백",
+          "note": "· 런지 순서 8:2 중심 이동<br>· 킥백 자세 좋음",
+          "next": "킥백에서 엉덩이 수축 느낌이 좋아요 — 런지에서도 그 힘을 이어받는 연습이에요"
+        },
+        {
+          "name": "레그 프레스",
+          "note": "· 20kg 20회 충분히 가능",
+          "next": "여유 있으면 다음엔 25kg으로 올려볼게요"
+        }
+      ],
       "lifts": [],
       "bodyData": {
         "labels": [],
@@ -264,8 +285,13 @@
       "trainerComment": "",
       "trainerDirection": "",
       "finalMessage": "",
-      "nextSessionMemo": "",
-      "musclesWorked": [],
+      "nextSessionMemo": "스쿼트 깊이 확인 / 레그 프레스 중량 25kg 시도",
+      "musclesWorked": [
+        "quads",
+        "glutes",
+        "hamstrings",
+        "triceps"
+      ],
       "weeklyRoutine": {
         "weekKey": "2026-W24-yw",
         "note": "🎯 2주차: 월-하체1(레슨) · 화-상체가슴(개인) · 목-상체등(레슨) · 금-하체2(개인)",
@@ -441,7 +467,37 @@
           }
         ]
       },
-      "sessionDates": []
+      "sessionDates": [
+        "2026-06-08"
+      ],
+      "summaries": [
+        {
+          "sessionDate": "2026-06-08",
+          "date": "2026년 6월 8일",
+          "items": [
+            {
+              "name": "스미스 머신 스쿼트",
+              "detail": "3세트 × 10회 / 2.5kg"
+            },
+            {
+              "name": "케이블 푸시다운",
+              "detail": "3세트 × 15회 / 5kg"
+            },
+            {
+              "name": "힙런지 + 덤벨 킥백",
+              "detail": "3세트"
+            },
+            {
+              "name": "레그 프레스",
+              "detail": "3세트 × 20회 / 20kg"
+            },
+            {
+              "name": "유산소",
+              "detail": "30분"
+            }
+          ]
+        }
+      ]
     },
     {
       "week": 3,
@@ -888,6 +944,6 @@
   ],
   "sessions": {
     "total": 20,
-    "completed": 13
+    "completed": 14
   }
 }

@@ -45,7 +45,7 @@
   },
   "sessions": {
     "total": 20,
-    "completed": 1
+    "completed": 3
   },
   "weeks": [
     {
@@ -323,12 +323,28 @@
       "week": 2,
       "label": "2주차",
       "date": "6/8",
-      "mainMessage": "",
+      "mainMessage": "컨벤셔널 데드리프트·리버스 런지·코삭 스쿼트 — 고관절 패턴의 핵심을 다졌어요. 무릎 아래에서 고관절을 더 깊이 접는 그 감각, 계속 기억해요!",
       "summary": {
         "date": "",
         "items": []
       },
-      "exercises": [],
+      "exercises": [
+        {
+          "name": "컨벤셔널 데드리프트",
+          "note": "· 무릎 아래에서 고관절을 더 깊게 접어 내려가기<br>· 고관절 접힘이 깊어질수록 햄스트링 자극이 강해짐",
+          "next": "내려갈 때 고관절 접힘을 더 의식해요 — 깊게 접을수록 당기는 느낌이 정확해져요"
+        },
+        {
+          "name": "리버스 런지 (원암 숄더)",
+          "note": "· 리그레이션으로 진행<br>· 마지막 한 다리 리버스 런지 → 니업 연결 동작 추가<br>· 안정적임<br>· 오른 다리 무릎 관절 최대 수축 약간의 어려움",
+          "next": "오른 무릎 최대로 구부리는 연습 — 무릎 굽힘 가동범위가 늘어나면 니업 연결이 더 자연스러워져요"
+        },
+        {
+          "name": "코삭 스쿼트",
+          "note": "· 흉추 회전 되지 않도록 고정<br>· 척추 신전 힘이 중간에 살짝 풀림",
+          "next": "앉는 내내 가슴을 세운 상태 유지 — 척추가 펴진 채 고관절만 움직이는 게 핵심이에요"
+        }
+      ],
       "lifts": [],
       "bodyData": {
         "labels": [],
@@ -343,8 +359,8 @@
       "sleep": "보통",
       "sleepNote": "",
       "stress": "보통",
-      "pain": "없음",
-      "painNote": "",
+      "pain": "있음",
+      "painNote": "오른 다리 무릎 관절 최대 수축 제한",
       "nutrition": "보통",
       "nutritionNote": "",
       "review": {
@@ -354,9 +370,14 @@
       },
       "trainerComment": "",
       "trainerDirection": "",
-      "nextSessionMemo": "",
+      "nextSessionMemo": "오른 다리 무릎 최대 수축 확인 / 코삭 스쿼트 척추 신전 유지",
       "finalMessage": "",
-      "musclesWorked": [],
+      "musclesWorked": [
+        "hamstrings",
+        "glutes",
+        "quads",
+        "back"
+      ],
       "weeklyRoutine": {
         "weekKey": "2026-W24-seo",
         "note": "🎯 2주차: 화=등 레슨 · 목=하체 레슨 · 월=개인하체 · 수=개인상체",
@@ -461,7 +482,30 @@
             "rest": true
           }
         ]
-      }
+      },
+      "summaries": [
+        {
+          "sessionDate": "2026-06-09",
+          "date": "2026년 6월 9일",
+          "items": [
+            {
+              "name": "컨벤셔널 데드리프트",
+              "detail": "3세트 × 10회 / 32.5kg"
+            },
+            {
+              "name": "리버스 런지 (원암 숄더)",
+              "detail": "3세트"
+            },
+            {
+              "name": "코삭 스쿼트",
+              "detail": "3세트"
+            }
+          ]
+        }
+      ],
+      "sessionDates": [
+        "2026-06-09"
+      ]
     },
     {
       "week": 3,
