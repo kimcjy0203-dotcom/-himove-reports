@@ -1,0 +1,158 @@
+{
+  "name": "김진솔",
+  "month": "2026년 6월",
+  "purposes": [
+    "체중감량",
+    "체력향상"
+  ],
+  "goals": {
+    "short": {
+      "text": "운동하는 습관 들이기 / 간식 줄이기",
+      "period": "1개월"
+    },
+    "mid": {
+      "text": "",
+      "period": "1개월"
+    },
+    "long": {
+      "text": "20kg 감량",
+      "period": "2027년 8월"
+    }
+  },
+  "cardio": {
+    "age": 29,
+    "restingHR": 72
+  },
+  "orm": {
+    "weight": 0,
+    "reps": 0,
+    "goal": "체중감량"
+  },
+  "weeks": [
+    {
+      "week": 1,
+      "label": "1주차",
+      "date": "6/9",
+      "mainMessage": "",
+      "summary": {
+        "date": "",
+        "items": []
+      },
+      "exercises": [],
+      "lifts": [],
+      "bodyData": {
+        "labels": [
+          "6/10"
+        ],
+        "weight": [
+          81.4
+        ],
+        "fat": [
+          34.6
+        ],
+        "muscle": [
+          25.7
+        ],
+        "lastMeasured": "2026-06-10",
+        "comment": ""
+      },
+      "condition": "보통",
+      "conditionNote": "인바디 측정 / 목표 설정 상담 / 안정시 심박수 72bpm / 존2 구간 143~155bpm 확인",
+      "sleep": "보통",
+      "sleepNote": "",
+      "stress": "보통",
+      "pain": "있음",
+      "painNote": "",
+      "nutrition": "보통",
+      "nutritionNote": "",
+      "review": {
+        "good": "",
+        "caution": "",
+        "suggest": ""
+      },
+      "trainerComment": "",
+      "trainerDirection": "",
+      "finalMessage": "",
+      "musclesWorked": [],
+      "weeklyRoutine": {
+        "weekKey": "2026-W24-kimjinsol",
+        "note": "",
+        "days": [
+          {
+            "day": "월",
+            "workout": "개인운동",
+            "rest": false
+          },
+          {
+            "day": "화",
+            "workout": "개인운동",
+            "rest": false
+          },
+          {
+            "day": "수",
+            "workout": "PT",
+            "rest": false
+          },
+          {
+            "day": "목",
+            "workout": "-",
+            "rest": true
+          },
+          {
+            "day": "금",
+            "workout": "-",
+            "rest": true
+          },
+          {
+            "day": "토",
+            "workout": "-",
+            "rest": true
+          },
+          {
+            "day": "일",
+            "workout": "-",
+            "rest": true
+          }
+        ]
+      },
+      "sessionDates": [
+        "2026-06-10"
+      ],
+      "summaries": [
+        {
+          "sessionDate": "2026-06-10",
+          "date": "2026년 6월 10일",
+          "items": [
+            {
+              "name": "목표 설정 상담",
+              "detail": "1세트"
+            },
+            {
+              "name": "존2 유산소 (속도별 심박수 체크)",
+              "detail": "1세트"
+            },
+            {
+              "name": "스트레칭 및 가동성 운동",
+              "detail": "1세트"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "week": 2,
+      "label": "2주차",
+      "date": "6/16"
+    },
+    {
+      "week": 3,
+      "label": "3주차",
+      "date": "6/23"
+    },
+    {
+      "week": 4,
+      "label": "4주차",
+      "date": "6/30"
+    }
+  ]
+}

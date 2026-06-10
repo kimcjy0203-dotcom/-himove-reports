@@ -348,7 +348,34 @@
       "label": "2주차",
       "date": "6/8",
       "mainMessage": "",
-      "summaries": [],
+      "summaries": [
+        {
+          "sessionDate": "2026-06-09",
+          "date": "2026년 6월 9일",
+          "items": [
+            {
+              "name": "케틀벨 로우",
+              "detail": "3세트"
+            },
+            {
+              "name": "슈퍼맨",
+              "detail": "3세트"
+            },
+            {
+              "name": "보수 백 익스텐션",
+              "detail": "3세트"
+            },
+            {
+              "name": "보수 힙 익스텐션",
+              "detail": "3세트"
+            },
+            {
+              "name": "보수볼 크런치",
+              "detail": "3세트"
+            }
+          ]
+        }
+      ],
       "exercises": [],
       "lifts": [],
       "bodyData": {
