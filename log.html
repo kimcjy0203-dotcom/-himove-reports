@@ -97,11 +97,13 @@ h1 { font-size: 20px; font-weight: 800; color: #1a2a40; letter-spacing: -0.8px; 
   <input class="search-input" id="search-input" type="text" placeholder="회원 이름 검색…" oninput="handleSearch(this.value)">
   <button class="search-clear" id="search-clear" onclick="clearSearch()">✕</button>
 </div>
+<div id="ci-banner" style="display:none;position:sticky;top:0;z-index:200;background:#e8f5e9;border-bottom:2px solid #4caf50;padding:12px 16px;font-size:13px;font-weight:700;color:#2e7d32"></div>
 <div id="loading">⋯</div>
 <div id="log"></div>
 
 <script>
 // 회원 체크인 링크 수신 처리
+window._ci = null;
 (function() {
   const ci = new URLSearchParams(window.location.search).get('ci');
   if (!ci) return;
@@ -109,24 +111,24 @@ h1 { font-size: 20px; font-weight: 800; color: #1a2a40; letter-spacing: -0.8px; 
     const b64 = ci.replace(/-/g,'+').replace(/_/g,'/');
     const b64p = b64 + '='.repeat((4 - b64.length % 4) % 4);
     const d = JSON.parse(decodeURIComponent(escape(atob(b64p))));
+    window._ci = d; // 브라우저 무관하게 이번 페이지 로드에서 항상 사용
     if (d.wk && d.d) {
       const key = `hm-week-${d.wk}`;
-      const wd  = JSON.parse(localStorage.getItem(key) || '{}');
-      if (!wd[d.d]) wd[d.d] = {};
-      if (d.c)  wd[d.d].condition      = d.c;
-      if (d.s)  wd[d.d].sleep          = d.s;
-      if (d.p)  wd[d.d].pain           = d.p;
-      if (d.n)  wd[d.d].nutrition      = d.n;
-      if (d.cn) wd[d.d].condition_note = d.cn;
-      if (d.sn) wd[d.d].sleep_note     = d.sn;
-      if (d.pn) wd[d.d].pain_note      = d.pn;
-      if (d.wouts?.length) wd._workouts = d.wouts;
-      localStorage.setItem(key, JSON.stringify(wd));
-      if (d.wm) localStorage.setItem(`hm-wmemo-${d.wk}`, d.wm);
+      try {
+        const wd = JSON.parse(localStorage.getItem(key) || '{}');
+        if (!wd[d.d]) wd[d.d] = {};
+        if (d.c)  wd[d.d].condition      = d.c;
+        if (d.s)  wd[d.d].sleep          = d.s;
+        if (d.p)  wd[d.d].pain           = d.p;
+        if (d.n)  wd[d.d].nutrition      = d.n;
+        if (d.cn) wd[d.d].condition_note = d.cn;
+        if (d.sn) wd[d.d].sleep_note     = d.sn;
+        if (d.pn) wd[d.d].pain_note      = d.pn;
+        if (d.wouts?.length) wd._workouts = d.wouts;
+        localStorage.setItem(key, JSON.stringify(wd));
+        if (d.wm) localStorage.setItem(`hm-wmemo-${d.wk}`, d.wm);
+      } catch(e) {} // localStorage 실패해도 _ci로 화면에는 표시됨
     }
-    const url = new URL(window.location);
-    url.searchParams.delete('ci');
-    window.history.replaceState({}, '', url);
   } catch(e) {}
 })();
 
@@ -151,11 +153,27 @@ function badge(label, val, map) {
 }
 
 function renderWeek(w) {
-  // localStorage 회원 체크인 데이터 읽기
+  // localStorage + ci 파라미터 병합으로 브라우저 무관하게 체크인 표시
   const wk    = `hm-week-${w.weeklyRoutine?.weekKey}`;
   const wmKey = `hm-wmemo-${w.weeklyRoutine?.weekKey}`;
-  const checkins = JSON.parse(localStorage.getItem(wk) || '{}');
-  const wmText   = (localStorage.getItem(wmKey) || '').trim();
+  let checkins = {};
+  let wmText = '';
+  try { checkins = JSON.parse(localStorage.getItem(wk) || '{}'); } catch(e) {}
+  try { wmText = (localStorage.getItem(wmKey) || '').trim(); } catch(e) {}
+  // ci 링크로 받은 데이터가 이 주차 것이면 덮어써서 확실히 표시
+  const ci = window._ci;
+  if (ci && ci.wk === w.weeklyRoutine?.weekKey) {
+    if (!checkins[ci.d]) checkins[ci.d] = {};
+    if (ci.c)  checkins[ci.d].condition      = ci.c;
+    if (ci.s)  checkins[ci.d].sleep          = ci.s;
+    if (ci.p)  checkins[ci.d].pain           = ci.p;
+    if (ci.n)  checkins[ci.d].nutrition      = ci.n;
+    if (ci.cn) checkins[ci.d].condition_note = ci.cn;
+    if (ci.sn) checkins[ci.d].sleep_note     = ci.sn;
+    if (ci.pn) checkins[ci.d].pain_note      = ci.pn;
+    if (ci.wouts?.length) checkins._workouts  = ci.wouts;
+    if (ci.wm) wmText = ci.wm;
+  }
   function getCounts(field) {
     const cnt = {};
     Object.values(checkins).forEach(day => {
@@ -286,6 +304,25 @@ fetch(`data/members.json?v=${Date.now()}`)
       `${valid.length}명 · ${new Date().toLocaleDateString('ko-KR',{month:'long',day:'numeric',hour:'2-digit',minute:'2-digit'})} 기준`;
     document.getElementById('log').innerHTML = valid
       .map(({member, data}) => renderMember(member, data)).join('');
+    // ci 수신 배너 표시
+    if (window._ci) {
+      const ci = window._ci;
+      const memberName = valid.find(({member}) => member.id === ci.id)?.data?.name || ci.id;
+      const parts = [];
+      if (ci.c) parts.push(`컨디션 ${ci.c}`);
+      if (ci.s) parts.push(`수면 ${ci.s}`);
+      if (ci.p) parts.push(`신체 불편 ${ci.p}`);
+      if (ci.n) parts.push(`영양 ${ci.n}`);
+      if (ci.wm) parts.push(`운동: ${ci.wm.split('\n')[0]}`);
+      const banner = document.getElementById('ci-banner');
+      banner.textContent = `✅ ${memberName}님 체크인 수신 · ${parts.join(' · ')}`;
+      banner.style.display = 'block';
+      // 해당 회원 섹션으로 스크롤
+      setTimeout(() => {
+        const block = document.querySelector(`[data-name="${memberName}"]`);
+        if (block) block.scrollIntoView({behavior:'smooth', block:'start'});
+      }, 300);
+    }
   })
   .catch(() => { document.getElementById('loading').textContent = '불러오기 실패'; });
 function handleSearch(val) {
