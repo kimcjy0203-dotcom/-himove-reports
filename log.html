@@ -87,6 +87,8 @@ h1 { font-size: 20px; font-weight: 800; color: #1a2a40; letter-spacing: -0.8px; 
 .wr-memo-label { font-size: 9px; font-weight: 700; color: #b07030; margin-bottom: 3px; }
 
 #loading { text-align: center; padding: 48px 0; color: #a0b8d0; font-size: 13px; }
+.ci-row { display: flex; gap: 5px; flex-wrap: wrap; align-items: center; margin-top: 8px; padding-top: 8px; border-top: 1px solid rgba(160,190,230,0.15); }
+.ci-row-label { font-size: 9px; font-weight: 700; color: #b0c0d4; letter-spacing: 0.5px; margin-right: 2px; }
 </style>
 </head>
 <body>
@@ -100,8 +102,20 @@ h1 { font-size: 20px; font-weight: 800; color: #1a2a40; letter-spacing: -0.8px; 
 <div id="ci-banner" style="display:none;position:sticky;top:0;z-index:200;background:#e8f5e9;border-bottom:2px solid #4caf50;padding:12px 16px;font-size:13px;font-weight:700;color:#2e7d32"></div>
 <div id="loading">⋯</div>
 <div id="log"></div>
+<div id="pat-setup" style="display:none;margin-top:24px;padding:14px 16px;background:white;border-radius:12px;border:1px solid rgba(160,190,230,0.3)">
+  <div style="font-size:12px;font-weight:700;color:#3a5a80;margin-bottom:8px">체크인 자동저장 설정</div>
+  <div style="font-size:11px;color:#a0b8d0;margin-bottom:10px">GitHub PAT을 한 번 입력하면 이후 링크 클릭 시 자동 저장됩니다.</div>
+  <input id="pat-input" type="password" placeholder="github_pat_..." style="width:100%;border:1px solid rgba(160,190,230,0.4);border-radius:8px;padding:8px 12px;font-size:12px;outline:none;font-family:inherit;margin-bottom:8px">
+  <button onclick="savePat()" style="width:100%;background:rgba(90,154,210,0.15);border:1px solid rgba(90,154,210,0.3);border-radius:8px;padding:8px;font-size:12px;font-weight:700;color:#2a5a8a;cursor:pointer">저장</button>
+</div>
 
 <script>
+// ── GitHub API 자동저장 설정 ──────────────────────────────
+const GH_TOKEN  = localStorage.getItem('hm_gh_pat') || '';
+const GH_OWNER  = 'kimcjy0203-dotcom';
+const GH_REPO   = '-himove-reports';
+// ─────────────────────────────────────────────────────────
+
 // 회원 체크인 링크 수신 처리
 window._ci = null;
 (function() {
@@ -112,10 +126,11 @@ window._ci = null;
     const b64 = ci.replace(/ /g,'+').replace(/-/g,'+').replace(/_/g,'/');
     const b64p = b64 + '='.repeat((4 - b64.length % 4) % 4);
     const d = JSON.parse(decodeURIComponent(escape(atob(b64p))));
-    window._ci = d; // 브라우저 무관하게 이번 페이지 로드에서 항상 사용
+    window._ci = d;
+    // localStorage에도 저장 (같은 브라우저에서 재방문 시)
     if (d.wk && d.d) {
-      const key = `hm-week-${d.wk}`;
       try {
+        const key = `hm-week-${d.wk}`;
         const wd = JSON.parse(localStorage.getItem(key) || '{}');
         if (!wd[d.d]) wd[d.d] = {};
         if (d.c)  wd[d.d].condition      = d.c;
@@ -128,10 +143,51 @@ window._ci = null;
         if (d.wouts?.length) wd._workouts = d.wouts;
         localStorage.setItem(key, JSON.stringify(wd));
         if (d.wm) localStorage.setItem(`hm-wmemo-${d.wk}`, d.wm);
-      } catch(e) {} // localStorage 실패해도 _ci로 화면에는 표시됨
+      } catch(e) {}
     }
-  } catch(e) {}
+  } catch(e) {
+    console.error('ci 파라미터 파싱 실패:', e);
+  }
 })();
+
+// GitHub API로 체크인 데이터를 JSON 파일에 영구저장
+async function saveCheckinToGitHub(ci) {
+  if (!GH_TOKEN || !ci?.id || !ci?.wk || !ci?.d) return false;
+  try {
+    const apiBase = `https://api.github.com/repos/${GH_OWNER}/${GH_REPO}/contents/data/${ci.id}.json`;
+    const res = await fetch(apiBase, { headers: { Authorization: `token ${GH_TOKEN}`, Accept: 'application/vnd.github+json' } });
+    if (!res.ok) throw new Error(`GET 실패: ${res.status}`);
+    const { content, sha } = await res.json();
+    const data = JSON.parse(atob(content.replace(/\n/g, '')));
+
+    // 해당 주차 찾기
+    const week = data.weeks?.find(w => w.weeklyRoutine?.weekKey === ci.wk);
+    if (!week) throw new Error(`weekKey ${ci.wk} 없음`);
+
+    // 체크인 데이터 반영
+    if (ci.c) week.condition = ci.c;
+    if (ci.s) week.sleep = ci.s;
+    if (ci.p && ci.p !== '없음') week.pain = ci.p;
+    if (ci.cn) week.conditionNote = ci.cn;
+    if (ci.sn) week.sleepNote = ci.sn;
+    if (ci.pn) week.painNote = ci.pn;
+    if (ci.wm) week.memberComment = ci.wm;
+    if (!week.sessionDates) week.sessionDates = [];
+    if (!week.sessionDates.includes(ci.d)) week.sessionDates.unshift(ci.d);
+
+    const updated = btoa(unescape(encodeURIComponent(JSON.stringify(data, null, 2))));
+    const putRes = await fetch(apiBase, {
+      method: 'PUT',
+      headers: { Authorization: `token ${GH_TOKEN}`, Accept: 'application/vnd.github+json', 'Content-Type': 'application/json' },
+      body: JSON.stringify({ message: `체크인 저장: ${ci.id} ${ci.d}`, content: updated, sha }),
+    });
+    if (!putRes.ok) throw new Error(`PUT 실패: ${putRes.status}`);
+    return true;
+  } catch(e) {
+    console.error('GitHub 저장 실패:', e);
+    return false;
+  }
+}
 
 const COND = {
   '매우 좋음':['#e8f5e9','#2e7d32'],'좋음':['#e8f5e9','#388e3c'],
@@ -305,7 +361,7 @@ fetch(`data/members.json?v=${Date.now()}`)
       `${valid.length}명 · ${new Date().toLocaleDateString('ko-KR',{month:'long',day:'numeric',hour:'2-digit',minute:'2-digit'})} 기준`;
     document.getElementById('log').innerHTML = valid
       .map(({member, data}) => renderMember(member, data)).join('');
-    // ci 수신 배너 표시
+    // ci 수신 배너 표시 + GitHub 자동저장
     if (window._ci) {
       const ci = window._ci;
       const memberName = valid.find(({member}) => member.id === ci.id)?.data?.name || ci.id;
@@ -316,8 +372,24 @@ fetch(`data/members.json?v=${Date.now()}`)
       if (ci.n) parts.push(`영양 ${ci.n}`);
       if (ci.wm) parts.push(`운동: ${ci.wm.split('\n')[0]}`);
       const banner = document.getElementById('ci-banner');
-      banner.textContent = `✅ ${memberName}님 체크인 수신 · ${parts.join(' · ')}`;
-      banner.style.display = 'block';
+
+      if (GH_TOKEN) {
+        // GitHub 자동저장 시도
+        banner.innerHTML = `⏳ ${memberName}님 체크인 저장 중...`;
+        banner.style.display = 'block';
+        saveCheckinToGitHub(ci).then(ok => {
+          banner.innerHTML = ok
+            ? `✅ ${memberName}님 체크인 저장 완료 · ${parts.join(' · ')}`
+            : `⚠️ ${memberName}님 체크인 수신 (저장 실패 — 화면에는 표시) · ${parts.join(' · ')}`;
+          // 저장 성공 시 페이지 새로고침으로 반영
+          if (ok) setTimeout(() => location.href = location.pathname, 1500);
+        });
+      } else {
+        // 토큰 없음 — 화면 표시만
+        banner.innerHTML = `✅ ${memberName}님 체크인 수신 · ${parts.join(' · ')}`;
+        banner.style.display = 'block';
+      }
+
       // 해당 회원 섹션으로 스크롤
       setTimeout(() => {
         const block = document.querySelector(`[data-name="${memberName}"]`);
@@ -326,6 +398,19 @@ fetch(`data/members.json?v=${Date.now()}`)
     }
   })
   .catch(() => { document.getElementById('loading').textContent = '불러오기 실패'; });
+
+// PAT 설정 UI
+if (!localStorage.getItem('hm_gh_pat')) {
+  document.getElementById('pat-setup').style.display = 'block';
+}
+function savePat() {
+  const v = document.getElementById('pat-input').value.trim();
+  if (!v) return;
+  localStorage.setItem('hm_gh_pat', v);
+  document.getElementById('pat-setup').style.display = 'none';
+  alert('저장됐어요! 이제 체크인 링크를 클릭하면 자동으로 반영됩니다.');
+}
+
 function handleSearch(val) {
   const q = val.trim();
   document.getElementById('search-clear').style.display = q ? 'block' : 'none';

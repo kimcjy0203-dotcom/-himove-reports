@@ -89,6 +89,10 @@ body > * { position: relative; z-index: 1; }
 .mc-status { display: flex; gap: 6px; margin-top: 10px; align-items: center; }
 .mc-status-chip { font-size: 10px; font-weight: 700; padding: 3px 9px; border-radius: 20px; background: rgba(255,255,255,0.6); border: 1px solid rgba(160,190,230,0.3); color: #6a9ac4; }
 .mc-comment { font-size: 12px; color: #6a8aaa; margin-top: 8px; line-height: 1.6; padding: 8px 10px; background: rgba(255,255,255,0.5); border-radius: 10px; border-left: 2px solid rgba(100,155,220,0.3); }
+.mc-check-row { display: flex; gap: 5px; margin-top: 8px; }
+.mc-cf { font-size: 10px; font-weight: 700; padding: 2px 8px; border-radius: 20px; white-space: nowrap; }
+.mc-cf.ok  { background: rgba(90,170,122,0.13); color: #3a8a5a; border: 1px solid rgba(90,170,122,0.28); }
+.mc-cf.bad { background: rgba(224,112,96,0.12);  color: #c05040; border: 1px solid rgba(224,112,96,0.28); }
 .mc-inbody { font-size: 10px; font-weight: 700; color: #e07060; background: rgba(230,100,80,0.08); border: 1px solid rgba(230,100,80,0.2); border-radius: 20px; padding: 3px 9px; margin-left: auto; }
 
 .empty-card {
@@ -141,11 +145,6 @@ body > * { position: relative; z-index: 1; }
 <div class="header">
   <h1>himove</h1>
   <div class="sub" id="member-count">불러오는 중...</div>
-</div>
-
-<div class="section-label">세션 체크</div>
-<div id="check-panel">
-  <div class="empty-card"><div class="spinner"></div>확인 중...</div>
 </div>
 
 <div class="section-label">등록 회원</div>
@@ -268,6 +267,23 @@ function renderCard(member, data) {
   const comment = cur.memberComment
     ? `<div class="mc-comment">💬 ${cur.memberComment}</div>` : '';
 
+  /* 최근 세션 체크 상태 */
+  let checkTags = '';
+  let lastWeek = null;
+  for (let i = (data.weeks||[]).length - 1; i >= 0; i--) {
+    if ((data.weeks[i].sessionDates?.length || 0) > 0) { lastWeek = data.weeks[i]; break; }
+  }
+  if (lastWeek) {
+    const fields = [
+      { label: '운동', ok: (lastWeek.exercises?.length || 0) > 0 },
+      { label: '잘한점', ok: !!lastWeek.review?.good },
+      { label: '코멘트', ok: !!lastWeek.trainerComment },
+    ];
+    checkTags = `<div class="mc-check-row">${fields.map(f =>
+      `<span class="mc-cf ${f.ok ? 'ok' : 'bad'}">${f.ok ? '✓' : '!'} ${f.label}</span>`
+    ).join('')}</div>`;
+  }
+
   return `<a class="member-card" href="report.html?id=${member.id}">
     <div class="mc-top">
       <div class="mc-avatar">${avatar}</div>
@@ -279,6 +295,7 @@ function renderCard(member, data) {
     </div>
     <div class="mc-week-row">${weekPills}</div>
     ${statusChips ? `<div class="mc-status">${statusChips}${inbodyBadge}</div>` : ''}
+    ${checkTags}
     ${comment}
     ${purposes ? `<div class="mc-purposes">${purposes}</div>` : ''}
   </a>`;
@@ -299,7 +316,6 @@ fetch(`data/members.json?v=${Date.now()}`)
   })
   .then(results => {
     const valid = results.filter(Boolean);
-    renderCheckPanel(valid);
     document.getElementById('member-list').innerHTML = valid.length
       ? valid.map(({ member, data }) => renderCard(member, data)).join('')
       : '<div class="empty-card">등록된 회원이 없습니다.</div>';
