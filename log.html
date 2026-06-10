@@ -158,7 +158,7 @@ async function saveCheckinToGitHub(ci) {
     const res = await fetch(apiBase, { headers: { Authorization: `token ${GH_TOKEN}`, Accept: 'application/vnd.github+json' } });
     if (!res.ok) throw new Error(`GET 실패: ${res.status}`);
     const { content, sha } = await res.json();
-    const data = JSON.parse(atob(content.replace(/\n/g, '')));
+    const data = JSON.parse(decodeURIComponent(escape(atob(content.replace(/\n/g, '')))));
 
     // 해당 주차 찾기
     const week = data.weeks?.find(w => w.weeklyRoutine?.weekKey === ci.wk);

@@ -25,15 +25,15 @@
   "bodyGoals": {
     "weight": {
       "start": 64.3,
-      "goal": 57
+      "goal": 57.0
     },
     "muscle": {
-      "start": 22,
-      "goal": 22
+      "start": 22.0,
+      "goal": 22.0
     },
     "fat": {
       "start": 23.6,
-      "goal": 16
+      "goal": 16.0
     }
   },
   "cardio": {
@@ -177,7 +177,7 @@
           23.6
         ],
         "muscle": [
-          22
+          22.0
         ],
         "lastMeasured": "2026-06-02",
         "comment": ""
@@ -362,13 +362,13 @@
           23.6
         ],
         "muscle": [
-          22
+          22.0
         ],
         "lastMeasured": "2026-06-02",
         "comment": ""
       },
       "condition": "보통",
-      "conditionNote": "운동도 적당히 지금 이시간 컨디션 보통",
+      "conditionNote": "",
       "sleep": "보통",
       "sleepNote": "어제 밤 10시부터 취침후 12시반에 깨고 7시까지 잤다",
       "stress": "Ã«Â³Â´Ã­ÂÂµ",
@@ -519,9 +519,7 @@
           }
         ]
       },
-      "sessionDates": [
-        "2026-06-09"
-      ],
+      "sessionDates": [],
       "memberComment": ""
     },
     {
