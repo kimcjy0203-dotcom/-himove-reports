@@ -386,7 +386,8 @@ fetchData(`${RAW}/data/members.json`)
           banner.innerHTML = ok
             ? `✅ ${memberName}님 체크인 저장 완료 · ${parts.join(' · ')}`
             : `⚠️ ${memberName}님 체크인 수신 (저장 실패 — 화면에는 표시) · ${parts.join(' · ')}`;
-          if (ok) setTimeout(() => location.href = location.pathname, 2500);
+          // 새로고침 없이 URL만 정리 — 데이터는 이미 화면에 표시됨
+          if (ok) history.pushState({}, '', location.pathname);
         });
       } else {
         // 토큰 없음 — 화면 표시만
