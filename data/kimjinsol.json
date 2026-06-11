@@ -62,7 +62,7 @@
         "comment": ""
       },
       "condition": "보통",
-      "conditionNote": "인바디 측정 / 목표 설정 상담 / 안정시 심박수 72bpm / 존2 구간 143~155bpm 확인",
+      "conditionNote": "인바디 측정 / 목표 설정 상담 / 안정시 심박수 72bpm / 존2 구간 143~155bpm / 존2 트레드밀 속도 5.0~5.3 (속도4.5→126bpm·속도5.5→162bpm 보간) / 시작 권장 속도 5.0",
       "sleep": "보통",
       "sleepNote": "",
       "stress": "보통",
