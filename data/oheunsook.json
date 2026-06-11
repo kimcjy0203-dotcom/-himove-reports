@@ -396,8 +396,8 @@
       },
       "condition": "보통",
       "conditionNote": "운동도 적당히 지금 이시간 컨디션 보통",
-      "sleep": "보통",
-      "sleepNote": "어제 밤 10시부터 취침후 12시반에 깨고 7시까지 잤다",
+      "sleep": "나쁨",
+      "sleepNote": "12시반에취침ㅡ5시10분에기상",
       "stress": "보통",
       "pain": "없음",
       "painNote": "압박스타킹으로 걸어도 종아리가 불편하지않았다",
@@ -547,9 +547,10 @@
         ]
       },
       "sessionDates": [
+        "2026-06-10",
         "2026-06-09"
       ],
-      "memberComment": ""
+      "memberComment": "개인운동못했어요ㅜㅜ"
     },
     {
       "week": 3,
