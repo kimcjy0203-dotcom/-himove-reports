@@ -153,13 +153,41 @@
         "weekKey": "2026-W25-kimjinsol",
         "note": "",
         "days": [
-          { "day": "월", "workout": "개인운동", "rest": false },
-          { "day": "화", "workout": "개인운동", "rest": false },
-          { "day": "수", "workout": "PT", "rest": false },
-          { "day": "목", "workout": "-", "rest": true },
-          { "day": "금", "workout": "-", "rest": true },
-          { "day": "토", "workout": "-", "rest": true },
-          { "day": "일", "workout": "-", "rest": true }
+          {
+            "day": "월",
+            "workout": "개인운동",
+            "rest": false
+          },
+          {
+            "day": "화",
+            "workout": "개인운동",
+            "rest": false
+          },
+          {
+            "day": "수",
+            "workout": "PT",
+            "rest": false
+          },
+          {
+            "day": "목",
+            "workout": "-",
+            "rest": true
+          },
+          {
+            "day": "금",
+            "workout": "-",
+            "rest": true
+          },
+          {
+            "day": "토",
+            "workout": "-",
+            "rest": true
+          },
+          {
+            "day": "일",
+            "workout": "-",
+            "rest": true
+          }
         ]
       }
     },
@@ -171,13 +199,41 @@
         "weekKey": "2026-W26-kimjinsol",
         "note": "",
         "days": [
-          { "day": "월", "workout": "개인운동", "rest": false },
-          { "day": "화", "workout": "개인운동", "rest": false },
-          { "day": "수", "workout": "PT", "rest": false },
-          { "day": "목", "workout": "-", "rest": true },
-          { "day": "금", "workout": "-", "rest": true },
-          { "day": "토", "workout": "-", "rest": true },
-          { "day": "일", "workout": "-", "rest": true }
+          {
+            "day": "월",
+            "workout": "개인운동",
+            "rest": false
+          },
+          {
+            "day": "화",
+            "workout": "개인운동",
+            "rest": false
+          },
+          {
+            "day": "수",
+            "workout": "PT",
+            "rest": false
+          },
+          {
+            "day": "목",
+            "workout": "-",
+            "rest": true
+          },
+          {
+            "day": "금",
+            "workout": "-",
+            "rest": true
+          },
+          {
+            "day": "토",
+            "workout": "-",
+            "rest": true
+          },
+          {
+            "day": "일",
+            "workout": "-",
+            "rest": true
+          }
         ]
       }
     }
