@@ -447,7 +447,34 @@
             "rest": true
           }
         ]
-      }
+      },
+      "sessionDates": [
+        "2026-06-09"
+      ],
+      "summaries": [
+        {
+          "sessionDate": "2026-06-09",
+          "date": "2026년 6월 9일",
+          "items": [
+            {
+              "name": "덤벨 킥백",
+              "detail": "3세트"
+            },
+            {
+              "name": "오버헤드 트라이셉스",
+              "detail": "3세트 / 4kg"
+            },
+            {
+              "name": "케이블 푸쉬 다운",
+              "detail": "3세트"
+            },
+            {
+              "name": "푸쉬업 (좁게)",
+              "detail": "3세트"
+            }
+          ]
+        }
+      ]
     },
     {
       "week": 3,
