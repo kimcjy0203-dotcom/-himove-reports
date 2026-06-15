@@ -43,7 +43,18 @@
         "date": "",
         "items": []
       },
-      "exercises": [],
+      "exercises": [
+        {
+          "name": "목표 설정 상담",
+          "note": "· 단기·장기 목표 설정 완료",
+          "next": ""
+        },
+        {
+          "name": "존2 유산소 (속도별 심박수 체크)",
+          "note": "· 존2 구간 143~155bpm 확인",
+          "next": ""
+        }
+      ],
       "lifts": [],
       "bodyData": {
         "labels": [
