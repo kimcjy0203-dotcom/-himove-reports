@@ -16,6 +16,11 @@ body {
 }
 h1 { font-size: 20px; font-weight: 800; color: #1a2a40; letter-spacing: -0.8px; }
 .page-sub { font-size: 11px; color: #a0b8d0; margin-top: 3px; margin-bottom: 14px; }
+.member-tabs { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 12px; }
+.tab-btn { background: white; border: 1px solid rgba(160,190,230,0.4); border-radius: 20px; padding: 4px 12px; font-size: 11px; font-weight: 700; color: #4a7ab0; cursor: pointer; font-family: inherit; transition: all 0.15s; }
+.tab-btn:hover { background: rgba(90,170,232,0.08); border-color: #5aaae8; }
+.tab-btn.active { background: #5aaae8; color: white; border-color: #5aaae8; }
+.tab-btn.all { color: #1a2a40; }
 .search-wrap { position: relative; margin-bottom: 20px; }
 .search-input {
   width: 100%; background: white; border: 1px solid rgba(160,190,230,0.4);
@@ -94,9 +99,10 @@ h1 { font-size: 20px; font-weight: 800; color: #1a2a40; letter-spacing: -0.8px; 
 <body>
 <h1>himove</h1>
 <div class="page-sub" id="page-sub">불러오는 중…</div>
+<div class="member-tabs" id="member-tabs"></div>
 <div class="search-wrap">
   <span class="search-icon">🔍</span>
-  <input class="search-input" id="search-input" type="text" placeholder="회원 이름 검색…" oninput="handleSearch(this.value)">
+  <input class="search-input" id="search-input" type="text" placeholder="이름·운동·날짜·코멘트 검색…" oninput="handleSearch(this.value)">
   <button class="search-clear" id="search-clear" onclick="clearSearch()">✕</button>
 </div>
 <div id="ci-banner" style="display:none;position:sticky;top:0;z-index:200;background:#e8f5e9;border-bottom:2px solid #4caf50;padding:12px 16px;font-size:13px;font-weight:700;color:#2e7d32"></div>
@@ -377,6 +383,7 @@ fetchData(`${RAW}/data/members.json`)
       `${valid.length}명 · ${new Date().toLocaleDateString('ko-KR',{month:'long',day:'numeric',hour:'2-digit',minute:'2-digit'})} 기준`;
     document.getElementById('log').innerHTML = valid
       .map(({member, data}) => renderMember(member, data)).join('');
+    buildTabs(valid.map(({data}) => data.name));
     // ci 수신 배너 표시 + GitHub 자동저장
     if (window._ci) {
       const ci = window._ci;
@@ -426,24 +433,44 @@ function savePat() {
   location.reload();
 }
 
+let activeTab = 'all';
+
 function handleSearch(val) {
-  const q = val.trim();
+  const q = val.trim().toLowerCase();
   document.getElementById('search-clear').style.display = q ? 'block' : 'none';
   const blocks = document.querySelectorAll('.member-block');
-  const log = document.getElementById('log');
-  if (!q) {
-    blocks.forEach(b => { b.classList.remove('hidden'); log.prepend(b); });
-    // 원래 순서 복원
-    [...blocks].reverse().forEach(b => log.prepend(b));
-    return;
-  }
-  const matched = [], rest = [];
   blocks.forEach(b => {
-    const name = b.dataset.name || '';
-    name.includes(q) ? matched.push(b) : rest.push(b);
+    const nameMatch = (b.dataset.name || '').toLowerCase().includes(q);
+    const textMatch = b.textContent.toLowerCase().includes(q);
+    const tabMatch  = activeTab === 'all' || b.dataset.name === activeTab;
+    b.classList.toggle('hidden', !(tabMatch && (nameMatch || textMatch || !q)));
   });
-  matched.forEach(b => { b.classList.remove('hidden'); log.prepend(b); });
-  rest.forEach(b => b.classList.add('hidden'));
+}
+
+function setTab(name) {
+  activeTab = name;
+  document.querySelectorAll('.tab-btn').forEach(btn => {
+    btn.classList.toggle('active', btn.dataset.tab === name);
+  });
+  handleSearch(document.getElementById('search-input').value);
+}
+
+function buildTabs(names) {
+  const wrap = document.getElementById('member-tabs');
+  const all = document.createElement('button');
+  all.className = 'tab-btn all active';
+  all.textContent = '전체';
+  all.dataset.tab = 'all';
+  all.onclick = () => setTab('all');
+  wrap.appendChild(all);
+  names.forEach(name => {
+    const btn = document.createElement('button');
+    btn.className = 'tab-btn';
+    btn.textContent = name;
+    btn.dataset.tab = name;
+    btn.onclick = () => setTab(name);
+    wrap.appendChild(btn);
+  });
 }
 
 function clearSearch() {
