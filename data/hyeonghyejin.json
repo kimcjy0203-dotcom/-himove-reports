@@ -25,15 +25,15 @@
   "bodyGoals": {
     "weight": {
       "start": 73.4,
-      "goal": 63.0
+      "goal": 63
     },
     "muscle": {
-      "start": 28.0,
-      "goal": 29.0
+      "start": 28,
+      "goal": 29
     },
     "fat": {
       "start": 22.9,
-      "goal": 12.0
+      "goal": 12
     }
   },
   "cardio": {
@@ -188,14 +188,14 @@
           22.9
         ],
         "muscle": [
-          28.0
+          28
         ],
         "lastMeasured": "2026-06-08",
         "comment": "PT 시작 인바디"
       },
-      "condition": "",
+      "condition": "보통",
       "conditionNote": "",
-      "sleep": "",
+      "sleep": "보통",
       "sleepNote": "",
       "stress": "",
       "pain": "없음",
@@ -212,7 +212,9 @@
       "nextSessionMemo": "",
       "finalMessage": "",
       "musclesWorked": [],
-      "sessionDates": [],
+      "sessionDates": [
+        "2026-06-08"
+      ],
       "memberComment": "",
       "weeklyRoutine": {
         "weekKey": "2026-W24-hj",
