@@ -595,16 +595,18 @@
         "lastMeasured": null,
         "comment": ""
       },
-      "sessionDates": [],
+      "sessionDates": [
+        "2026-06-16"
+      ],
       "mainMessage": "",
       "summaries": [],
       "condition": "보통",
-      "conditionNote": "",
+      "conditionNote": "아침에 컨디션좋았으나 점심이후로 피곤ㅡ과자먹음",
       "sleep": "보통",
-      "sleepNote": "",
+      "sleepNote": "12시반 취침ㅡ6시40분기상ㅡ중간에 깸",
       "stress": "보통",
-      "pain": "없음",
-      "painNote": "",
+      "pain": "있음",
+      "painNote": "어제 운동으로 햄스트링 증상",
       "review": {
         "good": "",
         "caution": "",
@@ -613,7 +615,7 @@
       "trainerComment": "",
       "trainerDirection": "",
       "nextSessionMemo": "",
-      "memberComment": "",
+      "memberComment": "오늘 ㅡ피티수업받습니다",
       "weeklyRoutine": {
         "weekKey": "2026-W25-es",
         "note": "🎯 3주차: 중량 5% 증가 도전",
