@@ -275,7 +275,7 @@
       },
       "condition": "좋음",
       "conditionNote": "",
-      "sleep": "좋음",
+      "sleep": "보통",
       "sleepNote": "",
       "stress": "",
       "pain": "있음",
@@ -334,6 +334,7 @@
         ]
       },
       "sessionDates": [
+        "2026-06-14",
         "2026-06-09",
         "2026-06-08"
       ],
@@ -361,7 +362,7 @@
           ]
         }
       ],
-      "memberComment": "폼롤러, 데드버그, 버드독"
+      "memberComment": "폼롤러 흉추로테이션"
     },
     {
       "week": 3,
