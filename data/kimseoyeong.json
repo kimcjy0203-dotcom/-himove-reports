@@ -166,170 +166,42 @@
       ],
       "weeklyRoutine": {
         "weekKey": "2026-W23-ky",
-        "note": "🎯 1주차: 자세 인식 + 약한 쪽 활성화 시작",
+        "note": "월 레슨 / 화~일 개인운동",
         "days": [
           {
             "day": "월",
-            "workout": "개인-자세교정 (집)",
-            "rest": false,
-            "plan": [
-              {
-                "name": "고양이-소 자세",
-                "sets": 3,
-                "reps": 10,
-                "weight": "천천히"
-              },
-              {
-                "name": "왼쪽 사이드 플랭크",
-                "sets": 3,
-                "reps": 1,
-                "weight": "20초"
-              },
-              {
-                "name": "오른 다리 싱글 힙브릿지",
-                "sets": 3,
-                "reps": 12,
-                "weight": "오른쪽 집중"
-              },
-              {
-                "name": "네발기기 흉추 회전 (왼쪽만)",
-                "sets": 3,
-                "reps": 12,
-                "weight": "왼쪽만"
-              },
-              {
-                "name": "버드독",
-                "sets": 3,
-                "reps": 10,
-                "weight": "양쪽"
-              }
-            ]
+            "workout": "레슨",
+            "rest": false
           },
           {
             "day": "화",
-            "workout": "레슨1-요추교정·코어",
-            "rest": false,
-            "plan": [
-              {
-                "name": "사이드 플랭크",
-                "sets": 3,
-                "reps": 1,
-                "weight": "왼30초/오20초"
-              },
-              {
-                "name": "싱글 레그 힙브릿지",
-                "sets": 3,
-                "reps": 10,
-                "weight": "왼3세트/오2세트"
-              },
-              {
-                "name": "버드 독",
-                "sets": 3,
-                "reps": 10,
-                "weight": "오른팔 먼저"
-              },
-              {
-                "name": "오른쪽 요방형근 스트레칭",
-                "sets": 3,
-                "reps": 1,
-                "weight": "15~20초"
-              },
-              {
-                "name": "덤벨 고블릿 스쿼트",
-                "sets": 3,
-                "reps": 10,
-                "weight": "-"
-              }
-            ]
+            "workout": "개인운동",
+            "rest": false
           },
           {
             "day": "수",
-            "workout": "휴식",
-            "rest": true
+            "workout": "개인운동",
+            "rest": false
           },
           {
             "day": "목",
-            "workout": "레슨2-흉추디로테이션·등",
-            "rest": false,
-            "plan": [
-              {
-                "name": "사이드 라잉 흉추 로테이션",
-                "sets": 3,
-                "reps": 10,
-                "weight": "왼쪽 방향"
-              },
-              {
-                "name": "팔레오프 프레스",
-                "sets": 3,
-                "reps": 10,
-                "weight": "왼쪽 저항"
-              },
-              {
-                "name": "덤벨 원암 로우",
-                "sets": 3,
-                "reps": 10,
-                "weight": "오른쪽 먼저"
-              },
-              {
-                "name": "밴드 페이스 풀",
-                "sets": 3,
-                "reps": 15,
-                "weight": "-"
-              },
-              {
-                "name": "월 슬라이드",
-                "sets": 3,
-                "reps": 12,
-                "weight": "-"
-              }
-            ]
+            "workout": "개인운동",
+            "rest": false
           },
           {
             "day": "금",
-            "workout": "개인-자세교정 (집)",
-            "rest": false,
-            "plan": [
-              {
-                "name": "고양이-소 자세",
-                "sets": 3,
-                "reps": 10,
-                "weight": "천천히"
-              },
-              {
-                "name": "왼쪽 사이드 플랭크",
-                "sets": 3,
-                "reps": 1,
-                "weight": "20초"
-              },
-              {
-                "name": "오른 다리 싱글 힙브릿지",
-                "sets": 3,
-                "reps": 12,
-                "weight": "오른쪽 집중"
-              },
-              {
-                "name": "네발기기 흉추 회전 (왼쪽만)",
-                "sets": 3,
-                "reps": 12,
-                "weight": "왼쪽만"
-              },
-              {
-                "name": "버드독",
-                "sets": 3,
-                "reps": 10,
-                "weight": "양쪽"
-              }
-            ]
+            "workout": "개인운동",
+            "rest": false
           },
           {
             "day": "토",
-            "workout": "휴식",
-            "rest": true
+            "workout": "개인운동",
+            "rest": false
           },
           {
             "day": "일",
-            "workout": "휴식",
-            "rest": true
+            "workout": "개인운동",
+            "rest": false
           }
         ]
       },
@@ -422,106 +294,42 @@
       "musclesWorked": [],
       "weeklyRoutine": {
         "weekKey": "2026-W24-ky",
-        "note": "🎯 2주차: 약한 쪽 근육 강화 + 유지 시간 늘리기",
+        "note": "월 레슨 / 화~일 개인운동",
         "days": [
           {
             "day": "월",
-            "workout": "개인-자세교정 (집)",
-            "rest": false,
-            "plan": [
-              {
-                "name": "고양이-소 자세",
-                "sets": 3,
-                "reps": 10,
-                "weight": "천천히"
-              },
-              {
-                "name": "왼쪽 사이드 플랭크",
-                "sets": 3,
-                "reps": 1,
-                "weight": "20초"
-              },
-              {
-                "name": "오른 다리 싱글 힙브릿지",
-                "sets": 3,
-                "reps": 12,
-                "weight": "오른쪽 집중"
-              },
-              {
-                "name": "네발기기 흉추 회전 (왼쪽만)",
-                "sets": 3,
-                "reps": 12,
-                "weight": "왼쪽만"
-              },
-              {
-                "name": "버드독",
-                "sets": 3,
-                "reps": 10,
-                "weight": "양쪽"
-              }
-            ]
+            "workout": "레슨",
+            "rest": false
           },
           {
             "day": "화",
-            "workout": "레슨",
+            "workout": "개인운동",
             "rest": false
           },
           {
             "day": "수",
-            "workout": "휴식",
-            "rest": true
+            "workout": "개인운동",
+            "rest": false
           },
           {
             "day": "목",
-            "workout": "레슨",
+            "workout": "개인운동",
             "rest": false
           },
           {
             "day": "금",
-            "workout": "개인-자세교정 (집)",
-            "rest": false,
-            "plan": [
-              {
-                "name": "고양이-소 자세",
-                "sets": 3,
-                "reps": 10,
-                "weight": "천천히"
-              },
-              {
-                "name": "왼쪽 사이드 플랭크",
-                "sets": 3,
-                "reps": 1,
-                "weight": "20초"
-              },
-              {
-                "name": "오른 다리 싱글 힙브릿지",
-                "sets": 3,
-                "reps": 12,
-                "weight": "오른쪽 집중"
-              },
-              {
-                "name": "네발기기 흉추 회전 (왼쪽만)",
-                "sets": 3,
-                "reps": 12,
-                "weight": "왼쪽만"
-              },
-              {
-                "name": "버드독",
-                "sets": 3,
-                "reps": 10,
-                "weight": "양쪽"
-              }
-            ]
+            "workout": "개인운동",
+            "rest": false
           },
           {
             "day": "토",
-            "workout": "휴식",
-            "rest": true
+            "workout": "개인운동",
+            "rest": false
           },
           {
             "day": "일",
-            "workout": "휴식",
-            "rest": true
+            "workout": "개인운동",
+            "rest": false
           }
         ]
       },
@@ -616,106 +424,42 @@
       "musclesWorked": [],
       "weeklyRoutine": {
         "weekKey": "2026-W25-ky",
-        "note": "🎯 3주차: 균형·안정성 강화 + 동작 질 높이기",
+        "note": "월 레슨 / 화~일 개인운동",
         "days": [
           {
             "day": "월",
-            "workout": "개인-자세교정 (집)",
-            "rest": false,
-            "plan": [
-              {
-                "name": "고양이-소 자세",
-                "sets": 3,
-                "reps": 10,
-                "weight": "천천히"
-              },
-              {
-                "name": "왼쪽 사이드 플랭크",
-                "sets": 3,
-                "reps": 1,
-                "weight": "20초"
-              },
-              {
-                "name": "오른 다리 싱글 힙브릿지",
-                "sets": 3,
-                "reps": 12,
-                "weight": "오른쪽 집중"
-              },
-              {
-                "name": "네발기기 흉추 회전 (왼쪽만)",
-                "sets": 3,
-                "reps": 12,
-                "weight": "왼쪽만"
-              },
-              {
-                "name": "버드독",
-                "sets": 3,
-                "reps": 10,
-                "weight": "양쪽"
-              }
-            ]
+            "workout": "레슨",
+            "rest": false
           },
           {
             "day": "화",
-            "workout": "레슨",
+            "workout": "개인운동",
             "rest": false
           },
           {
             "day": "수",
-            "workout": "휴식",
-            "rest": true
+            "workout": "개인운동",
+            "rest": false
           },
           {
             "day": "목",
-            "workout": "레슨",
+            "workout": "개인운동",
             "rest": false
           },
           {
             "day": "금",
-            "workout": "개인-자세교정 (집)",
-            "rest": false,
-            "plan": [
-              {
-                "name": "고양이-소 자세",
-                "sets": 3,
-                "reps": 10,
-                "weight": "천천히"
-              },
-              {
-                "name": "왼쪽 사이드 플랭크",
-                "sets": 3,
-                "reps": 1,
-                "weight": "20초"
-              },
-              {
-                "name": "오른 다리 싱글 힙브릿지",
-                "sets": 3,
-                "reps": 12,
-                "weight": "오른쪽 집중"
-              },
-              {
-                "name": "네발기기 흉추 회전 (왼쪽만)",
-                "sets": 3,
-                "reps": 12,
-                "weight": "왼쪽만"
-              },
-              {
-                "name": "버드독",
-                "sets": 3,
-                "reps": 10,
-                "weight": "양쪽"
-              }
-            ]
+            "workout": "개인운동",
+            "rest": false
           },
           {
             "day": "토",
-            "workout": "휴식",
-            "rest": true
+            "workout": "개인운동",
+            "rest": false
           },
           {
             "day": "일",
-            "workout": "휴식",
-            "rest": true
+            "workout": "개인운동",
+            "rest": false
           }
         ]
       },
@@ -791,106 +535,42 @@
       "musclesWorked": [],
       "weeklyRoutine": {
         "weekKey": "2026-W26-ky",
-        "note": "🎯 4주차: 복합 동작 + 1개월 자세 점검",
+        "note": "월 레슨 / 화~일 개인운동",
         "days": [
           {
             "day": "월",
-            "workout": "개인-자세교정 (집)",
-            "rest": false,
-            "plan": [
-              {
-                "name": "고양이-소 자세",
-                "sets": 3,
-                "reps": 10,
-                "weight": "천천히"
-              },
-              {
-                "name": "왼쪽 사이드 플랭크",
-                "sets": 3,
-                "reps": 1,
-                "weight": "20초"
-              },
-              {
-                "name": "오른 다리 싱글 힙브릿지",
-                "sets": 3,
-                "reps": 12,
-                "weight": "오른쪽 집중"
-              },
-              {
-                "name": "네발기기 흉추 회전 (왼쪽만)",
-                "sets": 3,
-                "reps": 12,
-                "weight": "왼쪽만"
-              },
-              {
-                "name": "버드독",
-                "sets": 3,
-                "reps": 10,
-                "weight": "양쪽"
-              }
-            ]
-          },
-          {
-            "day": "화",
             "workout": "레슨",
             "rest": false
           },
           {
+            "day": "화",
+            "workout": "개인운동",
+            "rest": false
+          },
+          {
             "day": "수",
-            "workout": "휴식",
-            "rest": true
+            "workout": "개인운동",
+            "rest": false
           },
           {
             "day": "목",
-            "workout": "레슨 + 인바디 측정 권장",
+            "workout": "개인운동",
             "rest": false
           },
           {
             "day": "금",
-            "workout": "개인-자세교정 (집)",
-            "rest": false,
-            "plan": [
-              {
-                "name": "고양이-소 자세",
-                "sets": 3,
-                "reps": 10,
-                "weight": "천천히"
-              },
-              {
-                "name": "왼쪽 사이드 플랭크",
-                "sets": 3,
-                "reps": 1,
-                "weight": "20초"
-              },
-              {
-                "name": "오른 다리 싱글 힙브릿지",
-                "sets": 3,
-                "reps": 12,
-                "weight": "오른쪽 집중"
-              },
-              {
-                "name": "네발기기 흉추 회전 (왼쪽만)",
-                "sets": 3,
-                "reps": 12,
-                "weight": "왼쪽만"
-              },
-              {
-                "name": "버드독",
-                "sets": 3,
-                "reps": 10,
-                "weight": "양쪽"
-              }
-            ]
+            "workout": "개인운동",
+            "rest": false
           },
           {
             "day": "토",
-            "workout": "휴식",
-            "rest": true
+            "workout": "개인운동",
+            "rest": false
           },
           {
             "day": "일",
-            "workout": "휴식",
-            "rest": true
+            "workout": "개인운동",
+            "rest": false
           }
         ]
       }
