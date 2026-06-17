@@ -550,7 +550,23 @@
         "date": "",
         "items": []
       },
-      "exercises": [],
+      "exercises": [
+        {
+          "name": "하이바 스쿼트",
+          "note": "· 12회 가능<br>· 오른 어깨·왼 무릎 내전 → 승모근·이상근 스트레칭 병행",
+          "next": ""
+        },
+        {
+          "name": "스미스 와이드 스쿼트",
+          "note": "· 하단 복부 힘 유지<br>· 엉덩이 빠지지 않게",
+          "next": ""
+        },
+        {
+          "name": "브이스쿼트",
+          "note": "· 힙힌지 자세로 진행<br>· 무릎 앞·뒤 이동 없도록<br>· 둔근 중하부 늘어나도록<br>· 식단 조절 전 수분 섭취량부터 1주일간 체크하기",
+          "next": ""
+        }
+      ],
       "lifts": [],
       "bodyData": {
         "labels": [],
@@ -561,11 +577,11 @@
         "comment": ""
       },
       "condition": "보통",
-      "conditionNote": "",
+      "conditionNote": "하체 레슨",
       "sleep": "보통",
       "sleepNote": "",
       "stress": "보통",
-      "pain": "없음",
+      "pain": "있음",
       "painNote": "",
       "nutrition": "보통",
       "nutritionNote": "",
@@ -683,7 +699,30 @@
             "rest": true
           }
         ]
-      }
+      },
+      "sessionDates": [
+        "2026-06-16"
+      ],
+      "summaries": [
+        {
+          "sessionDate": "2026-06-16",
+          "date": "2026년 6월 16일",
+          "items": [
+            {
+              "name": "하이바 스쿼트",
+              "detail": "3세트 × 12"
+            },
+            {
+              "name": "스미스 와이드 스쿼트",
+              "detail": "3세트"
+            },
+            {
+              "name": "브이스쿼트",
+              "detail": "3세트"
+            }
+          ]
+        }
+      ]
     },
     {
       "week": 4,
