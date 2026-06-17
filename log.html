@@ -456,7 +456,7 @@ function setTab(name) {
 }
 
 function buildTabs(names) {
-  names = [...names].sort((a, b) => a.localeCompare(b, 'ko'));
+  names = [...names].sort((a, b) => a.localeCompare(b));
   const wrap = document.getElementById('member-tabs');
   const all = document.createElement('button');
   all.className = 'tab-btn all active';
