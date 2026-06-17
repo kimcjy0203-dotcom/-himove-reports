@@ -313,8 +313,74 @@
       "label": "3주차",
       "date": "6/15",
       "mainMessage": "",
-      "summaries": [],
-      "exercises": [],
+      "summaries": [
+        {
+          "sessionDate": "2026-06-16",
+          "date": "2026년 6월 16일",
+          "items": [
+            {
+              "name": "고관절 내·외회전 (워밍업)",
+              "detail": "워밍업"
+            },
+            {
+              "name": "스탠다드 스쿼트 & 점프 스쿼트",
+              "detail": "3세트 × 점프 5회"
+            },
+            {
+              "name": "코삭 스쿼트 & 점프 스쿼트",
+              "detail": "3세트 × 점프 4회"
+            },
+            {
+              "name": "힙런지 & 점프 스쿼트",
+              "detail": "3세트 × 점프 3회"
+            },
+            {
+              "name": "레그 익스텐션 (개인 숙제)",
+              "detail": "3세트"
+            },
+            {
+              "name": "힙 어브덕션 (개인 숙제)",
+              "detail": "3세트"
+            },
+            {
+              "name": "힙 어덕션 (개인 숙제)",
+              "detail": "3세트"
+            }
+          ]
+        }
+      ],
+      "exercises": [
+        {
+          "name": "스탠다드 스쿼트 & 점프 스쿼트",
+          "note": "· 무릎 내전 경향 → 발바닥으로 바닥을 바깥으로 밀어내는 회전력 의식<br>· 착지 시 내전 심화 → 이상근 스트레칭 병행<br>· 힙 어브덕션 보조 운동으로 외전 근력 보강",
+          "next": ""
+        },
+        {
+          "name": "코삭 스쿼트 & 점프 스쿼트",
+          "note": "· 자세 안정적으로 크게 향상됨<br>· 점프 탄성이 점점 높아지는 긍정적 변화",
+          "next": ""
+        },
+        {
+          "name": "힙런지 & 점프 스쿼트",
+          "note": "· 지지하는 다리 최대수축 의식<br>· 탑 지점에서 전신을 단단히 고정한 후 다음 동작으로 연결",
+          "next": ""
+        },
+        {
+          "name": "레그 익스텐션 (개인 숙제)",
+          "note": "· 최대수축 지점에서 1초 유지 후 이완 시 천천히 내리기 — 편심성 수축 구간 컨트롤",
+          "next": ""
+        },
+        {
+          "name": "힙 어브덕션 (개인 숙제)",
+          "note": "· 무릎 내전 보완 목적 — 외전 근력 강화",
+          "next": ""
+        },
+        {
+          "name": "힙 어덕션 (개인 숙제)",
+          "note": "· 내전근 균형 유지 목적",
+          "next": ""
+        }
+      ],
       "lifts": [],
       "bodyData": {
         "labels": [],
@@ -325,11 +391,11 @@
         "comment": ""
       },
       "condition": "",
-      "conditionNote": "",
+      "conditionNote": "컴파운드 세트 방식 적용 / 스쿼트 착지 시 무릎 내전 → 발바닥 회전력 + 이상근 스트레칭 병행 / 코삭 스쿼트 자세 크게 향상",
       "sleep": "",
       "sleepNote": "",
       "stress": "",
-      "pain": "없음",
+      "pain": "있음",
       "painNote": "",
       "nutrition": "",
       "nutritionNote": "",
@@ -343,7 +409,9 @@
       "nextSessionMemo": "",
       "finalMessage": "",
       "musclesWorked": [],
-      "sessionDates": [],
+      "sessionDates": [
+        "2026-06-16"
+      ],
       "memberComment": "",
       "weeklyRoutine": {
         "weekKey": "2026-W25-hj",
