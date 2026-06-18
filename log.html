@@ -92,6 +92,16 @@ h1 { font-size: 20px; font-weight: 800; color: #1a2a40; letter-spacing: -0.8px; 
 .wr-memo-label { font-size: 9px; font-weight: 700; color: #b07030; margin-bottom: 3px; }
 
 #loading { text-align: center; padding: 48px 0; color: #a0b8d0; font-size: 13px; }
+.mh-dday { font-size: 10px; font-weight: 700; padding: 2px 9px; border-radius: 20px; white-space: nowrap; }
+.mh-dday.urgent { background: rgba(230,100,80,0.10); color: #c05040; border: 1px solid rgba(230,100,80,0.22); }
+.mh-dday.soon   { background: rgba(100,155,220,0.10); color: #3a6a9a; border: 1px solid rgba(100,155,220,0.22); }
+.mh-dday.later  { background: rgba(160,190,230,0.08); color: #8aaac0; border: 1px solid rgba(160,190,230,0.18); }
+.fb-strip { margin: 0 0 0; padding: 10px 16px 12px; border-bottom: 1px solid rgba(160,190,230,0.12); background: rgba(240,246,255,0.6); }
+.fb-strip-top { display: flex; align-items: center; gap: 6px; margin-bottom: 6px; }
+.fb-strip-label { font-size: 9px; font-weight: 700; color: #a0b8d0; letter-spacing: 0.8px; text-transform: uppercase; }
+.fb-strip-date  { font-size: 10px; color: #b8c8da; margin-left: auto; }
+.fb-strip-summary { font-size: 12px; color: #2a3a50; line-height: 1.7; margin-bottom: 5px; }
+.fb-strip-note { font-size: 11px; color: #6a8aaa; line-height: 1.6; padding-left: 8px; border-left: 2px solid rgba(100,155,220,0.28); }
 .ci-row { display: flex; gap: 5px; flex-wrap: wrap; align-items: center; margin-top: 8px; padding-top: 8px; border-top: 1px solid rgba(160,190,230,0.15); }
 .ci-row-label { font-size: 9px; font-weight: 700; color: #b0c0d4; letter-spacing: 0.5px; margin-right: 2px; }
 </style>
@@ -197,6 +207,28 @@ async function saveCheckinToGitHub(ci) {
     return false;
   }
 }
+
+/* ── 매월 2째·4째 수요일 D-day 계산 ── */
+function _getNthWeekday(y, m, wd, nth) {
+  const fd = new Date(y, m, 1).getDay();
+  let diff = wd - fd; if (diff < 0) diff += 7;
+  return new Date(y, m, 1 + diff + (nth-1)*7);
+}
+function nextFixedDate(from) {
+  let y = from.getFullYear(), mo = from.getMonth();
+  for (let i = 0; i < 6; i++) {
+    const ry = y + Math.floor(mo/12), rm = mo % 12;
+    for (const nth of [2,4]) {
+      const d = _getNthWeekday(ry, rm, 3, nth); d.setHours(0,0,0,0);
+      if (d >= from) return d;
+    }
+    mo++;
+  }
+  return null;
+}
+const _today = new Date(); _today.setHours(0,0,0,0);
+const _nextDate = nextFixedDate(_today);
+const _WDAY = ['일','월','화','수','목','금','토'];
 
 const COND = {
   '매우 좋음':['#e8f5e9','#2e7d32'],'좋음':['#e8f5e9','#388e3c'],
@@ -354,8 +386,17 @@ function renderMember(member, data) {
     goalHtml = `<div class="goal-row"><div class="goal-pill">체중 <span class="curr">${curr}kg</span> → ${bg.weight.goal}kg${rem>0?`<span class="rem"> -${rem}kg 남음</span>`:' ✓'}</div></div>`;
   }
 
+  /* D-day 칩 */
+  let ddayChip = '';
+  if (_nextDate) {
+    const dd = Math.round((_nextDate - _today) / 86400000);
+    const ddTxt = dd === 0 ? 'D-Day' : `D-${dd}`;
+    const cls = dd === 0 ? 'urgent' : dd <= 3 ? 'urgent' : dd <= 7 ? 'soon' : 'later';
+    ddayChip = `<span class="mh-dday ${cls}">인바디 ${ddTxt}</span>`;
+  }
+
   const header = `<div class="member-header">
-    <div class="mh-top"><span class="mh-name">${data.name}</span><span class="mh-month">${data.month||''}</span><div class="mh-btns"><a class="mh-report-btn" href="report.html?token=${member.token}" target="_blank">리포트 →</a><a class="mh-trainer-btn" href="report.html?id=${member.id}" target="_blank">트레이너 →</a></div></div>
+    <div class="mh-top"><span class="mh-name">${data.name}</span>${ddayChip}<span class="mh-month">${data.month||''}</span><div class="mh-btns"><a class="mh-report-btn" href="report.html?token=${member.token}" target="_blank">리포트 →</a><a class="mh-trainer-btn" href="report.html?id=${member.id}" target="_blank">트레이너 →</a></div></div>
     ${goalHtml}
     <div class="progress-wrap">
       <div class="progress-bar"><div class="progress-fill" style="width:${pct}%"></div></div>
@@ -363,8 +404,21 @@ function renderMember(member, data) {
     </div>
   </div>`;
 
+  /* 2주 피드백 */
+  const fb = data.biweeklyFeedback || [];
+  let fbHtml = '';
+  if (fb.length > 0) {
+    const latest = fb[fb.length - 1];
+    const dateLabel = latest.date ? latest.date.slice(5).replace('-', '/') : '';
+    fbHtml = `<div class="fb-strip">
+      <div class="fb-strip-top"><span class="fb-strip-label">2주 피드백</span>${dateLabel ? `<span class="fb-strip-date">${dateLabel}</span>` : ''}</div>
+      ${latest.summary ? `<div class="fb-strip-summary">${latest.summary}</div>` : ''}
+      ${latest.note    ? `<div class="fb-strip-note">${latest.note}</div>` : ''}
+    </div>`;
+  }
+
   const weeks = (data.weeks||[]).slice().reverse();
-  return `<div class="member-block" data-name="${data.name}">${header}${weeks.map(renderWeek).join('')}</div>`;
+  return `<div class="member-block" data-name="${data.name}">${header}${fbHtml}${weeks.map(renderWeek).join('')}</div>`;
 }
 
 const RAW = `https://raw.githubusercontent.com/${GH_OWNER}/${GH_REPO}/main`;
