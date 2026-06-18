@@ -586,5 +586,12 @@
     "total": 30,
     "completed": 18
   },
-  "biweeklyFeedback": []
+  "biweeklyFeedback": [
+    {
+      "date": "2026-06-18",
+      "summary": "6/2 인바디 측정 결과 체중 52.2kg / 골격근량 23.0kg / 체지방량 10.3kg. 체성분 균형이 잘 잡혀 있어요.",
+      "note": "근비대를 위한 단백질 섭취에 신경 쓰고, 불규칙한 생활 패턴 안에서도 수면 루틴 만들기에 집중해봐요.",
+      "auto": false
+    }
+  ]
 }
