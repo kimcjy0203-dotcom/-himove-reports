@@ -91,6 +91,34 @@ tr:last-child td { border-bottom: none; }
 .dlbl { font-size: 10px; color: #b0c0d4; font-weight: 700; letter-spacing: 0.5px; margin-bottom: 4px; }
 .dval { font-size: 15px; font-weight: 700; color: #2a3a50; }
 .dval.up { color: #e07070; } .dval.down { color: #5a9a7a; }
+.rpt-schedule-card {
+  background: #ffffff; border-radius: 28px; padding: 20px 24px; margin-bottom: 12px;
+  border: 1px solid rgba(140,180,230,0.45); box-shadow: 0 4px 20px rgba(100,150,230,0.10);
+}
+.rpt-sch-title { font-size: 10px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; color: #b8c8da; margin-bottom: 14px; }
+.rpt-sch-row { display: flex; align-items: center; gap: 10px; padding: 8px 0; border-bottom: 1px solid rgba(160,190,230,0.12); }
+.rpt-sch-row:last-child { border-bottom: none; }
+.rpt-sch-badge { font-size: 10px; font-weight: 700; padding: 3px 10px; border-radius: 20px; white-space: nowrap; }
+.rpt-sch-badge.inbody  { background: rgba(230,100,80,0.08);  color: #c05040; border: 1px solid rgba(230,100,80,0.22); }
+.rpt-sch-badge.consult { background: rgba(100,130,220,0.08); color: #3a5ab0; border: 1px solid rgba(100,130,220,0.22); }
+.rpt-sch-date { font-size: 12px; color: #6a8aaa; }
+.rpt-sch-dday { font-size: 14px; font-weight: 800; margin-left: auto; }
+.rpt-sch-dday.overdue { color: #c05040; }
+.rpt-sch-dday.today   { color: #e06020; }
+.rpt-sch-dday.urgent  { color: #d07030; }
+.rpt-sch-dday.soon    { color: #6a9ad0; }
+.rpt-sch-dday.later   { color: #a0b8d0; }
+.rpt-feedback-card {
+  background: #ffffff; border-radius: 28px; padding: 20px 24px; margin-bottom: 12px;
+  border: 1px solid rgba(140,180,230,0.45); box-shadow: 0 4px 20px rgba(100,150,230,0.10);
+}
+.rpt-fb-header { display: flex; align-items: center; gap: 8px; margin-bottom: 14px; }
+.rpt-fb-title { font-size: 10px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; color: #b8c8da; }
+.rpt-fb-date  { font-size: 10px; font-weight: 700; padding: 2px 9px; border-radius: 20px; background: rgba(100,155,220,0.08); border: 1px solid rgba(100,155,220,0.2); color: #5a7aa8; margin-left: auto; }
+.rpt-fb-auto  { font-size: 9px; font-weight: 700; padding: 2px 7px; border-radius: 20px; background: rgba(180,150,230,0.10); border: 1px solid rgba(180,150,230,0.25); color: #8a60b0; }
+.rpt-fb-summary { font-size: 13px; color: #2a3a50; line-height: 1.8; margin-bottom: 10px; white-space: pre-line; }
+.rpt-fb-note { font-size: 12px; color: #6a8aaa; line-height: 1.7; padding: 10px 14px; background: rgba(232,241,255,0.5); border-radius: 12px; border-left: 3px solid rgba(100,155,220,0.35); white-space: pre-line; }
+.rpt-fb-empty { font-size: 12px; color: #c0d0e0; text-align: center; padding: 8px 0; }
 .countdown-wrap { background: rgba(255,255,255,0.5); border: 1px solid rgba(255,255,255,0.8); border-radius: 16px; padding: 14px 16px; }
 .countdown-top { display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px; }
 .countdown-label { font-size: 11px; font-weight: 700; letter-spacing: 1px; color: #a0b8d0; text-transform: uppercase; }
@@ -290,6 +318,8 @@ tr:last-child td { border-bottom: none; }
     <div id="purpose-grid" class="purpose-grid"></div>
     <div id="monthly-progress"></div>
   </div>
+  <div id="report-schedule"></div>
+  <div id="report-feedback"></div>
   <div class="card" id="goals-card" style="display:none"></div>
   <div class="week-nav" id="week-nav"></div>
   <div id="week-panels"></div>
@@ -571,6 +601,73 @@ function init(data) {
       }
     }
   }
+
+  /* ── 상단 일정 카드 (매월 2째·4째 수요일 고정) ── */
+  (function buildScheduleCard() {
+    const today = new Date(); today.setHours(0,0,0,0);
+    const WDAY = ['일','월','화','수','목','금','토'];
+    function getNthWeekday(y, m, wd, nth) {
+      const fd = new Date(y, m, 1).getDay();
+      let diff = wd - fd; if (diff < 0) diff += 7;
+      return new Date(y, m, 1 + diff + (nth-1)*7);
+    }
+    function nextFixed(from) {
+      let y = from.getFullYear(), mo = from.getMonth();
+      for (let i = 0; i < 6; i++) {
+        const ry = y + Math.floor(mo/12), rm = mo % 12;
+        for (const nth of [2,4]) {
+          const d = getNthWeekday(ry, rm, 3, nth); d.setHours(0,0,0,0);
+          if (d >= from) return d;
+        }
+        mo++;
+      }
+      return null;
+    }
+    const rows = [];
+    const nd = nextFixed(today);
+    if (nd) {
+      const dd = Math.round((nd - today) / 86400000);
+      const ds = `${nd.getMonth()+1}/${nd.getDate()}(${WDAY[nd.getDay()]})`;
+      const ddTxt = dd === 0 ? 'D-Day' : `D-${dd}`;
+      const ddCls = dd === 0 ? 'today' : dd <= 3 ? 'urgent' : dd <= 7 ? 'soon' : 'later';
+      rows.push(`<div class="rpt-sch-row"><span class="rpt-sch-badge inbody">인바디</span><span class="rpt-sch-date">${ds}</span><span class="rpt-sch-dday ${ddCls}">${ddTxt}</span></div>`);
+    }
+    if (data.nextConsult) {
+      const ct = new Date(data.nextConsult); ct.setHours(0,0,0,0);
+      const dd = Math.round((ct - today) / 86400000);
+      const ds = `${ct.getMonth()+1}/${ct.getDate()}(${WDAY[ct.getDay()]})`;
+      const ddTxt = dd === 0 ? 'D-Day' : dd < 0 ? `D+${Math.abs(dd)}` : `D-${dd}`;
+      const ddCls = dd < 0 ? 'overdue' : dd === 0 ? 'today' : dd <= 3 ? 'urgent' : dd <= 7 ? 'soon' : 'later';
+      rows.push(`<div class="rpt-sch-row"><span class="rpt-sch-badge consult">상담</span><span class="rpt-sch-date">${ds}</span><span class="rpt-sch-dday ${ddCls}">${ddTxt}</span></div>`);
+    }
+    if (rows.length) {
+      document.getElementById('report-schedule').innerHTML =
+        `<div class="rpt-schedule-card"><div class="rpt-sch-title">다음 일정</div>${rows.join('')}</div>`;
+    }
+  })();
+
+  /* ── 2주 피드백 카드 ── */
+  (function buildFeedbackCard() {
+    const fb = data.biweeklyFeedback;
+    const el = document.getElementById('report-feedback');
+    if (!el) return;
+    if (!fb || fb.length === 0) {
+      if (!isMember) el.innerHTML = `<div class="rpt-feedback-card"><div class="rpt-fb-header"><span class="rpt-fb-title">2주 피드백</span></div><div class="rpt-fb-empty">아직 피드백이 없어요</div></div>`;
+      return;
+    }
+    const latest = fb[fb.length - 1];
+    const dateLabel = latest.date ? latest.date.slice(5).replace('-', '/') : '';
+    const autoTag = latest.auto ? '<span class="rpt-fb-auto">AI 생성</span>' : '';
+    el.innerHTML = `<div class="rpt-feedback-card">
+      <div class="rpt-fb-header">
+        <span class="rpt-fb-title">2주 피드백</span>
+        ${autoTag}
+        ${dateLabel ? `<span class="rpt-fb-date">${dateLabel}</span>` : ''}
+      </div>
+      ${latest.summary ? `<div class="rpt-fb-summary">${latest.summary}</div>` : ''}
+      ${latest.note    ? `<div class="rpt-fb-note">${latest.note}</div>` : ''}
+    </div>`;
+  })();
 
   function buildCountdown(lastMeasured) {
     if (!lastMeasured) return '';
