@@ -256,53 +256,70 @@ function renderCheckPanel(results) {
     `<div class="check-card">${header}${rows.join('')}</div>`;
 }
 
+function getNthWeekday(year, month, weekday, nth) {
+  const firstDay = new Date(year, month, 1).getDay();
+  let diff = weekday - firstDay;
+  if (diff < 0) diff += 7;
+  return new Date(year, month, 1 + diff + (nth - 1) * 7);
+}
+
+function nextFixedDate(from) {
+  /* 매월 2째·4째 수요일(3) 중 from 이후 첫 번째 날짜 반환 */
+  let year = from.getFullYear(), month = from.getMonth();
+  for (let attempt = 0; attempt < 6; attempt++) {
+    const y = year + Math.floor(month / 12);
+    const m = month % 12;
+    for (const nth of [2, 4]) {
+      const d = getNthWeekday(y, m, 3, nth);
+      d.setHours(0, 0, 0, 0);
+      if (d >= from) return d;
+    }
+    month++;
+  }
+  return null;
+}
+
 function renderSchedulePanel(results) {
-  const today = new Date(); today.setHours(0,0,0,0);
-  const items = [];
+  const today = new Date(); today.setHours(0, 0, 0, 0);
+  const WDAY = ['일','월','화','수','목','금','토'];
 
-  results.forEach(({ data }) => {
-    /* InBody: 마지막 측정일 + 14일 */
-    let lastMeasured = null;
-    for (let i = (data.weeks||[]).length - 1; i >= 0; i--) {
-      const lm = data.weeks[i].bodyData?.lastMeasured;
-      if (lm) { lastMeasured = lm; break; }
-    }
-    if (lastMeasured) {
-      const next = new Date(lastMeasured);
-      next.setDate(next.getDate() + 14); next.setHours(0,0,0,0);
-      const d = Math.round((next - today) / 86400000);
-      items.push({ name: data.name, type: 'inbody', date: next, d });
-    }
-
-    /* 상담: nextConsult 필드 있으면 */
-    if (data.nextConsult) {
-      const next = new Date(data.nextConsult); next.setHours(0,0,0,0);
-      const d = Math.round((next - today) / 86400000);
-      items.push({ name: data.name, type: 'consult', date: next, d });
-    }
-  });
-
-  /* 날짜순 정렬 (지난 것 → 오늘 → 앞으로) */
-  items.sort((a, b) => a.d - b.d);
-
-  if (!items.length) {
+  const nextDate = nextFixedDate(today);
+  if (!nextDate) {
     document.getElementById('schedule-panel').innerHTML =
-      '<div class="schedule-card" style="text-align:center;color:#b0c0d4;font-size:12px;padding:20px">예정 일정 없음</div>';
+      '<div class="schedule-card" style="text-align:center;color:#b0c0d4;font-size:12px;padding:20px">일정 없음</div>';
     return;
   }
 
+  const items = [];
+
+  /* 전 회원 동일: 다음 2째·4째 수요일 */
+  results.forEach(({ data }) => {
+    const d = Math.round((nextDate - today) / 86400000);
+    items.push({ name: data.name, type: 'inbody', date: nextDate, d });
+  });
+
+  /* 개별 상담 일정 (nextConsult 필드 있으면) */
+  results.forEach(({ data }) => {
+    if (data.nextConsult) {
+      const dt = new Date(data.nextConsult); dt.setHours(0, 0, 0, 0);
+      const d = Math.round((dt - today) / 86400000);
+      items.push({ name: data.name, type: 'consult', date: dt, d });
+    }
+  });
+
+  items.sort((a, b) => a.d - b.d);
+
   const rows = items.map(item => {
-    const mo = item.date.getMonth() + 1, dy = item.date.getDate();
-    const dateStr = `${mo}/${dy}`;
-    const ddayTxt = item.d === 0 ? 'D-Day' : item.d < 0 ? `D+${Math.abs(item.d)}` : `D-${item.d}`;
-    const ddayCls = item.d < 0 ? 'overdue' : item.d === 0 ? 'today' : item.d <= 3 ? 'urgent' : item.d <= 7 ? 'soon' : 'later';
-    const badgeCls = item.type === 'inbody' ? 'inbody' : 'consult';
-    const badgeTxt = item.type === 'inbody' ? '인바디' : '상담';
+    const ds = `${item.date.getMonth()+1}/${item.date.getDate()}(${WDAY[item.date.getDay()]})`;
+    const ddTxt = item.d === 0 ? 'D-Day' : item.d < 0 ? `D+${Math.abs(item.d)}` : `D-${item.d}`;
+    const ddCls = item.d < 0 ? 'overdue' : item.d === 0 ? 'today' : item.d <= 3 ? 'urgent' : item.d <= 7 ? 'soon' : 'later';
+    const bCls = item.type === 'inbody' ? 'inbody' : 'consult';
+    const bTxt = item.type === 'inbody' ? '인바디' : '상담';
     return `<div class="sch-row">
       <span class="sch-name">${item.name}</span>
-      <span class="sch-badge ${badgeCls}">${badgeTxt}</span>
-      <span class="sch-date">${dateStr}</span>
-      <span class="sch-dday ${ddayCls}">${ddayTxt}</span>
+      <span class="sch-badge ${bCls}">${bTxt}</span>
+      <span class="sch-date">${ds}</span>
+      <span class="sch-dday ${ddCls}">${ddTxt}</span>
     </div>`;
   });
 
