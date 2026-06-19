@@ -569,11 +569,19 @@
       ],
       "lifts": [],
       "bodyData": {
-        "labels": [],
-        "weight": [],
-        "fat": [],
-        "muscle": [],
-        "lastMeasured": null,
+        "labels": [
+          "6/16"
+        ],
+        "weight": [
+          66.1
+        ],
+        "fat": [
+          24.6
+        ],
+        "muscle": [
+          22.6
+        ],
+        "lastMeasured": "2026-06-16",
         "comment": ""
       },
       "condition": "보통",
