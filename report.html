@@ -293,10 +293,74 @@ tr:last-child td { border-bottom: none; }
 .hm-tdot { width:36px; height:36px; border-radius:50%; cursor:pointer; border:3px solid transparent; transition:all 0.15s; -webkit-tap-highlight-color:transparent; position:relative; }
 .hm-tdot.active { border-color:rgba(255,255,255,0.9); box-shadow:0 0 0 2.5px rgba(0,0,0,0.35); }
 .hm-tdot[data-t="original"] { background:linear-gradient(135deg,#5aaae8,#f7faff); }
+.hm-tdot[data-t="apple"]    { background:linear-gradient(135deg,#f5f5f7,#1d1d1f); }
 .hm-tdot[data-t="navy"]     { background:linear-gradient(135deg,#0d1b2e,#c9a96e); }
 .hm-tdot[data-t="charcoal"] { background:linear-gradient(135deg,#111827,#d4982a); }
 .hm-tdot[data-t="forest"]   { background:linear-gradient(135deg,#0a1f1a,#a8d5a2); }
 .hm-tdot[data-t="plum"]     { background:linear-gradient(135deg,#1a0f2e,#e8a0b4); }
+
+/* ─── APPLE CLEAN ─── */
+html[data-theme="apple"] { background:#f5f5f7; }
+html[data-theme="apple"] body { background:#f5f5f7; color:#1d1d1f; }
+html[data-theme="apple"] .header { background:#ffffff; border-color:rgba(0,0,0,0.06); box-shadow:0 2px 16px rgba(0,0,0,0.06); }
+html[data-theme="apple"] .header h1 { background:linear-gradient(135deg,#1d1d1f 0%,#3a3a3c 100%); -webkit-background-clip:text; background-clip:text; -webkit-text-fill-color:transparent; }
+html[data-theme="apple"] .header .subtitle { color:#6e6e73; }
+html[data-theme="apple"] .header .meta span { background:rgba(0,0,0,0.04); border-color:rgba(0,0,0,0.08); color:#6e6e73; }
+html[data-theme="apple"] .card { background:#ffffff; border-color:rgba(0,0,0,0.06); box-shadow:0 2px 16px rgba(0,0,0,0.06); }
+html[data-theme="apple"] .card-title { color:#acacac; }
+html[data-theme="apple"] .msg { background:#f5f5f7; border-color:rgba(0,0,0,0.06); color:#1d1d1f; box-shadow:none; }
+html[data-theme="apple"] .note { color:#acacac; }
+html[data-theme="apple"] .sub-label { color:#acacac; }
+html[data-theme="apple"] th { color:#acacac; border-color:rgba(0,0,0,0.08); }
+html[data-theme="apple"] td { color:#3a3a3c; border-color:rgba(0,0,0,0.06); }
+html[data-theme="apple"] .chip { background:#f5f5f7; border-color:rgba(0,0,0,0.08); color:#acacac; }
+html[data-theme="apple"] .chip.on { background:rgba(0,113,227,0.08); border-color:rgba(0,113,227,0.3); color:#0071e3; }
+html[data-theme="apple"] .stat-box { background:#ffffff; border-color:rgba(0,0,0,0.06); box-shadow:0 2px 12px rgba(0,0,0,0.05); }
+html[data-theme="apple"] .stat-box .lbl { color:#acacac; }
+html[data-theme="apple"] .stat-box .val { color:#1d1d1f; }
+html[data-theme="apple"] .stat-box .unt { color:#acacac; }
+html[data-theme="apple"] .delta-box { background:#f5f5f7; border-color:rgba(0,0,0,0.06); }
+html[data-theme="apple"] .dlbl { color:#acacac; }
+html[data-theme="apple"] .dval { color:#3a3a3c; }
+html[data-theme="apple"] .exercise-item { background:#ffffff; border-color:rgba(0,0,0,0.06); box-shadow:0 2px 12px rgba(0,0,0,0.05); }
+html[data-theme="apple"] .ei-name { color:#1d1d1f; }
+html[data-theme="apple"] .ei-feedback { color:#6e6e73; }
+html[data-theme="apple"] .ei-next { color:#acacac; }
+html[data-theme="apple"] .lift-box { background:#ffffff; border-color:rgba(0,0,0,0.06); box-shadow:0 2px 12px rgba(0,0,0,0.05); }
+html[data-theme="apple"] .lb-name { color:#1d1d1f; }
+html[data-theme="apple"] .lb-current { color:#1d1d1f; }
+html[data-theme="apple"] .lb-current span { color:#acacac; }
+html[data-theme="apple"] .lb-goal { color:#acacac; }
+html[data-theme="apple"] .lb-gap { color:#0071e3; }
+html[data-theme="apple"] .cal-day { background:#f5f5f7; border-color:rgba(0,0,0,0.06); }
+html[data-theme="apple"] .cd-weekday { color:#acacac; }
+html[data-theme="apple"] .cd-date { color:#1d1d1f; }
+html[data-theme="apple"] .cal-day.checked { background:rgba(0,113,227,0.06); border-color:rgba(0,113,227,0.25); }
+html[data-theme="apple"] .cal-day.checked .cd-weekday, html[data-theme="apple"] .cal-day.checked .cd-date { color:#0071e3; }
+html[data-theme="apple"] .countdown-wrap { background:#f5f5f7; border-color:rgba(0,0,0,0.06); }
+html[data-theme="apple"] .countdown-label { color:#acacac; }
+html[data-theme="apple"] .countdown-days { color:#0071e3; }
+html[data-theme="apple"] .week-nav { background:rgba(245,245,247,0.96); }
+html[data-theme="apple"] .wt-btn { background:#f5f5f7; border-color:rgba(0,0,0,0.08); color:#acacac; }
+html[data-theme="apple"] .wt-btn.active { background:rgba(0,113,227,0.08); border-color:rgba(0,113,227,0.3); color:#0071e3; box-shadow:none; }
+html[data-theme="apple"] .week-empty { background:#f5f5f7; border-color:rgba(0,0,0,0.08); color:#acacac; }
+html[data-theme="apple"] .week-empty .we-num { color:#d1d1d6; }
+html[data-theme="apple"] .rpt-feedback-card { background:#ffffff; border-color:rgba(0,0,0,0.06); box-shadow:0 2px 12px rgba(0,0,0,0.05); }
+html[data-theme="apple"] .rpt-fb-summary { color:#1d1d1f; }
+html[data-theme="apple"] .si-name { color:#0071e3; }
+html[data-theme="apple"] .si-detail { color:#3a3a3c; }
+html[data-theme="apple"] .si-sep { color:#d1d1d6; }
+html[data-theme="apple"] .final-card { background:#f0f0f5; border-color:rgba(0,0,0,0.06); box-shadow:none; }
+html[data-theme="apple"] .final-card > div:first-child { color:#acacac; }
+html[data-theme="apple"] .final-card > div:last-child { color:#1d1d1f; }
+html[data-theme="apple"] .daily-note { background:#f5f5f7; border-color:rgba(0,0,0,0.1); color:#1d1d1f; }
+html[data-theme="apple"] .purpose-chip { background:#ffffff; border-color:rgba(0,0,0,0.06); color:#3a3a3c; }
+html[data-theme="apple"] .ms-card { background:#f5f5f7; border-color:rgba(0,0,0,0.06); }
+html[data-theme="apple"] .ms-label { color:#1d1d1f; }
+html[data-theme="apple"] .hm-theme-panel { background:rgba(255,255,255,0.98); border-color:rgba(0,0,0,0.08); }
+html[data-theme="apple"] .muscle-tag { background:rgba(0,113,227,0.07); border-color:rgba(0,113,227,0.2); color:#0071e3; }
+html[data-theme="apple"] .countdown-bar-fill { background:linear-gradient(90deg,rgba(0,113,227,0.5),rgba(0,113,227,0.85)); }
+html[data-theme="apple"] .goal-bar-fill { }
 
 /* ─── NAVY ─── */
 html[data-theme="navy"] { background:#0d1b2e; }
@@ -1330,6 +1394,7 @@ document.getElementById('plan-overlay').addEventListener('click', e => { if(e.ta
 <button class="hm-theme-fab" id="hmFab" title="테마 변경">🎨</button>
 <div class="hm-theme-panel" id="hmPanel">
   <div class="hm-tdot" data-t="original" title="오리지널"></div>
+  <div class="hm-tdot" data-t="apple"    title="애플 클린"></div>
   <div class="hm-tdot" data-t="navy"     title="미드나이트 네이비"></div>
   <div class="hm-tdot" data-t="charcoal" title="챠콜 & 앰버"></div>
   <div class="hm-tdot" data-t="forest"   title="딥 포레스트"></div>
@@ -1337,7 +1402,7 @@ document.getElementById('plan-overlay').addEventListener('click', e => { if(e.ta
 </div>
 <script>
 (function(){
-  const THEMES=['original','navy','charcoal','forest','plum'];
+  const THEMES=['original','apple','navy','charcoal','forest','plum'];
   const KEY='hm_theme';
   const fab=document.getElementById('hmFab');
   const panel=document.getElementById('hmPanel');
@@ -1348,7 +1413,7 @@ document.getElementById('plan-overlay').addEventListener('click', e => { if(e.ta
     dots.forEach(d=>d.classList.toggle('active',d.dataset.t===t));
     localStorage.setItem(KEY,t);
   }
-  const saved=localStorage.getItem(KEY)||'navy';
+  const saved=localStorage.getItem(KEY)||'apple';
   apply(saved);
   fab.addEventListener('click',function(e){ e.stopPropagation(); panel.classList.toggle('open'); });
   dots.forEach(d=>d.addEventListener('click',function(){ apply(this.dataset.t); panel.classList.remove('open'); }));
