@@ -503,12 +503,33 @@
       "week": 3,
       "label": "3주차",
       "date": "6/15",
-      "mainMessage": "",
+      "mainMessage": "등·삼두 집중 세션. 신장성 수축과 흉추 신전 가동성에 집중.",
       "summary": {
         "date": "",
         "items": []
       },
-      "exercises": [],
+      "exercises": [
+        {
+          "name": "해머 시티드 로우",
+          "note": "· 신장성 수축(내려오는 구간)에 집중\n· 이완 범위 향상 목표\n· 흉추 신전(가슴열림) 범위가 늘어난 게 느껴짐 — 좋은 신호",
+          "next": ""
+        },
+        {
+          "name": "케이블 스트레이트 암 풀 다운",
+          "note": "· 광배 상부 자극이 큼\n· 중·하부까지 자극 전달되도록 팔꿈치 방향과 견갑 움직임 연결",
+          "next": ""
+        },
+        {
+          "name": "덤벨 킥백 & 암 익스텐션",
+          "note": "· 킥백 후 중량 내려놓고 팔 편 상태로 업·다운 추가\n· 킥백 시 삼두 최대 수축 끝까지 유도",
+          "next": ""
+        },
+        {
+          "name": "엎드려 렛풀다운",
+          "note": "· 팔꿈치를 천장이 아닌 옆구리 방향으로 눌러야 광배 수축 제대로 됨\n· 기립근 보조력 아직 부족 — 코어·척추기립근 강화 병행 필요",
+          "next": ""
+        }
+      ],
       "lifts": [],
       "bodyData": {
         "labels": [],
@@ -536,7 +557,10 @@
       "trainerDirection": "",
       "finalMessage": "",
       "nextSessionMemo": "",
-      "musclesWorked": [],
+      "musclesWorked": [
+        "back",
+        "triceps"
+      ],
       "weeklyRoutine": {
         "weekKey": "2026-W25-yw",
         "note": "🎯 3주차: 월-하체1(레슨) · 화-상체등(개인) · 목-상체가슴(레슨) · 금-하체2(개인)",
@@ -712,7 +736,33 @@
           }
         ]
       },
-      "sessionDates": []
+      "sessionDates": [
+        "2026-06-18"
+      ],
+      "summaries": [
+        {
+          "sessionDate": "2026-06-18",
+          "date": "2026년 6월 18일",
+          "items": [
+            {
+              "name": "해머 시티드 로우",
+              "detail": "3세트"
+            },
+            {
+              "name": "케이블 스트레이트 암 풀 다운",
+              "detail": "3세트"
+            },
+            {
+              "name": "덤벨 킥백 & 암 익스텐션",
+              "detail": "3세트"
+            },
+            {
+              "name": "엎드려 렛풀다운",
+              "detail": "3세트"
+            }
+          ]
+        }
+      ]
     },
     {
       "week": 4,
