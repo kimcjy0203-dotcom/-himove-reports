@@ -104,9 +104,186 @@ h1 { font-size: 20px; font-weight: 800; color: #1a2a40; letter-spacing: -0.8px; 
 .fb-strip-note { font-size: 11px; color: #6a8aaa; line-height: 1.6; padding-left: 8px; border-left: 2px solid rgba(100,155,220,0.28); }
 .ci-row { display: flex; gap: 5px; flex-wrap: wrap; align-items: center; margin-top: 8px; padding-top: 8px; border-top: 1px solid rgba(160,190,230,0.15); }
 .ci-row-label { font-size: 9px; font-weight: 700; color: #b0c0d4; letter-spacing: 0.5px; margin-right: 2px; }
+
+/* ─── THEME BAR ─── */
+.hm-theme-bar { display:flex; align-items:center; gap:8px; padding:0 0 14px; }
+.hm-theme-bar-label { font-size:10px; font-weight:700; color:#b0c0d4; letter-spacing:1px; text-transform:uppercase; margin-right:4px; flex-shrink:0; }
+.hm-tdot { width:22px; height:22px; border-radius:50%; cursor:pointer; border:2.5px solid transparent; transition:all 0.15s; -webkit-tap-highlight-color:transparent; flex-shrink:0; }
+.hm-tdot.active { border-color:rgba(0,0,0,0.3); box-shadow:0 0 0 2px rgba(255,255,255,0.85); }
+.hm-tdot[data-t="original"] { background:linear-gradient(135deg,#5aaae8,#eef2f8); }
+.hm-tdot[data-t="apple"]    { background:linear-gradient(135deg,#f5f5f7,#1d1d1f); }
+.hm-tdot[data-t="navy"]     { background:linear-gradient(135deg,#0d1b2e,#c9a96e); }
+.hm-tdot[data-t="charcoal"] { background:linear-gradient(135deg,#111827,#d4982a); }
+.hm-tdot[data-t="forest"]   { background:linear-gradient(135deg,#0a1f1a,#a8d5a2); }
+.hm-tdot[data-t="plum"]     { background:linear-gradient(135deg,#1a0f2e,#e8a0b4); }
+html[data-theme="navy"] .hm-theme-bar-label,html[data-theme="charcoal"] .hm-theme-bar-label,html[data-theme="forest"] .hm-theme-bar-label,html[data-theme="plum"] .hm-theme-bar-label { color:#3a5888; }
+
+/* ─── APPLE CLEAN ─── */
+html[data-theme="apple"] { background:#f5f5f7; }
+html[data-theme="apple"] body { background:#f5f5f7; color:#1d1d1f; }
+html[data-theme="apple"] h1 { color:#1d1d1f; }
+html[data-theme="apple"] .page-sub { color:#acacac; }
+html[data-theme="apple"] .tab-btn { background:#fff; border-color:rgba(0,0,0,0.1); color:#3a3a3c; }
+html[data-theme="apple"] .tab-btn.active { background:#1d1d1f; color:#fff; border-color:#1d1d1f; }
+html[data-theme="apple"] .search-input { background:#fff; border-color:rgba(0,0,0,0.1); color:#1d1d1f; }
+html[data-theme="apple"] .member-block { background:#fff; border-color:rgba(0,0,0,0.06); }
+html[data-theme="apple"] .member-header { border-color:rgba(0,0,0,0.06); }
+html[data-theme="apple"] .mh-name { color:#1d1d1f; }
+html[data-theme="apple"] .mh-month { color:#acacac; }
+html[data-theme="apple"] .goal-pill { background:rgba(0,0,0,0.04); border-color:rgba(0,0,0,0.08); color:#6e6e73; }
+html[data-theme="apple"] .goal-pill .curr { color:#1d1d1f; }
+html[data-theme="apple"] .week-row { border-color:rgba(0,0,0,0.06); }
+html[data-theme="apple"] .wr-label { color:#1d1d1f; }
+html[data-theme="apple"] .wr-date { color:#acacac; }
+html[data-theme="apple"] .wr-comment { background:rgba(0,0,0,0.03); color:#3a3a3c; }
+html[data-theme="apple"] .wr-exercises { color:#6e6e73; }
+html[data-theme="apple"] .wr-memo { background:rgba(220,160,60,0.06); color:#6a4010; }
+html[data-theme="apple"] .fb-strip { background:rgba(0,0,0,0.02); border-color:rgba(0,0,0,0.06); }
+html[data-theme="apple"] .fb-strip-summary { color:#1d1d1f; }
+html[data-theme="apple"] .fb-strip-note { color:#6e6e73; border-color:rgba(0,0,0,0.15); }
+html[data-theme="apple"] .progress-bar { background:rgba(0,0,0,0.06); }
+html[data-theme="apple"] .progress-fill { background:linear-gradient(90deg,#0071e3,#0051b0); }
+html[data-theme="apple"] .progress-text { color:#0071e3; }
+html[data-theme="apple"] .ci-row { border-color:rgba(0,0,0,0.06); }
+
+/* ─── NAVY ─── */
+html[data-theme="navy"] { background:#0d1b2e; }
+html[data-theme="navy"] body { background:linear-gradient(145deg,#0d1b2e 0%,#162844 60%,#0a1628 100%); color:#c8dcf8; }
+html[data-theme="navy"] h1 { color:#c9a96e; }
+html[data-theme="navy"] .page-sub { color:#4a6898; }
+html[data-theme="navy"] .tab-btn { background:rgba(12,35,82,0.45); border-color:rgba(40,80,170,0.25); color:#4a6898; }
+html[data-theme="navy"] .tab-btn.active { background:rgba(35,75,170,0.4); border-color:rgba(70,120,230,0.5); color:#78aae0; }
+html[data-theme="navy"] .search-input { background:rgba(12,35,82,0.5); border-color:rgba(40,80,170,0.3); color:#c8dcf8; }
+html[data-theme="navy"] .member-block { background:rgba(10,28,65,0.88); border-color:rgba(40,80,170,0.22); }
+html[data-theme="navy"] .member-header { border-color:rgba(40,80,170,0.18); }
+html[data-theme="navy"] .mh-name { color:#b8d0f0; }
+html[data-theme="navy"] .mh-month { color:#3a5888; }
+html[data-theme="navy"] .goal-pill { background:rgba(30,60,130,0.35); border-color:rgba(50,90,180,0.28); color:#6888b8; }
+html[data-theme="navy"] .goal-pill .curr { color:#b8d0f0; }
+html[data-theme="navy"] .week-row { border-color:rgba(40,80,170,0.12); }
+html[data-theme="navy"] .wr-label { color:#88aad8; }
+html[data-theme="navy"] .wr-date { color:#3a5888; }
+html[data-theme="navy"] .wr-comment { background:rgba(15,40,90,0.5); color:#a8c8e8; }
+html[data-theme="navy"] .wr-exercises { color:#6888b0; }
+html[data-theme="navy"] .wr-memo { background:rgba(100,60,20,0.2); color:#c8a060; border-color:rgba(180,120,40,0.4); }
+html[data-theme="navy"] .fb-strip { background:rgba(10,28,65,0.5); border-color:rgba(40,80,170,0.15); }
+html[data-theme="navy"] .fb-strip-summary { color:#a8c8e8; }
+html[data-theme="navy"] .fb-strip-note { color:#6888b0; border-color:rgba(60,100,180,0.3); }
+html[data-theme="navy"] .progress-bar { background:rgba(40,80,170,0.2); }
+html[data-theme="navy"] .week-row.empty { opacity:0.25; }
+html[data-theme="navy"] .ci-row { border-color:rgba(40,80,170,0.15); }
+
+/* ─── CHARCOAL ─── */
+html[data-theme="charcoal"] { background:#101520; }
+html[data-theme="charcoal"] body { background:linear-gradient(145deg,#111827 0%,#1c2638 60%,#0f1a2e 100%); color:#ede0c8; }
+html[data-theme="charcoal"] h1 { color:#d4982a; }
+html[data-theme="charcoal"] .page-sub { color:#5a5040; }
+html[data-theme="charcoal"] .tab-btn { background:rgba(18,26,44,0.45); border-color:rgba(80,65,25,0.28); color:#6a5a38; }
+html[data-theme="charcoal"] .tab-btn.active { background:rgba(120,85,20,0.35); border-color:rgba(200,145,40,0.5); color:#d4a840; }
+html[data-theme="charcoal"] .search-input { background:rgba(18,26,44,0.5); border-color:rgba(80,65,25,0.3); color:#ede0c8; }
+html[data-theme="charcoal"] .member-block { background:rgba(15,22,38,0.9); border-color:rgba(80,65,25,0.22); }
+html[data-theme="charcoal"] .member-header { border-color:rgba(80,65,25,0.18); }
+html[data-theme="charcoal"] .mh-name { color:#dcc890; }
+html[data-theme="charcoal"] .mh-month { color:#5a5040; }
+html[data-theme="charcoal"] .goal-pill { background:rgba(80,60,20,0.3); border-color:rgba(120,90,30,0.3); color:#887040; }
+html[data-theme="charcoal"] .goal-pill .curr { color:#dcc890; }
+html[data-theme="charcoal"] .week-row { border-color:rgba(80,65,25,0.12); }
+html[data-theme="charcoal"] .wr-label { color:#c0a060; }
+html[data-theme="charcoal"] .wr-date { color:#5a5040; }
+html[data-theme="charcoal"] .wr-comment { background:rgba(18,26,44,0.5); color:#c8b898; }
+html[data-theme="charcoal"] .wr-exercises { color:#887860; }
+html[data-theme="charcoal"] .wr-memo { background:rgba(100,60,10,0.2); color:#c8a060; border-color:rgba(180,120,30,0.4); }
+html[data-theme="charcoal"] .fb-strip { background:rgba(15,22,38,0.5); border-color:rgba(80,65,25,0.15); }
+html[data-theme="charcoal"] .fb-strip-summary { color:#c8b898; }
+html[data-theme="charcoal"] .fb-strip-note { color:#887860; border-color:rgba(120,90,30,0.3); }
+html[data-theme="charcoal"] .progress-bar { background:rgba(80,65,25,0.2); }
+html[data-theme="charcoal"] .progress-fill { background:linear-gradient(90deg,#d4982a,#f0b840); }
+html[data-theme="charcoal"] .progress-text { color:#d4a840; }
+html[data-theme="charcoal"] .ci-row { border-color:rgba(80,65,25,0.15); }
+
+/* ─── FOREST ─── */
+html[data-theme="forest"] { background:#091812; }
+html[data-theme="forest"] body { background:linear-gradient(145deg,#0a1f1a 0%,#122a22 60%,#0d2018 100%); color:#c8e8d0; }
+html[data-theme="forest"] h1 { color:#a8d5a2; }
+html[data-theme="forest"] .page-sub { color:#2a5840; }
+html[data-theme="forest"] .tab-btn { background:rgba(10,28,18,0.45); border-color:rgba(30,80,50,0.28); color:#387858; }
+html[data-theme="forest"] .tab-btn.active { background:rgba(30,100,60,0.35); border-color:rgba(70,170,100,0.5); color:#78d898; }
+html[data-theme="forest"] .search-input { background:rgba(10,28,18,0.5); border-color:rgba(30,80,50,0.3); color:#c8e8d0; }
+html[data-theme="forest"] .member-block { background:rgba(8,24,16,0.9); border-color:rgba(30,80,50,0.22); }
+html[data-theme="forest"] .member-header { border-color:rgba(30,80,50,0.18); }
+html[data-theme="forest"] .mh-name { color:#a8d8b8; }
+html[data-theme="forest"] .mh-month { color:#2a5840; }
+html[data-theme="forest"] .goal-pill { background:rgba(20,70,40,0.35); border-color:rgba(40,100,60,0.3); color:#488860; }
+html[data-theme="forest"] .goal-pill .curr { color:#a8d8b8; }
+html[data-theme="forest"] .week-row { border-color:rgba(30,80,50,0.12); }
+html[data-theme="forest"] .wr-label { color:#78b888; }
+html[data-theme="forest"] .wr-date { color:#2a5840; }
+html[data-theme="forest"] .wr-comment { background:rgba(10,28,18,0.5); color:#98c8a8; }
+html[data-theme="forest"] .wr-exercises { color:#588878; }
+html[data-theme="forest"] .wr-memo { background:rgba(80,50,10,0.2); color:#c8a060; border-color:rgba(180,120,30,0.4); }
+html[data-theme="forest"] .fb-strip { background:rgba(8,24,16,0.5); border-color:rgba(30,80,50,0.15); }
+html[data-theme="forest"] .fb-strip-summary { color:#98c8a8; }
+html[data-theme="forest"] .fb-strip-note { color:#588878; border-color:rgba(60,150,80,0.3); }
+html[data-theme="forest"] .progress-bar { background:rgba(30,80,50,0.2); }
+html[data-theme="forest"] .progress-fill { background:linear-gradient(90deg,#78b888,#a8d5a2); }
+html[data-theme="forest"] .progress-text { color:#78d898; }
+html[data-theme="forest"] .ci-row { border-color:rgba(30,80,50,0.15); }
+
+/* ─── PLUM ─── */
+html[data-theme="plum"] { background:#160d28; }
+html[data-theme="plum"] body { background:linear-gradient(145deg,#1a0f2e 0%,#2a1848 60%,#160d28 100%); color:#e0d8f8; }
+html[data-theme="plum"] h1 { color:#e8a0b4; }
+html[data-theme="plum"] .page-sub { color:#5a3870; }
+html[data-theme="plum"] .tab-btn { background:rgba(26,14,54,0.45); border-color:rgba(80,45,130,0.28); color:#6a4888; }
+html[data-theme="plum"] .tab-btn.active { background:rgba(100,45,150,0.35); border-color:rgba(180,100,230,0.5); color:#d0a0e8; }
+html[data-theme="plum"] .search-input { background:rgba(26,14,54,0.5); border-color:rgba(80,45,130,0.3); color:#e0d8f8; }
+html[data-theme="plum"] .member-block { background:rgba(22,12,46,0.9); border-color:rgba(80,45,130,0.22); }
+html[data-theme="plum"] .member-header { border-color:rgba(80,45,130,0.18); }
+html[data-theme="plum"] .mh-name { color:#d0b8f8; }
+html[data-theme="plum"] .mh-month { color:#5a3870; }
+html[data-theme="plum"] .goal-pill { background:rgba(70,30,110,0.3); border-color:rgba(100,60,150,0.3); color:#8858a8; }
+html[data-theme="plum"] .goal-pill .curr { color:#d0b8f8; }
+html[data-theme="plum"] .week-row { border-color:rgba(80,45,130,0.12); }
+html[data-theme="plum"] .wr-label { color:#b890d8; }
+html[data-theme="plum"] .wr-date { color:#5a3870; }
+html[data-theme="plum"] .wr-comment { background:rgba(26,14,54,0.5); color:#c8b8e8; }
+html[data-theme="plum"] .wr-exercises { color:#8868a8; }
+html[data-theme="plum"] .wr-memo { background:rgba(80,40,10,0.2); color:#c8a060; border-color:rgba(180,120,30,0.4); }
+html[data-theme="plum"] .fb-strip { background:rgba(22,12,46,0.5); border-color:rgba(80,45,130,0.15); }
+html[data-theme="plum"] .fb-strip-summary { color:#c8b8e8; }
+html[data-theme="plum"] .fb-strip-note { color:#8868a8; border-color:rgba(150,80,210,0.3); }
+html[data-theme="plum"] .progress-bar { background:rgba(80,45,130,0.2); }
+html[data-theme="plum"] .progress-fill { background:linear-gradient(90deg,#c088c8,#e8a0b4); }
+html[data-theme="plum"] .progress-text { color:#d0a0e8; }
+html[data-theme="plum"] .ci-row { border-color:rgba(80,45,130,0.15); }
 </style>
 </head>
 <body>
+<div class="hm-theme-bar" id="hmBar">
+  <span class="hm-theme-bar-label">THEME</span>
+  <div class="hm-tdot" data-t="original" title="오리지널"></div>
+  <div class="hm-tdot" data-t="apple"    title="애플 클린"></div>
+  <div class="hm-tdot" data-t="navy"     title="미드나이트 네이비"></div>
+  <div class="hm-tdot" data-t="charcoal" title="챠콜 & 앰버"></div>
+  <div class="hm-tdot" data-t="forest"   title="딥 포레스트"></div>
+  <div class="hm-tdot" data-t="plum"     title="딥 플럼"></div>
+</div>
+<script>
+(function(){
+  const KEY='hm_theme';
+  const bar=document.getElementById('hmBar');
+  const dots=bar.querySelectorAll('.hm-tdot');
+  function apply(t){
+    if(t==='original') document.documentElement.removeAttribute('data-theme');
+    else document.documentElement.setAttribute('data-theme',t);
+    dots.forEach(d=>d.classList.toggle('active',d.dataset.t===t));
+    localStorage.setItem(KEY,t);
+  }
+  const saved=localStorage.getItem(KEY)||'apple';
+  apply(saved);
+  dots.forEach(d=>d.addEventListener('click',function(){ apply(this.dataset.t); }));
+})();
+</script>
 <h1>himove</h1>
 <div class="page-sub" id="page-sub">불러오는 중…</div>
 <div class="member-tabs" id="member-tabs"></div>
