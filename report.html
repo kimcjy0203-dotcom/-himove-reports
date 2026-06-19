@@ -285,13 +285,12 @@ tr:last-child td { border-bottom: none; }
 .ms-comment { font-size: 12px; color: #5a7a9a; line-height: 1.7; background: rgba(232,241,255,0.5); border-radius: 12px; padding: 10px 14px; border: 1px solid rgba(180,210,250,0.3); }
 
 /* ─── THEME SWITCHER UI ─── */
-.hm-theme-fab { position:fixed; bottom:24px; right:calc(50% - 215px + 8px); z-index:9999; width:38px; height:38px; border-radius:50%; border:none; cursor:pointer; font-size:17px; display:flex; align-items:center; justify-content:center; box-shadow:0 4px 18px rgba(0,0,0,0.22); background:#fff; transition:all 0.2s; -webkit-tap-highlight-color:transparent; }
-@media (max-width:450px){ .hm-theme-fab { right:12px; } }
-.hm-theme-panel { position:fixed; bottom:70px; right:calc(50% - 215px + 8px); z-index:9999; display:none; flex-direction:column; gap:7px; background:rgba(255,255,255,0.97); backdrop-filter:blur(24px); border-radius:18px; padding:12px 10px; border:1px solid rgba(160,190,230,0.35); box-shadow:0 8px 36px rgba(0,0,0,0.18); }
-@media (max-width:450px){ .hm-theme-panel { right:12px; } }
-.hm-theme-panel.open { display:flex; }
-.hm-tdot { width:36px; height:36px; border-radius:50%; cursor:pointer; border:3px solid transparent; transition:all 0.15s; -webkit-tap-highlight-color:transparent; position:relative; }
-.hm-tdot.active { border-color:rgba(255,255,255,0.9); box-shadow:0 0 0 2.5px rgba(0,0,0,0.35); }
+.hm-theme-bar { display:flex; align-items:center; gap:8px; padding:10px 4px 16px; }
+.hm-theme-bar-label { font-size:10px; font-weight:700; color:#b0c0d4; letter-spacing:1px; text-transform:uppercase; margin-right:4px; flex-shrink:0; }
+.hm-tdot { width:24px; height:24px; border-radius:50%; cursor:pointer; border:2.5px solid transparent; transition:all 0.15s; -webkit-tap-highlight-color:transparent; flex-shrink:0; }
+.hm-tdot.active { border-color:rgba(0,0,0,0.3); box-shadow:0 0 0 2px rgba(255,255,255,0.85); }
+html[data-theme="apple"] .hm-tdot.active { border-color:rgba(0,0,0,0.25); }
+html[data-theme="navy"] .hm-theme-bar-label,html[data-theme="charcoal"] .hm-theme-bar-label,html[data-theme="forest"] .hm-theme-bar-label,html[data-theme="plum"] .hm-theme-bar-label { color:#3a5888; }
 .hm-tdot[data-t="original"] { background:linear-gradient(135deg,#5aaae8,#f7faff); }
 .hm-tdot[data-t="apple"]    { background:linear-gradient(135deg,#f5f5f7,#1d1d1f); }
 .hm-tdot[data-t="navy"]     { background:linear-gradient(135deg,#0d1b2e,#c9a96e); }
@@ -1391,8 +1390,8 @@ document.getElementById('plan-close').addEventListener('click', () => document.g
 document.getElementById('plan-overlay').addEventListener('click', e => { if(e.target===e.currentTarget) e.currentTarget.classList.remove('show'); });
 </script>
 <!-- THEME SWITCHER -->
-<button class="hm-theme-fab" id="hmFab" title="테마 변경">🎨</button>
-<div class="hm-theme-panel" id="hmPanel">
+<div class="hm-theme-bar" id="hmBar">
+  <span class="hm-theme-bar-label">THEME</span>
   <div class="hm-tdot" data-t="original" title="오리지널"></div>
   <div class="hm-tdot" data-t="apple"    title="애플 클린"></div>
   <div class="hm-tdot" data-t="navy"     title="미드나이트 네이비"></div>
@@ -1402,11 +1401,9 @@ document.getElementById('plan-overlay').addEventListener('click', e => { if(e.ta
 </div>
 <script>
 (function(){
-  const THEMES=['original','apple','navy','charcoal','forest','plum'];
   const KEY='hm_theme';
-  const fab=document.getElementById('hmFab');
-  const panel=document.getElementById('hmPanel');
-  const dots=panel.querySelectorAll('.hm-tdot');
+  const bar=document.getElementById('hmBar');
+  const dots=bar.querySelectorAll('.hm-tdot');
   function apply(t){
     if(t==='original') document.documentElement.removeAttribute('data-theme');
     else document.documentElement.setAttribute('data-theme',t);
@@ -1415,9 +1412,7 @@ document.getElementById('plan-overlay').addEventListener('click', e => { if(e.ta
   }
   const saved=localStorage.getItem(KEY)||'apple';
   apply(saved);
-  fab.addEventListener('click',function(e){ e.stopPropagation(); panel.classList.toggle('open'); });
-  dots.forEach(d=>d.addEventListener('click',function(){ apply(this.dataset.t); panel.classList.remove('open'); }));
-  document.addEventListener('click',function(e){ if(!panel.contains(e.target)&&e.target!==fab) panel.classList.remove('open'); });
+  dots.forEach(d=>d.addEventListener('click',function(){ apply(this.dataset.t); }));
 })();
 </script>
 </body>
