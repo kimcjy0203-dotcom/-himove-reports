@@ -750,12 +750,28 @@
       "week": 4,
       "label": "4주차",
       "date": "6/22",
-      "mainMessage": "",
+      "mainMessage": "하체 기초 강화 세션. 하이바 스쿼트 자세 안정, 스플릿 스쿼트 좌우 균형 개선.",
       "summary": {
         "date": "",
         "items": []
       },
-      "exercises": [],
+      "exercises": [
+        {
+          "name": "하이바 스쿼트",
+          "note": "· 20kg × 15회\n· 무릎과 고관절 신전 타이밍 개선됨 — 자세 안정적",
+          "next": ""
+        },
+        {
+          "name": "불가리안 스플릿 스쿼트",
+          "note": "· 4×8\n· 좌우 균형 많이 개선됨\n· 오른쪽 강도 4 / 왼쪽 강도 7 수준으로 느껴짐 — 왼쪽 보완 계속",
+          "next": "왼쪽 균형 강화 지속"
+        },
+        {
+          "name": "스티프 데드리프트",
+          "note": "· 중량 중심은 앞 발볼에 유지\n· 무릎은 발목보다 뒤로 신전\n· 엉덩뼈를 위로 끌어올리는 느낌으로 고관절 신전",
+          "next": ""
+        }
+      ],
       "lifts": [],
       "bodyData": {
         "labels": [],
@@ -783,7 +799,11 @@
       "trainerDirection": "",
       "nextSessionMemo": "",
       "finalMessage": "",
-      "musclesWorked": [],
+      "musclesWorked": [
+        "quads",
+        "glutes",
+        "hamstrings"
+      ],
       "weeklyRoutine": {
         "weekKey": "2026-W26-seo",
         "note": "🎯 4주차: 화=하체 레슨 · 목=가슴 레슨 · 월=개인하체 · 수=개인상체",
@@ -888,7 +908,30 @@
             "rest": true
           }
         ]
-      }
+      },
+      "sessionDates": [
+        "2026-06-23"
+      ],
+      "summaries": [
+        {
+          "sessionDate": "2026-06-23",
+          "date": "2026년 6월 23일",
+          "items": [
+            {
+              "name": "하이바 스쿼트",
+              "detail": "3세트 · 20kg×15"
+            },
+            {
+              "name": "불가리안 스플릿 스쿼트",
+              "detail": "4×8"
+            },
+            {
+              "name": "스티프 데드리프트",
+              "detail": "3세트"
+            }
+          ]
+        }
+      ]
     },
     {
       "week": 5,

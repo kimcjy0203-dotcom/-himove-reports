@@ -599,9 +599,53 @@
       "week": 4,
       "label": "4주차",
       "date": "6/22",
-      "mainMessage": "",
-      "summaries": [],
-      "exercises": [],
+      "mainMessage": "허리통증으로 근막이완·코어 안정화 위주 진행. 척추 중립 패턴 교육.",
+      "summaries": [
+        {
+          "sessionDate": "2026-06-23",
+          "date": "2026년 6월 23일",
+          "items": [
+            {
+              "name": "근막이완 (핀프린트)",
+              "detail": "케어"
+            },
+            {
+              "name": "활 자세 스트레칭",
+              "detail": "3세트"
+            },
+            {
+              "name": "플랭크잭 & 플랭크",
+              "detail": "3세트"
+            },
+            {
+              "name": "데드버그 & 백·힙 익스텐션",
+              "detail": "3세트"
+            }
+          ]
+        }
+      ],
+      "exercises": [
+        {
+          "name": "근막이완 핀프린트 테크닉",
+          "note": "· 허리 주변 근막 이완 집중\n· 통증 유발 부위 중점 처치",
+          "next": ""
+        },
+        {
+          "name": "활 자세 스트레칭",
+          "note": "· 가슴 + 고관절 굴곡근 동시 스트레칭\n· 하루 2회 이상 자가 수행 권장",
+          "next": "하루 2회 이상 자가 수행"
+        },
+        {
+          "name": "플랭크잭 & 플랭크",
+          "note": "· 허리 안정화 기초 코어 활성화",
+          "next": ""
+        },
+        {
+          "name": "데드버그 & 백·힙 익스텐션",
+          "note": "· x축(전후) 코어 강화\n· 상체 앞으로 기울일 때 척추 중립 유지 연습",
+          "next": ""
+        }
+      ],
       "lifts": [],
       "bodyData": {
         "labels": [],
@@ -625,12 +669,17 @@
         "caution": "",
         "suggest": ""
       },
-      "trainerComment": "",
+      "trainerComment": "평상시 허리 안정성을 확보하며 움직이기. 상체 앞으로 기울일 때 척추 중립 유지. 가슴 스트레칭 하루 2회 이상.",
       "trainerDirection": "",
       "nextSessionMemo": "",
       "finalMessage": "",
-      "musclesWorked": [],
-      "sessionDates": [],
+      "musclesWorked": [
+        "back",
+        "abs"
+      ],
+      "sessionDates": [
+        "2026-06-23"
+      ],
       "memberComment": "",
       "weeklyRoutine": {
         "weekKey": "2026-W26-lj",

@@ -768,12 +768,23 @@
       "week": 4,
       "label": "4주차",
       "date": "6/22",
-      "mainMessage": "",
+      "mainMessage": "하체·삼두 복합 세션. 스쿼트 자세 안정, 밴드 킥백 팔꿈치 고정 보완 필요.",
       "summary": {
         "date": "",
         "items": []
       },
-      "exercises": [],
+      "exercises": [
+        {
+          "name": "스미스 머신 스쿼트 + 밴드 킥백",
+          "note": "· 스쿼트 15회 — 자세 안정적\n· 밴드 킥백: 팔꿈치가 풀림 → 허리 옆(더 높게) 고정 후 동작\n· 팔꿈치 펼 때 가슴이 말림 → 가슴 열어주며 동시에 펴기",
+          "next": "팔꿈치 고정 위치 허리 옆으로 유지"
+        },
+        {
+          "name": "리버스 힙런지 + 케이블 푸쉬 다운",
+          "note": "· 케이블 5kg × 15회\n· 수축 시 단단한 느낌 끝까지 유지 — 힘 풀린 상태로 수축 금지\n· 케이블 머신에서 너무 멀리 서지 않도록",
+          "next": "수축 끝지점 단단히 유지"
+        }
+      ],
       "lifts": [],
       "bodyData": {
         "labels": [],
@@ -801,7 +812,11 @@
       "trainerDirection": "",
       "finalMessage": "",
       "nextSessionMemo": "",
-      "musclesWorked": [],
+      "musclesWorked": [
+        "quads",
+        "glutes",
+        "triceps"
+      ],
       "weeklyRoutine": {
         "weekKey": "2026-W26-yw",
         "note": "🎯 4주차: 월-하체1(레슨) · 화-상체가슴(개인) · 목-상체등(레슨) · 금-하체2(개인)",
@@ -977,7 +992,25 @@
           }
         ]
       },
-      "sessionDates": []
+      "sessionDates": [
+        "2026-06-23"
+      ],
+      "summaries": [
+        {
+          "sessionDate": "2026-06-23",
+          "date": "2026년 6월 23일",
+          "items": [
+            {
+              "name": "스미스 머신 스쿼트 + 밴드 킥백",
+              "detail": "3세트 · 각 15회"
+            },
+            {
+              "name": "리버스 힙런지 + 케이블 푸쉬 다운",
+              "detail": "3세트 · 5kg×15"
+            }
+          ]
+        }
+      ]
     },
     {
       "week": 5,
