@@ -11,7 +11,7 @@
   ],
   "goals": {
     "short": {
-      "text": "하루 칼로리 299 적자 실천 + 가슴 스트레칭 매일 (캣카우)",
+      "text": "하루 칼로리 300 적자 실천 + 가슴 스트레칭 매일 (캣카우)",
       "period": "1개월"
     },
     "mid": {
@@ -814,5 +814,6 @@
     "completed": 11
   },
   "monthlySummary": [],
-  "biweeklyFeedback": []
+  "biweeklyFeedback": [],
+  "calDeficit": 300
 }
