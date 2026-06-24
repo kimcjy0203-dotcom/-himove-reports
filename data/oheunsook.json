@@ -528,9 +528,30 @@
         "lastMeasured": null,
         "comment": ""
       },
-      "sessionDates": [],
-      "mainMessage": "",
-      "summaries": [],
+      "sessionDates": [
+        "2026-06-23"
+      ],
+      "mainMessage": "하체 복합 세션. 하이바 스쿼트 점프 스쿼트 결합, 힙힌지 패턴 심화.",
+      "summaries": [
+        {
+          "sessionDate": "2026-06-23",
+          "date": "2026년 6월 23일",
+          "items": [
+            {
+              "name": "하이바 스쿼트 + 점프 스쿼트",
+              "detail": "3세트 · 20kg×12 + 점프5회"
+            },
+            {
+              "name": "브이스쿼트 + 점프 스쿼트",
+              "detail": "3세트 · 점프3회"
+            },
+            {
+              "name": "힙 어브덕션",
+              "detail": "3세트"
+            }
+          ]
+        }
+      ],
       "condition": "보통",
       "conditionNote": "",
       "sleep": "보통",
@@ -587,7 +608,29 @@
             "rest": true
           }
         ]
-      }
+      },
+      "musclesWorked": [
+        "quads",
+        "glutes",
+        "hamstrings"
+      ],
+      "exercises": [
+        {
+          "name": "하이바 스쿼트 + 점프 스쿼트",
+          "note": "· 20kg × 12회, 이후 점프 스쿼트 5회\n· 엉덩이가 먼저 들리지 않도록 — 무릎과 엉덩이 동시에 펴기\n· 점프 시 상체 각도 흔들리지 않게 코어 단단히 유지",
+          "next": ""
+        },
+        {
+          "name": "브이스쿼트 (힙힌지 패턴) + 점프 스쿼트",
+          "note": "· 점프 스쿼트 3회 결합\n· 무릎이 앞으로 접히지 않도록 — 속옷 라인(서혜부)을 깊게 접는 느낌으로 고관절 우선 굴곡",
+          "next": ""
+        },
+        {
+          "name": "힙 어브덕션",
+          "note": "· 외측 둔근(중둔근) 자극",
+          "next": ""
+        }
+      ]
     },
     {
       "week": 5,
