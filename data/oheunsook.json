@@ -529,6 +529,7 @@
         "comment": ""
       },
       "sessionDates": [
+        "2026-06-25",
         "2026-06-23"
       ],
       "mainMessage": "하체 복합 세션. 하이바 스쿼트 점프 스쿼트 결합, 힙힌지 패턴 심화.",
@@ -552,13 +553,13 @@
           ]
         }
       ],
-      "condition": "보통",
-      "conditionNote": "",
-      "sleep": "보통",
-      "sleepNote": "",
+      "condition": "피곤함",
+      "conditionNote": "월요일부터 계속 피곤함",
+      "sleep": "나쁨",
+      "sleepNote": "잠을 쉬 이루지못해 ㅡ수면 도움되는 약 복용\n수욜ㅡ히트 운동 ㅡ근육통 있음ㅡ아침컨디션  나쁨ㅡ피곤함",
       "stress": "보통",
-      "pain": "없음",
-      "painNote": "",
+      "pain": "있음",
+      "painNote": "오른쪽?바깥엉덩이 부분.허리 약간뻐근.손목 불편ㅡ케틀백ㅡ",
       "review": {
         "good": "",
         "caution": "",
