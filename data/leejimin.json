@@ -861,7 +861,110 @@
           "note": "· note: 팔꿈치 편 상태 유지하며 팔을 몸통과 평행하게 뒤로 보내는 경로 연습<br>· next: 광배근이 수축되는 느낌을 인지하며 완전한 가동 범위로 수행",
           "next": ""
         }
-      ]
+      ],
+      "weeklyRoutine": {
+        "weekKey": "2026-W27-lj",
+        "note": "🎯 5주차: 하체·삼두 집중 · 8월 드레스 투어 목표 유지",
+        "days": [
+          {
+            "day": "월",
+            "workout": "레슨-하체",
+            "rest": false
+          },
+          {
+            "day": "화",
+            "workout": "유산소 30분",
+            "rest": false,
+            "plan": [
+              {
+                "name": "빠른 걷기 or 트레드밀",
+                "sets": 1,
+                "reps": 1,
+                "weight": "30분"
+              },
+              {
+                "name": "캣카우 (가슴 스트레칭)",
+                "sets": 3,
+                "reps": 10,
+                "weight": "-"
+              }
+            ]
+          },
+          {
+            "day": "수",
+            "workout": "개인-하체",
+            "rest": false,
+            "plan": [
+              {
+                "name": "스쿼트",
+                "sets": 3,
+                "reps": 15,
+                "weight": "-"
+              },
+              {
+                "name": "런지",
+                "sets": 3,
+                "reps": 10,
+                "weight": "양쪽"
+              },
+              {
+                "name": "힙브릿지",
+                "sets": 3,
+                "reps": 15,
+                "weight": "-"
+              }
+            ]
+          },
+          {
+            "day": "목",
+            "workout": "레슨-상체",
+            "rest": false
+          },
+          {
+            "day": "금",
+            "workout": "개인-전신",
+            "rest": false,
+            "plan": [
+              {
+                "name": "푸쉬업 플러스",
+                "sets": 3,
+                "reps": 10,
+                "weight": "-"
+              },
+              {
+                "name": "스쿼트",
+                "sets": 3,
+                "reps": 15,
+                "weight": "-"
+              },
+              {
+                "name": "플랭크",
+                "sets": 3,
+                "reps": 1,
+                "weight": "30초"
+              }
+            ]
+          },
+          {
+            "day": "토",
+            "workout": "자율운동",
+            "rest": false,
+            "plan": [
+              {
+                "name": "산책 or 스트레칭",
+                "sets": 1,
+                "reps": 1,
+                "weight": "30분+"
+              }
+            ]
+          },
+          {
+            "day": "일",
+            "workout": "휴식",
+            "rest": true
+          }
+        ]
+      }
     }
   ],
   "quotes": [
