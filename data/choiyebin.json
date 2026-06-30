@@ -26,12 +26,12 @@
       "goal": 43.5
     },
     "muscle": {
-      "start": null,
-      "goal": null
+      "start": 0,
+      "goal": 2
     },
     "fat": {
-      "start": null,
-      "goal": null
+      "start": 0,
+      "goal": 1
     }
   },
   "cardio": {
@@ -131,10 +131,10 @@
       "bodyData": {
         "labels": ["6/29"],
         "weight": [40.3],
-        "fat": [null],
-        "muscle": [null],
+        "fat": [0],
+        "muscle": [0],
         "lastMeasured": "2026-06-29",
-        "comment": "PT 시작 기준 공복 체중 40.3kg — 골격근량·체지방은 인바디 측정 후 기록 예정이에요."
+        "comment": "PT 시작 공복 체중 40.3kg · 근육+지방은 인바디 측정 후 실제값으로 업데이트 예정 — 현재 증량 기준 0 표시"
       },
       "condition": "",
       "conditionNote": "",

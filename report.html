@@ -819,9 +819,9 @@ function init(data) {
     const latestM = weeks.flatMap(w => (w.bodyData?.muscle||[]).filter(v=>v!=null)).at(-1) ?? null;
     const latestF = weeks.flatMap(w => (w.bodyData?.fat||[]).filter(v=>v!=null)).at(-1) ?? null;
     const bars = [
-      { label:'체중', val:latestW, s:bg.weight?.start, g:bg.weight?.goal, color:'rgba(210,120,110,0.75)', invert:true },
-      { label:'골격근량', val:latestM, s:bg.muscle?.start, g:bg.muscle?.goal, color:'rgba(90,154,210,0.8)', invert:false },
-      { label:'체지방량', val:latestF, s:bg.fat?.start,    g:bg.fat?.goal,    color:'rgba(255,180,80,0.8)', invert:true },
+      { label:'체중', val:latestW, s:bg.weight?.start, g:bg.weight?.goal, color:'rgba(90,154,210,0.8)',   invert: (bg.weight?.goal??0) < (bg.weight?.start??0) },
+      { label:'골격근량', val:latestM, s:bg.muscle?.start, g:bg.muscle?.goal, color:'rgba(90,175,130,0.85)', invert: (bg.muscle?.goal??0) < (bg.muscle?.start??0) },
+      { label:'체지방량', val:latestF, s:bg.fat?.start,    g:bg.fat?.goal,    color:'rgba(255,180,80,0.8)',  invert: (bg.fat?.goal??0)    < (bg.fat?.start??0) },
     ].filter(b => b.val != null && b.s != null && b.g != null);
     if (bars.length) {
       const barsHtml = bars.map(b => {
