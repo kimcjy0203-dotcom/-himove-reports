@@ -1,6 +1,6 @@
 {
   "name": "최예빈",
-  "month": "2026년 6월",
+  "month": "2026년 7월",
   "purposes": [
     "체력증진",
     "근력증진",
@@ -129,10 +129,18 @@
       "exercises": [],
       "lifts": [],
       "bodyData": {
-        "labels": ["6/29"],
-        "weight": [40.3],
-        "fat": [0],
-        "muscle": [0],
+        "labels": [
+          "6/29"
+        ],
+        "weight": [
+          40.3
+        ],
+        "fat": [
+          0
+        ],
+        "muscle": [
+          0
+        ],
         "lastMeasured": "2026-06-29",
         "comment": "PT 시작 공복 체중 40.3kg · 근육+지방은 인바디 측정 후 실제값으로 업데이트 예정 — 현재 증량 기준 0 표시"
       },
@@ -155,7 +163,9 @@
       "nextSessionMemo": "",
       "finalMessage": "",
       "musclesWorked": [],
-      "sessionDates": ["2026-06-29"],
+      "sessionDates": [
+        "2026-06-29"
+      ],
       "memberComment": "",
       "weeklyRoutine": {
         "weekKey": "2026-W27-cy",
@@ -171,15 +181,60 @@
             "workout": "하체 근력+러닝",
             "rest": false,
             "plan": [
-              { "name": "맨몸 스쿼트", "sets": 3, "reps": 20, "weight": "-" },
-              { "name": "런지", "sets": 3, "reps": 12, "weight": "양쪽" },
-              { "name": "불가리안 스플릿 스쿼트", "sets": 3, "reps": 10, "weight": "양쪽" },
-              { "name": "글루트 브릿지", "sets": 3, "reps": 20, "weight": "-" },
-              { "name": "사이드 라잉 힙 어브덕션", "sets": 3, "reps": 15, "weight": "양쪽" },
-              { "name": "카프레이즈", "sets": 3, "reps": 20, "weight": "-" },
-              { "name": "빠른 걷기 워밍업", "sets": 1, "reps": 1, "weight": "3분" },
-              { "name": "Zone 2-3 조깅 (심박 139-165 bpm)", "sets": 1, "reps": 1, "weight": "14분" },
-              { "name": "걷기 쿨다운", "sets": 1, "reps": 1, "weight": "3분" }
+              {
+                "name": "맨몸 스쿼트",
+                "sets": 3,
+                "reps": 20,
+                "weight": "-"
+              },
+              {
+                "name": "런지",
+                "sets": 3,
+                "reps": 12,
+                "weight": "양쪽"
+              },
+              {
+                "name": "불가리안 스플릿 스쿼트",
+                "sets": 3,
+                "reps": 10,
+                "weight": "양쪽"
+              },
+              {
+                "name": "글루트 브릿지",
+                "sets": 3,
+                "reps": 20,
+                "weight": "-"
+              },
+              {
+                "name": "사이드 라잉 힙 어브덕션",
+                "sets": 3,
+                "reps": 15,
+                "weight": "양쪽"
+              },
+              {
+                "name": "카프레이즈",
+                "sets": 3,
+                "reps": 20,
+                "weight": "-"
+              },
+              {
+                "name": "빠른 걷기 워밍업",
+                "sets": 1,
+                "reps": 1,
+                "weight": "3분"
+              },
+              {
+                "name": "Zone 2-3 조깅 (심박 139-165 bpm)",
+                "sets": 1,
+                "reps": 1,
+                "weight": "14분"
+              },
+              {
+                "name": "걷기 쿨다운",
+                "sets": 1,
+                "reps": 1,
+                "weight": "3분"
+              }
             ]
           },
           {
@@ -192,15 +247,60 @@
             "workout": "상체 근력+러닝",
             "rest": false,
             "plan": [
-              { "name": "푸쉬업 (무릎 or 일반)", "sets": 3, "reps": 12, "weight": "-" },
-              { "name": "파이크 푸쉬업", "sets": 3, "reps": 10, "weight": "-" },
-              { "name": "슈퍼맨", "sets": 3, "reps": 15, "weight": "-" },
-              { "name": "테이블 로우 (등)", "sets": 3, "reps": 12, "weight": "-" },
-              { "name": "다이아몬드 푸쉬업", "sets": 3, "reps": 10, "weight": "-" },
-              { "name": "덤벨·물병 숄더프레스", "sets": 3, "reps": 15, "weight": "가벼운 무게" },
-              { "name": "빠른 걷기 워밍업", "sets": 1, "reps": 1, "weight": "3분" },
-              { "name": "Zone 2-3 조깅 (심박 139-165 bpm)", "sets": 1, "reps": 1, "weight": "14분" },
-              { "name": "걷기 쿨다운", "sets": 1, "reps": 1, "weight": "3분" }
+              {
+                "name": "푸쉬업 (무릎 or 일반)",
+                "sets": 3,
+                "reps": 12,
+                "weight": "-"
+              },
+              {
+                "name": "파이크 푸쉬업",
+                "sets": 3,
+                "reps": 10,
+                "weight": "-"
+              },
+              {
+                "name": "슈퍼맨",
+                "sets": 3,
+                "reps": 15,
+                "weight": "-"
+              },
+              {
+                "name": "테이블 로우 (등)",
+                "sets": 3,
+                "reps": 12,
+                "weight": "-"
+              },
+              {
+                "name": "다이아몬드 푸쉬업",
+                "sets": 3,
+                "reps": 10,
+                "weight": "-"
+              },
+              {
+                "name": "덤벨·물병 숄더프레스",
+                "sets": 3,
+                "reps": 15,
+                "weight": "가벼운 무게"
+              },
+              {
+                "name": "빠른 걷기 워밍업",
+                "sets": 1,
+                "reps": 1,
+                "weight": "3분"
+              },
+              {
+                "name": "Zone 2-3 조깅 (심박 139-165 bpm)",
+                "sets": 1,
+                "reps": 1,
+                "weight": "14분"
+              },
+              {
+                "name": "걷기 쿨다운",
+                "sets": 1,
+                "reps": 1,
+                "weight": "3분"
+              }
             ]
           },
           {
@@ -213,9 +313,24 @@
             "workout": "러닝 20분",
             "rest": false,
             "plan": [
-              { "name": "빠른 걷기 워밍업", "sets": 1, "reps": 1, "weight": "3분" },
-              { "name": "Zone 2-3 조깅 (심박 139-165 bpm)", "sets": 1, "reps": 1, "weight": "14분" },
-              { "name": "걷기 쿨다운", "sets": 1, "reps": 1, "weight": "3분" }
+              {
+                "name": "빠른 걷기 워밍업",
+                "sets": 1,
+                "reps": 1,
+                "weight": "3분"
+              },
+              {
+                "name": "Zone 2-3 조깅 (심박 139-165 bpm)",
+                "sets": 1,
+                "reps": 1,
+                "weight": "14분"
+              },
+              {
+                "name": "걷기 쿨다운",
+                "sets": 1,
+                "reps": 1,
+                "weight": "3분"
+              }
             ]
           },
           {
@@ -223,13 +338,953 @@
             "workout": "러닝 20분",
             "rest": false,
             "plan": [
-              { "name": "빠른 걷기 워밍업", "sets": 1, "reps": 1, "weight": "3분" },
-              { "name": "Zone 2-3 조깅 (심박 139-165 bpm)", "sets": 1, "reps": 1, "weight": "14분" },
-              { "name": "걷기 쿨다운", "sets": 1, "reps": 1, "weight": "3분" }
+              {
+                "name": "빠른 걷기 워밍업",
+                "sets": 1,
+                "reps": 1,
+                "weight": "3분"
+              },
+              {
+                "name": "Zone 2-3 조깅 (심박 139-165 bpm)",
+                "sets": 1,
+                "reps": 1,
+                "weight": "14분"
+              },
+              {
+                "name": "걷기 쿨다운",
+                "sets": 1,
+                "reps": 1,
+                "weight": "3분"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "week": 2,
+      "label": "2주차",
+      "date": "7/6",
+      "mainMessage": "",
+      "summaries": [],
+      "exercises": [],
+      "lifts": [],
+      "bodyData": {
+        "labels": [],
+        "weight": [],
+        "fat": [],
+        "muscle": [],
+        "lastMeasured": null,
+        "comment": ""
+      },
+      "condition": "",
+      "conditionNote": "",
+      "sleep": "",
+      "sleepNote": "",
+      "stress": "",
+      "pain": "없음",
+      "painNote": "",
+      "nutrition": "",
+      "nutritionNote": "",
+      "review": {
+        "good": "",
+        "caution": "",
+        "suggest": ""
+      },
+      "trainerComment": "",
+      "trainerDirection": "월=요가 / 화=하체 근력(홈트 1h) → 러닝 20분 / 수=요가 / 목=상체 근력(홈트 1h) → 러닝 20분 / 금=요가 / 토=러닝 20분 / 일=러닝 20분",
+      "nextSessionMemo": "",
+      "finalMessage": "",
+      "musclesWorked": [],
+      "sessionDates": [],
+      "memberComment": "",
+      "weeklyRoutine": {
+        "weekKey": "2026-W28-cy",
+        "note": "🎯 2주차: 루틴 유지 · 5끼 식사 정착",
+        "days": [
+          {
+            "day": "월",
+            "workout": "요가",
+            "rest": false
+          },
+          {
+            "day": "화",
+            "workout": "하체 근력+러닝",
+            "rest": false,
+            "plan": [
+              {
+                "name": "맨몸 스쿼트",
+                "sets": 3,
+                "reps": 20,
+                "weight": "-"
+              },
+              {
+                "name": "런지",
+                "sets": 3,
+                "reps": 12,
+                "weight": "양쪽"
+              },
+              {
+                "name": "불가리안 스플릿 스쿼트",
+                "sets": 3,
+                "reps": 10,
+                "weight": "양쪽"
+              },
+              {
+                "name": "글루트 브릿지",
+                "sets": 3,
+                "reps": 20,
+                "weight": "-"
+              },
+              {
+                "name": "사이드 라잉 힙 어브덕션",
+                "sets": 3,
+                "reps": 15,
+                "weight": "양쪽"
+              },
+              {
+                "name": "카프레이즈",
+                "sets": 3,
+                "reps": 20,
+                "weight": "-"
+              },
+              {
+                "name": "빠른 걷기 워밍업",
+                "sets": 1,
+                "reps": 1,
+                "weight": "3분"
+              },
+              {
+                "name": "Zone 2-3 조깅 (심박 139-165 bpm)",
+                "sets": 1,
+                "reps": 1,
+                "weight": "14분"
+              },
+              {
+                "name": "걷기 쿨다운",
+                "sets": 1,
+                "reps": 1,
+                "weight": "3분"
+              }
+            ]
+          },
+          {
+            "day": "수",
+            "workout": "요가",
+            "rest": false
+          },
+          {
+            "day": "목",
+            "workout": "상체 근력+러닝",
+            "rest": false,
+            "plan": [
+              {
+                "name": "푸쉬업 (무릎 or 일반)",
+                "sets": 3,
+                "reps": 12,
+                "weight": "-"
+              },
+              {
+                "name": "파이크 푸쉬업",
+                "sets": 3,
+                "reps": 10,
+                "weight": "-"
+              },
+              {
+                "name": "슈퍼맨",
+                "sets": 3,
+                "reps": 15,
+                "weight": "-"
+              },
+              {
+                "name": "테이블 로우 (등)",
+                "sets": 3,
+                "reps": 12,
+                "weight": "-"
+              },
+              {
+                "name": "다이아몬드 푸쉬업",
+                "sets": 3,
+                "reps": 10,
+                "weight": "-"
+              },
+              {
+                "name": "덤벨·물병 숄더프레스",
+                "sets": 3,
+                "reps": 15,
+                "weight": "가벼운 무게"
+              },
+              {
+                "name": "빠른 걷기 워밍업",
+                "sets": 1,
+                "reps": 1,
+                "weight": "3분"
+              },
+              {
+                "name": "Zone 2-3 조깅 (심박 139-165 bpm)",
+                "sets": 1,
+                "reps": 1,
+                "weight": "14분"
+              },
+              {
+                "name": "걷기 쿨다운",
+                "sets": 1,
+                "reps": 1,
+                "weight": "3분"
+              }
+            ]
+          },
+          {
+            "day": "금",
+            "workout": "요가",
+            "rest": false
+          },
+          {
+            "day": "토",
+            "workout": "러닝 20분",
+            "rest": false,
+            "plan": [
+              {
+                "name": "빠른 걷기 워밍업",
+                "sets": 1,
+                "reps": 1,
+                "weight": "3분"
+              },
+              {
+                "name": "Zone 2-3 조깅 (심박 139-165 bpm)",
+                "sets": 1,
+                "reps": 1,
+                "weight": "14분"
+              },
+              {
+                "name": "걷기 쿨다운",
+                "sets": 1,
+                "reps": 1,
+                "weight": "3분"
+              }
+            ]
+          },
+          {
+            "day": "일",
+            "workout": "러닝 20분",
+            "rest": false,
+            "plan": [
+              {
+                "name": "빠른 걷기 워밍업",
+                "sets": 1,
+                "reps": 1,
+                "weight": "3분"
+              },
+              {
+                "name": "Zone 2-3 조깅 (심박 139-165 bpm)",
+                "sets": 1,
+                "reps": 1,
+                "weight": "14분"
+              },
+              {
+                "name": "걷기 쿨다운",
+                "sets": 1,
+                "reps": 1,
+                "weight": "3분"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "week": 3,
+      "label": "3주차",
+      "date": "7/13",
+      "mainMessage": "",
+      "summaries": [],
+      "exercises": [],
+      "lifts": [],
+      "bodyData": {
+        "labels": [],
+        "weight": [],
+        "fat": [],
+        "muscle": [],
+        "lastMeasured": null,
+        "comment": ""
+      },
+      "condition": "",
+      "conditionNote": "",
+      "sleep": "",
+      "sleepNote": "",
+      "stress": "",
+      "pain": "없음",
+      "painNote": "",
+      "nutrition": "",
+      "nutritionNote": "",
+      "review": {
+        "good": "",
+        "caution": "",
+        "suggest": ""
+      },
+      "trainerComment": "",
+      "trainerDirection": "월=요가 / 화=하체 근력(홈트 1h) → 러닝 20분 / 수=요가 / 목=상체 근력(홈트 1h) → 러닝 20분 / 금=요가 / 토=러닝 20분 / 일=러닝 20분",
+      "nextSessionMemo": "",
+      "finalMessage": "",
+      "musclesWorked": [],
+      "sessionDates": [],
+      "memberComment": "",
+      "weeklyRoutine": {
+        "weekKey": "2026-W29-cy",
+        "note": "🎯 3주차: 중간 점검 · 강도 조금씩 높이기",
+        "days": [
+          {
+            "day": "월",
+            "workout": "요가",
+            "rest": false
+          },
+          {
+            "day": "화",
+            "workout": "하체 근력+러닝",
+            "rest": false,
+            "plan": [
+              {
+                "name": "맨몸 스쿼트",
+                "sets": 3,
+                "reps": 20,
+                "weight": "-"
+              },
+              {
+                "name": "런지",
+                "sets": 3,
+                "reps": 12,
+                "weight": "양쪽"
+              },
+              {
+                "name": "불가리안 스플릿 스쿼트",
+                "sets": 3,
+                "reps": 10,
+                "weight": "양쪽"
+              },
+              {
+                "name": "글루트 브릿지",
+                "sets": 3,
+                "reps": 20,
+                "weight": "-"
+              },
+              {
+                "name": "사이드 라잉 힙 어브덕션",
+                "sets": 3,
+                "reps": 15,
+                "weight": "양쪽"
+              },
+              {
+                "name": "카프레이즈",
+                "sets": 3,
+                "reps": 20,
+                "weight": "-"
+              },
+              {
+                "name": "빠른 걷기 워밍업",
+                "sets": 1,
+                "reps": 1,
+                "weight": "3분"
+              },
+              {
+                "name": "Zone 2-3 조깅 (심박 139-165 bpm)",
+                "sets": 1,
+                "reps": 1,
+                "weight": "14분"
+              },
+              {
+                "name": "걷기 쿨다운",
+                "sets": 1,
+                "reps": 1,
+                "weight": "3분"
+              }
+            ]
+          },
+          {
+            "day": "수",
+            "workout": "요가",
+            "rest": false
+          },
+          {
+            "day": "목",
+            "workout": "상체 근력+러닝",
+            "rest": false,
+            "plan": [
+              {
+                "name": "푸쉬업 (무릎 or 일반)",
+                "sets": 3,
+                "reps": 12,
+                "weight": "-"
+              },
+              {
+                "name": "파이크 푸쉬업",
+                "sets": 3,
+                "reps": 10,
+                "weight": "-"
+              },
+              {
+                "name": "슈퍼맨",
+                "sets": 3,
+                "reps": 15,
+                "weight": "-"
+              },
+              {
+                "name": "테이블 로우 (등)",
+                "sets": 3,
+                "reps": 12,
+                "weight": "-"
+              },
+              {
+                "name": "다이아몬드 푸쉬업",
+                "sets": 3,
+                "reps": 10,
+                "weight": "-"
+              },
+              {
+                "name": "덤벨·물병 숄더프레스",
+                "sets": 3,
+                "reps": 15,
+                "weight": "가벼운 무게"
+              },
+              {
+                "name": "빠른 걷기 워밍업",
+                "sets": 1,
+                "reps": 1,
+                "weight": "3분"
+              },
+              {
+                "name": "Zone 2-3 조깅 (심박 139-165 bpm)",
+                "sets": 1,
+                "reps": 1,
+                "weight": "14분"
+              },
+              {
+                "name": "걷기 쿨다운",
+                "sets": 1,
+                "reps": 1,
+                "weight": "3분"
+              }
+            ]
+          },
+          {
+            "day": "금",
+            "workout": "요가",
+            "rest": false
+          },
+          {
+            "day": "토",
+            "workout": "러닝 20분",
+            "rest": false,
+            "plan": [
+              {
+                "name": "빠른 걷기 워밍업",
+                "sets": 1,
+                "reps": 1,
+                "weight": "3분"
+              },
+              {
+                "name": "Zone 2-3 조깅 (심박 139-165 bpm)",
+                "sets": 1,
+                "reps": 1,
+                "weight": "14분"
+              },
+              {
+                "name": "걷기 쿨다운",
+                "sets": 1,
+                "reps": 1,
+                "weight": "3분"
+              }
+            ]
+          },
+          {
+            "day": "일",
+            "workout": "러닝 20분",
+            "rest": false,
+            "plan": [
+              {
+                "name": "빠른 걷기 워밍업",
+                "sets": 1,
+                "reps": 1,
+                "weight": "3분"
+              },
+              {
+                "name": "Zone 2-3 조깅 (심박 139-165 bpm)",
+                "sets": 1,
+                "reps": 1,
+                "weight": "14분"
+              },
+              {
+                "name": "걷기 쿨다운",
+                "sets": 1,
+                "reps": 1,
+                "weight": "3분"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "week": 4,
+      "label": "4주차",
+      "date": "7/20",
+      "mainMessage": "",
+      "summaries": [],
+      "exercises": [],
+      "lifts": [],
+      "bodyData": {
+        "labels": [],
+        "weight": [],
+        "fat": [],
+        "muscle": [],
+        "lastMeasured": null,
+        "comment": ""
+      },
+      "condition": "",
+      "conditionNote": "",
+      "sleep": "",
+      "sleepNote": "",
+      "stress": "",
+      "pain": "없음",
+      "painNote": "",
+      "nutrition": "",
+      "nutritionNote": "",
+      "review": {
+        "good": "",
+        "caution": "",
+        "suggest": ""
+      },
+      "trainerComment": "",
+      "trainerDirection": "월=요가 / 화=하체 근력(홈트 1h) → 러닝 20분 / 수=요가 / 목=상체 근력(홈트 1h) → 러닝 20분 / 금=요가 / 토=러닝 20분 / 일=러닝 20분",
+      "nextSessionMemo": "",
+      "finalMessage": "",
+      "musclesWorked": [],
+      "sessionDates": [],
+      "memberComment": "",
+      "weeklyRoutine": {
+        "weekKey": "2026-W30-cy",
+        "note": "🎯 4주차: 체중 변화 확인 · 루틴 심화",
+        "days": [
+          {
+            "day": "월",
+            "workout": "요가",
+            "rest": false
+          },
+          {
+            "day": "화",
+            "workout": "하체 근력+러닝",
+            "rest": false,
+            "plan": [
+              {
+                "name": "맨몸 스쿼트",
+                "sets": 3,
+                "reps": 20,
+                "weight": "-"
+              },
+              {
+                "name": "런지",
+                "sets": 3,
+                "reps": 12,
+                "weight": "양쪽"
+              },
+              {
+                "name": "불가리안 스플릿 스쿼트",
+                "sets": 3,
+                "reps": 10,
+                "weight": "양쪽"
+              },
+              {
+                "name": "글루트 브릿지",
+                "sets": 3,
+                "reps": 20,
+                "weight": "-"
+              },
+              {
+                "name": "사이드 라잉 힙 어브덕션",
+                "sets": 3,
+                "reps": 15,
+                "weight": "양쪽"
+              },
+              {
+                "name": "카프레이즈",
+                "sets": 3,
+                "reps": 20,
+                "weight": "-"
+              },
+              {
+                "name": "빠른 걷기 워밍업",
+                "sets": 1,
+                "reps": 1,
+                "weight": "3분"
+              },
+              {
+                "name": "Zone 2-3 조깅 (심박 139-165 bpm)",
+                "sets": 1,
+                "reps": 1,
+                "weight": "14분"
+              },
+              {
+                "name": "걷기 쿨다운",
+                "sets": 1,
+                "reps": 1,
+                "weight": "3분"
+              }
+            ]
+          },
+          {
+            "day": "수",
+            "workout": "요가",
+            "rest": false
+          },
+          {
+            "day": "목",
+            "workout": "상체 근력+러닝",
+            "rest": false,
+            "plan": [
+              {
+                "name": "푸쉬업 (무릎 or 일반)",
+                "sets": 3,
+                "reps": 12,
+                "weight": "-"
+              },
+              {
+                "name": "파이크 푸쉬업",
+                "sets": 3,
+                "reps": 10,
+                "weight": "-"
+              },
+              {
+                "name": "슈퍼맨",
+                "sets": 3,
+                "reps": 15,
+                "weight": "-"
+              },
+              {
+                "name": "테이블 로우 (등)",
+                "sets": 3,
+                "reps": 12,
+                "weight": "-"
+              },
+              {
+                "name": "다이아몬드 푸쉬업",
+                "sets": 3,
+                "reps": 10,
+                "weight": "-"
+              },
+              {
+                "name": "덤벨·물병 숄더프레스",
+                "sets": 3,
+                "reps": 15,
+                "weight": "가벼운 무게"
+              },
+              {
+                "name": "빠른 걷기 워밍업",
+                "sets": 1,
+                "reps": 1,
+                "weight": "3분"
+              },
+              {
+                "name": "Zone 2-3 조깅 (심박 139-165 bpm)",
+                "sets": 1,
+                "reps": 1,
+                "weight": "14분"
+              },
+              {
+                "name": "걷기 쿨다운",
+                "sets": 1,
+                "reps": 1,
+                "weight": "3분"
+              }
+            ]
+          },
+          {
+            "day": "금",
+            "workout": "요가",
+            "rest": false
+          },
+          {
+            "day": "토",
+            "workout": "러닝 20분",
+            "rest": false,
+            "plan": [
+              {
+                "name": "빠른 걷기 워밍업",
+                "sets": 1,
+                "reps": 1,
+                "weight": "3분"
+              },
+              {
+                "name": "Zone 2-3 조깅 (심박 139-165 bpm)",
+                "sets": 1,
+                "reps": 1,
+                "weight": "14분"
+              },
+              {
+                "name": "걷기 쿨다운",
+                "sets": 1,
+                "reps": 1,
+                "weight": "3분"
+              }
+            ]
+          },
+          {
+            "day": "일",
+            "workout": "러닝 20분",
+            "rest": false,
+            "plan": [
+              {
+                "name": "빠른 걷기 워밍업",
+                "sets": 1,
+                "reps": 1,
+                "weight": "3분"
+              },
+              {
+                "name": "Zone 2-3 조깅 (심박 139-165 bpm)",
+                "sets": 1,
+                "reps": 1,
+                "weight": "14분"
+              },
+              {
+                "name": "걷기 쿨다운",
+                "sets": 1,
+                "reps": 1,
+                "weight": "3분"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "week": 5,
+      "label": "5주차",
+      "date": "7/27",
+      "mainMessage": "",
+      "summaries": [],
+      "exercises": [],
+      "lifts": [],
+      "bodyData": {
+        "labels": [],
+        "weight": [],
+        "fat": [],
+        "muscle": [],
+        "lastMeasured": null,
+        "comment": ""
+      },
+      "condition": "",
+      "conditionNote": "",
+      "sleep": "",
+      "sleepNote": "",
+      "stress": "",
+      "pain": "없음",
+      "painNote": "",
+      "nutrition": "",
+      "nutritionNote": "",
+      "review": {
+        "good": "",
+        "caution": "",
+        "suggest": ""
+      },
+      "trainerComment": "",
+      "trainerDirection": "월=요가 / 화=하체 근력(홈트 1h) → 러닝 20분 / 수=요가 / 목=상체 근력(홈트 1h) → 러닝 20분 / 금=요가 / 토=러닝 20분 / 일=러닝 20분",
+      "nextSessionMemo": "",
+      "finalMessage": "",
+      "musclesWorked": [],
+      "sessionDates": [],
+      "memberComment": "",
+      "weeklyRoutine": {
+        "weekKey": "2026-W31-cy",
+        "note": "🎯 5주차: 7월 마무리 · 인바디 재측정 예정",
+        "days": [
+          {
+            "day": "월",
+            "workout": "요가",
+            "rest": false
+          },
+          {
+            "day": "화",
+            "workout": "하체 근력+러닝",
+            "rest": false,
+            "plan": [
+              {
+                "name": "맨몸 스쿼트",
+                "sets": 3,
+                "reps": 20,
+                "weight": "-"
+              },
+              {
+                "name": "런지",
+                "sets": 3,
+                "reps": 12,
+                "weight": "양쪽"
+              },
+              {
+                "name": "불가리안 스플릿 스쿼트",
+                "sets": 3,
+                "reps": 10,
+                "weight": "양쪽"
+              },
+              {
+                "name": "글루트 브릿지",
+                "sets": 3,
+                "reps": 20,
+                "weight": "-"
+              },
+              {
+                "name": "사이드 라잉 힙 어브덕션",
+                "sets": 3,
+                "reps": 15,
+                "weight": "양쪽"
+              },
+              {
+                "name": "카프레이즈",
+                "sets": 3,
+                "reps": 20,
+                "weight": "-"
+              },
+              {
+                "name": "빠른 걷기 워밍업",
+                "sets": 1,
+                "reps": 1,
+                "weight": "3분"
+              },
+              {
+                "name": "Zone 2-3 조깅 (심박 139-165 bpm)",
+                "sets": 1,
+                "reps": 1,
+                "weight": "14분"
+              },
+              {
+                "name": "걷기 쿨다운",
+                "sets": 1,
+                "reps": 1,
+                "weight": "3분"
+              }
+            ]
+          },
+          {
+            "day": "수",
+            "workout": "요가",
+            "rest": false
+          },
+          {
+            "day": "목",
+            "workout": "상체 근력+러닝",
+            "rest": false,
+            "plan": [
+              {
+                "name": "푸쉬업 (무릎 or 일반)",
+                "sets": 3,
+                "reps": 12,
+                "weight": "-"
+              },
+              {
+                "name": "파이크 푸쉬업",
+                "sets": 3,
+                "reps": 10,
+                "weight": "-"
+              },
+              {
+                "name": "슈퍼맨",
+                "sets": 3,
+                "reps": 15,
+                "weight": "-"
+              },
+              {
+                "name": "테이블 로우 (등)",
+                "sets": 3,
+                "reps": 12,
+                "weight": "-"
+              },
+              {
+                "name": "다이아몬드 푸쉬업",
+                "sets": 3,
+                "reps": 10,
+                "weight": "-"
+              },
+              {
+                "name": "덤벨·물병 숄더프레스",
+                "sets": 3,
+                "reps": 15,
+                "weight": "가벼운 무게"
+              },
+              {
+                "name": "빠른 걷기 워밍업",
+                "sets": 1,
+                "reps": 1,
+                "weight": "3분"
+              },
+              {
+                "name": "Zone 2-3 조깅 (심박 139-165 bpm)",
+                "sets": 1,
+                "reps": 1,
+                "weight": "14분"
+              },
+              {
+                "name": "걷기 쿨다운",
+                "sets": 1,
+                "reps": 1,
+                "weight": "3분"
+              }
+            ]
+          },
+          {
+            "day": "금",
+            "workout": "요가",
+            "rest": false
+          },
+          {
+            "day": "토",
+            "workout": "러닝 20분",
+            "rest": false,
+            "plan": [
+              {
+                "name": "빠른 걷기 워밍업",
+                "sets": 1,
+                "reps": 1,
+                "weight": "3분"
+              },
+              {
+                "name": "Zone 2-3 조깅 (심박 139-165 bpm)",
+                "sets": 1,
+                "reps": 1,
+                "weight": "14분"
+              },
+              {
+                "name": "걷기 쿨다운",
+                "sets": 1,
+                "reps": 1,
+                "weight": "3분"
+              }
+            ]
+          },
+          {
+            "day": "일",
+            "workout": "러닝 20분",
+            "rest": false,
+            "plan": [
+              {
+                "name": "빠른 걷기 워밍업",
+                "sets": 1,
+                "reps": 1,
+                "weight": "3분"
+              },
+              {
+                "name": "Zone 2-3 조깅 (심박 139-165 bpm)",
+                "sets": 1,
+                "reps": 1,
+                "weight": "14분"
+              },
+              {
+                "name": "걷기 쿨다운",
+                "sets": 1,
+                "reps": 1,
+                "weight": "3분"
+              }
             ]
           }
         ]
       }
     }
-  ]
+  ],
+  "hideLesson": true
 }
