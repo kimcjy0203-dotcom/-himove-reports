@@ -8,11 +8,11 @@
   ],
   "goals": {
     "short": {
-      "text": "요가·러닝 루틴 빠짐없이 유지 + 규칙적 식사로 체중 41kg 달성",
+      "text": "요가·러닝 루틴 유지 + 하루 1900kcal 5끼 식사 정착 + 체중 41kg 달성",
       "period": "1개월"
     },
     "mid": {
-      "text": "근력운동 주 2회 추가 정착 + 체중 42-43kg 달성",
+      "text": "근력운동 주2회 루틴 완전 정착 + 근육 +2kg · 지방 +1kg 증량",
       "period": "2개월"
     },
     "long": {
@@ -42,6 +42,70 @@
   "sessions": {
     "total": 0,
     "completed": 0
+  },
+  "nutritionPlan": {
+    "bmr": 1081,
+    "targetCalories": 1900,
+    "proteinGoal": 50,
+    "proteinSources": "달걀·흰살생선 위주",
+    "meals": 5,
+    "muscleGainGoal": 2,
+    "fatGainGoal": 1,
+    "mealGuide": [
+      {
+        "name": "아침 (7–8시)",
+        "calories": 400,
+        "protein": 13,
+        "foods": [
+          "흰쌀밥 ½공기",
+          "달걀 2개 (스크램블 or 삶은 것) → 단백질 약 13g",
+          "맑은 국 (미역국·콩나물국)",
+          "나물 반찬 1–2가지"
+        ]
+      },
+      {
+        "name": "오전 간식 (10–11시)",
+        "calories": 300,
+        "protein": 8,
+        "foods": [
+          "바나나 1개",
+          "그릭요거트 100g → 단백질 약 8g",
+          "아몬드 10알"
+        ]
+      },
+      {
+        "name": "점심 (12–1시)",
+        "calories": 500,
+        "protein": 17,
+        "foods": [
+          "흰쌀밥 1공기",
+          "흰살생선 구이 (대구·동태·가자미 등) → 단백질 약 17g",
+          "익힌 채소 (호박·당근·시금치)",
+          "맑은 국"
+        ]
+      },
+      {
+        "name": "운동 전 간식 (4–4:30시)",
+        "calories": 300,
+        "protein": 5,
+        "foods": [
+          "고구마 중간 크기 1개",
+          "두유 200ml → 단백질 약 5g",
+          "바나나 ½개"
+        ]
+      },
+      {
+        "name": "저녁 (7–8시, 러닝 후)",
+        "calories": 400,
+        "protein": 15,
+        "foods": [
+          "흰쌀밥 ½공기 or 오트밀",
+          "흰살생선 or 달걀찜 → 단백질 약 15g",
+          "나물·익힌 채소 반찬",
+          "따뜻한 국"
+        ]
+      }
+    ]
   },
   "quotes": [
     "몸은 당신이 생각하는 것보다 훨씬 강합니다 — 문제는 마음입니다.",
@@ -87,7 +151,7 @@
         "suggest": ""
       },
       "trainerComment": "",
-      "trainerDirection": "월=요가 / 화=러닝 20분 / 수=요가 / 목=러닝 20분 / 금=요가 / 토=러닝 20분 / 일=러닝 20분\n러닝: 슬로우 러닝 1분 + 걷기 1분 반복 × 10세트 (총 20분) — 저녁 식사 전 5-6시",
+      "trainerDirection": "월=요가 / 화=하체 근력(홈트 1h) → 러닝 20분 / 수=요가 / 목=상체 근력(홈트 1h) → 러닝 20분 / 금=요가 / 토=러닝 20분 / 일=러닝 20분",
       "nextSessionMemo": "",
       "finalMessage": "",
       "musclesWorked": [],
@@ -95,7 +159,7 @@
       "memberComment": "",
       "weeklyRoutine": {
         "weekKey": "2026-W27-cy",
-        "note": "🎯 1주차: 요가+러닝 루틴 정착 · 규칙적 식사 시작",
+        "note": "🎯 1주차: 요가+러닝 루틴 정착 · 홈트 근력 시작 · 5끼 식사 습관",
         "days": [
           {
             "day": "월",
@@ -104,15 +168,18 @@
           },
           {
             "day": "화",
-            "workout": "러닝 20분",
+            "workout": "하체 근력+러닝",
             "rest": false,
             "plan": [
-              {
-                "name": "슬로우 러닝 1분 + 걷기 1분 반복",
-                "sets": 10,
-                "reps": 1,
-                "weight": "20분"
-              }
+              { "name": "맨몸 스쿼트", "sets": 3, "reps": 20, "weight": "-" },
+              { "name": "런지", "sets": 3, "reps": 12, "weight": "양쪽" },
+              { "name": "불가리안 스플릿 스쿼트", "sets": 3, "reps": 10, "weight": "양쪽" },
+              { "name": "글루트 브릿지", "sets": 3, "reps": 20, "weight": "-" },
+              { "name": "사이드 라잉 힙 어브덕션", "sets": 3, "reps": 15, "weight": "양쪽" },
+              { "name": "카프레이즈", "sets": 3, "reps": 20, "weight": "-" },
+              { "name": "빠른 걷기 워밍업", "sets": 1, "reps": 1, "weight": "3분" },
+              { "name": "Zone 2-3 조깅 (심박 139-165 bpm)", "sets": 1, "reps": 1, "weight": "14분" },
+              { "name": "걷기 쿨다운", "sets": 1, "reps": 1, "weight": "3분" }
             ]
           },
           {
@@ -122,15 +189,18 @@
           },
           {
             "day": "목",
-            "workout": "러닝 20분",
+            "workout": "상체 근력+러닝",
             "rest": false,
             "plan": [
-              {
-                "name": "슬로우 러닝 1분 + 걷기 1분 반복",
-                "sets": 10,
-                "reps": 1,
-                "weight": "20분"
-              }
+              { "name": "푸쉬업 (무릎 or 일반)", "sets": 3, "reps": 12, "weight": "-" },
+              { "name": "파이크 푸쉬업", "sets": 3, "reps": 10, "weight": "-" },
+              { "name": "슈퍼맨", "sets": 3, "reps": 15, "weight": "-" },
+              { "name": "테이블 로우 (등)", "sets": 3, "reps": 12, "weight": "-" },
+              { "name": "다이아몬드 푸쉬업", "sets": 3, "reps": 10, "weight": "-" },
+              { "name": "덤벨·물병 숄더프레스", "sets": 3, "reps": 15, "weight": "가벼운 무게" },
+              { "name": "빠른 걷기 워밍업", "sets": 1, "reps": 1, "weight": "3분" },
+              { "name": "Zone 2-3 조깅 (심박 139-165 bpm)", "sets": 1, "reps": 1, "weight": "14분" },
+              { "name": "걷기 쿨다운", "sets": 1, "reps": 1, "weight": "3분" }
             ]
           },
           {
@@ -143,12 +213,9 @@
             "workout": "러닝 20분",
             "rest": false,
             "plan": [
-              {
-                "name": "슬로우 러닝 1분 + 걷기 1분 반복",
-                "sets": 10,
-                "reps": 1,
-                "weight": "20분"
-              }
+              { "name": "빠른 걷기 워밍업", "sets": 1, "reps": 1, "weight": "3분" },
+              { "name": "Zone 2-3 조깅 (심박 139-165 bpm)", "sets": 1, "reps": 1, "weight": "14분" },
+              { "name": "걷기 쿨다운", "sets": 1, "reps": 1, "weight": "3분" }
             ]
           },
           {
@@ -156,12 +223,9 @@
             "workout": "러닝 20분",
             "rest": false,
             "plan": [
-              {
-                "name": "슬로우 러닝 1분 + 걷기 1분 반복",
-                "sets": 10,
-                "reps": 1,
-                "weight": "20분"
-              }
+              { "name": "빠른 걷기 워밍업", "sets": 1, "reps": 1, "weight": "3분" },
+              { "name": "Zone 2-3 조깅 (심박 139-165 bpm)", "sets": 1, "reps": 1, "weight": "14분" },
+              { "name": "걷기 쿨다운", "sets": 1, "reps": 1, "weight": "3분" }
             ]
           }
         ]
