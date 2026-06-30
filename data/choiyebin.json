@@ -1,0 +1,171 @@
+{
+  "name": "최예빈",
+  "month": "2026년 6월",
+  "purposes": [
+    "체력증진",
+    "근력증진",
+    "근육증량"
+  ],
+  "goals": {
+    "short": {
+      "text": "요가·러닝 루틴 빠짐없이 유지 + 규칙적 식사로 체중 41kg 달성",
+      "period": "1개월"
+    },
+    "mid": {
+      "text": "근력운동 주 2회 추가 정착 + 체중 42-43kg 달성",
+      "period": "2개월"
+    },
+    "long": {
+      "text": "8월 말까지 43-44kg 건강 증량 달성 — 체력·근력 기반 완성",
+      "period": "3개월"
+    }
+  },
+  "bodyGoals": {
+    "weight": {
+      "start": 40.3,
+      "goal": 43.5
+    },
+    "muscle": {
+      "start": null,
+      "goal": null
+    },
+    "fat": {
+      "start": null,
+      "goal": null
+    }
+  },
+  "cardio": {
+    "age": 21,
+    "restingHR": 60
+  },
+  "orm": null,
+  "sessions": {
+    "total": 0,
+    "completed": 0
+  },
+  "quotes": [
+    "몸은 당신이 생각하는 것보다 훨씬 강합니다 — 문제는 마음입니다.",
+    "매일 조금씩 해내는 것이 결국 가장 큰 변화를 만든다.",
+    "처음엔 누구나 초보다 — 멈추지 않는 것이 전부다.",
+    "몸이 변하는 데는 시간이 걸리지만, 매일 쌓인 노력은 반드시 결과로 나타난다.",
+    "강해지고 싶다면 오늘 할 수 있는 것을 오늘 하면 된다.",
+    "규칙적인 운동이 생활이 되면, 삶 전체가 달라진다.",
+    "네 몸을 믿어라 — 그것은 네가 생각하는 것보다 훨씬 많은 걸 해낼 수 있다.",
+    "모든 챔피언은 한때 포기하지 않은 도전자였다.",
+    "건강한 몸은 타고나는 것이 아니라 매일 선택하는 것이다.",
+    "지금 이 순간의 러닝이, 내일의 나를 한 걸음 더 강하게 만든다."
+  ],
+  "weeks": [
+    {
+      "week": 1,
+      "label": "1주차",
+      "date": "6/29",
+      "mainMessage": "",
+      "summaries": [],
+      "exercises": [],
+      "lifts": [],
+      "bodyData": {
+        "labels": ["6/29"],
+        "weight": [40.3],
+        "fat": [null],
+        "muscle": [null],
+        "lastMeasured": "2026-06-29",
+        "comment": "PT 시작 기준 공복 체중 40.3kg — 골격근량·체지방은 인바디 측정 후 기록 예정이에요."
+      },
+      "condition": "",
+      "conditionNote": "",
+      "sleep": "",
+      "sleepNote": "",
+      "stress": "",
+      "pain": "없음",
+      "painNote": "",
+      "nutrition": "",
+      "nutritionNote": "",
+      "review": {
+        "good": "",
+        "caution": "",
+        "suggest": ""
+      },
+      "trainerComment": "",
+      "trainerDirection": "월=요가 / 화=러닝 20분 / 수=요가 / 목=러닝 20분 / 금=요가 / 토=러닝 20분 / 일=러닝 20분\n러닝: 슬로우 러닝 1분 + 걷기 1분 반복 × 10세트 (총 20분) — 저녁 식사 전 5-6시",
+      "nextSessionMemo": "",
+      "finalMessage": "",
+      "musclesWorked": [],
+      "sessionDates": ["2026-06-29"],
+      "memberComment": "",
+      "weeklyRoutine": {
+        "weekKey": "2026-W27-cy",
+        "note": "🎯 1주차: 요가+러닝 루틴 정착 · 규칙적 식사 시작",
+        "days": [
+          {
+            "day": "월",
+            "workout": "요가",
+            "rest": false
+          },
+          {
+            "day": "화",
+            "workout": "러닝 20분",
+            "rest": false,
+            "plan": [
+              {
+                "name": "슬로우 러닝 1분 + 걷기 1분 반복",
+                "sets": 10,
+                "reps": 1,
+                "weight": "20분"
+              }
+            ]
+          },
+          {
+            "day": "수",
+            "workout": "요가",
+            "rest": false
+          },
+          {
+            "day": "목",
+            "workout": "러닝 20분",
+            "rest": false,
+            "plan": [
+              {
+                "name": "슬로우 러닝 1분 + 걷기 1분 반복",
+                "sets": 10,
+                "reps": 1,
+                "weight": "20분"
+              }
+            ]
+          },
+          {
+            "day": "금",
+            "workout": "요가",
+            "rest": false
+          },
+          {
+            "day": "토",
+            "workout": "러닝 20분",
+            "rest": false,
+            "plan": [
+              {
+                "name": "슬로우 러닝 1분 + 걷기 1분 반복",
+                "sets": 10,
+                "reps": 1,
+                "weight": "20분"
+              }
+            ]
+          },
+          {
+            "day": "일",
+            "workout": "러닝 20분",
+            "rest": false,
+            "plan": [
+              {
+                "name": "슬로우 러닝 1분 + 걷기 1분 반복",
+                "sets": 10,
+                "reps": 1,
+                "weight": "20분"
+              }
+            ]
+          }
+        ]
+      }
+    }
+  ]
+}
