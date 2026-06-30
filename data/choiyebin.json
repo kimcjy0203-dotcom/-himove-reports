@@ -335,28 +335,8 @@
           },
           {
             "day": "일",
-            "workout": "러닝 20분",
-            "rest": false,
-            "plan": [
-              {
-                "name": "빠른 걷기 워밍업",
-                "sets": 1,
-                "reps": 1,
-                "weight": "3분"
-              },
-              {
-                "name": "Zone 2-3 조깅 (심박 139-165 bpm)",
-                "sets": 1,
-                "reps": 1,
-                "weight": "14분"
-              },
-              {
-                "name": "걷기 쿨다운",
-                "sets": 1,
-                "reps": 1,
-                "weight": "3분"
-              }
-            ]
+            "workout": "휴식",
+            "rest": true
           }
         ]
       }
@@ -566,28 +546,8 @@
           },
           {
             "day": "일",
-            "workout": "러닝 20분",
-            "rest": false,
-            "plan": [
-              {
-                "name": "빠른 걷기 워밍업",
-                "sets": 1,
-                "reps": 1,
-                "weight": "3분"
-              },
-              {
-                "name": "Zone 2-3 조깅 (심박 139-165 bpm)",
-                "sets": 1,
-                "reps": 1,
-                "weight": "14분"
-              },
-              {
-                "name": "걷기 쿨다운",
-                "sets": 1,
-                "reps": 1,
-                "weight": "3분"
-              }
-            ]
+            "workout": "휴식",
+            "rest": true
           }
         ]
       }
@@ -797,28 +757,8 @@
           },
           {
             "day": "일",
-            "workout": "러닝 20분",
-            "rest": false,
-            "plan": [
-              {
-                "name": "빠른 걷기 워밍업",
-                "sets": 1,
-                "reps": 1,
-                "weight": "3분"
-              },
-              {
-                "name": "Zone 2-3 조깅 (심박 139-165 bpm)",
-                "sets": 1,
-                "reps": 1,
-                "weight": "14분"
-              },
-              {
-                "name": "걷기 쿨다운",
-                "sets": 1,
-                "reps": 1,
-                "weight": "3분"
-              }
-            ]
+            "workout": "휴식",
+            "rest": true
           }
         ]
       }
@@ -1028,28 +968,8 @@
           },
           {
             "day": "일",
-            "workout": "러닝 20분",
-            "rest": false,
-            "plan": [
-              {
-                "name": "빠른 걷기 워밍업",
-                "sets": 1,
-                "reps": 1,
-                "weight": "3분"
-              },
-              {
-                "name": "Zone 2-3 조깅 (심박 139-165 bpm)",
-                "sets": 1,
-                "reps": 1,
-                "weight": "14분"
-              },
-              {
-                "name": "걷기 쿨다운",
-                "sets": 1,
-                "reps": 1,
-                "weight": "3분"
-              }
-            ]
+            "workout": "휴식",
+            "rest": true
           }
         ]
       }
@@ -1259,28 +1179,8 @@
           },
           {
             "day": "일",
-            "workout": "러닝 20분",
-            "rest": false,
-            "plan": [
-              {
-                "name": "빠른 걷기 워밍업",
-                "sets": 1,
-                "reps": 1,
-                "weight": "3분"
-              },
-              {
-                "name": "Zone 2-3 조깅 (심박 139-165 bpm)",
-                "sets": 1,
-                "reps": 1,
-                "weight": "14분"
-              },
-              {
-                "name": "걷기 쿨다운",
-                "sets": 1,
-                "reps": 1,
-                "weight": "3분"
-              }
-            ]
+            "workout": "휴식",
+            "rest": true
           }
         ]
       }
