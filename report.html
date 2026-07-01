@@ -32,23 +32,24 @@ body > * { position: relative; z-index: 1; }
 @keyframes spin { to { transform: rotate(360deg); } }
 #error-msg { display: none; text-align: center; padding: 60px 24px; color: #a0b8d0; font-size: 14px; line-height: 1.8; }
 
+/* V2: 컴팩트 헤더 */
 .header {
-  background: #ffffff;
-  border-radius: 32px; padding: 36px 28px 30px; margin-bottom: 18px;
-  border: 1px solid rgba(140,180,230,0.45);
-  box-shadow: 0 4px 20px rgba(100,150,230,0.10);
+  background: linear-gradient(145deg, #ffffff 0%, #f0f6ff 100%);
+  border-radius: 28px; padding: 26px 24px 22px; margin-bottom: 14px;
+  border: 1px solid rgba(140,180,230,0.4);
+  box-shadow: 0 4px 24px rgba(100,150,230,0.10);
 }
 .header h1 {
-  font-size: 42px; font-weight: 800; letter-spacing: -2px;
-  background: linear-gradient(135deg, #5aaae8 0%, #3a8fd4 45%, #7acef5 100%);
+  font-size: 32px; font-weight: 800; letter-spacing: -1.5px;
+  background: linear-gradient(135deg, #4a9ae0 0%, #2a7fc8 50%, #60bef0 100%);
   -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
-  margin-bottom: 4px; line-height: 1;
+  margin-bottom: 2px; line-height: 1;
 }
-.header .subtitle { font-size: 13px; color: #a0b2c8; font-weight: 400; margin-bottom: 22px; }
-.header .meta { display: flex; flex-wrap: wrap; gap: 8px; }
+.header .subtitle { font-size: 12px; color: #a0b2c8; font-weight: 400; margin-bottom: 16px; }
+.header .meta { display: flex; flex-wrap: wrap; gap: 6px; }
 .header .meta span {
-  background: rgba(160,190,230,0.15); border: 1px solid rgba(160,190,230,0.3);
-  border-radius: 100px; padding: 5px 14px; font-size: 12px; color: #5a7a9a; font-weight: 500;
+  background: rgba(100,155,220,0.08); border: 1px solid rgba(160,190,230,0.25);
+  border-radius: 100px; padding: 4px 12px; font-size: 11px; color: #5a7a9a; font-weight: 600;
 }
 .card {
   background: #ffffff;
@@ -78,9 +79,10 @@ table { width: 100%; border-collapse: collapse; font-size: 13px; }
 th { padding: 0 0 10px; text-align: left; font-size: 10px; font-weight: 700; color: #c0ccd8; letter-spacing: 1.5px; text-transform: uppercase; border-bottom: 1px solid rgba(160,190,230,0.2); }
 td { padding: 13px 0; border-bottom: 1px solid rgba(160,190,230,0.15); color: #2a3a50; vertical-align: top; line-height: 1.7; }
 tr:last-child td { border-bottom: none; }
-.check-row { display: flex; flex-wrap: nowrap; gap: 6px; margin-bottom: 14px; }
-.chip { flex: 1; min-width: 0; text-align: center; background: rgba(255,255,255,0.45); border: 1px solid rgba(160,190,230,0.3); border-radius: 100px; padding: 7px 4px; font-size: 11px; color: #a0b8d0; font-weight: 400; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
-.chip.on { background: rgba(100,155,220,0.15); border-color: rgba(100,155,220,0.45); color: #3a6a9a; font-weight: 700; }
+.check-row { display: flex; flex-wrap: nowrap; gap: 7px; margin-bottom: 14px; }
+/* V2: 더 크고 탭하기 쉬운 칩 */
+.chip { flex: 1; min-width: 0; text-align: center; background: rgba(255,255,255,0.6); border: 1px solid rgba(160,190,230,0.3); border-radius: 14px; padding: 12px 4px; font-size: 12px; color: #8aaccf; font-weight: 500; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; transition: all 0.15s; -webkit-tap-highlight-color: transparent; }
+.chip.on { background: rgba(90,140,220,0.14); border-color: rgba(90,140,220,0.5); color: #2a5a9a; font-weight: 800; box-shadow: 0 2px 8px rgba(90,140,220,0.15); }
 .stat-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; }
 .stat-box { background: rgba(255,255,255,0.78); backdrop-filter: blur(32px); -webkit-backdrop-filter: blur(32px); border-radius: 22px; padding: 20px 10px; text-align: center; border: 1px solid rgba(195,218,255,0.6); box-shadow: 0 4px 20px rgba(100,150,230,0.10), inset 0 1px 0 rgba(255,255,255,1); }
 .stat-box .lbl { font-size: 10px; color: #b0c0d4; margin-bottom: 6px; font-weight: 700; letter-spacing: 0.5px; text-transform: uppercase; }
@@ -211,12 +213,16 @@ tr:last-child td { border-bottom: none; }
 .si-name   { font-size: 12px; font-weight: 800; color: #3a6a9a; min-width: 80px; flex-shrink: 0; }
 .si-sep    { font-size: 12px; color: #c0d0e0; flex-shrink: 0; }
 .si-detail { font-size: 13px; color: #2a3a50; line-height: 1.6; }
-.week-nav { position: sticky; top: 0; z-index: 100; display: flex; gap: 8px; padding: 12px 0 10px; background: rgba(255,255,255,0.95); backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px); margin-bottom: 4px; overflow-x: auto; scrollbar-width: none; -ms-overflow-style: none; }
-.week-nav::-webkit-scrollbar { display: none; }
-.wt-btn { flex: 0 0 auto; min-width: 64px; padding: 10px 6px; border-radius: 16px; border: 1px solid rgba(160,190,230,0.3); background: rgba(255,255,255,0.45); font-size: 12px; font-weight: 700; color: #a0b8d0; cursor: pointer; text-align: center; transition: all 0.2s; -webkit-tap-highlight-color: transparent; }
-.wt-btn .wt-week { display: block; font-size: 13px; font-weight: 800; margin-bottom: 2px; }
-.wt-btn .wt-date { display: block; font-size: 10px; font-weight: 400; opacity: 0.8; }
-.wt-btn.active { background: rgba(100,155,220,0.18); border-color: rgba(100,155,220,0.5); color: #3a6a9a; box-shadow: 0 3px 14px rgba(100,150,230,0.12); }
+/* V2: 화살표 주차 네비게이션 */
+.week-nav { position: sticky; top: 0; z-index: 100; display: flex; align-items: center; justify-content: space-between; padding: 10px 0 8px; background: rgba(247,250,255,0.97); backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px); margin-bottom: 8px; gap: 10px; }
+.wk-arrow { width: 42px; height: 42px; border: none; border-radius: 50%; background: rgba(100,155,220,0.1); color: #3a6a9a; font-size: 20px; cursor: pointer; display: flex; align-items: center; justify-content: center; flex-shrink: 0; transition: background 0.15s; -webkit-tap-highlight-color: transparent; }
+.wk-arrow:active { background: rgba(100,155,220,0.22); }
+.wk-arrow:disabled { opacity: 0.25; cursor: default; }
+.wk-nav-center { flex: 1; text-align: center; }
+.wk-nav-label { font-size: 18px; font-weight: 800; color: #2a3a50; letter-spacing: -0.5px; display: block; }
+.wk-nav-dot { display: flex; justify-content: center; gap: 5px; margin-top: 5px; }
+.wk-dot { width: 6px; height: 6px; border-radius: 50%; background: rgba(160,190,230,0.4); transition: all 0.2s; }
+.wk-dot.on { background: rgba(90,154,210,0.85); width: 16px; border-radius: 3px; }
 .wt-btn.empty { opacity: 0.38; cursor: default; }
 .week-panel { display: none; }
 .week-panel.active { display: block; }
@@ -843,10 +849,20 @@ function init(data) {
 
   /* 주차 탭 & 패널 */
   let activeChart = {};
+  let _curIdx = 0;
   function switchWeek(idx) {
-    document.querySelectorAll('.wt-btn').forEach((b, i) => b.classList.toggle('active', i === idx));
+    _curIdx = idx;
     document.querySelectorAll('.week-panel').forEach((p, i) => p.classList.toggle('active', i === idx));
     initDailyStatus(idx);
+    /* V2: 화살표 네비 업데이트 */
+    const prevBtn = document.getElementById('wk-prev');
+    const nextBtn = document.getElementById('wk-next');
+    const labelEl = document.getElementById('wk-nav-label');
+    const dotsEl  = document.getElementById('wk-nav-dots');
+    if (prevBtn) prevBtn.disabled = idx === 0;
+    if (nextBtn) nextBtn.disabled = idx === weeks.length - 1;
+    if (labelEl) labelEl.textContent = weeks[idx].label;
+    if (dotsEl) dotsEl.querySelectorAll('.wk-dot').forEach((d,i) => d.classList.toggle('on', i === idx));
     const w = weeks[idx];
     if (w && w.bodyData && !activeChart[idx]) {
       const canvas = document.getElementById(`bodyChart-${idx}`);
@@ -1216,14 +1232,15 @@ function init(data) {
     const HR = '<hr style="border:none;border-top:1px solid rgba(160,190,230,0.2);margin:20px 0">';
     return `<div class="week-panel" data-idx="${idx}">
       ${!isMember && w.nextSessionMemo ? `<div class="card" style="border-left:3px solid rgba(200,160,90,0.5)"><div class="card-title gold">다음 수업 준비<span class="memo-badge">트레이너</span></div><div class="note">${w.nextSessionMemo}</div></div>` : ''}
+      ${/* V2: 이번 주 상태를 최상단으로 */ ''}
+      ${collapsible('📋 이번 주 상태', 'blue', `<div id="ds-${idx}"><div style="font-size:11px;color:#a0b8d0;font-weight:600;margin-bottom:14px">📅 ${new Date().toLocaleDateString('ko-KR',{month:'long',day:'numeric'})} 기준 · 이번 주 누적</div><div class="sub-label"><span class="dot" style="background:#f4a07e"></span>컨디션</div><div class="day-count" data-field="condition"></div><div class="check-row">${dailyChips('condition',['매우 좋음','좋음','보통','피곤함','매우 피곤함'])}</div><textarea class="daily-note" data-note="condition_note" placeholder="메모..." rows="2"></textarea>${HR}<div class="sub-label"><span class="dot" style="background:#a78bde"></span>수면</div><div class="day-count" data-field="sleep"></div><div class="check-row">${dailyChips('sleep',['매우 나쁨','나쁨','보통','좋음','매우 좋음'])}</div><textarea class="daily-note" data-note="sleep_note" placeholder="메모..." rows="2"></textarea>${HR}<div class="sub-label"><span class="dot" style="background:#6dc99c"></span>신체 불편</div><div class="day-count" data-field="pain"></div><div class="check-row">${dailyChips('pain',['없음','있음'])}</div><textarea class="daily-note" data-note="pain_note" placeholder="메모..." rows="2"></textarea>${HR}<div class="sub-label"><span class="dot" style="background:#f0c96a"></span>영양 상태</div><div class="day-count" data-field="nutrition"></div><div class="check-row">${dailyChips('nutrition',['매우 나쁨','나쁨','보통','좋음','매우 좋음'])}</div><textarea class="daily-note" data-note="nutrition_note" placeholder="메모..." rows="2"></textarea>${HR}${HR}<div class="sub-label" style="margin-bottom:4px">✏️ 개인 운동 메모</div><div style="font-size:11px;color:#a0b8d0;margin-bottom:8px">홈트·자유 운동 내용 — 주간 누적 기록</div><textarea id="wmemo-${idx}" class="daily-note" placeholder="예) 유산소 30분, 스쿼트 3×15, 플랭크 1분..." rows="3" style="min-height:70px"></textarea>${HR}<button class="send-btn" style="width:100%;padding:15px;border:none;border-radius:16px;background:linear-gradient(135deg,rgba(100,155,220,0.18),rgba(80,130,200,0.22));color:#2a5a9a;font-size:14px;font-weight:800;cursor:pointer;letter-spacing:0.3px;border:1px solid rgba(100,155,220,0.3)">💬 트레이너에게 오늘 상태 전송</button></div>`, true)}
+      ${nutritionPlan ? collapsible('🍽 식사 가이드 & 기록', 'green', buildNutritionSection(nutritionPlan, idx)) : ''}
+      ${(w.review?.good || w.review?.caution || w.review?.suggest || w.trainerComment) ? collapsible('<span style="display:flex;align-items:center"><span class="req-dot"></span>트레이너 평가</span>', 'gold', `${w.review?.good?`<div style="margin-bottom:14px"><div class="sub-label">✓ 잘 하고 있는 점</div><div class="msg green">${w.review.good}</div></div>`:''}${w.review?.caution?`<div style="margin-bottom:14px"><div class="sub-label" style="color:#e05050">⚠ 주의할 점</div><div class="msg gold">${w.review.caution}</div></div>`:''}${w.review?.suggest?`<div style="margin-bottom:14px"><div class="sub-label">→ 권장 사항</div><div class="msg">${w.review.suggest}</div></div>`:''}${w.trainerComment ? `${HR}<div class="sub-label">트레이너 코멘트</div><div class="msg gold">${w.trainerComment}</div>` : ''}${!isMember && w.trainerDirection ? `${HR}<div class="sub-label">트레이닝 방향</div><div class="msg">${w.trainerDirection}</div>` : ''}`) : ''}
       ${hideLesson ? '' : collapsible('<span style="display:flex;align-items:center"><span class="req-dot"></span>수업 내용</span>', 'blue', `<div class="sub-label">요약</div><div class="summary-list">${summaryItems}</div>${HR}<div class="sub-label">운동 피드백</div><div class="exercise-grid">${exItems}</div>${w.musclesWorked?.length?`${HR}<div class="sub-label">운동 부위</div><div class="muscle-tag-row">${w.musclesWorked.map(m=>`<span class="muscle-tag">${MUSCLE_DATA[m]?.name||m}</span>`).join("")}</div>`:""}`, true)}
       ${collapsible('<span style="display:flex;align-items:center"><span class="req-dot"></span>운동 현황</span>', 'blue', `<div class="sub-label">주요 리프트</div><div class="lift-grid">${liftItems}</div>${HR}<div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:10px"><div class="sub-label" style="margin-bottom:0">이번 주 트레이닝</div><span class="wk-count" id="wk-count-${idx}">주 0회</span></div><div class="weekly-cal" id="weekly-cal-${idx}">${calDays}</div><div class="note">${r.note||''}</div>`, true)}
-      ${(w.review?.good || w.review?.caution || w.review?.suggest || w.trainerComment) ? collapsible('<span style="display:flex;align-items:center"><span class="req-dot"></span>트레이너 평가</span>', 'gold', `${w.review?.good?`<div style="margin-bottom:14px"><div class="sub-label">✓ 잘 하고 있는 점</div><div class="msg green">${w.review.good}</div></div>`:''}${w.review?.caution?`<div style="margin-bottom:14px"><div class="sub-label" style="color:#e05050">⚠ 주의할 점</div><div class="msg gold">${w.review.caution}</div></div>`:''}${w.review?.suggest?`<div style="margin-bottom:14px"><div class="sub-label">→ 권장 사항</div><div class="msg">${w.review.suggest}</div></div>`:''}${w.trainerComment ? `${HR}<div class="sub-label">트레이너 코멘트</div><div class="msg gold">${w.trainerComment}</div>` : ''}${!isMember && w.trainerDirection ? `${HR}<div class="sub-label">트레이닝 방향</div><div class="msg">${w.trainerDirection}</div>` : ''}`) : ''}
-      ${nutritionPlan ? collapsible('🍽 식사 가이드 & 기록', 'green', buildNutritionSection(nutritionPlan, idx)) : ''}
-      ${collapsible('<span style="display:flex;align-items:center"><span class="req-dot"></span>이번 주 상태</span>', 'blue', `<div id="ds-${idx}"><div style="font-size:11px;color:#a0b8d0;font-weight:600;margin-bottom:14px">📅 ${new Date().toLocaleDateString('ko-KR',{month:'long',day:'numeric'})} 기준 · 이번 주 누적</div><div class="sub-label"><span class="dot" style="background:#f4a07e"></span>컨디션</div><div class="day-count" data-field="condition"></div><div class="check-row">${dailyChips('condition',['매우 좋음','좋음','보통','피곤함','매우 피곤함'])}</div><textarea class="daily-note" data-note="condition_note" placeholder="메모..." rows="2"></textarea>${HR}<div class="sub-label"><span class="dot" style="background:#a78bde"></span>수면</div><div class="day-count" data-field="sleep"></div><div class="check-row">${dailyChips('sleep',['매우 나쁨','나쁨','보통','좋음','매우 좋음'])}</div><textarea class="daily-note" data-note="sleep_note" placeholder="메모..." rows="2"></textarea>${HR}<div class="sub-label"><span class="dot" style="background:#6dc99c"></span>신체 불편</div><div class="day-count" data-field="pain"></div><div class="check-row">${dailyChips('pain',['없음','있음'])}</div><textarea class="daily-note" data-note="pain_note" placeholder="메모..." rows="2"></textarea>${HR}<div class="sub-label"><span class="dot" style="background:#f0c96a"></span>영양 상태</div><div class="day-count" data-field="nutrition"></div><div class="check-row">${dailyChips('nutrition',['매우 나쁨','나쁨','보통','좋음','매우 좋음'])}</div><textarea class="daily-note" data-note="nutrition_note" placeholder="메모..." rows="2"></textarea>${HR}${HR}<div class="sub-label" style="margin-bottom:4px">✏️ 개인 운동 메모</div><div style="font-size:11px;color:#a0b8d0;margin-bottom:8px">홈트·자유 운동 내용 — 주간 누적 기록</div><textarea id="wmemo-${idx}" class="daily-note" placeholder="예) 유산소 30분, 스쿼트 3×15, 플랭크 1분..." rows="3" style="min-height:70px"></textarea>${HR}<button class="send-btn" style="width:100%;padding:13px;border:none;border-radius:14px;background:rgba(255,220,50,0.18);color:#b8860b;font-size:13px;font-weight:800;cursor:pointer;letter-spacing:0.3px">💬 트레이너에게 오늘 상태 전송</button></div>`)}
+      ${collapsible('📊 체성분', 'green', `${buildCountdown(bd.lastMeasured)}<div style="display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:${bd.lastMeasured?'14px':'0'}"><div style="background:linear-gradient(145deg,#fff,#f5f8ff);border-radius:20px;padding:18px 10px;text-align:center;border:1px solid rgba(90,175,130,0.2);box-shadow:0 2px 12px rgba(90,175,130,0.08)"><div style="font-size:10px;color:#90b8a0;font-weight:700;letter-spacing:0.5px;margin-bottom:4px">체중</div><div style="font-size:30px;font-weight:800;color:#1a2a40;letter-spacing:-2px;line-height:1">${lW??'—'}</div><div style="font-size:10px;color:#b0c0d4;margin-top:3px">kg</div></div><div style="background:linear-gradient(145deg,#fff,#f8f5ff);border-radius:20px;padding:18px 10px;text-align:center;border:1px solid rgba(210,120,110,0.2);box-shadow:0 2px 12px rgba(210,120,110,0.06)"><div style="font-size:10px;color:#c09090;font-weight:700;letter-spacing:0.5px;margin-bottom:4px">체지방</div><div style="font-size:30px;font-weight:800;color:#1a2a40;letter-spacing:-2px;line-height:1">${lF??'—'}</div><div style="font-size:10px;color:#b0c0d4;margin-top:3px">kg</div></div><div style="background:linear-gradient(145deg,#fff,#f5f7ff);border-radius:20px;padding:18px 10px;text-align:center;border:1px solid rgba(90,154,210,0.2);box-shadow:0 2px 12px rgba(90,154,210,0.08)"><div style="font-size:10px;color:#8aaac8;font-weight:700;letter-spacing:0.5px;margin-bottom:4px">근육</div><div style="font-size:30px;font-weight:800;color:#1a2a40;letter-spacing:-2px;line-height:1">${lM??'—'}</div><div style="font-size:10px;color:#b0c0d4;margin-top:3px">kg</div></div></div><div class="delta-row"><div class="delta-box"><span class="dlbl">체중 변화</span><span class="dval ${dW.cls}">${dW.text}</span></div><div class="delta-box"><span class="dlbl">체지방 변화</span><span class="dval ${dF.cls}">${dF.text}</span></div><div class="delta-box"><span class="dlbl">근육 변화</span><span class="dval ${dM.cls}">${dM.text}</span></div></div>${HR}<div class="sub-label">변화 추이</div><div style="font-size:10px;font-weight:700;color:#90c8a8;letter-spacing:0.5px;margin-bottom:4px">체중</div><div style="position:relative;height:130px;margin-bottom:12px"><canvas id="bodyChart-${idx}"></canvas></div><div style="font-size:10px;font-weight:700;color:#7aaad4;letter-spacing:0.5px;margin-bottom:4px">골격근량 · 체지방량</div><div style="position:relative;height:130px;margin-bottom:14px"><canvas id="bodyChart2-${idx}"></canvas></div><div class="msg">${bd.comment}</div>`)}
       ${collapsible('운동 처방 가이드', 'blue', '<div style="display:flex;align-items:center;gap:8px;margin-bottom:6px"><span style="font-size:11px;color:#a0b8d0;white-space:nowrap">기준 중량 (1RM)</span><input id="train-kg-'+idx+'" type="number" min="1" max="500" value="60" style="width:52px;background:rgba(255,255,255,0.6);border:1px solid rgba(160,190,230,0.4);border-radius:8px;padding:4px 6px;font-size:13px;font-weight:700;color:#2a3a50;text-align:center;outline:none;font-family:inherit"><span style="font-size:11px;color:#a0b8d0">kg</span></div><div style="display:flex;align-items:center;gap:5px;margin-bottom:10px;padding:6px 8px;background:rgba(255,255,255,0.35);border-radius:8px;border:1px solid rgba(160,190,230,0.2)"><span style="font-size:10px;color:#b0c8e0;white-space:nowrap">1RM 모를 때</span><input id="est-w-'+idx+'" type="number" min="1" max="400" placeholder="무게" style="width:46px;background:rgba(255,255,255,0.6);border:1px solid rgba(160,190,230,0.3);border-radius:6px;padding:3px 4px;font-size:11px;font-weight:600;color:#2a3a50;text-align:center;outline:none;font-family:inherit"><span style="font-size:10px;color:#c0d0e0">kg</span><input id="est-r-'+idx+'" type="number" min="1" max="30" placeholder="횟수" style="width:38px;background:rgba(255,255,255,0.6);border:1px solid rgba(160,190,230,0.3);border-radius:6px;padding:3px 4px;font-size:11px;font-weight:600;color:#2a3a50;text-align:center;outline:none;font-family:inherit"><span style="font-size:10px;color:#c0d0e0">회</span><span style="font-size:10px;color:#c0d0e0">→</span><span id="est-result-'+idx+'" style="font-size:11px;font-weight:700;color:#5a8ab8;min-width:28px">—</span><span style="font-size:10px;color:#c0d0e0">kg</span></div><div id="train-table-'+idx+'"></div>')}
       ${collapsible('유산소 강도 가이드', 'blue', '<div style="display:flex;align-items:center;gap:8px;margin-bottom:4px"><span style="font-size:11px;color:#a0b8d0;white-space:nowrap">오늘 안정시 심박수</span><input id="card-rhr-'+idx+'" type="number" min="40" max="120" style="width:52px;background:rgba(255,255,255,0.6);border:1px solid rgba(160,190,230,0.4);border-radius:8px;padding:4px 6px;font-size:13px;font-weight:700;color:#2a3a50;text-align:center;outline:none;font-family:inherit"><span style="font-size:11px;color:#a0b8d0">bpm</span></div><div id="card-formula-'+idx+'" style="font-size:10px;color:#c0d0e0;margin-bottom:8px;padding:0 2px"></div><div id="card-zones-'+idx+'" style="display:flex;flex-direction:column;gap:5px"></div>')}
-      ${collapsible('체성분', 'green', `${buildCountdown(bd.lastMeasured)}<div class="stat-grid" style="margin-top:${bd.lastMeasured?'14px':'0'}"><div class="stat-box"><div class="lbl">체중</div><div class="val">${lW??'—'}</div><div class="unt">kg</div></div><div class="stat-box"><div class="lbl">체지방량</div><div class="val">${lF??'—'}</div><div class="unt">kg</div></div><div class="stat-box"><div class="lbl">골격근량</div><div class="val">${lM??'—'}</div><div class="unt">kg</div></div></div><div class="delta-row"><div class="delta-box"><span class="dlbl">체중 변화</span><span class="dval ${dW.cls}">${dW.text}</span></div><div class="delta-box"><span class="dlbl">체지방 변화</span><span class="dval ${dF.cls}">${dF.text}</span></div><div class="delta-box"><span class="dlbl">근육 변화</span><span class="dval ${dM.cls}">${dM.text}</span></div></div>${HR}<div class="sub-label">변화 추이</div><div style="font-size:10px;font-weight:700;color:#90c8a8;letter-spacing:0.5px;margin-bottom:4px">체중</div><div style="position:relative;height:130px;margin-bottom:12px"><canvas id="bodyChart-${idx}"></canvas></div><div style="font-size:10px;font-weight:700;color:#7aaad4;letter-spacing:0.5px;margin-bottom:4px">골격근량 · 체지방량</div><div style="position:relative;height:130px;margin-bottom:14px"><canvas id="bodyChart2-${idx}"></canvas></div><div class="msg">${bd.comment}</div>`)}
     </div>`;
   }
 
@@ -1236,7 +1253,24 @@ function init(data) {
   const _wkStarts = weeks.map(w=>_parseWkDate(w.date));
   let defaultIdx = 0;
   for(let i=_wkStarts.length-1;i>=0;i--){ if(_wkStarts[i] && _today >= _wkStarts[i]){ defaultIdx=i; break; } }
-  navEl.innerHTML   = weeks.map((w,i) => `<button class="wt-btn${!w.mainMessage?' empty':''}${i===defaultIdx?' active':''}" data-idx="${i}"><span class="wt-week">${w.label}</span>${!w.mainMessage?'<span class="wt-date">미입력</span>':''}</button>`).join('');
+  /* V2: 화살표 네비게이션 렌더 */
+  const dots = weeks.map((_,i) => `<div class="wk-dot${i===defaultIdx?' on':''}"></div>`).join('');
+  navEl.innerHTML = `
+    <button class="wk-arrow" id="wk-prev" ${defaultIdx===0?'disabled':''}>‹</button>
+    <div class="wk-nav-center">
+      <span class="wk-nav-label" id="wk-nav-label">${weeks[defaultIdx].label}</span>
+      <div class="wk-nav-dot" id="wk-nav-dots">${dots}</div>
+    </div>
+    <button class="wk-arrow" id="wk-next" ${defaultIdx===weeks.length-1?'disabled':''}>›</button>`;
+  document.getElementById('wk-prev').addEventListener('click', () => { if (_curIdx > 0) switchWeek(_curIdx - 1); });
+  document.getElementById('wk-next').addEventListener('click', () => { if (_curIdx < weeks.length - 1) switchWeek(_curIdx + 1); });
+  /* 스와이프 지원 */
+  let _tx0 = 0;
+  panelEl.addEventListener('touchstart', e => { _tx0 = e.touches[0].clientX; }, { passive: true });
+  panelEl.addEventListener('touchend',   e => {
+    const dx = e.changedTouches[0].clientX - _tx0;
+    if (Math.abs(dx) > 50) { if (dx < 0 && _curIdx < weeks.length-1) switchWeek(_curIdx+1); else if (dx > 0 && _curIdx > 0) switchWeek(_curIdx-1); }
+  });
   panelEl.innerHTML = weeks.map((w,i) => buildPanel(w,i)).join('');
 
   /* 운동 처방 가이드 + 유산소 강도 가이드 초기화 */
