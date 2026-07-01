@@ -81,7 +81,7 @@ td { padding: 13px 0; border-bottom: 1px solid rgba(160,190,230,0.15); color: #2
 tr:last-child td { border-bottom: none; }
 .check-row { display: flex; flex-wrap: nowrap; gap: 7px; margin-bottom: 14px; }
 /* V2: 더 크고 탭하기 쉬운 칩 */
-.chip { flex: 1; min-width: 0; text-align: center; background: rgba(255,255,255,0.6); border: 1px solid rgba(160,190,230,0.3); border-radius: 14px; padding: 12px 4px; font-size: 12px; color: #8aaccf; font-weight: 500; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; transition: all 0.15s; -webkit-tap-highlight-color: transparent; }
+.chip { flex: 1; min-width: 0; text-align: center; background: rgba(255,255,255,0.6); border: 1px solid rgba(160,190,230,0.3); border-radius: 12px; padding: 7px 4px; font-size: 11px; color: #8aaccf; font-weight: 500; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; transition: all 0.15s; -webkit-tap-highlight-color: transparent; }
 .chip.on { background: rgba(90,140,220,0.14); border-color: rgba(90,140,220,0.5); color: #2a5a9a; font-weight: 800; box-shadow: 0 2px 8px rgba(90,140,220,0.15); }
 .stat-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; }
 .stat-box { background: rgba(255,255,255,0.78); backdrop-filter: blur(32px); -webkit-backdrop-filter: blur(32px); border-radius: 22px; padding: 20px 10px; text-align: center; border: 1px solid rgba(195,218,255,0.6); box-shadow: 0 4px 20px rgba(100,150,230,0.10), inset 0 1px 0 rgba(255,255,255,1); }
@@ -1485,7 +1485,8 @@ function init(data) {
     archEl.style.marginTop = '8px';
     const archInner = archWeeks.map(w => {
       const wSums = _buildSumItems(w.summaries||[]);
-      const wContent = `${w.mainMessage?`<div class="msg" style="margin-bottom:12px">${w.mainMessage}</div>`:''}${wSums?`<div class="sub-label">운동 기록</div><div class="summary-list">${wSums}</div>`:''}${w.trainerComment?`${wSums||w.mainMessage?HR:''}<div class="sub-label">트레이너 코멘트</div><div class="msg gold">${w.trainerComment}</div>`:''}`;
+      const _archHR = '<hr style="border:none;border-top:1px solid rgba(160,190,230,0.2);margin:12px 0">';
+      const wContent = `${w.mainMessage?`<div class="msg" style="margin-bottom:12px">${w.mainMessage}</div>`:''}${wSums?`<div class="sub-label">운동 기록</div><div class="summary-list">${wSums}</div>`:''}${w.trainerComment?`${wSums||w.mainMessage?_archHR:''}<div class="sub-label">트레이너 코멘트</div><div class="msg gold">${w.trainerComment}</div>`:''}`;
       return collapsible(w.label, 'blue', wContent);
     }).join('');
     archEl.innerHTML = collapsible('📋 지난 기록 보기', 'blue', archInner);
