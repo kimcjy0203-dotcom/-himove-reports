@@ -1,6 +1,6 @@
 {
   "name": "권서영",
-  "month": "2026년 6월",
+  "month": "2026년 7월",
   "purposes": [
     "체중감량",
     "근육증가",
@@ -52,6 +52,231 @@
     "completed": 3
   },
   "weeks": [
+    {
+      "week": 1,
+      "label": "1주차",
+      "date": "6/29",
+      "mainMessage": "오늘 체성분 측정 완료 — 8월 말까지 4kg 감량 목표를 새로 설정했어요. 하루 550kcal 적자를 꾸준히 만들어 가면 충분히 달성할 수 있어요. 회사에서의 간식 습관을 조금씩 바꿔나가는 게 이번 달 첫 번째 과제예요.",
+      "summaries": [],
+      "exercises": [
+        {
+          "name": "식후 스쿼트",
+          "note": "식사 직후 50회 · 혈당 스파이크 억제 + 하루 칼로리 소비 추가에 효과적이에요. 특히 저녁 식사 후 필수로 진행해요.",
+          "next": "매 식사 후 50회 목표 → 익숙해지면 속도·깊이 높이기"
+        }
+      ],
+      "lifts": [],
+      "bodyData": {
+        "labels": [
+          "6/30"
+        ],
+        "weight": [
+          66.6
+        ],
+        "fat": [
+          24.9
+        ],
+        "muscle": [
+          22.7
+        ],
+        "lastMeasured": "2026-06-30",
+        "comment": "66.6kg · 근육 22.7kg · 지방 24.9kg · 허리 27인치 — 8월 말 목표: 62.6kg · 허리 25인치"
+      },
+      "condition": "",
+      "conditionNote": "",
+      "sleep": "",
+      "sleepNote": "",
+      "stress": "",
+      "pain": "없음",
+      "painNote": "",
+      "nutrition": "",
+      "nutritionNote": "",
+      "review": {
+        "good": "체성분 측정 잘 챙겨줬어요. 근육량 22.7kg 유지 중 — 감량하면서도 근육 잘 지키고 있어요.",
+        "caution": "회사 과자·군것질 습관 체크 필요. 일하는 날 무의식적인 간식 섭취가 하루 적자 목표를 무너뜨릴 수 있어요.",
+        "suggest": "【식단 개선안】\n① 아침: 밥 반공기 + 달걀 장조림 → 달걀 2알 추가 (단백질 보충 필수)\n② 점심: 밥 2/3공기 + 고기 반찬(육류) 유지 · 튀김 반찬(생선가스 등) 유지 · 밑반찬 그대로\n③ 저녁: 밥 한공기 → 반공기로 줄이기 · 돈가스 소스 최소화\n④ 매 식사 직후 스쿼트 50회 실시 (혈당 관리 + 추가 소비)"
+      },
+      "trainerComment": "오늘 체성분 측정 완료 (66.6kg / 근육 22.7 / 지방 24.9). 8월 말까지 4kg 감량 — 하루 550kcal 적자 유지가 핵심이에요. 식단 분석: 아침 단백질이 부족해요 — 달걀 2알 추가가 첫 번째 과제예요. 점심은 현재 구성 유지 (밥 2/3공기 + 고기·생선가스 반찬). 저녁은 밥을 한공기에서 반공기로 줄이는 것만으로도 200kcal 이상 줄어요. 그리고 매 식사 후 스쿼트 50회 — 특히 저녁 식사 후 꼭 해주세요. 회사 과자도 계속 체크해요.",
+      "trainerDirection": "하루 550kcal 적자 · 기초대사량 1270kcal · 아침 달걀 2알 추가 · 저녁 밥 반공기 · 식후 스쿼트 50회 · 물 1.5~2L · 과자→견과류",
+      "nextSessionMemo": "이번 주 식단 체크 — 과자 섭취 줄었는지, 물 섭취량 변화 확인",
+      "finalMessage": "",
+      "musclesWorked": [],
+      "sessionDates": [
+        "2026-06-30"
+      ],
+      "memberComment": "",
+      "weeklyRoutine": null
+    },
+    {
+      "week": 2,
+      "label": "2주차",
+      "date": "7/6",
+      "mainMessage": "",
+      "summaries": [],
+      "exercises": [],
+      "lifts": [],
+      "bodyData": null,
+      "condition": "",
+      "conditionNote": "",
+      "sleep": "",
+      "sleepNote": "",
+      "stress": "",
+      "pain": "없음",
+      "painNote": "",
+      "nutrition": "",
+      "nutritionNote": "",
+      "review": {
+        "good": "",
+        "caution": "",
+        "suggest": ""
+      },
+      "trainerComment": "",
+      "trainerDirection": "",
+      "nextSessionMemo": "",
+      "finalMessage": "",
+      "musclesWorked": [],
+      "sessionDates": [],
+      "memberComment": "",
+      "weeklyRoutine": null
+    },
+    {
+      "week": 3,
+      "label": "3주차",
+      "date": "7/13",
+      "mainMessage": "",
+      "summaries": [],
+      "exercises": [],
+      "lifts": [],
+      "bodyData": null,
+      "condition": "",
+      "conditionNote": "",
+      "sleep": "",
+      "sleepNote": "",
+      "stress": "",
+      "pain": "없음",
+      "painNote": "",
+      "nutrition": "",
+      "nutritionNote": "",
+      "review": {
+        "good": "",
+        "caution": "",
+        "suggest": ""
+      },
+      "trainerComment": "",
+      "trainerDirection": "",
+      "nextSessionMemo": "",
+      "finalMessage": "",
+      "musclesWorked": [],
+      "sessionDates": [],
+      "memberComment": "",
+      "weeklyRoutine": null
+    },
+    {
+      "week": 4,
+      "label": "4주차",
+      "date": "7/20",
+      "mainMessage": "",
+      "summaries": [],
+      "exercises": [],
+      "lifts": [],
+      "bodyData": null,
+      "condition": "",
+      "conditionNote": "",
+      "sleep": "",
+      "sleepNote": "",
+      "stress": "",
+      "pain": "없음",
+      "painNote": "",
+      "nutrition": "",
+      "nutritionNote": "",
+      "review": {
+        "good": "",
+        "caution": "",
+        "suggest": ""
+      },
+      "trainerComment": "",
+      "trainerDirection": "",
+      "nextSessionMemo": "",
+      "finalMessage": "",
+      "musclesWorked": [],
+      "sessionDates": [],
+      "memberComment": "",
+      "weeklyRoutine": null
+    },
+    {
+      "week": 5,
+      "label": "5주차",
+      "date": "7/27",
+      "mainMessage": "",
+      "summaries": [],
+      "exercises": [],
+      "lifts": [],
+      "bodyData": null,
+      "condition": "",
+      "conditionNote": "",
+      "sleep": "",
+      "sleepNote": "",
+      "stress": "",
+      "pain": "없음",
+      "painNote": "",
+      "nutrition": "",
+      "nutritionNote": "",
+      "review": {
+        "good": "",
+        "caution": "",
+        "suggest": ""
+      },
+      "trainerComment": "",
+      "trainerDirection": "",
+      "nextSessionMemo": "",
+      "finalMessage": "",
+      "musclesWorked": [],
+      "sessionDates": [],
+      "memberComment": "",
+      "weeklyRoutine": null
+    }
+  ],
+  "quotes": [
+    "50회를 채운 몸은 이미 달라져 있어요. 이제 그 몸을 유지하는 건 당신 차례예요.",
+    "운동 습관이 생기면 살이 빠지는 게 아니라, 살이 찔 수가 없어요.",
+    "바지가 헐렁해지는 날이 반드시 와요. 오늘도 그 날에 한 걸음 더 가까워졌어요.",
+    "주 1회가 주 2회가 되고, 주 2회가 일상이 돼요.",
+    "체중계 숫자보다 계단이 가뿐해지는 느낌이 더 정직한 성과예요.",
+    "힘든 날 나온 게 제일 잘한 거예요.",
+    "PT가 끝나도 몸은 기억해요. 오늘까지 쌓은 것들을.",
+    "목표 체중 52kg, 지금 이 운동들이 거기까지 데려다줄 거예요.",
+    "작은 꾸준함이 큰 변화를 만들어요.",
+    "오늘의 1회가 내일의 습관을 만들어요."
+  ],
+  "monthlySummary": [],
+  "biweeklyFeedback": [],
+  "nutritionPlan": {
+    "deficitGoal": 550,
+    "bmr": 1270,
+    "waterGoal": 1000,
+    "memo": "물통 구매 완료 · 러닝화 구매 예정",
+    "mealGuide": [
+      {
+        "name": "아침",
+        "current": "밥 반공기 · 달걀 장조림 반알 · 국 건더기 · 밑반찬 소량",
+        "change": "달걀 2알 추가 (단백질 보충)",
+        "changeType": "add"
+      },
+      {
+        "name": "점심",
+        "current": "밥 2/3공기 · 고기 반찬(육류) · 튀김반찬(생선가스) · 밑반찬",
+        "change": "그대로 유지",
+        "changeType": "keep"
+      },
+      {
+        "name": "저녁",
+        "current": "밥 한공기 · 돈가스",
+        "change": "밥 반공기로 줄이기 (50% 감소) · 식후 스쿼트 50회",
+        "changeType": "reduce"
+      }
+    ]
+  },
+  "archiveWeeks": [
     {
       "week": 1,
       "label": "1주차",
@@ -1025,45 +1250,5 @@
       "memberComment": "",
       "weeklyRoutine": null
     }
-  ],
-  "quotes": [
-    "50회를 채운 몸은 이미 달라져 있어요. 이제 그 몸을 유지하는 건 당신 차례예요.",
-    "운동 습관이 생기면 살이 빠지는 게 아니라, 살이 찔 수가 없어요.",
-    "바지가 헐렁해지는 날이 반드시 와요. 오늘도 그 날에 한 걸음 더 가까워졌어요.",
-    "주 1회가 주 2회가 되고, 주 2회가 일상이 돼요.",
-    "체중계 숫자보다 계단이 가뿐해지는 느낌이 더 정직한 성과예요.",
-    "힘든 날 나온 게 제일 잘한 거예요.",
-    "PT가 끝나도 몸은 기억해요. 오늘까지 쌓은 것들을.",
-    "목표 체중 52kg, 지금 이 운동들이 거기까지 데려다줄 거예요.",
-    "작은 꾸준함이 큰 변화를 만들어요.",
-    "오늘의 1회가 내일의 습관을 만들어요."
-  ],
-  "monthlySummary": [],
-  "biweeklyFeedback": [],
-  "nutritionPlan": {
-    "deficitGoal": 550,
-    "bmr": 1270,
-    "waterGoal": 1000,
-    "memo": "물통 구매 완료 · 러닝화 구매 예정",
-    "mealGuide": [
-      {
-        "name": "아침",
-        "current": "밥 반공기 · 달걀 장조림 반알 · 국 건더기 · 밑반찬 소량",
-        "change": "달걀 2알 추가 (단백질 보충)",
-        "changeType": "add"
-      },
-      {
-        "name": "점심",
-        "current": "밥 2/3공기 · 고기 반찬(육류) · 튀김반찬(생선가스) · 밑반찬",
-        "change": "그대로 유지",
-        "changeType": "keep"
-      },
-      {
-        "name": "저녁",
-        "current": "밥 한공기 · 돈가스",
-        "change": "밥 반공기로 줄이기 (50% 감소) · 식후 스쿼트 50회",
-        "changeType": "reduce"
-      }
-    ]
-  }
+  ]
 }

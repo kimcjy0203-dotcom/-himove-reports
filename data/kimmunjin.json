@@ -1,6 +1,6 @@
 {
   "name": "김문진",
-  "month": "2026년 5~6월",
+  "month": "2026년 7월",
   "purposes": [
     "체중감량",
     "근력강화",
@@ -46,6 +46,225 @@
     "goal": "근비대"
   },
   "weeks": [
+    {
+      "week": 1,
+      "label": "1주차",
+      "date": "6/29",
+      "mainMessage": "",
+      "summaries": [],
+      "exercises": [],
+      "lifts": [],
+      "bodyData": null,
+      "condition": "",
+      "conditionNote": "",
+      "sleep": "",
+      "sleepNote": "",
+      "stress": "",
+      "pain": "없음",
+      "painNote": "",
+      "nutrition": "",
+      "nutritionNote": "",
+      "review": {
+        "good": "",
+        "caution": "",
+        "suggest": ""
+      },
+      "trainerComment": "",
+      "trainerDirection": "",
+      "nextSessionMemo": "",
+      "finalMessage": "",
+      "musclesWorked": [],
+      "sessionDates": [],
+      "memberComment": "",
+      "weeklyRoutine": null
+    },
+    {
+      "week": 2,
+      "label": "2주차",
+      "date": "7/6",
+      "mainMessage": "",
+      "summaries": [],
+      "exercises": [],
+      "lifts": [],
+      "bodyData": null,
+      "condition": "",
+      "conditionNote": "",
+      "sleep": "",
+      "sleepNote": "",
+      "stress": "",
+      "pain": "없음",
+      "painNote": "",
+      "nutrition": "",
+      "nutritionNote": "",
+      "review": {
+        "good": "",
+        "caution": "",
+        "suggest": ""
+      },
+      "trainerComment": "",
+      "trainerDirection": "",
+      "nextSessionMemo": "",
+      "finalMessage": "",
+      "musclesWorked": [],
+      "sessionDates": [],
+      "memberComment": "",
+      "weeklyRoutine": null
+    },
+    {
+      "week": 3,
+      "label": "3주차",
+      "date": "7/13",
+      "mainMessage": "",
+      "summaries": [],
+      "exercises": [],
+      "lifts": [],
+      "bodyData": null,
+      "condition": "",
+      "conditionNote": "",
+      "sleep": "",
+      "sleepNote": "",
+      "stress": "",
+      "pain": "없음",
+      "painNote": "",
+      "nutrition": "",
+      "nutritionNote": "",
+      "review": {
+        "good": "",
+        "caution": "",
+        "suggest": ""
+      },
+      "trainerComment": "",
+      "trainerDirection": "",
+      "nextSessionMemo": "",
+      "finalMessage": "",
+      "musclesWorked": [],
+      "sessionDates": [],
+      "memberComment": "",
+      "weeklyRoutine": null
+    },
+    {
+      "week": 4,
+      "label": "4주차",
+      "date": "7/20",
+      "mainMessage": "",
+      "summaries": [],
+      "exercises": [],
+      "lifts": [],
+      "bodyData": null,
+      "condition": "",
+      "conditionNote": "",
+      "sleep": "",
+      "sleepNote": "",
+      "stress": "",
+      "pain": "없음",
+      "painNote": "",
+      "nutrition": "",
+      "nutritionNote": "",
+      "review": {
+        "good": "",
+        "caution": "",
+        "suggest": ""
+      },
+      "trainerComment": "",
+      "trainerDirection": "",
+      "nextSessionMemo": "",
+      "finalMessage": "",
+      "musclesWorked": [],
+      "sessionDates": [],
+      "memberComment": "",
+      "weeklyRoutine": null
+    },
+    {
+      "week": 5,
+      "label": "5주차",
+      "date": "7/27",
+      "mainMessage": "",
+      "summaries": [],
+      "exercises": [],
+      "lifts": [],
+      "bodyData": null,
+      "condition": "",
+      "conditionNote": "",
+      "sleep": "",
+      "sleepNote": "",
+      "stress": "",
+      "pain": "없음",
+      "painNote": "",
+      "nutrition": "",
+      "nutritionNote": "",
+      "review": {
+        "good": "",
+        "caution": "",
+        "suggest": ""
+      },
+      "trainerComment": "",
+      "trainerDirection": "",
+      "nextSessionMemo": "",
+      "finalMessage": "",
+      "musclesWorked": [],
+      "sessionDates": [],
+      "memberComment": "",
+      "weeklyRoutine": null
+    }
+  ],
+  "quotes": [
+    "나이는 숫자일 뿐이다. 한계는 마음이 만드는 것이다.",
+    "매일 1%씩 나아지면, 1년 후엔 37배 더 나아진다.",
+    "큰 목표는 작은 습관들이 쌓여 이루어진다.",
+    "몸을 바꾸는 데 4주, 주변이 알아채는 데 8주, 세상이 알아채는 데 12주다.",
+    "가동성은 자유다. 몸이 자유로워지면 삶도 자유로워진다.",
+    "오늘의 땀이 내일의 체력이 된다.",
+    "근육은 기억한다. 꾸준히 자극을 주면 반드시 응답한다.",
+    "움직임이 약이다. 지금 이 순간이 처방전이다.",
+    "준비하는 자만이 결과를 만든다.",
+    "몸이 먼저 변하면 마음도 따라온다."
+  ],
+  "sessions": {
+    "total": 30,
+    "completed": 22
+  },
+  "monthlySummary": [
+    {
+      "year": 2026,
+      "month": 5,
+      "label": "2026년 5월",
+      "sessions": 1,
+      "bodyChange": {
+        "weight": {
+          "start": 84.3,
+          "end": 84.3,
+          "change": 0.0
+        },
+        "muscle": {
+          "start": 29.5,
+          "end": 29.5,
+          "change": 0.0
+        },
+        "fat": {
+          "start": 31.4,
+          "end": 31.4,
+          "change": 0.0
+        }
+      },
+      "condition": {
+        "보통": 1
+      },
+      "sleep": {
+        "보통": 1
+      },
+      "stress": {
+        "보통": 1
+      },
+      "topExercises": [
+        "폼롤러 캣카우 + 흉추 회전",
+        "네발기기 흉추 회전",
+        "흉추 에어플레인 (벽)"
+      ],
+      "autoComment": "1회 출석 · 체중 유지 · 주력 운동: 폼롤러 캣카우 + 흉추 회전, 네발기기 흉추 회전, 흉추 에어플레인 (벽)"
+    }
+  ],
+  "biweeklyFeedback": [],
+  "archiveWeeks": [
     {
       "week": 0,
       "label": "5월 마지막주",
@@ -1031,62 +1250,5 @@
         ]
       }
     }
-  ],
-  "quotes": [
-    "나이는 숫자일 뿐이다. 한계는 마음이 만드는 것이다.",
-    "매일 1%씩 나아지면, 1년 후엔 37배 더 나아진다.",
-    "큰 목표는 작은 습관들이 쌓여 이루어진다.",
-    "몸을 바꾸는 데 4주, 주변이 알아채는 데 8주, 세상이 알아채는 데 12주다.",
-    "가동성은 자유다. 몸이 자유로워지면 삶도 자유로워진다.",
-    "오늘의 땀이 내일의 체력이 된다.",
-    "근육은 기억한다. 꾸준히 자극을 주면 반드시 응답한다.",
-    "움직임이 약이다. 지금 이 순간이 처방전이다.",
-    "준비하는 자만이 결과를 만든다.",
-    "몸이 먼저 변하면 마음도 따라온다."
-  ],
-  "sessions": {
-    "total": 30,
-    "completed": 22
-  },
-  "monthlySummary": [
-    {
-      "year": 2026,
-      "month": 5,
-      "label": "2026년 5월",
-      "sessions": 1,
-      "bodyChange": {
-        "weight": {
-          "start": 84.3,
-          "end": 84.3,
-          "change": 0.0
-        },
-        "muscle": {
-          "start": 29.5,
-          "end": 29.5,
-          "change": 0.0
-        },
-        "fat": {
-          "start": 31.4,
-          "end": 31.4,
-          "change": 0.0
-        }
-      },
-      "condition": {
-        "보통": 1
-      },
-      "sleep": {
-        "보통": 1
-      },
-      "stress": {
-        "보통": 1
-      },
-      "topExercises": [
-        "폼롤러 캣카우 + 흉추 회전",
-        "네발기기 흉추 회전",
-        "흉추 에어플레인 (벽)"
-      ],
-      "autoComment": "1회 출석 · 체중 유지 · 주력 운동: 폼롤러 캣카우 + 흉추 회전, 네발기기 흉추 회전, 흉추 에어플레인 (벽)"
-    }
-  ],
-  "biweeklyFeedback": []
+  ]
 }

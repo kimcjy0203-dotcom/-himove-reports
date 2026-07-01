@@ -1,6 +1,6 @@
 {
   "name": "형혜진",
-  "month": "2026년 6월",
+  "month": "2026년 7월",
   "purposes": [
     "체중감량",
     "근력강화",
@@ -46,6 +46,159 @@
     "goal": "자세교정·재활"
   },
   "weeks": [
+    {
+      "week": 1,
+      "label": "1주차",
+      "date": "6/29"
+    },
+    {
+      "week": 2,
+      "label": "2주차",
+      "date": "7/6",
+      "mainMessage": "",
+      "summaries": [],
+      "exercises": [],
+      "lifts": [],
+      "bodyData": null,
+      "condition": "",
+      "conditionNote": "",
+      "sleep": "",
+      "sleepNote": "",
+      "stress": "",
+      "pain": "없음",
+      "painNote": "",
+      "nutrition": "",
+      "nutritionNote": "",
+      "review": {
+        "good": "",
+        "caution": "",
+        "suggest": ""
+      },
+      "trainerComment": "",
+      "trainerDirection": "",
+      "nextSessionMemo": "",
+      "finalMessage": "",
+      "musclesWorked": [],
+      "sessionDates": [],
+      "memberComment": "",
+      "weeklyRoutine": null
+    },
+    {
+      "week": 3,
+      "label": "3주차",
+      "date": "7/13",
+      "mainMessage": "",
+      "summaries": [],
+      "exercises": [],
+      "lifts": [],
+      "bodyData": null,
+      "condition": "",
+      "conditionNote": "",
+      "sleep": "",
+      "sleepNote": "",
+      "stress": "",
+      "pain": "없음",
+      "painNote": "",
+      "nutrition": "",
+      "nutritionNote": "",
+      "review": {
+        "good": "",
+        "caution": "",
+        "suggest": ""
+      },
+      "trainerComment": "",
+      "trainerDirection": "",
+      "nextSessionMemo": "",
+      "finalMessage": "",
+      "musclesWorked": [],
+      "sessionDates": [],
+      "memberComment": "",
+      "weeklyRoutine": null
+    },
+    {
+      "week": 4,
+      "label": "4주차",
+      "date": "7/20",
+      "mainMessage": "",
+      "summaries": [],
+      "exercises": [],
+      "lifts": [],
+      "bodyData": null,
+      "condition": "",
+      "conditionNote": "",
+      "sleep": "",
+      "sleepNote": "",
+      "stress": "",
+      "pain": "없음",
+      "painNote": "",
+      "nutrition": "",
+      "nutritionNote": "",
+      "review": {
+        "good": "",
+        "caution": "",
+        "suggest": ""
+      },
+      "trainerComment": "",
+      "trainerDirection": "",
+      "nextSessionMemo": "",
+      "finalMessage": "",
+      "musclesWorked": [],
+      "sessionDates": [],
+      "memberComment": "",
+      "weeklyRoutine": null
+    },
+    {
+      "week": 5,
+      "label": "5주차",
+      "date": "7/27",
+      "mainMessage": "",
+      "summaries": [],
+      "exercises": [],
+      "lifts": [],
+      "bodyData": null,
+      "condition": "",
+      "conditionNote": "",
+      "sleep": "",
+      "sleepNote": "",
+      "stress": "",
+      "pain": "없음",
+      "painNote": "",
+      "nutrition": "",
+      "nutritionNote": "",
+      "review": {
+        "good": "",
+        "caution": "",
+        "suggest": ""
+      },
+      "trainerComment": "",
+      "trainerDirection": "",
+      "nextSessionMemo": "",
+      "finalMessage": "",
+      "musclesWorked": [],
+      "sessionDates": [],
+      "memberComment": "",
+      "weeklyRoutine": null
+    }
+  ],
+  "quotes": [
+    "나온 것 자체가 이미 절반이에요.",
+    "오늘 30분이 내일의 몸을 만든다.",
+    "몸이 기억하는 건 숫자가 아니라 꾸준함이다.",
+    "어깨를 펴면 자신감도 함께 올라온다.",
+    "6kg은 목표가 아니라 결과다. 과정에 집중해요.",
+    "재활도 운동이에요. 아끼는 만큼 강해진다.",
+    "몸의 신호에 귀 기울이는 것도 실력이에요.",
+    "작은 습관 하나가 체형을 바꾼다.",
+    "오늘 덜 먹은 것이 내일의 에너지가 된다.",
+    "완벽하지 않아도 된다. 어제보다 나아지기만 하면."
+  ],
+  "sessions": {
+    "total": 10,
+    "completed": 0
+  },
+  "monthlySummary": [],
+  "biweeklyFeedback": [],
+  "archiveWeeks": [
     {
       "week": 1,
       "label": "1주차",
@@ -639,23 +792,5 @@
       "label": "5주차",
       "date": "6/29"
     }
-  ],
-  "quotes": [
-    "나온 것 자체가 이미 절반이에요.",
-    "오늘 30분이 내일의 몸을 만든다.",
-    "몸이 기억하는 건 숫자가 아니라 꾸준함이다.",
-    "어깨를 펴면 자신감도 함께 올라온다.",
-    "6kg은 목표가 아니라 결과다. 과정에 집중해요.",
-    "재활도 운동이에요. 아끼는 만큼 강해진다.",
-    "몸의 신호에 귀 기울이는 것도 실력이에요.",
-    "작은 습관 하나가 체형을 바꾼다.",
-    "오늘 덜 먹은 것이 내일의 에너지가 된다.",
-    "완벽하지 않아도 된다. 어제보다 나아지기만 하면."
-  ],
-  "sessions": {
-    "total": 10,
-    "completed": 0
-  },
-  "monthlySummary": [],
-  "biweeklyFeedback": []
+  ]
 }

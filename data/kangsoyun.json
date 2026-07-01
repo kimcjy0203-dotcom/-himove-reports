@@ -1,6 +1,6 @@
 {
   "name": "강소윤",
-  "month": "2026년 6월",
+  "month": "2026년 7월",
   "purposes": [
     "체중감량",
     "건강관리",
@@ -44,6 +44,158 @@
     "goal": "근비대"
   },
   "weeks": [
+    {
+      "week": 1,
+      "label": "1주차",
+      "date": "6/29"
+    },
+    {
+      "week": 2,
+      "label": "2주차",
+      "date": "7/6",
+      "mainMessage": "",
+      "summaries": [],
+      "exercises": [],
+      "lifts": [],
+      "bodyData": null,
+      "condition": "",
+      "conditionNote": "",
+      "sleep": "",
+      "sleepNote": "",
+      "stress": "",
+      "pain": "없음",
+      "painNote": "",
+      "nutrition": "",
+      "nutritionNote": "",
+      "review": {
+        "good": "",
+        "caution": "",
+        "suggest": ""
+      },
+      "trainerComment": "",
+      "trainerDirection": "",
+      "nextSessionMemo": "",
+      "finalMessage": "",
+      "musclesWorked": [],
+      "sessionDates": [],
+      "memberComment": "",
+      "weeklyRoutine": null
+    },
+    {
+      "week": 3,
+      "label": "3주차",
+      "date": "7/13",
+      "mainMessage": "",
+      "summaries": [],
+      "exercises": [],
+      "lifts": [],
+      "bodyData": null,
+      "condition": "",
+      "conditionNote": "",
+      "sleep": "",
+      "sleepNote": "",
+      "stress": "",
+      "pain": "없음",
+      "painNote": "",
+      "nutrition": "",
+      "nutritionNote": "",
+      "review": {
+        "good": "",
+        "caution": "",
+        "suggest": ""
+      },
+      "trainerComment": "",
+      "trainerDirection": "",
+      "nextSessionMemo": "",
+      "finalMessage": "",
+      "musclesWorked": [],
+      "sessionDates": [],
+      "memberComment": "",
+      "weeklyRoutine": null
+    },
+    {
+      "week": 4,
+      "label": "4주차",
+      "date": "7/20",
+      "mainMessage": "",
+      "summaries": [],
+      "exercises": [],
+      "lifts": [],
+      "bodyData": null,
+      "condition": "",
+      "conditionNote": "",
+      "sleep": "",
+      "sleepNote": "",
+      "stress": "",
+      "pain": "없음",
+      "painNote": "",
+      "nutrition": "",
+      "nutritionNote": "",
+      "review": {
+        "good": "",
+        "caution": "",
+        "suggest": ""
+      },
+      "trainerComment": "",
+      "trainerDirection": "",
+      "nextSessionMemo": "",
+      "finalMessage": "",
+      "musclesWorked": [],
+      "sessionDates": [],
+      "memberComment": "",
+      "weeklyRoutine": null
+    },
+    {
+      "week": 5,
+      "label": "5주차",
+      "date": "7/27",
+      "mainMessage": "",
+      "summaries": [],
+      "exercises": [],
+      "lifts": [],
+      "bodyData": null,
+      "condition": "",
+      "conditionNote": "",
+      "sleep": "",
+      "sleepNote": "",
+      "stress": "",
+      "pain": "없음",
+      "painNote": "",
+      "nutrition": "",
+      "nutritionNote": "",
+      "review": {
+        "good": "",
+        "caution": "",
+        "suggest": ""
+      },
+      "trainerComment": "",
+      "trainerDirection": "",
+      "nextSessionMemo": "",
+      "finalMessage": "",
+      "musclesWorked": [],
+      "sessionDates": [],
+      "memberComment": "",
+      "weeklyRoutine": null
+    }
+  ],
+  "quotes": [
+    "20분이라도 움직이는 사람이 결국 바뀐다.",
+    "작은 것들이 쌓여 큰 변화를 만든다.",
+    "완벽한 계획보다 불완전한 실행이 낫다.",
+    "오늘 나온 것만으로도 이미 어제보다 나은 나다.",
+    "지금 하는 모든 운동이 복직 후의 나를 만들고 있다.",
+    "몸이 바뀌는 건 시간 문제다. 포기하지 않는 사람이 이긴다.",
+    "시간이 없는 게 아니라 우선순위의 문제다. 오늘도 나를 우선에 뒀다.",
+    "속도보다 방향이 중요하다. 방향만 잃지 않으면 된다.",
+    "3kg이 시작이다. 그 다음은 자연스럽게 따라온다.",
+    "운동 후의 나는 운동 전의 나보다 항상 강하다."
+  ],
+  "sessions": {
+    "total": 10,
+    "completed": 4
+  },
+  "biweeklyFeedback": [],
+  "archiveWeeks": [
     {
       "week": 1,
       "label": "1주차",
@@ -840,22 +992,5 @@
       "label": "5주차",
       "date": "6/29"
     }
-  ],
-  "quotes": [
-    "20분이라도 움직이는 사람이 결국 바뀐다.",
-    "작은 것들이 쌓여 큰 변화를 만든다.",
-    "완벽한 계획보다 불완전한 실행이 낫다.",
-    "오늘 나온 것만으로도 이미 어제보다 나은 나다.",
-    "지금 하는 모든 운동이 복직 후의 나를 만들고 있다.",
-    "몸이 바뀌는 건 시간 문제다. 포기하지 않는 사람이 이긴다.",
-    "시간이 없는 게 아니라 우선순위의 문제다. 오늘도 나를 우선에 뒀다.",
-    "속도보다 방향이 중요하다. 방향만 잃지 않으면 된다.",
-    "3kg이 시작이다. 그 다음은 자연스럽게 따라온다.",
-    "운동 후의 나는 운동 전의 나보다 항상 강하다."
-  ],
-  "sessions": {
-    "total": 10,
-    "completed": 4
-  },
-  "biweeklyFeedback": []
+  ]
 }

@@ -1,6 +1,6 @@
 {
   "name": "이다겸",
-  "month": "2026년 6월",
+  "month": "2026년 7월",
   "purposes": [
     "재활회복",
     "자세교정",
@@ -30,6 +30,155 @@
     "completed": 1
   },
   "weeks": [
+    {
+      "week": 1,
+      "label": "1주차",
+      "date": "6/29"
+    },
+    {
+      "week": 2,
+      "label": "2주차",
+      "date": "7/6",
+      "mainMessage": "",
+      "summaries": [],
+      "exercises": [],
+      "lifts": [],
+      "bodyData": null,
+      "condition": "",
+      "conditionNote": "",
+      "sleep": "",
+      "sleepNote": "",
+      "stress": "",
+      "pain": "없음",
+      "painNote": "",
+      "nutrition": "",
+      "nutritionNote": "",
+      "review": {
+        "good": "",
+        "caution": "",
+        "suggest": ""
+      },
+      "trainerComment": "",
+      "trainerDirection": "",
+      "nextSessionMemo": "",
+      "finalMessage": "",
+      "musclesWorked": [],
+      "sessionDates": [],
+      "memberComment": "",
+      "weeklyRoutine": null
+    },
+    {
+      "week": 3,
+      "label": "3주차",
+      "date": "7/13",
+      "mainMessage": "",
+      "summaries": [],
+      "exercises": [],
+      "lifts": [],
+      "bodyData": null,
+      "condition": "",
+      "conditionNote": "",
+      "sleep": "",
+      "sleepNote": "",
+      "stress": "",
+      "pain": "없음",
+      "painNote": "",
+      "nutrition": "",
+      "nutritionNote": "",
+      "review": {
+        "good": "",
+        "caution": "",
+        "suggest": ""
+      },
+      "trainerComment": "",
+      "trainerDirection": "",
+      "nextSessionMemo": "",
+      "finalMessage": "",
+      "musclesWorked": [],
+      "sessionDates": [],
+      "memberComment": "",
+      "weeklyRoutine": null
+    },
+    {
+      "week": 4,
+      "label": "4주차",
+      "date": "7/20",
+      "mainMessage": "",
+      "summaries": [],
+      "exercises": [],
+      "lifts": [],
+      "bodyData": null,
+      "condition": "",
+      "conditionNote": "",
+      "sleep": "",
+      "sleepNote": "",
+      "stress": "",
+      "pain": "없음",
+      "painNote": "",
+      "nutrition": "",
+      "nutritionNote": "",
+      "review": {
+        "good": "",
+        "caution": "",
+        "suggest": ""
+      },
+      "trainerComment": "",
+      "trainerDirection": "",
+      "nextSessionMemo": "",
+      "finalMessage": "",
+      "musclesWorked": [],
+      "sessionDates": [],
+      "memberComment": "",
+      "weeklyRoutine": null
+    },
+    {
+      "week": 5,
+      "label": "5주차",
+      "date": "7/27",
+      "mainMessage": "",
+      "summaries": [],
+      "exercises": [],
+      "lifts": [],
+      "bodyData": null,
+      "condition": "",
+      "conditionNote": "",
+      "sleep": "",
+      "sleepNote": "",
+      "stress": "",
+      "pain": "없음",
+      "painNote": "",
+      "nutrition": "",
+      "nutritionNote": "",
+      "review": {
+        "good": "",
+        "caution": "",
+        "suggest": ""
+      },
+      "trainerComment": "",
+      "trainerDirection": "",
+      "nextSessionMemo": "",
+      "finalMessage": "",
+      "musclesWorked": [],
+      "sessionDates": [],
+      "memberComment": "",
+      "weeklyRoutine": null
+    }
+  ],
+  "quotes": [
+    "오늘 찾은 그 감각이 내 몸을 바꾸는 시작이에요.",
+    "통증 없이 움직이는 날이 반드시 와요. 오늘이 그 첫걸음이에요.",
+    "자세가 바뀌면 통증이 바뀌고, 통증이 없어지면 삶이 바뀌어요.",
+    "54세는 늦은 게 아니에요 — 지금 시작한 게 딱 맞아요.",
+    "어깨가 편해지는 날, 그 날을 위해 오늘 하나씩 쌓아가요.",
+    "호흡이 바뀌면 자세가 바뀌고, 자세가 바뀌면 힘이 생겨요.",
+    "힘든 날도 나온 게 제일 잘한 거예요.",
+    "몸의 불균형은 오래 걸렸지만, 회복도 분명히 일어나요.",
+    "작은 습관이 큰 변화를 만들어요 — 벽 대고 5종이 그 시작이에요.",
+    "트레이너를 믿고, 몸을 믿고, 꾸준히."
+  ],
+  "monthlySummary": [],
+  "biweeklyFeedback": [],
+  "archiveWeeks": [
     {
       "week": 1,
       "label": "1주차",
@@ -79,8 +228,12 @@
       ],
       "lifts": [],
       "bodyData": {
-        "labels": ["6/24"],
-        "weight": [56.0],
+        "labels": [
+          "6/24"
+        ],
+        "weight": [
+          56.0
+        ],
         "fat": [],
         "muscle": [],
         "lastMeasured": "2026-06-24",
@@ -203,7 +356,9 @@
           }
         ]
       },
-      "sessionDates": ["2026-06-24"],
+      "sessionDates": [
+        "2026-06-24"
+      ],
       "summaries": [
         {
           "sessionDate": "2026-06-24",
@@ -238,19 +393,5 @@
       "label": "5주차",
       "date": "6/29"
     }
-  ],
-  "quotes": [
-    "오늘 찾은 그 감각이 내 몸을 바꾸는 시작이에요.",
-    "통증 없이 움직이는 날이 반드시 와요. 오늘이 그 첫걸음이에요.",
-    "자세가 바뀌면 통증이 바뀌고, 통증이 없어지면 삶이 바뀌어요.",
-    "54세는 늦은 게 아니에요 — 지금 시작한 게 딱 맞아요.",
-    "어깨가 편해지는 날, 그 날을 위해 오늘 하나씩 쌓아가요.",
-    "호흡이 바뀌면 자세가 바뀌고, 자세가 바뀌면 힘이 생겨요.",
-    "힘든 날도 나온 게 제일 잘한 거예요.",
-    "몸의 불균형은 오래 걸렸지만, 회복도 분명히 일어나요.",
-    "작은 습관이 큰 변화를 만들어요 — 벽 대고 5종이 그 시작이에요.",
-    "트레이너를 믿고, 몸을 믿고, 꾸준히."
-  ],
-  "monthlySummary": [],
-  "biweeklyFeedback": []
+  ]
 }

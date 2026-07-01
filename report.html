@@ -1195,7 +1195,7 @@ function init(data) {
     const dW=dl(lW,pW), dF=dl(lF,pF), dM=dl(lM,pM);
     function chips(opts,active){ return opts.map(o=>`<div class="chip${o===active?' on':''}">${o}</div>`).join(''); }
     const allSummaries = w.summaries || (w.summary ? [w.summary] : []);
-    const summaryItems = allSummaries.length ? allSummaries.map(sess=>`<div style="font-size:11px;color:#a0b8d0;font-weight:600;margin:10px 0 6px;padding-top:${allSummaries.indexOf(sess)>0?'14px':'0'}">${sess.date}</div><div>${(sess.items||[]).map(it=>`<div class="summary-item"><span class="si-name">${it.name}</span><span class="si-sep">=</span><span class="si-detail">${it.detail}</span></div>`).join('')}</div>`).join('') : '<div style="font-size:13px;color:#c0d0e0;padding:8px 0">수업 후 트레이너가 입력합니다.</div>';
+    const summaryItems = allSummaries.length ? allSummaries.map((sess,si)=>`<div style="font-size:11px;color:#a0b8d0;font-weight:600;margin:${si>0?'14px':'0'} 0 8px">${sess.date}</div><div style="display:flex;flex-wrap:wrap;gap:6px">${(sess.items||[]).map(it=>`<span style="background:rgba(100,155,220,0.1);border:1px solid rgba(100,155,220,0.2);border-radius:20px;padding:5px 12px;font-size:12px;font-weight:600;color:#3a6a9a">${it.name}</span>`).join('')}</div>`).join('') : '<div style="font-size:13px;color:#c0d0e0;padding:8px 0">수업 후 트레이너가 입력합니다.</div>';
     const exMap = {}; (w.exercises||[]).forEach(e => { exMap[e.name] = e; });
     const exBase = allSummaries.flatMap(s=>(s.items||[]).map(it=>it.name));
     const exAll = exBase.length ? exBase : (w.exercises||[]).map(e=>e.name);

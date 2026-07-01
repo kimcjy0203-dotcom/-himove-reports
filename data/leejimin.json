@@ -1,6 +1,6 @@
 {
   "name": "이지민",
-  "month": "2026년 6월",
+  "month": "2026년 7월",
   "purposes": [
     "체중감량",
     "근육증가",
@@ -47,6 +47,330 @@
     "goal": "자세교정·근력강화"
   },
   "weeks": [
+    {
+      "week": 1,
+      "label": "1주차",
+      "date": "6/29",
+      "sessionDates": [
+        "2026-06-29"
+      ],
+      "summaries": [
+        {
+          "sessionDate": "2026-06-29",
+          "date": "2026년 6월 29일",
+          "items": [
+            {
+              "name": "스쿼트",
+              "detail": "3세트 × 15 / 5kg"
+            },
+            {
+              "name": "오버헤드 트라이셉스 익스텐션",
+              "detail": "3세트 × 15 / 2kg"
+            },
+            {
+              "name": "스미스머신 와이드 스쿼트",
+              "detail": "3세트 × 10"
+            },
+            {
+              "name": "케이블 푸쉬다운",
+              "detail": "3세트 × 15 / 10kg"
+            },
+            {
+              "name": "런지",
+              "detail": "3세트 × 10"
+            },
+            {
+              "name": "스트레이트 암 풀다운",
+              "detail": "3세트 / 10kg"
+            }
+          ]
+        }
+      ],
+      "exercises": [
+        {
+          "name": "스쿼트",
+          "note": "· note: 하강 시 3:1 박자 인지하며 긴장감 유지 연습 — 내려가는 속도를 의식적으로 조절함<br>· next: 하강 구간 내내 복압과 둔근 긴장을 놓치지 않도록 집중",
+          "next": ""
+        },
+        {
+          "name": "오버헤드 트라이셉스 익스텐션",
+          "note": "· note: 손바닥이 천장을 향하도록 그립 방향 유지 — 팔꿈치를 어깨 위 너비로 고정하는 감각 잡는 중<br>· next: 동작 내내 팔꿈치가 바깥으로 벌어지지 않는지 스스로 체크",
+          "next": ""
+        },
+        {
+          "name": "스미스머신 와이드 스쿼트",
+          "note": "· note: 기립 시 무릎이 안쪽으로 쏠리는 패턴 확인 — 하체 외회전 의식 필요<br>· next: 일어날 때 무릎 끝이 발끝 방향으로 정렬되도록 집중",
+          "next": ""
+        },
+        {
+          "name": "케이블 푸쉬다운",
+          "note": "· note: 팔꿈치를 완전히 펼 때 어깨가 앞으로 말리는 보상 동작 주의<br>· next: 어깨를 뒤로 안정시킨 상태에서 삼두 완전 수축까지 밀어내기",
+          "next": ""
+        },
+        {
+          "name": "런지",
+          "note": "· note: 발바닥 중앙 위에서 무게 중심 유지하며 상체 각도 일정하게 유지<br>· next: 내려갈 때도 상체가 앞으로 기울지 않도록 시선과 흉곽 위치 고정",
+          "next": ""
+        },
+        {
+          "name": "스트레이트 암 풀다운",
+          "note": "· note: 팔꿈치 편 상태 유지하며 팔을 몸통과 평행하게 뒤로 보내는 경로 연습<br>· next: 광배근이 수축되는 느낌을 인지하며 완전한 가동 범위로 수행",
+          "next": ""
+        }
+      ],
+      "weeklyRoutine": {
+        "weekKey": "2026-W27-lj",
+        "note": "🎯 5주차: 하체·삼두 집중 · 8월 드레스 투어 목표 유지",
+        "days": [
+          {
+            "day": "월",
+            "workout": "레슨-하체",
+            "rest": false
+          },
+          {
+            "day": "화",
+            "workout": "유산소 30분",
+            "rest": false,
+            "plan": [
+              {
+                "name": "빠른 걷기 or 트레드밀",
+                "sets": 1,
+                "reps": 1,
+                "weight": "30분"
+              },
+              {
+                "name": "캣카우 (가슴 스트레칭)",
+                "sets": 3,
+                "reps": 10,
+                "weight": "-"
+              }
+            ]
+          },
+          {
+            "day": "수",
+            "workout": "개인-하체",
+            "rest": false,
+            "plan": [
+              {
+                "name": "스쿼트",
+                "sets": 3,
+                "reps": 15,
+                "weight": "-"
+              },
+              {
+                "name": "런지",
+                "sets": 3,
+                "reps": 10,
+                "weight": "양쪽"
+              },
+              {
+                "name": "힙브릿지",
+                "sets": 3,
+                "reps": 15,
+                "weight": "-"
+              }
+            ]
+          },
+          {
+            "day": "목",
+            "workout": "레슨-상체",
+            "rest": false
+          },
+          {
+            "day": "금",
+            "workout": "개인-전신",
+            "rest": false,
+            "plan": [
+              {
+                "name": "푸쉬업 플러스",
+                "sets": 3,
+                "reps": 10,
+                "weight": "-"
+              },
+              {
+                "name": "스쿼트",
+                "sets": 3,
+                "reps": 15,
+                "weight": "-"
+              },
+              {
+                "name": "플랭크",
+                "sets": 3,
+                "reps": 1,
+                "weight": "30초"
+              }
+            ]
+          },
+          {
+            "day": "토",
+            "workout": "자율운동",
+            "rest": false,
+            "plan": [
+              {
+                "name": "산책 or 스트레칭",
+                "sets": 1,
+                "reps": 1,
+                "weight": "30분+"
+              }
+            ]
+          },
+          {
+            "day": "일",
+            "workout": "휴식",
+            "rest": true
+          }
+        ]
+      }
+    },
+    {
+      "week": 2,
+      "label": "2주차",
+      "date": "7/6",
+      "mainMessage": "",
+      "summaries": [],
+      "exercises": [],
+      "lifts": [],
+      "bodyData": null,
+      "condition": "",
+      "conditionNote": "",
+      "sleep": "",
+      "sleepNote": "",
+      "stress": "",
+      "pain": "없음",
+      "painNote": "",
+      "nutrition": "",
+      "nutritionNote": "",
+      "review": {
+        "good": "",
+        "caution": "",
+        "suggest": ""
+      },
+      "trainerComment": "",
+      "trainerDirection": "",
+      "nextSessionMemo": "",
+      "finalMessage": "",
+      "musclesWorked": [],
+      "sessionDates": [],
+      "memberComment": "",
+      "weeklyRoutine": null
+    },
+    {
+      "week": 3,
+      "label": "3주차",
+      "date": "7/13",
+      "mainMessage": "",
+      "summaries": [],
+      "exercises": [],
+      "lifts": [],
+      "bodyData": null,
+      "condition": "",
+      "conditionNote": "",
+      "sleep": "",
+      "sleepNote": "",
+      "stress": "",
+      "pain": "없음",
+      "painNote": "",
+      "nutrition": "",
+      "nutritionNote": "",
+      "review": {
+        "good": "",
+        "caution": "",
+        "suggest": ""
+      },
+      "trainerComment": "",
+      "trainerDirection": "",
+      "nextSessionMemo": "",
+      "finalMessage": "",
+      "musclesWorked": [],
+      "sessionDates": [],
+      "memberComment": "",
+      "weeklyRoutine": null
+    },
+    {
+      "week": 4,
+      "label": "4주차",
+      "date": "7/20",
+      "mainMessage": "",
+      "summaries": [],
+      "exercises": [],
+      "lifts": [],
+      "bodyData": null,
+      "condition": "",
+      "conditionNote": "",
+      "sleep": "",
+      "sleepNote": "",
+      "stress": "",
+      "pain": "없음",
+      "painNote": "",
+      "nutrition": "",
+      "nutritionNote": "",
+      "review": {
+        "good": "",
+        "caution": "",
+        "suggest": ""
+      },
+      "trainerComment": "",
+      "trainerDirection": "",
+      "nextSessionMemo": "",
+      "finalMessage": "",
+      "musclesWorked": [],
+      "sessionDates": [],
+      "memberComment": "",
+      "weeklyRoutine": null
+    },
+    {
+      "week": 5,
+      "label": "5주차",
+      "date": "7/27",
+      "mainMessage": "",
+      "summaries": [],
+      "exercises": [],
+      "lifts": [],
+      "bodyData": null,
+      "condition": "",
+      "conditionNote": "",
+      "sleep": "",
+      "sleepNote": "",
+      "stress": "",
+      "pain": "없음",
+      "painNote": "",
+      "nutrition": "",
+      "nutritionNote": "",
+      "review": {
+        "good": "",
+        "caution": "",
+        "suggest": ""
+      },
+      "trainerComment": "",
+      "trainerDirection": "",
+      "nextSessionMemo": "",
+      "finalMessage": "",
+      "musclesWorked": [],
+      "sessionDates": [],
+      "memberComment": "",
+      "weeklyRoutine": null
+    }
+  ],
+  "quotes": [
+    "결혼식 날의 나는 지금 이 순간 만들어지고 있다.",
+    "드레스가 몸에 맞는 게 아니라, 내 몸이 드레스를 빛내는 것이다.",
+    "완벽하지 않아도 된다. 어제보다 더 나아지기만 하면 된다.",
+    "꾸준함이 재능을 이긴다.",
+    "오늘 나온 것 자체가 이미 절반의 성공이다.",
+    "작은 변화가 모여 큰 차이를 만든다.",
+    "힘든 하루를 이긴 나는, 더 강한 나다.",
+    "가장 예쁜 날을 위해, 오늘도 한 걸음.",
+    "운동을 빠진 날보다 나온 날을 세어라.",
+    "오늘의 땀이 그날의 빛이 된다."
+  ],
+  "sessions": {
+    "total": 30,
+    "completed": 11
+  },
+  "monthlySummary": [],
+  "biweeklyFeedback": [],
+  "calDeficit": 300,
+  "archiveWeeks": [
     {
       "week": 1,
       "label": "1주차",
@@ -966,24 +1290,5 @@
         ]
       }
     }
-  ],
-  "quotes": [
-    "결혼식 날의 나는 지금 이 순간 만들어지고 있다.",
-    "드레스가 몸에 맞는 게 아니라, 내 몸이 드레스를 빛내는 것이다.",
-    "완벽하지 않아도 된다. 어제보다 더 나아지기만 하면 된다.",
-    "꾸준함이 재능을 이긴다.",
-    "오늘 나온 것 자체가 이미 절반의 성공이다.",
-    "작은 변화가 모여 큰 차이를 만든다.",
-    "힘든 하루를 이긴 나는, 더 강한 나다.",
-    "가장 예쁜 날을 위해, 오늘도 한 걸음.",
-    "운동을 빠진 날보다 나온 날을 세어라.",
-    "오늘의 땀이 그날의 빛이 된다."
-  ],
-  "sessions": {
-    "total": 30,
-    "completed": 11
-  },
-  "monthlySummary": [],
-  "biweeklyFeedback": [],
-  "calDeficit": 300
+  ]
 }

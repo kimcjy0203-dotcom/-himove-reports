@@ -1,6 +1,6 @@
 {
   "name": "김서영",
-  "month": "2026년 6월",
+  "month": "2026년 7월",
   "purposes": [
     "근육증가",
     "근력강화",
@@ -56,6 +56,153 @@
     "오늘 나온 것만으로도 내일의 나에게 선물을 준 것이다."
   ],
   "weeks": [
+    {
+      "week": 1,
+      "label": "1주차",
+      "date": "6/29"
+    },
+    {
+      "week": 2,
+      "label": "2주차",
+      "date": "7/6",
+      "mainMessage": "",
+      "summaries": [],
+      "exercises": [],
+      "lifts": [],
+      "bodyData": null,
+      "condition": "",
+      "conditionNote": "",
+      "sleep": "",
+      "sleepNote": "",
+      "stress": "",
+      "pain": "없음",
+      "painNote": "",
+      "nutrition": "",
+      "nutritionNote": "",
+      "review": {
+        "good": "",
+        "caution": "",
+        "suggest": ""
+      },
+      "trainerComment": "",
+      "trainerDirection": "",
+      "nextSessionMemo": "",
+      "finalMessage": "",
+      "musclesWorked": [],
+      "sessionDates": [],
+      "memberComment": "",
+      "weeklyRoutine": null
+    },
+    {
+      "week": 3,
+      "label": "3주차",
+      "date": "7/13",
+      "mainMessage": "",
+      "summaries": [],
+      "exercises": [],
+      "lifts": [],
+      "bodyData": null,
+      "condition": "",
+      "conditionNote": "",
+      "sleep": "",
+      "sleepNote": "",
+      "stress": "",
+      "pain": "없음",
+      "painNote": "",
+      "nutrition": "",
+      "nutritionNote": "",
+      "review": {
+        "good": "",
+        "caution": "",
+        "suggest": ""
+      },
+      "trainerComment": "",
+      "trainerDirection": "",
+      "nextSessionMemo": "",
+      "finalMessage": "",
+      "musclesWorked": [],
+      "sessionDates": [],
+      "memberComment": "",
+      "weeklyRoutine": null
+    },
+    {
+      "week": 4,
+      "label": "4주차",
+      "date": "7/20",
+      "mainMessage": "",
+      "summaries": [],
+      "exercises": [],
+      "lifts": [],
+      "bodyData": null,
+      "condition": "",
+      "conditionNote": "",
+      "sleep": "",
+      "sleepNote": "",
+      "stress": "",
+      "pain": "없음",
+      "painNote": "",
+      "nutrition": "",
+      "nutritionNote": "",
+      "review": {
+        "good": "",
+        "caution": "",
+        "suggest": ""
+      },
+      "trainerComment": "",
+      "trainerDirection": "",
+      "nextSessionMemo": "",
+      "finalMessage": "",
+      "musclesWorked": [],
+      "sessionDates": [],
+      "memberComment": "",
+      "weeklyRoutine": null
+    },
+    {
+      "week": 5,
+      "label": "5주차",
+      "date": "7/27",
+      "mainMessage": "",
+      "summaries": [],
+      "exercises": [],
+      "lifts": [],
+      "bodyData": null,
+      "condition": "",
+      "conditionNote": "",
+      "sleep": "",
+      "sleepNote": "",
+      "stress": "",
+      "pain": "없음",
+      "painNote": "",
+      "nutrition": "",
+      "nutritionNote": "",
+      "review": {
+        "good": "",
+        "caution": "",
+        "suggest": ""
+      },
+      "trainerComment": "",
+      "trainerDirection": "",
+      "nextSessionMemo": "",
+      "finalMessage": "",
+      "musclesWorked": [],
+      "sessionDates": [],
+      "memberComment": "",
+      "weeklyRoutine": null
+    }
+  ],
+  "sessions": {
+    "total": 30,
+    "completed": 18
+  },
+  "biweeklyFeedback": [
+    {
+      "date": "2026-06-18",
+      "summary": "6/2 인바디 측정 결과 체중 52.2kg / 골격근량 23.0kg / 체지방량 10.3kg. 체성분 균형이 잘 잡혀 있어요.",
+      "note": "근비대를 위한 단백질 섭취에 신경 쓰고, 불규칙한 생활 패턴 안에서도 수면 루틴 만들기에 집중해봐요.",
+      "auto": false
+    }
+  ],
+  "archiveWeeks": [
     {
       "week": 1,
       "label": "1주차",
@@ -580,18 +727,6 @@
       "week": 5,
       "label": "5주차",
       "date": "6/29"
-    }
-  ],
-  "sessions": {
-    "total": 30,
-    "completed": 18
-  },
-  "biweeklyFeedback": [
-    {
-      "date": "2026-06-18",
-      "summary": "6/2 인바디 측정 결과 체중 52.2kg / 골격근량 23.0kg / 체지방량 10.3kg. 체성분 균형이 잘 잡혀 있어요.",
-      "note": "근비대를 위한 단백질 섭취에 신경 쓰고, 불규칙한 생활 패턴 안에서도 수면 루틴 만들기에 집중해봐요.",
-      "auto": false
     }
   ]
 }
