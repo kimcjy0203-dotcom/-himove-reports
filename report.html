@@ -1106,6 +1106,41 @@ function init(data) {
 
   function buildNutritionSection(plan, idx) {
     const HR3 = '<hr style="border:none;border-top:1px solid rgba(90,160,120,0.15);margin:12px 0">';
+
+    /* ── 감량 모드 (deficitGoal 있을 때) ── */
+    if (plan.deficitGoal) {
+      const changeColor = { add:'#5a9a6a', reduce:'#e07070', keep:'#8ab8a0' };
+      const changeIcon  = { add:'➕', reduce:'📉', keep:'✅' };
+      const mealRows2 = (plan.mealGuide || []).map((m, mi) => {
+        const key = `hm_ntr_${idx}_${mi}`;
+        const cc = changeColor[m.changeType] || '#8ab8a0';
+        const ci = changeIcon[m.changeType]  || '→';
+        return `<div>
+          <div style="font-size:12px;font-weight:700;color:#7a98b8;margin-bottom:6px">${m.name}</div>
+          <div style="font-size:11px;color:#a0b8d0;line-height:1.7;margin-bottom:4px">현재: ${m.current}</div>
+          <div style="font-size:11px;color:${cc};font-weight:600;margin-bottom:8px">${ci} ${m.change}</div>
+          <textarea class="daily-note ntr-ta" id="${key}" placeholder="오늘 기록..." rows="2" style="font-size:12px"></textarea>
+        </div>`;
+      }).join(HR3);
+      const waterL = plan.waterGoal >= 1000 ? (plan.waterGoal/1000)+'L' : plan.waterGoal+'ml';
+      return `<div style="margin-bottom:14px;padding:12px 14px;background:rgba(90,130,200,0.07);border-radius:12px;border:1px solid rgba(90,130,200,0.18)">
+        <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:3px">
+          <div style="font-size:11px;color:#8ab0d8;font-weight:600">하루 칼로리 적자 목표</div>
+          <div style="font-size:20px;font-weight:800;color:#6a9ad8">−${plan.deficitGoal} <span style="font-size:11px;font-weight:600">kcal</span></div>
+        </div>
+        <div style="font-size:10px;color:#a0b8d0">기초대사량 ${plan.bmr} kcal · 2개월 4kg 감량 목표</div>
+        <div style="margin-top:6px;font-size:10px;color:#8ab8d0">💧 물 하루 목표 ${waterL} · 물통 지참 권장</div>
+        ${plan.memo ? `<div style="margin-top:4px;font-size:10px;color:#a0b8c8">📝 ${plan.memo}</div>` : ''}
+      </div>
+      <div class="sub-label" style="margin-bottom:12px">식단 현황 & 개선 포인트</div>
+      ${mealRows2}
+      <div style="margin-top:14px;padding:10px 12px;background:rgba(210,100,80,0.06);border-radius:10px;border:1px solid rgba(210,100,80,0.12)">
+        <div style="font-size:10px;color:#c07870;font-weight:700;margin-bottom:5px">⚠️ 감량 식단 체크</div>
+        <div style="font-size:11px;color:#c09898;line-height:1.7">· 회사 과자·군것질 → 견과류·과일로 대체<br>· 저녁 밥 반공기 유지 · 돈가스 소스 최소화<br>· 식후 스쿼트 50회 빠짐 없이 진행</div>
+      </div>`;
+    }
+
+    /* ── 증량 모드 (기존) ── */
     const mealRows = (plan.mealGuide || []).map((m, mi) => {
       const key = `hm_ntr_${idx}_${mi}`;
       return `<div>

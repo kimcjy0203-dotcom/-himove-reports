@@ -3,8 +3,12 @@
   "month": "2026년 6월",
   "purposes": [
     "체중감량",
+    "근육증가",
+    "근력강화",
     "체력향상",
-    "건강관리"
+    "건강관리",
+    "자세교정",
+    "유지"
   ],
   "goals": {
     "short": {
@@ -1035,5 +1039,31 @@
     "오늘의 1회가 내일의 습관을 만들어요."
   ],
   "monthlySummary": [],
-  "biweeklyFeedback": []
+  "biweeklyFeedback": [],
+  "nutritionPlan": {
+    "deficitGoal": 550,
+    "bmr": 1270,
+    "waterGoal": 1000,
+    "memo": "물통 구매 완료 · 러닝화 구매 예정",
+    "mealGuide": [
+      {
+        "name": "아침",
+        "current": "밥 반공기 · 달걀 장조림 반알 · 국 건더기 · 밑반찬 소량",
+        "change": "달걀 2알 추가 (단백질 보충)",
+        "changeType": "add"
+      },
+      {
+        "name": "점심",
+        "current": "밥 2/3공기 · 고기 반찬(육류) · 튀김반찬(생선가스) · 밑반찬",
+        "change": "그대로 유지",
+        "changeType": "keep"
+      },
+      {
+        "name": "저녁",
+        "current": "밥 한공기 · 돈가스",
+        "change": "밥 반공기로 줄이기 (50% 감소) · 식후 스쿼트 50회",
+        "changeType": "reduce"
+      }
+    ]
+  }
 }
