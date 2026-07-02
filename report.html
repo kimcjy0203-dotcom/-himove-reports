@@ -1189,7 +1189,7 @@ function init(data) {
     return sumList.map((sess,si)=>`<div style="font-size:11px;color:#a0b8d0;font-weight:600;margin:${si>0?'16px':'0'} 0 8px">${sess.date}</div><div style="display:flex;flex-direction:column;gap:5px">${(sess.items||[]).map(it=>`<div style="display:flex;justify-content:space-between;align-items:center;padding:7px 11px;background:rgba(255,255,255,0.55);border-radius:10px;border:1px solid rgba(160,190,230,0.2)"><span style="font-size:13px;font-weight:700;color:#2a3a50">${it.name}</span><span style="font-size:11px;color:#8aaac8;font-weight:500;white-space:nowrap;margin-left:8px">${it.detail}</span></div>`).join('')}</div>`).join('');
   }
 
-  function _gToggle(type, idx) {
+  window._gToggle = function(type, idx) {
     ['train','card'].forEach(t => {
       const el = document.getElementById('gd-'+t+'-'+idx);
       const btn = document.getElementById('gb-'+t+'-'+idx);
@@ -1203,7 +1203,7 @@ function init(data) {
         btn.classList.remove('open');
       }
     });
-  }
+  };
 
   function buildPanel(w, idx) {
     const hasRoutine = w.weeklyRoutine?.days?.some(d => d.plan?.length);
