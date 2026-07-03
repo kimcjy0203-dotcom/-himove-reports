@@ -1186,7 +1186,7 @@ function init(data) {
   }
 
   function _buildSumItems(sumList) {
-    return sumList.map((sess,si)=>`<div style="font-size:11px;color:#a0b8d0;font-weight:600;margin:${si>0?'16px':'0'} 0 8px">${sess.date}</div><div style="display:flex;flex-direction:column;gap:5px">${(sess.items||[]).map(it=>`<div style="display:flex;justify-content:space-between;align-items:center;padding:7px 11px;background:rgba(255,255,255,0.55);border-radius:10px;border:1px solid rgba(160,190,230,0.2)"><span style="font-size:13px;font-weight:700;color:#2a3a50">${it.name}</span><span style="font-size:11px;color:#8aaac8;font-weight:500;white-space:nowrap;margin-left:8px">${it.detail}</span></div>`).join('')}</div>`).join('');
+    return sumList.map((sess,si)=>`<div style="font-size:11px;color:#a0b8d0;font-weight:600;margin:${si>0?'16px':'0'} 0 8px">${sess.date}</div><div style="display:flex;flex-direction:column;gap:5px">${(sess.items||[]).map(it=>`<div style="padding:7px 11px;background:rgba(255,255,255,0.55);border-radius:10px;border:1px solid rgba(160,190,230,0.2)"><div style="font-size:13px;font-weight:700;color:#2a3a50">${it.name}</div>${it.detail?`<div style="font-size:11px;color:#8aaac8;font-weight:500;margin-top:2px">${it.detail}</div>`:''}</div>`).join('')}</div>`).join('');
   }
 
   window._gToggle = function(type, idx) {
