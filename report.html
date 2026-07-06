@@ -207,6 +207,23 @@ tr:last-child td { border-bottom: none; }
 .gt-long .gt-dot   { background: rgba(156,39,176,0.8); }
 .gt-long .gt-card  { padding-left: 8px; border-left: 2px solid rgba(156,39,176,0.45); }
 .gt-long .gt-badge { background: rgba(156,39,176,0.09); color: #6a1b9a; }
+.diet-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px; }
+.diet-badges { display: flex; gap: 6px; flex-wrap: wrap; }
+.diet-badge { padding: 4px 11px; border-radius: 20px; font-size: 11px; font-weight: 700; white-space: nowrap; }
+.diet-badge.kcal { background: rgba(90,154,210,0.12); color: #3a6a9a; }
+.diet-badge.deficit { background: rgba(210,120,110,0.12); color: #c04a4a; }
+.diet-badge.protein { background: rgba(90,175,130,0.12); color: #2e6a4a; }
+.diet-meal { margin-bottom: 10px; border-radius: 14px; overflow: hidden; border: 1px solid rgba(160,190,230,0.2); }
+.diet-meal-head { display: flex; justify-content: space-between; align-items: center; padding: 9px 14px; background: rgba(255,255,255,0.55); border-bottom: 1px solid rgba(160,190,230,0.15); }
+.diet-meal-label { font-size: 13px; font-weight: 800; color: #2a3a50; }
+.diet-meal-sub { font-size: 11px; color: #8aaac8; font-weight: 600; }
+.diet-item-list { background: rgba(255,255,255,0.3); padding: 4px 14px; }
+.diet-item { display: flex; align-items: center; gap: 6px; padding: 6px 0; border-bottom: 1px solid rgba(160,190,230,0.1); }
+.diet-item:last-child { border-bottom: none; }
+.diet-item-name { font-size: 12px; color: #2a3a50; flex: 1; }
+.diet-item-amount { font-size: 11px; color: #a0b8d0; min-width: 36px; text-align: right; }
+.diet-item-kcal { font-size: 12px; font-weight: 700; color: #5a9ad2; min-width: 38px; text-align: right; }
+.diet-note { font-size: 11px; color: #8aaac8; margin-top: 4px; padding: 9px 12px; background: rgba(255,255,255,0.35); border-radius: 12px; line-height: 1.6; }
 .summary-list { display: flex; flex-direction: column; }
 .summary-item { display: flex; gap: 8px; padding: 10px 0; border-bottom: 1px solid rgba(160,190,230,0.15); align-items: baseline; }
 .summary-item:last-child { border-bottom: none; padding-bottom: 0; }
@@ -611,6 +628,7 @@ html[data-theme="plum"] .muscle-tag { background:rgba(90,40,130,0.2); border-col
   </div>
   <div id="report-feedback"></div>
   <div class="card" id="goals-card" style="display:none"></div>
+  <div id="diet-plan-section"></div>
   <div class="week-nav" id="week-nav"></div>
   <div id="week-panels"></div>
   <div id="monthly-summary-section"></div>
@@ -845,6 +863,40 @@ function init(data) {
       pgCard.innerHTML = `<div class="card-title blue">목표 달성률</div>${barsHtml}`;
       goalsCard.after(pgCard);
     }
+  }
+
+  /* 식단표 */
+  if (data.dietPlan) {
+    const dp = data.dietPlan;
+    const mealsHtml = (dp.meals || []).map(m => `
+      <div class="diet-meal">
+        <div class="diet-meal-head">
+          <span class="diet-meal-label">${m.label}</span>
+          <span class="diet-meal-sub">${m.kcal} kcal &nbsp;·&nbsp; 단백질 ${m.protein}g</span>
+        </div>
+        <div class="diet-item-list">
+          ${(m.items || []).map(it => `
+            <div class="diet-item">
+              <span class="diet-item-name">${it.name}</span>
+              <span class="diet-item-amount">${it.amount}</span>
+              <span class="diet-item-kcal">${it.kcal}</span>
+            </div>`).join('')}
+        </div>
+      </div>`).join('');
+    const totalProtein = (dp.meals || []).reduce((s, m) => s + (m.protein || 0), 0);
+    document.getElementById('diet-plan-section').innerHTML = `
+      <div class="card">
+        <div class="card-title blue">식단표</div>
+        <div class="diet-header">
+          <div class="diet-badges">
+            <span class="diet-badge kcal">하루 ${dp.targetKcal} kcal</span>
+            <span class="diet-badge deficit">목표 적자 ${dp.deficit} kcal</span>
+            <span class="diet-badge protein">단백질 ${totalProtein}g</span>
+          </div>
+        </div>
+        ${mealsHtml}
+        ${dp.note ? `<div class="diet-note">${dp.note}</div>` : ''}
+      </div>`;
   }
 
   /* 주차 탭 & 패널 */

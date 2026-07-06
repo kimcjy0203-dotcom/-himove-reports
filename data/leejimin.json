@@ -11,15 +11,15 @@
   ],
   "goals": {
     "short": {
-      "text": "하루 칼로리 300 적자 실천 + 가슴 스트레칭 매일 (캣카우)",
-      "period": "1개월"
+      "text": "8월 16일까지 52kg — 하루 770 kcal 적자 / 유산소 주 4회(60~80분) / 점심·저녁 1000 kcal 식단",
+      "period": "6주"
     },
     "mid": {
-      "text": "8월 드레스 투어까지 52-53kg 달성",
+      "text": "8월 드레스 투어까지 52kg 달성 — 팔뚝·허벅지·뱃살 라인 개선",
       "period": "2개월"
     },
     "long": {
-      "text": "본식까지 47kg 달성 — 팔뚝·허벅지·뱃살 제거",
+      "text": "본식까지 47kg 달성 — 근력·유산소 병행으로 체지방 11kg 목표",
       "period": "6개월+"
     }
   },
@@ -369,7 +369,38 @@
   },
   "monthlySummary": [],
   "biweeklyFeedback": [],
-  "calDeficit": 300,
+  "calDeficit": 770,
+  "dietPlan": {
+    "targetKcal": 1000,
+    "deficit": 770,
+    "meals": [
+      {
+        "label": "점심",
+        "kcal": 470,
+        "protein": 47,
+        "items": [
+          { "name": "현미밥", "amount": "100g", "kcal": 130 },
+          { "name": "닭가슴살", "amount": "150g", "kcal": 165 },
+          { "name": "삶은달걀", "amount": "1개", "kcal": 80 },
+          { "name": "채소나물 2가지", "amount": "-", "kcal": 60 },
+          { "name": "된장국 or 미역국", "amount": "1공기", "kcal": 35 }
+        ]
+      },
+      {
+        "label": "저녁",
+        "kcal": 469,
+        "protein": 38,
+        "items": [
+          { "name": "현미밥", "amount": "80g", "kcal": 104 },
+          { "name": "고등어구이 or 닭가슴살", "amount": "120g", "kcal": 185 },
+          { "name": "두부조림", "amount": "100g", "kcal": 80 },
+          { "name": "채소볶음", "amount": "-", "kcal": 70 },
+          { "name": "미역국", "amount": "1공기", "kcal": 30 }
+        ]
+      }
+    ],
+    "note": "단백질 하루 85g — 유산소 집중 감량 시 근육 손실 방지. 닭가슴살·생선·두부·계란 돌아가며 구성."
+  },
   "archiveWeeks": [
     {
       "week": 1,
