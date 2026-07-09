@@ -367,7 +367,42 @@
     "total": 30,
     "completed": 11
   },
-  "monthlySummary": [],
+  "monthlySummary": [
+    {
+      "year": 2026,
+      "month": 6,
+      "label": "2026년 6월",
+      "sessions": 2,
+      "bodyChange": {
+        "weight": {
+          "start": 54.7,
+          "end": 54.7,
+          "change": 0.0
+        },
+        "muscle": {
+          "start": 18.1,
+          "end": 18.1,
+          "change": 0.0
+        },
+        "fat": {
+          "start": 20.6,
+          "end": 20.6,
+          "change": 0.0
+        }
+      },
+      "condition": {},
+      "sleep": {},
+      "stress": {},
+      "topExercises": [
+        "오버헤드 트라이셉스 익스텐션",
+        "스쿼트",
+        "스미스머신 와이드 스쿼트",
+        "케이블 푸쉬다운",
+        "런지"
+      ],
+      "autoComment": "2회 출석 · 체중 유지 · 주력 운동: 오버헤드 트라이셉스 익스텐션, 스쿼트, 스미스머신 와이드 스쿼트"
+    }
+  ],
   "biweeklyFeedback": [],
   "calDeficit": 770,
   "dietPlan": {
@@ -379,11 +414,31 @@
         "kcal": 470,
         "protein": 47,
         "items": [
-          { "name": "현미밥", "amount": "100g", "kcal": 130 },
-          { "name": "닭가슴살", "amount": "150g", "kcal": 165 },
-          { "name": "삶은달걀", "amount": "1개", "kcal": 80 },
-          { "name": "채소나물 2가지", "amount": "-", "kcal": 60 },
-          { "name": "된장국 or 미역국", "amount": "1공기", "kcal": 35 }
+          {
+            "name": "현미밥",
+            "amount": "100g",
+            "kcal": 130
+          },
+          {
+            "name": "닭가슴살",
+            "amount": "150g",
+            "kcal": 165
+          },
+          {
+            "name": "삶은달걀",
+            "amount": "1개",
+            "kcal": 80
+          },
+          {
+            "name": "채소나물 2가지",
+            "amount": "-",
+            "kcal": 60
+          },
+          {
+            "name": "된장국 or 미역국",
+            "amount": "1공기",
+            "kcal": 35
+          }
         ]
       },
       {
@@ -391,11 +446,31 @@
         "kcal": 469,
         "protein": 38,
         "items": [
-          { "name": "현미밥", "amount": "80g", "kcal": 104 },
-          { "name": "고등어구이 or 닭가슴살", "amount": "120g", "kcal": 185 },
-          { "name": "두부조림", "amount": "100g", "kcal": 80 },
-          { "name": "채소볶음", "amount": "-", "kcal": 70 },
-          { "name": "미역국", "amount": "1공기", "kcal": 30 }
+          {
+            "name": "현미밥",
+            "amount": "80g",
+            "kcal": 104
+          },
+          {
+            "name": "고등어구이 or 닭가슴살",
+            "amount": "120g",
+            "kcal": 185
+          },
+          {
+            "name": "두부조림",
+            "amount": "100g",
+            "kcal": 80
+          },
+          {
+            "name": "채소볶음",
+            "amount": "-",
+            "kcal": 70
+          },
+          {
+            "name": "미역국",
+            "amount": "1공기",
+            "kcal": 30
+          }
         ]
       }
     ],

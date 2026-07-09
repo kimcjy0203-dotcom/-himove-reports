@@ -728,5 +728,41 @@
       "label": "5주차",
       "date": "6/29"
     }
+  ],
+  "monthlySummary": [
+    {
+      "year": 2026,
+      "month": 6,
+      "label": "2026년 6월",
+      "sessions": 3,
+      "bodyChange": {
+        "weight": {
+          "start": 52.2,
+          "end": 52.2,
+          "change": 0.0
+        },
+        "muscle": {
+          "start": 23.0,
+          "end": 23.0,
+          "change": 0.0
+        },
+        "fat": {
+          "start": 10.3,
+          "end": 10.3,
+          "change": 0.0
+        }
+      },
+      "condition": {},
+      "sleep": {},
+      "stress": {},
+      "topExercises": [
+        "보수볼 오버헤드 스쿼트 (작은 볼)",
+        "힙런지 (앞발 보수)",
+        "보수볼 니업 등척성",
+        "폼롤러 호흡",
+        "리버스 크런치 (볼)"
+      ],
+      "autoComment": "3회 출석 · 체중 유지 · 주력 운동: 보수볼 오버헤드 스쿼트 (작은 볼), 힙런지 (앞발 보수), 보수볼 니업 등척성"
+    }
   ]
 }

@@ -261,6 +261,39 @@
         "흉추 에어플레인 (벽)"
       ],
       "autoComment": "1회 출석 · 체중 유지 · 주력 운동: 폼롤러 캣카우 + 흉추 회전, 네발기기 흉추 회전, 흉추 에어플레인 (벽)"
+    },
+    {
+      "year": 2026,
+      "month": 6,
+      "label": "2026년 6월",
+      "sessions": 1,
+      "bodyChange": {
+        "weight": {
+          "start": null,
+          "end": null,
+          "change": null
+        },
+        "muscle": {
+          "start": null,
+          "end": null,
+          "change": null
+        },
+        "fat": {
+          "start": null,
+          "end": null,
+          "change": null
+        }
+      },
+      "condition": {},
+      "sleep": {},
+      "stress": {},
+      "topExercises": [
+        "힙&흉추 에어플레인",
+        "로우 런지 + 흉추 회전",
+        "골반 회전",
+        "케틀벨 흉추 회전"
+      ],
+      "autoComment": "1회 출석 · 주력 운동: 힙&흉추 에어플레인, 로우 런지 + 흉추 회전, 골반 회전"
     }
   ],
   "biweeklyFeedback": [],

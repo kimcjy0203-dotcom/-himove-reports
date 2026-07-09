@@ -992,5 +992,41 @@
       "label": "5주차",
       "date": "6/29"
     }
+  ],
+  "monthlySummary": [
+    {
+      "year": 2026,
+      "month": 6,
+      "label": "2026년 6월",
+      "sessions": 2,
+      "bodyChange": {
+        "weight": {
+          "start": 62.9,
+          "end": 62.9,
+          "change": 0.0
+        },
+        "muscle": {
+          "start": 22.7,
+          "end": 22.7,
+          "change": 0.0
+        },
+        "fat": {
+          "start": 21.1,
+          "end": 21.1,
+          "change": 0.0
+        }
+      },
+      "condition": {},
+      "sleep": {},
+      "stress": {},
+      "topExercises": [
+        "고블릿 스쿼트",
+        "힙런지",
+        "와이드 바운스 스쿼트",
+        "힙브릿지 & 암 로우",
+        "에어바이크"
+      ],
+      "autoComment": "2회 출석 · 체중 유지 · 주력 운동: 고블릿 스쿼트, 힙런지, 와이드 바운스 스쿼트"
+    }
   ]
 }

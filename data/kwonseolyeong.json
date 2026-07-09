@@ -248,7 +248,42 @@
     "작은 꾸준함이 큰 변화를 만들어요.",
     "오늘의 1회가 내일의 습관을 만들어요."
   ],
-  "monthlySummary": [],
+  "monthlySummary": [
+    {
+      "year": 2026,
+      "month": 6,
+      "label": "2026년 6월",
+      "sessions": 4,
+      "bodyChange": {
+        "weight": {
+          "start": null,
+          "end": null,
+          "change": null
+        },
+        "muscle": {
+          "start": null,
+          "end": null,
+          "change": null
+        },
+        "fat": {
+          "start": null,
+          "end": null,
+          "change": null
+        }
+      },
+      "condition": {},
+      "sleep": {},
+      "stress": {},
+      "topExercises": [
+        "하이바 스쿼트",
+        "스미스 와이드 스쿼트",
+        "브이스쿼트",
+        "루마니안 데드리프트",
+        "원 암 덤벨 로우"
+      ],
+      "autoComment": "4회 출석 · 주력 운동: 하이바 스쿼트, 스미스 와이드 스쿼트, 브이스쿼트"
+    }
+  ],
   "biweeklyFeedback": [],
   "nutritionPlan": {
     "deficitGoal": 550,

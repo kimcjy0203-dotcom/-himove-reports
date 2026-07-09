@@ -168,7 +168,12 @@
         "muscle": [],
         "lastMeasured": "2026-06-24",
         "comment": "첫 측정값 56kg (표준 이내). 근력·체지방은 다음 인바디 측정 후 기록 예정이에요."
-      }
+      },
+      "conditionNote": "1주차 본격 훈련 — 6/24 평가 방향 연결",
+      "pain": "있음",
+      "sessionDates": [
+        "2026-07-01"
+      ]
     },
     {
       "week": 2,
@@ -311,7 +316,42 @@
     "작은 습관이 큰 변화를 만들어요 — 벽 대고 5종이 그 시작이에요.",
     "트레이너를 믿고, 몸을 믿고, 꾸준히."
   ],
-  "monthlySummary": [],
+  "monthlySummary": [
+    {
+      "year": 2026,
+      "month": 6,
+      "label": "2026년 6월",
+      "sessions": 1,
+      "bodyChange": {
+        "weight": {
+          "start": 56.0,
+          "end": 56.0,
+          "change": 0.0
+        },
+        "muscle": {
+          "start": null,
+          "end": null,
+          "change": null
+        },
+        "fat": {
+          "start": null,
+          "end": null,
+          "change": null
+        }
+      },
+      "condition": {},
+      "sleep": {},
+      "stress": {},
+      "topExercises": [
+        "피트릭스 체형분석",
+        "자세유지 강화 5종 (벽 대고)",
+        "호흡 패턴 교정",
+        "근막이완 (상체→골반→고관절 굴곡근)",
+        "아킬레스건 케어"
+      ],
+      "autoComment": "1회 출석 · 체중 유지 · 주력 운동: 피트릭스 체형분석, 자세유지 강화 5종 (벽 대고), 호흡 패턴 교정"
+    }
+  ],
   "biweeklyFeedback": [],
   "archiveWeeks": [
     {

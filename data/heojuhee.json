@@ -1079,5 +1079,41 @@
       "label": "5주차",
       "date": "6/30"
     }
+  ],
+  "monthlySummary": [
+    {
+      "year": 2026,
+      "month": 6,
+      "label": "2026년 6월",
+      "sessions": 3,
+      "bodyChange": {
+        "weight": {
+          "start": 80.0,
+          "end": 80.0,
+          "change": 0.0
+        },
+        "muscle": {
+          "start": 30.5,
+          "end": 30.5,
+          "change": 0.0
+        },
+        "fat": {
+          "start": 32.1,
+          "end": 32.1,
+          "change": 0.0
+        }
+      },
+      "condition": {},
+      "sleep": {},
+      "stress": {},
+      "topExercises": [
+        "전신 순환 스트레칭",
+        "폼롤러 엔젤",
+        "흉추 신전",
+        "개구리 자세",
+        "고관절 내외회전"
+      ],
+      "autoComment": "3회 출석 · 체중 유지 · 주력 운동: 전신 순환 스트레칭, 폼롤러 엔젤, 흉추 신전"
+    }
   ]
 }

@@ -54,16 +54,86 @@
       "label": "2주차",
       "date": "7/6",
       "mainMessage": "",
-      "summaries": [],
-      "exercises": [],
+      "summaries": [
+        {
+          "sessionDate": "2026-07-06",
+          "date": "2026년 7월 6일",
+          "items": [
+            {
+              "name": "레그 익스텐션",
+              "detail": "-세트 × 15 / 5kg"
+            },
+            {
+              "name": "힙 어브덕션",
+              "detail": "-세트 × 10 / 27.5→20→12.5kg"
+            },
+            {
+              "name": "고관절·외회전근 스트레칭",
+              "detail": "워밍업"
+            },
+            {
+              "name": "고블릿 스쿼트",
+              "detail": "3세트 × 12 / 8kg"
+            },
+            {
+              "name": "힙런지",
+              "detail": "3세트 × 10"
+            },
+            {
+              "name": "인앤아웃 스쿼트",
+              "detail": "3세트 × 20"
+            },
+            {
+              "name": "브이 스쿼트 (힙힌지)",
+              "detail": "3세트 × 12 / 10kg"
+            },
+            {
+              "name": "점프스쿼트",
+              "detail": "3세트 × 10"
+            }
+          ]
+        }
+      ],
+      "exercises": [
+        {
+          "name": "힙 어브덕션",
+          "note": "· note: 드롭셋 (27.5→20→12.5kg, 10회씩) — 외전근 점진적 활성화<br>· next: 각 무게에서 10회 완수 후 바로 다음 무게로 내리기",
+          "next": ""
+        },
+        {
+          "name": "고블릿 스쿼트",
+          "note": "· note: 내려가는 속도를 의식적으로 늦추며 하체 긴장감 유지 — 속도 조절이 핵심<br>· next: 스쿼트 끝난 후 보조 운동 바로 붙이기 (스플릿 스쿼트 or 레그 프레스)",
+          "next": ""
+        },
+        {
+          "name": "힙런지",
+          "note": "· note: 손은 기둥에 살짝 얹되 잡지 않기 — 균형만 잡는 용도<br>· 내려갈 때 허리 구부러짐 확인 — 복압 유지하며 허리 세우고 내려가기<br>· next: 허리 유지 감각 잡히면 기둥 없이 도전",
+          "next": ""
+        },
+        {
+          "name": "인앤아웃 스쿼트",
+          "note": "· note: 속도 빠르게 올리며 일정한 리듬 유지 — 멈추지 않고 연속으로<br>· next: 속도 높이면서도 발 착지 부드럽게",
+          "next": ""
+        },
+        {
+          "name": "브이 스쿼트 (힙힌지)",
+          "note": "· note: 5+5kg<br>· 무릎을 먼저 고정한 뒤 고관절만 뒤로 보내는 힙힌지 패턴에 집중<br>· next: 고관절이 뒤로 빠지는 감각이 명확해지면 무게 증량",
+          "next": ""
+        },
+        {
+          "name": "점프스쿼트",
+          "note": "· note: 팔은 뒤가 아닌 아래 방향으로 — 위로 올라가는 힘에 집중<br>· next: 착지 시 무릎 살짝 구부려 충격 분산",
+          "next": ""
+        }
+      ],
       "lifts": [],
       "bodyData": null,
       "condition": "",
-      "conditionNote": "",
+      "conditionNote": "하체 집중 세션 — 고관절·무릎 워밍업 후 스쿼트 패턴 다양하게 진행",
       "sleep": "",
       "sleepNote": "",
       "stress": "",
-      "pain": "없음",
+      "pain": "있음",
       "painNote": "",
       "nutrition": "",
       "nutritionNote": "",
@@ -77,7 +147,9 @@
       "nextSessionMemo": "",
       "finalMessage": "",
       "musclesWorked": [],
-      "sessionDates": [],
+      "sessionDates": [
+        "2026-07-06"
+      ],
       "memberComment": "",
       "weeklyRoutine": null
     },
@@ -1168,6 +1240,40 @@
       "week": 5,
       "label": "5주차",
       "date": "6/29"
+    }
+  ],
+  "monthlySummary": [
+    {
+      "year": 2026,
+      "month": 6,
+      "label": "2026년 6월",
+      "sessions": 1,
+      "bodyChange": {
+        "weight": {
+          "start": 69.2,
+          "end": 69.2,
+          "change": 0.0
+        },
+        "muscle": {
+          "start": 26.1,
+          "end": 26.1,
+          "change": 0.0
+        },
+        "fat": {
+          "start": 21.5,
+          "end": 21.5,
+          "change": 0.0
+        }
+      },
+      "condition": {},
+      "sleep": {},
+      "stress": {},
+      "topExercises": [
+        "목표 설정 상담",
+        "존2 유산소",
+        "스트레칭 및 가동성 운동"
+      ],
+      "autoComment": "1회 출석 · 체중 유지 · 주력 운동: 목표 설정 상담, 존2 유산소, 스트레칭 및 가동성 운동"
     }
   ]
 }
