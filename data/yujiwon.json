@@ -171,11 +171,7 @@
       "painNote": "",
       "nutrition": "",
       "nutritionNote": "",
-      "review": {
-        "good": "",
-        "caution": "",
-        "suggest": ""
-      },
+      "review": { "good": "", "caution": "", "suggest": "" },
       "trainerComment": "",
       "trainerDirection": "",
       "nextSessionMemo": "",
@@ -183,7 +179,104 @@
       "musclesWorked": [],
       "sessionDates": [],
       "memberComment": "",
-      "weeklyRoutine": null
+      "weeklyRoutine": {
+        "weekKey": "2026-W29-yujiwon",
+        "note": "🎯 웨딩촬영 D-2주 · 하체A-상체-하체B 2분할 · 세트 사이 인터벌로 활동 칼로리 극대화",
+        "days": [
+          {
+            "day": "월",
+            "workout": "하체 A (둔근·전면)",
+            "rest": false,
+            "plan": [
+              { "name": "흉추 폼롤러 신전", "sets": 1, "reps": "-", "weight": "-" },
+              { "name": "고관절 가동성 운동", "sets": 1, "reps": "-", "weight": "-" },
+              { "name": "힙쓰러스트", "sets": 3, "reps": 15, "weight": "-" },
+              { "name": "고블릿 스쿼트", "sets": 3, "reps": 12, "weight": "8kg" },
+              { "name": "와이드 스쿼트", "sets": 3, "reps": 12, "weight": "-" },
+              { "name": "런지 (기둥 잡고)", "sets": 3, "reps": "10each", "weight": "-" },
+              { "name": "스미스머신 스쿼트", "sets": 3, "reps": 12, "weight": "-" },
+              { "name": "힙어브덕션", "sets": 3, "reps": 12, "weight": "42.5kg" },
+              { "name": "힙어덕션", "sets": 3, "reps": 12, "weight": "-" },
+              { "name": "※ 세트 사이: 마운틴클라이머 20개 or 버피 5개", "sets": "-", "reps": "-", "weight": "-" }
+            ]
+          },
+          {
+            "day": "화",
+            "workout": "스트레칭",
+            "rest": false,
+            "plan": [
+              { "name": "가슴 스트레칭 (벽)", "sets": 1, "reps": "30초", "weight": "-" },
+              { "name": "햄스트링 스트레칭", "sets": 1, "reps": "30초", "weight": "-" },
+              { "name": "이상근 스트레칭", "sets": 1, "reps": "30초", "weight": "-" },
+              { "name": "고관절 굴곡근 스트레칭", "sets": 1, "reps": "30초", "weight": "-" },
+              { "name": "폼롤러 (등·허벅지)", "sets": 1, "reps": "-", "weight": "-" }
+            ]
+          },
+          {
+            "day": "수",
+            "workout": "상체 (가슴·등·삼두)",
+            "rest": false,
+            "plan": [
+              { "name": "흉추 폼롤러 신전", "sets": 1, "reps": "-", "weight": "-" },
+              { "name": "캣카우", "sets": 1, "reps": 10, "weight": "-" },
+              { "name": "스탠딩 푸쉬업 (넓게→좁게)", "sets": 3, "reps": "10+10", "weight": "-" },
+              { "name": "덤벨킥백", "sets": 3, "reps": 12, "weight": "-" },
+              { "name": "체스트 프레스", "sets": 3, "reps": 12, "weight": "-" },
+              { "name": "렛풀다운", "sets": 3, "reps": 12, "weight": "-" },
+              { "name": "해머 시티드로우", "sets": 3, "reps": 12, "weight": "-" },
+              { "name": "케이블 푸쉬다운", "sets": 3, "reps": 15, "weight": "-" },
+              { "name": "스트레이트암풀다운", "sets": 3, "reps": 12, "weight": "-" },
+              { "name": "※ 세트 사이: 점프스쿼트 10개 or 마운틴클라이머 20개", "sets": "-", "reps": "-", "weight": "-" }
+            ]
+          },
+          {
+            "day": "목",
+            "workout": "스트레칭",
+            "rest": false,
+            "plan": [
+              { "name": "가슴 스트레칭 (벽)", "sets": 1, "reps": "30초", "weight": "-" },
+              { "name": "햄스트링 스트레칭", "sets": 1, "reps": "30초", "weight": "-" },
+              { "name": "이상근 스트레칭", "sets": 1, "reps": "30초", "weight": "-" },
+              { "name": "고관절 굴곡근 스트레칭", "sets": 1, "reps": "30초", "weight": "-" },
+              { "name": "폼롤러 (등·허벅지)", "sets": 1, "reps": "-", "weight": "-" }
+            ]
+          },
+          {
+            "day": "금",
+            "workout": "하체 B (후면·전신)",
+            "rest": false,
+            "plan": [
+              { "name": "흉추 폼롤러 신전", "sets": 1, "reps": "-", "weight": "-" },
+              { "name": "고관절 가동성 운동", "sets": 1, "reps": "-", "weight": "-" },
+              { "name": "데드리프트 (힙힌지)", "sets": 3, "reps": 10, "weight": "-" },
+              { "name": "힙쓰러스트", "sets": 3, "reps": 15, "weight": "-" },
+              { "name": "와이드 스쿼트", "sets": 3, "reps": 12, "weight": "-" },
+              { "name": "고블릿 스쿼트", "sets": 3, "reps": 12, "weight": "8kg" },
+              { "name": "스미스머신 스쿼트", "sets": 3, "reps": 12, "weight": "-" },
+              { "name": "레그익스텐션", "sets": 3, "reps": 15, "weight": "-" },
+              { "name": "백익스텐션", "sets": 3, "reps": 15, "weight": "-" },
+              { "name": "※ 세트 사이: 버피 5개 or 점프스쿼트 10개", "sets": "-", "reps": "-", "weight": "-" }
+            ]
+          },
+          {
+            "day": "토",
+            "workout": "스트레칭",
+            "rest": false,
+            "plan": [
+              { "name": "가슴 스트레칭 (벽)", "sets": 1, "reps": "30초", "weight": "-" },
+              { "name": "햄스트링 스트레칭", "sets": 1, "reps": "30초", "weight": "-" },
+              { "name": "이상근 스트레칭", "sets": 1, "reps": "30초", "weight": "-" },
+              { "name": "고관절 굴곡근 스트레칭", "sets": 1, "reps": "30초", "weight": "-" },
+              { "name": "폼롤러 (등·허벅지)", "sets": 1, "reps": "-", "weight": "-" }
+            ]
+          },
+          {
+            "day": "일",
+            "workout": "휴일",
+            "rest": true
+          }
+        ]
+      }
     },
     {
       "week": 4,
@@ -203,11 +296,7 @@
       "painNote": "",
       "nutrition": "",
       "nutritionNote": "",
-      "review": {
-        "good": "",
-        "caution": "",
-        "suggest": ""
-      },
+      "review": { "good": "", "caution": "", "suggest": "" },
       "trainerComment": "",
       "trainerDirection": "",
       "nextSessionMemo": "",
@@ -215,7 +304,104 @@
       "musclesWorked": [],
       "sessionDates": [],
       "memberComment": "",
-      "weeklyRoutine": null
+      "weeklyRoutine": {
+        "weekKey": "2026-W30-yujiwon",
+        "note": "🎯 웨딩촬영 D-1주 · 하체A-상체-하체B 2분할 · 세트 사이 인터벌로 활동 칼로리 극대화",
+        "days": [
+          {
+            "day": "월",
+            "workout": "하체 A (둔근·전면)",
+            "rest": false,
+            "plan": [
+              { "name": "흉추 폼롤러 신전", "sets": 1, "reps": "-", "weight": "-" },
+              { "name": "고관절 가동성 운동", "sets": 1, "reps": "-", "weight": "-" },
+              { "name": "힙쓰러스트", "sets": 3, "reps": 15, "weight": "-" },
+              { "name": "고블릿 스쿼트", "sets": 3, "reps": 12, "weight": "8kg" },
+              { "name": "와이드 스쿼트", "sets": 3, "reps": 12, "weight": "-" },
+              { "name": "런지 (기둥 잡고)", "sets": 3, "reps": "10each", "weight": "-" },
+              { "name": "스미스머신 스쿼트", "sets": 3, "reps": 12, "weight": "-" },
+              { "name": "힙어브덕션", "sets": 3, "reps": 12, "weight": "42.5kg" },
+              { "name": "힙어덕션", "sets": 3, "reps": 12, "weight": "-" },
+              { "name": "※ 세트 사이: 마운틴클라이머 20개 or 버피 5개", "sets": "-", "reps": "-", "weight": "-" }
+            ]
+          },
+          {
+            "day": "화",
+            "workout": "스트레칭",
+            "rest": false,
+            "plan": [
+              { "name": "가슴 스트레칭 (벽)", "sets": 1, "reps": "30초", "weight": "-" },
+              { "name": "햄스트링 스트레칭", "sets": 1, "reps": "30초", "weight": "-" },
+              { "name": "이상근 스트레칭", "sets": 1, "reps": "30초", "weight": "-" },
+              { "name": "고관절 굴곡근 스트레칭", "sets": 1, "reps": "30초", "weight": "-" },
+              { "name": "폼롤러 (등·허벅지)", "sets": 1, "reps": "-", "weight": "-" }
+            ]
+          },
+          {
+            "day": "수",
+            "workout": "상체 (가슴·등·삼두)",
+            "rest": false,
+            "plan": [
+              { "name": "흉추 폼롤러 신전", "sets": 1, "reps": "-", "weight": "-" },
+              { "name": "캣카우", "sets": 1, "reps": 10, "weight": "-" },
+              { "name": "스탠딩 푸쉬업 (넓게→좁게)", "sets": 3, "reps": "10+10", "weight": "-" },
+              { "name": "덤벨킥백", "sets": 3, "reps": 12, "weight": "-" },
+              { "name": "체스트 프레스", "sets": 3, "reps": 12, "weight": "-" },
+              { "name": "렛풀다운", "sets": 3, "reps": 12, "weight": "-" },
+              { "name": "해머 시티드로우", "sets": 3, "reps": 12, "weight": "-" },
+              { "name": "케이블 푸쉬다운", "sets": 3, "reps": 15, "weight": "-" },
+              { "name": "스트레이트암풀다운", "sets": 3, "reps": 12, "weight": "-" },
+              { "name": "※ 세트 사이: 점프스쿼트 10개 or 마운틴클라이머 20개", "sets": "-", "reps": "-", "weight": "-" }
+            ]
+          },
+          {
+            "day": "목",
+            "workout": "스트레칭",
+            "rest": false,
+            "plan": [
+              { "name": "가슴 스트레칭 (벽)", "sets": 1, "reps": "30초", "weight": "-" },
+              { "name": "햄스트링 스트레칭", "sets": 1, "reps": "30초", "weight": "-" },
+              { "name": "이상근 스트레칭", "sets": 1, "reps": "30초", "weight": "-" },
+              { "name": "고관절 굴곡근 스트레칭", "sets": 1, "reps": "30초", "weight": "-" },
+              { "name": "폼롤러 (등·허벅지)", "sets": 1, "reps": "-", "weight": "-" }
+            ]
+          },
+          {
+            "day": "금",
+            "workout": "하체 B (후면·전신)",
+            "rest": false,
+            "plan": [
+              { "name": "흉추 폼롤러 신전", "sets": 1, "reps": "-", "weight": "-" },
+              { "name": "고관절 가동성 운동", "sets": 1, "reps": "-", "weight": "-" },
+              { "name": "데드리프트 (힙힌지)", "sets": 3, "reps": 10, "weight": "-" },
+              { "name": "힙쓰러스트", "sets": 3, "reps": 15, "weight": "-" },
+              { "name": "와이드 스쿼트", "sets": 3, "reps": 12, "weight": "-" },
+              { "name": "고블릿 스쿼트", "sets": 3, "reps": 12, "weight": "8kg" },
+              { "name": "스미스머신 스쿼트", "sets": 3, "reps": 12, "weight": "-" },
+              { "name": "레그익스텐션", "sets": 3, "reps": 15, "weight": "-" },
+              { "name": "백익스텐션", "sets": 3, "reps": 15, "weight": "-" },
+              { "name": "※ 세트 사이: 버피 5개 or 점프스쿼트 10개", "sets": "-", "reps": "-", "weight": "-" }
+            ]
+          },
+          {
+            "day": "토",
+            "workout": "스트레칭",
+            "rest": false,
+            "plan": [
+              { "name": "가슴 스트레칭 (벽)", "sets": 1, "reps": "30초", "weight": "-" },
+              { "name": "햄스트링 스트레칭", "sets": 1, "reps": "30초", "weight": "-" },
+              { "name": "이상근 스트레칭", "sets": 1, "reps": "30초", "weight": "-" },
+              { "name": "고관절 굴곡근 스트레칭", "sets": 1, "reps": "30초", "weight": "-" },
+              { "name": "폼롤러 (등·허벅지)", "sets": 1, "reps": "-", "weight": "-" }
+            ]
+          },
+          {
+            "day": "일",
+            "workout": "휴일",
+            "rest": true
+          }
+        ]
+      }
     },
     {
       "week": 5,
