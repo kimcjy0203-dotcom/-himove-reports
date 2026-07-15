@@ -144,16 +144,73 @@
       "label": "3주차",
       "date": "7/13",
       "mainMessage": "",
-      "summaries": [],
-      "exercises": [],
+      "summaries": [
+        {
+          "sessionDate": "2026-07-14",
+          "date": "2026년 7월 14일",
+          "items": [
+            {
+              "name": "트레드밀 (워밍업)",
+              "detail": "-세트 × 3-5분 6.2 + 인터벌(2분 6.5↔1분 4.5)"
+            },
+            {
+              "name": "햄스트링 이완 + 힙힌지 가동성",
+              "detail": "워밍업"
+            },
+            {
+              "name": "로우 런지 (고관절·햄스트링 이완)",
+              "detail": "워밍업"
+            },
+            {
+              "name": "리버스 런지 니업",
+              "detail": "3세트 × 5 / 4kg"
+            },
+            {
+              "name": "워킹 런지",
+              "detail": "-세트 × 2바퀴"
+            },
+            {
+              "name": "사이드 런지",
+              "detail": "3세트"
+            }
+          ]
+        }
+      ],
+      "exercises": [
+        {
+          "name": "햄스트링 이완 + 힙힌지 가동성",
+          "note": "· note: 햄스트링 타이트함 확인 — 아직 이완 운동 집중 필요<br>· next: 매 세션 전 햄스트링 이완 루틴 고정",
+          "next": ""
+        },
+        {
+          "name": "로우 런지 (고관절·햄스트링 이완)",
+          "note": "· note: 블럭 대고 중심 잡으며 진행<br>· 무릎 펴내는 힘으로 햄스트링 늘리기<br>· next: 블럭 없이도 중심 잡을 수 있도록 점진적 도전",
+          "next": ""
+        },
+        {
+          "name": "리버스 런지 니업",
+          "note": "· note: 어깨·골반 레벨 차이 확인 — 좌우 수평 유지 필요<br>· 니업 시 너무 높게 들지 않고 지지 다리 곧게 펴기<br>· next: 어깨·골반 수평 유지하며 동작 안정성 우선 — 높이보다 정렬",
+          "next": ""
+        },
+        {
+          "name": "워킹 런지",
+          "note": "· note: 뒤꿈치부터 착지 후 중심이 발볼로 이동<br>· 뒷발 추진력을 자연스럽게 앞으로 넘기기<br>· next: 뒷발 밀어내는 감각 강화 — 발볼 쪽으로 밀어내기 의식하기",
+          "next": ""
+        },
+        {
+          "name": "사이드 런지",
+          "note": "· note: 힙힌지 패턴이 핵심 — 앉는 쪽 엉덩이 뒤로 빠지며 체중 이동<br>· next: 착지 시 무릎이 발끝 방향으로 정렬되도록 집중",
+          "next": ""
+        }
+      ],
       "lifts": [],
       "bodyData": null,
       "condition": "",
-      "conditionNote": "",
+      "conditionNote": "가동성 세션 — 햄스트링 타이트함 / 유산소 포함",
       "sleep": "",
       "sleepNote": "",
       "stress": "",
-      "pain": "없음",
+      "pain": "있음",
       "painNote": "",
       "nutrition": "",
       "nutritionNote": "",
@@ -167,7 +224,9 @@
       "nextSessionMemo": "",
       "finalMessage": "",
       "musclesWorked": [],
-      "sessionDates": [],
+      "sessionDates": [
+        "2026-07-14"
+      ],
       "memberComment": "",
       "weeklyRoutine": null
     },
