@@ -11,7 +11,7 @@
   ],
   "goals": {
     "short": {
-      "text": "8월 16일까지 52kg — 하루 770 kcal 적자 / 유산소 주 4회(60~80분) / 점심·저녁 1000 kcal 식단",
+      "text": "8월 드레스 투어까지 52-53kg — 하루 300 kcal 적자 / 지속 가능한 식단 + 운동 병행",
       "period": "6주"
     },
     "mid": {
@@ -259,16 +259,69 @@
       "label": "3주차",
       "date": "7/13",
       "mainMessage": "",
-      "summaries": [],
-      "exercises": [],
+      "summaries": [
+        {
+          "sessionDate": "2026-07-13",
+          "date": "2026년 7월 13일",
+          "items": [
+            {
+              "name": "사이드 런지",
+              "detail": "3세트 × 10"
+            },
+            {
+              "name": "와이드 스쿼트 + 오버헤드 트라이셉스 익스텐션",
+              "detail": "3세트 × 10 / 3kg 15회"
+            },
+            {
+              "name": "힙런지 + 사이드 레터럴 레이즈",
+              "detail": "3세트 / 1kg 15회"
+            },
+            {
+              "name": "점프 스쿼트 + 오버헤드 트라이셉스 익스텐션",
+              "detail": "3세트 × 10 / 1kg 15회"
+            },
+            {
+              "name": "플랭크잭 + 플랭크 트위스트",
+              "detail": "3세트 × 10회씩"
+            }
+          ]
+        }
+      ],
+      "exercises": [
+        {
+          "name": "사이드 런지",
+          "note": "· note: 수평 이동 패턴 안정적 — 끝범위에서 내전근 최대 이완 느끼며 밀어내는 감각 잡힘<br>· next: 이동 거리 조금 더 늘려 내전근 이완 범위 확장 도전",
+          "next": ""
+        },
+        {
+          "name": "와이드 스쿼트 + 오버헤드 트라이셉스 익스텐션",
+          "note": "· note: 와이드 스쿼트 — 너무 깊으면 허리 구부러짐 / 허리 곧게 유지되는 깊이까지만 앉기<br>· 오버헤드 3kg — 무게 올려도 팔꿈치 고정 감각 잡히는 중 / 팔꿈치 바깥으로 벌어지지 않도록<br>· next: 와이드 스쿼트 깊이 기준점 기억 / 오버헤드 팔꿈치 내향 고정 유지",
+          "next": ""
+        },
+        {
+          "name": "힙런지 + 사이드 레터럴 레이즈",
+          "note": "· note: 힙런지 — 발바닥 중심 유지하며 힙힌지 패턴으로 무게 중심 이동<br>· 레터럴 레이즈 1kg — 팔꿈치 살짝 구부려 어깨 측면 활성화<br>· next: 힙런지 중심 이동 감각 익숙해지면 속도 올리기 / 레이즈 끝범위 1초 유지",
+          "next": ""
+        },
+        {
+          "name": "점프 스쿼트 + 오버헤드 트라이셉스 익스텐션",
+          "note": "· note: 점프 스쿼트 — 위로 올라가는 힘에 집중 / 착지 시 무릎 살짝 구부려 충격 분산<br>· 오버헤드 1kg — 세트 후반 지구력 집중 / 팔꿈치 흔들림 없이 끝까지<br>· next: 착지 자세 안정화 — 무릎 안으로 쏠리지 않도록",
+          "next": ""
+        },
+        {
+          "name": "플랭크잭 + 플랭크 트위스트",
+          "note": "· note: 플랭크잭 — 발 벌릴 때 골반 흔들리지 않도록 코어 먼저 고정<br>· 트위스트 — 회전 시 엉덩이 올라가거나 내려가지 않도록 몸통 수평 유지<br>· next: 두 동작 연결 시 지쳐도 골반 수평 유지 먼저",
+          "next": ""
+        }
+      ],
       "lifts": [],
       "bodyData": null,
       "condition": "",
-      "conditionNote": "",
+      "conditionNote": "하체·삼두 복합 서킷 — 하체와 상체 번갈아 진행 / 목표: 하루 300 kcal 적자로 전환",
       "sleep": "",
       "sleepNote": "",
       "stress": "",
-      "pain": "없음",
+      "pain": "있음",
       "painNote": "",
       "nutrition": "",
       "nutritionNote": "",
@@ -281,8 +334,18 @@
       "trainerDirection": "",
       "nextSessionMemo": "",
       "finalMessage": "",
-      "musclesWorked": [],
-      "sessionDates": [],
+      "musclesWorked": [
+        "quads",
+        "glutes",
+        "hamstrings",
+        "adductors",
+        "shoulders",
+        "triceps",
+        "abs"
+      ],
+      "sessionDates": [
+        "2026-07-13"
+      ],
       "memberComment": "",
       "weeklyRoutine": null
     },
@@ -404,10 +467,10 @@
     }
   ],
   "biweeklyFeedback": [],
-  "calDeficit": 770,
+  "calDeficit": 300,
   "dietPlan": {
-    "targetKcal": 1000,
-    "deficit": 770,
+    "targetKcal": 1470,
+    "deficit": 300,
     "meals": [
       {
         "label": "점심",
@@ -474,7 +537,7 @@
         ]
       }
     ],
-    "note": "단백질 하루 85g — 유산소 집중 감량 시 근육 손실 방지. 닭가슴살·생선·두부·계란 돌아가며 구성."
+    "note": "목표 칼로리 1470 kcal (기존 1000→상향) — 하루 300 kcal 적자로 지속 가능한 감량 전환. 단백질 85g 유지. 기존 식단에 간식 1회 추가 가능 (과일·그릭요거트 200 kcal 이내)."
   },
   "archiveWeeks": [
     {
