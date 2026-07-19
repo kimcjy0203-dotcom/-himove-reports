@@ -335,8 +335,64 @@
           },
           {
             "day": "일",
-            "workout": "휴식",
-            "rest": true
+            "workout": "전신 자세 교정 (30분)",
+            "rest": false,
+            "plan": [
+              {
+                "name": "고양이-소 스트레칭",
+                "sets": 1,
+                "reps": 10,
+                "weight": "워밍업"
+              },
+              {
+                "name": "월 엔젤 (벽에 등 붙이고)",
+                "sets": 1,
+                "reps": 10,
+                "weight": "워밍업"
+              },
+              {
+                "name": "데드버그",
+                "sets": 3,
+                "reps": 10,
+                "weight": "양쪽"
+              },
+              {
+                "name": "버드독",
+                "sets": 3,
+                "reps": 12,
+                "weight": "양쪽"
+              },
+              {
+                "name": "슈퍼맨 홀드",
+                "sets": 3,
+                "reps": 12,
+                "weight": "-"
+              },
+              {
+                "name": "글루트 브릿지",
+                "sets": 3,
+                "reps": 20,
+                "weight": "-"
+              },
+              {
+                "name": "사이드 플랭크",
+                "sets": 3,
+                "reps": 1,
+                "weight": "20초 양쪽"
+              },
+              {
+                "name": "인치웜 워크",
+                "sets": 2,
+                "reps": 8,
+                "weight": "-"
+              },
+              {
+                "name": "비둘기 자세 (쿨다운)",
+                "sets": 1,
+                "reps": 1,
+                "weight": "양쪽 30초"
+              }
+            ]
           }
         ]
       }
@@ -546,8 +602,64 @@
           },
           {
             "day": "일",
-            "workout": "휴식",
-            "rest": true
+            "workout": "전신 자세 교정 (30분)",
+            "rest": false,
+            "plan": [
+              {
+                "name": "고양이-소 스트레칭",
+                "sets": 1,
+                "reps": 10,
+                "weight": "워밍업"
+              },
+              {
+                "name": "월 엔젤 (벽에 등 붙이고)",
+                "sets": 1,
+                "reps": 10,
+                "weight": "워밍업"
+              },
+              {
+                "name": "데드버그",
+                "sets": 3,
+                "reps": 10,
+                "weight": "양쪽"
+              },
+              {
+                "name": "버드독",
+                "sets": 3,
+                "reps": 12,
+                "weight": "양쪽"
+              },
+              {
+                "name": "슈퍼맨 홀드",
+                "sets": 3,
+                "reps": 12,
+                "weight": "-"
+              },
+              {
+                "name": "글루트 브릿지",
+                "sets": 3,
+                "reps": 20,
+                "weight": "-"
+              },
+              {
+                "name": "사이드 플랭크",
+                "sets": 3,
+                "reps": 1,
+                "weight": "20초 양쪽"
+              },
+              {
+                "name": "인치웜 워크",
+                "sets": 2,
+                "reps": 8,
+                "weight": "-"
+              },
+              {
+                "name": "비둘기 자세 (쿨다운)",
+                "sets": 1,
+                "reps": 1,
+                "weight": "양쪽 30초"
+              }
+            ]
           }
         ]
       }
@@ -759,8 +871,64 @@
           },
           {
             "day": "일",
-            "workout": "휴식",
-            "rest": true
+            "workout": "전신 자세 교정 (30분)",
+            "rest": false,
+            "plan": [
+              {
+                "name": "고양이-소 스트레칭",
+                "sets": 1,
+                "reps": 10,
+                "weight": "워밍업"
+              },
+              {
+                "name": "월 엔젤 (벽에 등 붙이고)",
+                "sets": 1,
+                "reps": 10,
+                "weight": "워밍업"
+              },
+              {
+                "name": "데드버그",
+                "sets": 3,
+                "reps": 10,
+                "weight": "양쪽"
+              },
+              {
+                "name": "버드독",
+                "sets": 3,
+                "reps": 12,
+                "weight": "양쪽"
+              },
+              {
+                "name": "슈퍼맨 홀드",
+                "sets": 3,
+                "reps": 12,
+                "weight": "-"
+              },
+              {
+                "name": "글루트 브릿지",
+                "sets": 3,
+                "reps": 20,
+                "weight": "-"
+              },
+              {
+                "name": "사이드 플랭크",
+                "sets": 3,
+                "reps": 1,
+                "weight": "20초 양쪽"
+              },
+              {
+                "name": "인치웜 워크",
+                "sets": 2,
+                "reps": 8,
+                "weight": "-"
+              },
+              {
+                "name": "비둘기 자세 (쿨다운)",
+                "sets": 1,
+                "reps": 1,
+                "weight": "양쪽 30초"
+              }
+            ]
           }
         ]
       }
@@ -970,8 +1138,64 @@
           },
           {
             "day": "일",
-            "workout": "휴식",
-            "rest": true
+            "workout": "전신 자세 교정 (30분)",
+            "rest": false,
+            "plan": [
+              {
+                "name": "고양이-소 스트레칭",
+                "sets": 1,
+                "reps": 10,
+                "weight": "워밍업"
+              },
+              {
+                "name": "월 엔젤 (벽에 등 붙이고)",
+                "sets": 1,
+                "reps": 10,
+                "weight": "워밍업"
+              },
+              {
+                "name": "데드버그",
+                "sets": 3,
+                "reps": 10,
+                "weight": "양쪽"
+              },
+              {
+                "name": "버드독",
+                "sets": 3,
+                "reps": 12,
+                "weight": "양쪽"
+              },
+              {
+                "name": "슈퍼맨 홀드",
+                "sets": 3,
+                "reps": 12,
+                "weight": "-"
+              },
+              {
+                "name": "글루트 브릿지",
+                "sets": 3,
+                "reps": 20,
+                "weight": "-"
+              },
+              {
+                "name": "사이드 플랭크",
+                "sets": 3,
+                "reps": 1,
+                "weight": "20초 양쪽"
+              },
+              {
+                "name": "인치웜 워크",
+                "sets": 2,
+                "reps": 8,
+                "weight": "-"
+              },
+              {
+                "name": "비둘기 자세 (쿨다운)",
+                "sets": 1,
+                "reps": 1,
+                "weight": "양쪽 30초"
+              }
+            ]
           }
         ]
       }
@@ -1181,8 +1405,64 @@
           },
           {
             "day": "일",
-            "workout": "휴식",
-            "rest": true
+            "workout": "전신 자세 교정 (30분)",
+            "rest": false,
+            "plan": [
+              {
+                "name": "고양이-소 스트레칭",
+                "sets": 1,
+                "reps": 10,
+                "weight": "워밍업"
+              },
+              {
+                "name": "월 엔젤 (벽에 등 붙이고)",
+                "sets": 1,
+                "reps": 10,
+                "weight": "워밍업"
+              },
+              {
+                "name": "데드버그",
+                "sets": 3,
+                "reps": 10,
+                "weight": "양쪽"
+              },
+              {
+                "name": "버드독",
+                "sets": 3,
+                "reps": 12,
+                "weight": "양쪽"
+              },
+              {
+                "name": "슈퍼맨 홀드",
+                "sets": 3,
+                "reps": 12,
+                "weight": "-"
+              },
+              {
+                "name": "글루트 브릿지",
+                "sets": 3,
+                "reps": 20,
+                "weight": "-"
+              },
+              {
+                "name": "사이드 플랭크",
+                "sets": 3,
+                "reps": 1,
+                "weight": "20초 양쪽"
+              },
+              {
+                "name": "인치웜 워크",
+                "sets": 2,
+                "reps": 8,
+                "weight": "-"
+              },
+              {
+                "name": "비둘기 자세 (쿨다운)",
+                "sets": 1,
+                "reps": 1,
+                "weight": "양쪽 30초"
+              }
+            ]
           }
         ]
       }
