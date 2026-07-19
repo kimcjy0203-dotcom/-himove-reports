@@ -568,10 +568,10 @@
         "lastMeasured": null,
         "comment": ""
       },
-      "condition": "",
+      "condition": "좋음",
       "conditionNote": "",
-      "sleep": "",
-      "sleepNote": "",
+      "sleep": "보통",
+      "sleepNote": "7시간 미만",
       "stress": "",
       "pain": "없음",
       "painNote": "",
@@ -587,8 +587,10 @@
       "nextSessionMemo": "",
       "finalMessage": "",
       "musclesWorked": [],
-      "sessionDates": [],
-      "memberComment": "",
+      "sessionDates": [
+        "2026-07-19"
+      ],
+      "memberComment": "화-목 여행일정으로  \n토요일:복근 운동 20분 ,스쿼트 1분 10개 총 80개 \n일요일: 상체? 하체? 요일별 일정을 못 맞춘 날은 자세를 바로 잡기 위해서 전신 운동을 하고싶은데 어떤 시퀀스로 해야 좋을까요?",
       "weeklyRoutine": {
         "weekKey": "2026-W29-cy",
         "note": "🎯 3주차: 중간 점검 · 강도 조금씩 높이기",
