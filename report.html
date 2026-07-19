@@ -159,6 +159,7 @@ tr:last-child td { border-bottom: none; }
 .plan-row:last-child { border-bottom:none; }
 .plan-name { font-size:13px; font-weight:700; color:#2a3a50; }
 .plan-detail { font-size:12px; color:#6a9ac4; font-weight:600; }
+.plan-note { font-size:11px; color:#6a8aaa; line-height:1.65; padding:10px 12px; background:rgba(100,155,220,0.07); border-radius:10px; margin-bottom:14px; white-space:pre-line; }
 .plan-check-btn { width:100%; margin-top:16px; padding:12px; border:none; border-radius:14px; font-size:13px; font-weight:800; cursor:pointer; transition:all 0.2s; background:rgba(100,155,220,0.12); color:#3a6a9a; }
 .plan-check-btn.done { background:rgba(90,175,130,0.15); color:#3a8a6a; }
 .plan-close { position:absolute; top:14px; right:16px; font-size:18px; color:#c0d0e0; cursor:pointer; background:none; border:none; line-height:1; }
@@ -641,6 +642,7 @@ html[data-theme="plum"] .muscle-tag { background:rgba(90,40,130,0.2); border-col
     <button class="plan-close" id="plan-close">×</button>
     <div class="plan-popup-title" id="plan-title"></div>
     <div class="plan-popup-sub" id="plan-sub"></div>
+    <div class="plan-note" id="plan-note" style="display:none"></div>
     <div id="plan-rows"></div>
     <button class="plan-check-btn" id="plan-check-btn"></button>
   </div>
@@ -1299,7 +1301,7 @@ function init(data) {
       const dateNum = dayDate ? dayDate.getDate() : '';
       const isToday = dayDate && dayDate.getTime() === today.getTime();
       const workoutShort = d.rest ? '휴식' : (d.workout||'').split('-')[0] || '-';
-      return `<div class="cal-day${d.rest?' rest-day':''}${isToday?' today':''}" data-idx="${i}" data-cal="${calKey}" data-day="${d.day}" data-workout="${d.workout||''}" data-plan='${JSON.stringify(d.plan||[])}' data-istoday="${isToday?'1':'0'}" data-isrest="${d.rest?'1':'0'}"><div class="cd-weekday">${d.day}</div>${dateNum?`<div class="cd-date">${dateNum}</div>`:''}<div class="cd-workout">${workoutShort}</div><div class="cd-check">✓</div></div>`;
+      return `<div class="cal-day${d.rest?' rest-day':''}${isToday?' today':''}" data-idx="${i}" data-cal="${calKey}" data-day="${d.day}" data-workout="${d.workout||''}" data-plan='${JSON.stringify(d.plan||[])}' data-note="${(d.note||'').replace(/"/g,'&quot;')}" data-istoday="${isToday?'1':'0'}" data-isrest="${d.rest?'1':'0'}"><div class="cd-weekday">${d.day}</div>${dateNum?`<div class="cd-date">${dateNum}</div>`:''}<div class="cd-workout">${workoutShort}</div><div class="cd-check">✓</div></div>`;
     }).join('');
     const HR = '<hr style="border:none;border-top:1px solid rgba(160,190,230,0.2);margin:20px 0">';
     return `<div class="week-panel" data-idx="${idx}">
@@ -1448,7 +1450,8 @@ function init(data) {
       const i = parseInt(this.dataset.idx);
       const plan = JSON.parse(this.dataset.plan || '[]');
       const day = this.dataset.day, workout = this.dataset.workout;
-      openPlanPopup(day, workout, plan, i, checked, calKey, renderCal);
+      const note = this.dataset.note || '';
+      openPlanPopup(day, workout, plan, note, i, checked, calKey, renderCal);
     }));
   });
 
@@ -1568,10 +1571,13 @@ function init(data) {
 
 /* ── 운동 계획 팝업 ── */
 let _planCtx = {};
-function openPlanPopup(day, workout, plan, idx, checked, calKey, renderCal) {
+function openPlanPopup(day, workout, plan, note, idx, checked, calKey, renderCal) {
   _planCtx = { idx, checked, calKey, renderCal };
   document.getElementById('plan-title').textContent = `${day}요일 · ${workout}`;
   document.getElementById('plan-sub').textContent = plan.length ? `총 ${plan.length}개 운동` : '세부 계획 없음';
+  const noteEl = document.getElementById('plan-note');
+  if (note) { noteEl.textContent = note; noteEl.style.display = ''; }
+  else { noteEl.style.display = 'none'; }
   document.getElementById('plan-rows').innerHTML = plan.length
     ? plan.map(p=>`<div class="plan-row"><span class="plan-name">${p.name}</span><span class="plan-detail">${p.sets}세트 × ${p.reps}회${p.weight?' / '+p.weight:''}</span></div>`).join('')
     : '<div style="font-size:13px;color:#c0d0e0;padding:8px 0">이 날 세부 계획이 없어요.</div>';
