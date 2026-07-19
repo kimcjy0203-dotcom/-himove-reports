@@ -1285,7 +1285,9 @@ function init(data) {
       return `<div class="lb-timer waiting">D-${diff} 증량 예정</div>`;
     }
     const liftItems = (w.lifts||[]).map(l=>`<div class="lift-box"><div class="lb-name">${l.name}</div><div class="lb-current">${l.current}<span>kg</span></div><div class="lb-meta"><div class="lb-goal">목표 ${l.goal}kg</div><div class="lb-gap">−${l.goal-l.current}kg</div>${liftTimer(l)}</div></div>`).join('') || '<div style="font-size:13px;color:#c0d0e0;padding:4px 0">리프트 데이터를 입력해 주세요.</div>';
-    const r = w.weeklyRoutine || { weekKey: `wk-${idx}`, note: '', days: [] }; const calKey = `hm_${r.weekKey}_${idx}`;
+    const r = w.weeklyRoutine || { weekKey: `wk-${idx}`, note: '', days: [] };
+    if (!r.days || r.days.length === 0) r.days = ['월','화','수','목','금','토','일'].map(d=>({day:d,workout:'',rest:false}));
+    const calKey = `hm_${r.weekKey}_${idx}`;
     const today = new Date(); today.setHours(0,0,0,0);
     function parseWeekStart(dateStr) {
       if (!dateStr || !dateStr.includes('/')) return null;
