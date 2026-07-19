@@ -47,7 +47,135 @@
     {
       "week": 1,
       "label": "1주차",
-      "date": "6/29"
+      "date": "6/29",
+      "weeklyRoutine": {
+        "weekKey": "2026-W27-ksy",
+        "note": "🎯 감량+자세교정 루틴 · 1주차",
+        "days": [
+          {
+            "day": "월",
+            "workout": "유산소+코어",
+            "rest": false,
+            "note": "주의 시작을 가볍게 여는 날이에요. 유산소로 지방을 태우고, 코어 운동으로 허리와 복부를 잡아줍니다. 자세 교정의 기초가 되는 깊은 코어 근육을 활성화합니다.",
+            "plan": [
+              {
+                "name": "빠른 걷기/조깅",
+                "sets": 1,
+                "reps": 1,
+                "weight": "20분"
+              },
+              {
+                "name": "플랭크",
+                "sets": 3,
+                "reps": 1,
+                "weight": "30초"
+              },
+              {
+                "name": "데드버그",
+                "sets": 3,
+                "reps": 10,
+                "weight": "양쪽"
+              },
+              {
+                "name": "버드독",
+                "sets": 3,
+                "reps": 10,
+                "weight": "양쪽"
+              }
+            ]
+          },
+          {
+            "day": "화",
+            "workout": "PT 레슨",
+            "rest": false
+          },
+          {
+            "day": "수",
+            "workout": "휴식",
+            "rest": true
+          },
+          {
+            "day": "목",
+            "workout": "하체+유산소",
+            "rest": false,
+            "note": "하체 큰 근육을 자극해 기초대사량을 높이는 날이에요. 스쿼트·런지로 허벅지와 엉덩이를 다지고, 유산소로 칼로리 소모를 이어갑니다.",
+            "plan": [
+              {
+                "name": "맨몸 스쿼트",
+                "sets": 3,
+                "reps": 15,
+                "weight": "-"
+              },
+              {
+                "name": "런지",
+                "sets": 3,
+                "reps": 10,
+                "weight": "양쪽"
+              },
+              {
+                "name": "힙브릿지",
+                "sets": 3,
+                "reps": 15,
+                "weight": "-"
+              },
+              {
+                "name": "빠른 걷기",
+                "sets": 1,
+                "reps": 1,
+                "weight": "15분"
+              }
+            ]
+          },
+          {
+            "day": "금",
+            "workout": "휴식",
+            "rest": true
+          },
+          {
+            "day": "토",
+            "workout": "상체+자세교정",
+            "rest": false,
+            "note": "상체를 강화하면서 자세 교정을 함께 챙기는 날이에요. 슈퍼맨·월 엔젤로 등과 어깨를 바로잡고, 푸쉬업·덤벨 로우로 상체 근력을 키웁니다.",
+            "plan": [
+              {
+                "name": "슈퍼맨 홀드",
+                "sets": 3,
+                "reps": 12,
+                "weight": "-"
+              },
+              {
+                "name": "월 엔젤 (벽에 등 붙이고)",
+                "sets": 2,
+                "reps": 10,
+                "weight": "-"
+              },
+              {
+                "name": "푸쉬업 (무릎 or 일반)",
+                "sets": 3,
+                "reps": 10,
+                "weight": "-"
+              },
+              {
+                "name": "덤벨 로우",
+                "sets": 3,
+                "reps": 12,
+                "weight": "양쪽"
+              },
+              {
+                "name": "플랭크",
+                "sets": 3,
+                "reps": 1,
+                "weight": "30초"
+              }
+            ]
+          },
+          {
+            "day": "일",
+            "workout": "휴식",
+            "rest": true
+          }
+        ]
+      }
     },
     {
       "week": 2,
@@ -79,7 +207,134 @@
       "musclesWorked": [],
       "sessionDates": [],
       "memberComment": "",
-      "weeklyRoutine": null
+      "weeklyRoutine": {
+        "weekKey": "2026-W28-ksy",
+        "note": "🎯 감량+자세교정 루틴 · 2주차",
+        "days": [
+          {
+            "day": "월",
+            "workout": "유산소+코어",
+            "rest": false,
+            "note": "주의 시작을 가볍게 여는 날이에요. 유산소로 지방을 태우고, 코어 운동으로 허리와 복부를 잡아줍니다. 자세 교정의 기초가 되는 깊은 코어 근육을 활성화합니다.",
+            "plan": [
+              {
+                "name": "빠른 걷기/조깅",
+                "sets": 1,
+                "reps": 1,
+                "weight": "20분"
+              },
+              {
+                "name": "플랭크",
+                "sets": 3,
+                "reps": 1,
+                "weight": "30초"
+              },
+              {
+                "name": "데드버그",
+                "sets": 3,
+                "reps": 10,
+                "weight": "양쪽"
+              },
+              {
+                "name": "버드독",
+                "sets": 3,
+                "reps": 10,
+                "weight": "양쪽"
+              }
+            ]
+          },
+          {
+            "day": "화",
+            "workout": "PT 레슨",
+            "rest": false
+          },
+          {
+            "day": "수",
+            "workout": "휴식",
+            "rest": true
+          },
+          {
+            "day": "목",
+            "workout": "하체+유산소",
+            "rest": false,
+            "note": "하체 큰 근육을 자극해 기초대사량을 높이는 날이에요. 스쿼트·런지로 허벅지와 엉덩이를 다지고, 유산소로 칼로리 소모를 이어갑니다.",
+            "plan": [
+              {
+                "name": "맨몸 스쿼트",
+                "sets": 3,
+                "reps": 15,
+                "weight": "-"
+              },
+              {
+                "name": "런지",
+                "sets": 3,
+                "reps": 10,
+                "weight": "양쪽"
+              },
+              {
+                "name": "힙브릿지",
+                "sets": 3,
+                "reps": 15,
+                "weight": "-"
+              },
+              {
+                "name": "빠른 걷기",
+                "sets": 1,
+                "reps": 1,
+                "weight": "15분"
+              }
+            ]
+          },
+          {
+            "day": "금",
+            "workout": "휴식",
+            "rest": true
+          },
+          {
+            "day": "토",
+            "workout": "상체+자세교정",
+            "rest": false,
+            "note": "상체를 강화하면서 자세 교정을 함께 챙기는 날이에요. 슈퍼맨·월 엔젤로 등과 어깨를 바로잡고, 푸쉬업·덤벨 로우로 상체 근력을 키웁니다.",
+            "plan": [
+              {
+                "name": "슈퍼맨 홀드",
+                "sets": 3,
+                "reps": 12,
+                "weight": "-"
+              },
+              {
+                "name": "월 엔젤 (벽에 등 붙이고)",
+                "sets": 2,
+                "reps": 10,
+                "weight": "-"
+              },
+              {
+                "name": "푸쉬업 (무릎 or 일반)",
+                "sets": 3,
+                "reps": 10,
+                "weight": "-"
+              },
+              {
+                "name": "덤벨 로우",
+                "sets": 3,
+                "reps": 12,
+                "weight": "양쪽"
+              },
+              {
+                "name": "플랭크",
+                "sets": 3,
+                "reps": 1,
+                "weight": "30초"
+              }
+            ]
+          },
+          {
+            "day": "일",
+            "workout": "휴식",
+            "rest": true
+          }
+        ]
+      }
     },
     {
       "week": 3,
@@ -111,7 +366,134 @@
       "musclesWorked": [],
       "sessionDates": [],
       "memberComment": "",
-      "weeklyRoutine": null
+      "weeklyRoutine": {
+        "weekKey": "2026-W29-ksy",
+        "note": "🎯 감량+자세교정 루틴 · 3주차",
+        "days": [
+          {
+            "day": "월",
+            "workout": "유산소+코어",
+            "rest": false,
+            "note": "주의 시작을 가볍게 여는 날이에요. 유산소로 지방을 태우고, 코어 운동으로 허리와 복부를 잡아줍니다. 자세 교정의 기초가 되는 깊은 코어 근육을 활성화합니다.",
+            "plan": [
+              {
+                "name": "빠른 걷기/조깅",
+                "sets": 1,
+                "reps": 1,
+                "weight": "20분"
+              },
+              {
+                "name": "플랭크",
+                "sets": 3,
+                "reps": 1,
+                "weight": "30초"
+              },
+              {
+                "name": "데드버그",
+                "sets": 3,
+                "reps": 10,
+                "weight": "양쪽"
+              },
+              {
+                "name": "버드독",
+                "sets": 3,
+                "reps": 10,
+                "weight": "양쪽"
+              }
+            ]
+          },
+          {
+            "day": "화",
+            "workout": "PT 레슨",
+            "rest": false
+          },
+          {
+            "day": "수",
+            "workout": "휴식",
+            "rest": true
+          },
+          {
+            "day": "목",
+            "workout": "하체+유산소",
+            "rest": false,
+            "note": "하체 큰 근육을 자극해 기초대사량을 높이는 날이에요. 스쿼트·런지로 허벅지와 엉덩이를 다지고, 유산소로 칼로리 소모를 이어갑니다.",
+            "plan": [
+              {
+                "name": "맨몸 스쿼트",
+                "sets": 3,
+                "reps": 15,
+                "weight": "-"
+              },
+              {
+                "name": "런지",
+                "sets": 3,
+                "reps": 10,
+                "weight": "양쪽"
+              },
+              {
+                "name": "힙브릿지",
+                "sets": 3,
+                "reps": 15,
+                "weight": "-"
+              },
+              {
+                "name": "빠른 걷기",
+                "sets": 1,
+                "reps": 1,
+                "weight": "15분"
+              }
+            ]
+          },
+          {
+            "day": "금",
+            "workout": "휴식",
+            "rest": true
+          },
+          {
+            "day": "토",
+            "workout": "상체+자세교정",
+            "rest": false,
+            "note": "상체를 강화하면서 자세 교정을 함께 챙기는 날이에요. 슈퍼맨·월 엔젤로 등과 어깨를 바로잡고, 푸쉬업·덤벨 로우로 상체 근력을 키웁니다.",
+            "plan": [
+              {
+                "name": "슈퍼맨 홀드",
+                "sets": 3,
+                "reps": 12,
+                "weight": "-"
+              },
+              {
+                "name": "월 엔젤 (벽에 등 붙이고)",
+                "sets": 2,
+                "reps": 10,
+                "weight": "-"
+              },
+              {
+                "name": "푸쉬업 (무릎 or 일반)",
+                "sets": 3,
+                "reps": 10,
+                "weight": "-"
+              },
+              {
+                "name": "덤벨 로우",
+                "sets": 3,
+                "reps": 12,
+                "weight": "양쪽"
+              },
+              {
+                "name": "플랭크",
+                "sets": 3,
+                "reps": 1,
+                "weight": "30초"
+              }
+            ]
+          },
+          {
+            "day": "일",
+            "workout": "휴식",
+            "rest": true
+          }
+        ]
+      }
     },
     {
       "week": 4,
@@ -143,7 +525,134 @@
       "musclesWorked": [],
       "sessionDates": [],
       "memberComment": "",
-      "weeklyRoutine": null
+      "weeklyRoutine": {
+        "weekKey": "2026-W30-ksy",
+        "note": "🎯 감량+자세교정 루틴 · 4주차",
+        "days": [
+          {
+            "day": "월",
+            "workout": "유산소+코어",
+            "rest": false,
+            "note": "주의 시작을 가볍게 여는 날이에요. 유산소로 지방을 태우고, 코어 운동으로 허리와 복부를 잡아줍니다. 자세 교정의 기초가 되는 깊은 코어 근육을 활성화합니다.",
+            "plan": [
+              {
+                "name": "빠른 걷기/조깅",
+                "sets": 1,
+                "reps": 1,
+                "weight": "20분"
+              },
+              {
+                "name": "플랭크",
+                "sets": 3,
+                "reps": 1,
+                "weight": "30초"
+              },
+              {
+                "name": "데드버그",
+                "sets": 3,
+                "reps": 10,
+                "weight": "양쪽"
+              },
+              {
+                "name": "버드독",
+                "sets": 3,
+                "reps": 10,
+                "weight": "양쪽"
+              }
+            ]
+          },
+          {
+            "day": "화",
+            "workout": "PT 레슨",
+            "rest": false
+          },
+          {
+            "day": "수",
+            "workout": "휴식",
+            "rest": true
+          },
+          {
+            "day": "목",
+            "workout": "하체+유산소",
+            "rest": false,
+            "note": "하체 큰 근육을 자극해 기초대사량을 높이는 날이에요. 스쿼트·런지로 허벅지와 엉덩이를 다지고, 유산소로 칼로리 소모를 이어갑니다.",
+            "plan": [
+              {
+                "name": "맨몸 스쿼트",
+                "sets": 3,
+                "reps": 15,
+                "weight": "-"
+              },
+              {
+                "name": "런지",
+                "sets": 3,
+                "reps": 10,
+                "weight": "양쪽"
+              },
+              {
+                "name": "힙브릿지",
+                "sets": 3,
+                "reps": 15,
+                "weight": "-"
+              },
+              {
+                "name": "빠른 걷기",
+                "sets": 1,
+                "reps": 1,
+                "weight": "15분"
+              }
+            ]
+          },
+          {
+            "day": "금",
+            "workout": "휴식",
+            "rest": true
+          },
+          {
+            "day": "토",
+            "workout": "상체+자세교정",
+            "rest": false,
+            "note": "상체를 강화하면서 자세 교정을 함께 챙기는 날이에요. 슈퍼맨·월 엔젤로 등과 어깨를 바로잡고, 푸쉬업·덤벨 로우로 상체 근력을 키웁니다.",
+            "plan": [
+              {
+                "name": "슈퍼맨 홀드",
+                "sets": 3,
+                "reps": 12,
+                "weight": "-"
+              },
+              {
+                "name": "월 엔젤 (벽에 등 붙이고)",
+                "sets": 2,
+                "reps": 10,
+                "weight": "-"
+              },
+              {
+                "name": "푸쉬업 (무릎 or 일반)",
+                "sets": 3,
+                "reps": 10,
+                "weight": "-"
+              },
+              {
+                "name": "덤벨 로우",
+                "sets": 3,
+                "reps": 12,
+                "weight": "양쪽"
+              },
+              {
+                "name": "플랭크",
+                "sets": 3,
+                "reps": 1,
+                "weight": "30초"
+              }
+            ]
+          },
+          {
+            "day": "일",
+            "workout": "휴식",
+            "rest": true
+          }
+        ]
+      }
     },
     {
       "week": 5,
@@ -175,7 +684,134 @@
       "musclesWorked": [],
       "sessionDates": [],
       "memberComment": "",
-      "weeklyRoutine": null
+      "weeklyRoutine": {
+        "weekKey": "2026-W31-ksy",
+        "note": "🎯 감량+자세교정 루틴 · 5주차",
+        "days": [
+          {
+            "day": "월",
+            "workout": "유산소+코어",
+            "rest": false,
+            "note": "주의 시작을 가볍게 여는 날이에요. 유산소로 지방을 태우고, 코어 운동으로 허리와 복부를 잡아줍니다. 자세 교정의 기초가 되는 깊은 코어 근육을 활성화합니다.",
+            "plan": [
+              {
+                "name": "빠른 걷기/조깅",
+                "sets": 1,
+                "reps": 1,
+                "weight": "20분"
+              },
+              {
+                "name": "플랭크",
+                "sets": 3,
+                "reps": 1,
+                "weight": "30초"
+              },
+              {
+                "name": "데드버그",
+                "sets": 3,
+                "reps": 10,
+                "weight": "양쪽"
+              },
+              {
+                "name": "버드독",
+                "sets": 3,
+                "reps": 10,
+                "weight": "양쪽"
+              }
+            ]
+          },
+          {
+            "day": "화",
+            "workout": "PT 레슨",
+            "rest": false
+          },
+          {
+            "day": "수",
+            "workout": "휴식",
+            "rest": true
+          },
+          {
+            "day": "목",
+            "workout": "하체+유산소",
+            "rest": false,
+            "note": "하체 큰 근육을 자극해 기초대사량을 높이는 날이에요. 스쿼트·런지로 허벅지와 엉덩이를 다지고, 유산소로 칼로리 소모를 이어갑니다.",
+            "plan": [
+              {
+                "name": "맨몸 스쿼트",
+                "sets": 3,
+                "reps": 15,
+                "weight": "-"
+              },
+              {
+                "name": "런지",
+                "sets": 3,
+                "reps": 10,
+                "weight": "양쪽"
+              },
+              {
+                "name": "힙브릿지",
+                "sets": 3,
+                "reps": 15,
+                "weight": "-"
+              },
+              {
+                "name": "빠른 걷기",
+                "sets": 1,
+                "reps": 1,
+                "weight": "15분"
+              }
+            ]
+          },
+          {
+            "day": "금",
+            "workout": "휴식",
+            "rest": true
+          },
+          {
+            "day": "토",
+            "workout": "상체+자세교정",
+            "rest": false,
+            "note": "상체를 강화하면서 자세 교정을 함께 챙기는 날이에요. 슈퍼맨·월 엔젤로 등과 어깨를 바로잡고, 푸쉬업·덤벨 로우로 상체 근력을 키웁니다.",
+            "plan": [
+              {
+                "name": "슈퍼맨 홀드",
+                "sets": 3,
+                "reps": 12,
+                "weight": "-"
+              },
+              {
+                "name": "월 엔젤 (벽에 등 붙이고)",
+                "sets": 2,
+                "reps": 10,
+                "weight": "-"
+              },
+              {
+                "name": "푸쉬업 (무릎 or 일반)",
+                "sets": 3,
+                "reps": 10,
+                "weight": "-"
+              },
+              {
+                "name": "덤벨 로우",
+                "sets": 3,
+                "reps": 12,
+                "weight": "양쪽"
+              },
+              {
+                "name": "플랭크",
+                "sets": 3,
+                "reps": 1,
+                "weight": "30초"
+              }
+            ]
+          },
+          {
+            "day": "일",
+            "workout": "휴식",
+            "rest": true
+          }
+        ]
+      }
     }
   ],
   "quotes": [

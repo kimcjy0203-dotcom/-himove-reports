@@ -74,7 +74,155 @@
       "musclesWorked": [],
       "sessionDates": [],
       "memberComment": "",
-      "weeklyRoutine": null
+      "weeklyRoutine": {
+        "weekKey": "2026-W27-hj",
+        "note": "🎯 감량+자세교정 루틴 · 1주차",
+        "days": [
+          {
+            "day": "월",
+            "workout": "PT 레슨",
+            "rest": false
+          },
+          {
+            "day": "화",
+            "workout": "상체+코어",
+            "rest": false,
+            "note": "상체와 코어를 함께 잡는 날이에요. 버드독·슈퍼맨으로 척추 안정화를 먼저 챙기고, 푸쉬업·덤벨 로우로 팔·등 라인을 만들어 갑니다.",
+            "plan": [
+              {
+                "name": "버드독",
+                "sets": 3,
+                "reps": 10,
+                "weight": "양쪽"
+              },
+              {
+                "name": "슈퍼맨 홀드",
+                "sets": 3,
+                "reps": 12,
+                "weight": "-"
+              },
+              {
+                "name": "푸쉬업 (무릎 or 일반)",
+                "sets": 3,
+                "reps": 10,
+                "weight": "-"
+              },
+              {
+                "name": "덤벨 로우",
+                "sets": 3,
+                "reps": 12,
+                "weight": "양쪽"
+              },
+              {
+                "name": "플랭크",
+                "sets": 3,
+                "reps": 1,
+                "weight": "30초"
+              }
+            ]
+          },
+          {
+            "day": "수",
+            "workout": "유산소+자세교정",
+            "rest": false,
+            "note": "발목에 무리 없이 걷기 유산소로 지방을 태우고, 고양이-소·월 엔젤로 굳은 등과 어깨를 풀어주는 날이에요.",
+            "plan": [
+              {
+                "name": "고양이-소 스트레칭",
+                "sets": 1,
+                "reps": 10,
+                "weight": "워밍업"
+              },
+              {
+                "name": "빠른 걷기 (평지)",
+                "sets": 1,
+                "reps": 1,
+                "weight": "20-25분"
+              },
+              {
+                "name": "월 엔젤 (벽에 등 붙이고)",
+                "sets": 2,
+                "reps": 10,
+                "weight": "-"
+              },
+              {
+                "name": "흉추 회전 스트레칭",
+                "sets": 2,
+                "reps": 10,
+                "weight": "양쪽"
+              }
+            ]
+          },
+          {
+            "day": "목",
+            "workout": "하체 (발목 주의)",
+            "rest": false,
+            "note": "왼쪽 발목 가동성을 고려해 깊은 스쿼트 대신 누워서 하는 하체 운동 위주예요. 엉덩이·허벅지 근육을 자극하면서 발목 부담을 최소화합니다.",
+            "plan": [
+              {
+                "name": "힙브릿지",
+                "sets": 3,
+                "reps": 20,
+                "weight": "-"
+              },
+              {
+                "name": "사이드 라잉 힙 어브덕션",
+                "sets": 3,
+                "reps": 15,
+                "weight": "양쪽"
+              },
+              {
+                "name": "클램셸",
+                "sets": 3,
+                "reps": 15,
+                "weight": "양쪽"
+              },
+              {
+                "name": "맨몸 스쿼트 (얕게)",
+                "sets": 3,
+                "reps": 12,
+                "weight": "발목 가동 범위 내"
+              },
+              {
+                "name": "누워서 레그레이즈",
+                "sets": 3,
+                "reps": 12,
+                "weight": "-"
+              }
+            ]
+          },
+          {
+            "day": "금",
+            "workout": "휴식",
+            "rest": true
+          },
+          {
+            "day": "토",
+            "workout": "유산소",
+            "rest": false,
+            "note": "주 마무리 가벼운 걷기예요. 종아리 스트레칭으로 왼쪽 발목 유연성을 꾸준히 관리합니다.",
+            "plan": [
+              {
+                "name": "빠른 걷기",
+                "sets": 1,
+                "reps": 1,
+                "weight": "25-30분"
+              },
+              {
+                "name": "종아리·발목 스트레칭",
+                "sets": 1,
+                "reps": 1,
+                "weight": "10분"
+              }
+            ]
+          },
+          {
+            "day": "일",
+            "workout": "휴식",
+            "rest": true
+          }
+        ]
+      }
     },
     {
       "week": 2,
@@ -106,7 +254,155 @@
       "musclesWorked": [],
       "sessionDates": [],
       "memberComment": "",
-      "weeklyRoutine": null
+      "weeklyRoutine": {
+        "weekKey": "2026-W28-hj",
+        "note": "🎯 감량+자세교정 루틴 · 2주차",
+        "days": [
+          {
+            "day": "월",
+            "workout": "PT 레슨",
+            "rest": false
+          },
+          {
+            "day": "화",
+            "workout": "상체+코어",
+            "rest": false,
+            "note": "상체와 코어를 함께 잡는 날이에요. 버드독·슈퍼맨으로 척추 안정화를 먼저 챙기고, 푸쉬업·덤벨 로우로 팔·등 라인을 만들어 갑니다.",
+            "plan": [
+              {
+                "name": "버드독",
+                "sets": 3,
+                "reps": 10,
+                "weight": "양쪽"
+              },
+              {
+                "name": "슈퍼맨 홀드",
+                "sets": 3,
+                "reps": 12,
+                "weight": "-"
+              },
+              {
+                "name": "푸쉬업 (무릎 or 일반)",
+                "sets": 3,
+                "reps": 10,
+                "weight": "-"
+              },
+              {
+                "name": "덤벨 로우",
+                "sets": 3,
+                "reps": 12,
+                "weight": "양쪽"
+              },
+              {
+                "name": "플랭크",
+                "sets": 3,
+                "reps": 1,
+                "weight": "30초"
+              }
+            ]
+          },
+          {
+            "day": "수",
+            "workout": "유산소+자세교정",
+            "rest": false,
+            "note": "발목에 무리 없이 걷기 유산소로 지방을 태우고, 고양이-소·월 엔젤로 굳은 등과 어깨를 풀어주는 날이에요.",
+            "plan": [
+              {
+                "name": "고양이-소 스트레칭",
+                "sets": 1,
+                "reps": 10,
+                "weight": "워밍업"
+              },
+              {
+                "name": "빠른 걷기 (평지)",
+                "sets": 1,
+                "reps": 1,
+                "weight": "20-25분"
+              },
+              {
+                "name": "월 엔젤 (벽에 등 붙이고)",
+                "sets": 2,
+                "reps": 10,
+                "weight": "-"
+              },
+              {
+                "name": "흉추 회전 스트레칭",
+                "sets": 2,
+                "reps": 10,
+                "weight": "양쪽"
+              }
+            ]
+          },
+          {
+            "day": "목",
+            "workout": "하체 (발목 주의)",
+            "rest": false,
+            "note": "왼쪽 발목 가동성을 고려해 깊은 스쿼트 대신 누워서 하는 하체 운동 위주예요. 엉덩이·허벅지 근육을 자극하면서 발목 부담을 최소화합니다.",
+            "plan": [
+              {
+                "name": "힙브릿지",
+                "sets": 3,
+                "reps": 20,
+                "weight": "-"
+              },
+              {
+                "name": "사이드 라잉 힙 어브덕션",
+                "sets": 3,
+                "reps": 15,
+                "weight": "양쪽"
+              },
+              {
+                "name": "클램셸",
+                "sets": 3,
+                "reps": 15,
+                "weight": "양쪽"
+              },
+              {
+                "name": "맨몸 스쿼트 (얕게)",
+                "sets": 3,
+                "reps": 12,
+                "weight": "발목 가동 범위 내"
+              },
+              {
+                "name": "누워서 레그레이즈",
+                "sets": 3,
+                "reps": 12,
+                "weight": "-"
+              }
+            ]
+          },
+          {
+            "day": "금",
+            "workout": "휴식",
+            "rest": true
+          },
+          {
+            "day": "토",
+            "workout": "유산소",
+            "rest": false,
+            "note": "주 마무리 가벼운 걷기예요. 종아리 스트레칭으로 왼쪽 발목 유연성을 꾸준히 관리합니다.",
+            "plan": [
+              {
+                "name": "빠른 걷기",
+                "sets": 1,
+                "reps": 1,
+                "weight": "25-30분"
+              },
+              {
+                "name": "종아리·발목 스트레칭",
+                "sets": 1,
+                "reps": 1,
+                "weight": "10분"
+              }
+            ]
+          },
+          {
+            "day": "일",
+            "workout": "휴식",
+            "rest": true
+          }
+        ]
+      }
     },
     {
       "week": 3,
@@ -138,7 +434,155 @@
       "musclesWorked": [],
       "sessionDates": [],
       "memberComment": "",
-      "weeklyRoutine": null
+      "weeklyRoutine": {
+        "weekKey": "2026-W29-hj",
+        "note": "🎯 감량+자세교정 루틴 · 3주차",
+        "days": [
+          {
+            "day": "월",
+            "workout": "PT 레슨",
+            "rest": false
+          },
+          {
+            "day": "화",
+            "workout": "상체+코어",
+            "rest": false,
+            "note": "상체와 코어를 함께 잡는 날이에요. 버드독·슈퍼맨으로 척추 안정화를 먼저 챙기고, 푸쉬업·덤벨 로우로 팔·등 라인을 만들어 갑니다.",
+            "plan": [
+              {
+                "name": "버드독",
+                "sets": 3,
+                "reps": 10,
+                "weight": "양쪽"
+              },
+              {
+                "name": "슈퍼맨 홀드",
+                "sets": 3,
+                "reps": 12,
+                "weight": "-"
+              },
+              {
+                "name": "푸쉬업 (무릎 or 일반)",
+                "sets": 3,
+                "reps": 10,
+                "weight": "-"
+              },
+              {
+                "name": "덤벨 로우",
+                "sets": 3,
+                "reps": 12,
+                "weight": "양쪽"
+              },
+              {
+                "name": "플랭크",
+                "sets": 3,
+                "reps": 1,
+                "weight": "30초"
+              }
+            ]
+          },
+          {
+            "day": "수",
+            "workout": "유산소+자세교정",
+            "rest": false,
+            "note": "발목에 무리 없이 걷기 유산소로 지방을 태우고, 고양이-소·월 엔젤로 굳은 등과 어깨를 풀어주는 날이에요.",
+            "plan": [
+              {
+                "name": "고양이-소 스트레칭",
+                "sets": 1,
+                "reps": 10,
+                "weight": "워밍업"
+              },
+              {
+                "name": "빠른 걷기 (평지)",
+                "sets": 1,
+                "reps": 1,
+                "weight": "20-25분"
+              },
+              {
+                "name": "월 엔젤 (벽에 등 붙이고)",
+                "sets": 2,
+                "reps": 10,
+                "weight": "-"
+              },
+              {
+                "name": "흉추 회전 스트레칭",
+                "sets": 2,
+                "reps": 10,
+                "weight": "양쪽"
+              }
+            ]
+          },
+          {
+            "day": "목",
+            "workout": "하체 (발목 주의)",
+            "rest": false,
+            "note": "왼쪽 발목 가동성을 고려해 깊은 스쿼트 대신 누워서 하는 하체 운동 위주예요. 엉덩이·허벅지 근육을 자극하면서 발목 부담을 최소화합니다.",
+            "plan": [
+              {
+                "name": "힙브릿지",
+                "sets": 3,
+                "reps": 20,
+                "weight": "-"
+              },
+              {
+                "name": "사이드 라잉 힙 어브덕션",
+                "sets": 3,
+                "reps": 15,
+                "weight": "양쪽"
+              },
+              {
+                "name": "클램셸",
+                "sets": 3,
+                "reps": 15,
+                "weight": "양쪽"
+              },
+              {
+                "name": "맨몸 스쿼트 (얕게)",
+                "sets": 3,
+                "reps": 12,
+                "weight": "발목 가동 범위 내"
+              },
+              {
+                "name": "누워서 레그레이즈",
+                "sets": 3,
+                "reps": 12,
+                "weight": "-"
+              }
+            ]
+          },
+          {
+            "day": "금",
+            "workout": "휴식",
+            "rest": true
+          },
+          {
+            "day": "토",
+            "workout": "유산소",
+            "rest": false,
+            "note": "주 마무리 가벼운 걷기예요. 종아리 스트레칭으로 왼쪽 발목 유연성을 꾸준히 관리합니다.",
+            "plan": [
+              {
+                "name": "빠른 걷기",
+                "sets": 1,
+                "reps": 1,
+                "weight": "25-30분"
+              },
+              {
+                "name": "종아리·발목 스트레칭",
+                "sets": 1,
+                "reps": 1,
+                "weight": "10분"
+              }
+            ]
+          },
+          {
+            "day": "일",
+            "workout": "휴식",
+            "rest": true
+          }
+        ]
+      }
     },
     {
       "week": 4,
@@ -170,7 +614,155 @@
       "musclesWorked": [],
       "sessionDates": [],
       "memberComment": "",
-      "weeklyRoutine": null
+      "weeklyRoutine": {
+        "weekKey": "2026-W30-hj",
+        "note": "🎯 감량+자세교정 루틴 · 4주차",
+        "days": [
+          {
+            "day": "월",
+            "workout": "PT 레슨",
+            "rest": false
+          },
+          {
+            "day": "화",
+            "workout": "상체+코어",
+            "rest": false,
+            "note": "상체와 코어를 함께 잡는 날이에요. 버드독·슈퍼맨으로 척추 안정화를 먼저 챙기고, 푸쉬업·덤벨 로우로 팔·등 라인을 만들어 갑니다.",
+            "plan": [
+              {
+                "name": "버드독",
+                "sets": 3,
+                "reps": 10,
+                "weight": "양쪽"
+              },
+              {
+                "name": "슈퍼맨 홀드",
+                "sets": 3,
+                "reps": 12,
+                "weight": "-"
+              },
+              {
+                "name": "푸쉬업 (무릎 or 일반)",
+                "sets": 3,
+                "reps": 10,
+                "weight": "-"
+              },
+              {
+                "name": "덤벨 로우",
+                "sets": 3,
+                "reps": 12,
+                "weight": "양쪽"
+              },
+              {
+                "name": "플랭크",
+                "sets": 3,
+                "reps": 1,
+                "weight": "30초"
+              }
+            ]
+          },
+          {
+            "day": "수",
+            "workout": "유산소+자세교정",
+            "rest": false,
+            "note": "발목에 무리 없이 걷기 유산소로 지방을 태우고, 고양이-소·월 엔젤로 굳은 등과 어깨를 풀어주는 날이에요.",
+            "plan": [
+              {
+                "name": "고양이-소 스트레칭",
+                "sets": 1,
+                "reps": 10,
+                "weight": "워밍업"
+              },
+              {
+                "name": "빠른 걷기 (평지)",
+                "sets": 1,
+                "reps": 1,
+                "weight": "20-25분"
+              },
+              {
+                "name": "월 엔젤 (벽에 등 붙이고)",
+                "sets": 2,
+                "reps": 10,
+                "weight": "-"
+              },
+              {
+                "name": "흉추 회전 스트레칭",
+                "sets": 2,
+                "reps": 10,
+                "weight": "양쪽"
+              }
+            ]
+          },
+          {
+            "day": "목",
+            "workout": "하체 (발목 주의)",
+            "rest": false,
+            "note": "왼쪽 발목 가동성을 고려해 깊은 스쿼트 대신 누워서 하는 하체 운동 위주예요. 엉덩이·허벅지 근육을 자극하면서 발목 부담을 최소화합니다.",
+            "plan": [
+              {
+                "name": "힙브릿지",
+                "sets": 3,
+                "reps": 20,
+                "weight": "-"
+              },
+              {
+                "name": "사이드 라잉 힙 어브덕션",
+                "sets": 3,
+                "reps": 15,
+                "weight": "양쪽"
+              },
+              {
+                "name": "클램셸",
+                "sets": 3,
+                "reps": 15,
+                "weight": "양쪽"
+              },
+              {
+                "name": "맨몸 스쿼트 (얕게)",
+                "sets": 3,
+                "reps": 12,
+                "weight": "발목 가동 범위 내"
+              },
+              {
+                "name": "누워서 레그레이즈",
+                "sets": 3,
+                "reps": 12,
+                "weight": "-"
+              }
+            ]
+          },
+          {
+            "day": "금",
+            "workout": "휴식",
+            "rest": true
+          },
+          {
+            "day": "토",
+            "workout": "유산소",
+            "rest": false,
+            "note": "주 마무리 가벼운 걷기예요. 종아리 스트레칭으로 왼쪽 발목 유연성을 꾸준히 관리합니다.",
+            "plan": [
+              {
+                "name": "빠른 걷기",
+                "sets": 1,
+                "reps": 1,
+                "weight": "25-30분"
+              },
+              {
+                "name": "종아리·발목 스트레칭",
+                "sets": 1,
+                "reps": 1,
+                "weight": "10분"
+              }
+            ]
+          },
+          {
+            "day": "일",
+            "workout": "휴식",
+            "rest": true
+          }
+        ]
+      }
     },
     {
       "week": 5,
@@ -202,7 +794,155 @@
       "musclesWorked": [],
       "sessionDates": [],
       "memberComment": "",
-      "weeklyRoutine": null
+      "weeklyRoutine": {
+        "weekKey": "2026-W31-hj",
+        "note": "🎯 감량+자세교정 루틴 · 5주차",
+        "days": [
+          {
+            "day": "월",
+            "workout": "PT 레슨",
+            "rest": false
+          },
+          {
+            "day": "화",
+            "workout": "상체+코어",
+            "rest": false,
+            "note": "상체와 코어를 함께 잡는 날이에요. 버드독·슈퍼맨으로 척추 안정화를 먼저 챙기고, 푸쉬업·덤벨 로우로 팔·등 라인을 만들어 갑니다.",
+            "plan": [
+              {
+                "name": "버드독",
+                "sets": 3,
+                "reps": 10,
+                "weight": "양쪽"
+              },
+              {
+                "name": "슈퍼맨 홀드",
+                "sets": 3,
+                "reps": 12,
+                "weight": "-"
+              },
+              {
+                "name": "푸쉬업 (무릎 or 일반)",
+                "sets": 3,
+                "reps": 10,
+                "weight": "-"
+              },
+              {
+                "name": "덤벨 로우",
+                "sets": 3,
+                "reps": 12,
+                "weight": "양쪽"
+              },
+              {
+                "name": "플랭크",
+                "sets": 3,
+                "reps": 1,
+                "weight": "30초"
+              }
+            ]
+          },
+          {
+            "day": "수",
+            "workout": "유산소+자세교정",
+            "rest": false,
+            "note": "발목에 무리 없이 걷기 유산소로 지방을 태우고, 고양이-소·월 엔젤로 굳은 등과 어깨를 풀어주는 날이에요.",
+            "plan": [
+              {
+                "name": "고양이-소 스트레칭",
+                "sets": 1,
+                "reps": 10,
+                "weight": "워밍업"
+              },
+              {
+                "name": "빠른 걷기 (평지)",
+                "sets": 1,
+                "reps": 1,
+                "weight": "20-25분"
+              },
+              {
+                "name": "월 엔젤 (벽에 등 붙이고)",
+                "sets": 2,
+                "reps": 10,
+                "weight": "-"
+              },
+              {
+                "name": "흉추 회전 스트레칭",
+                "sets": 2,
+                "reps": 10,
+                "weight": "양쪽"
+              }
+            ]
+          },
+          {
+            "day": "목",
+            "workout": "하체 (발목 주의)",
+            "rest": false,
+            "note": "왼쪽 발목 가동성을 고려해 깊은 스쿼트 대신 누워서 하는 하체 운동 위주예요. 엉덩이·허벅지 근육을 자극하면서 발목 부담을 최소화합니다.",
+            "plan": [
+              {
+                "name": "힙브릿지",
+                "sets": 3,
+                "reps": 20,
+                "weight": "-"
+              },
+              {
+                "name": "사이드 라잉 힙 어브덕션",
+                "sets": 3,
+                "reps": 15,
+                "weight": "양쪽"
+              },
+              {
+                "name": "클램셸",
+                "sets": 3,
+                "reps": 15,
+                "weight": "양쪽"
+              },
+              {
+                "name": "맨몸 스쿼트 (얕게)",
+                "sets": 3,
+                "reps": 12,
+                "weight": "발목 가동 범위 내"
+              },
+              {
+                "name": "누워서 레그레이즈",
+                "sets": 3,
+                "reps": 12,
+                "weight": "-"
+              }
+            ]
+          },
+          {
+            "day": "금",
+            "workout": "휴식",
+            "rest": true
+          },
+          {
+            "day": "토",
+            "workout": "유산소",
+            "rest": false,
+            "note": "주 마무리 가벼운 걷기예요. 종아리 스트레칭으로 왼쪽 발목 유연성을 꾸준히 관리합니다.",
+            "plan": [
+              {
+                "name": "빠른 걷기",
+                "sets": 1,
+                "reps": 1,
+                "weight": "25-30분"
+              },
+              {
+                "name": "종아리·발목 스트레칭",
+                "sets": 1,
+                "reps": 1,
+                "weight": "10분"
+              }
+            ]
+          },
+          {
+            "day": "일",
+            "workout": "휴식",
+            "rest": true
+          }
+        ]
+      }
     }
   ],
   "quotes": [

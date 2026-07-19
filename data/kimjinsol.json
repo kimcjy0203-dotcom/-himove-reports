@@ -59,7 +59,128 @@
       "musclesWorked": [],
       "sessionDates": [],
       "memberComment": "",
-      "weeklyRoutine": null
+      "weeklyRoutine": {
+        "weekKey": "2026-W27-kjs",
+        "note": "🎯 감량+체력 루틴 · 1주차",
+        "days": [
+          {
+            "day": "월",
+            "workout": "하체+유산소",
+            "rest": false,
+            "note": "하체 큰 근육을 움직여 칼로리 소모를 극대화하는 날이에요. 스쿼트·런지로 허벅지와 엉덩이를 자극하고, 유산소로 지방 연소를 이어갑니다.",
+            "plan": [
+              {
+                "name": "맨몸 스쿼트",
+                "sets": 3,
+                "reps": 15,
+                "weight": "-"
+              },
+              {
+                "name": "런지",
+                "sets": 3,
+                "reps": 10,
+                "weight": "양쪽"
+              },
+              {
+                "name": "힙브릿지",
+                "sets": 3,
+                "reps": 15,
+                "weight": "-"
+              },
+              {
+                "name": "카프레이즈",
+                "sets": 3,
+                "reps": 20,
+                "weight": "-"
+              },
+              {
+                "name": "빠른 걷기/조깅",
+                "sets": 1,
+                "reps": 1,
+                "weight": "20분"
+              }
+            ]
+          },
+          {
+            "day": "화",
+            "workout": "상체+코어",
+            "rest": false,
+            "note": "팔·어깨·등 상체를 골고루 자극하고, 플랭크·레그레이즈로 복부를 탄탄하게 잡는 날이에요. 전신 체형 균형을 위해 꼭 필요한 세션입니다.",
+            "plan": [
+              {
+                "name": "푸쉬업 (무릎 or 일반)",
+                "sets": 3,
+                "reps": 10,
+                "weight": "-"
+              },
+              {
+                "name": "덤벨 로우 (물병 대체 가능)",
+                "sets": 3,
+                "reps": 12,
+                "weight": "양쪽"
+              },
+              {
+                "name": "숄더프레스",
+                "sets": 3,
+                "reps": 12,
+                "weight": "가벼운 무게"
+              },
+              {
+                "name": "플랭크",
+                "sets": 3,
+                "reps": 1,
+                "weight": "30초"
+              },
+              {
+                "name": "레그레이즈",
+                "sets": 3,
+                "reps": 12,
+                "weight": "-"
+              }
+            ]
+          },
+          {
+            "day": "수",
+            "workout": "PT 레슨",
+            "rest": false
+          },
+          {
+            "day": "목",
+            "workout": "휴식",
+            "rest": true
+          },
+          {
+            "day": "금",
+            "workout": "휴식",
+            "rest": true
+          },
+          {
+            "day": "토",
+            "workout": "유산소",
+            "rest": false,
+            "note": "주간 마무리 유산소예요. 무리하지 않고 가볍게 걸으면서 한 주 피로를 풀고 다음 주를 준비합니다.",
+            "plan": [
+              {
+                "name": "빠른 걷기/파워워킹",
+                "sets": 1,
+                "reps": 1,
+                "weight": "25-30분"
+              },
+              {
+                "name": "가벼운 전신 스트레칭",
+                "sets": 1,
+                "reps": 1,
+                "weight": "10분"
+              }
+            ]
+          },
+          {
+            "day": "일",
+            "workout": "휴식",
+            "rest": true
+          }
+        ]
+      }
     },
     {
       "week": 2,
@@ -91,7 +212,128 @@
       "musclesWorked": [],
       "sessionDates": [],
       "memberComment": "",
-      "weeklyRoutine": null
+      "weeklyRoutine": {
+        "weekKey": "2026-W28-kjs",
+        "note": "🎯 감량+체력 루틴 · 2주차",
+        "days": [
+          {
+            "day": "월",
+            "workout": "하체+유산소",
+            "rest": false,
+            "note": "하체 큰 근육을 움직여 칼로리 소모를 극대화하는 날이에요. 스쿼트·런지로 허벅지와 엉덩이를 자극하고, 유산소로 지방 연소를 이어갑니다.",
+            "plan": [
+              {
+                "name": "맨몸 스쿼트",
+                "sets": 3,
+                "reps": 15,
+                "weight": "-"
+              },
+              {
+                "name": "런지",
+                "sets": 3,
+                "reps": 10,
+                "weight": "양쪽"
+              },
+              {
+                "name": "힙브릿지",
+                "sets": 3,
+                "reps": 15,
+                "weight": "-"
+              },
+              {
+                "name": "카프레이즈",
+                "sets": 3,
+                "reps": 20,
+                "weight": "-"
+              },
+              {
+                "name": "빠른 걷기/조깅",
+                "sets": 1,
+                "reps": 1,
+                "weight": "20분"
+              }
+            ]
+          },
+          {
+            "day": "화",
+            "workout": "상체+코어",
+            "rest": false,
+            "note": "팔·어깨·등 상체를 골고루 자극하고, 플랭크·레그레이즈로 복부를 탄탄하게 잡는 날이에요. 전신 체형 균형을 위해 꼭 필요한 세션입니다.",
+            "plan": [
+              {
+                "name": "푸쉬업 (무릎 or 일반)",
+                "sets": 3,
+                "reps": 10,
+                "weight": "-"
+              },
+              {
+                "name": "덤벨 로우 (물병 대체 가능)",
+                "sets": 3,
+                "reps": 12,
+                "weight": "양쪽"
+              },
+              {
+                "name": "숄더프레스",
+                "sets": 3,
+                "reps": 12,
+                "weight": "가벼운 무게"
+              },
+              {
+                "name": "플랭크",
+                "sets": 3,
+                "reps": 1,
+                "weight": "30초"
+              },
+              {
+                "name": "레그레이즈",
+                "sets": 3,
+                "reps": 12,
+                "weight": "-"
+              }
+            ]
+          },
+          {
+            "day": "수",
+            "workout": "PT 레슨",
+            "rest": false
+          },
+          {
+            "day": "목",
+            "workout": "휴식",
+            "rest": true
+          },
+          {
+            "day": "금",
+            "workout": "휴식",
+            "rest": true
+          },
+          {
+            "day": "토",
+            "workout": "유산소",
+            "rest": false,
+            "note": "주간 마무리 유산소예요. 무리하지 않고 가볍게 걸으면서 한 주 피로를 풀고 다음 주를 준비합니다.",
+            "plan": [
+              {
+                "name": "빠른 걷기/파워워킹",
+                "sets": 1,
+                "reps": 1,
+                "weight": "25-30분"
+              },
+              {
+                "name": "가벼운 전신 스트레칭",
+                "sets": 1,
+                "reps": 1,
+                "weight": "10분"
+              }
+            ]
+          },
+          {
+            "day": "일",
+            "workout": "휴식",
+            "rest": true
+          }
+        ]
+      }
     },
     {
       "week": 3,
@@ -123,7 +365,128 @@
       "musclesWorked": [],
       "sessionDates": [],
       "memberComment": "",
-      "weeklyRoutine": null
+      "weeklyRoutine": {
+        "weekKey": "2026-W29-kjs",
+        "note": "🎯 감량+체력 루틴 · 3주차",
+        "days": [
+          {
+            "day": "월",
+            "workout": "하체+유산소",
+            "rest": false,
+            "note": "하체 큰 근육을 움직여 칼로리 소모를 극대화하는 날이에요. 스쿼트·런지로 허벅지와 엉덩이를 자극하고, 유산소로 지방 연소를 이어갑니다.",
+            "plan": [
+              {
+                "name": "맨몸 스쿼트",
+                "sets": 3,
+                "reps": 15,
+                "weight": "-"
+              },
+              {
+                "name": "런지",
+                "sets": 3,
+                "reps": 10,
+                "weight": "양쪽"
+              },
+              {
+                "name": "힙브릿지",
+                "sets": 3,
+                "reps": 15,
+                "weight": "-"
+              },
+              {
+                "name": "카프레이즈",
+                "sets": 3,
+                "reps": 20,
+                "weight": "-"
+              },
+              {
+                "name": "빠른 걷기/조깅",
+                "sets": 1,
+                "reps": 1,
+                "weight": "20분"
+              }
+            ]
+          },
+          {
+            "day": "화",
+            "workout": "상체+코어",
+            "rest": false,
+            "note": "팔·어깨·등 상체를 골고루 자극하고, 플랭크·레그레이즈로 복부를 탄탄하게 잡는 날이에요. 전신 체형 균형을 위해 꼭 필요한 세션입니다.",
+            "plan": [
+              {
+                "name": "푸쉬업 (무릎 or 일반)",
+                "sets": 3,
+                "reps": 10,
+                "weight": "-"
+              },
+              {
+                "name": "덤벨 로우 (물병 대체 가능)",
+                "sets": 3,
+                "reps": 12,
+                "weight": "양쪽"
+              },
+              {
+                "name": "숄더프레스",
+                "sets": 3,
+                "reps": 12,
+                "weight": "가벼운 무게"
+              },
+              {
+                "name": "플랭크",
+                "sets": 3,
+                "reps": 1,
+                "weight": "30초"
+              },
+              {
+                "name": "레그레이즈",
+                "sets": 3,
+                "reps": 12,
+                "weight": "-"
+              }
+            ]
+          },
+          {
+            "day": "수",
+            "workout": "PT 레슨",
+            "rest": false
+          },
+          {
+            "day": "목",
+            "workout": "휴식",
+            "rest": true
+          },
+          {
+            "day": "금",
+            "workout": "휴식",
+            "rest": true
+          },
+          {
+            "day": "토",
+            "workout": "유산소",
+            "rest": false,
+            "note": "주간 마무리 유산소예요. 무리하지 않고 가볍게 걸으면서 한 주 피로를 풀고 다음 주를 준비합니다.",
+            "plan": [
+              {
+                "name": "빠른 걷기/파워워킹",
+                "sets": 1,
+                "reps": 1,
+                "weight": "25-30분"
+              },
+              {
+                "name": "가벼운 전신 스트레칭",
+                "sets": 1,
+                "reps": 1,
+                "weight": "10분"
+              }
+            ]
+          },
+          {
+            "day": "일",
+            "workout": "휴식",
+            "rest": true
+          }
+        ]
+      }
     },
     {
       "week": 4,
@@ -155,7 +518,128 @@
       "musclesWorked": [],
       "sessionDates": [],
       "memberComment": "",
-      "weeklyRoutine": null
+      "weeklyRoutine": {
+        "weekKey": "2026-W30-kjs",
+        "note": "🎯 감량+체력 루틴 · 4주차",
+        "days": [
+          {
+            "day": "월",
+            "workout": "하체+유산소",
+            "rest": false,
+            "note": "하체 큰 근육을 움직여 칼로리 소모를 극대화하는 날이에요. 스쿼트·런지로 허벅지와 엉덩이를 자극하고, 유산소로 지방 연소를 이어갑니다.",
+            "plan": [
+              {
+                "name": "맨몸 스쿼트",
+                "sets": 3,
+                "reps": 15,
+                "weight": "-"
+              },
+              {
+                "name": "런지",
+                "sets": 3,
+                "reps": 10,
+                "weight": "양쪽"
+              },
+              {
+                "name": "힙브릿지",
+                "sets": 3,
+                "reps": 15,
+                "weight": "-"
+              },
+              {
+                "name": "카프레이즈",
+                "sets": 3,
+                "reps": 20,
+                "weight": "-"
+              },
+              {
+                "name": "빠른 걷기/조깅",
+                "sets": 1,
+                "reps": 1,
+                "weight": "20분"
+              }
+            ]
+          },
+          {
+            "day": "화",
+            "workout": "상체+코어",
+            "rest": false,
+            "note": "팔·어깨·등 상체를 골고루 자극하고, 플랭크·레그레이즈로 복부를 탄탄하게 잡는 날이에요. 전신 체형 균형을 위해 꼭 필요한 세션입니다.",
+            "plan": [
+              {
+                "name": "푸쉬업 (무릎 or 일반)",
+                "sets": 3,
+                "reps": 10,
+                "weight": "-"
+              },
+              {
+                "name": "덤벨 로우 (물병 대체 가능)",
+                "sets": 3,
+                "reps": 12,
+                "weight": "양쪽"
+              },
+              {
+                "name": "숄더프레스",
+                "sets": 3,
+                "reps": 12,
+                "weight": "가벼운 무게"
+              },
+              {
+                "name": "플랭크",
+                "sets": 3,
+                "reps": 1,
+                "weight": "30초"
+              },
+              {
+                "name": "레그레이즈",
+                "sets": 3,
+                "reps": 12,
+                "weight": "-"
+              }
+            ]
+          },
+          {
+            "day": "수",
+            "workout": "PT 레슨",
+            "rest": false
+          },
+          {
+            "day": "목",
+            "workout": "휴식",
+            "rest": true
+          },
+          {
+            "day": "금",
+            "workout": "휴식",
+            "rest": true
+          },
+          {
+            "day": "토",
+            "workout": "유산소",
+            "rest": false,
+            "note": "주간 마무리 유산소예요. 무리하지 않고 가볍게 걸으면서 한 주 피로를 풀고 다음 주를 준비합니다.",
+            "plan": [
+              {
+                "name": "빠른 걷기/파워워킹",
+                "sets": 1,
+                "reps": 1,
+                "weight": "25-30분"
+              },
+              {
+                "name": "가벼운 전신 스트레칭",
+                "sets": 1,
+                "reps": 1,
+                "weight": "10분"
+              }
+            ]
+          },
+          {
+            "day": "일",
+            "workout": "휴식",
+            "rest": true
+          }
+        ]
+      }
     },
     {
       "week": 5,
@@ -187,7 +671,128 @@
       "musclesWorked": [],
       "sessionDates": [],
       "memberComment": "",
-      "weeklyRoutine": null
+      "weeklyRoutine": {
+        "weekKey": "2026-W31-kjs",
+        "note": "🎯 감량+체력 루틴 · 5주차",
+        "days": [
+          {
+            "day": "월",
+            "workout": "하체+유산소",
+            "rest": false,
+            "note": "하체 큰 근육을 움직여 칼로리 소모를 극대화하는 날이에요. 스쿼트·런지로 허벅지와 엉덩이를 자극하고, 유산소로 지방 연소를 이어갑니다.",
+            "plan": [
+              {
+                "name": "맨몸 스쿼트",
+                "sets": 3,
+                "reps": 15,
+                "weight": "-"
+              },
+              {
+                "name": "런지",
+                "sets": 3,
+                "reps": 10,
+                "weight": "양쪽"
+              },
+              {
+                "name": "힙브릿지",
+                "sets": 3,
+                "reps": 15,
+                "weight": "-"
+              },
+              {
+                "name": "카프레이즈",
+                "sets": 3,
+                "reps": 20,
+                "weight": "-"
+              },
+              {
+                "name": "빠른 걷기/조깅",
+                "sets": 1,
+                "reps": 1,
+                "weight": "20분"
+              }
+            ]
+          },
+          {
+            "day": "화",
+            "workout": "상체+코어",
+            "rest": false,
+            "note": "팔·어깨·등 상체를 골고루 자극하고, 플랭크·레그레이즈로 복부를 탄탄하게 잡는 날이에요. 전신 체형 균형을 위해 꼭 필요한 세션입니다.",
+            "plan": [
+              {
+                "name": "푸쉬업 (무릎 or 일반)",
+                "sets": 3,
+                "reps": 10,
+                "weight": "-"
+              },
+              {
+                "name": "덤벨 로우 (물병 대체 가능)",
+                "sets": 3,
+                "reps": 12,
+                "weight": "양쪽"
+              },
+              {
+                "name": "숄더프레스",
+                "sets": 3,
+                "reps": 12,
+                "weight": "가벼운 무게"
+              },
+              {
+                "name": "플랭크",
+                "sets": 3,
+                "reps": 1,
+                "weight": "30초"
+              },
+              {
+                "name": "레그레이즈",
+                "sets": 3,
+                "reps": 12,
+                "weight": "-"
+              }
+            ]
+          },
+          {
+            "day": "수",
+            "workout": "PT 레슨",
+            "rest": false
+          },
+          {
+            "day": "목",
+            "workout": "휴식",
+            "rest": true
+          },
+          {
+            "day": "금",
+            "workout": "휴식",
+            "rest": true
+          },
+          {
+            "day": "토",
+            "workout": "유산소",
+            "rest": false,
+            "note": "주간 마무리 유산소예요. 무리하지 않고 가볍게 걸으면서 한 주 피로를 풀고 다음 주를 준비합니다.",
+            "plan": [
+              {
+                "name": "빠른 걷기/파워워킹",
+                "sets": 1,
+                "reps": 1,
+                "weight": "25-30분"
+              },
+              {
+                "name": "가벼운 전신 스트레칭",
+                "sets": 1,
+                "reps": 1,
+                "weight": "10분"
+              }
+            ]
+          },
+          {
+            "day": "일",
+            "workout": "휴식",
+            "rest": true
+          }
+        ]
+      }
     }
   ],
   "biweeklyFeedback": [],

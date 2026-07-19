@@ -105,7 +105,95 @@
         "2026-06-30"
       ],
       "memberComment": "",
-      "weeklyRoutine": null
+      "weeklyRoutine": {
+        "weekKey": "2026-W27-kwsy",
+        "note": "🎯 습관 형성 루틴 · 1주차",
+        "days": [
+          {
+            "day": "월",
+            "workout": "PT 레슨",
+            "rest": false
+          },
+          {
+            "day": "화",
+            "workout": "휴식",
+            "rest": true
+          },
+          {
+            "day": "수",
+            "workout": "전신 기초",
+            "rest": false,
+            "note": "운동 습관을 만들어가는 전신 기초 세션이에요. 많은 동작보다 기본 동작을 정확하게 하는 게 목표입니다. 허리 군살을 빼는 데 가장 효과적인 기초 근력+유산소 조합으로 구성했습니다.",
+            "plan": [
+              {
+                "name": "맨몸 스쿼트",
+                "sets": 3,
+                "reps": 12,
+                "weight": "-"
+              },
+              {
+                "name": "힙브릿지",
+                "sets": 3,
+                "reps": 15,
+                "weight": "-"
+              },
+              {
+                "name": "무릎 푸쉬업",
+                "sets": 3,
+                "reps": 8,
+                "weight": "-"
+              },
+              {
+                "name": "플랭크",
+                "sets": 3,
+                "reps": 1,
+                "weight": "20초"
+              },
+              {
+                "name": "빠른 걷기",
+                "sets": 1,
+                "reps": 1,
+                "weight": "15분"
+              }
+            ]
+          },
+          {
+            "day": "목",
+            "workout": "휴식",
+            "rest": true
+          },
+          {
+            "day": "금",
+            "workout": "휴식",
+            "rest": true
+          },
+          {
+            "day": "토",
+            "workout": "유산소",
+            "rest": false,
+            "note": "가볍게 걷는 것만으로도 훌륭한 운동이에요. 주말 산책으로 칼로리를 소모하고, 스트레칭으로 허리 주변 근육을 풀어줍니다.",
+            "plan": [
+              {
+                "name": "파워워킹/산책",
+                "sets": 1,
+                "reps": 1,
+                "weight": "20-30분"
+              },
+              {
+                "name": "가벼운 스트레칭",
+                "sets": 1,
+                "reps": 1,
+                "weight": "10분"
+              }
+            ]
+          },
+          {
+            "day": "일",
+            "workout": "휴식",
+            "rest": true
+          }
+        ]
+      }
     },
     {
       "week": 2,
@@ -137,7 +225,95 @@
       "musclesWorked": [],
       "sessionDates": [],
       "memberComment": "",
-      "weeklyRoutine": null
+      "weeklyRoutine": {
+        "weekKey": "2026-W28-kwsy",
+        "note": "🎯 습관 형성 루틴 · 2주차",
+        "days": [
+          {
+            "day": "월",
+            "workout": "PT 레슨",
+            "rest": false
+          },
+          {
+            "day": "화",
+            "workout": "휴식",
+            "rest": true
+          },
+          {
+            "day": "수",
+            "workout": "전신 기초",
+            "rest": false,
+            "note": "운동 습관을 만들어가는 전신 기초 세션이에요. 많은 동작보다 기본 동작을 정확하게 하는 게 목표입니다. 허리 군살을 빼는 데 가장 효과적인 기초 근력+유산소 조합으로 구성했습니다.",
+            "plan": [
+              {
+                "name": "맨몸 스쿼트",
+                "sets": 3,
+                "reps": 12,
+                "weight": "-"
+              },
+              {
+                "name": "힙브릿지",
+                "sets": 3,
+                "reps": 15,
+                "weight": "-"
+              },
+              {
+                "name": "무릎 푸쉬업",
+                "sets": 3,
+                "reps": 8,
+                "weight": "-"
+              },
+              {
+                "name": "플랭크",
+                "sets": 3,
+                "reps": 1,
+                "weight": "20초"
+              },
+              {
+                "name": "빠른 걷기",
+                "sets": 1,
+                "reps": 1,
+                "weight": "15분"
+              }
+            ]
+          },
+          {
+            "day": "목",
+            "workout": "휴식",
+            "rest": true
+          },
+          {
+            "day": "금",
+            "workout": "휴식",
+            "rest": true
+          },
+          {
+            "day": "토",
+            "workout": "유산소",
+            "rest": false,
+            "note": "가볍게 걷는 것만으로도 훌륭한 운동이에요. 주말 산책으로 칼로리를 소모하고, 스트레칭으로 허리 주변 근육을 풀어줍니다.",
+            "plan": [
+              {
+                "name": "파워워킹/산책",
+                "sets": 1,
+                "reps": 1,
+                "weight": "20-30분"
+              },
+              {
+                "name": "가벼운 스트레칭",
+                "sets": 1,
+                "reps": 1,
+                "weight": "10분"
+              }
+            ]
+          },
+          {
+            "day": "일",
+            "workout": "휴식",
+            "rest": true
+          }
+        ]
+      }
     },
     {
       "week": 3,
@@ -298,7 +474,95 @@
         "2026-07-13"
       ],
       "memberComment": "",
-      "weeklyRoutine": null
+      "weeklyRoutine": {
+        "weekKey": "2026-W29-kwsy",
+        "note": "🎯 습관 형성 루틴 · 3주차",
+        "days": [
+          {
+            "day": "월",
+            "workout": "PT 레슨",
+            "rest": false
+          },
+          {
+            "day": "화",
+            "workout": "휴식",
+            "rest": true
+          },
+          {
+            "day": "수",
+            "workout": "전신 기초",
+            "rest": false,
+            "note": "운동 습관을 만들어가는 전신 기초 세션이에요. 많은 동작보다 기본 동작을 정확하게 하는 게 목표입니다. 허리 군살을 빼는 데 가장 효과적인 기초 근력+유산소 조합으로 구성했습니다.",
+            "plan": [
+              {
+                "name": "맨몸 스쿼트",
+                "sets": 3,
+                "reps": 12,
+                "weight": "-"
+              },
+              {
+                "name": "힙브릿지",
+                "sets": 3,
+                "reps": 15,
+                "weight": "-"
+              },
+              {
+                "name": "무릎 푸쉬업",
+                "sets": 3,
+                "reps": 8,
+                "weight": "-"
+              },
+              {
+                "name": "플랭크",
+                "sets": 3,
+                "reps": 1,
+                "weight": "20초"
+              },
+              {
+                "name": "빠른 걷기",
+                "sets": 1,
+                "reps": 1,
+                "weight": "15분"
+              }
+            ]
+          },
+          {
+            "day": "목",
+            "workout": "휴식",
+            "rest": true
+          },
+          {
+            "day": "금",
+            "workout": "휴식",
+            "rest": true
+          },
+          {
+            "day": "토",
+            "workout": "유산소",
+            "rest": false,
+            "note": "가볍게 걷는 것만으로도 훌륭한 운동이에요. 주말 산책으로 칼로리를 소모하고, 스트레칭으로 허리 주변 근육을 풀어줍니다.",
+            "plan": [
+              {
+                "name": "파워워킹/산책",
+                "sets": 1,
+                "reps": 1,
+                "weight": "20-30분"
+              },
+              {
+                "name": "가벼운 스트레칭",
+                "sets": 1,
+                "reps": 1,
+                "weight": "10분"
+              }
+            ]
+          },
+          {
+            "day": "일",
+            "workout": "휴식",
+            "rest": true
+          }
+        ]
+      }
     },
     {
       "week": 4,
@@ -330,7 +594,95 @@
       "musclesWorked": [],
       "sessionDates": [],
       "memberComment": "",
-      "weeklyRoutine": null
+      "weeklyRoutine": {
+        "weekKey": "2026-W30-kwsy",
+        "note": "🎯 습관 형성 루틴 · 4주차",
+        "days": [
+          {
+            "day": "월",
+            "workout": "PT 레슨",
+            "rest": false
+          },
+          {
+            "day": "화",
+            "workout": "휴식",
+            "rest": true
+          },
+          {
+            "day": "수",
+            "workout": "전신 기초",
+            "rest": false,
+            "note": "운동 습관을 만들어가는 전신 기초 세션이에요. 많은 동작보다 기본 동작을 정확하게 하는 게 목표입니다. 허리 군살을 빼는 데 가장 효과적인 기초 근력+유산소 조합으로 구성했습니다.",
+            "plan": [
+              {
+                "name": "맨몸 스쿼트",
+                "sets": 3,
+                "reps": 12,
+                "weight": "-"
+              },
+              {
+                "name": "힙브릿지",
+                "sets": 3,
+                "reps": 15,
+                "weight": "-"
+              },
+              {
+                "name": "무릎 푸쉬업",
+                "sets": 3,
+                "reps": 8,
+                "weight": "-"
+              },
+              {
+                "name": "플랭크",
+                "sets": 3,
+                "reps": 1,
+                "weight": "20초"
+              },
+              {
+                "name": "빠른 걷기",
+                "sets": 1,
+                "reps": 1,
+                "weight": "15분"
+              }
+            ]
+          },
+          {
+            "day": "목",
+            "workout": "휴식",
+            "rest": true
+          },
+          {
+            "day": "금",
+            "workout": "휴식",
+            "rest": true
+          },
+          {
+            "day": "토",
+            "workout": "유산소",
+            "rest": false,
+            "note": "가볍게 걷는 것만으로도 훌륭한 운동이에요. 주말 산책으로 칼로리를 소모하고, 스트레칭으로 허리 주변 근육을 풀어줍니다.",
+            "plan": [
+              {
+                "name": "파워워킹/산책",
+                "sets": 1,
+                "reps": 1,
+                "weight": "20-30분"
+              },
+              {
+                "name": "가벼운 스트레칭",
+                "sets": 1,
+                "reps": 1,
+                "weight": "10분"
+              }
+            ]
+          },
+          {
+            "day": "일",
+            "workout": "휴식",
+            "rest": true
+          }
+        ]
+      }
     },
     {
       "week": 5,
@@ -362,7 +714,95 @@
       "musclesWorked": [],
       "sessionDates": [],
       "memberComment": "",
-      "weeklyRoutine": null
+      "weeklyRoutine": {
+        "weekKey": "2026-W31-kwsy",
+        "note": "🎯 습관 형성 루틴 · 5주차",
+        "days": [
+          {
+            "day": "월",
+            "workout": "PT 레슨",
+            "rest": false
+          },
+          {
+            "day": "화",
+            "workout": "휴식",
+            "rest": true
+          },
+          {
+            "day": "수",
+            "workout": "전신 기초",
+            "rest": false,
+            "note": "운동 습관을 만들어가는 전신 기초 세션이에요. 많은 동작보다 기본 동작을 정확하게 하는 게 목표입니다. 허리 군살을 빼는 데 가장 효과적인 기초 근력+유산소 조합으로 구성했습니다.",
+            "plan": [
+              {
+                "name": "맨몸 스쿼트",
+                "sets": 3,
+                "reps": 12,
+                "weight": "-"
+              },
+              {
+                "name": "힙브릿지",
+                "sets": 3,
+                "reps": 15,
+                "weight": "-"
+              },
+              {
+                "name": "무릎 푸쉬업",
+                "sets": 3,
+                "reps": 8,
+                "weight": "-"
+              },
+              {
+                "name": "플랭크",
+                "sets": 3,
+                "reps": 1,
+                "weight": "20초"
+              },
+              {
+                "name": "빠른 걷기",
+                "sets": 1,
+                "reps": 1,
+                "weight": "15분"
+              }
+            ]
+          },
+          {
+            "day": "목",
+            "workout": "휴식",
+            "rest": true
+          },
+          {
+            "day": "금",
+            "workout": "휴식",
+            "rest": true
+          },
+          {
+            "day": "토",
+            "workout": "유산소",
+            "rest": false,
+            "note": "가볍게 걷는 것만으로도 훌륭한 운동이에요. 주말 산책으로 칼로리를 소모하고, 스트레칭으로 허리 주변 근육을 풀어줍니다.",
+            "plan": [
+              {
+                "name": "파워워킹/산책",
+                "sets": 1,
+                "reps": 1,
+                "weight": "20-30분"
+              },
+              {
+                "name": "가벼운 스트레칭",
+                "sets": 1,
+                "reps": 1,
+                "weight": "10분"
+              }
+            ]
+          },
+          {
+            "day": "일",
+            "workout": "휴식",
+            "rest": true
+          }
+        ]
+      }
     }
   ],
   "quotes": [

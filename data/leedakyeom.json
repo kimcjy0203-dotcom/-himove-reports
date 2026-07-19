@@ -173,7 +173,135 @@
       "pain": "있음",
       "sessionDates": [
         "2026-07-01"
-      ]
+      ],
+      "weeklyRoutine": {
+        "weekKey": "2026-W27-ldky",
+        "note": "🎯 재활+자세교정 루틴 (어깨·발목 주의) · 1주차",
+        "days": [
+          {
+            "day": "월",
+            "workout": "PT 레슨",
+            "rest": false
+          },
+          {
+            "day": "화",
+            "workout": "휴식",
+            "rest": true
+          },
+          {
+            "day": "수",
+            "workout": "자세교정+코어",
+            "rest": false,
+            "note": "척추 정렬과 코어 안정화를 중심으로 한 세션이에요. 아킬레스와 우측 어깨에 부담 없는 동작만 골랐습니다. 데드버그·버드독으로 깊은 코어를 자극하고, 턱 당기기로 목 자세를 바로잡습니다.",
+            "plan": [
+              {
+                "name": "고양이-소 스트레칭",
+                "sets": 1,
+                "reps": 10,
+                "weight": "척추 이완"
+              },
+              {
+                "name": "턱 당기기 (Chin Tuck)",
+                "sets": 3,
+                "reps": 10,
+                "weight": "목 자세 교정"
+              },
+              {
+                "name": "데드버그",
+                "sets": 3,
+                "reps": 8,
+                "weight": "양쪽"
+              },
+              {
+                "name": "버드독",
+                "sets": 3,
+                "reps": 8,
+                "weight": "양쪽"
+              },
+              {
+                "name": "폼롤러 흉추 이완 (있는 경우)",
+                "sets": 1,
+                "reps": 1,
+                "weight": "5분"
+              }
+            ]
+          },
+          {
+            "day": "목",
+            "workout": "휴식",
+            "rest": true
+          },
+          {
+            "day": "금",
+            "workout": "하체+하체 안정화",
+            "rest": false,
+            "note": "어깨를 전혀 사용하지 않고 하체와 코어만 자극하는 날이에요. 아킬레스에 부담을 주는 카프레이즈는 제외하고, 누워서 엉덩이와 허벅지를 안전하게 강화합니다.",
+            "plan": [
+              {
+                "name": "힙브릿지",
+                "sets": 3,
+                "reps": 15,
+                "weight": "천천히"
+              },
+              {
+                "name": "사이드 라잉 힙 어브덕션",
+                "sets": 3,
+                "reps": 12,
+                "weight": "양쪽"
+              },
+              {
+                "name": "클램셸",
+                "sets": 3,
+                "reps": 12,
+                "weight": "양쪽"
+              },
+              {
+                "name": "의자 앉았다 일어서기",
+                "sets": 3,
+                "reps": 10,
+                "weight": "양손 교차 가슴"
+              },
+              {
+                "name": "발목 아이소메트릭 (수건 저항)",
+                "sets": 2,
+                "reps": 10,
+                "weight": "아킬레스 재활"
+              }
+            ]
+          },
+          {
+            "day": "토",
+            "workout": "휴식",
+            "rest": true
+          },
+          {
+            "day": "일",
+            "workout": "가벼운 스트레칭",
+            "rest": false,
+            "note": "회복을 돕는 이완 세션이에요. 어깨는 통증 없는 범위에서만 부드럽게 움직이고, 고관절과 등 스트레칭으로 한 주 피로를 풀어줍니다.",
+            "plan": [
+              {
+                "name": "고관절 굴곡근 스트레칭",
+                "sets": 1,
+                "reps": 1,
+                "weight": "양쪽 30초"
+              },
+              {
+                "name": "어깨 부드러운 돌리기 (통증 없는 범위)",
+                "sets": 1,
+                "reps": 10,
+                "weight": "양쪽"
+              },
+              {
+                "name": "목·등 가벼운 스트레칭",
+                "sets": 1,
+                "reps": 1,
+                "weight": "10분"
+              }
+            ]
+          }
+        ]
+      }
     },
     {
       "week": 2,
@@ -205,7 +333,134 @@
       "musclesWorked": [],
       "sessionDates": [],
       "memberComment": "",
-      "weeklyRoutine": null
+      "weeklyRoutine": {
+        "weekKey": "2026-W28-ldky",
+        "note": "🎯 재활+자세교정 루틴 (어깨·발목 주의) · 2주차",
+        "days": [
+          {
+            "day": "월",
+            "workout": "PT 레슨",
+            "rest": false
+          },
+          {
+            "day": "화",
+            "workout": "휴식",
+            "rest": true
+          },
+          {
+            "day": "수",
+            "workout": "자세교정+코어",
+            "rest": false,
+            "note": "척추 정렬과 코어 안정화를 중심으로 한 세션이에요. 아킬레스와 우측 어깨에 부담 없는 동작만 골랐습니다. 데드버그·버드독으로 깊은 코어를 자극하고, 턱 당기기로 목 자세를 바로잡습니다.",
+            "plan": [
+              {
+                "name": "고양이-소 스트레칭",
+                "sets": 1,
+                "reps": 10,
+                "weight": "척추 이완"
+              },
+              {
+                "name": "턱 당기기 (Chin Tuck)",
+                "sets": 3,
+                "reps": 10,
+                "weight": "목 자세 교정"
+              },
+              {
+                "name": "데드버그",
+                "sets": 3,
+                "reps": 8,
+                "weight": "양쪽"
+              },
+              {
+                "name": "버드독",
+                "sets": 3,
+                "reps": 8,
+                "weight": "양쪽"
+              },
+              {
+                "name": "폼롤러 흉추 이완 (있는 경우)",
+                "sets": 1,
+                "reps": 1,
+                "weight": "5분"
+              }
+            ]
+          },
+          {
+            "day": "목",
+            "workout": "휴식",
+            "rest": true
+          },
+          {
+            "day": "금",
+            "workout": "하체+하체 안정화",
+            "rest": false,
+            "note": "어깨를 전혀 사용하지 않고 하체와 코어만 자극하는 날이에요. 아킬레스에 부담을 주는 카프레이즈는 제외하고, 누워서 엉덩이와 허벅지를 안전하게 강화합니다.",
+            "plan": [
+              {
+                "name": "힙브릿지",
+                "sets": 3,
+                "reps": 15,
+                "weight": "천천히"
+              },
+              {
+                "name": "사이드 라잉 힙 어브덕션",
+                "sets": 3,
+                "reps": 12,
+                "weight": "양쪽"
+              },
+              {
+                "name": "클램셸",
+                "sets": 3,
+                "reps": 12,
+                "weight": "양쪽"
+              },
+              {
+                "name": "의자 앉았다 일어서기",
+                "sets": 3,
+                "reps": 10,
+                "weight": "양손 교차 가슴"
+              },
+              {
+                "name": "발목 아이소메트릭 (수건 저항)",
+                "sets": 2,
+                "reps": 10,
+                "weight": "아킬레스 재활"
+              }
+            ]
+          },
+          {
+            "day": "토",
+            "workout": "휴식",
+            "rest": true
+          },
+          {
+            "day": "일",
+            "workout": "가벼운 스트레칭",
+            "rest": false,
+            "note": "회복을 돕는 이완 세션이에요. 어깨는 통증 없는 범위에서만 부드럽게 움직이고, 고관절과 등 스트레칭으로 한 주 피로를 풀어줍니다.",
+            "plan": [
+              {
+                "name": "고관절 굴곡근 스트레칭",
+                "sets": 1,
+                "reps": 1,
+                "weight": "양쪽 30초"
+              },
+              {
+                "name": "어깨 부드러운 돌리기 (통증 없는 범위)",
+                "sets": 1,
+                "reps": 10,
+                "weight": "양쪽"
+              },
+              {
+                "name": "목·등 가벼운 스트레칭",
+                "sets": 1,
+                "reps": 1,
+                "weight": "10분"
+              }
+            ]
+          }
+        ]
+      }
     },
     {
       "week": 3,
@@ -283,7 +538,134 @@
         "2026-07-15"
       ],
       "memberComment": "",
-      "weeklyRoutine": null
+      "weeklyRoutine": {
+        "weekKey": "2026-W29-ldky",
+        "note": "🎯 재활+자세교정 루틴 (어깨·발목 주의) · 3주차",
+        "days": [
+          {
+            "day": "월",
+            "workout": "PT 레슨",
+            "rest": false
+          },
+          {
+            "day": "화",
+            "workout": "휴식",
+            "rest": true
+          },
+          {
+            "day": "수",
+            "workout": "자세교정+코어",
+            "rest": false,
+            "note": "척추 정렬과 코어 안정화를 중심으로 한 세션이에요. 아킬레스와 우측 어깨에 부담 없는 동작만 골랐습니다. 데드버그·버드독으로 깊은 코어를 자극하고, 턱 당기기로 목 자세를 바로잡습니다.",
+            "plan": [
+              {
+                "name": "고양이-소 스트레칭",
+                "sets": 1,
+                "reps": 10,
+                "weight": "척추 이완"
+              },
+              {
+                "name": "턱 당기기 (Chin Tuck)",
+                "sets": 3,
+                "reps": 10,
+                "weight": "목 자세 교정"
+              },
+              {
+                "name": "데드버그",
+                "sets": 3,
+                "reps": 8,
+                "weight": "양쪽"
+              },
+              {
+                "name": "버드독",
+                "sets": 3,
+                "reps": 8,
+                "weight": "양쪽"
+              },
+              {
+                "name": "폼롤러 흉추 이완 (있는 경우)",
+                "sets": 1,
+                "reps": 1,
+                "weight": "5분"
+              }
+            ]
+          },
+          {
+            "day": "목",
+            "workout": "휴식",
+            "rest": true
+          },
+          {
+            "day": "금",
+            "workout": "하체+하체 안정화",
+            "rest": false,
+            "note": "어깨를 전혀 사용하지 않고 하체와 코어만 자극하는 날이에요. 아킬레스에 부담을 주는 카프레이즈는 제외하고, 누워서 엉덩이와 허벅지를 안전하게 강화합니다.",
+            "plan": [
+              {
+                "name": "힙브릿지",
+                "sets": 3,
+                "reps": 15,
+                "weight": "천천히"
+              },
+              {
+                "name": "사이드 라잉 힙 어브덕션",
+                "sets": 3,
+                "reps": 12,
+                "weight": "양쪽"
+              },
+              {
+                "name": "클램셸",
+                "sets": 3,
+                "reps": 12,
+                "weight": "양쪽"
+              },
+              {
+                "name": "의자 앉았다 일어서기",
+                "sets": 3,
+                "reps": 10,
+                "weight": "양손 교차 가슴"
+              },
+              {
+                "name": "발목 아이소메트릭 (수건 저항)",
+                "sets": 2,
+                "reps": 10,
+                "weight": "아킬레스 재활"
+              }
+            ]
+          },
+          {
+            "day": "토",
+            "workout": "휴식",
+            "rest": true
+          },
+          {
+            "day": "일",
+            "workout": "가벼운 스트레칭",
+            "rest": false,
+            "note": "회복을 돕는 이완 세션이에요. 어깨는 통증 없는 범위에서만 부드럽게 움직이고, 고관절과 등 스트레칭으로 한 주 피로를 풀어줍니다.",
+            "plan": [
+              {
+                "name": "고관절 굴곡근 스트레칭",
+                "sets": 1,
+                "reps": 1,
+                "weight": "양쪽 30초"
+              },
+              {
+                "name": "어깨 부드러운 돌리기 (통증 없는 범위)",
+                "sets": 1,
+                "reps": 10,
+                "weight": "양쪽"
+              },
+              {
+                "name": "목·등 가벼운 스트레칭",
+                "sets": 1,
+                "reps": 1,
+                "weight": "10분"
+              }
+            ]
+          }
+        ]
+      }
     },
     {
       "week": 4,
@@ -315,7 +697,134 @@
       "musclesWorked": [],
       "sessionDates": [],
       "memberComment": "",
-      "weeklyRoutine": null
+      "weeklyRoutine": {
+        "weekKey": "2026-W30-ldky",
+        "note": "🎯 재활+자세교정 루틴 (어깨·발목 주의) · 4주차",
+        "days": [
+          {
+            "day": "월",
+            "workout": "PT 레슨",
+            "rest": false
+          },
+          {
+            "day": "화",
+            "workout": "휴식",
+            "rest": true
+          },
+          {
+            "day": "수",
+            "workout": "자세교정+코어",
+            "rest": false,
+            "note": "척추 정렬과 코어 안정화를 중심으로 한 세션이에요. 아킬레스와 우측 어깨에 부담 없는 동작만 골랐습니다. 데드버그·버드독으로 깊은 코어를 자극하고, 턱 당기기로 목 자세를 바로잡습니다.",
+            "plan": [
+              {
+                "name": "고양이-소 스트레칭",
+                "sets": 1,
+                "reps": 10,
+                "weight": "척추 이완"
+              },
+              {
+                "name": "턱 당기기 (Chin Tuck)",
+                "sets": 3,
+                "reps": 10,
+                "weight": "목 자세 교정"
+              },
+              {
+                "name": "데드버그",
+                "sets": 3,
+                "reps": 8,
+                "weight": "양쪽"
+              },
+              {
+                "name": "버드독",
+                "sets": 3,
+                "reps": 8,
+                "weight": "양쪽"
+              },
+              {
+                "name": "폼롤러 흉추 이완 (있는 경우)",
+                "sets": 1,
+                "reps": 1,
+                "weight": "5분"
+              }
+            ]
+          },
+          {
+            "day": "목",
+            "workout": "휴식",
+            "rest": true
+          },
+          {
+            "day": "금",
+            "workout": "하체+하체 안정화",
+            "rest": false,
+            "note": "어깨를 전혀 사용하지 않고 하체와 코어만 자극하는 날이에요. 아킬레스에 부담을 주는 카프레이즈는 제외하고, 누워서 엉덩이와 허벅지를 안전하게 강화합니다.",
+            "plan": [
+              {
+                "name": "힙브릿지",
+                "sets": 3,
+                "reps": 15,
+                "weight": "천천히"
+              },
+              {
+                "name": "사이드 라잉 힙 어브덕션",
+                "sets": 3,
+                "reps": 12,
+                "weight": "양쪽"
+              },
+              {
+                "name": "클램셸",
+                "sets": 3,
+                "reps": 12,
+                "weight": "양쪽"
+              },
+              {
+                "name": "의자 앉았다 일어서기",
+                "sets": 3,
+                "reps": 10,
+                "weight": "양손 교차 가슴"
+              },
+              {
+                "name": "발목 아이소메트릭 (수건 저항)",
+                "sets": 2,
+                "reps": 10,
+                "weight": "아킬레스 재활"
+              }
+            ]
+          },
+          {
+            "day": "토",
+            "workout": "휴식",
+            "rest": true
+          },
+          {
+            "day": "일",
+            "workout": "가벼운 스트레칭",
+            "rest": false,
+            "note": "회복을 돕는 이완 세션이에요. 어깨는 통증 없는 범위에서만 부드럽게 움직이고, 고관절과 등 스트레칭으로 한 주 피로를 풀어줍니다.",
+            "plan": [
+              {
+                "name": "고관절 굴곡근 스트레칭",
+                "sets": 1,
+                "reps": 1,
+                "weight": "양쪽 30초"
+              },
+              {
+                "name": "어깨 부드러운 돌리기 (통증 없는 범위)",
+                "sets": 1,
+                "reps": 10,
+                "weight": "양쪽"
+              },
+              {
+                "name": "목·등 가벼운 스트레칭",
+                "sets": 1,
+                "reps": 1,
+                "weight": "10분"
+              }
+            ]
+          }
+        ]
+      }
     },
     {
       "week": 5,
@@ -347,7 +856,134 @@
       "musclesWorked": [],
       "sessionDates": [],
       "memberComment": "",
-      "weeklyRoutine": null
+      "weeklyRoutine": {
+        "weekKey": "2026-W31-ldky",
+        "note": "🎯 재활+자세교정 루틴 (어깨·발목 주의) · 5주차",
+        "days": [
+          {
+            "day": "월",
+            "workout": "PT 레슨",
+            "rest": false
+          },
+          {
+            "day": "화",
+            "workout": "휴식",
+            "rest": true
+          },
+          {
+            "day": "수",
+            "workout": "자세교정+코어",
+            "rest": false,
+            "note": "척추 정렬과 코어 안정화를 중심으로 한 세션이에요. 아킬레스와 우측 어깨에 부담 없는 동작만 골랐습니다. 데드버그·버드독으로 깊은 코어를 자극하고, 턱 당기기로 목 자세를 바로잡습니다.",
+            "plan": [
+              {
+                "name": "고양이-소 스트레칭",
+                "sets": 1,
+                "reps": 10,
+                "weight": "척추 이완"
+              },
+              {
+                "name": "턱 당기기 (Chin Tuck)",
+                "sets": 3,
+                "reps": 10,
+                "weight": "목 자세 교정"
+              },
+              {
+                "name": "데드버그",
+                "sets": 3,
+                "reps": 8,
+                "weight": "양쪽"
+              },
+              {
+                "name": "버드독",
+                "sets": 3,
+                "reps": 8,
+                "weight": "양쪽"
+              },
+              {
+                "name": "폼롤러 흉추 이완 (있는 경우)",
+                "sets": 1,
+                "reps": 1,
+                "weight": "5분"
+              }
+            ]
+          },
+          {
+            "day": "목",
+            "workout": "휴식",
+            "rest": true
+          },
+          {
+            "day": "금",
+            "workout": "하체+하체 안정화",
+            "rest": false,
+            "note": "어깨를 전혀 사용하지 않고 하체와 코어만 자극하는 날이에요. 아킬레스에 부담을 주는 카프레이즈는 제외하고, 누워서 엉덩이와 허벅지를 안전하게 강화합니다.",
+            "plan": [
+              {
+                "name": "힙브릿지",
+                "sets": 3,
+                "reps": 15,
+                "weight": "천천히"
+              },
+              {
+                "name": "사이드 라잉 힙 어브덕션",
+                "sets": 3,
+                "reps": 12,
+                "weight": "양쪽"
+              },
+              {
+                "name": "클램셸",
+                "sets": 3,
+                "reps": 12,
+                "weight": "양쪽"
+              },
+              {
+                "name": "의자 앉았다 일어서기",
+                "sets": 3,
+                "reps": 10,
+                "weight": "양손 교차 가슴"
+              },
+              {
+                "name": "발목 아이소메트릭 (수건 저항)",
+                "sets": 2,
+                "reps": 10,
+                "weight": "아킬레스 재활"
+              }
+            ]
+          },
+          {
+            "day": "토",
+            "workout": "휴식",
+            "rest": true
+          },
+          {
+            "day": "일",
+            "workout": "가벼운 스트레칭",
+            "rest": false,
+            "note": "회복을 돕는 이완 세션이에요. 어깨는 통증 없는 범위에서만 부드럽게 움직이고, 고관절과 등 스트레칭으로 한 주 피로를 풀어줍니다.",
+            "plan": [
+              {
+                "name": "고관절 굴곡근 스트레칭",
+                "sets": 1,
+                "reps": 1,
+                "weight": "양쪽 30초"
+              },
+              {
+                "name": "어깨 부드러운 돌리기 (통증 없는 범위)",
+                "sets": 1,
+                "reps": 10,
+                "weight": "양쪽"
+              },
+              {
+                "name": "목·등 가벼운 스트레칭",
+                "sets": 1,
+                "reps": 1,
+                "weight": "10분"
+              }
+            ]
+          }
+        ]
+      }
     }
   ],
   "quotes": [
