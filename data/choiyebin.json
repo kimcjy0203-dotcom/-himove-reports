@@ -1473,5 +1473,6 @@
       }
     }
   ],
-  "hideLesson": true
+  "hideLesson": true,
+  "상태": "활성"
 }
