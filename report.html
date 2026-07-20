@@ -58,6 +58,14 @@ body > * { position: relative; z-index: 1; }
   box-shadow: 0 4px 20px rgba(100,150,230,0.10);
 }
 .card:has(.card-title.gold) { background: #ffffff; border-color: rgba(140,180,230,0.5); }
+.notice-banner {
+  background: rgba(255,243,224,0.92); backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(230,160,60,0.5); border-radius: 18px; padding: 14px 16px;
+  margin-bottom: 12px; display: flex; align-items: flex-start; gap: 10px;
+  box-shadow: 0 4px 16px rgba(230,140,30,0.1);
+}
+.notice-icon { font-size: 18px; flex-shrink: 0; line-height: 1.4; }
+.notice-text { font-size: 13px; line-height: 1.7; color: #7a4a10; font-weight: 500; }
 .card-title {
   font-size: 13px; font-weight: 700; letter-spacing: 0.5px; color: #7a95b8;
   margin-bottom: 18px; display: flex; align-items: center; justify-content: space-between;
@@ -627,6 +635,7 @@ html[data-theme="plum"] .muscle-tag { background:rgba(90,40,130,0.2); border-col
     <div id="purpose-grid" class="purpose-grid"></div>
     <div id="monthly-progress"></div>
   </div>
+  <div id="notice-section"></div>
   <div id="report-feedback"></div>
   <div class="card" id="goals-card" style="display:none"></div>
   <div id="diet-plan-section"></div>
@@ -758,6 +767,12 @@ function init(data) {
 
   /* 헤더 */
   if (!isMember) document.getElementById('report-subtitle').textContent = `${name} 월간 리포트`;
+
+  /* 공지 배너 */
+  const noticeEl = document.getElementById('notice-section');
+  if (data.notice) {
+    noticeEl.innerHTML = `<div class="notice-banner"><span class="notice-icon">📢</span><span class="notice-text">${data.notice}</span></div>`;
+  }
 
   /* 이번 달 누적 운동 횟수 (sessionDates + 캘린더 체크, 날짜 중복 제거) */
   function calcMonthlyCount() {
