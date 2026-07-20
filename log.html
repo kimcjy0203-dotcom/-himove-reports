@@ -574,7 +574,7 @@ function renderMember(member, data) {
   }
 
   const header = `<div class="member-header">
-    <div class="mh-top"><span class="mh-name">${data.name}</span>${data.상태==='종료'?'<span class="badge-ended">종료</span>':''}${ddayChip}<span class="mh-month">${data.month||''}</span><div class="mh-btns"><a class="mh-report-btn" href="report.html?token=${member.token}" target="_blank">리포트 →</a></div></div>
+    <div class="mh-top"><span class="mh-name">${data.name}</span>${data['상태']==='종료'?'<span class="badge-ended">종료</span>':''}${ddayChip}<span class="mh-month">${data.month||''}</span><div class="mh-btns"><a class="mh-report-btn" href="report.html?token=${member.token}" target="_blank">리포트 →</a></div></div>
     ${goalHtml}
     <div class="progress-wrap">
       <div class="progress-bar"><div class="progress-fill" style="width:${pct}%"></div></div>
@@ -596,7 +596,7 @@ function renderMember(member, data) {
   }
 
   const weeks = (data.weeks||[]).slice().reverse();
-  return `<div class="member-block${data.상태==='종료'?' ended':''}" data-name="${data.name}">${header}${fbHtml}${weeks.map(renderWeek).join('')}</div>`;
+  return `<div class="member-block${data['상태']==='종료'?' ended':''}" data-name="${data.name}">${header}${fbHtml}${weeks.map(renderWeek).join('')}</div>`;
 }
 
 const RAW = `https://raw.githubusercontent.com/${GH_OWNER}/${GH_REPO}/main`;
