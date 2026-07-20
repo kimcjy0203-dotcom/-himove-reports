@@ -640,7 +640,6 @@ html[data-theme="plum"] .muscle-tag { background:rgba(90,40,130,0.2); border-col
   <div id="report-feedback"></div>
   <div class="week-nav" id="week-nav"></div>
   <div id="week-panels"></div>
-  <div id="diet-plan-section"></div>
   <div id="monthly-summary-section"></div>
   <div id="quote-section"></div>
   <div class="footer">HiMove &nbsp;·&nbsp; 월간 회원 리포트<br>본 리포트는 트레이너와 AI가 함께 작성합니다</div>
@@ -882,39 +881,6 @@ function init(data) {
     }
   }
 
-  /* 식단표 */
-  if (data.dietPlan) {
-    const dp = data.dietPlan;
-    const mealsHtml = (dp.meals || []).map(m => `
-      <div class="diet-meal">
-        <div class="diet-meal-head">
-          <span class="diet-meal-label">${m.label}</span>
-          <span class="diet-meal-sub">${m.kcal} kcal &nbsp;·&nbsp; 단백질 ${m.protein}g</span>
-        </div>
-        <div class="diet-item-list">
-          ${(m.items || []).map(it => `
-            <div class="diet-item">
-              <span class="diet-item-name">${it.name}</span>
-              <span class="diet-item-amount">${it.amount}</span>
-              <span class="diet-item-kcal">${it.kcal}</span>
-            </div>`).join('')}
-        </div>
-      </div>`).join('');
-    const totalProtein = (dp.meals || []).reduce((s, m) => s + (m.protein || 0), 0);
-    document.getElementById('diet-plan-section').innerHTML = `
-      <div class="card">
-        <div class="card-title blue">식단표</div>
-        <div class="diet-header">
-          <div class="diet-badges">
-            <span class="diet-badge kcal">하루 ${dp.targetKcal} kcal</span>
-            <span class="diet-badge deficit">목표 적자 ${dp.deficit} kcal</span>
-            <span class="diet-badge protein">단백질 ${totalProtein}g</span>
-          </div>
-        </div>
-        ${mealsHtml}
-        ${dp.note ? `<div class="diet-note">${dp.note}</div>` : ''}
-      </div>`;
-  }
 
   /* 주차 탭 & 패널 */
   let activeChart = {};
@@ -1274,6 +1240,14 @@ function init(data) {
     });
   };
 
+  function buildDietCard() {
+    const dp = data.dietPlan;
+    if (!dp) return '';
+    const totalProtein = (dp.meals || []).reduce((s, m) => s + (m.protein || 0), 0);
+    const mealsHtml = (dp.meals || []).map(m => `<div class="diet-meal"><div class="diet-meal-head"><span class="diet-meal-label">${m.label}</span><span class="diet-meal-sub">${m.kcal} kcal &nbsp;·&nbsp; 단백질 ${m.protein}g</span></div><div class="diet-item-list">${(m.items || []).map(it => `<div class="diet-item"><span class="diet-item-name">${it.name}</span><span class="diet-item-amount">${it.amount}</span><span class="diet-item-kcal">${it.kcal}</span></div>`).join('')}</div></div>`).join('');
+    return `<div class="card"><div class="card-title blue">식단표</div><div class="diet-header"><div class="diet-badges"><span class="diet-badge kcal">하루 ${dp.targetKcal} kcal</span><span class="diet-badge deficit">목표 적자 ${dp.deficit} kcal</span><span class="diet-badge protein">단백질 ${totalProtein}g</span></div></div>${mealsHtml}${dp.note ? `<div class="diet-note">${dp.note}</div>` : ''}</div>`;
+  }
+
   function buildPanel(w, idx) {
     const hasRoutine = w.weeklyRoutine?.days?.some(d => d.plan?.length);
     if (false) return `<div class="week-panel" data-idx="${idx}"><div class="week-empty"><div class="we-num">${w.week}주차</div><div class="we-msg">아직 입력 전입니다.<br>수업 후 트레이너가 업데이트해요.</div></div>${collapsible('운동 처방 가이드', 'blue', '<div style="display:flex;align-items:center;gap:8px;margin-bottom:6px"><span style="font-size:11px;color:#a0b8d0;white-space:nowrap">기준 중량 (1RM)</span><input id="train-kg-'+idx+'" type="number" min="1" max="500" value="60" style="width:52px;background:rgba(255,255,255,0.6);border:1px solid rgba(160,190,230,0.4);border-radius:8px;padding:4px 6px;font-size:13px;font-weight:700;color:#2a3a50;text-align:center;outline:none;font-family:inherit"><span style="font-size:11px;color:#a0b8d0">kg</span></div><div style="display:flex;align-items:center;gap:5px;margin-bottom:10px;padding:6px 8px;background:rgba(255,255,255,0.35);border-radius:8px;border:1px solid rgba(160,190,230,0.2)"><span style="font-size:10px;color:#b0c8e0;white-space:nowrap">1RM 모를 때</span><input id="est-w-'+idx+'" type="number" min="1" max="400" placeholder="무게" style="width:46px;background:rgba(255,255,255,0.6);border:1px solid rgba(160,190,230,0.3);border-radius:6px;padding:3px 4px;font-size:11px;font-weight:600;color:#2a3a50;text-align:center;outline:none;font-family:inherit"><span style="font-size:10px;color:#c0d0e0">kg</span><input id="est-r-'+idx+'" type="number" min="1" max="30" placeholder="횟수" style="width:38px;background:rgba(255,255,255,0.6);border:1px solid rgba(160,190,230,0.3);border-radius:6px;padding:3px 4px;font-size:11px;font-weight:600;color:#2a3a50;text-align:center;outline:none;font-family:inherit"><span style="font-size:10px;color:#c0d0e0">회</span><span style="font-size:10px;color:#c0d0e0">→</span><span id="est-result-'+idx+'" style="font-size:11px;font-weight:700;color:#5a8ab8;min-width:28px">—</span><span style="font-size:10px;color:#c0d0e0">kg</span></div><div id="train-table-'+idx+'"></div>')}${collapsible('유산소 강도 가이드', 'blue', '<div style="display:flex;align-items:center;gap:8px;margin-bottom:4px"><span style="font-size:11px;color:#a0b8d0;white-space:nowrap">오늘 안정시 심박수</span><input id="card-rhr-'+idx+'" type="number" min="40" max="120" style="width:52px;background:rgba(255,255,255,0.6);border:1px solid rgba(160,190,230,0.4);border-radius:8px;padding:4px 6px;font-size:13px;font-weight:700;color:#2a3a50;text-align:center;outline:none;font-family:inherit"><span style="font-size:11px;color:#a0b8d0">bpm</span></div><div id="card-formula-'+idx+'" style="font-size:10px;color:#c0d0e0;margin-bottom:8px;padding:0 2px"></div><div id="card-zones-'+idx+'" style="display:flex;flex-direction:column;gap:5px"></div>')}</div>`;
@@ -1327,6 +1301,7 @@ function init(data) {
       ${hideLesson ? '' : collapsible('<span style="display:flex;align-items:center"><span class="req-dot"></span>수업 내용</span>', 'blue', `<div class="sub-label">요약</div><div class="summary-list">${summaryItems}</div>${HR}<div class="sub-label">운동 피드백</div><div class="exercise-grid">${exItems}</div>${w.musclesWorked?.length?`${HR}<div class="sub-label">운동 부위</div><div class="muscle-tag-row">${w.musclesWorked.map(m=>`<span class="muscle-tag">${MUSCLE_DATA[m]?.name||m}</span>`).join("")}</div>`:""}`, true)}
       ${collapsible('<span style="display:flex;align-items:center"><span class="req-dot"></span>운동 현황</span>', 'blue', `<div class="sub-label">주요 리프트</div><div class="lift-grid">${liftItems}</div>${HR}<div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:10px"><div class="sub-label" style="margin-bottom:0">이번 주 트레이닝</div><span class="wk-count" id="wk-count-${idx}">주 0회</span></div><div class="weekly-cal" id="weekly-cal-${idx}">${calDays}</div><div class="note">${r.note||''}</div>`, true)}
       ${collapsible('📋 이번 주 상태', 'blue', `<div id="ds-${idx}"><div style="font-size:11px;color:#a0b8d0;font-weight:600;margin-bottom:6px">📅 ${new Date().toLocaleDateString('ko-KR',{month:'long',day:'numeric'})} 기준 · 이번 주 누적</div><div class="sub-label"><span class="dot" style="background:#f4a07e"></span>컨디션</div><div class="day-count" data-field="condition"></div><div class="check-row">${dailyChips('condition',['매우 좋음','좋음','보통','피곤함','매우 피곤함'])}</div><textarea class="daily-note" data-note="condition_note" placeholder="메모..." rows="1"></textarea>${HRS}<div class="sub-label"><span class="dot" style="background:#a78bde"></span>수면</div><div class="day-count" data-field="sleep"></div><div class="check-row">${dailyChips('sleep',['매우 나쁨','나쁨','보통','좋음','매우 좋음'])}</div><textarea class="daily-note" data-note="sleep_note" placeholder="메모..." rows="1"></textarea>${HRS}<div class="sub-label"><span class="dot" style="background:#6dc99c"></span>신체 불편</div><div class="day-count" data-field="pain"></div><div class="check-row">${dailyChips('pain',['없음','있음'])}</div><textarea class="daily-note" data-note="pain_note" placeholder="메모..." rows="1"></textarea>${HRS}<div class="sub-label"><span class="dot" style="background:#f0c96a"></span>영양 상태</div><div class="day-count" data-field="nutrition"></div><div class="check-row">${dailyChips('nutrition',['매우 나쁨','나쁨','보통','좋음','매우 좋음'])}</div><textarea class="daily-note" data-note="nutrition_note" placeholder="메모..." rows="1"></textarea>${HRS}<div class="sub-label" style="margin-bottom:4px">✏️ 개인 운동 메모</div><div style="font-size:11px;color:#a0b8d0;margin-bottom:8px">홈트·자유 운동 내용 — 주간 누적 기록</div><textarea id="wmemo-${idx}" class="daily-note" placeholder="예) 유산소 30분, 스쿼트 3×15, 플랭크 1분..." rows="2" style="min-height:40px"></textarea>${HRS}<button class="send-btn" style="width:100%;padding:15px;border:none;border-radius:16px;background:linear-gradient(135deg,rgba(100,155,220,0.18),rgba(80,130,200,0.22));color:#2a5a9a;font-size:14px;font-weight:800;cursor:pointer;letter-spacing:0.3px;border:1px solid rgba(100,155,220,0.3)">💬 트레이너에게 오늘 상태 전송</button></div>`, true)}
+      ${buildDietCard()}
       ${nutritionPlan ? collapsible('🍽 식사 가이드 & 기록', 'green', buildNutritionSection(nutritionPlan, idx)) : ''}
       ${(w.review?.good || w.review?.caution || w.review?.suggest || w.trainerComment) ? collapsible('<span style="display:flex;align-items:center"><span class="req-dot"></span>트레이너 평가</span>', 'gold', `${w.review?.good?`<div style="margin-bottom:14px"><div class="sub-label">✓ 잘 하고 있는 점</div><div class="msg green">${w.review.good}</div></div>`:''}${w.review?.caution?`<div style="margin-bottom:14px"><div class="sub-label" style="color:#e05050">⚠ 주의할 점</div><div class="msg gold">${w.review.caution}</div></div>`:''}${w.review?.suggest?`<div style="margin-bottom:14px"><div class="sub-label">→ 권장 사항</div><div class="msg">${w.review.suggest}</div></div>`:''}${w.trainerComment ? `${HR}<div class="sub-label">트레이너 코멘트</div><div class="msg gold">${w.trainerComment}</div>` : ''}${!isMember && w.trainerDirection ? `${HR}<div class="sub-label">트레이닝 방향</div><div class="msg">${w.trainerDirection}</div>` : ''}`) : ''}
       ${collapsible('📊 체성분', 'green', `${buildCountdown(bd.lastMeasured)}<div style="display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:${bd.lastMeasured?'14px':'0'}"><div style="background:linear-gradient(145deg,#fff,#f5f8ff);border-radius:20px;padding:18px 10px;text-align:center;border:1px solid rgba(90,175,130,0.2);box-shadow:0 2px 12px rgba(90,175,130,0.08)"><div style="font-size:10px;color:#90b8a0;font-weight:700;letter-spacing:0.5px;margin-bottom:4px">체중</div><div style="font-size:30px;font-weight:800;color:#1a2a40;letter-spacing:-2px;line-height:1">${lW??'—'}</div><div style="font-size:10px;color:#b0c0d4;margin-top:3px">kg</div></div><div style="background:linear-gradient(145deg,#fff,#f8f5ff);border-radius:20px;padding:18px 10px;text-align:center;border:1px solid rgba(210,120,110,0.2);box-shadow:0 2px 12px rgba(210,120,110,0.06)"><div style="font-size:10px;color:#c09090;font-weight:700;letter-spacing:0.5px;margin-bottom:4px">체지방</div><div style="font-size:30px;font-weight:800;color:#1a2a40;letter-spacing:-2px;line-height:1">${lF??'—'}</div><div style="font-size:10px;color:#b0c0d4;margin-top:3px">kg</div></div><div style="background:linear-gradient(145deg,#fff,#f5f7ff);border-radius:20px;padding:18px 10px;text-align:center;border:1px solid rgba(90,154,210,0.2);box-shadow:0 2px 12px rgba(90,154,210,0.08)"><div style="font-size:10px;color:#8aaac8;font-weight:700;letter-spacing:0.5px;margin-bottom:4px">근육</div><div style="font-size:30px;font-weight:800;color:#1a2a40;letter-spacing:-2px;line-height:1">${lM??'—'}</div><div style="font-size:10px;color:#b0c0d4;margin-top:3px">kg</div></div></div><div class="delta-row"><div class="delta-box"><span class="dlbl">체중 변화</span><span class="dval ${dW.cls}">${dW.text}</span></div><div class="delta-box"><span class="dlbl">체지방 변화</span><span class="dval ${dF.cls}">${dF.text}</span></div><div class="delta-box"><span class="dlbl">근육 변화</span><span class="dval ${dM.cls}">${dM.text}</span></div></div>${HR}<div class="sub-label">변화 추이</div><div style="font-size:10px;font-weight:700;color:#90c8a8;letter-spacing:0.5px;margin-bottom:4px">체중</div><div style="position:relative;height:130px;margin-bottom:12px"><canvas id="bodyChart-${idx}"></canvas></div><div style="font-size:10px;font-weight:700;color:#7aaad4;letter-spacing:0.5px;margin-bottom:4px">골격근량 · 체지방량</div><div style="position:relative;height:130px;margin-bottom:14px"><canvas id="bodyChart2-${idx}"></canvas></div><div class="msg">${bd.comment}</div>`)}
