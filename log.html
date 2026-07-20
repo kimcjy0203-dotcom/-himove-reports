@@ -67,6 +67,8 @@ h1 { font-size: 20px; font-weight: 800; color: #1a2a40; letter-spacing: -0.8px; 
 .badges { display: flex; gap: 4px; flex-wrap: wrap; }
 .badge { font-size: 9px; font-weight: 700; border-radius: 5px; padding: 2px 6px; white-space: nowrap; }
 .badge-pain { background: #fce4ec; color: #c62828; }
+.badge-ended { font-size: 9px; font-weight: 700; border-radius: 4px; padding: 2px 7px; background: rgba(120,120,130,0.12); color: #888; border: 1px solid rgba(120,120,130,0.2); }
+.member-block.ended { opacity: 0.55; }
 .badge-weight { font-size: 10px; font-weight: 700; color: #3a5a80; }
 
 .s-badge { font-size: 9px; font-weight: 700; border-radius: 4px; padding: 2px 6px; }
@@ -572,7 +574,7 @@ function renderMember(member, data) {
   }
 
   const header = `<div class="member-header">
-    <div class="mh-top"><span class="mh-name">${data.name}</span>${ddayChip}<span class="mh-month">${data.month||''}</span><div class="mh-btns"><a class="mh-report-btn" href="report.html?token=${member.token}" target="_blank">리포트 →</a></div></div>
+    <div class="mh-top"><span class="mh-name">${data.name}</span>${data.상태==='종료'?'<span class="badge-ended">종료</span>':''}${ddayChip}<span class="mh-month">${data.month||''}</span><div class="mh-btns"><a class="mh-report-btn" href="report.html?token=${member.token}" target="_blank">리포트 →</a></div></div>
     ${goalHtml}
     <div class="progress-wrap">
       <div class="progress-bar"><div class="progress-fill" style="width:${pct}%"></div></div>
@@ -594,7 +596,7 @@ function renderMember(member, data) {
   }
 
   const weeks = (data.weeks||[]).slice().reverse();
-  return `<div class="member-block" data-name="${data.name}">${header}${fbHtml}${weeks.map(renderWeek).join('')}</div>`;
+  return `<div class="member-block${data.상태==='종료'?' ended':''}" data-name="${data.name}">${header}${fbHtml}${weeks.map(renderWeek).join('')}</div>`;
 }
 
 const RAW = `https://raw.githubusercontent.com/${GH_OWNER}/${GH_REPO}/main`;
