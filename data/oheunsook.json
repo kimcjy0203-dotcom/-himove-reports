@@ -565,16 +565,42 @@
       "label": "4주차",
       "date": "7/20",
       "mainMessage": "",
-      "summaries": [],
-      "exercises": [],
+      "summaries": [
+        {
+          "sessionDate": "2026-07-21",
+          "date": "2026년 7월 21일",
+          "items": [
+            {
+              "name": "컨벤셔널 데드리프트 (동작 학습)",
+              "detail": "워밍업"
+            },
+            {
+              "name": "스모 데드리프트 (동작 학습)",
+              "detail": "워밍업"
+            }
+          ]
+        }
+      ],
+      "exercises": [
+        {
+          "name": "컨벤셔널 데드리프트 (동작 학습)",
+          "note": "· note: 전체 자세 매우 좋았음 — 데드리프트는 시작 위치가 핵심<br>· 위에서 시작하면 등 주도, 아래에서 시작하면 하체 주도<br>· ① 고관절 접어 힙힌지 → ② 무릎 접으며 수직으로 내려가 바벨 잡기<br>· next: 하단 구간(바벨 잡은 직후→무릎 높이) 집중 반복 — 정강이 스치며 발로 지면 밀어내는 감각 익히기",
+          "next": ""
+        },
+        {
+          "name": "스모 데드리프트 (동작 학습)",
+          "note": "· note: 1→4단계 구간별 분리 연습 진행<br>· ① 힙힌지로 접근 ② 수직 하강으로 바벨 그립 ③ 정강이 스치며 무릎 높이까지 발로 지면 밀어 수직 상승 ④ 무릎 위부터는 고관절 펴내는 힙힌지로 마무리<br>· next: 하단 구간(①~③) 반복 연습 집중 — 바벨이 몸에서 멀어지지 않도록 정강이 밀착 유지",
+          "next": ""
+        }
+      ],
       "lifts": [],
       "bodyData": null,
       "condition": "",
-      "conditionNote": "",
+      "conditionNote": "하체 레슨 — 컨벤셔널·스모 데드리프트 기초 동작 학습. 전반적인 자세가 매우 좋았음. 하단 구간(1→4단계) 반복 연습 필요.",
       "sleep": "",
       "sleepNote": "",
       "stress": "",
-      "pain": "없음",
+      "pain": "있음",
       "painNote": "",
       "nutrition": "",
       "nutritionNote": "",
@@ -588,7 +614,9 @@
       "nextSessionMemo": "",
       "finalMessage": "",
       "musclesWorked": [],
-      "sessionDates": [],
+      "sessionDates": [
+        "2026-07-21"
+      ],
       "memberComment": "",
       "weeklyRoutine": {
         "weekKey": "2026-W30-oes",
