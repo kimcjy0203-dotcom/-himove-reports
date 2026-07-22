@@ -493,16 +493,51 @@
       "label": "4주차",
       "date": "7/20",
       "mainMessage": "",
-      "summaries": [],
-      "exercises": [],
+      "summaries": [
+        {
+          "sessionDate": "2026-07-23",
+          "date": "2026년 7월 23일",
+          "items": [
+            {
+              "name": "루마니안 데드리프트",
+              "detail": "3세트"
+            },
+            {
+              "name": "해머 시티드 로우",
+              "detail": "3세트 / 7.5kg"
+            },
+            {
+              "name": "렛풀다운",
+              "detail": "3세트 / 12.5kg"
+            }
+          ]
+        }
+      ],
+      "exercises": [
+        {
+          "name": "루마니안 데드리프트",
+          "note": "· note: 초반 힙힌지 패턴이 명확하지 않았으나 세트 반복하며 점차 자세 안정화<br>· next: 내려갈 때 무릎은 살짝 구부린 채 고정하고, 엉덩이를 뒤로 보내는 감각에 집중 — 등이 먼저 구부러지지 않도록 복압 유지",
+          "next": ""
+        },
+        {
+          "name": "해머 시티드 로우",
+          "note": "· note: 동작 순서 — ① 가슴을 사선 위로 끌어올리며 흉추 신전 먼저 → ② 그 자세 유지한 채 팔꿈치를 아래·뒤로 누르듯 당기기<br>· 가슴이 열린 뒤에 팔꿈치를 당겨야 광배근이 제대로 수축됨<br>· next: 순서 ①→② 지키며 당기는 내내 가슴 열림 유지",
+          "next": ""
+        },
+        {
+          "name": "렛풀다운",
+          "note": "· note: 동작 순서 — ① 바를 당기기 전 가슴을 사선 위로 끌어올려 흉추 신전 → ② 팔꿈치를 아래로 누르듯 당기며 광배근 수축<br>· 팔 힘으로 먼저 당기면 이두 개입이 커지므로 가슴 끌어올리기가 반드시 선행<br>· next: 바에 매달린 느낌으로 흉추 신전 → 팔꿈치 누르기 순서 체득",
+          "next": ""
+        }
+      ],
       "lifts": [],
       "bodyData": null,
       "condition": "",
-      "conditionNote": "",
+      "conditionNote": "등 레슨 — 루마니안 데드리프트 힙힌지 패턴 초반 불명확했으나 세트 거듭하며 점진적으로 자세 개선됨.",
       "sleep": "",
       "sleepNote": "",
       "stress": "",
-      "pain": "없음",
+      "pain": "있음",
       "painNote": "",
       "nutrition": "",
       "nutritionNote": "",
@@ -516,7 +551,9 @@
       "nextSessionMemo": "",
       "finalMessage": "",
       "musclesWorked": [],
-      "sessionDates": [],
+      "sessionDates": [
+        "2026-07-23"
+      ],
       "memberComment": "",
       "weeklyRoutine": {
         "weekKey": "2026-W30-kjs",

@@ -745,16 +745,46 @@
       "label": "4주차",
       "date": "7/20",
       "mainMessage": "",
-      "summaries": [],
-      "exercises": [],
+      "summaries": [
+        {
+          "sessionDate": "2026-07-23",
+          "date": "2026년 7월 23일",
+          "items": [
+            {
+              "name": "고관절 후관절낭 이완 + 굴곡근 이완",
+              "detail": "워밍업"
+            },
+            {
+              "name": "싱글레그 힙힌지",
+              "detail": "3세트"
+            },
+            {
+              "name": "고관절 에어 플레인",
+              "detail": "3세트"
+            }
+          ]
+        }
+      ],
+      "exercises": [
+        {
+          "name": "싱글레그 힙힌지",
+          "note": "· note: 한 발 지지 상태에서 힙힌지 패턴 연습 — 왼쪽이 오른쪽보다 불안정하며 균형 잡기 어려움<br>· next: 왼쪽 지지 시 고관절 안정화 근육(둔근·고관절 외회전근) 의식적으로 수축하며 천천히 진행",
+          "next": ""
+        },
+        {
+          "name": "고관절 에어 플레인",
+          "note": "· note: 힙 오픈(고관절 외회전·외전) 가동범위가 아직 제한적 — 왼쪽에서 더 두드러짐<br>· next: 에어 플레인 동작 중 골반이 따라 돌지 않도록 고정하며 대퇴골 회전 범위 점진적으로 넓히기",
+          "next": ""
+        }
+      ],
       "lifts": [],
       "bodyData": null,
       "condition": "",
-      "conditionNote": "",
+      "conditionNote": "고관절 가동성 레슨 — 힙 오픈이 아직 제한적이며 왼쪽이 오른쪽보다 불안정한 상태. 운동 전 고관절 후관절낭 이완 + 고관절 굴곡근 이완 진행.",
       "sleep": "",
       "sleepNote": "",
       "stress": "",
-      "pain": "없음",
+      "pain": "있음",
       "painNote": "",
       "nutrition": "",
       "nutritionNote": "",
@@ -768,7 +798,9 @@
       "nextSessionMemo": "",
       "finalMessage": "",
       "musclesWorked": [],
-      "sessionDates": [],
+      "sessionDates": [
+        "2026-07-23"
+      ],
       "memberComment": "",
       "weeklyRoutine": {
         "weekKey": "2026-W30-kmj",
