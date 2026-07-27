@@ -737,10 +737,12 @@ const token    = params.get('token');
 if (directId) {
   loadMember(directId);
 } else if (token) {
-  fetch(`data/members.json?v=${Date.now()}`)
-    .then(r => { if (!r.ok) throw new Error(); return r.json(); })
-    .then(members => {
-      const member = members.find(m => m.token === token);
+  Promise.all([
+    fetch(`data/members.json?v=${Date.now()}`).then(r => r.ok ? r.json() : []).catch(() => []),
+    fetch(`data/ot-members.json?v=${Date.now()}`).then(r => r.ok ? r.json() : []).catch(() => []),
+  ])
+    .then(([members, otMembers]) => {
+      const member = [...members, ...otMembers].find(m => m.token === token);
       if (!member) throw new Error();
       loadMember(member.id);
     })
