@@ -552,6 +552,64 @@ function renderWeek(w) {
   </div>`;
 }
 
+const OT_ZONES = [
+  { label: 'Zone 1', pctLo: 0.50, pctHi: 0.60, color: '#6abf69', desc: '가벼운 회복' },
+  { label: 'Zone 2', pctLo: 0.60, pctHi: 0.70, color: '#42a5f5', desc: '지방 연소'   },
+  { label: 'Zone 3', pctLo: 0.70, pctHi: 0.80, color: '#ffa726', desc: '유산소 능력' },
+  { label: 'Zone 4', pctLo: 0.80, pctHi: 0.90, color: '#ef5350', desc: '역치 훈련'   },
+  { label: 'Zone 5', pctLo: 0.90, pctHi: 1.00, color: '#ab47bc', desc: '최대 강도'   },
+];
+function computeZones(cardio) {
+  if (!cardio?.age) return null;
+  const maxHR = Math.round(207 - 0.7 * cardio.age);
+  const rhr = cardio.restingHR || 65;
+  const hrr = maxHR - rhr;
+  return { maxHR, rhr, zones: OT_ZONES.map(z => ({ ...z, loBpm: Math.round(z.pctLo*hrr+rhr), hiBpm: Math.round(z.pctHi*hrr+rhr) })) };
+}
+
+function renderOtWeek(w) {
+  const days = w.weeklyRoutine?.days || [];
+  if (!days.length) return '';
+  const dayRows = days.map(d => {
+    const planHtml = (d.plan||[]).map(p => {
+      const parts = [p.name];
+      const sr = [p.sets && p.sets > 1 ? `${p.sets}세트` : '', p.reps && p.reps > 1 ? `${p.reps}회` : ''].filter(Boolean).join(' × ');
+      if (sr) parts.push(sr);
+      if (p.weight && p.weight !== '-') parts.push(p.weight);
+      return `· ${parts.join(' ')}`;
+    }).join('<br>');
+    return `<div class="week-row${d.rest ? ' empty' : ''}">
+      <div class="wr-top"><span class="wr-label">${d.day}</span><span class="wr-date">${d.workout||''}</span></div>
+      ${planHtml ? `<div class="wr-exercises">${planHtml}</div>` : ''}
+      ${d.note ? `<div class="wr-comment">${d.note}</div>` : ''}
+    </div>`;
+  }).join('');
+  return `<div class="week-row" style="background:rgba(90,170,232,0.05)">
+    <div class="wr-top"><span class="wr-label">${w.label||''}</span><span class="wr-date">${w.date||''}</span></div>
+    ${w.weeklyRoutine?.note ? `<div class="wr-comment">${w.weeklyRoutine.note}</div>` : ''}
+  </div>${dayRows}`;
+}
+
+function renderOtMember(member, data) {
+  const purposesHtml = (data.purposes||[]).map(p => `<span class="goal-pill">${p}</span>`).join('');
+  const goalsHtml = data.goals?.short?.text
+    ? `<div class="wr-comment" style="margin:0 16px 10px">🎯 ${data.goals.short.text}${data.goals.short.period ? ` (${data.goals.short.period})` : ''}</div>` : '';
+
+  const z = computeZones(data.cardio);
+  const zoneHtml = z ? `<div style="margin:0 16px 10px;padding:10px 12px;background:rgba(90,170,232,0.05);border-radius:10px">
+    <div style="font-size:10px;font-weight:700;color:#5aaae8;margin-bottom:6px">유산소 강도 가이드 · 최대심박 ${z.maxHR} · 안정시 ${z.rhr}</div>
+    ${z.zones.map(zn => `<div style="display:flex;align-items:center;gap:8px;font-size:11px;color:#3a5a80;padding:2px 0"><span style="width:8px;height:8px;border-radius:50%;background:${zn.color};flex-shrink:0"></span><span style="font-weight:700;width:48px">${zn.label}</span><span>${zn.loBpm}–${zn.hiBpm} bpm</span><span style="margin-left:auto;color:#a0b8d0">${zn.desc}</span></div>`).join('')}
+  </div>` : '';
+
+  const header = `<div class="member-header">
+    <div class="mh-top"><span class="mh-name">${data.name}</span><span class="mh-month">${data.month||''}</span><div class="mh-btns"><a class="mh-report-btn" href="report.html?token=${member.token}" target="_blank">리포트 →</a></div></div>
+    ${purposesHtml ? `<div class="goal-row">${purposesHtml}</div>` : ''}
+  </div>`;
+
+  const weeks = (data.weeks||[]).slice().reverse();
+  return `<div class="member-block" data-name="${data.name}">${header}${goalsHtml}${zoneHtml}${weeks.map(renderOtWeek).join('')}</div>`;
+}
+
 function renderMember(member, data) {
   const s = data.sessions || {};
   const pct = s.total ? Math.round((s.completed||0)/s.total*100) : 0;
@@ -619,7 +677,7 @@ fetchData(`${RAW}/data/ot-members.json`)
     document.getElementById('page-sub').textContent =
       `${valid.length}명 · ${new Date().toLocaleDateString('ko-KR',{month:'long',day:'numeric',hour:'2-digit',minute:'2-digit'})} 기준`;
     document.getElementById('log').innerHTML = valid
-      .map(({member, data}) => renderMember(member, data)).join('');
+      .map(({member, data}) => renderOtMember(member, data)).join('');
     buildTabs(valid.map(({data}) => data.name));
     // ci 수신 배너 표시 + GitHub 자동저장
     if (window._ci) {
