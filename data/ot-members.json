@@ -1,4 +1,5 @@
 [
   { "id": "ottest", "name": "오티테스트(TEST)", "token": "42ca5eefe16d" },
-  { "id": "kimsojeong", "name": "김소정", "token": "75b7b438a142" }
+  { "id": "kimsojeong", "name": "김소정", "token": "75b7b438a142" },
+  { "id": "syk", "name": "SYK (김수연 회원님 언니)", "token": "27d040c45e2a" }
 ]
