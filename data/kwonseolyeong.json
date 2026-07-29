@@ -769,8 +769,43 @@
       "label": "5주차",
       "date": "7/27",
       "mainMessage": "",
-      "summaries": [],
-      "exercises": [],
+      "summaries": [
+        {
+          "sessionDate": "2026-07-28",
+          "date": "2026년 7월 28일",
+          "items": [
+            {
+              "name": "하이바 스쿼트",
+              "detail": "3세트 / 20kg"
+            },
+            {
+              "name": "와이드 스쿼트",
+              "detail": "3세트 / 16kg"
+            },
+            {
+              "name": "런지",
+              "detail": "3세트 / 5kg"
+            }
+          ]
+        }
+      ],
+      "exercises": [
+        {
+          "name": "하이바 스쿼트",
+          "note": "· 전반적으로 근력이 좋아져 20kg으로 프로그램 전체를 수월하게 진행<br>· 복부 힘만 조금 더 생기면 충분한 상태",
+          "next": "· 다음~다다음 세션에 걸쳐 증량 테스트 진행"
+        },
+        {
+          "name": "와이드 스쿼트",
+          "note": "· 16kg 수월하게 진행",
+          "next": "· 다음 세션 증량 예정"
+        },
+        {
+          "name": "런지",
+          "note": "· 5kg 가벼운 편으로 수월하게 진행",
+          "next": "· 다음 세션 증량 예정"
+        }
+      ],
       "lifts": [],
       "bodyData": null,
       "condition": "",
@@ -787,12 +822,14 @@
         "caution": "",
         "suggest": ""
       },
-      "trainerComment": "",
+      "trainerComment": "하체 운동 전반적으로 근력이 좋아져 모든 프로그램을 수월하게 소화 — 복부 힘만 조금 더 보완되면 충분한 상태.",
       "trainerDirection": "",
-      "nextSessionMemo": "",
+      "nextSessionMemo": "하이바 스쿼트·와이드 스쿼트·런지·컨벤셔널 데드리프트·스모 데드리프트 모두 다음~다다음 세션에 걸쳐 증량 테스트 진행 예정.",
       "finalMessage": "",
       "musclesWorked": [],
-      "sessionDates": [],
+      "sessionDates": [
+        "2026-07-28"
+      ],
       "memberComment": "",
       "weeklyRoutine": {
         "weekKey": "2026-W31-kwsy",
