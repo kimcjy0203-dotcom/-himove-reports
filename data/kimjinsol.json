@@ -652,9 +652,39 @@
       "week": 5,
       "label": "5주차",
       "date": "7/27",
-      "mainMessage": "",
-      "summaries": [],
-      "exercises": [],
+      "mainMessage": "스텝박스를 활용한 복합 동작으로 하체 리듬과 상체 움직임을 함께 훈련했어요. 방향 전환이 있는 동작이라 처음엔 헷갈렸지만, 반복하면서 감각이 빠르게 좋아졌어요.",
+      "summaries": [
+        {
+          "sessionDate": "2026-07-29",
+          "date": "2026년 7월 29일",
+          "items": [
+            {
+              "name": "스텝박스 니업 스텝",
+              "detail": "3세트"
+            },
+            {
+              "name": "스텝박스 니업 & 원암 숄더 프레스",
+              "detail": "3세트"
+            },
+            {
+              "name": "사이드 스텝 트라이셉스 익스텐션",
+              "detail": "3세트"
+            }
+          ]
+        }
+      ],
+      "exercises": [
+        {
+          "name": "스텝박스 니업 & 원암 숄더 프레스",
+          "note": "· 니업 스텝에 한 팔 숄더 프레스를 결합한 복합 동작<br>· 하체 리듬을 유지하며 상체 동작을 추가하는 협응 훈련",
+          "next": ""
+        },
+        {
+          "name": "사이드 스텝 트라이셉스 익스텐션",
+          "note": "· 옆으로 스텝 이동과 삼두 익스텐션을 동시에 진행<br>· 방향 감각에 어려움이 있었지만 반복하며 점차 개선됨",
+          "next": "스텝 방향 전환 타이밍에 맞춰 삼두 동작 타이밍을 맞추는 연습 반복"
+        }
+      ],
       "lifts": [],
       "bodyData": null,
       "condition": "",
@@ -667,13 +697,13 @@
       "nutrition": "",
       "nutritionNote": "",
       "review": {
-        "good": "",
+        "good": "방향 전환이 있는 복합 동작에서 처음엔 헷갈렸지만, 반복 학습으로 빠르게 감각을 찾아간 점이 좋았어요.",
         "caution": "",
         "suggest": ""
       },
       "trainerComment": "",
       "trainerDirection": "",
-      "nextSessionMemo": "",
+      "nextSessionMemo": "사이드 스텝 트라이셉스 익스텐션 — 방향 전환 타이밍 계속 연습",
       "finalMessage": "",
       "musclesWorked": [],
       "sessionDates": [],
