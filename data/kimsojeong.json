@@ -3,7 +3,10 @@
   "name": "김소정",
   "month": "2026년 7월",
   "notice": "",
-  "purposes": ["체중감량", "체력향상"],
+  "purposes": [
+    "체중감량",
+    "체력향상"
+  ],
   "goals": {
     "short": {
       "text": "마운자로 투여 약 6개월째 (6개월 후 중단 예정) — 군것질은 이미 끊은 상태. 올해 안에 60kg 초반대 달성이 목표",
@@ -11,7 +14,10 @@
     }
   },
   "bodyGoals": {
-    "weight": { "start": 71, "goal": 60 }
+    "weight": {
+      "start": 71,
+      "goal": 60
+    }
   },
   "cardio": {
     "age": 26,
@@ -24,25 +30,253 @@
       "date": "7/28",
       "weeklyRoutine": {
         "weekKey": "2026-W31-kimsojeong",
-        "note": "주 4회 상하 2분할 (상체: 가슴·등 / 하체: 하체·복부·삼두) — 메인 리프트만 우선 확정, 나머지 머신 운동은 추가 예정. 요일 배치는 초안이니 확인 후 조정해주세요.",
+        "note": "주 4회 3분할 — 하체(화·금) / 상체-당기기(월) / 상체-밀기·팔(목). 종목이 많아 상체를 두 프로그램으로 나누고, 하체는 기존 구성 그대로 유지. 모든 종목 12~15회 반복 가능한 무게로 3세트씩.",
         "days": [
-          { "day": "월", "workout": "상체(가슴·등)", "rest": false, "plan": [
-            { "name": "스탠딩 푸쉬업", "sets": 3, "reps": "-", "weight": "-" }
-          ], "note": "등 운동은 머신 추가 예정" },
-          { "day": "화", "workout": "하체(하체·복부·삼두)", "rest": false, "plan": [
-            { "name": "스쿼트", "sets": 3, "reps": "-", "weight": "-" },
-            { "name": "루마니안 데드리프트", "sets": 3, "reps": "-", "weight": "-" }
-          ], "note": "복부·삼두 보조 운동은 머신 추가 예정" },
-          { "day": "수", "workout": "휴식", "rest": true },
-          { "day": "목", "workout": "상체(가슴·등)", "rest": false, "plan": [
-            { "name": "스탠딩 푸쉬업", "sets": 3, "reps": "-", "weight": "-" }
-          ], "note": "등 운동은 머신 추가 예정" },
-          { "day": "금", "workout": "하체(하체·복부·삼두)", "rest": false, "plan": [
-            { "name": "스쿼트", "sets": 3, "reps": "-", "weight": "-" },
-            { "name": "루마니안 데드리프트", "sets": 3, "reps": "-", "weight": "-" }
-          ], "note": "복부·삼두 보조 운동은 머신 추가 예정" },
-          { "day": "토", "workout": "휴식", "rest": true },
-          { "day": "일", "workout": "휴식", "rest": true }
+          {
+            "day": "월",
+            "workout": "상체 - 당기기",
+            "rest": false,
+            "plan": [
+              {
+                "name": "루마니안 데드리프트",
+                "sets": 3,
+                "reps": "12~15",
+                "weight": "-"
+              },
+              {
+                "name": "백 익스텐션",
+                "sets": 3,
+                "reps": "12~15",
+                "weight": "-"
+              },
+              {
+                "name": "해머 시티드로우",
+                "sets": 3,
+                "reps": "12~15",
+                "weight": "-"
+              },
+              {
+                "name": "랫풀다운",
+                "sets": 3,
+                "reps": "12~15",
+                "weight": "-"
+              },
+              {
+                "name": "시티드로우",
+                "sets": 3,
+                "reps": "12~15",
+                "weight": "-"
+              },
+              {
+                "name": "어시스트 풀업",
+                "sets": 3,
+                "reps": "12~15",
+                "weight": "-"
+              }
+            ],
+            "note": "등·햄스트링 위주 당기기 패턴 — 12~15회 가능한 중량으로 3세트씩"
+          },
+          {
+            "day": "화",
+            "workout": "하체",
+            "rest": false,
+            "plan": [
+              {
+                "name": "스쿼트",
+                "sets": 3,
+                "reps": "12~15",
+                "weight": "-"
+              },
+              {
+                "name": "레그프레스",
+                "sets": 3,
+                "reps": "12~15",
+                "weight": "-"
+              },
+              {
+                "name": "스미스머신 스탠다드 스쿼트",
+                "sets": 3,
+                "reps": "12~15",
+                "weight": "-"
+              },
+              {
+                "name": "스미스머신 와이드 스쿼트",
+                "sets": 3,
+                "reps": "12~15",
+                "weight": "-"
+              },
+              {
+                "name": "브이 스쿼트",
+                "sets": 3,
+                "reps": "12~15",
+                "weight": "-"
+              },
+              {
+                "name": "힙 쓰러스트",
+                "sets": 3,
+                "reps": "12~15",
+                "weight": "-"
+              },
+              {
+                "name": "힙 어브덕션",
+                "sets": 3,
+                "reps": "12~15",
+                "weight": "-"
+              },
+              {
+                "name": "힙 어덕션",
+                "sets": 3,
+                "reps": "12~15",
+                "weight": "-"
+              },
+              {
+                "name": "레그 익스텐션",
+                "sets": 3,
+                "reps": "12~15",
+                "weight": "-"
+              },
+              {
+                "name": "레그 컬",
+                "sets": 3,
+                "reps": "12~15",
+                "weight": "-"
+              }
+            ],
+            "note": "하체 기구 전 종목 — 12~15회 가능한 중량으로 3세트씩"
+          },
+          {
+            "day": "수",
+            "workout": "휴식",
+            "rest": true
+          },
+          {
+            "day": "목",
+            "workout": "상체 - 밀기·팔",
+            "rest": false,
+            "plan": [
+              {
+                "name": "스탠딩 푸쉬업",
+                "sets": 3,
+                "reps": "12~15",
+                "weight": "-"
+              },
+              {
+                "name": "체스트 프레스",
+                "sets": 3,
+                "reps": "12~15",
+                "weight": "-"
+              },
+              {
+                "name": "펙덱플라이",
+                "sets": 3,
+                "reps": "12~15",
+                "weight": "-"
+              },
+              {
+                "name": "케이블 푸시다운",
+                "sets": 3,
+                "reps": "12~15",
+                "weight": "-"
+              },
+              {
+                "name": "스트레이트 암 풀다운",
+                "sets": 3,
+                "reps": "12~15",
+                "weight": "-"
+              },
+              {
+                "name": "덤벨 킥백",
+                "sets": 3,
+                "reps": "12~15",
+                "weight": "-"
+              },
+              {
+                "name": "오버헤드 트라이셉스 익스텐션",
+                "sets": 3,
+                "reps": "12~15",
+                "weight": "-"
+              }
+            ],
+            "note": "가슴·팔 위주 밀기 패턴 — 12~15회 가능한 중량으로 3세트씩"
+          },
+          {
+            "day": "금",
+            "workout": "하체",
+            "rest": false,
+            "plan": [
+              {
+                "name": "스쿼트",
+                "sets": 3,
+                "reps": "12~15",
+                "weight": "-"
+              },
+              {
+                "name": "레그프레스",
+                "sets": 3,
+                "reps": "12~15",
+                "weight": "-"
+              },
+              {
+                "name": "스미스머신 스탠다드 스쿼트",
+                "sets": 3,
+                "reps": "12~15",
+                "weight": "-"
+              },
+              {
+                "name": "스미스머신 와이드 스쿼트",
+                "sets": 3,
+                "reps": "12~15",
+                "weight": "-"
+              },
+              {
+                "name": "브이 스쿼트",
+                "sets": 3,
+                "reps": "12~15",
+                "weight": "-"
+              },
+              {
+                "name": "힙 쓰러스트",
+                "sets": 3,
+                "reps": "12~15",
+                "weight": "-"
+              },
+              {
+                "name": "힙 어브덕션",
+                "sets": 3,
+                "reps": "12~15",
+                "weight": "-"
+              },
+              {
+                "name": "힙 어덕션",
+                "sets": 3,
+                "reps": "12~15",
+                "weight": "-"
+              },
+              {
+                "name": "레그 익스텐션",
+                "sets": 3,
+                "reps": "12~15",
+                "weight": "-"
+              },
+              {
+                "name": "레그 컬",
+                "sets": 3,
+                "reps": "12~15",
+                "weight": "-"
+              }
+            ],
+            "note": "하체 기구 전 종목 — 12~15회 가능한 중량으로 3세트씩"
+          },
+          {
+            "day": "토",
+            "workout": "휴식",
+            "rest": true
+          },
+          {
+            "day": "일",
+            "workout": "휴식",
+            "rest": true
+          }
         ]
       }
     }
