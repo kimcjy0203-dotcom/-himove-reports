@@ -1246,6 +1246,22 @@ function init(data) {
     });
   };
 
+  function buildTrainingPrinciplesCard() {
+    const sec = (title, rows) => `<div class="sub-label">${title}</div><div style="margin-bottom:14px">${rows}</div>`;
+    const row = (name, desc) => `<div class="plan-row" style="align-items:flex-start"><span class="plan-name" style="flex-shrink:0;width:38%">${name}</span><span class="plan-detail" style="text-align:right;font-weight:500;color:#6a8aaa;line-height:1.55">${desc}</span></div>`;
+    return sec('수축 종류와 템포', row('단축성 수축', '근육이 짧아지며 힘을 냄 — 드는(올리는) 동작, 상대적으로 빠르게 1초')
+      + row('신장성 수축', '근육이 늘어나며 힘을 냄 — 내리는(버티는) 동작, 천천히 3초. 근력·근성장에 특히 중요하고 지연성 근육통(DOMS)의 주 원인')
+      + row('등척성 수축', '길이 변화 없이 힘을 냄 — 플랭크처럼 자세를 버티는 동작'))
+      + sec('세트 · 반복 · 휴식 기준', row('기본 세트 수', '3세트 (초보자 기준)')
+      + row('세트 간 휴식', '근력 목적 2~5분 · 근비대 목적 1~2분 · 근지구력 목적 30초~1분')
+      + row('반복 횟수(목적별)', '근력 1~5회(고강도) · 근비대 8~15회(중강도) · 근지구력 15회 이상(저강도)'))
+      + sec('운동 순서 원칙', row('부위·관절 순서', '큰 근육군 → 작은 근육군, 다관절(복합) 운동 → 단일관절(고립) 운동')
+      + row('도구 순서', '프리웨이트 → 머신 (안정성이 필요한 동작을 지치기 전에 먼저)'))
+      + sec('호흡 · 회복', row('호흡법', '힘쓰는 구간(수축)에서 내쉬고, 이완 구간에서 들이마시기 — 숨 참고 힘주는 발살바 호흡은 혈압을 급격히 올려 특히 고혈압·심혈관 질환이 있다면 주의')
+      + row('점진적 과부하', '무게·반복수·세트수·가동범위·빈도 중 하나씩 점진적으로 늘려야 지속적으로 발전')
+      + row('회복 시간', '자극받은 근육은 48~72시간의 회복(초과회복) 시간이 필요 — 같은 부위는 연속으로 훈련하지 않기'));
+  }
+
   function buildDietCard() {
     const dp = data.dietPlan;
     if (!dp) return '';
@@ -1310,6 +1326,7 @@ function init(data) {
       ${hideLesson ? '' : collapsible('<span style="display:flex;align-items:center"><span class="req-dot"></span>수업 내용</span>', 'blue', `<div class="sub-label">요약</div><div class="summary-list">${summaryItems}</div>${HR}<div class="sub-label">운동 피드백</div><div class="exercise-grid">${exItems}</div>${w.musclesWorked?.length?`${HR}<div class="sub-label">운동 부위</div><div class="muscle-tag-row">${w.musclesWorked.map(m=>`<span class="muscle-tag">${MUSCLE_DATA[m]?.name||m}</span>`).join("")}</div>`:""}`, true)}
       ${collapsible('<span style="display:flex;align-items:center"><span class="req-dot"></span>운동 현황</span>', 'blue', `<div class="sub-label">주요 리프트</div><div class="lift-grid">${liftItems}</div>${HR}<div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:10px"><div class="sub-label" style="margin-bottom:0">이번 주 트레이닝</div><span class="wk-count" id="wk-count-${idx}">주 0회</span></div><div class="weekly-cal" id="weekly-cal-${idx}">${calDays}</div><div class="note">${r.note||''}</div>`, true)}
       ${isOT && routineDetailHtml ? collapsible('<span style="display:flex;align-items:center"><span class="req-dot"></span>이번 주 루틴</span>', 'blue', `<div class="routine-detail">${routineDetailHtml}</div>`, true) : ''}
+      ${collapsible('<span style="display:flex;align-items:center"><span class="req-dot"></span>웨이트 트레이닝 기본 원칙</span>', 'blue', buildTrainingPrinciplesCard())}
       ${isOT ? '' : collapsible('📋 이번 주 상태', 'blue', `<div id="ds-${idx}"><div style="font-size:11px;color:#a0b8d0;font-weight:600;margin-bottom:6px">📅 ${new Date().toLocaleDateString('ko-KR',{month:'long',day:'numeric'})} 기준 · 이번 주 누적</div><div class="sub-label"><span class="dot" style="background:#f4a07e"></span>컨디션</div><div class="day-count" data-field="condition"></div><div class="check-row">${dailyChips('condition',['매우 좋음','좋음','보통','피곤함','매우 피곤함'])}</div><textarea class="daily-note" data-note="condition_note" placeholder="메모..." rows="1"></textarea>${HRS}<div class="sub-label"><span class="dot" style="background:#a78bde"></span>수면</div><div class="day-count" data-field="sleep"></div><div class="check-row">${dailyChips('sleep',['매우 나쁨','나쁨','보통','좋음','매우 좋음'])}</div><textarea class="daily-note" data-note="sleep_note" placeholder="메모..." rows="1"></textarea>${HRS}<div class="sub-label"><span class="dot" style="background:#6dc99c"></span>신체 불편</div><div class="day-count" data-field="pain"></div><div class="check-row">${dailyChips('pain',['없음','있음'])}</div><textarea class="daily-note" data-note="pain_note" placeholder="메모..." rows="1"></textarea>${HRS}<div class="sub-label"><span class="dot" style="background:#f0c96a"></span>영양 상태</div><div class="day-count" data-field="nutrition"></div><div class="check-row">${dailyChips('nutrition',['매우 나쁨','나쁨','보통','좋음','매우 좋음'])}</div><textarea class="daily-note" data-note="nutrition_note" placeholder="메모..." rows="1"></textarea>${HRS}<div class="sub-label" style="margin-bottom:4px">✏️ 개인 운동 메모</div><div style="font-size:11px;color:#a0b8d0;margin-bottom:8px">홈트·자유 운동 내용 — 주간 누적 기록</div><textarea id="wmemo-${idx}" class="daily-note" placeholder="예) 유산소 30분, 스쿼트 3×15, 플랭크 1분..." rows="2" style="min-height:40px"></textarea>${HRS}<button class="send-btn" style="width:100%;padding:15px;border:none;border-radius:16px;background:linear-gradient(135deg,rgba(100,155,220,0.18),rgba(80,130,200,0.22));color:#2a5a9a;font-size:14px;font-weight:800;cursor:pointer;letter-spacing:0.3px;border:1px solid rgba(100,155,220,0.3)">💬 트레이너에게 오늘 상태 전송</button></div>`, true)}
       ${buildDietCard()}
       ${nutritionPlan ? collapsible('🍽 식사 가이드 & 기록', 'green', buildNutritionSection(nutritionPlan, idx)) : ''}
