@@ -170,6 +170,10 @@ tr:last-child td { border-bottom: none; }
 .plan-note { font-size:11px; color:#6a8aaa; line-height:1.65; padding:10px 12px; background:rgba(100,155,220,0.07); border-radius:10px; margin-bottom:14px; white-space:pre-line; }
 .plan-check-btn { width:100%; margin-top:16px; padding:12px; border:none; border-radius:14px; font-size:13px; font-weight:800; cursor:pointer; transition:all 0.2s; background:rgba(100,155,220,0.12); color:#3a6a9a; }
 .plan-check-btn.done { background:rgba(90,175,130,0.15); color:#3a8a6a; }
+.routine-detail { margin-top:2px; }
+.routine-day-block { margin-bottom:14px; padding:12px 14px; background:rgba(255,255,255,0.4); border:1px solid rgba(160,190,230,0.25); border-radius:14px; }
+.routine-day-block:last-child { margin-bottom:0; }
+.rdb-head { font-size:13px; font-weight:800; color:#3a6a9a; margin-bottom:2px; }
 .plan-close { position:absolute; top:14px; right:16px; font-size:18px; color:#c0d0e0; cursor:pointer; background:none; border:none; line-height:1; }
 .muscle-area { cursor: pointer; transition: filter 0.15s; }
 .muscle-popup { position: fixed; background: rgba(255,255,255,0.97); backdrop-filter: blur(24px); -webkit-backdrop-filter: blur(24px); border: 1px solid rgba(195,218,255,0.8); border-radius: 18px; padding: 14px 16px 12px; box-shadow: 0 10px 40px rgba(100,150,230,0.2); z-index: 200; min-width: 160px; max-width: 200px; }
@@ -1278,6 +1282,9 @@ function init(data) {
     const liftItems = (w.lifts||[]).map(l=>`<div class="lift-box"><div class="lb-name">${l.name}</div><div class="lb-current">${l.current}<span>kg</span></div><div class="lb-meta"><div class="lb-goal">목표 ${l.goal}kg</div><div class="lb-gap">−${l.goal-l.current}kg</div>${liftTimer(l)}</div></div>`).join('') || '<div style="font-size:13px;color:#c0d0e0;padding:4px 0">리프트 데이터를 입력해 주세요.</div>';
     const r = w.weeklyRoutine || { weekKey: `wk-${idx}`, note: '', days: [] };
     if (!r.days || r.days.length === 0) r.days = ['월','화','수','목','금','토','일'].map(d=>({day:d,workout:'',rest:false}));
+    const routineDetailHtml = (r.days||[]).filter(d=>!d.rest && d.plan?.length).map(d =>
+      `<div class="routine-day-block"><div class="rdb-head">${d.day} · ${d.workout||''}</div>${d.note?`<div class="plan-note" style="margin-top:6px">${d.note}</div>`:''}<div style="margin-top:${d.note?'2px':'8px'}">${d.plan.map(p=>`<div class="plan-row"><span class="plan-name">${p.name}</span><span class="plan-detail">${p.sets}세트 × ${p.reps}회${p.weight&&p.weight!=='-'?' / '+p.weight:''}</span></div>`).join('')}</div></div>`
+    ).join('');
     const calKey = `hm_${r.weekKey}_${idx}`;
     const today = new Date(); today.setHours(0,0,0,0);
     function parseWeekStart(dateStr) {
@@ -1301,7 +1308,7 @@ function init(data) {
     return `<div class="week-panel" data-idx="${idx}">
       ${!isMember && w.nextSessionMemo ? `<div class="card" style="border-left:3px solid rgba(200,160,90,0.5)"><div class="card-title gold">다음 수업 준비<span class="memo-badge">트레이너</span></div><div class="note">${w.nextSessionMemo}</div></div>` : ''}
       ${hideLesson ? '' : collapsible('<span style="display:flex;align-items:center"><span class="req-dot"></span>수업 내용</span>', 'blue', `<div class="sub-label">요약</div><div class="summary-list">${summaryItems}</div>${HR}<div class="sub-label">운동 피드백</div><div class="exercise-grid">${exItems}</div>${w.musclesWorked?.length?`${HR}<div class="sub-label">운동 부위</div><div class="muscle-tag-row">${w.musclesWorked.map(m=>`<span class="muscle-tag">${MUSCLE_DATA[m]?.name||m}</span>`).join("")}</div>`:""}`, true)}
-      ${collapsible('<span style="display:flex;align-items:center"><span class="req-dot"></span>운동 현황</span>', 'blue', `<div class="sub-label">주요 리프트</div><div class="lift-grid">${liftItems}</div>${HR}<div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:10px"><div class="sub-label" style="margin-bottom:0">이번 주 트레이닝</div><span class="wk-count" id="wk-count-${idx}">주 0회</span></div><div class="weekly-cal" id="weekly-cal-${idx}">${calDays}</div><div class="note">${r.note||''}</div>`, true)}
+      ${collapsible('<span style="display:flex;align-items:center"><span class="req-dot"></span>운동 현황</span>', 'blue', `<div class="sub-label">주요 리프트</div><div class="lift-grid">${liftItems}</div>${HR}<div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:10px"><div class="sub-label" style="margin-bottom:0">이번 주 트레이닝</div><span class="wk-count" id="wk-count-${idx}">주 0회</span></div><div class="weekly-cal" id="weekly-cal-${idx}">${calDays}</div><div class="note">${r.note||''}</div>${isOT && routineDetailHtml ? `${HR}<div class="sub-label">이번 주 루틴</div><div class="routine-detail">${routineDetailHtml}</div>` : ''}`, true)}
       ${isOT ? '' : collapsible('📋 이번 주 상태', 'blue', `<div id="ds-${idx}"><div style="font-size:11px;color:#a0b8d0;font-weight:600;margin-bottom:6px">📅 ${new Date().toLocaleDateString('ko-KR',{month:'long',day:'numeric'})} 기준 · 이번 주 누적</div><div class="sub-label"><span class="dot" style="background:#f4a07e"></span>컨디션</div><div class="day-count" data-field="condition"></div><div class="check-row">${dailyChips('condition',['매우 좋음','좋음','보통','피곤함','매우 피곤함'])}</div><textarea class="daily-note" data-note="condition_note" placeholder="메모..." rows="1"></textarea>${HRS}<div class="sub-label"><span class="dot" style="background:#a78bde"></span>수면</div><div class="day-count" data-field="sleep"></div><div class="check-row">${dailyChips('sleep',['매우 나쁨','나쁨','보통','좋음','매우 좋음'])}</div><textarea class="daily-note" data-note="sleep_note" placeholder="메모..." rows="1"></textarea>${HRS}<div class="sub-label"><span class="dot" style="background:#6dc99c"></span>신체 불편</div><div class="day-count" data-field="pain"></div><div class="check-row">${dailyChips('pain',['없음','있음'])}</div><textarea class="daily-note" data-note="pain_note" placeholder="메모..." rows="1"></textarea>${HRS}<div class="sub-label"><span class="dot" style="background:#f0c96a"></span>영양 상태</div><div class="day-count" data-field="nutrition"></div><div class="check-row">${dailyChips('nutrition',['매우 나쁨','나쁨','보통','좋음','매우 좋음'])}</div><textarea class="daily-note" data-note="nutrition_note" placeholder="메모..." rows="1"></textarea>${HRS}<div class="sub-label" style="margin-bottom:4px">✏️ 개인 운동 메모</div><div style="font-size:11px;color:#a0b8d0;margin-bottom:8px">홈트·자유 운동 내용 — 주간 누적 기록</div><textarea id="wmemo-${idx}" class="daily-note" placeholder="예) 유산소 30분, 스쿼트 3×15, 플랭크 1분..." rows="2" style="min-height:40px"></textarea>${HRS}<button class="send-btn" style="width:100%;padding:15px;border:none;border-radius:16px;background:linear-gradient(135deg,rgba(100,155,220,0.18),rgba(80,130,200,0.22));color:#2a5a9a;font-size:14px;font-weight:800;cursor:pointer;letter-spacing:0.3px;border:1px solid rgba(100,155,220,0.3)">💬 트레이너에게 오늘 상태 전송</button></div>`, true)}
       ${buildDietCard()}
       ${nutritionPlan ? collapsible('🍽 식사 가이드 & 기록', 'green', buildNutritionSection(nutritionPlan, idx)) : ''}
@@ -1442,6 +1449,13 @@ function init(data) {
 
     cal.querySelectorAll('.cal-day:not(.rest-day)').forEach(el => el.addEventListener('click', function(){
       const i = parseInt(this.dataset.idx);
+      if (isOT) {
+        const pos = checked.indexOf(i);
+        if (pos !== -1) checked.splice(pos, 1); else checked.push(i);
+        localStorage.setItem(calKey, JSON.stringify(checked));
+        renderCal();
+        return;
+      }
       const plan = JSON.parse(this.dataset.plan || '[]');
       const day = this.dataset.day, workout = this.dataset.workout;
       const note = this.dataset.note || '';
