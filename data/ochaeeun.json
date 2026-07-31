@@ -1,0 +1,77 @@
+{
+  "name": "오채은",
+  "month": "2026년 7월",
+  "notice": "",
+  "purposes": [],
+  "goals": {
+    "short": {
+      "text": "상담 진행 중 — 목표 확정 예정",
+      "period": ""
+    }
+  },
+  "bodyGoals": null,
+  "cardio": {
+    "age": null,
+    "restingHR": null
+  },
+  "weeks": [
+    {
+      "week": 1,
+      "label": "1주차",
+      "date": "7/28",
+      "mainMessage": "오늘은 하체·상체 머신 사용법을 하나씩 살펴봤어요. 레그프레스부터 랫풀다운까지, 앞으로 사용할 기구들과 먼저 친해지는 시간이었습니다.",
+      "summaries": [
+        {
+          "sessionDate": "2026-07-30",
+          "date": "2026년 7월 30일",
+          "items": [
+            {"name": "레그프레스", "detail": "기구 사용법 안내"},
+            {"name": "브이 스쿼트", "detail": "기구 사용법 안내"},
+            {"name": "힙 쓰러스트", "detail": "기구 사용법 안내"},
+            {"name": "힙 어덕션", "detail": "기구 사용법 안내"},
+            {"name": "힙 어브덕션", "detail": "기구 사용법 안내"},
+            {"name": "레그 익스텐션", "detail": "기구 사용법 안내"},
+            {"name": "레그 컬", "detail": "기구 사용법 안내"},
+            {"name": "백 익스텐션", "detail": "기구 사용법 안내"},
+            {"name": "체스트 프레스", "detail": "기구 사용법 안내"},
+            {"name": "랫풀다운", "detail": "기구 사용법 안내"},
+            {"name": "시티드로우", "detail": "기구 사용법 안내"}
+          ]
+        },
+        {
+          "sessionDate": "2026-07-28",
+          "date": "2026년 7월 28일",
+          "items": [
+            {"name": "상담 및 목표 설정", "detail": ""},
+            {"name": "폼롤러 사용법", "detail": "기구 사용법 안내"}
+          ]
+        }
+      ],
+      "exercises": [],
+      "lifts": [],
+      "bodyData": null,
+      "condition": "",
+      "conditionNote": "",
+      "sleep": "",
+      "sleepNote": "",
+      "stress": "",
+      "pain": "없음",
+      "painNote": "",
+      "nutrition": "",
+      "nutritionNote": "",
+      "review": {
+        "good": "새로운 기구들을 차근차근 살펴보며 적응해 나간 점이 좋았어요.",
+        "caution": "",
+        "suggest": ""
+      },
+      "trainerComment": "",
+      "trainerDirection": "",
+      "nextSessionMemo": "지난 시간 안내한 기구들로 실제 세트 진행 예정",
+      "finalMessage": "",
+      "musclesWorked": [],
+      "sessionDates": [],
+      "memberComment": "",
+      "weeklyRoutine": null
+    }
+  ]
+}
