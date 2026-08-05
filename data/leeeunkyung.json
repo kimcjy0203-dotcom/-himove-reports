@@ -1,0 +1,67 @@
+{
+  "name": "이은경",
+  "month": "2026년 8월",
+  "notice": "",
+  "purposes": ["통증 없이 운동하기", "다이어트"],
+  "goals": {
+    "short": {
+      "text": "주간 약 590g 감량 페이스 유지 — 주 4회, 회당 90분 (3분할)",
+      "period": "주 단위"
+    },
+    "mid": {
+      "text": "2개월 내 약 4.6kg 감량 — 고지혈증약 중단 목표(-5kg)에 근접",
+      "period": "2개월"
+    }
+  },
+  "bodyGoals": null,
+  "cardio": {
+    "age": null,
+    "restingHR": null
+  },
+  "sessions": {
+    "total": null,
+    "completed": 1
+  },
+  "weeks": [
+    {
+      "week": 1,
+      "label": "1주차",
+      "date": "8/3",
+      "mainMessage": "첫 상담에서 목표를 정했어요. 통증 없이 운동하는 것과 다이어트가 핵심이고, 주 4회·90분씩 3분할로 진행할 예정이에요. 팔꿈치 상태를 매번 확인하면서, 호흡·승모근 뭉침·어깨 말림 같은 자세부터 먼저 잡아갈게요.",
+      "summaries": [
+        {
+          "sessionDate": "2026-08-05",
+          "date": "2026년 8월 5일",
+          "items": [
+            {"name": "상담 및 목표 설정", "detail": ""}
+          ]
+        }
+      ],
+      "exercises": [],
+      "lifts": [],
+      "bodyData": null,
+      "condition": "",
+      "conditionNote": "",
+      "sleep": "",
+      "sleepNote": "",
+      "stress": "",
+      "pain": "있음",
+      "painNote": "팔꿈치 상태가 좋지 않아 매 세션 컨디션 확인하며 진행 예정",
+      "nutrition": "",
+      "nutritionNote": "",
+      "review": {
+        "good": "",
+        "caution": "",
+        "suggest": ""
+      },
+      "trainerComment": "",
+      "trainerDirection": "",
+      "nextSessionMemo": "3분할 프로그램 구성 후 첫 운동 세션 진행 예정 — 팔꿈치 상태 확인 우선",
+      "finalMessage": "",
+      "musclesWorked": [],
+      "sessionDates": ["2026-08-05"],
+      "memberComment": "",
+      "weeklyRoutine": null
+    }
+  ]
+}

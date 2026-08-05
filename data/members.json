@@ -12,5 +12,6 @@
   { "id": "testmember", "name": "테스트회원", "token": "491aca6ea458" },
   { "id": "leedakyeom", "name": "이다겸", "token": "f2ad69d2aa98" },
   { "id": "choiyebin", "name": "최예빈", "token": "9612a56f5aab" },
-  { "id": "ochaeeun", "name": "송윤채", "token": "055d62cf2aa0" }
+  { "id": "ochaeeun", "name": "송윤채", "token": "055d62cf2aa0" },
+  { "id": "leeeunkyung", "name": "이은경", "token": "c312e24d25c0" }
 ]
