@@ -16,9 +16,132 @@
   },
   "sessions": {
     "total": 30,
-    "completed": 2
+    "completed": 3
   },
   "weeks": [
+    {
+      "week": 2,
+      "label": "2주차",
+      "date": "8/3",
+      "mainMessage": "오늘은 등·가슴 기구 사용법을 살펴봤어요. 등은 시티드로우·랫풀다운처럼 팔꿈치로 당기는 패턴 위주, 가슴은 스탠딩 푸쉬업·체스트 프레스로 미는 패턴 위주로 진행했어요.",
+      "summaries": [
+        {
+          "sessionDate": "2026-08-06",
+          "date": "2026년 8월 6일",
+          "items": [
+            {"name": "백 익스텐션", "detail": "3세트"},
+            {"name": "시티드로우", "detail": "3세트"},
+            {"name": "랫풀다운", "detail": "3세트"},
+            {"name": "케이블 스트레이트 암 풀다운", "detail": "3세트"},
+            {"name": "스탠딩 푸쉬업", "detail": "3세트"},
+            {"name": "체스트 프레스", "detail": "3세트"},
+            {"name": "케이블 푸시다운", "detail": "3세트"}
+          ]
+        }
+      ],
+      "exercises": [
+        {
+          "name": "백 익스텐션",
+          "note": "· 허리가 아닌 엉덩이·등 하부 힘으로 몸통을 들어 올리기<br>· 너무 높이 들어 허리가 과신전되지 않도록 주의",
+          "next": ""
+        },
+        {
+          "name": "시티드로우",
+          "note": "· 가슴을 사선 위로 끌어올려 열고, 팔꿈치를 뒤로 눌러 당기는 힘에 집중<br>· 손 힘으로 당기지 않기",
+          "next": ""
+        },
+        {
+          "name": "랫풀다운",
+          "note": "· 바를 당길 때 팔꿈치를 아래·뒤 방향으로 눌러 광배근 개입<br>· 어깨가 위로 들리지 않도록 견갑골을 먼저 내리고 시작",
+          "next": ""
+        },
+        {
+          "name": "케이블 스트레이트 암 풀다운",
+          "note": "· 팔꿈치를 살짝 굽힌 상태로 고정하고 어깨 관절만 움직여 아래로 누르기<br>· 가슴이 먼저 열려야 등을 최대로 쓸 수 있음",
+          "next": ""
+        },
+        {
+          "name": "스탠딩 푸쉬업",
+          "note": "· 밀 때 어깨가 앞으로 말리지 않도록 가슴을 먼저 끌어올린 상태 유지<br>· 팔꿈치는 몸통에서 45도 정도 벌어진 각도 유지",
+          "next": ""
+        },
+        {
+          "name": "체스트 프레스",
+          "note": "· 손목이 꺾이지 않게 일직선으로 유지<br>· 밀 때 어깨가 아닌 가슴으로 미는 감각에 집중",
+          "next": ""
+        },
+        {
+          "name": "케이블 푸시다운",
+          "note": "· 힙힌지 자세에서 팔꿈치를 몸통에 고정하고 팔꿈치만 펴서 케이블 내리기",
+          "next": ""
+        }
+      ],
+      "lifts": [],
+      "bodyData": null,
+      "condition": "",
+      "conditionNote": "",
+      "sleep": "",
+      "sleepNote": "",
+      "stress": "",
+      "pain": "없음",
+      "painNote": "",
+      "nutrition": "",
+      "nutritionNote": "",
+      "review": {
+        "good": "",
+        "caution": "",
+        "suggest": ""
+      },
+      "trainerComment": "",
+      "trainerDirection": "",
+      "nextSessionMemo": "",
+      "finalMessage": "",
+      "musclesWorked": [],
+      "sessionDates": ["2026-08-06"],
+      "memberComment": "",
+      "weeklyRoutine": {
+        "weekKey": "2026-W32-ochaeeun",
+        "note": "레슨 화·목(하체 / 등·가슴 로테이션) / 개인운동 월·수·금은 레슨에서 다루지 않는 어깨·코어·유산소 위주로 구성해 부위가 겹치지 않도록 함",
+        "days": [
+          {
+            "day": "월",
+            "workout": "개인-어깨·코어",
+            "rest": false,
+            "plan": [
+              {"name": "밴드 숄더 프레스", "sets": 3, "reps": 12, "weight": "-"},
+              {"name": "밴드 레터럴 레이즈", "sets": 3, "reps": 15, "weight": "-"},
+              {"name": "플랭크", "sets": 3, "reps": "30초", "weight": "-"}
+            ],
+            "note": "화·목 레슨이 하체·등·가슴 위주라 어깨·코어는 겹치지 않아 개인운동으로 보강"
+          },
+          {"day": "화", "workout": "레슨", "rest": false},
+          {
+            "day": "수",
+            "workout": "개인-유산소·코어",
+            "rest": false,
+            "plan": [
+              {"name": "인터벌 걷기 (빠르게 1분 + 천천히 2분 반복)", "sets": 1, "reps": "20분", "weight": "-"},
+              {"name": "데드버그", "sets": 3, "reps": 12, "weight": "-"}
+            ],
+            "note": "체력증진·다이어트 목표에 맞춰 유산소 비중을 두는 날 — 코어는 가볍게 유지"
+          },
+          {"day": "목", "workout": "레슨", "rest": false},
+          {
+            "day": "금",
+            "workout": "개인-코어·유산소",
+            "rest": false,
+            "plan": [
+              {"name": "크런치", "sets": 3, "reps": 15, "weight": "-"},
+              {"name": "사이드 플랭크", "sets": 2, "reps": "20초", "weight": "-"},
+              {"name": "줄넘기 (또는 가벼운 조깅)", "sets": 1, "reps": "15분", "weight": "-"}
+            ],
+            "note": "화·목에서 다루는 하체·등·가슴과 겹치지 않는 코어·유산소 위주로 한 주 마무리"
+          },
+          {"day": "토", "workout": "휴식", "rest": true},
+          {"day": "일", "workout": "휴식", "rest": true}
+        ]
+      }
+    },
     {
       "week": 1,
       "label": "1주차",
