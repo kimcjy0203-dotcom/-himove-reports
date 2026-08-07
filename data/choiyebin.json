@@ -121,6 +121,1346 @@
   ],
   "weeks": [
     {
+      "week": 6,
+      "label": "8월 1주차",
+      "date": "8/3",
+      "mainMessage": "",
+      "summaries": [],
+      "exercises": [],
+      "lifts": [],
+      "bodyData": {
+        "labels": [],
+        "weight": [],
+        "fat": [],
+        "muscle": [],
+        "lastMeasured": null,
+        "comment": ""
+      },
+      "condition": "",
+      "conditionNote": "",
+      "sleep": "",
+      "sleepNote": "",
+      "stress": "",
+      "pain": "없음",
+      "painNote": "",
+      "nutrition": "",
+      "nutritionNote": "",
+      "review": {
+        "good": "",
+        "caution": "",
+        "suggest": ""
+      },
+      "trainerComment": "",
+      "trainerDirection": "월=요가 / 화=하체 근력(홈트 1h) → 러닝 20분 / 수=요가 / 목=상체 근력(홈트 1h) → 러닝 20분 / 금=요가 / 토=러닝 20분 / 일=러닝 20분",
+      "nextSessionMemo": "",
+      "finalMessage": "",
+      "musclesWorked": [],
+      "sessionDates": [],
+      "memberComment": "",
+      "weeklyRoutine": {
+        "weekKey": "2026-W32-cy",
+        "note": "🎯 8월 1주차: 인바디 재측정 결과 확인 · 8월 목표 재설정",
+        "days": [
+          {
+            "day": "월",
+            "workout": "요가",
+            "rest": false
+          },
+          {
+            "day": "화",
+            "workout": "하체 근력+러닝",
+            "rest": false,
+            "plan": [
+              {
+                "name": "맨몸 스쿼트",
+                "sets": 3,
+                "reps": 20,
+                "weight": "-"
+              },
+              {
+                "name": "런지",
+                "sets": 3,
+                "reps": 12,
+                "weight": "양쪽"
+              },
+              {
+                "name": "불가리안 스플릿 스쿼트",
+                "sets": 3,
+                "reps": 10,
+                "weight": "양쪽"
+              },
+              {
+                "name": "글루트 브릿지",
+                "sets": 3,
+                "reps": 20,
+                "weight": "-"
+              },
+              {
+                "name": "사이드 라잉 힙 어브덕션",
+                "sets": 3,
+                "reps": 15,
+                "weight": "양쪽"
+              },
+              {
+                "name": "카프레이즈",
+                "sets": 3,
+                "reps": 20,
+                "weight": "-"
+              },
+              {
+                "name": "빠른 걷기 워밍업",
+                "sets": 1,
+                "reps": 1,
+                "weight": "3분"
+              },
+              {
+                "name": "Zone 2-3 조깅 (심박 139-165 bpm)",
+                "sets": 1,
+                "reps": 1,
+                "weight": "14분"
+              },
+              {
+                "name": "걷기 쿨다운",
+                "sets": 1,
+                "reps": 1,
+                "weight": "3분"
+              }
+            ]
+          },
+          {
+            "day": "수",
+            "workout": "요가",
+            "rest": false
+          },
+          {
+            "day": "목",
+            "workout": "상체 근력+러닝",
+            "rest": false,
+            "plan": [
+              {
+                "name": "푸쉬업 (무릎 or 일반)",
+                "sets": 3,
+                "reps": 12,
+                "weight": "-"
+              },
+              {
+                "name": "파이크 푸쉬업",
+                "sets": 3,
+                "reps": 10,
+                "weight": "-"
+              },
+              {
+                "name": "슈퍼맨",
+                "sets": 3,
+                "reps": 15,
+                "weight": "-"
+              },
+              {
+                "name": "테이블 로우 (등)",
+                "sets": 3,
+                "reps": 12,
+                "weight": "-"
+              },
+              {
+                "name": "다이아몬드 푸쉬업",
+                "sets": 3,
+                "reps": 10,
+                "weight": "-"
+              },
+              {
+                "name": "덤벨·물병 숄더프레스",
+                "sets": 3,
+                "reps": 15,
+                "weight": "가벼운 무게"
+              },
+              {
+                "name": "빠른 걷기 워밍업",
+                "sets": 1,
+                "reps": 1,
+                "weight": "3분"
+              },
+              {
+                "name": "Zone 2-3 조깅 (심박 139-165 bpm)",
+                "sets": 1,
+                "reps": 1,
+                "weight": "14분"
+              },
+              {
+                "name": "걷기 쿨다운",
+                "sets": 1,
+                "reps": 1,
+                "weight": "3분"
+              }
+            ]
+          },
+          {
+            "day": "금",
+            "workout": "요가",
+            "rest": false
+          },
+          {
+            "day": "토",
+            "workout": "러닝 20분",
+            "rest": false,
+            "plan": [
+              {
+                "name": "빠른 걷기 워밍업",
+                "sets": 1,
+                "reps": 1,
+                "weight": "3분"
+              },
+              {
+                "name": "Zone 2-3 조깅 (심박 139-165 bpm)",
+                "sets": 1,
+                "reps": 1,
+                "weight": "14분"
+              },
+              {
+                "name": "걷기 쿨다운",
+                "sets": 1,
+                "reps": 1,
+                "weight": "3분"
+              }
+            ]
+          },
+          {
+            "day": "일",
+            "workout": "전신 자세 교정 (30분)",
+            "rest": false,
+            "note": "요가 흐름과 연결되는 척추·코어 안정화 시퀀스예요. 데드버그·버드독으로 깊은 코어를 깨우고, 슈퍼맨·글루트 브릿지로 후면 근육을 강화해 굽은 자세를 방지합니다. 사이드 플랭크·인치웜은 전신 연결과 측면 안정화, 비둘기 자세로 마무리해 러닝 후 고관절을 풀어줍니다.",
+            "plan": [
+              {
+                "name": "고양이-소 스트레칭",
+                "sets": 1,
+                "reps": 10,
+                "weight": "워밍업"
+              },
+              {
+                "name": "월 엔젤 (벽에 등 붙이고)",
+                "sets": 1,
+                "reps": 10,
+                "weight": "워밍업"
+              },
+              {
+                "name": "데드버그",
+                "sets": 3,
+                "reps": 10,
+                "weight": "양쪽"
+              },
+              {
+                "name": "버드독",
+                "sets": 3,
+                "reps": 12,
+                "weight": "양쪽"
+              },
+              {
+                "name": "슈퍼맨 홀드",
+                "sets": 3,
+                "reps": 12,
+                "weight": "-"
+              },
+              {
+                "name": "글루트 브릿지",
+                "sets": 3,
+                "reps": 20,
+                "weight": "-"
+              },
+              {
+                "name": "사이드 플랭크",
+                "sets": 3,
+                "reps": 1,
+                "weight": "20초 양쪽"
+              },
+              {
+                "name": "인치웜 워크",
+                "sets": 2,
+                "reps": 8,
+                "weight": "-"
+              },
+              {
+                "name": "비둘기 자세 (쿨다운)",
+                "sets": 1,
+                "reps": 1,
+                "weight": "양쪽 30초"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "week": 7,
+      "label": "8월 2주차",
+      "date": "8/10",
+      "mainMessage": "",
+      "summaries": [],
+      "exercises": [],
+      "lifts": [],
+      "bodyData": {
+        "labels": [],
+        "weight": [],
+        "fat": [],
+        "muscle": [],
+        "lastMeasured": null,
+        "comment": ""
+      },
+      "condition": "",
+      "conditionNote": "",
+      "sleep": "",
+      "sleepNote": "",
+      "stress": "",
+      "pain": "없음",
+      "painNote": "",
+      "nutrition": "",
+      "nutritionNote": "",
+      "review": {
+        "good": "",
+        "caution": "",
+        "suggest": ""
+      },
+      "trainerComment": "",
+      "trainerDirection": "월=요가 / 화=하체 근력(홈트 1h) → 러닝 20분 / 수=요가 / 목=상체 근력(홈트 1h) → 러닝 20분 / 금=요가 / 토=러닝 20분 / 일=러닝 20분",
+      "nextSessionMemo": "",
+      "finalMessage": "",
+      "musclesWorked": [],
+      "sessionDates": [],
+      "memberComment": "",
+      "weeklyRoutine": {
+        "weekKey": "2026-W33-cy",
+        "note": "🎯 8월 2주차: 증량 루틴 유지 · 근력 강도 점진적 증가",
+        "days": [
+          {
+            "day": "월",
+            "workout": "요가",
+            "rest": false
+          },
+          {
+            "day": "화",
+            "workout": "하체 근력+러닝",
+            "rest": false,
+            "plan": [
+              {
+                "name": "맨몸 스쿼트",
+                "sets": 3,
+                "reps": 20,
+                "weight": "-"
+              },
+              {
+                "name": "런지",
+                "sets": 3,
+                "reps": 12,
+                "weight": "양쪽"
+              },
+              {
+                "name": "불가리안 스플릿 스쿼트",
+                "sets": 3,
+                "reps": 10,
+                "weight": "양쪽"
+              },
+              {
+                "name": "글루트 브릿지",
+                "sets": 3,
+                "reps": 20,
+                "weight": "-"
+              },
+              {
+                "name": "사이드 라잉 힙 어브덕션",
+                "sets": 3,
+                "reps": 15,
+                "weight": "양쪽"
+              },
+              {
+                "name": "카프레이즈",
+                "sets": 3,
+                "reps": 20,
+                "weight": "-"
+              },
+              {
+                "name": "빠른 걷기 워밍업",
+                "sets": 1,
+                "reps": 1,
+                "weight": "3분"
+              },
+              {
+                "name": "Zone 2-3 조깅 (심박 139-165 bpm)",
+                "sets": 1,
+                "reps": 1,
+                "weight": "14분"
+              },
+              {
+                "name": "걷기 쿨다운",
+                "sets": 1,
+                "reps": 1,
+                "weight": "3분"
+              }
+            ]
+          },
+          {
+            "day": "수",
+            "workout": "요가",
+            "rest": false
+          },
+          {
+            "day": "목",
+            "workout": "상체 근력+러닝",
+            "rest": false,
+            "plan": [
+              {
+                "name": "푸쉬업 (무릎 or 일반)",
+                "sets": 3,
+                "reps": 12,
+                "weight": "-"
+              },
+              {
+                "name": "파이크 푸쉬업",
+                "sets": 3,
+                "reps": 10,
+                "weight": "-"
+              },
+              {
+                "name": "슈퍼맨",
+                "sets": 3,
+                "reps": 15,
+                "weight": "-"
+              },
+              {
+                "name": "테이블 로우 (등)",
+                "sets": 3,
+                "reps": 12,
+                "weight": "-"
+              },
+              {
+                "name": "다이아몬드 푸쉬업",
+                "sets": 3,
+                "reps": 10,
+                "weight": "-"
+              },
+              {
+                "name": "덤벨·물병 숄더프레스",
+                "sets": 3,
+                "reps": 15,
+                "weight": "가벼운 무게"
+              },
+              {
+                "name": "빠른 걷기 워밍업",
+                "sets": 1,
+                "reps": 1,
+                "weight": "3분"
+              },
+              {
+                "name": "Zone 2-3 조깅 (심박 139-165 bpm)",
+                "sets": 1,
+                "reps": 1,
+                "weight": "14분"
+              },
+              {
+                "name": "걷기 쿨다운",
+                "sets": 1,
+                "reps": 1,
+                "weight": "3분"
+              }
+            ]
+          },
+          {
+            "day": "금",
+            "workout": "요가",
+            "rest": false
+          },
+          {
+            "day": "토",
+            "workout": "러닝 20분",
+            "rest": false,
+            "plan": [
+              {
+                "name": "빠른 걷기 워밍업",
+                "sets": 1,
+                "reps": 1,
+                "weight": "3분"
+              },
+              {
+                "name": "Zone 2-3 조깅 (심박 139-165 bpm)",
+                "sets": 1,
+                "reps": 1,
+                "weight": "14분"
+              },
+              {
+                "name": "걷기 쿨다운",
+                "sets": 1,
+                "reps": 1,
+                "weight": "3분"
+              }
+            ]
+          },
+          {
+            "day": "일",
+            "workout": "전신 자세 교정 (30분)",
+            "rest": false,
+            "note": "요가 흐름과 연결되는 척추·코어 안정화 시퀀스예요. 데드버그·버드독으로 깊은 코어를 깨우고, 슈퍼맨·글루트 브릿지로 후면 근육을 강화해 굽은 자세를 방지합니다. 사이드 플랭크·인치웜은 전신 연결과 측면 안정화, 비둘기 자세로 마무리해 러닝 후 고관절을 풀어줍니다.",
+            "plan": [
+              {
+                "name": "고양이-소 스트레칭",
+                "sets": 1,
+                "reps": 10,
+                "weight": "워밍업"
+              },
+              {
+                "name": "월 엔젤 (벽에 등 붙이고)",
+                "sets": 1,
+                "reps": 10,
+                "weight": "워밍업"
+              },
+              {
+                "name": "데드버그",
+                "sets": 3,
+                "reps": 10,
+                "weight": "양쪽"
+              },
+              {
+                "name": "버드독",
+                "sets": 3,
+                "reps": 12,
+                "weight": "양쪽"
+              },
+              {
+                "name": "슈퍼맨 홀드",
+                "sets": 3,
+                "reps": 12,
+                "weight": "-"
+              },
+              {
+                "name": "글루트 브릿지",
+                "sets": 3,
+                "reps": 20,
+                "weight": "-"
+              },
+              {
+                "name": "사이드 플랭크",
+                "sets": 3,
+                "reps": 1,
+                "weight": "20초 양쪽"
+              },
+              {
+                "name": "인치웜 워크",
+                "sets": 2,
+                "reps": 8,
+                "weight": "-"
+              },
+              {
+                "name": "비둘기 자세 (쿨다운)",
+                "sets": 1,
+                "reps": 1,
+                "weight": "양쪽 30초"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "week": 8,
+      "label": "8월 3주차",
+      "date": "8/17",
+      "mainMessage": "",
+      "summaries": [],
+      "exercises": [],
+      "lifts": [],
+      "bodyData": {
+        "labels": [],
+        "weight": [],
+        "fat": [],
+        "muscle": [],
+        "lastMeasured": null,
+        "comment": ""
+      },
+      "condition": "",
+      "conditionNote": "",
+      "sleep": "",
+      "sleepNote": "",
+      "stress": "",
+      "pain": "없음",
+      "painNote": "",
+      "nutrition": "",
+      "nutritionNote": "",
+      "review": {
+        "good": "",
+        "caution": "",
+        "suggest": ""
+      },
+      "trainerComment": "",
+      "trainerDirection": "월=요가 / 화=하체 근력(홈트 1h) → 러닝 20분 / 수=요가 / 목=상체 근력(홈트 1h) → 러닝 20분 / 금=요가 / 토=러닝 20분 / 일=러닝 20분",
+      "nextSessionMemo": "",
+      "finalMessage": "",
+      "musclesWorked": [],
+      "sessionDates": [],
+      "memberComment": "",
+      "weeklyRoutine": {
+        "weekKey": "2026-W34-cy",
+        "note": "🎯 8월 3주차: 중간 점검 · 식사량 조정",
+        "days": [
+          {
+            "day": "월",
+            "workout": "요가",
+            "rest": false
+          },
+          {
+            "day": "화",
+            "workout": "하체 근력+러닝",
+            "rest": false,
+            "plan": [
+              {
+                "name": "맨몸 스쿼트",
+                "sets": 3,
+                "reps": 20,
+                "weight": "-"
+              },
+              {
+                "name": "런지",
+                "sets": 3,
+                "reps": 12,
+                "weight": "양쪽"
+              },
+              {
+                "name": "불가리안 스플릿 스쿼트",
+                "sets": 3,
+                "reps": 10,
+                "weight": "양쪽"
+              },
+              {
+                "name": "글루트 브릿지",
+                "sets": 3,
+                "reps": 20,
+                "weight": "-"
+              },
+              {
+                "name": "사이드 라잉 힙 어브덕션",
+                "sets": 3,
+                "reps": 15,
+                "weight": "양쪽"
+              },
+              {
+                "name": "카프레이즈",
+                "sets": 3,
+                "reps": 20,
+                "weight": "-"
+              },
+              {
+                "name": "빠른 걷기 워밍업",
+                "sets": 1,
+                "reps": 1,
+                "weight": "3분"
+              },
+              {
+                "name": "Zone 2-3 조깅 (심박 139-165 bpm)",
+                "sets": 1,
+                "reps": 1,
+                "weight": "14분"
+              },
+              {
+                "name": "걷기 쿨다운",
+                "sets": 1,
+                "reps": 1,
+                "weight": "3분"
+              }
+            ]
+          },
+          {
+            "day": "수",
+            "workout": "요가",
+            "rest": false
+          },
+          {
+            "day": "목",
+            "workout": "상체 근력+러닝",
+            "rest": false,
+            "plan": [
+              {
+                "name": "푸쉬업 (무릎 or 일반)",
+                "sets": 3,
+                "reps": 12,
+                "weight": "-"
+              },
+              {
+                "name": "파이크 푸쉬업",
+                "sets": 3,
+                "reps": 10,
+                "weight": "-"
+              },
+              {
+                "name": "슈퍼맨",
+                "sets": 3,
+                "reps": 15,
+                "weight": "-"
+              },
+              {
+                "name": "테이블 로우 (등)",
+                "sets": 3,
+                "reps": 12,
+                "weight": "-"
+              },
+              {
+                "name": "다이아몬드 푸쉬업",
+                "sets": 3,
+                "reps": 10,
+                "weight": "-"
+              },
+              {
+                "name": "덤벨·물병 숄더프레스",
+                "sets": 3,
+                "reps": 15,
+                "weight": "가벼운 무게"
+              },
+              {
+                "name": "빠른 걷기 워밍업",
+                "sets": 1,
+                "reps": 1,
+                "weight": "3분"
+              },
+              {
+                "name": "Zone 2-3 조깅 (심박 139-165 bpm)",
+                "sets": 1,
+                "reps": 1,
+                "weight": "14분"
+              },
+              {
+                "name": "걷기 쿨다운",
+                "sets": 1,
+                "reps": 1,
+                "weight": "3분"
+              }
+            ]
+          },
+          {
+            "day": "금",
+            "workout": "요가",
+            "rest": false
+          },
+          {
+            "day": "토",
+            "workout": "러닝 20분",
+            "rest": false,
+            "plan": [
+              {
+                "name": "빠른 걷기 워밍업",
+                "sets": 1,
+                "reps": 1,
+                "weight": "3분"
+              },
+              {
+                "name": "Zone 2-3 조깅 (심박 139-165 bpm)",
+                "sets": 1,
+                "reps": 1,
+                "weight": "14분"
+              },
+              {
+                "name": "걷기 쿨다운",
+                "sets": 1,
+                "reps": 1,
+                "weight": "3분"
+              }
+            ]
+          },
+          {
+            "day": "일",
+            "workout": "전신 자세 교정 (30분)",
+            "rest": false,
+            "note": "요가 흐름과 연결되는 척추·코어 안정화 시퀀스예요. 데드버그·버드독으로 깊은 코어를 깨우고, 슈퍼맨·글루트 브릿지로 후면 근육을 강화해 굽은 자세를 방지합니다. 사이드 플랭크·인치웜은 전신 연결과 측면 안정화, 비둘기 자세로 마무리해 러닝 후 고관절을 풀어줍니다.",
+            "plan": [
+              {
+                "name": "고양이-소 스트레칭",
+                "sets": 1,
+                "reps": 10,
+                "weight": "워밍업"
+              },
+              {
+                "name": "월 엔젤 (벽에 등 붙이고)",
+                "sets": 1,
+                "reps": 10,
+                "weight": "워밍업"
+              },
+              {
+                "name": "데드버그",
+                "sets": 3,
+                "reps": 10,
+                "weight": "양쪽"
+              },
+              {
+                "name": "버드독",
+                "sets": 3,
+                "reps": 12,
+                "weight": "양쪽"
+              },
+              {
+                "name": "슈퍼맨 홀드",
+                "sets": 3,
+                "reps": 12,
+                "weight": "-"
+              },
+              {
+                "name": "글루트 브릿지",
+                "sets": 3,
+                "reps": 20,
+                "weight": "-"
+              },
+              {
+                "name": "사이드 플랭크",
+                "sets": 3,
+                "reps": 1,
+                "weight": "20초 양쪽"
+              },
+              {
+                "name": "인치웜 워크",
+                "sets": 2,
+                "reps": 8,
+                "weight": "-"
+              },
+              {
+                "name": "비둘기 자세 (쿨다운)",
+                "sets": 1,
+                "reps": 1,
+                "weight": "양쪽 30초"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "week": 9,
+      "label": "8월 4주차",
+      "date": "8/24",
+      "mainMessage": "",
+      "summaries": [],
+      "exercises": [],
+      "lifts": [],
+      "bodyData": {
+        "labels": [],
+        "weight": [],
+        "fat": [],
+        "muscle": [],
+        "lastMeasured": null,
+        "comment": ""
+      },
+      "condition": "",
+      "conditionNote": "",
+      "sleep": "",
+      "sleepNote": "",
+      "stress": "",
+      "pain": "없음",
+      "painNote": "",
+      "nutrition": "",
+      "nutritionNote": "",
+      "review": {
+        "good": "",
+        "caution": "",
+        "suggest": ""
+      },
+      "trainerComment": "",
+      "trainerDirection": "월=요가 / 화=하체 근력(홈트 1h) → 러닝 20분 / 수=요가 / 목=상체 근력(홈트 1h) → 러닝 20분 / 금=요가 / 토=러닝 20분 / 일=러닝 20분",
+      "nextSessionMemo": "",
+      "finalMessage": "",
+      "musclesWorked": [],
+      "sessionDates": [],
+      "memberComment": "",
+      "weeklyRoutine": {
+        "weekKey": "2026-W35-cy",
+        "note": "🎯 8월 4주차: 루틴 습관화 · 컨디션 관리",
+        "days": [
+          {
+            "day": "월",
+            "workout": "요가",
+            "rest": false
+          },
+          {
+            "day": "화",
+            "workout": "하체 근력+러닝",
+            "rest": false,
+            "plan": [
+              {
+                "name": "맨몸 스쿼트",
+                "sets": 3,
+                "reps": 20,
+                "weight": "-"
+              },
+              {
+                "name": "런지",
+                "sets": 3,
+                "reps": 12,
+                "weight": "양쪽"
+              },
+              {
+                "name": "불가리안 스플릿 스쿼트",
+                "sets": 3,
+                "reps": 10,
+                "weight": "양쪽"
+              },
+              {
+                "name": "글루트 브릿지",
+                "sets": 3,
+                "reps": 20,
+                "weight": "-"
+              },
+              {
+                "name": "사이드 라잉 힙 어브덕션",
+                "sets": 3,
+                "reps": 15,
+                "weight": "양쪽"
+              },
+              {
+                "name": "카프레이즈",
+                "sets": 3,
+                "reps": 20,
+                "weight": "-"
+              },
+              {
+                "name": "빠른 걷기 워밍업",
+                "sets": 1,
+                "reps": 1,
+                "weight": "3분"
+              },
+              {
+                "name": "Zone 2-3 조깅 (심박 139-165 bpm)",
+                "sets": 1,
+                "reps": 1,
+                "weight": "14분"
+              },
+              {
+                "name": "걷기 쿨다운",
+                "sets": 1,
+                "reps": 1,
+                "weight": "3분"
+              }
+            ]
+          },
+          {
+            "day": "수",
+            "workout": "요가",
+            "rest": false
+          },
+          {
+            "day": "목",
+            "workout": "상체 근력+러닝",
+            "rest": false,
+            "plan": [
+              {
+                "name": "푸쉬업 (무릎 or 일반)",
+                "sets": 3,
+                "reps": 12,
+                "weight": "-"
+              },
+              {
+                "name": "파이크 푸쉬업",
+                "sets": 3,
+                "reps": 10,
+                "weight": "-"
+              },
+              {
+                "name": "슈퍼맨",
+                "sets": 3,
+                "reps": 15,
+                "weight": "-"
+              },
+              {
+                "name": "테이블 로우 (등)",
+                "sets": 3,
+                "reps": 12,
+                "weight": "-"
+              },
+              {
+                "name": "다이아몬드 푸쉬업",
+                "sets": 3,
+                "reps": 10,
+                "weight": "-"
+              },
+              {
+                "name": "덤벨·물병 숄더프레스",
+                "sets": 3,
+                "reps": 15,
+                "weight": "가벼운 무게"
+              },
+              {
+                "name": "빠른 걷기 워밍업",
+                "sets": 1,
+                "reps": 1,
+                "weight": "3분"
+              },
+              {
+                "name": "Zone 2-3 조깅 (심박 139-165 bpm)",
+                "sets": 1,
+                "reps": 1,
+                "weight": "14분"
+              },
+              {
+                "name": "걷기 쿨다운",
+                "sets": 1,
+                "reps": 1,
+                "weight": "3분"
+              }
+            ]
+          },
+          {
+            "day": "금",
+            "workout": "요가",
+            "rest": false
+          },
+          {
+            "day": "토",
+            "workout": "러닝 20분",
+            "rest": false,
+            "plan": [
+              {
+                "name": "빠른 걷기 워밍업",
+                "sets": 1,
+                "reps": 1,
+                "weight": "3분"
+              },
+              {
+                "name": "Zone 2-3 조깅 (심박 139-165 bpm)",
+                "sets": 1,
+                "reps": 1,
+                "weight": "14분"
+              },
+              {
+                "name": "걷기 쿨다운",
+                "sets": 1,
+                "reps": 1,
+                "weight": "3분"
+              }
+            ]
+          },
+          {
+            "day": "일",
+            "workout": "전신 자세 교정 (30분)",
+            "rest": false,
+            "note": "요가 흐름과 연결되는 척추·코어 안정화 시퀀스예요. 데드버그·버드독으로 깊은 코어를 깨우고, 슈퍼맨·글루트 브릿지로 후면 근육을 강화해 굽은 자세를 방지합니다. 사이드 플랭크·인치웜은 전신 연결과 측면 안정화, 비둘기 자세로 마무리해 러닝 후 고관절을 풀어줍니다.",
+            "plan": [
+              {
+                "name": "고양이-소 스트레칭",
+                "sets": 1,
+                "reps": 10,
+                "weight": "워밍업"
+              },
+              {
+                "name": "월 엔젤 (벽에 등 붙이고)",
+                "sets": 1,
+                "reps": 10,
+                "weight": "워밍업"
+              },
+              {
+                "name": "데드버그",
+                "sets": 3,
+                "reps": 10,
+                "weight": "양쪽"
+              },
+              {
+                "name": "버드독",
+                "sets": 3,
+                "reps": 12,
+                "weight": "양쪽"
+              },
+              {
+                "name": "슈퍼맨 홀드",
+                "sets": 3,
+                "reps": 12,
+                "weight": "-"
+              },
+              {
+                "name": "글루트 브릿지",
+                "sets": 3,
+                "reps": 20,
+                "weight": "-"
+              },
+              {
+                "name": "사이드 플랭크",
+                "sets": 3,
+                "reps": 1,
+                "weight": "20초 양쪽"
+              },
+              {
+                "name": "인치웜 워크",
+                "sets": 2,
+                "reps": 8,
+                "weight": "-"
+              },
+              {
+                "name": "비둘기 자세 (쿨다운)",
+                "sets": 1,
+                "reps": 1,
+                "weight": "양쪽 30초"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "week": 10,
+      "label": "8월 5주차",
+      "date": "8/31",
+      "mainMessage": "",
+      "summaries": [],
+      "exercises": [],
+      "lifts": [],
+      "bodyData": {
+        "labels": [],
+        "weight": [],
+        "fat": [],
+        "muscle": [],
+        "lastMeasured": null,
+        "comment": ""
+      },
+      "condition": "",
+      "conditionNote": "",
+      "sleep": "",
+      "sleepNote": "",
+      "stress": "",
+      "pain": "없음",
+      "painNote": "",
+      "nutrition": "",
+      "nutritionNote": "",
+      "review": {
+        "good": "",
+        "caution": "",
+        "suggest": ""
+      },
+      "trainerComment": "",
+      "trainerDirection": "월=요가 / 화=하체 근력(홈트 1h) → 러닝 20분 / 수=요가 / 목=상체 근력(홈트 1h) → 러닝 20분 / 금=요가 / 토=러닝 20분 / 일=러닝 20분",
+      "nextSessionMemo": "",
+      "finalMessage": "",
+      "musclesWorked": [],
+      "sessionDates": [],
+      "memberComment": "",
+      "weeklyRoutine": {
+        "weekKey": "2026-W36-cy",
+        "note": "🎯 8월 5주차: 8월 마무리 · 다음 달 목표 설정",
+        "days": [
+          {
+            "day": "월",
+            "workout": "요가",
+            "rest": false
+          },
+          {
+            "day": "화",
+            "workout": "하체 근력+러닝",
+            "rest": false,
+            "plan": [
+              {
+                "name": "맨몸 스쿼트",
+                "sets": 3,
+                "reps": 20,
+                "weight": "-"
+              },
+              {
+                "name": "런지",
+                "sets": 3,
+                "reps": 12,
+                "weight": "양쪽"
+              },
+              {
+                "name": "불가리안 스플릿 스쿼트",
+                "sets": 3,
+                "reps": 10,
+                "weight": "양쪽"
+              },
+              {
+                "name": "글루트 브릿지",
+                "sets": 3,
+                "reps": 20,
+                "weight": "-"
+              },
+              {
+                "name": "사이드 라잉 힙 어브덕션",
+                "sets": 3,
+                "reps": 15,
+                "weight": "양쪽"
+              },
+              {
+                "name": "카프레이즈",
+                "sets": 3,
+                "reps": 20,
+                "weight": "-"
+              },
+              {
+                "name": "빠른 걷기 워밍업",
+                "sets": 1,
+                "reps": 1,
+                "weight": "3분"
+              },
+              {
+                "name": "Zone 2-3 조깅 (심박 139-165 bpm)",
+                "sets": 1,
+                "reps": 1,
+                "weight": "14분"
+              },
+              {
+                "name": "걷기 쿨다운",
+                "sets": 1,
+                "reps": 1,
+                "weight": "3분"
+              }
+            ]
+          },
+          {
+            "day": "수",
+            "workout": "요가",
+            "rest": false
+          },
+          {
+            "day": "목",
+            "workout": "상체 근력+러닝",
+            "rest": false,
+            "plan": [
+              {
+                "name": "푸쉬업 (무릎 or 일반)",
+                "sets": 3,
+                "reps": 12,
+                "weight": "-"
+              },
+              {
+                "name": "파이크 푸쉬업",
+                "sets": 3,
+                "reps": 10,
+                "weight": "-"
+              },
+              {
+                "name": "슈퍼맨",
+                "sets": 3,
+                "reps": 15,
+                "weight": "-"
+              },
+              {
+                "name": "테이블 로우 (등)",
+                "sets": 3,
+                "reps": 12,
+                "weight": "-"
+              },
+              {
+                "name": "다이아몬드 푸쉬업",
+                "sets": 3,
+                "reps": 10,
+                "weight": "-"
+              },
+              {
+                "name": "덤벨·물병 숄더프레스",
+                "sets": 3,
+                "reps": 15,
+                "weight": "가벼운 무게"
+              },
+              {
+                "name": "빠른 걷기 워밍업",
+                "sets": 1,
+                "reps": 1,
+                "weight": "3분"
+              },
+              {
+                "name": "Zone 2-3 조깅 (심박 139-165 bpm)",
+                "sets": 1,
+                "reps": 1,
+                "weight": "14분"
+              },
+              {
+                "name": "걷기 쿨다운",
+                "sets": 1,
+                "reps": 1,
+                "weight": "3분"
+              }
+            ]
+          },
+          {
+            "day": "금",
+            "workout": "요가",
+            "rest": false
+          },
+          {
+            "day": "토",
+            "workout": "러닝 20분",
+            "rest": false,
+            "plan": [
+              {
+                "name": "빠른 걷기 워밍업",
+                "sets": 1,
+                "reps": 1,
+                "weight": "3분"
+              },
+              {
+                "name": "Zone 2-3 조깅 (심박 139-165 bpm)",
+                "sets": 1,
+                "reps": 1,
+                "weight": "14분"
+              },
+              {
+                "name": "걷기 쿨다운",
+                "sets": 1,
+                "reps": 1,
+                "weight": "3분"
+              }
+            ]
+          },
+          {
+            "day": "일",
+            "workout": "전신 자세 교정 (30분)",
+            "rest": false,
+            "note": "요가 흐름과 연결되는 척추·코어 안정화 시퀀스예요. 데드버그·버드독으로 깊은 코어를 깨우고, 슈퍼맨·글루트 브릿지로 후면 근육을 강화해 굽은 자세를 방지합니다. 사이드 플랭크·인치웜은 전신 연결과 측면 안정화, 비둘기 자세로 마무리해 러닝 후 고관절을 풀어줍니다.",
+            "plan": [
+              {
+                "name": "고양이-소 스트레칭",
+                "sets": 1,
+                "reps": 10,
+                "weight": "워밍업"
+              },
+              {
+                "name": "월 엔젤 (벽에 등 붙이고)",
+                "sets": 1,
+                "reps": 10,
+                "weight": "워밍업"
+              },
+              {
+                "name": "데드버그",
+                "sets": 3,
+                "reps": 10,
+                "weight": "양쪽"
+              },
+              {
+                "name": "버드독",
+                "sets": 3,
+                "reps": 12,
+                "weight": "양쪽"
+              },
+              {
+                "name": "슈퍼맨 홀드",
+                "sets": 3,
+                "reps": 12,
+                "weight": "-"
+              },
+              {
+                "name": "글루트 브릿지",
+                "sets": 3,
+                "reps": 20,
+                "weight": "-"
+              },
+              {
+                "name": "사이드 플랭크",
+                "sets": 3,
+                "reps": 1,
+                "weight": "20초 양쪽"
+              },
+              {
+                "name": "인치웜 워크",
+                "sets": 2,
+                "reps": 8,
+                "weight": "-"
+              },
+              {
+                "name": "비둘기 자세 (쿨다운)",
+                "sets": 1,
+                "reps": 1,
+                "weight": "양쪽 30초"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
       "week": 1,
       "label": "1주차",
       "date": "6/29",
