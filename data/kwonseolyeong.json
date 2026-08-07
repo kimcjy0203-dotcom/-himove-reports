@@ -911,6 +911,184 @@
           }
         ]
       }
+    },
+    {
+      "week": 6,
+      "label": "8월 1주차",
+      "date": "8/3",
+      "mainMessage": "오늘은 세션 중 두통이 있어서, 근력운동 후 이완 위주로 방향을 바꿔 진행했어요. 후두하근·승모근·견갑하근을 풀고 깊은 호흡으로 이완하는 시간을 가진 뒤 두통이 다소 완화됐어요.",
+      "summaries": [
+        {
+          "sessionDate": "2026-08-06",
+          "date": "2026년 8월 6일",
+          "items": [
+            {
+              "name": "바벨 숄더 프레스",
+              "detail": "3세트 × 10 / 10kg"
+            },
+            {
+              "name": "스쿼트",
+              "detail": "3세트 × 10 / 10kg"
+            },
+            {
+              "name": "리버스 런지 트위스트",
+              "detail": "3세트"
+            },
+            {
+              "name": "후두하근 마사지",
+              "detail": ""
+            },
+            {
+              "name": "흉추 신전",
+              "detail": ""
+            },
+            {
+              "name": "승모근 풀기",
+              "detail": ""
+            },
+            {
+              "name": "견갑하근 풀기",
+              "detail": ""
+            },
+            {
+              "name": "호흡 이완",
+              "detail": ""
+            }
+          ]
+        }
+      ],
+      "exercises": [
+        {
+          "name": "후두하근 마사지",
+          "note": "· 두통이 지속되어 룸으로 이동 후 진행 — 목 뒤 후두하근을 눌러 이완, 두통 완화 목적",
+          "next": ""
+        },
+        {
+          "name": "흉추 신전",
+          "note": "· 가슴 근육 이완 목적으로 진행",
+          "next": ""
+        },
+        {
+          "name": "승모근 풀기",
+          "note": "· 두통·긴장과 연결된 승모근 이완",
+          "next": ""
+        },
+        {
+          "name": "견갑하근 풀기",
+          "note": "· 견갑골 주변 긴장 이완",
+          "next": ""
+        },
+        {
+          "name": "호흡 이완",
+          "note": "· 깊은 호흡으로 이완되는 감각을 직접 경험<br>· 통증이 있을 때 깊은 호흡이 부교감 신경을 자극해 몸을 이완 상태로 전환시키는 원리 설명",
+          "next": "두통이나 긴장이 느껴질 때 깊은 호흡을 스스로 활용해보기"
+        }
+      ],
+      "lifts": [],
+      "bodyData": null,
+      "condition": "",
+      "conditionNote": "세션 중 두통 호소 — 근력운동 이후 통증 지속되어 이완 위주로 전환, 세션 후반 두통 다소 완화됨",
+      "sleep": "",
+      "sleepNote": "",
+      "stress": "",
+      "pain": "있음",
+      "painNote": "두통",
+      "nutrition": "",
+      "nutritionNote": "",
+      "review": {
+        "good": "",
+        "caution": "",
+        "suggest": ""
+      },
+      "trainerComment": "",
+      "trainerDirection": "",
+      "nextSessionMemo": "",
+      "finalMessage": "",
+      "musclesWorked": [],
+      "sessionDates": [
+        "2026-08-06"
+      ],
+      "memberComment": "",
+      "weeklyRoutine": {
+        "weekKey": "2026-W31-kwsy",
+        "note": "상·하 2분할 — 화 레슨(상체/가슴), 목 레슨(하체), 금 개인(등) 60분",
+        "days": [
+          {
+            "day": "월",
+            "workout": "휴식",
+            "rest": true
+          },
+          {
+            "day": "화",
+            "workout": "레슨-상체",
+            "rest": false
+          },
+          {
+            "day": "수",
+            "workout": "휴식",
+            "rest": true
+          },
+          {
+            "day": "목",
+            "workout": "레슨-하체",
+            "rest": false
+          },
+          {
+            "day": "금",
+            "workout": "개인-등",
+            "rest": false,
+            "plan": [
+              {
+                "name": "렛풀다운",
+                "sets": 4,
+                "reps": 12,
+                "weight": "-"
+              },
+              {
+                "name": "시티드 케이블 로우",
+                "sets": 4,
+                "reps": 12,
+                "weight": "-"
+              },
+              {
+                "name": "원암 덤벨 로우",
+                "sets": 3,
+                "reps": 12,
+                "weight": "-"
+              },
+              {
+                "name": "페이스 풀",
+                "sets": 3,
+                "reps": 15,
+                "weight": "-"
+              },
+              {
+                "name": "케이블 스트레이트 암 풀다운",
+                "sets": 3,
+                "reps": 15,
+                "weight": "-"
+              },
+              {
+                "name": "플랭크",
+                "sets": 3,
+                "reps": 1,
+                "weight": "30초"
+              }
+            ],
+            "note": "화요일 레슨에서 가슴(밀기)을 했으니 금요일은 등(당기기)으로 상체 전·후면 균형을 맞춥니다. 렛풀다운→케이블 로우 순서로 광배근부터 중부 승모근까지 순차 자극. 세트 간 60초 휴식 유지."
+          },
+          {
+            "day": "토",
+            "workout": "휴식",
+            "rest": true
+          },
+          {
+            "day": "일",
+            "workout": "휴식",
+            "rest": true
+          }
+        ]
+      }
     }
   ],
   "quotes": [
