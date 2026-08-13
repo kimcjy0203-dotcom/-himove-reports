@@ -1089,6 +1089,157 @@
           }
         ]
       }
+    },
+    {
+      "week": 7,
+      "label": "8월 2주차",
+      "date": "8/10",
+      "mainMessage": "오늘은 가슴 위주로 진행했어요. 어시스트 풀업은 내려갈 때는 스스로 버티고 올라올 때만 밴드로 보조해서, 신장성 수축 구간에 집중적으로 자극을 주는 방식으로 진행했어요.",
+      "summaries": [
+        {
+          "sessionDate": "2026-08-12",
+          "date": "2026년 8월 12일",
+          "items": [
+            {
+              "name": "어시스트 풀업 (신장성 수축 중심)",
+              "detail": "10회"
+            },
+            {
+              "name": "덤벨 체스트 프레스",
+              "detail": "10회 / 6+6kg"
+            },
+            {
+              "name": "체스트 프레스 머신",
+              "detail": "10회 / 10kg"
+            },
+            {
+              "name": "어시스트 딥스",
+              "detail": "10회"
+            },
+            {
+              "name": "에어바이크",
+              "detail": "마무리 유산소"
+            }
+          ]
+        }
+      ],
+      "exercises": [
+        {
+          "name": "어시스트 풀업 (신장성 수축 중심)",
+          "note": "· 보조 발판 아래에서 3번째 칸에 세팅 — 올라올 때(동심성 구간)는 트레이너가 밴드로 골반을 받쳐 보조하고, 내려올 때(신장성 구간)는 스스로 버티며 저항<br>· 이 운동을 하는 이유: 신장성(내려가는) 수축은 근육이 늘어나면서 힘을 내는 방식으로 동심성보다 더 큰 힘을 낼 수 있어, 아직 스스로 끌어올릴 근력이 부족한 단계에서도 근력·근비대 자극을 만들 수 있음 — 이렇게 쌓은 힘이 점진적으로 동심성 근력까지 끌어올려줌",
+          "next": ""
+        },
+        {
+          "name": "어시스트 딥스",
+          "note": "· 팔꿈치가 몸 쪽으로 모이면서 등 힘이 느껴지는 것 확인<br>· 팔꿈치가 주먹과 수직이 되는 정렬을 유지하는 것이 포인트",
+          "next": "팔꿈치가 너무 모이거나 벌어지지 않도록 매 반복 체크"
+        }
+      ],
+      "lifts": [],
+      "bodyData": null,
+      "condition": "",
+      "conditionNote": "",
+      "sleep": "",
+      "sleepNote": "",
+      "stress": "",
+      "pain": "없음",
+      "painNote": "",
+      "nutrition": "",
+      "nutritionNote": "",
+      "review": {
+        "good": "",
+        "caution": "",
+        "suggest": ""
+      },
+      "trainerComment": "",
+      "trainerDirection": "",
+      "nextSessionMemo": "",
+      "finalMessage": "",
+      "musclesWorked": [],
+      "sessionDates": [
+        "2026-08-12"
+      ],
+      "memberComment": "",
+      "weeklyRoutine": {
+        "weekKey": "2026-W31-kwsy",
+        "note": "상·하 2분할 — 화 레슨(상체/가슴), 목 레슨(하체), 금 개인(등) 60분",
+        "days": [
+          {
+            "day": "월",
+            "workout": "휴식",
+            "rest": true
+          },
+          {
+            "day": "화",
+            "workout": "레슨-상체",
+            "rest": false
+          },
+          {
+            "day": "수",
+            "workout": "휴식",
+            "rest": true
+          },
+          {
+            "day": "목",
+            "workout": "레슨-하체",
+            "rest": false
+          },
+          {
+            "day": "금",
+            "workout": "개인-등",
+            "rest": false,
+            "plan": [
+              {
+                "name": "렛풀다운",
+                "sets": 4,
+                "reps": 12,
+                "weight": "-"
+              },
+              {
+                "name": "시티드 케이블 로우",
+                "sets": 4,
+                "reps": 12,
+                "weight": "-"
+              },
+              {
+                "name": "원암 덤벨 로우",
+                "sets": 3,
+                "reps": 12,
+                "weight": "-"
+              },
+              {
+                "name": "페이스 풀",
+                "sets": 3,
+                "reps": 15,
+                "weight": "-"
+              },
+              {
+                "name": "케이블 스트레이트 암 풀다운",
+                "sets": 3,
+                "reps": 15,
+                "weight": "-"
+              },
+              {
+                "name": "플랭크",
+                "sets": 3,
+                "reps": 1,
+                "weight": "30초"
+              }
+            ],
+            "note": "화요일 레슨에서 가슴(밀기)을 했으니 금요일은 등(당기기)으로 상체 전·후면 균형을 맞춥니다. 렛풀다운→케이블 로우 순서로 광배근부터 중부 승모근까지 순차 자극. 세트 간 60초 휴식 유지."
+          },
+          {
+            "day": "토",
+            "workout": "휴식",
+            "rest": true
+          },
+          {
+            "day": "일",
+            "workout": "휴식",
+            "rest": true
+          }
+        ]
+      }
     }
   ],
   "quotes": [
