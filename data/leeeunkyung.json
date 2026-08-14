@@ -16,7 +16,12 @@
       "period": "2개월"
     }
   },
-  "bodyGoals": null,
+  "bodyGoals": {
+    "weight": {
+      "start": 55.5,
+      "goal": 50.9
+    }
+  },
   "cardio": {
     "age": 50,
     "restingHR": null
@@ -199,7 +204,22 @@
         }
       ],
       "lifts": [],
-      "bodyData": null,
+      "bodyData": {
+        "labels": [
+          "8/11"
+        ],
+        "weight": [
+          55.5
+        ],
+        "fat": [
+          0
+        ],
+        "muscle": [
+          0
+        ],
+        "lastMeasured": "2026-08-11",
+        "comment": "2주차 기준 체중 55.5kg — 장기 목표 4.6kg 감량 시 목표 체중 50.9kg"
+      },
       "condition": "",
       "conditionNote": "",
       "sleep": "",
