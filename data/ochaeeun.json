@@ -453,33 +453,12 @@
       "memberComment": "",
       "weeklyRoutine": {
         "weekKey": "2026-W33-ochaeeun",
-        "note": "화요일 개인-하체 신설. 레슨/개인운동 요일 재구성 진행 중.",
+        "note": "레슨 월 1회 / 개인운동 화(하체)·수(유산소·코어)·목(어깨·코어)·금(코어·유산소)",
         "days": [
           {
             "day": "월",
-            "workout": "개인-어깨·코어",
-            "rest": false,
-            "plan": [
-              {
-                "name": "밴드 숄더 프레스",
-                "sets": 3,
-                "reps": 12,
-                "weight": "-"
-              },
-              {
-                "name": "밴드 레터럴 레이즈",
-                "sets": 3,
-                "reps": 15,
-                "weight": "-"
-              },
-              {
-                "name": "플랭크",
-                "sets": 3,
-                "reps": "30초",
-                "weight": "-"
-              }
-            ],
-            "note": "어깨·코어 보강"
+            "workout": "레슨",
+            "rest": false
           },
           {
             "day": "화",
@@ -553,8 +532,29 @@
           },
           {
             "day": "목",
-            "workout": "레슨",
-            "rest": false
+            "workout": "개인-어깨·코어",
+            "rest": false,
+            "plan": [
+              {
+                "name": "밴드 숄더 프레스",
+                "sets": 3,
+                "reps": 12,
+                "weight": "-"
+              },
+              {
+                "name": "밴드 레터럴 레이즈",
+                "sets": 3,
+                "reps": 15,
+                "weight": "-"
+              },
+              {
+                "name": "플랭크",
+                "sets": 3,
+                "reps": "30초",
+                "weight": "-"
+              }
+            ],
+            "note": "어깨·코어 보강 (레슨이 월요일 주 1회로 줄면서 목요일로 이동)"
           },
           {
             "day": "금",
