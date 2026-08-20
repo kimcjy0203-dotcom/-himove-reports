@@ -65,7 +65,7 @@ body > * { position: relative; z-index: 1; }
   box-shadow: 0 4px 16px rgba(230,140,30,0.1);
 }
 .notice-icon { font-size: 18px; flex-shrink: 0; line-height: 1.4; }
-.notice-text { font-size: 13px; line-height: 1.7; color: #7a4a10; font-weight: 500; }
+.notice-text { font-size: 13px; line-height: 1.7; color: #7a4a10; font-weight: 500; white-space: pre-line; }
 .card-title {
   font-size: 13px; font-weight: 700; letter-spacing: 0.5px; color: #7a95b8;
   margin-bottom: 18px; display: flex; align-items: center; justify-content: space-between;
@@ -773,11 +773,25 @@ function init(data) {
   /* 헤더 */
   if (!isMember) document.getElementById('report-subtitle').textContent = `${name} 월간 리포트`;
 
-  /* 공지 배너 */
+  /* 공지 배너 — 문자열이면 항상 표시, {text, from, until} 객체면 기간 내에만 표시 */
   const noticeEl = document.getElementById('notice-section');
-  if (data.notice) {
-    noticeEl.innerHTML = `<div class="notice-banner"><span class="notice-icon">📢</span><span class="notice-text">${data.notice}</span></div>`;
-  }
+  (function renderNotice() {
+    if (!data.notice) return;
+    let text = null;
+    if (typeof data.notice === 'string') {
+      text = data.notice;
+    } else {
+      const today = new Date(); today.setHours(0,0,0,0);
+      const from = data.notice.from ? new Date(data.notice.from) : null;
+      const until = data.notice.until ? new Date(data.notice.until) : null;
+      if ((!from || today >= from) && (!until || today <= until)) {
+        text = data.notice.text;
+      }
+    }
+    if (text) {
+      noticeEl.innerHTML = `<div class="notice-banner"><span class="notice-icon">📢</span><span class="notice-text">${text}</span></div>`;
+    }
+  })();
 
   /* 이번 달 누적 운동 횟수 (sessionDates + 캘린더 체크, 날짜 중복 제거) */
   function calcMonthlyCount() {
