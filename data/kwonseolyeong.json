@@ -1259,6 +1259,128 @@
           }
         ]
       }
+    },
+    {
+      "week": 8,
+      "label": "8월 3주차",
+      "date": "8/17",
+      "mainMessage": "",
+      "summaries": [],
+      "exercises": [],
+      "lifts": [],
+      "bodyData": {
+        "labels": [
+          "8/18"
+        ],
+        "weight": [
+          67.3
+        ],
+        "fat": [
+          25.5
+        ],
+        "muscle": [
+          22.8
+        ],
+        "lastMeasured": "2026-08-18",
+        "comment": "67.3kg · 근육 22.8kg · 지방 25.5kg · 체지방률 37.9% · 인바디점수 67점 — 지난 측정(6/30) 대비 체중 +0.7kg, 지방 +0.6kg. 8월 말 목표: 62.6kg · 허리 25인치"
+      },
+      "condition": "",
+      "conditionNote": "",
+      "sleep": "",
+      "sleepNote": "",
+      "stress": "",
+      "pain": "없음",
+      "painNote": "",
+      "nutrition": "",
+      "nutritionNote": "",
+      "review": {
+        "good": "",
+        "caution": "",
+        "suggest": ""
+      },
+      "trainerComment": "",
+      "trainerDirection": "",
+      "nextSessionMemo": "",
+      "finalMessage": "",
+      "musclesWorked": [],
+      "sessionDates": [
+        "2026-08-18"
+      ],
+      "memberComment": "",
+      "weeklyRoutine": {
+        "weekKey": "2026-W33-kwsy",
+        "note": "화 레슨(상체/가슴), 목 레슨(하체) + 월(하체 메인)·수(등 메인)·금(가슴 메인) 개인운동 3일",
+        "days": [
+          {
+            "day": "월",
+            "workout": "개인-하체 메인",
+            "rest": false,
+            "plan": [
+              {
+                "name": "하이바 스쿼트",
+                "sets": 3,
+                "reps": 12,
+                "weight": "32.5"
+              },
+              {
+                "name": "런지",
+                "sets": 3,
+                "reps": 12,
+                "weight": "-"
+              }
+            ],
+            "note": "하체 메인 — 하이바 스쿼트는 8/13 중량 테스트 기준 12회 3세트 추정 무게(32.5kg) 적용, 자세 무너지면 낮추기"
+          },
+          {
+            "day": "화",
+            "workout": "레슨-상체",
+            "rest": false
+          },
+          {
+            "day": "수",
+            "workout": "개인-등 메인",
+            "rest": false,
+            "plan": [
+              {
+                "name": "루마니안 데드리프트",
+                "sets": 3,
+                "reps": 12,
+                "weight": "-"
+              }
+            ],
+            "note": "등 메인 — 다음 세션에서 12회 3세트 가능한 무게 테스트 후 반영 예정"
+          },
+          {
+            "day": "목",
+            "workout": "레슨-하체",
+            "rest": false
+          },
+          {
+            "day": "금",
+            "workout": "개인-가슴 메인",
+            "rest": false,
+            "plan": [
+              {
+                "name": "벤치 프레스",
+                "sets": 3,
+                "reps": 12,
+                "weight": "-"
+              }
+            ],
+            "note": "가슴 메인 — 다음 세션에서 12회 3세트 가능한 무게 테스트 후 반영 예정"
+          },
+          {
+            "day": "토",
+            "workout": "휴식",
+            "rest": true
+          },
+          {
+            "day": "일",
+            "workout": "휴식",
+            "rest": true
+          }
+        ]
+      }
     }
   ],
   "quotes": [
