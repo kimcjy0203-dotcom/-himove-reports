@@ -361,15 +361,23 @@ async function saveCheckinToGitHub(ci) {
     if (!week) throw new Error(`weekKey ${ci.wk} 없음`);
 
     // 체크인 데이터 반영
-    if (ci.c) week.condition = ci.c;
     if (ci.s) week.sleep = ci.s;
     if (ci.p && ci.p !== '없음') week.pain = ci.p;
-    if (ci.cn) week.conditionNote = ci.cn;
     if (ci.sn) week.sleepNote = ci.sn;
     if (ci.pn) week.painNote = ci.pn;
     if (ci.wm) week.memberComment = ci.wm;
     if (!week.sessionDates) week.sessionDates = [];
     if (!week.sessionDates.includes(ci.d)) week.sessionDates.unshift(ci.d);
+
+    // 회원이 직접 기록한 종목별 무게·횟수·자각도 (진행 과부하 기록)
+    if (ci.pr?.length) {
+      if (!week.exerciseLogs) week.exerciseLogs = [];
+      ci.pr.forEach(l => {
+        if (!week.exerciseLogs.some(e => e.date === ci.d && e.name === l.name)) {
+          week.exerciseLogs.unshift({ date: ci.d, name: l.name, reps: l.reps, weight: l.weight, rpe: l.rpe });
+        }
+      });
+    }
 
     const jsonBytes = new TextEncoder().encode(JSON.stringify(data, null, 2));
     let binary = ''; jsonBytes.forEach(b => binary += String.fromCharCode(b));

@@ -66,6 +66,7 @@ body > * { position: relative; z-index: 1; }
 }
 .notice-icon { font-size: 18px; flex-shrink: 0; line-height: 1.4; }
 .notice-text { font-size: 13px; line-height: 1.7; color: #7a4a10; font-weight: 500; white-space: pre-line; }
+.pr-test-banner { background: rgba(255,243,224,0.92); border: 1px solid rgba(230,160,60,0.5); border-radius: 14px; padding: 10px 14px; margin-bottom: 12px; font-size: 12px; line-height: 1.6; color: #7a4a10; font-weight: 500; }
 .card-title {
   font-size: 13px; font-weight: 700; letter-spacing: 0.5px; color: #7a95b8;
   margin-bottom: 18px; display: flex; align-items: center; justify-content: space-between;
@@ -163,13 +164,21 @@ tr:last-child td { border-bottom: none; }
 .plan-popup { background:rgba(255,255,255,0.97); backdrop-filter:blur(32px); -webkit-backdrop-filter:blur(32px); border:1px solid rgba(195,218,255,0.8); border-radius:24px; padding:22px 22px 18px; box-shadow:0 16px 60px rgba(100,150,230,0.22); width:300px; max-width:90vw; position:relative; }
 .plan-popup-title { font-size:15px; font-weight:800; color:#2a3a50; margin-bottom:4px; padding-right:24px; }
 .plan-popup-sub { font-size:11px; color:#a0b8d0; margin-bottom:16px; font-weight:600; letter-spacing:0.3px; }
-.plan-row { display:flex; align-items:center; justify-content:space-between; padding:9px 0; border-bottom:1px solid rgba(160,190,230,0.15); }
-.plan-row:last-child { border-bottom:none; }
+.plan-row { display:flex; align-items:center; justify-content:space-between; padding:9px 0 4px; }
 .plan-name { font-size:13px; font-weight:700; color:#2a3a50; }
 .plan-detail { font-size:12px; color:#6a9ac4; font-weight:600; }
 .plan-note { font-size:11px; color:#6a8aaa; line-height:1.65; padding:10px 12px; background:rgba(100,155,220,0.07); border-radius:10px; margin-bottom:14px; white-space:pre-line; }
 .plan-check-btn { width:100%; margin-top:16px; padding:12px; border:none; border-radius:14px; font-size:13px; font-weight:800; cursor:pointer; transition:all 0.2s; background:rgba(100,155,220,0.12); color:#3a6a9a; }
 .plan-check-btn.done { background:rgba(90,175,130,0.15); color:#3a8a6a; }
+#plan-rows { max-height:52vh; overflow-y:auto; padding-right:2px; }
+.plan-row-log { padding:9px 0; border-bottom:1px solid rgba(160,190,230,0.15); }
+.plan-row-log:last-child { border-bottom:none; }
+.pr-test-badge { font-size:10px; font-weight:800; color:#c46a2a; background:rgba(240,150,60,0.12); border-radius:8px; padding:3px 8px; display:inline-block; margin-bottom:6px; }
+.pr-log-row { display:flex; gap:6px; margin-bottom:6px; }
+.pr-input { flex:1; min-width:0; background:rgba(255,255,255,0.7); border:1px solid rgba(160,190,230,0.4); border-radius:8px; padding:6px 8px; font-size:12px; font-weight:600; color:#2a3a50; text-align:center; outline:none; font-family:inherit; }
+.pr-input::placeholder { color:#b0c4da; font-weight:500; }
+.pr-rpe-row { display:flex; gap:5px; }
+.pr-rpe-chip { flex:1; text-align:center; font-size:10px; padding:6px 2px; }
 .routine-detail { margin-top:2px; }
 .routine-day-block { margin-bottom:14px; padding:12px 14px; background:rgba(255,255,255,0.4); border:1px solid rgba(160,190,230,0.25); border-radius:14px; }
 .routine-day-block:last-child { margin-bottom:0; }
@@ -1055,9 +1064,66 @@ function init(data) {
     </div>`;
   }
 
-  const todayKey = new Date().toISOString().slice(0,10); // "2026-05-31"
+  function localDateStr(d) {
+    d = d || new Date();
+    const y = d.getFullYear(), m = String(d.getMonth()+1).padStart(2,'0'), day = String(d.getDate()).padStart(2,'0');
+    return `${y}-${m}-${day}`;
+  }
+  const todayKey = localDateStr(); // "2026-05-31"
   function dailyChips(field, opts) {
     return opts.map(o => `<div class="chip daily-chip" data-field="${field}" data-value="${o}">${o}</div>`).join('');
+  }
+
+  /* ── 진행 과부하(PR) 기록 — 종목별 무게·횟수·자각도, 3주 증량 주기 추적 ── */
+  const RPE_LABELS = ['쉬움','적당','힘듦','매우힘듦'];
+  const PR_CYCLE_DAYS = 21;
+  function prKey(name) { return `hm_pr_${currentMemberId}_${encodeURIComponent(name)}`; }
+  function getPrData(name) {
+    try { return JSON.parse(localStorage.getItem(prKey(name)) || 'null') || { lastWeight: null, weightSetDate: null, history: [] }; }
+    catch(e) { return { lastWeight: null, weightSetDate: null, history: [] }; }
+  }
+  function savePrEntry(name, { reps, weight, rpe }) {
+    const data = getPrData(name);
+    const w = weight !== '' && weight != null ? parseFloat(weight) : null;
+    if (w != null && (data.lastWeight == null || w > data.lastWeight)) {
+      data.lastWeight = w;
+      data.weightSetDate = todayKey;
+    }
+    const existing = data.history.find(h => h.date === todayKey);
+    const entry = { date: todayKey, reps: reps || '', weight: w != null ? w : '', rpe: rpe || '' };
+    if (existing) Object.assign(existing, entry);
+    else data.history.unshift(entry);
+    data.history = data.history.slice(0, 30);
+    localStorage.setItem(prKey(name), JSON.stringify(data));
+    return data;
+  }
+  function daysSinceWeightSet(name) {
+    const data = getPrData(name);
+    if (!data.weightSetDate) return null;
+    const [y,m,d] = data.weightSetDate.split('-').map(Number);
+    const set = new Date(y, m-1, d);
+    const today = new Date(); today.setHours(0,0,0,0);
+    return Math.round((today - set) / 86400000);
+  }
+  function isTestDue(name) {
+    const days = daysSinceWeightSet(name);
+    return days != null && days >= PR_CYCLE_DAYS;
+  }
+  function getTodayExerciseLogs(calDays) {
+    const names = new Set();
+    (calDays || []).forEach(d => (d.plan || []).forEach(p => names.add(p.name)));
+    const out = [];
+    names.forEach(name => {
+      const data = getPrData(name);
+      const t = data.history.find(h => h.date === todayKey);
+      if (t && (t.reps || t.weight || t.rpe)) out.push({ name, reps: t.reps, weight: t.weight, rpe: t.rpe });
+    });
+    return out;
+  }
+  function getDueTests(calDays) {
+    const names = new Set();
+    (calDays || []).forEach(d => (d.plan || []).forEach(p => names.add(p.name)));
+    return [...names].filter(isTestDue);
   }
   function initDailyStatus(idx) {
     const sec = document.getElementById(`ds-${idx}`);
@@ -1083,7 +1149,7 @@ function init(data) {
       const parts = Object.entries(cnt).map(([k,v]) => `<b>${k} ${v}</b>`).join('');
       el.innerHTML = parts ? `<div class="mini-sum">${parts}</div>` : '';
     }
-    ['condition','sleep','pain','nutrition'].forEach(renderCounts);
+    ['sleep','pain','nutrition'].forEach(renderCounts);
 
     sec.querySelectorAll('.daily-chip').forEach(chip => {
       chip.classList.toggle('on', saved[chip.dataset.field] === chip.dataset.value);
@@ -1132,10 +1198,9 @@ function init(data) {
       const cur = JSON.parse(localStorage.getItem(sk) || '{}');
       const wd  = JSON.parse(localStorage.getItem(wk) || '{}');
       const today = wd[todayKey] || {};
-      const LABELS = {condition:'컨디션', sleep:'수면', pain:'신체 불편', nutrition:'영양 상태',
-                      condition_note:'', sleep_note:'', pain_note:'', nutrition_note:''};
+      const LABELS = {sleep:'수면', pain:'신체 불편', nutrition:'영양 상태',
+                      sleep_note:'', pain_note:'', nutrition_note:''};
       const lines = [];
-      if (cur.condition) lines.push(`컨디션: ${cur.condition}${today.condition_note ? ' — ' + today.condition_note : ''}`);
       if (cur.sleep)     lines.push(`수면: ${cur.sleep}${today.sleep_note ? ' — ' + today.sleep_note : ''}`);
       if (cur.pain)      lines.push(`신체 불편: ${cur.pain}${today.pain_note ? ' — ' + today.pain_note : ''}`);
       if (cur.nutrition) lines.push(`영양: ${cur.nutrition}${today.nutrition_note ? ' — ' + today.nutrition_note : ''}`);
@@ -1152,21 +1217,27 @@ function init(data) {
       const wmText = (localStorage.getItem(wmKey) || '').trim();
       if (wmText) lines.push(`개인 운동 메모:\n${wmText}`);
 
+      // 오늘 기록한 종목별 무게·횟수·자각도
+      const prLogs = getTodayExerciseLogs(calDays);
+      if (prLogs.length) {
+        lines.push('오늘 운동 기록:');
+        prLogs.forEach(l => lines.push(`  · ${l.name} — ${l.weight ? l.weight + 'kg ' : ''}${l.reps ? l.reps + '회 ' : ''}${l.rpe ? '(' + l.rpe + ')' : ''}`.trim()));
+      }
+
       if (!lines.length) { alert('먼저 오늘 상태를 체크해주세요!'); return; }
       // 세션 로그 자동 업데이트 링크 생성
       const ciData = {
         id: currentMemberId,
         wk: weekKey,
         d: todayKey,
-        c: cur.condition || '',
         s: cur.sleep    || '',
         p: cur.pain     || '',
         n: cur.nutrition|| '',
-        cn: today.condition_note || '',
         sn: today.sleep_note     || '',
         pn: today.pain_note      || '',
         wouts: doneList,
         wm: wmText,
+        pr: prLogs,
       };
       const ciParam = btoa(unescape(encodeURIComponent(JSON.stringify(ciData)))).replace(/\+/g,'-').replace(/\//g,'_').replace(/=/g,'');
       const base    = window.location.href.split('?')[0].replace(/[^/]*$/, '');
@@ -1343,10 +1414,11 @@ function init(data) {
     return `<div class="week-panel" data-idx="${idx}">
       ${!isMember && w.nextSessionMemo ? `<div class="card" style="border-left:3px solid rgba(200,160,90,0.5)"><div class="card-title gold">다음 수업 준비<span class="memo-badge">트레이너</span></div><div class="note">${w.nextSessionMemo}</div></div>` : ''}
       ${hideLesson ? '' : collapsible('<span style="display:flex;align-items:center"><span class="req-dot"></span>수업 내용</span>', 'blue', `<div class="sub-label">요약</div><div class="summary-list">${summaryItems}</div>${HR}<div class="sub-label">운동 피드백</div><div class="exercise-grid">${exItems}</div>${w.musclesWorked?.length?`${HR}<div class="sub-label">운동 부위</div><div class="muscle-tag-row">${w.musclesWorked.map(m=>`<span class="muscle-tag">${MUSCLE_DATA[m]?.name||m}</span>`).join("")}</div>`:""}`, true)}
+      ${(() => { const due = getDueTests(r.days); return due.length ? `<div class="pr-test-banner">🔥 <b>${due.join(', ')}</b> — 마지막 증량 후 3주가 지났어요. 다음 개인운동 때 무게를 올려서 테스트해보세요!</div>` : ''; })()}
       ${collapsible('<span style="display:flex;align-items:center"><span class="req-dot"></span>운동 현황</span>', 'blue', `<div class="sub-label">주요 리프트</div><div class="lift-grid">${liftItems}</div>${HR}<div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:10px"><div class="sub-label" style="margin-bottom:0">이번 주 트레이닝</div><span class="wk-count" id="wk-count-${idx}">주 0회</span></div><div class="weekly-cal" id="weekly-cal-${idx}">${calDays}</div><div class="note">${r.note||''}</div>`, true)}
       ${isOT && routineDetailHtml ? collapsible('<span style="display:flex;align-items:center"><span class="req-dot"></span>이번 주 루틴</span>', 'blue', `<div class="routine-detail">${routineDetailHtml}</div>`, true) : ''}
       ${collapsible('<span style="display:flex;align-items:center"><span class="req-dot"></span>웨이트 트레이닝 기본 원칙</span>', 'blue', buildTrainingPrinciplesCard())}
-      ${isOT ? '' : collapsible('📋 이번 주 상태', 'blue', `<div id="ds-${idx}"><div style="font-size:11px;color:#a0b8d0;font-weight:600;margin-bottom:6px">📅 ${new Date().toLocaleDateString('ko-KR',{month:'long',day:'numeric'})} 기준 · 이번 주 누적</div><div class="sub-label"><span class="dot" style="background:#f4a07e"></span>컨디션</div><div class="day-count" data-field="condition"></div><div class="check-row">${dailyChips('condition',['매우 좋음','좋음','보통','피곤함','매우 피곤함'])}</div><textarea class="daily-note" data-note="condition_note" placeholder="메모..." rows="1"></textarea>${HRS}<div class="sub-label"><span class="dot" style="background:#a78bde"></span>수면</div><div class="day-count" data-field="sleep"></div><div class="check-row">${dailyChips('sleep',['매우 나쁨','나쁨','보통','좋음','매우 좋음'])}</div><textarea class="daily-note" data-note="sleep_note" placeholder="메모..." rows="1"></textarea>${HRS}<div class="sub-label"><span class="dot" style="background:#6dc99c"></span>신체 불편</div><div class="day-count" data-field="pain"></div><div class="check-row">${dailyChips('pain',['없음','있음'])}</div><textarea class="daily-note" data-note="pain_note" placeholder="메모..." rows="1"></textarea>${HRS}<div class="sub-label"><span class="dot" style="background:#f0c96a"></span>영양 상태</div><div class="day-count" data-field="nutrition"></div><div class="check-row">${dailyChips('nutrition',['매우 나쁨','나쁨','보통','좋음','매우 좋음'])}</div><textarea class="daily-note" data-note="nutrition_note" placeholder="메모..." rows="1"></textarea>${HRS}<div class="sub-label" style="margin-bottom:4px">✏️ 개인 운동 메모</div><div style="font-size:11px;color:#a0b8d0;margin-bottom:8px">홈트·자유 운동 내용 — 주간 누적 기록</div><textarea id="wmemo-${idx}" class="daily-note" placeholder="예) 유산소 30분, 스쿼트 3×15, 플랭크 1분..." rows="2" style="min-height:40px"></textarea>${HRS}<button class="send-btn" style="width:100%;padding:15px;border:none;border-radius:16px;background:linear-gradient(135deg,rgba(100,155,220,0.18),rgba(80,130,200,0.22));color:#2a5a9a;font-size:14px;font-weight:800;cursor:pointer;letter-spacing:0.3px;border:1px solid rgba(100,155,220,0.3)">💬 트레이너에게 오늘 상태 전송</button></div>`, true)}
+      ${isOT ? '' : collapsible('📋 이번 주 상태', 'blue', `<div id="ds-${idx}"><div style="font-size:11px;color:#a0b8d0;font-weight:600;margin-bottom:6px">📅 ${new Date().toLocaleDateString('ko-KR',{month:'long',day:'numeric'})} 기준 · 이번 주 누적</div><div class="sub-label"><span class="dot" style="background:#a78bde"></span>수면</div><div class="day-count" data-field="sleep"></div><div class="check-row">${dailyChips('sleep',['매우 나쁨','나쁨','보통','좋음','매우 좋음'])}</div><textarea class="daily-note" data-note="sleep_note" placeholder="메모..." rows="1"></textarea>${HRS}<div class="sub-label"><span class="dot" style="background:#6dc99c"></span>신체 불편</div><div class="day-count" data-field="pain"></div><div class="check-row">${dailyChips('pain',['없음','있음'])}</div><textarea class="daily-note" data-note="pain_note" placeholder="메모..." rows="1"></textarea>${HRS}<div class="sub-label"><span class="dot" style="background:#f0c96a"></span>영양 상태</div><div class="day-count" data-field="nutrition"></div><div class="check-row">${dailyChips('nutrition',['매우 나쁨','나쁨','보통','좋음','매우 좋음'])}</div><textarea class="daily-note" data-note="nutrition_note" placeholder="메모..." rows="1"></textarea>${HRS}<div class="sub-label" style="margin-bottom:4px">✏️ 개인 운동 메모</div><div style="font-size:11px;color:#a0b8d0;margin-bottom:8px">홈트·자유 운동 내용 — 주간 누적 기록</div><textarea id="wmemo-${idx}" class="daily-note" placeholder="예) 유산소 30분, 스쿼트 3×15, 플랭크 1분..." rows="2" style="min-height:40px"></textarea>${HRS}<button class="send-btn" style="width:100%;padding:15px;border:none;border-radius:16px;background:linear-gradient(135deg,rgba(100,155,220,0.18),rgba(80,130,200,0.22));color:#2a5a9a;font-size:14px;font-weight:800;cursor:pointer;letter-spacing:0.3px;border:1px solid rgba(100,155,220,0.3)">💬 트레이너에게 오늘 상태 전송</button></div>`, true)}
       ${buildDietCard()}
       ${nutritionPlan ? collapsible('🍽 식사 가이드 & 기록', 'green', buildNutritionSection(nutritionPlan, idx)) : ''}
       ${(w.review?.good || w.review?.caution || w.review?.suggest || w.trainerComment) ? collapsible('<span style="display:flex;align-items:center"><span class="req-dot"></span>트레이너 평가</span>', 'gold', `${w.review?.good?`<div style="margin-bottom:14px"><div class="sub-label">✓ 잘 하고 있는 점</div><div class="msg green">${w.review.good}</div></div>`:''}${w.review?.caution?`<div style="margin-bottom:14px"><div class="sub-label" style="color:#e05050">⚠ 주의할 점</div><div class="msg gold">${w.review.caution}</div></div>`:''}${w.review?.suggest?`<div style="margin-bottom:14px"><div class="sub-label">→ 권장 사항</div><div class="msg">${w.review.suggest}</div></div>`:''}${w.trainerComment ? `${HR}<div class="sub-label">트레이너 코멘트</div><div class="msg gold">${w.trainerComment}</div>` : ''}${!isMember && w.trainerDirection ? `${HR}<div class="sub-label">트레이닝 방향</div><div class="msg">${w.trainerDirection}</div>` : ''}`) : ''}
@@ -1619,13 +1691,52 @@ let _planCtx = {};
 function openPlanPopup(day, workout, plan, note, idx, checked, calKey, renderCal) {
   _planCtx = { idx, checked, calKey, renderCal };
   document.getElementById('plan-title').textContent = `${day}요일 · ${workout}`;
-  document.getElementById('plan-sub').textContent = plan.length ? `총 ${plan.length}개 운동` : '세부 계획 없음';
+  document.getElementById('plan-sub').textContent = plan.length ? `총 ${plan.length}개 운동 · 오늘 기록을 남겨보세요` : '세부 계획 없음';
   const noteEl = document.getElementById('plan-note');
   if (note) { noteEl.textContent = note; noteEl.style.display = ''; }
   else { noteEl.style.display = 'none'; }
-  document.getElementById('plan-rows').innerHTML = plan.length
-    ? plan.map(p=>`<div class="plan-row"><span class="plan-name">${p.name}</span><span class="plan-detail">${p.sets}세트 × ${p.reps}회${p.weight?' / '+p.weight:''}</span></div>`).join('')
-    : '<div style="font-size:13px;color:#c0d0e0;padding:8px 0">이 날 세부 계획이 없어요.</div>';
+  const rowsEl = document.getElementById('plan-rows');
+  if (!plan.length) {
+    rowsEl.innerHTML = '<div style="font-size:13px;color:#c0d0e0;padding:8px 0">이 날 세부 계획이 없어요.</div>';
+    updatePlanBtn();
+    document.getElementById('plan-overlay').classList.add('show');
+    return;
+  }
+  rowsEl.innerHTML = plan.map(p => {
+    const pr = getPrData(p.name);
+    const t = pr.history.find(h => h.date === todayKey) || {};
+    const due = isTestDue(p.name);
+    const nameAttr = p.name.replace(/"/g,'&quot;');
+    return `<div class="plan-row-log" data-name="${nameAttr}">
+      <div class="plan-row"><span class="plan-name">${p.name}</span><span class="plan-detail">${p.sets}세트 × ${p.reps}회${p.weight&&p.weight!=='-'?' / '+p.weight:''}</span></div>
+      ${due ? `<div class="pr-test-badge">🔥 3주 지났어요 — 증량 테스트 해보세요</div>` : ''}
+      <div class="pr-log-row">
+        <input type="number" class="pr-input pr-weight" placeholder="무게kg" value="${t.weight ?? ''}">
+        <input type="number" class="pr-input pr-reps" placeholder="횟수" value="${t.reps ?? ''}">
+      </div>
+      <div class="pr-rpe-row">${RPE_LABELS.map(l => `<div class="chip pr-rpe-chip${l===t.rpe?' on':''}" data-rpe="${l}">${l}</div>`).join('')}</div>
+    </div>`;
+  }).join('');
+
+  rowsEl.querySelectorAll('.plan-row-log').forEach(row => {
+    const name = row.dataset.name;
+    const weightEl = row.querySelector('.pr-weight');
+    const repsEl = row.querySelector('.pr-reps');
+    function save() {
+      const rpe = row.querySelector('.pr-rpe-chip.on')?.dataset.rpe || '';
+      savePrEntry(name, { weight: weightEl.value, reps: repsEl.value, rpe });
+    }
+    weightEl.addEventListener('change', save);
+    repsEl.addEventListener('change', save);
+    row.querySelectorAll('.pr-rpe-chip').forEach(chip => {
+      chip.addEventListener('click', () => {
+        row.querySelectorAll('.pr-rpe-chip').forEach(c => c.classList.remove('on'));
+        chip.classList.add('on');
+        save();
+      });
+    });
+  });
+
   updatePlanBtn();
   document.getElementById('plan-overlay').classList.add('show');
 }
