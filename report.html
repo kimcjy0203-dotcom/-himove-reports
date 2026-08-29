@@ -158,21 +158,22 @@ tr:last-child td { border-bottom: none; }
 .body-map-wrap { display: flex; flex-direction: column; align-items: center; }
 .body-map-svg { width: 100%; max-width: 58px; display: block; }
 .body-map-lbl { font-size: 9px; font-weight: 700; letter-spacing: 1px; color: #b8c8da; text-align: center; margin-top: 4px; }
-.plan-overlay { display:none; position:fixed; inset:0; background:rgba(30,50,80,0.25); backdrop-filter:blur(4px); z-index:300; align-items:center; justify-content:center; }
-.plan-overlay.show { display:flex; }
-.plan-popup { background:rgba(255,255,255,0.97); backdrop-filter:blur(32px); -webkit-backdrop-filter:blur(32px); border:1px solid rgba(195,218,255,0.8); border-radius:24px; padding:22px 22px 18px; box-shadow:0 16px 60px rgba(100,150,230,0.22); width:300px; max-width:90vw; position:relative; }
-.plan-popup-title { font-size:15px; font-weight:800; color:#2a3a50; margin-bottom:4px; padding-right:24px; }
-.plan-popup-sub { font-size:11px; color:#a0b8d0; margin-bottom:16px; font-weight:600; letter-spacing:0.3px; }
+.day-detail-wrap { margin-top: 10px; }
+.day-detail { background: rgba(255,255,255,0.55); border: 1px solid rgba(160,190,230,0.35); border-radius: 16px; padding: 14px 16px 16px; animation: dd-in 0.15s ease; }
+@keyframes dd-in { from { opacity:0; transform:translateY(-4px); } to { opacity:1; transform:translateY(0); } }
+.dd-head { font-size:13px; font-weight:800; color:#3a6a9a; margin-bottom:10px; }
 .plan-row { display:flex; align-items:center; justify-content:space-between; padding:9px 0 4px; }
 .plan-name { font-size:13px; font-weight:700; color:#2a3a50; }
 .plan-detail { font-size:12px; color:#6a9ac4; font-weight:600; }
 .plan-note { font-size:11px; color:#6a8aaa; line-height:1.65; padding:10px 12px; background:rgba(100,155,220,0.07); border-radius:10px; margin-bottom:14px; white-space:pre-line; }
-.plan-check-btn { width:100%; margin-top:16px; padding:12px; border:none; border-radius:14px; font-size:13px; font-weight:800; cursor:pointer; transition:all 0.2s; background:rgba(100,155,220,0.12); color:#3a6a9a; }
-.plan-check-btn.done { background:rgba(90,175,130,0.15); color:#3a8a6a; }
-#plan-rows { max-height:52vh; overflow-y:auto; padding-right:2px; }
+.day-done-btn { width:100%; margin-top:14px; padding:12px; border:none; border-radius:14px; font-size:13px; font-weight:800; cursor:pointer; transition:all 0.2s; background:rgba(100,155,220,0.12); color:#3a6a9a; }
+.day-done-btn.done { background:rgba(90,175,130,0.15); color:#3a8a6a; }
 .plan-row-log { padding:9px 0; border-bottom:1px solid rgba(160,190,230,0.15); }
 .plan-row-log:last-child { border-bottom:none; }
 .pr-test-badge { font-size:10px; font-weight:800; color:#c46a2a; background:rgba(240,150,60,0.12); border-radius:8px; padding:3px 8px; display:inline-block; margin-bottom:6px; }
+.dd-ex-grid { display:grid; grid-template-columns: 1fr 58px; gap:8px; align-items:start; }
+.dd-rpe-col { display:flex; flex-direction:column; gap:4px; }
+.dd-rpe-col .pr-rpe-chip { flex:none; padding:5px 2px; font-size:9px; letter-spacing:-0.2px; }
 .pr-log-row { display:flex; gap:6px; margin-bottom:6px; }
 .pr-input { flex:1; min-width:0; background:rgba(255,255,255,0.7); border:1px solid rgba(160,190,230,0.4); border-radius:8px; padding:6px 8px; font-size:12px; font-weight:600; color:#2a3a50; text-align:center; outline:none; font-family:inherit; }
 .pr-input::placeholder { color:#b0c4da; font-weight:500; }
@@ -182,7 +183,7 @@ tr:last-child td { border-bottom: none; }
 .routine-day-block { margin-bottom:14px; padding:12px 14px; background:rgba(255,255,255,0.4); border:1px solid rgba(160,190,230,0.25); border-radius:14px; }
 .routine-day-block:last-child { margin-bottom:0; }
 .rdb-head { font-size:13px; font-weight:800; color:#3a6a9a; margin-bottom:2px; }
-.plan-close { position:absolute; top:14px; right:16px; font-size:18px; color:#c0d0e0; cursor:pointer; background:none; border:none; line-height:1; }
+.cal-day.active-day { border-color: rgba(90,175,130,0.6); box-shadow: 0 0 0 2px rgba(90,175,130,0.25); }
 .muscle-area { cursor: pointer; transition: filter 0.15s; }
 .muscle-popup { position: fixed; background: rgba(255,255,255,0.97); backdrop-filter: blur(24px); -webkit-backdrop-filter: blur(24px); border: 1px solid rgba(195,218,255,0.8); border-radius: 18px; padding: 14px 16px 12px; box-shadow: 0 10px 40px rgba(100,150,230,0.2); z-index: 200; min-width: 160px; max-width: 200px; }
 .popup-close { position: absolute; top: 9px; right: 13px; font-size: 17px; color: #b0c0d4; cursor: pointer; }
@@ -659,17 +660,6 @@ html[data-theme="plum"] .muscle-tag { background:rgba(90,40,130,0.2); border-col
     <div style="width:100%;max-width:430px;padding:10px 18px calc(10px + env(safe-area-inset-bottom));background:linear-gradient(180deg,rgba(247,250,255,0),rgba(247,250,255,0.96) 35%);pointer-events:auto">
       <button id="global-send-btn" style="width:100%;padding:15px;border:none;border-radius:16px;background:linear-gradient(135deg,rgba(90,150,220,0.95),rgba(70,125,200,0.98));color:#fff;font-size:14px;font-weight:800;cursor:pointer;letter-spacing:0.3px;box-shadow:0 6px 20px rgba(80,130,200,0.35)">💬 오늘 기록 트레이너에게 보내기</button>
     </div>
-  </div>
-</div>
-
-<div class="plan-overlay" id="plan-overlay">
-  <div class="plan-popup">
-    <button class="plan-close" id="plan-close">×</button>
-    <div class="plan-popup-title" id="plan-title"></div>
-    <div class="plan-popup-sub" id="plan-sub"></div>
-    <div class="plan-note" id="plan-note" style="display:none"></div>
-    <div id="plan-rows"></div>
-    <button class="plan-check-btn" id="plan-check-btn"></button>
   </div>
 </div>
 
@@ -1219,7 +1209,7 @@ function init(data) {
     const HR = '<hr style="border:none;border-top:1px solid rgba(160,190,230,0.2);margin:20px 0">';
     return `<div class="week-panel" data-idx="${idx}">
       ${!isMember && w.nextSessionMemo ? `<div class="card" style="border-left:3px solid rgba(200,160,90,0.5)"><div class="card-title gold">다음 수업 준비<span class="memo-badge">트레이너</span></div><div class="note">${w.nextSessionMemo}</div></div>` : ''}
-      ${collapsible('<span style="display:flex;align-items:center"><span class="req-dot"></span>운동 현황</span>', 'blue', `<div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:10px"><div class="sub-label" style="margin-bottom:0">이번 주 트레이닝</div><span class="wk-count" id="wk-count-${idx}">주 0회</span></div><div class="weekly-cal" id="weekly-cal-${idx}">${calDays}</div><div class="note">${r.note||''}</div>`, true)}
+      ${collapsible('<span style="display:flex;align-items:center"><span class="req-dot"></span>운동 현황</span>', 'blue', `<div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:10px"><div class="sub-label" style="margin-bottom:0">이번 주 트레이닝</div><span class="wk-count" id="wk-count-${idx}">주 0회</span></div><div class="weekly-cal" id="weekly-cal-${idx}">${calDays}</div><div class="day-detail-wrap" id="day-detail-${idx}"></div><div class="note">${r.note||''}</div>`, true)}
       ${(() => { const due = getDueTests(r.days); return due.length ? `<div class="pr-test-banner">🔥 <b>${due.join(', ')}</b> — 목표 횟수를 여유 있게 해내고 있어요. 다음 개인운동 때 무게를 올려서 테스트해보세요!</div>` : ''; })()}
       ${isOT && routineDetailHtml ? collapsible('<span style="display:flex;align-items:center"><span class="req-dot"></span>이번 주 루틴</span>', 'blue', `<div class="routine-detail">${routineDetailHtml}</div>`, true) : ''}
       ${(!isOT && !hideLesson) ? collapsible('<span style="display:flex;align-items:center"><span class="req-dot"></span>레슨일지</span>', 'gold', `<div class="sub-label">요약</div><div class="summary-list">${summaryItems}</div>${HR}<div class="sub-label">운동 피드백</div><div class="exercise-grid">${exItems}</div>${w.musclesWorked?.length?`${HR}<div class="sub-label">운동 부위</div><div class="muscle-tag-row">${w.musclesWorked.map(m=>`<span class="muscle-tag">${MUSCLE_DATA[m]?.name||m}</span>`).join("")}</div>`:""}${(w.review?.good||w.review?.caution||w.review?.suggest||w.trainerComment)?`${HR}${w.review?.good?`<div style="margin-bottom:14px"><div class="sub-label">✓ 잘 하고 있는 점</div><div class="msg green">${w.review.good}</div></div>`:''}${w.review?.caution?`<div style="margin-bottom:14px"><div class="sub-label" style="color:#e05050">⚠ 주의할 점</div><div class="msg gold">${w.review.caution}</div></div>`:''}${w.review?.suggest?`<div style="margin-bottom:14px"><div class="sub-label">→ 권장 사항</div><div class="msg">${w.review.suggest}</div></div>`:''}${w.trainerComment?`<div class="sub-label">트레이너 코멘트</div><div class="msg gold">${w.trainerComment}</div>`:''}`:''}${!isMember && w.trainerDirection ? `${HR}<div class="sub-label">트레이닝 방향</div><div class="msg">${w.trainerDirection}</div>` : ''}`, true) : ''}
@@ -1391,7 +1381,8 @@ function init(data) {
       const plan = JSON.parse(this.dataset.plan || '[]');
       const day = this.dataset.day, workout = this.dataset.workout;
       const note = this.dataset.note || '';
-      openPlanPopup(day, workout, plan, note, i, checked, calKey, renderCal);
+      const panelIdx = parseInt(cal.id.replace('weekly-cal-',''));
+      toggleDayDetail(panelIdx, day, workout, plan, note, i, checked, calKey, renderCal, this);
     }));
   });
 
@@ -1481,83 +1472,85 @@ function init(data) {
 }
 
 /* ── 운동 계획 팝업 ── */
-let _planCtx = {};
-function openPlanPopup(day, workout, plan, note, idx, checked, calKey, renderCal) {
-  _planCtx = { idx, checked, calKey, renderCal };
-  document.getElementById('plan-title').textContent = `${day}요일 · ${workout}`;
-  document.getElementById('plan-sub').textContent = plan.length ? `총 ${plan.length}개 운동 · 오늘 기록을 남겨보세요` : '세부 계획 없음';
-  const noteEl = document.getElementById('plan-note');
-  if (note) { noteEl.textContent = note; noteEl.style.display = ''; }
-  else { noteEl.style.display = 'none'; }
-  const rowsEl = document.getElementById('plan-rows');
-  if (!plan.length) {
-    rowsEl.innerHTML = '<div style="font-size:13px;color:#c0d0e0;padding:8px 0">이 날 세부 계획이 없어요.</div>';
-    updatePlanBtn();
-    document.getElementById('plan-overlay').classList.add('show');
+/* 요일 클릭 시 팝업 대신 캘린더 바로 아래에 인라인으로 펼쳐지는 운동 기록 블록 (아코디언) */
+function toggleDayDetail(panelIdx, day, workout, plan, note, dayIdx, checked, calKey, renderCal, dayEl) {
+  const wrap = document.getElementById(`day-detail-${panelIdx}`);
+  if (!wrap) return;
+  const calEl = document.getElementById(`weekly-cal-${panelIdx}`);
+
+  if (wrap.dataset.open === String(dayIdx)) {
+    wrap.innerHTML = '';
+    wrap.dataset.open = '';
+    if (calEl) calEl.querySelectorAll('.cal-day').forEach(d => d.classList.remove('active-day'));
     return;
   }
-  rowsEl.innerHTML = plan.map(p => {
-    const pr = getPrData(p.name);
-    const t = pr.history.find(h => h.date === todayKey) || {};
-    const due = isTestDue(p.name);
-    const nameAttr = p.name.replace(/"/g,'&quot;');
-    return `<div class="plan-row-log" data-name="${nameAttr}" data-target="${p.reps}">
-      <div class="plan-row"><span class="plan-name">${p.name}</span><span class="plan-detail">목표 ${p.sets}세트 × ${p.reps}회${p.weight&&p.weight!=='-'?' / '+p.weight:''}</span></div>
-      ${due ? `<div class="pr-test-badge">🔥 무게를 올려볼 때예요 — 증량 테스트 해보세요</div>` : ''}
-      <div class="pr-log-row">
-        <input type="number" class="pr-input pr-weight" placeholder="무게kg" value="${t.weight ?? ''}">
-        <input type="number" class="pr-input pr-reps" placeholder="횟수" value="${t.reps ?? ''}">
-        <input type="number" class="pr-input pr-extra" placeholder="+더가능" min="0" value="${t.extraReps ?? ''}">
-      </div>
-      <div class="pr-rpe-row">${RPE_LABELS.map(l => `<div class="chip pr-rpe-chip${l===t.rpe?' on':''}" data-rpe="${l}">${l}</div>`).join('')}</div>
-      <textarea class="daily-note pr-note" placeholder="오늘 느낌을 자유롭게 적어보세요" rows="1">${t.note ?? ''}</textarea>
-    </div>`;
-  }).join('');
+  wrap.dataset.open = String(dayIdx);
+  if (calEl) calEl.querySelectorAll('.cal-day').forEach(d => d.classList.toggle('active-day', d === dayEl));
 
-  rowsEl.querySelectorAll('.plan-row-log').forEach(row => {
-    const name = row.dataset.name;
-    const target = parseInt(row.dataset.target) || null;
-    const weightEl = row.querySelector('.pr-weight');
-    const repsEl = row.querySelector('.pr-reps');
-    const extraEl = row.querySelector('.pr-extra');
-    const noteEl = row.querySelector('.pr-note');
-    function save() {
-      const rpe = row.querySelector('.pr-rpe-chip.on')?.dataset.rpe || '';
-      savePrEntry(name, { weight: weightEl.value, reps: repsEl.value, rpe, target, extraReps: extraEl.value, note: noteEl.value });
-    }
-    weightEl.addEventListener('change', save);
-    repsEl.addEventListener('change', save);
-    extraEl.addEventListener('change', save);
-    noteEl.addEventListener('change', save);
-    row.querySelectorAll('.pr-rpe-chip').forEach(chip => {
-      chip.addEventListener('click', () => {
-        row.querySelectorAll('.pr-rpe-chip').forEach(c => c.classList.remove('on'));
-        chip.classList.add('on');
-        save();
+  const doneNow = checked.includes(dayIdx);
+  const doneBtnHtml = `<button class="day-done-btn${doneNow?' done':''}" id="day-done-${panelIdx}">${doneNow ? '✓ 완료됨' : '완료 체크'}</button>`;
+
+  if (!plan.length) {
+    wrap.innerHTML = `<div class="day-detail"><div class="dd-head">${day}요일 · ${workout||'-'}</div>${note?`<div class="plan-note">${note}</div>`:''}<div style="font-size:13px;color:#c0d0e0;padding:8px 0">이 날 세부 계획이 없어요.</div>${doneBtnHtml}</div>`;
+  } else {
+    const rows = plan.map(p => {
+      const pr = getPrData(p.name);
+      const t = pr.history.find(h => h.date === todayKey) || {};
+      const due = isTestDue(p.name);
+      const nameAttr = p.name.replace(/"/g,'&quot;');
+      return `<div class="plan-row-log" data-name="${nameAttr}" data-target="${p.reps}">
+        <div class="dd-ex-grid">
+          <div>
+            <div class="plan-row"><span class="plan-name">${p.name}</span><span class="plan-detail">목표 ${p.sets}세트 × ${p.reps}회${p.weight&&p.weight!=='-'?' / '+p.weight:''}</span></div>
+            ${due ? `<div class="pr-test-badge">🔥 무게를 올려볼 때예요 — 증량 테스트 해보세요</div>` : ''}
+            <div class="pr-log-row">
+              <input type="number" class="pr-input pr-weight" placeholder="무게kg" value="${t.weight ?? ''}">
+              <input type="number" class="pr-input pr-reps" placeholder="횟수" value="${t.reps ?? ''}">
+              <input type="number" class="pr-input pr-extra" placeholder="+더가능" min="0" value="${t.extraReps ?? ''}">
+            </div>
+            <textarea class="daily-note pr-note" placeholder="오늘 느낌을 자유롭게 적어보세요" rows="1">${t.note ?? ''}</textarea>
+          </div>
+          <div class="dd-rpe-col">${RPE_LABELS.map(l => `<div class="chip pr-rpe-chip${l===t.rpe?' on':''}" data-rpe="${l}">${l}</div>`).join('')}</div>
+        </div>
+      </div>`;
+    }).join('');
+    wrap.innerHTML = `<div class="day-detail"><div class="dd-head">${day}요일 · ${workout||'-'}</div>${note?`<div class="plan-note">${note}</div>`:''}${rows}${doneBtnHtml}</div>`;
+
+    wrap.querySelectorAll('.plan-row-log').forEach(row => {
+      const name = row.dataset.name;
+      const target = parseInt(row.dataset.target) || null;
+      const weightEl = row.querySelector('.pr-weight');
+      const repsEl = row.querySelector('.pr-reps');
+      const extraEl = row.querySelector('.pr-extra');
+      const noteEl = row.querySelector('.pr-note');
+      function save() {
+        const rpe = row.querySelector('.pr-rpe-chip.on')?.dataset.rpe || '';
+        savePrEntry(name, { weight: weightEl.value, reps: repsEl.value, rpe, target, extraReps: extraEl.value, note: noteEl.value });
+      }
+      weightEl.addEventListener('change', save);
+      repsEl.addEventListener('change', save);
+      extraEl.addEventListener('change', save);
+      noteEl.addEventListener('change', save);
+      row.querySelectorAll('.pr-rpe-chip').forEach(chip => {
+        chip.addEventListener('click', () => {
+          row.querySelectorAll('.pr-rpe-chip').forEach(c => c.classList.remove('on'));
+          chip.classList.add('on');
+          save();
+        });
       });
     });
-  });
+  }
 
-  updatePlanBtn();
-  document.getElementById('plan-overlay').classList.add('show');
+  const doneBtn = document.getElementById(`day-done-${panelIdx}`);
+  if (doneBtn) doneBtn.addEventListener('click', () => {
+    const pos = checked.indexOf(dayIdx);
+    if (pos !== -1) checked.splice(pos, 1); else checked.push(dayIdx);
+    localStorage.setItem(calKey, JSON.stringify(checked));
+    renderCal();
+    doneBtn.textContent = checked.includes(dayIdx) ? '✓ 완료됨' : '완료 체크';
+    doneBtn.classList.toggle('done', checked.includes(dayIdx));
+  });
 }
-function updatePlanBtn() {
-  const btn = document.getElementById('plan-check-btn');
-  const done = _planCtx.checked.includes(_planCtx.idx);
-  btn.textContent = done ? '✓ 완료됨' : '완료 체크';
-  btn.classList.toggle('done', done);
-}
-document.getElementById('plan-check-btn').addEventListener('click', () => {
-  const { idx, checked, calKey, renderCal } = _planCtx;
-  const pos = checked.indexOf(idx);
-  if (pos !== -1) checked.splice(pos, 1);
-  else checked.push(idx);
-  localStorage.setItem(calKey, JSON.stringify(checked));
-  renderCal();
-  updatePlanBtn();
-});
-document.getElementById('plan-close').addEventListener('click', () => document.getElementById('plan-overlay').classList.remove('show'));
-document.getElementById('plan-overlay').addEventListener('click', e => { if(e.target===e.currentTarget) e.currentTarget.classList.remove('show'); });
 </script>
 <!-- THEME SWITCHER -->
 <div class="hm-theme-bar" id="hmBar">
