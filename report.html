@@ -162,7 +162,7 @@ tr:last-child td { border-bottom: none; }
 .day-detail { background: rgba(255,255,255,0.55); border: 1px solid rgba(160,190,230,0.35); border-radius: 16px; padding: 14px 16px 16px; animation: dd-in 0.15s ease; }
 @keyframes dd-in { from { opacity:0; transform:translateY(-4px); } to { opacity:1; transform:translateY(0); } }
 .dd-head { font-size:13px; font-weight:800; color:#3a6a9a; margin-bottom:10px; }
-.plan-row { display:flex; align-items:center; justify-content:space-between; padding:9px 0 4px; }
+.plan-row { display:flex; flex-wrap:wrap; align-items:center; justify-content:space-between; gap:2px 8px; padding:9px 0 4px; min-width:0; }
 .plan-name { font-size:13px; font-weight:700; color:#2a3a50; }
 .plan-detail { font-size:12px; color:#6a9ac4; font-weight:600; }
 .plan-note { font-size:11px; color:#6a8aaa; line-height:1.65; padding:10px 12px; background:rgba(100,155,220,0.07); border-radius:10px; margin-bottom:14px; white-space:pre-line; }
@@ -171,10 +171,11 @@ tr:last-child td { border-bottom: none; }
 .plan-row-log { padding:9px 0; border-bottom:1px solid rgba(160,190,230,0.15); }
 .plan-row-log:last-child { border-bottom:none; }
 .pr-test-badge { font-size:10px; font-weight:800; color:#c46a2a; background:rgba(240,150,60,0.12); border-radius:8px; padding:3px 8px; display:inline-block; margin-bottom:6px; }
-.dd-ex-grid { display:grid; grid-template-columns: 1fr 58px; gap:8px; align-items:start; }
-.dd-rpe-col { display:flex; flex-direction:column; gap:4px; }
-.dd-rpe-col .pr-rpe-chip { flex:none; padding:5px 2px; font-size:9px; letter-spacing:-0.2px; }
-.pr-log-row { display:flex; gap:6px; margin-bottom:6px; }
+.dd-ex-grid { display:grid; grid-template-columns: 1fr 60px; gap:8px; align-items:start; max-width:100%; }
+.dd-ex-grid > div { min-width: 0; }
+.dd-rpe-col { display:flex; flex-direction:column; gap:4px; min-width: 0; }
+.dd-rpe-col .pr-rpe-chip { flex:none; width:100%; padding:5px 1px; font-size:9px; letter-spacing:-0.3px; word-break:keep-all; overflow-wrap:break-word; box-sizing:border-box; }
+.pr-log-row { display:flex; gap:6px; margin-bottom:6px; min-width: 0; }
 .pr-input { flex:1; min-width:0; background:rgba(255,255,255,0.7); border:1px solid rgba(160,190,230,0.4); border-radius:8px; padding:6px 8px; font-size:12px; font-weight:600; color:#2a3a50; text-align:center; outline:none; font-family:inherit; }
 .pr-input::placeholder { color:#b0c4da; font-weight:500; }
 .pr-rpe-row { display:flex; gap:5px; }
