@@ -1029,6 +1029,90 @@
       "week": 5,
       "label": "5주차",
       "date": "6/29"
+    },
+    {
+      "week": 6,
+      "label": "6주차",
+      "date": "8/24",
+      "weeklyRoutine": {
+        "weekKey": "2026-W35-tm",
+        "note": "",
+        "days": [
+          {
+            "day": "월",
+            "workout": "휴식",
+            "rest": true
+          },
+          {
+            "day": "화",
+            "workout": "전신",
+            "rest": false,
+            "plan": [
+              {
+                "name": "스쿼트",
+                "sets": 3,
+                "reps": 10,
+                "weight": "70kg"
+              },
+              {
+                "name": "루마니안 데드리프트",
+                "sets": 3,
+                "reps": 10,
+                "weight": "65kg"
+              },
+              {
+                "name": "레그프레스",
+                "sets": 3,
+                "reps": 15,
+                "weight": "100kg"
+              },
+              {
+                "name": "케이블 로우",
+                "sets": 3,
+                "reps": 12,
+                "weight": "40kg"
+              },
+              {
+                "name": "랫풀다운",
+                "sets": 3,
+                "reps": 10,
+                "weight": "50kg"
+              },
+              {
+                "name": "플랭크",
+                "sets": 3,
+                "reps": 60,
+                "weight": "-"
+              }
+            ]
+          },
+          {
+            "day": "수",
+            "workout": "휴식",
+            "rest": true
+          },
+          {
+            "day": "목",
+            "workout": "휴식",
+            "rest": true
+          },
+          {
+            "day": "금",
+            "workout": "휴식",
+            "rest": true
+          },
+          {
+            "day": "토",
+            "workout": "휴식",
+            "rest": true
+          },
+          {
+            "day": "일",
+            "workout": "휴식",
+            "rest": true
+          }
+        ]
+      }
     }
   ],
   "quotes": [

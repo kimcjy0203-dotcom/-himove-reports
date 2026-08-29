@@ -3,9 +3,16 @@
   "name": "오티테스트(TEST)",
   "month": "2026년 7월",
   "notice": "",
-  "purposes": ["체중감량", "체력향상", "자세교정"],
+  "purposes": [
+    "체중감량",
+    "체력향상",
+    "자세교정"
+  ],
   "goals": {
-    "short": { "text": "테스트 목표 문구 — 실제 상담 후 교체 예정", "period": "4주" }
+    "short": {
+      "text": "테스트 목표 문구 — 실제 상담 후 교체 예정",
+      "period": "4주"
+    }
   },
   "cardio": {
     "age": 30,
@@ -20,21 +27,104 @@
         "weekKey": "2026-W30-ottest",
         "note": "테스트용 샘플 루틴 — 실제 오티 상담 내용으로 교체 예정",
         "days": [
-          { "day": "월", "workout": "전신 스트레칭", "rest": false, "plan": [
-            { "name": "폼롤러 전신 이완", "sets": 1, "reps": 1, "weight": "10분" }
-          ], "note": "테스트 노트" },
-          { "day": "화", "workout": "유산소 20분", "rest": false, "plan": [
-            { "name": "빠른 걷기", "sets": 1, "reps": 1, "weight": "20분" }
-          ] },
-          { "day": "수", "workout": "휴식", "rest": true },
-          { "day": "목", "workout": "개인-하체", "rest": false, "plan": [
-            { "name": "스쿼트", "sets": 3, "reps": 15, "weight": "-" }
-          ] },
-          { "day": "금", "workout": "휴식", "rest": true },
-          { "day": "토", "workout": "유산소 20분", "rest": false, "plan": [
-            { "name": "빠른 걷기", "sets": 1, "reps": 1, "weight": "20분" }
-          ] },
-          { "day": "일", "workout": "휴식", "rest": true }
+          {
+            "day": "월",
+            "workout": "전신 스트레칭",
+            "rest": false,
+            "plan": [
+              {
+                "name": "폼롤러 전신 이완",
+                "sets": 1,
+                "reps": 1,
+                "weight": "10분"
+              }
+            ],
+            "note": "테스트 노트"
+          },
+          {
+            "day": "화",
+            "workout": "유산소 20분",
+            "rest": false,
+            "plan": [
+              {
+                "name": "빠른 걷기",
+                "sets": 1,
+                "reps": 1,
+                "weight": "20분"
+              }
+            ]
+          },
+          {
+            "day": "수",
+            "workout": "휴식",
+            "rest": true
+          },
+          {
+            "day": "목",
+            "workout": "개인-하체",
+            "rest": false,
+            "plan": [
+              {
+                "name": "스쿼트",
+                "sets": 3,
+                "reps": 15,
+                "weight": "-"
+              },
+              {
+                "name": "런지",
+                "sets": 3,
+                "reps": 12,
+                "weight": "-"
+              },
+              {
+                "name": "레그프레스",
+                "sets": 3,
+                "reps": 15,
+                "weight": "40kg"
+              },
+              {
+                "name": "레그컬",
+                "sets": 3,
+                "reps": 12,
+                "weight": "20kg"
+              },
+              {
+                "name": "레그익스텐션",
+                "sets": 3,
+                "reps": 12,
+                "weight": "20kg"
+              },
+              {
+                "name": "카프레이즈",
+                "sets": 3,
+                "reps": 20,
+                "weight": "-"
+              }
+            ]
+          },
+          {
+            "day": "금",
+            "workout": "휴식",
+            "rest": true
+          },
+          {
+            "day": "토",
+            "workout": "유산소 20분",
+            "rest": false,
+            "plan": [
+              {
+                "name": "빠른 걷기",
+                "sets": 1,
+                "reps": 1,
+                "weight": "20분"
+              }
+            ]
+          },
+          {
+            "day": "일",
+            "workout": "휴식",
+            "rest": true
+          }
         ]
       }
     }
