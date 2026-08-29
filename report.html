@@ -775,6 +775,75 @@ if (directId) {
 /* ════════════════════════════════
    초기화
 ════════════════════════════════ */
+function localDateStr(d) {
+  d = d || new Date();
+  const y = d.getFullYear(), m = String(d.getMonth()+1).padStart(2,'0'), day = String(d.getDate()).padStart(2,'0');
+  return `${y}-${m}-${day}`;
+}
+const todayKey = localDateStr(); // "2026-05-31"
+/* ── 진행 과부하(PR) 기록 — 종목별 무게·횟수·RPE·여유횟수·느낌메모 ── */
+const RPE_LABELS = ['쉬움','적당','힘듦','매우힘듦'];
+function prKey(name) { return `hm_pr_${currentMemberId}_${encodeURIComponent(name)}`; }
+function getPrData(name) {
+  try { return JSON.parse(localStorage.getItem(prKey(name)) || 'null') || { lastWeight: null, weightSetDate: null, history: [] }; }
+  catch(e) { return { lastWeight: null, weightSetDate: null, history: [] }; }
+}
+function savePrEntry(name, { reps, weight, rpe, target, extraReps, note }) {
+  const data = getPrData(name);
+  const w = weight !== '' && weight != null ? parseFloat(weight) : null;
+  if (w != null && (data.lastWeight == null || w > data.lastWeight)) {
+    data.lastWeight = w;
+    data.weightSetDate = todayKey;
+  }
+  const existing = data.history.find(h => h.date === todayKey);
+  const entry = {
+    date: todayKey,
+    reps: reps || '',
+    weight: w != null ? w : '',
+    rpe: rpe || '',
+    target: target ?? null,
+    extraReps: (extraReps !== '' && extraReps != null) ? parseInt(extraReps) : null,
+    note: note || ''
+  };
+  if (existing) Object.assign(existing, entry);
+  else data.history.unshift(entry);
+  data.history = data.history.slice(0, 30);
+  localStorage.setItem(prKey(name), JSON.stringify(data));
+  return data;
+}
+function daysSinceWeightSet(name) {
+  const data = getPrData(name);
+  if (!data.weightSetDate) return null;
+  const [y,m,d] = data.weightSetDate.split('-').map(Number);
+  const set = new Date(y, m-1, d);
+  const today = new Date(); today.setHours(0,0,0,0);
+  return Math.round((today - set) / 86400000);
+}
+const PR_MIN_CYCLE_DAYS = 7;
+function isTestDue(name) {
+  const days = daysSinceWeightSet(name);
+  if (days == null || days < PR_MIN_CYCLE_DAYS) return false;
+  const recent = getPrData(name).history.filter(h => h.reps !== '' && h.target != null).slice(0, 2);
+  if (recent.length < 2) return false;
+  return recent.every(h => h.reps >= h.target && (h.extraReps || 0) >= 2 && ['쉬움','적당'].includes(h.rpe));
+}
+function getTodayExerciseLogs(calDays) {
+  const names = new Set();
+  (calDays || []).forEach(d => (d.plan || []).forEach(p => names.add(p.name)));
+  const out = [];
+  names.forEach(name => {
+    const data = getPrData(name);
+    const t = data.history.find(h => h.date === todayKey);
+    if (t && (t.reps || t.weight || t.rpe || t.note)) out.push({ name, reps: t.reps, weight: t.weight, rpe: t.rpe, target: t.target, extraReps: t.extraReps, note: t.note });
+  });
+  return out;
+}
+function getDueTests(calDays) {
+  const names = new Set();
+  (calDays || []).forEach(d => (d.plan || []).forEach(p => names.add(p.name)));
+  return [...names].filter(isTestDue);
+}
+
 function init(data) {
   const { name, month, purposes, goals, cardio, orm, weeks, hideLesson, isOT } = data;
 
@@ -1026,74 +1095,6 @@ function init(data) {
     </div>`;
   }
 
-  function localDateStr(d) {
-    d = d || new Date();
-    const y = d.getFullYear(), m = String(d.getMonth()+1).padStart(2,'0'), day = String(d.getDate()).padStart(2,'0');
-    return `${y}-${m}-${day}`;
-  }
-  const todayKey = localDateStr(); // "2026-05-31"
-  /* ── 진행 과부하(PR) 기록 — 종목별 무게·횟수·RPE·여유횟수·느낌메모 ── */
-  const RPE_LABELS = ['쉬움','적당','힘듦','매우힘듦'];
-  function prKey(name) { return `hm_pr_${currentMemberId}_${encodeURIComponent(name)}`; }
-  function getPrData(name) {
-    try { return JSON.parse(localStorage.getItem(prKey(name)) || 'null') || { lastWeight: null, weightSetDate: null, history: [] }; }
-    catch(e) { return { lastWeight: null, weightSetDate: null, history: [] }; }
-  }
-  function savePrEntry(name, { reps, weight, rpe, target, extraReps, note }) {
-    const data = getPrData(name);
-    const w = weight !== '' && weight != null ? parseFloat(weight) : null;
-    if (w != null && (data.lastWeight == null || w > data.lastWeight)) {
-      data.lastWeight = w;
-      data.weightSetDate = todayKey;
-    }
-    const existing = data.history.find(h => h.date === todayKey);
-    const entry = {
-      date: todayKey,
-      reps: reps || '',
-      weight: w != null ? w : '',
-      rpe: rpe || '',
-      target: target ?? null,
-      extraReps: (extraReps !== '' && extraReps != null) ? parseInt(extraReps) : null,
-      note: note || ''
-    };
-    if (existing) Object.assign(existing, entry);
-    else data.history.unshift(entry);
-    data.history = data.history.slice(0, 30);
-    localStorage.setItem(prKey(name), JSON.stringify(data));
-    return data;
-  }
-  function daysSinceWeightSet(name) {
-    const data = getPrData(name);
-    if (!data.weightSetDate) return null;
-    const [y,m,d] = data.weightSetDate.split('-').map(Number);
-    const set = new Date(y, m-1, d);
-    const today = new Date(); today.setHours(0,0,0,0);
-    return Math.round((today - set) / 86400000);
-  }
-  const PR_MIN_CYCLE_DAYS = 7;
-  function isTestDue(name) {
-    const days = daysSinceWeightSet(name);
-    if (days == null || days < PR_MIN_CYCLE_DAYS) return false;
-    const recent = getPrData(name).history.filter(h => h.reps !== '' && h.target != null).slice(0, 2);
-    if (recent.length < 2) return false;
-    return recent.every(h => h.reps >= h.target && (h.extraReps || 0) >= 2 && ['쉬움','적당'].includes(h.rpe));
-  }
-  function getTodayExerciseLogs(calDays) {
-    const names = new Set();
-    (calDays || []).forEach(d => (d.plan || []).forEach(p => names.add(p.name)));
-    const out = [];
-    names.forEach(name => {
-      const data = getPrData(name);
-      const t = data.history.find(h => h.date === todayKey);
-      if (t && (t.reps || t.weight || t.rpe || t.note)) out.push({ name, reps: t.reps, weight: t.weight, rpe: t.rpe, target: t.target, extraReps: t.extraReps, note: t.note });
-    });
-    return out;
-  }
-  function getDueTests(calDays) {
-    const names = new Set();
-    (calDays || []).forEach(d => (d.plan || []).forEach(p => names.add(p.name)));
-    return [...names].filter(isTestDue);
-  }
 
   /* ── 인바디 자가입력 ── */
   function inbodyKey() { return `hm_ibody_${currentMemberId}`; }
