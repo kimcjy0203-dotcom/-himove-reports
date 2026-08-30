@@ -171,13 +171,10 @@ tr:last-child td { border-bottom: none; }
 .plan-row-log { padding:9px 0; border-bottom:1px solid rgba(160,190,230,0.15); }
 .plan-row-log:last-child { border-bottom:none; }
 .pr-test-badge { font-size:10px; font-weight:800; color:#c46a2a; background:rgba(240,150,60,0.12); border-radius:8px; padding:3px 8px; display:inline-block; margin-bottom:6px; }
-.dd-ex-grid { display:grid; grid-template-columns: 1fr 72px; gap:8px; align-items:start; max-width:100%; }
-.dd-ex-grid > div { min-width: 0; }
-.dd-check-col { display:flex; flex-direction:column; gap:3px; min-width: 0; }
-.dd-check-label { font-size:9px; font-weight:700; color:#b8c8da; letter-spacing:0.5px; margin-top:4px; }
-.dd-check-label:first-child { margin-top:0; }
-.dd-rpe-col { display:flex; flex-direction:column; gap:4px; min-width: 0; }
-.dd-rpe-col .chip { flex:none; width:100%; padding:5px 1px; font-size:9px; letter-spacing:-0.3px; word-break:keep-all; overflow-wrap:break-word; box-sizing:border-box; }
+.dd-chip-row { display:flex; align-items:center; gap:6px; flex-wrap:wrap; margin-top:7px; }
+.dd-chip-row:first-of-type { margin-top:8px; }
+.dd-chip-label { font-size:9px; font-weight:700; color:#b8c8da; letter-spacing:0.3px; flex-shrink:0; width:38px; }
+.dd-mini-chip { flex:none; padding:5px 9px; font-size:10px; cursor:pointer; }
 .pr-input { width:100%; min-width:0; box-sizing:border-box; background:rgba(255,255,255,0.7); border:1px solid rgba(160,190,230,0.4); border-radius:8px; padding:6px 8px; font-size:12px; font-weight:600; color:#2a3a50; text-align:center; outline:none; font-family:inherit; }
 .pr-input::placeholder { color:#b0c4da; font-weight:500; }
 .pr-rpe-row { display:flex; gap:5px; }
@@ -774,8 +771,9 @@ function localDateStr(d) {
   return `${y}-${m}-${day}`;
 }
 const todayKey = localDateStr(); // "2026-05-31"
-/* ── 진행 과부하(PR) 기록 — 무게·횟수는 트레이너가 루틴에 정해둔 값 그대로,
-   회원은 자각도(RPE)·여유 횟수(RIR)만 체크박스로 남김 ── */
+/* ── 진행 과부하(PR) 기록 — 무게·횟수·자각도·여유횟수 전부 탭해서 고르는 칩(체크박스) 형태 ── */
+const WEIGHT_LABELS = ['처방대로','더가벼움','더무거움'];
+const REPS_LABELS = ['다채움','못채움'];
 const RPE_LABELS = ['쉬움','적당','힘듦','매우힘듦'];
 const RIR_LABELS = ['0개','1~2개','3개+'];
 function prKey(name) { return `hm_pr_${currentMemberId}_${encodeURIComponent(name)}`; }
@@ -783,7 +781,7 @@ function getPrData(name) {
   try { return JSON.parse(localStorage.getItem(prKey(name)) || 'null') || { lastPlanWeight: null, weightSetDate: null, history: [] }; }
   catch(e) { return { lastPlanWeight: null, weightSetDate: null, history: [] }; }
 }
-function savePrEntry(name, { rpe, extraReps, note, target, planWeight }) {
+function savePrEntry(name, { weightCheck, repsCheck, rpe, extraReps, note, target, planWeight }) {
   const data = getPrData(name);
   // 트레이너가 루틴의 무게를 바꿨으면(=증량) 그 시점을 새 증량 기준일로 기록
   if (planWeight != null && data.lastPlanWeight !== planWeight) {
@@ -791,7 +789,7 @@ function savePrEntry(name, { rpe, extraReps, note, target, planWeight }) {
     data.weightSetDate = todayKey;
   }
   const existing = data.history.find(h => h.date === todayKey);
-  const entry = { date: todayKey, rpe: rpe || '', extraReps: extraReps || '', note: note || '', target: target ?? null };
+  const entry = { date: todayKey, weightCheck: weightCheck || '', repsCheck: repsCheck || '', rpe: rpe || '', extraReps: extraReps || '', note: note || '', target: target ?? null };
   if (existing) Object.assign(existing, entry);
   else data.history.unshift(entry);
   data.history = data.history.slice(0, 30);
@@ -812,7 +810,7 @@ function isTestDue(name) {
   if (days == null || days < PR_MIN_CYCLE_DAYS) return false;
   const recent = getPrData(name).history.filter(h => h.rpe && h.extraReps).slice(0, 2);
   if (recent.length < 2) return false;
-  return recent.every(h => h.extraReps === '3개+' && ['쉬움','적당'].includes(h.rpe));
+  return recent.every(h => h.repsCheck === '다채움' && h.extraReps === '3개+' && ['쉬움','적당'].includes(h.rpe));
 }
 function getTodayExerciseLogs(calDays) {
   const names = new Set();
@@ -821,7 +819,7 @@ function getTodayExerciseLogs(calDays) {
   names.forEach(name => {
     const data = getPrData(name);
     const t = data.history.find(h => h.date === todayKey);
-    if (t && (t.rpe || t.extraReps || t.note)) out.push({ name, rpe: t.rpe, extraReps: t.extraReps, note: t.note, target: t.target });
+    if (t && (t.weightCheck || t.repsCheck || t.rpe || t.extraReps || t.note)) out.push({ name, weightCheck: t.weightCheck, repsCheck: t.repsCheck, rpe: t.rpe, extraReps: t.extraReps, note: t.note, target: t.target });
   });
   return out;
 }
@@ -1329,7 +1327,7 @@ function init(data) {
       if (doneList.length) lines.push(`운동 완료: ${doneList.join(' · ')}`);
       if (prLogs.length) {
         lines.push('오늘 운동 기록:');
-        prLogs.forEach(l => lines.push(`  · ${l.name}${l.rpe?' 자각도 '+l.rpe:''}${l.extraReps?' · 여유 '+l.extraReps:''}${l.note?' — '+l.note:''}`.trim()));
+        prLogs.forEach(l => lines.push(`  · ${l.name}${l.weightCheck?' '+l.weightCheck:''}${l.repsCheck?' · '+l.repsCheck:''}${l.rpe?' · 자각도 '+l.rpe:''}${l.extraReps?' · 여유 '+l.extraReps:''}${l.note?' — '+l.note:''}`.trim()));
       }
       if (ib) lines.push(`인바디: 체중 ${ib.weight??'—'}kg · 골격근량 ${ib.muscle??'—'}kg · 체지방 ${ib.fat??'—'}%`);
       const ciData = { id: currentMemberId, wk: weekKey, d: todayKey, pr: prLogs, body: ib, wouts: doneList };
@@ -1490,26 +1488,25 @@ function toggleDayDetail(panelIdx, day, workout, plan, note, dayIdx, checked, ca
   if (!plan.length) {
     wrap.innerHTML = `<div class="day-detail"><div class="dd-head">${day}요일 · ${workout||'-'}</div>${note?`<div class="plan-note">${note}</div>`:''}<div style="font-size:13px;color:#c0d0e0;padding:8px 0">이 날 세부 계획이 없어요.</div>${doneBtnHtml}</div>`;
   } else {
+    const CHIP_GROUPS = [
+      { key: 'weight', label: '무게', labels: WEIGHT_LABELS },
+      { key: 'reps',   label: '횟수', labels: REPS_LABELS },
+      { key: 'rpe',    label: '자각도', labels: RPE_LABELS },
+      { key: 'rir',    label: '여유', labels: RIR_LABELS },
+    ];
     const rows = plan.map(p => {
       const pr = getPrData(p.name);
       const t = pr.history.find(h => h.date === todayKey) || {};
       const due = isTestDue(p.name);
       const nameAttr = p.name.replace(/"/g,'&quot;');
       const weightAttr = (p.weight||'').replace(/"/g,'&quot;');
+      const activeVal = { weight: t.weightCheck, reps: t.repsCheck, rpe: t.rpe, rir: t.extraReps };
+      const chipRows = CHIP_GROUPS.map(g => `<div class="dd-chip-row" data-group="${g.key}"><span class="dd-chip-label">${g.label}</span>${g.labels.map(l => `<div class="chip dd-mini-chip${l===activeVal[g.key]?' on':''}" data-val="${l}">${l}</div>`).join('')}</div>`).join('');
       return `<div class="plan-row-log" data-name="${nameAttr}" data-target="${p.reps}" data-weight="${weightAttr}">
-        <div class="dd-ex-grid">
-          <div>
-            <div class="plan-row"><span class="plan-name">${p.name}</span><span class="plan-detail">${p.sets}세트 × ${p.reps}회${p.weight&&p.weight!=='-'?' / '+p.weight:''}</span></div>
-            ${due ? `<div class="pr-test-badge">🔥 무게를 올려볼 때예요 — 증량 테스트 해보세요</div>` : ''}
-            <textarea class="daily-note pr-note" placeholder="오늘 느낌을 자유롭게 적어보세요 (선택)" rows="1">${t.note ?? ''}</textarea>
-          </div>
-          <div class="dd-check-col">
-            <div class="dd-check-label">자각도</div>
-            <div class="dd-rpe-col">${RPE_LABELS.map(l => `<div class="chip pr-rpe-chip${l===t.rpe?' on':''}" data-rpe="${l}">${l}</div>`).join('')}</div>
-            <div class="dd-check-label">여유 횟수</div>
-            <div class="dd-rpe-col">${RIR_LABELS.map(l => `<div class="chip pr-rir-chip${l===t.extraReps?' on':''}" data-rir="${l}">${l}</div>`).join('')}</div>
-          </div>
-        </div>
+        <div class="plan-row"><span class="plan-name">${p.name}</span><span class="plan-detail">${p.sets}세트 × ${p.reps}회${p.weight&&p.weight!=='-'?' / '+p.weight:''}</span></div>
+        ${due ? `<div class="pr-test-badge">🔥 무게를 올려볼 때예요 — 증량 테스트 해보세요</div>` : ''}
+        ${chipRows}
+        <textarea class="daily-note pr-note" placeholder="오늘 느낌을 자유롭게 적어보세요 (선택)" rows="1">${t.note ?? ''}</textarea>
       </div>`;
     }).join('');
     wrap.innerHTML = `<div class="day-detail"><div class="dd-head">${day}요일 · ${workout||'-'}</div>${note?`<div class="plan-note">${note}</div>`:''}${rows}${doneBtnHtml}</div>`;
@@ -1520,23 +1517,18 @@ function toggleDayDetail(panelIdx, day, workout, plan, note, dayIdx, checked, ca
       const planWeight = row.dataset.weight || '';
       const noteEl = row.querySelector('.pr-note');
       function save() {
-        const rpe = row.querySelector('.pr-rpe-chip.on')?.dataset.rpe || '';
-        const rir = row.querySelector('.pr-rir-chip.on')?.dataset.rir || '';
-        savePrEntry(name, { rpe, extraReps: rir, note: noteEl.value, target, planWeight });
+        const val = key => row.querySelector(`.dd-chip-row[data-group="${key}"] .dd-mini-chip.on`)?.dataset.val || '';
+        savePrEntry(name, { weightCheck: val('weight'), repsCheck: val('reps'), rpe: val('rpe'), extraReps: val('rir'), note: noteEl.value, target, planWeight });
       }
       noteEl.addEventListener('change', save);
-      row.querySelectorAll('.pr-rpe-chip').forEach(chip => {
-        chip.addEventListener('click', () => {
-          row.querySelectorAll('.pr-rpe-chip').forEach(c => c.classList.remove('on'));
-          chip.classList.add('on');
-          save();
-        });
-      });
-      row.querySelectorAll('.pr-rir-chip').forEach(chip => {
-        chip.addEventListener('click', () => {
-          row.querySelectorAll('.pr-rir-chip').forEach(c => c.classList.remove('on'));
-          chip.classList.add('on');
-          save();
+      row.querySelectorAll('.dd-chip-row').forEach(group => {
+        group.querySelectorAll('.dd-mini-chip').forEach(chip => {
+          chip.addEventListener('click', () => {
+            const alreadyOn = chip.classList.contains('on');
+            group.querySelectorAll('.dd-mini-chip').forEach(c => c.classList.remove('on'));
+            if (!alreadyOn) chip.classList.add('on');
+            save();
+          });
         });
       });
     });
