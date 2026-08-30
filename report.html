@@ -168,6 +168,7 @@ tr:last-child td { border-bottom: none; }
 .plan-note { font-size:11px; color:#6a8aaa; line-height:1.65; padding:10px 12px; background:rgba(100,155,220,0.07); border-radius:10px; margin-bottom:14px; white-space:pre-line; }
 .day-done-btn { width:100%; margin-top:14px; padding:12px; border:none; border-radius:14px; font-size:13px; font-weight:800; cursor:pointer; transition:all 0.2s; background:rgba(100,155,220,0.12); color:#3a6a9a; }
 .day-done-btn.done { background:rgba(90,175,130,0.15); color:#3a8a6a; }
+.day-demo-btn { width:100%; margin-bottom:12px; padding:9px; border:1px dashed rgba(230,160,60,0.5); border-radius:12px; font-size:11px; font-weight:700; cursor:pointer; background:rgba(255,243,224,0.6); color:#a06a1a; }
 .plan-row-log { padding:9px 0; border-bottom:1px solid rgba(160,190,230,0.15); }
 .plan-row-log:last-child { border-bottom:none; }
 .pr-test-badge { font-size:10px; font-weight:800; color:#c46a2a; background:rgba(240,150,60,0.12); border-radius:8px; padding:3px 8px; display:inline-block; margin-bottom:6px; }
@@ -814,13 +815,53 @@ function daysSinceWeightSet(name) {
   const today = new Date(); today.setHours(0,0,0,0);
   return Math.round((today - set) / 86400000);
 }
-const PR_MIN_CYCLE_DAYS = 7;
-function isTestDue(name) {
+/* 증량 최소 대기일 — 이 운동을 일주일에 몇 번 하는지에 따라 다르게 적용.
+   자주 할수록(자극 노출이 잦을수록) 더 자주 무게를 올려도 몸이 따라감,
+   1주일에 한 번뿐이면 우연히 잘한 한 번으로 판단하지 않도록 더 길게 지켜봄. */
+function weeklyFrequency(name, calDays) {
+  return (calDays || []).filter(d => !d.rest && (d.plan||[]).some(p => p.name === name)).length;
+}
+function minCycleDaysFor(freq) {
+  if (freq >= 3) return 5;   // 주 3회 이상 — 회복이 빠르게 반복돼서 짧은 주기로도 판단 가능
+  if (freq === 2) return 10; // 주 2회 — 약 1.5주 주기
+  return 14;                 // 주 1회 이하 — 2주는 지켜봐야 우연이 아님을 확인 가능
+}
+function isTestDue(name, calDays) {
   const days = daysSinceWeightSet(name);
-  if (days == null || days < PR_MIN_CYCLE_DAYS) return false;
+  const minDays = minCycleDaysFor(weeklyFrequency(name, calDays));
+  if (days == null || days < minDays) return false;
   const recent = getPrData(name).history.filter(h => h.reps !== '' && h.target != null).slice(0, 2);
   if (recent.length < 2) return false;
   return recent.every(h => h.reps >= h.target && h.extraReps !== '' && Number(h.extraReps) >= 3 && ['쉬움','적당'].includes(h.rpe));
+}
+/* 증량 제안 무게 — 하체·복합관절 운동은 더 큰 폭(약 7.5%), 그 외(상체·고립 운동)는
+   작은 폭(약 3.5%)으로 올리는 게 일반적인 체육학 권장 범위(NSCA 가이드라인 기준
+   상체 2.5~5%, 하체/복합관절 5~10%)의 중간값. 헬스장 플레이트 단위(2.5kg)로 반올림. */
+const LOWER_BODY_KEYWORDS = ['스쿼트','데드리프트','레그프레스','런지','힙쓰러스트','레그컬','레그익스텐션','카프레이즈','핵스쿼트','스티프','불가리안'];
+function suggestedIncreasePct(name) {
+  return LOWER_BODY_KEYWORDS.some(k => name.includes(k)) ? 0.075 : 0.035;
+}
+function roundToPlate(w) { return Math.round(w / 2.5) * 2.5; }
+function suggestedNextWeight(name) {
+  const base = getPrData(name).lastWeight;
+  if (base == null) return null;
+  return roundToPlate(base * (1 + suggestedIncreasePct(name)));
+}
+/* 테스트 계정(testmember/ottest) 전용 — 증량 배너가 실제로 뜨는 모습을 바로 보여주기 위해
+   지난 두 번의 "잘 해낸 세션"을 가상으로 채워넣는 데모용 함수. 실제 회원에게는 노출되지 않음. */
+function seedDemoHistory(name, targetReps, planWeightStr, calDays) {
+  const minDays = minCycleDaysFor(weeklyFrequency(name, calDays));
+  const data = getPrData(name);
+  const parsedPlanWeight = parseFloat(planWeightStr);
+  if (data.lastWeight == null) data.lastWeight = !isNaN(parsedPlanWeight) ? parsedPlanWeight : 40;
+  const today = new Date();
+  function daysAgoStr(n) { const d = new Date(today); d.setDate(d.getDate() - n); return localDateStr(d); }
+  const setDate = daysAgoStr(minDays + 1);
+  const secondDate = daysAgoStr(Math.max(1, Math.floor(minDays / 2)));
+  data.weightSetDate = setDate;
+  const mk = date => ({ date, weight: data.lastWeight, reps: targetReps, rpe: '쉬움', extraReps: 3, note: '데모 기록', target: targetReps });
+  data.history = [mk(secondDate), mk(setDate), ...data.history.filter(h => h.date !== secondDate && h.date !== setDate)].slice(0, 30);
+  localStorage.setItem(prKey(name), JSON.stringify(data));
 }
 function getTodayExerciseLogs(calDays) {
   const names = new Set();
@@ -836,7 +877,7 @@ function getTodayExerciseLogs(calDays) {
 function getDueTests(calDays) {
   const names = new Set();
   (calDays || []).forEach(d => (d.plan || []).forEach(p => names.add(p.name)));
-  return [...names].filter(isTestDue);
+  return [...names].filter(n => isTestDue(n, calDays));
 }
 
 function init(data) {
@@ -1215,7 +1256,12 @@ function init(data) {
     return `<div class="week-panel" data-idx="${idx}">
       ${!isMember && w.nextSessionMemo ? `<div class="card" style="border-left:3px solid rgba(200,160,90,0.5)"><div class="card-title gold">다음 수업 준비<span class="memo-badge">트레이너</span></div><div class="note">${w.nextSessionMemo}</div></div>` : ''}
       ${collapsible('<span style="display:flex;align-items:center"><span class="req-dot"></span>운동 현황</span>', 'blue', `<div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:10px"><div class="sub-label" style="margin-bottom:0">이번 주 트레이닝</div><span class="wk-count" id="wk-count-${idx}">주 0회</span></div><div class="weekly-cal" id="weekly-cal-${idx}">${calDays}</div><div class="day-detail-wrap" id="day-detail-${idx}"></div><div class="note">${r.note||''}</div>`, true)}
-      ${(() => { const due = getDueTests(r.days); return due.length ? `<div class="pr-test-banner">🔥 <b>${due.join(', ')}</b> — 목표 횟수를 여유 있게 해내고 있어요. 다음 개인운동 때 무게를 올려서 테스트해보세요!</div>` : ''; })()}
+      ${(() => {
+        const due = getDueTests(r.days);
+        if (!due.length) return '';
+        const lines = due.map(n => { const nw = suggestedNextWeight(n); return nw != null ? `${n} → ${nw}kg` : n; }).join(', ');
+        return `<div class="pr-test-banner">🔥 <b>${lines}</b> — 최근 목표 횟수를 여유 있게 해내고 있어요. 다음 개인운동 때 무게를 올려서 테스트해보세요!</div>`;
+      })()}
       ${isOT && routineDetailHtml ? collapsible('<span style="display:flex;align-items:center"><span class="req-dot"></span>이번 주 루틴</span>', 'blue', `<div class="routine-detail">${routineDetailHtml}</div>`, true) : ''}
       ${(!isOT && !hideLesson) ? collapsible('<span style="display:flex;align-items:center"><span class="req-dot"></span>레슨일지</span>', 'gold', `<div class="sub-label">요약</div><div class="summary-list">${summaryItems}</div>${HR}<div class="sub-label">운동 피드백</div><div class="exercise-grid">${exItems}</div>${w.musclesWorked?.length?`${HR}<div class="sub-label">운동 부위</div><div class="muscle-tag-row">${w.musclesWorked.map(m=>`<span class="muscle-tag">${MUSCLE_DATA[m]?.name||m}</span>`).join("")}</div>`:""}${(w.review?.good||w.review?.caution||w.review?.suggest||w.trainerComment)?`${HR}${w.review?.good?`<div style="margin-bottom:14px"><div class="sub-label">✓ 잘 하고 있는 점</div><div class="msg green">${w.review.good}</div></div>`:''}${w.review?.caution?`<div style="margin-bottom:14px"><div class="sub-label" style="color:#e05050">⚠ 주의할 점</div><div class="msg gold">${w.review.caution}</div></div>`:''}${w.review?.suggest?`<div style="margin-bottom:14px"><div class="sub-label">→ 권장 사항</div><div class="msg">${w.review.suggest}</div></div>`:''}${w.trainerComment?`<div class="sub-label">트레이너 코멘트</div><div class="msg gold">${w.trainerComment}</div>`:''}`:''}${!isMember && w.trainerDirection ? `${HR}<div class="sub-label">트레이닝 방향</div><div class="msg">${w.trainerDirection}</div>` : ''}`, true) : ''}
       ${collapsible('<span style="display:flex;align-items:center"><span class="req-dot"></span>웨이트 트레이닝 기본 원칙</span>', 'blue', buildTrainingPrinciplesCard())}
@@ -1374,6 +1420,8 @@ function init(data) {
       }
     }
 
+    const weekDays = [...cal.querySelectorAll('.cal-day')].map(d => ({ rest: d.dataset.isrest === '1', plan: JSON.parse(d.dataset.plan || '[]') }));
+
     cal.querySelectorAll('.cal-day:not(.rest-day)').forEach(el => el.addEventListener('click', function(){
       const i = parseInt(this.dataset.idx);
       if (isOT) {
@@ -1387,7 +1435,7 @@ function init(data) {
       const day = this.dataset.day, workout = this.dataset.workout;
       const note = this.dataset.note || '';
       const panelIdx = parseInt(cal.id.replace('weekly-cal-',''));
-      toggleDayDetail(panelIdx, day, workout, plan, note, i, checked, calKey, renderCal, this);
+      toggleDayDetail(panelIdx, day, workout, plan, note, i, checked, calKey, renderCal, this, weekDays);
     }));
   });
 
@@ -1478,7 +1526,7 @@ function init(data) {
 
 /* ── 운동 계획 팝업 ── */
 /* 요일 클릭 시 팝업 대신 캘린더 바로 아래에 인라인으로 펼쳐지는 운동 기록 블록 (아코디언) */
-function toggleDayDetail(panelIdx, day, workout, plan, note, dayIdx, checked, calKey, renderCal, dayEl) {
+function toggleDayDetail(panelIdx, day, workout, plan, note, dayIdx, checked, calKey, renderCal, dayEl, weekDays) {
   const wrap = document.getElementById(`day-detail-${panelIdx}`);
   if (!wrap) return;
   const calEl = document.getElementById(`weekly-cal-${panelIdx}`);
@@ -1494,6 +1542,8 @@ function toggleDayDetail(panelIdx, day, workout, plan, note, dayIdx, checked, ca
 
   const doneNow = checked.includes(dayIdx);
   const doneBtnHtml = `<button class="day-done-btn${doneNow?' done':''}" id="day-done-${panelIdx}">${doneNow ? '✓ 완료됨' : '완료 체크'}</button>`;
+  const isDemoAccount = ['testmember','ottest'].includes(currentMemberId);
+  const demoBtnHtml = (isDemoAccount && plan.length) ? `<button type="button" class="day-demo-btn" id="day-demo-${panelIdx}">🧪 테스트용 — 지난 기록 채워서 증량 배너 미리보기</button>` : '';
 
   if (!plan.length) {
     wrap.innerHTML = `<div class="day-detail"><div class="dd-head">${day}요일 · ${workout||'-'}</div>${note?`<div class="plan-note">${note}</div>`:''}<div style="font-size:13px;color:#c0d0e0;padding:8px 0">이 날 세부 계획이 없어요.</div>${doneBtnHtml}</div>`;
@@ -1507,7 +1557,8 @@ function toggleDayDetail(panelIdx, day, workout, plan, note, dayIdx, checked, ca
     const rows = plan.map(p => {
       const pr = getPrData(p.name);
       const t = pr.history.find(h => h.date === todayKey) || {};
-      const due = isTestDue(p.name);
+      const due = isTestDue(p.name, weekDays);
+      const nextW = due ? suggestedNextWeight(p.name) : null;
       const nameAttr = p.name.replace(/"/g,'&quot;');
 
       const weightField = fieldHtml('weight', '무게', t.weight !== '' && t.weight != null ? `${t.weight}kg` : '입력', t.weight === '' || t.weight == null,
@@ -1521,12 +1572,12 @@ function toggleDayDetail(panelIdx, day, workout, plan, note, dayIdx, checked, ca
 
       return `<div class="plan-row-log" data-name="${nameAttr}" data-target="${p.reps}">
         <div class="plan-row"><span class="plan-name">${p.name}</span><span class="plan-detail">${p.sets}세트 × ${p.reps}회${p.weight&&p.weight!=='-'?' / '+p.weight:''}</span></div>
-        ${due ? `<div class="pr-test-badge">🔥 무게를 올려볼 때예요 — 증량 테스트 해보세요</div>` : ''}
+        ${due ? `<div class="pr-test-badge">🔥 무게를 올려볼 때예요${nextW!=null?` — 다음엔 ${nextW}kg 정도로`:''}</div>` : ''}
         ${weightField}${repsField}${rpeField}${rirField}
         <textarea class="daily-note pr-note" placeholder="오늘 느낌을 자유롭게 적어보세요 (선택)" rows="1">${t.note ?? ''}</textarea>
       </div>`;
     }).join('');
-    wrap.innerHTML = `<div class="day-detail"><div class="dd-head">${day}요일 · ${workout||'-'}</div>${note?`<div class="plan-note">${note}</div>`:''}${rows}${doneBtnHtml}</div>`;
+    wrap.innerHTML = `<div class="day-detail"><div class="dd-head">${day}요일 · ${workout||'-'}</div>${note?`<div class="plan-note">${note}</div>`:''}${demoBtnHtml}${rows}${doneBtnHtml}</div>`;
 
     wrap.querySelectorAll('.plan-row-log').forEach(row => {
       const name = row.dataset.name;
@@ -1589,6 +1640,13 @@ function toggleDayDetail(panelIdx, day, workout, plan, note, dayIdx, checked, ca
     renderCal();
     doneBtn.textContent = checked.includes(dayIdx) ? '✓ 완료됨' : '완료 체크';
     doneBtn.classList.toggle('done', checked.includes(dayIdx));
+  });
+
+  const demoBtn = document.getElementById(`day-demo-${panelIdx}`);
+  if (demoBtn) demoBtn.addEventListener('click', () => {
+    plan.forEach(p => seedDemoHistory(p.name, p.reps, p.weight, weekDays));
+    wrap.dataset.open = '';
+    toggleDayDetail(panelIdx, day, workout, plan, note, dayIdx, checked, calKey, renderCal, dayEl, weekDays);
   });
 }
 </script>
