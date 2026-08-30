@@ -783,8 +783,16 @@ function localDateStr(d) {
 const todayKey = localDateStr(); // "2026-05-31"
 /* ── 진행 과부하(PR) 기록 — 무게는 직접 숫자 입력, 횟수·자각도·여유횟수는 박스를 눌러
    펼치는 목록에서 선택. 각 항목은 독립적으로 접었다 펼 수 있는 아코디언 ── */
-const REPS_RANGE = Array.from({length: 16}, (_, i) => i + 5);  // 5~20
-const RIR_RANGE  = Array.from({length: 6},  (_, i) => i);      // 0~5
+/* 기본 5~20회 범위로 고르되, 목표 횟수가 이 범위 밖(예: 스트레칭·홀드 동작의
+   "1세트 1회", 드롭세트처럼 복합 표기라 파싱되는 숫자가 범위 밖인 경우)이면
+   그 목표치를 포함하도록 범위를 넓혀서 항상 목표를 고를 수 있게 함 */
+function repsRangeFor(target) {
+  const t = parseInt(target);
+  let lo = 5, hi = 20;
+  if (!isNaN(t)) { lo = Math.min(lo, t); hi = Math.max(hi, t); }
+  return Array.from({length: hi - lo + 1}, (_, i) => lo + i);
+}
+const RIR_RANGE = Array.from({length: 6}, (_, i) => i);      // 0~5
 const RPE_LABELS = ['쉬움','적당','힘듦','매우힘듦'];
 function prKey(name) { return `hm_pr_${currentMemberId}_${encodeURIComponent(name)}`; }
 function getPrData(name) {
@@ -1564,7 +1572,7 @@ function toggleDayDetail(panelIdx, day, workout, plan, note, dayIdx, checked, ca
       const weightField = fieldHtml('weight', '무게', t.weight !== '' && t.weight != null ? `${t.weight}kg` : '입력', t.weight === '' || t.weight == null,
         `<input type="number" step="0.5" inputmode="decimal" class="pr-input dd-weight-input" placeholder="무게 kg" value="${t.weight ?? ''}">`);
       const repsField = fieldHtml('reps', '횟수', t.reps !== '' && t.reps != null ? `${t.reps}회` : '선택', t.reps === '' || t.reps == null,
-        `<div class="dd-num-grid">${REPS_RANGE.map(n => `<div class="chip dd-num-chip${n===t.reps?' on':''}" data-val="${n}">${n}</div>`).join('')}</div>`);
+        `<div class="dd-num-grid">${repsRangeFor(p.reps).map(n => `<div class="chip dd-num-chip${n===t.reps?' on':''}" data-val="${n}">${n}</div>`).join('')}</div>`);
       const rpeField = fieldHtml('rpe', '자각도', t.rpe || '선택', !t.rpe,
         `<div class="dd-list-col">${RPE_LABELS.map(l => `<div class="chip dd-num-chip${l===t.rpe?' on':''}" data-val="${l}">${l}</div>`).join('')}</div>`);
       const rirField = fieldHtml('rir', '여유 횟수', t.extraReps !== '' && t.extraReps != null ? `${t.extraReps}개` : '선택', t.extraReps === '' || t.extraReps == null,
