@@ -369,12 +369,12 @@ async function saveCheckinToGitHub(ci) {
     if (!week.sessionDates) week.sessionDates = [];
     if (!week.sessionDates.includes(ci.d)) week.sessionDates.unshift(ci.d);
 
-    // 회원이 직접 체크한 종목별 무게/횟수 처방대비 여부·자각도(RPE)·여유 횟수(RIR)·느낌메모
+    // 회원이 직접 기록한 종목별 무게·횟수·자각도(RPE)·여유 횟수(RIR)·느낌메모
     if (ci.pr?.length) {
       if (!week.exerciseLogs) week.exerciseLogs = [];
       ci.pr.forEach(l => {
         const idx2 = week.exerciseLogs.findIndex(e => e.date === ci.d && e.name === l.name);
-        const entry = { date: ci.d, name: l.name, weightCheck: l.weightCheck || '', repsCheck: l.repsCheck || '', rpe: l.rpe, extraReps: l.extraReps || '', note: l.note || '', target: l.target ?? null };
+        const entry = { date: ci.d, name: l.name, weight: l.weight ?? '', reps: l.reps ?? '', rpe: l.rpe || '', extraReps: l.extraReps ?? '', note: l.note || '', target: l.target ?? null };
         if (idx2 !== -1) week.exerciseLogs[idx2] = entry;
         else week.exerciseLogs.unshift(entry);
       });

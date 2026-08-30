@@ -171,11 +171,20 @@ tr:last-child td { border-bottom: none; }
 .plan-row-log { padding:9px 0; border-bottom:1px solid rgba(160,190,230,0.15); }
 .plan-row-log:last-child { border-bottom:none; }
 .pr-test-badge { font-size:10px; font-weight:800; color:#c46a2a; background:rgba(240,150,60,0.12); border-radius:8px; padding:3px 8px; display:inline-block; margin-bottom:6px; }
-.dd-chip-row { display:flex; align-items:center; gap:6px; flex-wrap:wrap; margin-top:7px; }
-.dd-chip-row:first-of-type { margin-top:8px; }
-.dd-chip-label { font-size:9px; font-weight:700; color:#b8c8da; letter-spacing:0.3px; flex-shrink:0; width:38px; }
-.dd-mini-chip { flex:none; padding:5px 9px; font-size:10px; cursor:pointer; }
-.pr-input { width:100%; min-width:0; box-sizing:border-box; background:rgba(255,255,255,0.7); border:1px solid rgba(160,190,230,0.4); border-radius:8px; padding:6px 8px; font-size:12px; font-weight:600; color:#2a3a50; text-align:center; outline:none; font-family:inherit; }
+.dd-field { margin-top:7px; }
+.dd-field:first-of-type { margin-top:8px; }
+.dd-field-head { width:100%; display:flex; align-items:center; justify-content:space-between; gap:8px; background:rgba(255,255,255,0.55); border:1px solid rgba(160,190,230,0.3); border-radius:11px; padding:8px 12px; cursor:pointer; font-family:inherit; text-align:left; -webkit-tap-highlight-color:transparent; }
+.dd-field-label { font-size:11px; font-weight:700; color:#6a8aaa; flex-shrink:0; }
+.dd-field-val { font-size:12px; font-weight:800; color:#2a3a50; text-align:right; }
+.dd-field-val.placeholder { color:#b0c4da; font-weight:500; }
+.dd-field-arrow { font-size:9px; color:#b0c4da; transition:transform 0.15s; flex-shrink:0; }
+.dd-field.open .dd-field-arrow { transform:rotate(180deg); }
+.dd-field-body { display:none; padding:10px 2px 2px; }
+.dd-field.open .dd-field-body { display:block; }
+.dd-num-grid { display:flex; flex-wrap:wrap; gap:6px; }
+.dd-num-chip { flex:none; min-width:34px; padding:6px 4px; }
+.dd-list-col { display:flex; flex-direction:column; gap:6px; }
+.pr-input { width:100%; min-width:0; box-sizing:border-box; background:rgba(255,255,255,0.7); border:1px solid rgba(160,190,230,0.4); border-radius:8px; padding:8px; font-size:14px; font-weight:700; color:#2a3a50; text-align:center; outline:none; font-family:inherit; }
 .pr-input::placeholder { color:#b0c4da; font-weight:500; }
 .pr-rpe-row { display:flex; gap:5px; }
 .pr-rpe-chip { flex:1; text-align:center; font-size:10px; padding:6px 2px; }
@@ -771,25 +780,26 @@ function localDateStr(d) {
   return `${y}-${m}-${day}`;
 }
 const todayKey = localDateStr(); // "2026-05-31"
-/* ── 진행 과부하(PR) 기록 — 무게·횟수·자각도·여유횟수 전부 탭해서 고르는 칩(체크박스) 형태 ── */
-const WEIGHT_LABELS = ['처방대로','더가벼움','더무거움'];
-const REPS_LABELS = ['다채움','못채움'];
+/* ── 진행 과부하(PR) 기록 — 무게는 직접 숫자 입력, 횟수·자각도·여유횟수는 박스를 눌러
+   펼치는 목록에서 선택. 각 항목은 독립적으로 접었다 펼 수 있는 아코디언 ── */
+const REPS_RANGE = Array.from({length: 16}, (_, i) => i + 5);  // 5~20
+const RIR_RANGE  = Array.from({length: 6},  (_, i) => i);      // 0~5
 const RPE_LABELS = ['쉬움','적당','힘듦','매우힘듦'];
-const RIR_LABELS = ['0개','1~2개','3개+'];
 function prKey(name) { return `hm_pr_${currentMemberId}_${encodeURIComponent(name)}`; }
 function getPrData(name) {
-  try { return JSON.parse(localStorage.getItem(prKey(name)) || 'null') || { lastPlanWeight: null, weightSetDate: null, history: [] }; }
-  catch(e) { return { lastPlanWeight: null, weightSetDate: null, history: [] }; }
+  try { return JSON.parse(localStorage.getItem(prKey(name)) || 'null') || { lastWeight: null, weightSetDate: null, history: [] }; }
+  catch(e) { return { lastWeight: null, weightSetDate: null, history: [] }; }
 }
-function savePrEntry(name, { weightCheck, repsCheck, rpe, extraReps, note, target, planWeight }) {
+function savePrEntry(name, { weight, reps, rpe, extraReps, note, target }) {
   const data = getPrData(name);
-  // 트레이너가 루틴의 무게를 바꿨으면(=증량) 그 시점을 새 증량 기준일로 기록
-  if (planWeight != null && data.lastPlanWeight !== planWeight) {
-    data.lastPlanWeight = planWeight;
+  const w = weight !== '' && weight != null ? parseFloat(weight) : null;
+  // 이전 기록보다 무게를 올려 입력했으면 그 시점을 새 증량 기준일로 기록
+  if (w != null && (data.lastWeight == null || w > data.lastWeight)) {
+    data.lastWeight = w;
     data.weightSetDate = todayKey;
   }
   const existing = data.history.find(h => h.date === todayKey);
-  const entry = { date: todayKey, weightCheck: weightCheck || '', repsCheck: repsCheck || '', rpe: rpe || '', extraReps: extraReps || '', note: note || '', target: target ?? null };
+  const entry = { date: todayKey, weight: w != null ? w : '', reps: reps ?? '', rpe: rpe || '', extraReps: extraReps ?? '', note: note || '', target: target ?? null };
   if (existing) Object.assign(existing, entry);
   else data.history.unshift(entry);
   data.history = data.history.slice(0, 30);
@@ -808,9 +818,9 @@ const PR_MIN_CYCLE_DAYS = 7;
 function isTestDue(name) {
   const days = daysSinceWeightSet(name);
   if (days == null || days < PR_MIN_CYCLE_DAYS) return false;
-  const recent = getPrData(name).history.filter(h => h.rpe && h.extraReps).slice(0, 2);
+  const recent = getPrData(name).history.filter(h => h.reps !== '' && h.target != null).slice(0, 2);
   if (recent.length < 2) return false;
-  return recent.every(h => h.repsCheck === '다채움' && h.extraReps === '3개+' && ['쉬움','적당'].includes(h.rpe));
+  return recent.every(h => h.reps >= h.target && h.extraReps !== '' && Number(h.extraReps) >= 3 && ['쉬움','적당'].includes(h.rpe));
 }
 function getTodayExerciseLogs(calDays) {
   const names = new Set();
@@ -819,7 +829,7 @@ function getTodayExerciseLogs(calDays) {
   names.forEach(name => {
     const data = getPrData(name);
     const t = data.history.find(h => h.date === todayKey);
-    if (t && (t.weightCheck || t.repsCheck || t.rpe || t.extraReps || t.note)) out.push({ name, weightCheck: t.weightCheck, repsCheck: t.repsCheck, rpe: t.rpe, extraReps: t.extraReps, note: t.note, target: t.target });
+    if (t && (t.weight !== '' || t.reps !== '' || t.rpe || t.extraReps !== '' || t.note)) out.push({ name, weight: t.weight, reps: t.reps, rpe: t.rpe, extraReps: t.extraReps, note: t.note, target: t.target });
   });
   return out;
 }
@@ -1327,7 +1337,7 @@ function init(data) {
       if (doneList.length) lines.push(`운동 완료: ${doneList.join(' · ')}`);
       if (prLogs.length) {
         lines.push('오늘 운동 기록:');
-        prLogs.forEach(l => lines.push(`  · ${l.name}${l.weightCheck?' '+l.weightCheck:''}${l.repsCheck?' · '+l.repsCheck:''}${l.rpe?' · 자각도 '+l.rpe:''}${l.extraReps?' · 여유 '+l.extraReps:''}${l.note?' — '+l.note:''}`.trim()));
+        prLogs.forEach(l => lines.push(`  · ${l.name} — ${l.weight!==''?l.weight+'kg ':''}${l.reps!==''?l.reps+'회 ':''}${l.rpe?'('+l.rpe+') ':''}${l.extraReps!==''?'(+'+l.extraReps+') ':''}${l.note?'— '+l.note:''}`.trim()));
       }
       if (ib) lines.push(`인바디: 체중 ${ib.weight??'—'}kg · 골격근량 ${ib.muscle??'—'}kg · 체지방 ${ib.fat??'—'}%`);
       const ciData = { id: currentMemberId, wk: weekKey, d: todayKey, pr: prLogs, body: ib, wouts: doneList };
@@ -1488,24 +1498,31 @@ function toggleDayDetail(panelIdx, day, workout, plan, note, dayIdx, checked, ca
   if (!plan.length) {
     wrap.innerHTML = `<div class="day-detail"><div class="dd-head">${day}요일 · ${workout||'-'}</div>${note?`<div class="plan-note">${note}</div>`:''}<div style="font-size:13px;color:#c0d0e0;padding:8px 0">이 날 세부 계획이 없어요.</div>${doneBtnHtml}</div>`;
   } else {
-    const CHIP_GROUPS = [
-      { key: 'weight', label: '무게', labels: WEIGHT_LABELS },
-      { key: 'reps',   label: '횟수', labels: REPS_LABELS },
-      { key: 'rpe',    label: '자각도', labels: RPE_LABELS },
-      { key: 'rir',    label: '여유', labels: RIR_LABELS },
-    ];
+    function fieldHtml(fieldKey, label, valDisplay, isPlaceholder, bodyHtml) {
+      return `<div class="dd-field" data-field="${fieldKey}">
+        <button type="button" class="dd-field-head"><span class="dd-field-label">${label}</span><span class="dd-field-val${isPlaceholder?' placeholder':''}">${valDisplay}</span><span class="dd-field-arrow">▾</span></button>
+        <div class="dd-field-body">${bodyHtml}</div>
+      </div>`;
+    }
     const rows = plan.map(p => {
       const pr = getPrData(p.name);
       const t = pr.history.find(h => h.date === todayKey) || {};
       const due = isTestDue(p.name);
       const nameAttr = p.name.replace(/"/g,'&quot;');
-      const weightAttr = (p.weight||'').replace(/"/g,'&quot;');
-      const activeVal = { weight: t.weightCheck, reps: t.repsCheck, rpe: t.rpe, rir: t.extraReps };
-      const chipRows = CHIP_GROUPS.map(g => `<div class="dd-chip-row" data-group="${g.key}"><span class="dd-chip-label">${g.label}</span>${g.labels.map(l => `<div class="chip dd-mini-chip${l===activeVal[g.key]?' on':''}" data-val="${l}">${l}</div>`).join('')}</div>`).join('');
-      return `<div class="plan-row-log" data-name="${nameAttr}" data-target="${p.reps}" data-weight="${weightAttr}">
+
+      const weightField = fieldHtml('weight', '무게', t.weight !== '' && t.weight != null ? `${t.weight}kg` : '입력', t.weight === '' || t.weight == null,
+        `<input type="number" step="0.5" inputmode="decimal" class="pr-input dd-weight-input" placeholder="무게 kg" value="${t.weight ?? ''}">`);
+      const repsField = fieldHtml('reps', '횟수', t.reps !== '' && t.reps != null ? `${t.reps}회` : '선택', t.reps === '' || t.reps == null,
+        `<div class="dd-num-grid">${REPS_RANGE.map(n => `<div class="chip dd-num-chip${n===t.reps?' on':''}" data-val="${n}">${n}</div>`).join('')}</div>`);
+      const rpeField = fieldHtml('rpe', '자각도', t.rpe || '선택', !t.rpe,
+        `<div class="dd-list-col">${RPE_LABELS.map(l => `<div class="chip dd-num-chip${l===t.rpe?' on':''}" data-val="${l}">${l}</div>`).join('')}</div>`);
+      const rirField = fieldHtml('rir', '여유 횟수', t.extraReps !== '' && t.extraReps != null ? `${t.extraReps}개` : '선택', t.extraReps === '' || t.extraReps == null,
+        `<div class="dd-num-grid">${RIR_RANGE.map(n => `<div class="chip dd-num-chip${n===t.extraReps?' on':''}" data-val="${n}">${n}개</div>`).join('')}</div>`);
+
+      return `<div class="plan-row-log" data-name="${nameAttr}" data-target="${p.reps}">
         <div class="plan-row"><span class="plan-name">${p.name}</span><span class="plan-detail">${p.sets}세트 × ${p.reps}회${p.weight&&p.weight!=='-'?' / '+p.weight:''}</span></div>
         ${due ? `<div class="pr-test-badge">🔥 무게를 올려볼 때예요 — 증량 테스트 해보세요</div>` : ''}
-        ${chipRows}
+        ${weightField}${repsField}${rpeField}${rirField}
         <textarea class="daily-note pr-note" placeholder="오늘 느낌을 자유롭게 적어보세요 (선택)" rows="1">${t.note ?? ''}</textarea>
       </div>`;
     }).join('');
@@ -1514,19 +1531,49 @@ function toggleDayDetail(panelIdx, day, workout, plan, note, dayIdx, checked, ca
     wrap.querySelectorAll('.plan-row-log').forEach(row => {
       const name = row.dataset.name;
       const target = parseInt(row.dataset.target) || null;
-      const planWeight = row.dataset.weight || '';
       const noteEl = row.querySelector('.pr-note');
-      function save() {
-        const val = key => row.querySelector(`.dd-chip-row[data-group="${key}"] .dd-mini-chip.on`)?.dataset.val || '';
-        savePrEntry(name, { weightCheck: val('weight'), repsCheck: val('reps'), rpe: val('rpe'), extraReps: val('rir'), note: noteEl.value, target, planWeight });
+      const weightInput = row.querySelector('.dd-weight-input');
+      function currentVal(fieldKey) {
+        const field = [...row.querySelectorAll('.dd-field')].find(f => f.dataset.field === fieldKey);
+        return field?.querySelector('.dd-num-chip.on')?.dataset.val ?? '';
       }
+      function save() {
+        savePrEntry(name, {
+          weight: weightInput.value,
+          reps: currentVal('reps') !== '' ? parseInt(currentVal('reps')) : '',
+          rpe: currentVal('rpe'),
+          extraReps: currentVal('rir') !== '' ? parseInt(currentVal('rir')) : '',
+          note: noteEl.value,
+          target,
+        });
+      }
+      function refreshFieldVal(field, text, placeholder) {
+        const valEl = field.querySelector('.dd-field-val');
+        valEl.textContent = text;
+        valEl.classList.toggle('placeholder', placeholder);
+      }
+      // 박스 헤더를 누르면 그 항목만 아래로 펼쳐짐/접힘 (다른 항목과 독립적)
+      row.querySelectorAll('.dd-field').forEach(field => {
+        field.querySelector('.dd-field-head').addEventListener('click', () => {
+          field.classList.toggle('open');
+        });
+      });
+      weightInput.addEventListener('change', () => {
+        const field = weightInput.closest('.dd-field');
+        refreshFieldVal(field, weightInput.value !== '' ? `${weightInput.value}kg` : '입력', weightInput.value === '');
+        field.classList.remove('open');
+        save();
+      });
       noteEl.addEventListener('change', save);
-      row.querySelectorAll('.dd-chip-row').forEach(group => {
-        group.querySelectorAll('.dd-mini-chip').forEach(chip => {
+      [...row.querySelectorAll('.dd-field')].filter(f => f.dataset.field !== 'weight').forEach(field => {
+        const suffix = field.dataset.field === 'rir' ? '개' : (field.dataset.field === 'reps' ? '회' : '');
+        field.querySelectorAll('.dd-num-chip').forEach(chip => {
           chip.addEventListener('click', () => {
             const alreadyOn = chip.classList.contains('on');
-            group.querySelectorAll('.dd-mini-chip').forEach(c => c.classList.remove('on'));
+            field.querySelectorAll('.dd-num-chip').forEach(c => c.classList.remove('on'));
             if (!alreadyOn) chip.classList.add('on');
+            refreshFieldVal(field, alreadyOn ? '선택' : chip.dataset.val + suffix, alreadyOn);
+            field.classList.remove('open');
             save();
           });
         });
