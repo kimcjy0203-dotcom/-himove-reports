@@ -389,6 +389,18 @@ async function saveCheckinToGitHub(ci) {
       else week.memberBodyLogs.unshift(bEntry);
     }
 
+    // 회원이 직접 남긴 이벤트 기록 — 주차가 아니라 월별로 최상위(data.eventLog)에 저장
+    if (ci.event) {
+      if (!data.eventLog) data.eventLog = [];
+      const month = ci.d.slice(0, 7);
+      let bucket = data.eventLog.find(m => m.month === month);
+      if (!bucket) { bucket = { month, entries: [] }; data.eventLog.push(bucket); }
+      const eIdx = bucket.entries.findIndex(e => e.date === ci.d);
+      const eEntry = { date: ci.d, text: ci.event };
+      if (eIdx !== -1) bucket.entries[eIdx] = eEntry;
+      else bucket.entries.unshift(eEntry);
+    }
+
     const jsonBytes = new TextEncoder().encode(JSON.stringify(data, null, 2));
     let binary = ''; jsonBytes.forEach(b => binary += String.fromCharCode(b));
     const updated = btoa(binary);

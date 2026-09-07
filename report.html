@@ -1049,21 +1049,76 @@ function init(data) {
     }
   }
 
-  /* 월별 이벤트 기록 — 여행·모임·컨디션 변화처럼 체중 변화에 영향을 준 일을 월별로 남겨서
-     나중에 "이 달엔 왜 잘 안 빠졌는지"를 트레이너와 회원이 함께 되짚어볼 수 있게 함 */
-  const eventLogEl = document.getElementById('event-log-section');
-  if (eventLogEl && data.eventLog?.length) {
+  /* ── 이벤트 기록 — 여행·모임·컨디션 변화처럼 체중 변화에 영향을 준 일을 회원이 직접
+     남길 수 있게 함. 트레이너가 JSON에 남긴 기록(data.eventLog)과 회원이 입력한 기록
+     (localStorage)을 날짜순으로 합쳐서 월별로 보여줌 ── */
+  function eventKey() { return `hm_event_${currentMemberId}`; }
+  function getMemberEventLogs() {
+    try { return JSON.parse(localStorage.getItem(eventKey()) || '[]'); }
+    catch(e) { return []; }
+  }
+  function saveMemberEvent(text) {
+    const logs = getMemberEventLogs();
+    const existing = logs.find(l => l.date === todayKey);
+    const trimmed = text.trim();
+    if (trimmed) {
+      if (existing) existing.text = trimmed;
+      else logs.unshift({ date: todayKey, text: trimmed });
+    } else if (existing) {
+      logs.splice(logs.indexOf(existing), 1);
+    }
+    localStorage.setItem(eventKey(), JSON.stringify(logs.slice(0, 30)));
+    return logs;
+  }
+  function bindEventLog() {
+    const el = document.getElementById('event-log-section');
+    if (!el) return;
     function fmtMonth(m) {
       const [y, mo] = (m || '').split('-').map(Number);
       return y && mo ? `${y}년 ${mo}월` : m;
     }
-    const monthsHtml = [...data.eventLog].reverse().map(m => {
-      const entriesHtml = (m.entries || []).map(e =>
-        `<div class="event-entry"><span class="event-date">${(e.date||'').slice(5).replace('-','/')}</span><span class="event-text">${e.text}</span></div>`
-      ).join('');
-      return `<div class="event-month"><div class="event-month-label">${fmtMonth(m.month)}</div>${entriesHtml || '<div class="event-empty">기록 없음</div>'}</div>`;
-    }).join('');
-    eventLogEl.innerHTML = `<div class="card"><div class="card-title blue">📅 이벤트 기록</div>${monthsHtml}</div>`;
+    function combinedByMonth() {
+      const seen = new Set();
+      const flat = [];
+      function pushUnique(date, text) {
+        const key = date + '||' + text;
+        if (seen.has(key)) return;
+        seen.add(key);
+        flat.push({ date, text });
+      }
+      (data.eventLog || []).forEach(m => (m.entries || []).forEach(e => pushUnique(e.date, e.text)));
+      getMemberEventLogs().forEach(l => pushUnique(l.date, l.text));
+      const byMonth = {};
+      flat.forEach(e => {
+        const month = (e.date || '').slice(0, 7);
+        (byMonth[month] = byMonth[month] || []).push(e);
+      });
+      return Object.keys(byMonth).sort().reverse().map(month => ({
+        month,
+        entries: byMonth[month].sort((a, b) => b.date.localeCompare(a.date)),
+      }));
+    }
+    function render() {
+      const months = combinedByMonth();
+      const monthsHtml = months.map(m => {
+        const entriesHtml = m.entries.map(e =>
+          `<div class="event-entry"><span class="event-date">${(e.date||'').slice(5).replace('-','/')}</span><span class="event-text">${e.text}</span></div>`
+        ).join('');
+        return `<div class="event-month"><div class="event-month-label">${fmtMonth(m.month)}</div>${entriesHtml}</div>`;
+      }).join('') || '<div class="event-empty">아직 기록이 없어요</div>';
+      el.innerHTML = `<div class="card"><div class="card-title blue">📅 이벤트 기록</div>
+        <div class="sub-label" style="margin-bottom:4px">오늘 있었던 일을 적어보세요</div>
+        <textarea class="daily-note" id="event-input" placeholder="예) 친구 결혼식 뷔페, 컨디션 난조, 여행 등 — 나중에 이 시기에 왜 안 빠졌는지 알 수 있어요 (선택)" rows="2"></textarea>
+        <div style="margin-top:12px">${monthsHtml}</div>
+      </div>`;
+      const input = document.getElementById('event-input');
+      if (input) {
+        const todayEntry = getMemberEventLogs().find(l => l.date === todayKey);
+        input.value = todayEntry?.text ?? '';
+        input.addEventListener('change', () => { saveMemberEvent(input.value); render(); });
+      }
+    }
+    render();
   }
 
   /* 주차 탭 & 패널 */
@@ -1397,6 +1452,7 @@ function init(data) {
   navEl.querySelectorAll('.wt-btn').forEach(btn => btn.addEventListener('click', function(){ switchWeek(parseInt(this.dataset.idx)); }));
   switchWeek(defaultIdx);
   bindInbodyLog();
+  bindEventLog();
 
   /* ── 오늘 기록 트레이너에게 보내기 (전역, 위치 무관하게 그날 기록 전체 전송) ── */
   (function bindGlobalSend() {
@@ -1408,10 +1464,11 @@ function init(data) {
       const calDays = w?.weeklyRoutine?.days || [];
       const prLogs = getTodayExerciseLogs(calDays);
       const ib = getInbodyLogs().find(l => l.date === todayKey) || null;
+      const ev = getMemberEventLogs().find(l => l.date === todayKey) || null;
       const calKey = weekKey ? `hm_${weekKey}_${_curIdx}` : null;
       const checked = calKey ? JSON.parse(localStorage.getItem(calKey) || '[]') : [];
       const doneList = checked.map(di => calDays[di]).filter(d => d && !d.rest).map(d => d.day);
-      if (!prLogs.length && !ib && !doneList.length) { alert('오늘 기록한 내용이 없어요. 운동을 기록하거나 인바디를 입력해보세요!'); return; }
+      if (!prLogs.length && !ib && !ev && !doneList.length) { alert('오늘 기록한 내용이 없어요. 운동을 기록하거나 인바디를 입력해보세요!'); return; }
       const lines = [];
       if (doneList.length) lines.push(`운동 완료: ${doneList.join(' · ')}`);
       if (prLogs.length) {
@@ -1419,7 +1476,8 @@ function init(data) {
         prLogs.forEach(l => lines.push(`  · ${l.name} — ${l.weight!==''?l.weight+'kg ':''}${l.reps!==''?l.reps+'회 ':''}${l.rpe?'('+l.rpe+') ':''}${l.extraReps!==''?'(+'+l.extraReps+') ':''}${l.note?'— '+l.note:''}`.trim()));
       }
       if (ib) lines.push(`인바디: 체중 ${ib.weight??'—'}kg · 골격근량 ${ib.muscle??'—'}kg · 체지방 ${ib.fat??'—'}%`);
-      const ciData = { id: currentMemberId, wk: weekKey, d: todayKey, pr: prLogs, body: ib, wouts: doneList };
+      if (ev) lines.push(`오늘 있었던 일: ${ev.text}`);
+      const ciData = { id: currentMemberId, wk: weekKey, d: todayKey, pr: prLogs, body: ib, event: ev?.text || '', wouts: doneList };
       const ciParam = btoa(unescape(encodeURIComponent(JSON.stringify(ciData)))).replace(/\+/g,'-').replace(/\//g,'_').replace(/=/g,'');
       const base = window.location.href.split('?')[0].replace(/[^/]*$/, '');
       const logUrl = `${base}log.html?v=${Date.now()}&ci=${ciParam}`;
