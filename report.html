@@ -239,6 +239,14 @@ tr:last-child td { border-bottom: none; }
 .gt-long .gt-dot   { background: rgba(156,39,176,0.8); }
 .gt-long .gt-card  { padding-left: 8px; border-left: 2px solid rgba(156,39,176,0.45); }
 .gt-long .gt-badge { background: rgba(156,39,176,0.09); color: #6a1b9a; }
+.event-month { margin-bottom: 14px; }
+.event-month:last-child { margin-bottom: 0; }
+.event-month-label { font-size: 11px; font-weight: 800; color: #6a8aaa; margin-bottom: 6px; }
+.event-entry { display: flex; gap: 8px; padding: 6px 0; border-bottom: 1px solid rgba(160,190,230,0.15); }
+.event-entry:last-child { border-bottom: none; }
+.event-date { font-size: 11px; font-weight: 700; color: #8aaccf; flex-shrink: 0; width: 34px; }
+.event-text { font-size: 12px; color: #3a5a80; line-height: 1.55; }
+.event-empty { font-size: 12px; color: #c0d0e0; padding: 4px 0; }
 .diet-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px; }
 .diet-badges { display: flex; gap: 6px; flex-wrap: wrap; }
 .diet-badge { padding: 4px 11px; border-radius: 20px; font-size: 11px; font-weight: 700; white-space: nowrap; }
@@ -659,6 +667,7 @@ html[data-theme="plum"] .muscle-tag { background:rgba(90,40,130,0.2); border-col
     <div id="monthly-progress"></div>
   </div>
   <div class="card" id="goals-card" style="display:none"></div>
+  <div id="event-log-section"></div>
   <div id="notice-section"></div>
   <div id="report-feedback"></div>
   <div class="week-nav" id="week-nav"></div>
@@ -1040,6 +1049,22 @@ function init(data) {
     }
   }
 
+  /* 월별 이벤트 기록 — 여행·모임·컨디션 변화처럼 체중 변화에 영향을 준 일을 월별로 남겨서
+     나중에 "이 달엔 왜 잘 안 빠졌는지"를 트레이너와 회원이 함께 되짚어볼 수 있게 함 */
+  const eventLogEl = document.getElementById('event-log-section');
+  if (eventLogEl && data.eventLog?.length) {
+    function fmtMonth(m) {
+      const [y, mo] = (m || '').split('-').map(Number);
+      return y && mo ? `${y}년 ${mo}월` : m;
+    }
+    const monthsHtml = [...data.eventLog].reverse().map(m => {
+      const entriesHtml = (m.entries || []).map(e =>
+        `<div class="event-entry"><span class="event-date">${(e.date||'').slice(5).replace('-','/')}</span><span class="event-text">${e.text}</span></div>`
+      ).join('');
+      return `<div class="event-month"><div class="event-month-label">${fmtMonth(m.month)}</div>${entriesHtml || '<div class="event-empty">기록 없음</div>'}</div>`;
+    }).join('');
+    eventLogEl.innerHTML = `<div class="card"><div class="card-title blue">📅 이벤트 기록</div>${monthsHtml}</div>`;
+  }
 
   /* 주차 탭 & 패널 */
   let _curIdx = 0;
