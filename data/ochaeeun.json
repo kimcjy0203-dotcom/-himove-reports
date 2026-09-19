@@ -138,16 +138,26 @@
           "name": "레그 컬",
           "note": "· 발목 패드를 아킬레스건 위쪽에 맞추고, 무릎 굽힐 때 골반이 들리지 않도록 고정<br>· 허벅지 뒤쪽 자극에 집중",
           "next": ""
+        },
+        {
+          "name": "상담 및 목표 설정",
+          "note": "· 운동 목적·목표 상담",
+          "next": ""
+        },
+        {
+          "name": "폼롤러 사용법",
+          "note": "· 기구 사용법 안내",
+          "next": ""
         }
       ],
       "lifts": [],
       "bodyData": null,
       "condition": "",
-      "conditionNote": "",
+      "conditionNote": "상담 및 목표 설정 — 첫 세션",
       "sleep": "",
       "sleepNote": "",
       "stress": "",
-      "pain": "없음",
+      "pain": "있음",
       "painNote": "",
       "nutrition": "",
       "nutritionNote": "",
@@ -161,7 +171,10 @@
       "nextSessionMemo": "상체 기구 사용법 안내 예정 + 오늘 안내한 하체 기구로 실제 세트 진행",
       "finalMessage": "",
       "musclesWorked": [],
-      "sessionDates": [],
+      "sessionDates": [
+        "2026-07-30",
+        "2026-07-28"
+      ],
       "memberComment": "",
       "weeklyRoutine": null
     },
@@ -206,6 +219,22 @@
             {
               "name": "브이 스쿼트 (자세 재점검)",
               "detail": ""
+            },
+            {
+              "name": "유산소 (5분 연속 러닝 가능 여부 체크)",
+              "detail": "워밍업"
+            },
+            {
+              "name": "케이블 스트레이트 암 풀다운 (다음 세션 예정)",
+              "detail": "워밍업"
+            },
+            {
+              "name": "스탠딩 푸쉬업 (다음 세션 예정)",
+              "detail": "워밍업"
+            },
+            {
+              "name": "케이블 푸시다운 (다음 세션 예정)",
+              "detail": "워밍업"
             }
           ]
         }
@@ -250,16 +279,36 @@
           "name": "브이 스쿼트 (자세 재점검)",
           "note": "· 스탠스·무릎 방향 등 자세 재점검 필요",
           "next": "다음 세션에서 스쿼트 자세 학습 때 잡은 스탠스·무릎 방향 다시 확인"
+        },
+        {
+          "name": "유산소 (5분 연속 러닝 가능 여부 체크)",
+          "note": "· note: 속도 6.5로 시작 — 2분 정도 지나자 숨이 차 완주하지 못함, 현재 심폐지구력 수준에서는 6.5가 다소 높은 강도인 것으로 확인<br>· next: 이후 세트는 속도를 낮춰(5) 진행 — 완주 가능한 속도부터 점진적으로 올려가기",
+          "next": ""
+        },
+        {
+          "name": "케이블 스트레이트 암 풀다운 (다음 세션 예정)",
+          "note": "· next: 팔꿈치를 살짝 굽힌 상태로 고정하고 어깨 관절만 움직여 아래로 누르기 — 가슴이 먼저 열려야 등을 최대로 쓸 수 있음",
+          "next": ""
+        },
+        {
+          "name": "스탠딩 푸쉬업 (다음 세션 예정)",
+          "note": "· next: 밀 때 어깨가 앞으로 말리지 않도록 가슴을 먼저 끌어올린 상태 유지, 팔꿈치는 몸통에서 45도 정도 벌어진 각도 유지",
+          "next": ""
+        },
+        {
+          "name": "케이블 푸시다운 (다음 세션 예정)",
+          "note": "· next: 힙힌지 자세에서 팔꿈치를 몸통에 고정하고 팔꿈치만 펴서 케이블 내리기",
+          "next": ""
         }
       ],
       "lifts": [],
       "bodyData": null,
       "condition": "",
-      "conditionNote": "",
+      "conditionNote": "등·가슴 기구 사용법 안내 예정이었으나 시간 관계상 4종목만 진행, 나머지 3종목(케이블 스트레이트 암 풀다운·스탠딩 푸쉬업·케이블 푸시다운)은 다음 세션으로 이월. 근력 이후 유산소 진행 — 5분 연속 러닝 가능 여부 체크 후 속도 5로 20분 채움",
       "sleep": "",
       "sleepNote": "",
       "stress": "",
-      "pain": "없음",
+      "pain": "있음",
       "painNote": "",
       "nutrition": "",
       "nutritionNote": "",
@@ -429,11 +478,11 @@
       "lifts": [],
       "bodyData": null,
       "condition": "",
-      "conditionNote": "",
+      "conditionNote": "스탠다드·와이드 스쿼트 학습 → 브이스쿼트 → 오버트레이닝 증상으로 잠시 휴식 후 크런치·리버스 크런치로 마무리",
       "sleep": "",
       "sleepNote": "",
       "stress": "",
-      "pain": "없음",
+      "pain": "있음",
       "painNote": "",
       "nutrition": "",
       "nutritionNote": "",
@@ -594,6 +643,77 @@
           }
         ]
       }
+    }
+  ],
+  "상태": "활성",
+  "monthlySummary": [
+    {
+      "year": 2026,
+      "month": 7,
+      "label": "2026년 7월",
+      "sessions": 2,
+      "bodyChange": {
+        "weight": {
+          "start": null,
+          "end": null,
+          "change": null
+        },
+        "muscle": {
+          "start": null,
+          "end": null,
+          "change": null
+        },
+        "fat": {
+          "start": null,
+          "end": null,
+          "change": null
+        }
+      },
+      "condition": {},
+      "sleep": {},
+      "stress": {},
+      "topExercises": [
+        "스쿼트 (자세 학습)",
+        "레그프레스",
+        "브이 스쿼트",
+        "힙 쓰러스트",
+        "힙 어덕션"
+      ],
+      "autoComment": "2회 출석 · 주력 운동: 스쿼트 (자세 학습), 레그프레스, 브이 스쿼트"
+    },
+    {
+      "year": 2026,
+      "month": 8,
+      "label": "2026년 8월",
+      "sessions": 2,
+      "bodyChange": {
+        "weight": {
+          "start": null,
+          "end": null,
+          "change": null
+        },
+        "muscle": {
+          "start": null,
+          "end": null,
+          "change": null
+        },
+        "fat": {
+          "start": null,
+          "end": null,
+          "change": null
+        }
+      },
+      "condition": {},
+      "sleep": {},
+      "stress": {},
+      "topExercises": [
+        "스탠다드 스쿼트",
+        "와이드 스쿼트",
+        "브이 스쿼트",
+        "크런치",
+        "리버스 크런치"
+      ],
+      "autoComment": "2회 출석 · 주력 운동: 스탠다드 스쿼트, 와이드 스쿼트, 브이 스쿼트"
     }
   ]
 }

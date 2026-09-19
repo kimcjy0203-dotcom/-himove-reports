@@ -976,16 +976,31 @@
           "name": "매달리기 (풀업 머신)",
           "note": "· 어깨 관절 견인 + 광배근·전거근 이완 겸 어깨 안정성 훈련",
           "next": ""
+        },
+        {
+          "name": "폼롤러 흉추 굴곡·신전",
+          "note": "· note: 폼롤러 위에서 흉추를 굽혔다 펴며 분절 움직임 깨우기<br>· next: 뻐근한 구간 있으면 그 위치에서 호흡하며 조금 더 머물기",
+          "next": ""
+        },
+        {
+          "name": "폼롤러 끼고 흉추 회전",
+          "note": "· note: 겨드랑이 사이에 폼롤러를 끼워 팔이 아닌 흉추 자체가 돌아가도록 유도<br>· next: 팔로 돌리려는 습관 대신 갈비뼈가 함께 회전하는 느낌 잡기",
+          "next": ""
+        },
+        {
+          "name": "폼롤러 엔젤",
+          "note": "· note: 폼롤러 위에 누워 W자 팔 동작으로 흉추 신전과 어깨 가동성 함께 자극",
+          "next": ""
         }
       ],
       "lifts": [],
       "bodyData": null,
       "condition": "",
-      "conditionNote": "",
+      "conditionNote": "흉추 가동성 회복 + 어깨 외회전 근력 훈련",
       "sleep": "",
       "sleepNote": "",
       "stress": "",
-      "pain": "없음",
+      "pain": "있음",
       "painNote": "",
       "nutrition": "",
       "nutritionNote": "",
@@ -999,7 +1014,9 @@
       "nextSessionMemo": "소흉근 이완과 외회전 강화 운동은 이번 주 홈트에도 계속 포함해서 진행 — 흉추 회전 스트레칭도 틈틈이 함께",
       "finalMessage": "",
       "musclesWorked": [],
-      "sessionDates": [],
+      "sessionDates": [
+        "2026-07-29"
+      ],
       "memberComment": "",
       "weeklyRoutine": {
         "weekKey": "2026-W31-ldky",
@@ -1243,6 +1260,40 @@
         "아킬레스건 케어"
       ],
       "autoComment": "1회 출석 · 체중 유지 · 주력 운동: 피트릭스 체형분석, 자세유지 강화 5종 (벽 대고), 호흡 패턴 교정"
+    },
+    {
+      "year": 2026,
+      "month": 7,
+      "label": "2026년 7월",
+      "sessions": 4,
+      "bodyChange": {
+        "weight": {
+          "start": null,
+          "end": null,
+          "change": null
+        },
+        "muscle": {
+          "start": null,
+          "end": null,
+          "change": null
+        },
+        "fat": {
+          "start": null,
+          "end": null,
+          "change": null
+        }
+      },
+      "condition": {},
+      "sleep": {},
+      "stress": {},
+      "topExercises": [
+        "폼롤러 엔젤",
+        "폼롤러 흉추 굴곡·신전",
+        "폼롤러 끼고 흉추 회전",
+        "흉추 회전 스트레칭",
+        "밴드 외회전"
+      ],
+      "autoComment": "4회 출석 · 주력 운동: 폼롤러 엔젤, 폼롤러 흉추 굴곡·신전, 폼롤러 끼고 흉추 회전"
     }
   ],
   "biweeklyFeedback": [],

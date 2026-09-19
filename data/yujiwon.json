@@ -1918,6 +1918,40 @@
         "스트레칭 및 가동성 운동"
       ],
       "autoComment": "1회 출석 · 체중 유지 · 주력 운동: 목표 설정 상담, 존2 유산소, 스트레칭 및 가동성 운동"
+    },
+    {
+      "year": 2026,
+      "month": 7,
+      "label": "2026년 7월",
+      "sessions": 1,
+      "bodyChange": {
+        "weight": {
+          "start": null,
+          "end": null,
+          "change": null
+        },
+        "muscle": {
+          "start": null,
+          "end": null,
+          "change": null
+        },
+        "fat": {
+          "start": null,
+          "end": null,
+          "change": null
+        }
+      },
+      "condition": {},
+      "sleep": {},
+      "stress": {},
+      "topExercises": [
+        "레그 익스텐션",
+        "힙 어브덕션",
+        "고관절·외회전근 스트레칭",
+        "고블릿 스쿼트",
+        "힙런지"
+      ],
+      "autoComment": "1회 출석 · 주력 운동: 레그 익스텐션, 힙 어브덕션, 고관절·외회전근 스트레칭"
     }
   ],
   "상태": "종료"

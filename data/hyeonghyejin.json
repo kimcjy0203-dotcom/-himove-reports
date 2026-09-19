@@ -1137,11 +1137,11 @@
       "lifts": [],
       "bodyData": null,
       "condition": "",
-      "conditionNote": "러닝 시 고관절에서 소리가 나는 부분 확인 — 클램셸로 고관절 안정화 운동 진행",
+      "conditionNote": "흉추 회전 + 고관절 굴곡근 스트레칭으로 시작, 러닝 시 고관절에서 소리가 나는 부분 확인하고 클램셸로 고관절 안정화 지도. 샌드백 힙힌지(양발→싱글레그) → 샌드백 클린 → 로테이셔널 토스 → 스쿼트 숄더프레스·스쿼트 클린 콤보까지 진행. 클린 동작과 숄더프레스 자세가 지난 세션 대비 크게 안정화됨",
       "sleep": "",
       "sleepNote": "",
       "stress": "",
-      "pain": "없음",
+      "pain": "있음",
       "painNote": "",
       "nutrition": "",
       "nutritionNote": "",
@@ -1369,6 +1369,74 @@
         "레그 익스텐션 (개인 숙제)"
       ],
       "autoComment": "1회 출석 · 주력 운동: 고관절 내·외회전 (워밍업), 스탠다드 스쿼트 & 점프 스쿼트, 코삭 스쿼트 & 점프 스쿼트"
+    },
+    {
+      "year": 2026,
+      "month": 7,
+      "label": "2026년 7월",
+      "sessions": 2,
+      "bodyChange": {
+        "weight": {
+          "start": null,
+          "end": null,
+          "change": null
+        },
+        "muscle": {
+          "start": null,
+          "end": null,
+          "change": null
+        },
+        "fat": {
+          "start": null,
+          "end": null,
+          "change": null
+        }
+      },
+      "condition": {},
+      "sleep": {},
+      "stress": {},
+      "topExercises": [
+        "케틀벨 리버스 런지 + 원암 숄더 프레스 (복합)",
+        "점프 스쿼트",
+        "샌드백 힙힌지 클린",
+        "폼롤러 엔젤 자세 (가슴 이완)",
+        "소흉근 스트레칭 (팔꿈치 어깨보다 높게)"
+      ],
+      "autoComment": "2회 출석 · 주력 운동: 케틀벨 리버스 런지 + 원암 숄더 프레스 (복합), 점프 스쿼트, 샌드백 힙힌지 클린"
+    },
+    {
+      "year": 2026,
+      "month": 8,
+      "label": "2026년 8월",
+      "sessions": 1,
+      "bodyChange": {
+        "weight": {
+          "start": null,
+          "end": null,
+          "change": null
+        },
+        "muscle": {
+          "start": null,
+          "end": null,
+          "change": null
+        },
+        "fat": {
+          "start": null,
+          "end": null,
+          "change": null
+        }
+      },
+      "condition": {},
+      "sleep": {},
+      "stress": {},
+      "topExercises": [
+        "흉추 회전 (스트레칭)",
+        "고관절 굴곡근 스트레칭",
+        "클램셸 (고관절 안정화)",
+        "양발 힙힌지 (샌드백)",
+        "싱글 레그 힙힌지 (샌드백)"
+      ],
+      "autoComment": "1회 출석 · 주력 운동: 흉추 회전 (스트레칭), 고관절 굴곡근 스트레칭, 클램셸 (고관절 안정화)"
     }
   ],
   "biweeklyFeedback": [],

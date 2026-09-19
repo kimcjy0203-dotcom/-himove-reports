@@ -987,7 +987,7 @@
       "lifts": [],
       "bodyData": null,
       "condition": "",
-      "conditionNote": "세션 중 두통 호소 — 근력운동 이후 통증 지속되어 이완 위주로 전환, 세션 후반 두통 다소 완화됨",
+      "conditionNote": "컨디션 난조 — 세션 중 두통 호소. 근력운동 후 통증 지속되어 룸으로 이동해 이완 위주로 전환 진행, 세션 후반 두통 다소 완화됨.",
       "sleep": "",
       "sleepNote": "",
       "stress": "",
@@ -1157,16 +1157,21 @@
           "name": "컨벤셔널 데드리프트",
           "note": "· 45kg에서 50kg로 증량, 8회 충분히 가능하고 자세도 좋았음<br>· 12회 3세트 기준 추정 무게(1RM 환산) 약 45kg",
           "next": "45kg 12회 3세트로 다음 세션 진행"
+        },
+        {
+          "name": "에어바이크",
+          "note": "· 마무리 유산소",
+          "next": ""
         }
       ],
       "lifts": [],
       "bodyData": null,
       "condition": "",
-      "conditionNote": "",
+      "conditionNote": "가슴 운동 위주 세션",
       "sleep": "",
       "sleepNote": "",
       "stress": "",
-      "pain": "없음",
+      "pain": "있음",
       "painNote": "",
       "nutrition": "",
       "nutritionNote": "",
@@ -1365,11 +1370,11 @@
         "comment": "67.3kg · 근육 22.8kg · 지방 25.5kg · 체지방률 37.9% · 인바디점수 67점 — 지난 측정(6/30) 대비 체중 +0.7kg, 지방 +0.6kg. 8월 말 목표: 62.6kg · 허리 25인치"
       },
       "condition": "",
-      "conditionNote": "",
+      "conditionNote": "인바디 측정 (InBody270) + 최종 목표(보수볼 위 리버스 런지 니업 & 원암 숄더프레스)를 위한 8단계 빌드업 트레이닝 진행",
       "sleep": "",
       "sleepNote": "",
       "stress": "",
-      "pain": "없음",
+      "pain": "있음",
       "painNote": "",
       "nutrition": "",
       "nutritionNote": "",
@@ -1509,6 +1514,74 @@
         "원 암 덤벨 로우"
       ],
       "autoComment": "4회 출석 · 주력 운동: 하이바 스쿼트, 스미스 와이드 스쿼트, 브이스쿼트"
+    },
+    {
+      "year": 2026,
+      "month": 7,
+      "label": "2026년 7월",
+      "sessions": 3,
+      "bodyChange": {
+        "weight": {
+          "start": null,
+          "end": null,
+          "change": null
+        },
+        "muscle": {
+          "start": null,
+          "end": null,
+          "change": null
+        },
+        "fat": {
+          "start": null,
+          "end": null,
+          "change": null
+        }
+      },
+      "condition": {},
+      "sleep": {},
+      "stress": {},
+      "topExercises": [
+        "컨벤셔널 데드리프트",
+        "워킹 런지 + 중량 제자리 걷기",
+        "점프 스쿼트",
+        "인터벌 트레이닝 (트레드밀)",
+        "벤치프레스"
+      ],
+      "autoComment": "3회 출석 · 주력 운동: 컨벤셔널 데드리프트, 워킹 런지 + 중량 제자리 걷기, 점프 스쿼트"
+    },
+    {
+      "year": 2026,
+      "month": 8,
+      "label": "2026년 8월",
+      "sessions": 4,
+      "bodyChange": {
+        "weight": {
+          "start": 67.3,
+          "end": 67.3,
+          "change": 0.0
+        },
+        "muscle": {
+          "start": 22.8,
+          "end": 22.8,
+          "change": 0.0
+        },
+        "fat": {
+          "start": 25.5,
+          "end": 25.5,
+          "change": 0.0
+        }
+      },
+      "condition": {},
+      "sleep": {},
+      "stress": {},
+      "topExercises": [
+        "보수볼 위에서 뛰기 (빌드업 1단계)",
+        "양발 보수볼 점프 (빌드업 2단계)",
+        "양발 보수볼 스쿼트 (빌드업 3단계)",
+        "보수볼 한발 서기 - 니업 자세 (빌드업 4단계)",
+        "보수볼 한발 올려딛기 - 계단 오르듯 (빌드업 5단계)"
+      ],
+      "autoComment": "4회 출석 · 체중 유지 · 주력 운동: 보수볼 위에서 뛰기 (빌드업 1단계), 양발 보수볼 점프 (빌드업 2단계), 양발 보수볼 스쿼트 (빌드업 3단계)"
     }
   ],
   "biweeklyFeedback": [],

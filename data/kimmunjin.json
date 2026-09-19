@@ -1150,11 +1150,11 @@
       "lifts": [],
       "bodyData": null,
       "condition": "",
-      "conditionNote": "",
+      "conditionNote": "오랜만의 세션이라 전체를 이완·가동성 위주로 풀어줌 — 짐볼 척추 굴곡·신전, 위대한 스트레칭(몸통 회전), 고관절 후관절낭 이완 마사지, 90-90(손 짚지 않고 좌우 교차)까지 진행",
       "sleep": "",
       "sleepNote": "",
       "stress": "",
-      "pain": "없음",
+      "pain": "있음",
       "painNote": "",
       "nutrition": "",
       "nutritionNote": "",
@@ -1392,6 +1392,73 @@
         "케틀벨 흉추 회전"
       ],
       "autoComment": "1회 출석 · 주력 운동: 힙&흉추 에어플레인, 로우 런지 + 흉추 회전, 골반 회전"
+    },
+    {
+      "year": 2026,
+      "month": 7,
+      "label": "2026년 7월",
+      "sessions": 2,
+      "bodyChange": {
+        "weight": {
+          "start": null,
+          "end": null,
+          "change": null
+        },
+        "muscle": {
+          "start": null,
+          "end": null,
+          "change": null
+        },
+        "fat": {
+          "start": null,
+          "end": null,
+          "change": null
+        }
+      },
+      "condition": {},
+      "sleep": {},
+      "stress": {},
+      "topExercises": [
+        "고관절 후관절낭 이완 + 굴곡근 이완",
+        "싱글레그 힙힌지",
+        "고관절 에어 플레인",
+        "90-90",
+        "위대한 스트레칭 + 흉추 회전 → 무릎 포기"
+      ],
+      "autoComment": "2회 출석 · 주력 운동: 고관절 후관절낭 이완 + 굴곡근 이완, 싱글레그 힙힌지, 고관절 에어 플레인"
+    },
+    {
+      "year": 2026,
+      "month": 8,
+      "label": "2026년 8월",
+      "sessions": 1,
+      "bodyChange": {
+        "weight": {
+          "start": null,
+          "end": null,
+          "change": null
+        },
+        "muscle": {
+          "start": null,
+          "end": null,
+          "change": null
+        },
+        "fat": {
+          "start": null,
+          "end": null,
+          "change": null
+        }
+      },
+      "condition": {},
+      "sleep": {},
+      "stress": {},
+      "topExercises": [
+        "짐볼 척추 굴곡·신전",
+        "위대한 스트레칭 (몸통 회전)",
+        "고관절 후관절낭 이완 마사지",
+        "90-90 (손 짚지 않고 좌우 교차)"
+      ],
+      "autoComment": "1회 출석 · 주력 운동: 짐볼 척추 굴곡·신전, 위대한 스트레칭 (몸통 회전), 고관절 후관절낭 이완 마사지"
     }
   ],
   "biweeklyFeedback": [],

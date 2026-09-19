@@ -1436,11 +1436,11 @@
       "lifts": [],
       "bodyData": null,
       "condition": "",
-      "conditionNote": "",
+      "conditionNote": "매일 진행할 코어 안정화 루틴 안내 — 4종목을 묶어 서킷으로, 3세트 진행",
       "sleep": "",
       "sleepNote": "",
       "stress": "",
-      "pain": "없음",
+      "pain": "있음",
       "painNote": "",
       "nutrition": "",
       "nutritionNote": "",
@@ -2263,6 +2263,73 @@
         "리버스 크런치 (볼)"
       ],
       "autoComment": "3회 출석 · 체중 유지 · 주력 운동: 보수볼 오버헤드 스쿼트 (작은 볼), 힙런지 (앞발 보수), 보수볼 니업 등척성"
+    },
+    {
+      "year": 2026,
+      "month": 7,
+      "label": "2026년 7월",
+      "sessions": 2,
+      "bodyChange": {
+        "weight": {
+          "start": null,
+          "end": null,
+          "change": null
+        },
+        "muscle": {
+          "start": null,
+          "end": null,
+          "change": null
+        },
+        "fat": {
+          "start": null,
+          "end": null,
+          "change": null
+        }
+      },
+      "condition": {},
+      "sleep": {},
+      "stress": {},
+      "topExercises": [
+        "네발기기 견갑골 기름칠",
+        "하이플랭크",
+        "발볼 아치 이완 (발깍지 + 발바닥 롤러)",
+        "사이드 플랭크",
+        "리버스 플랭크"
+      ],
+      "autoComment": "2회 출석 · 주력 운동: 네발기기 견갑골 기름칠, 하이플랭크, 발볼 아치 이완 (발깍지 + 발바닥 롤러)"
+    },
+    {
+      "year": 2026,
+      "month": 8,
+      "label": "2026년 8월",
+      "sessions": 1,
+      "bodyChange": {
+        "weight": {
+          "start": null,
+          "end": null,
+          "change": null
+        },
+        "muscle": {
+          "start": null,
+          "end": null,
+          "change": null
+        },
+        "fat": {
+          "start": null,
+          "end": null,
+          "change": null
+        }
+      },
+      "condition": {},
+      "sleep": {},
+      "stress": {},
+      "topExercises": [
+        "싱글레그 힙브릿지",
+        "데드버그",
+        "버드독",
+        "사이드 플랭크"
+      ],
+      "autoComment": "1회 출석 · 주력 운동: 싱글레그 힙브릿지, 데드버그, 버드독"
     }
   ],
   "상태": "활성"

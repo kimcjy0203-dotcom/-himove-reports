@@ -940,6 +940,39 @@
         "백 익스텐션 로우"
       ],
       "autoComment": "4회 출석 · 체중 유지 · 주력 운동: 루마니안 데드리프트, 덤벨 로우, 바벨 로우"
+    },
+    {
+      "year": 2026,
+      "month": 7,
+      "label": "2026년 7월",
+      "sessions": 2,
+      "bodyChange": {
+        "weight": {
+          "start": null,
+          "end": null,
+          "change": null
+        },
+        "muscle": {
+          "start": null,
+          "end": null,
+          "change": null
+        },
+        "fat": {
+          "start": null,
+          "end": null,
+          "change": null
+        }
+      },
+      "condition": {},
+      "sleep": {},
+      "stress": {},
+      "topExercises": [
+        "루마니안 데드리프트",
+        "케이블 언더 로우 + 스트레이트 암 풀다운 (컴파운드 세트)",
+        "컨벤셔널 데드리프트 (동작 학습)",
+        "스모 데드리프트 (동작 학습)"
+      ],
+      "autoComment": "2회 출석 · 주력 운동: 루마니안 데드리프트, 케이블 언더 로우 + 스트레이트 암 풀다운 (컴파운드 세트), 컨벤셔널 데드리프트 (동작 학습)"
     }
   ],
   "biweeklyFeedback": [],
