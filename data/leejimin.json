@@ -1,6 +1,6 @@
 {
   "notice": {
-    "from": "2026-09-24",
+    "from": "2026-09-23",
     "until": "2026-09-27",
     "text": "🎑 추석 연휴 개인운동 숙제 (9/24~9/27)\n\n연휴 동안 레슨이 없는 기간이라 아래 타바타 서킷으로 혼자 운동해주세요. 4종목을 30초씩 쉬지 않고 이어서 진행하고, 이 서킷을 3세트(라운드) 반복하면 끝!\n\n① 스탠딩 푸쉬업 — 좁게, 삼두 집중 (밴드 킥백으로 대체 가능) — 30초\n② 덤벨 로우 (밴드 로우로 대체 가능) — 30초\n③ 점핑잭 — 30초\n④ 마운틴 클라이머 — 30초\n\n4종목 끝나면 짧게 숨 고르고 다시 ①부터, 총 3세트(라운드) 반복해주세요 💪"
   },
@@ -1537,6 +1537,74 @@
             "day": "일",
             "workout": "휴식",
             "rest": true
+          }
+        ]
+      }
+    },
+    {
+      "week": 9, "label": "9월 3주차", "date": "9/14",
+      "weeklyRoutine": {
+        "weekKey": "2026-W38-leejimin",
+        "note": "",
+        "days": [
+          {"day": "월", "workout": "레슨", "rest": false},
+          {"day": "화", "workout": "개인운동", "rest": false},
+          {"day": "수", "workout": "레슨", "rest": false},
+          {"day": "목", "workout": "개인운동", "rest": false},
+          {"day": "금", "workout": "개인운동", "rest": false},
+          {"day": "토", "workout": "휴식", "rest": true},
+          {"day": "일", "workout": "휴식", "rest": true}
+        ]
+      }
+    },
+    {
+      "week": 10, "label": "9월 4주차", "date": "9/21",
+      "weeklyRoutine": {
+        "weekKey": "2026-W39-leejimin",
+        "note": "9/24~9/27은 추석 연휴라 레슨이 없어요. 연휴 기간엔 상단 공지의 타바타 서킷으로 혼자 운동해주세요.",
+        "days": [
+          {"day": "월", "workout": "레슨", "rest": false},
+          {"day": "화", "workout": "개인운동", "rest": false},
+          {"day": "수", "workout": "레슨", "rest": false},
+          {
+            "day": "목", "workout": "홈트-추석 연휴 숙제", "rest": false,
+            "plan": [
+              {"name": "스탠딩 푸쉬업(좁게, 삼두 집중) — 밴드 킥백 대체 가능", "sets": 3, "reps": 1, "weight": "30초"},
+              {"name": "덤벨 로우 — 밴드 로우 대체 가능", "sets": 3, "reps": 1, "weight": "30초"},
+              {"name": "점핑잭", "sets": 3, "reps": 1, "weight": "30초"},
+              {"name": "마운틴 클라이머", "sets": 3, "reps": 1, "weight": "30초"}
+            ],
+            "note": "4종목을 30초씩 쉬지 않고 이어서, 3세트(라운드) 반복하는 타바타 서킷이에요."
+          },
+          {
+            "day": "금", "workout": "홈트-추석 연휴 숙제", "rest": false,
+            "plan": [
+              {"name": "스탠딩 푸쉬업(좁게, 삼두 집중) — 밴드 킥백 대체 가능", "sets": 3, "reps": 1, "weight": "30초"},
+              {"name": "덤벨 로우 — 밴드 로우 대체 가능", "sets": 3, "reps": 1, "weight": "30초"},
+              {"name": "점핑잭", "sets": 3, "reps": 1, "weight": "30초"},
+              {"name": "마운틴 클라이머", "sets": 3, "reps": 1, "weight": "30초"}
+            ],
+            "note": "4종목을 30초씩 쉬지 않고 이어서, 3세트(라운드) 반복하는 타바타 서킷이에요."
+          },
+          {
+            "day": "토", "workout": "홈트-추석 연휴 숙제", "rest": false,
+            "plan": [
+              {"name": "스탠딩 푸쉬업(좁게, 삼두 집중) — 밴드 킥백 대체 가능", "sets": 3, "reps": 1, "weight": "30초"},
+              {"name": "덤벨 로우 — 밴드 로우 대체 가능", "sets": 3, "reps": 1, "weight": "30초"},
+              {"name": "점핑잭", "sets": 3, "reps": 1, "weight": "30초"},
+              {"name": "마운틴 클라이머", "sets": 3, "reps": 1, "weight": "30초"}
+            ],
+            "note": "4종목을 30초씩 쉬지 않고 이어서, 3세트(라운드) 반복하는 타바타 서킷이에요."
+          },
+          {
+            "day": "일", "workout": "홈트-추석 연휴 숙제", "rest": false,
+            "plan": [
+              {"name": "스탠딩 푸쉬업(좁게, 삼두 집중) — 밴드 킥백 대체 가능", "sets": 3, "reps": 1, "weight": "30초"},
+              {"name": "덤벨 로우 — 밴드 로우 대체 가능", "sets": 3, "reps": 1, "weight": "30초"},
+              {"name": "점핑잭", "sets": 3, "reps": 1, "weight": "30초"},
+              {"name": "마운틴 클라이머", "sets": 3, "reps": 1, "weight": "30초"}
+            ],
+            "note": "4종목을 30초씩 쉬지 않고 이어서, 3세트(라운드) 반복하는 타바타 서킷이에요."
           }
         ]
       }
