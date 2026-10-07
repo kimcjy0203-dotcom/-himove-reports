@@ -193,6 +193,11 @@ tr:last-child td { border-bottom: none; }
 .routine-day-block { margin-bottom:14px; padding:12px 14px; background:rgba(255,255,255,0.4); border:1px solid rgba(160,190,230,0.25); border-radius:14px; }
 .routine-day-block:last-child { margin-bottom:0; }
 .rdb-head { font-size:13px; font-weight:800; color:#3a6a9a; margin-bottom:2px; }
+.rt-week { display:grid; grid-template-columns:repeat(7,minmax(0,1fr)); gap:5px; margin-bottom:12px; }
+.rt-chip { text-align:center; padding:6px 0 5px; border-radius:10px; background:rgba(255,255,255,0.4); border:1px solid rgba(160,190,230,0.25); font-size:12px; font-weight:700; color:#9ab0c8; }
+.rt-chip span { display:block; font-size:10px; font-weight:600; white-space:nowrap; overflow:hidden; text-overflow:ellipsis; }
+.rt-chip.on { background:#5aaae8; border-color:#5aaae8; color:#fff; }
+.plan-row.rt-cardio .plan-name, .plan-row.rt-cardio .plan-detail { color:#3a8a6a; }
 .cal-day.active-day { border-color: rgba(90,175,130,0.6); box-shadow: 0 0 0 2px rgba(90,175,130,0.25); }
 .muscle-area { cursor: pointer; transition: filter 0.15s; }
 .muscle-popup { position: fixed; background: rgba(255,255,255,0.97); backdrop-filter: blur(24px); -webkit-backdrop-filter: blur(24px); border: 1px solid rgba(195,218,255,0.8); border-radius: 18px; padding: 14px 16px 12px; box-shadow: 0 10px 40px rgba(100,150,230,0.2); z-index: 200; min-width: 160px; max-width: 200px; }
@@ -669,6 +674,7 @@ html[data-theme="plum"] .muscle-tag { background:rgba(90,40,130,0.2); border-col
   <div class="card" id="goals-card" style="display:none"></div>
   <div id="event-log-section"></div>
   <div id="notice-section"></div>
+  <div id="routine-table-section"></div>
   <div id="report-feedback"></div>
   <div class="week-nav" id="week-nav"></div>
   <div id="week-panels"></div>
@@ -1218,6 +1224,25 @@ function init(data) {
       <div class="tool-body${open?'':' hidden'}">${content}</div>
     </div>`;
   }
+
+  /* 고정 루틴표 — routineTable이 있는 회원만 표시 (요일별 고정 루틴 + 짧은 버전) */
+  (function renderRoutineTable() {
+    const rt = data.routineTable;
+    if (!rt?.days?.length) return;
+    const byDay = {}; rt.days.forEach(d => { byDay[d.day] = d; });
+    const strip = ['월','화','수','목','금','토','일'].map(d =>
+      `<div class="rt-chip${byDay[d]?' on':''}">${d}<span>${byDay[d]?.title?.split('+')[0] || '휴식'}</span></div>`).join('');
+    const row = p => {
+      const detail = p.time || (p.reps ? `${p.sets||3}세트 × ${p.reps}회` : `${p.sets||3}세트`);
+      return `<div class="plan-row${p.time?' rt-cardio':''}"><span class="plan-name">${p.name}</span><span class="plan-detail">${detail}</span></div>`;
+    };
+    const block = (head, b) => `<div class="routine-day-block"><div class="rdb-head">${head}</div>${b.note?`<div class="plan-note" style="margin-top:6px">${b.note}</div>`:''}${(b.plan||[]).map(row).join('')}</div>`;
+    const days = rt.days.map(d => block(`${d.day} · ${d.title||''}`, d)).join('');
+    const extra = (rt.extra||[]).map(e => block(e.title||'', e)).join('');
+    document.getElementById('routine-table-section').innerHTML = collapsible(
+      '<span style="display:flex;align-items:center"><span class="req-dot"></span>내 루틴표</span>', 'blue',
+      `<div class="rt-week">${strip}</div>${rt.note?`<div class="note" style="margin-bottom:12px">${rt.note}</div>`:''}<div class="routine-detail">${days}${extra}</div>`, true);
+  })();
 
 
   /* ── 인바디 자가입력 ── */
