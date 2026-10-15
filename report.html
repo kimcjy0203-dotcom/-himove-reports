@@ -182,6 +182,14 @@ tr:last-child td { border-bottom: none; }
 .dd-field.open .dd-field-arrow { transform:rotate(180deg); }
 .dd-field-body { display:none; padding:10px 2px 2px; }
 .dd-field.open .dd-field-body { display:block; }
+.cardio-target { margin:4px 0 10px; padding:10px 12px; border-radius:12px; background:rgba(58,138,106,0.08); border:1px solid rgba(58,138,106,0.25); }
+.ct-label { font-size:10px; font-weight:700; color:#3a8a6a; letter-spacing:0.5px; }
+.ct-val { font-size:15px; font-weight:800; color:#2a6a50; margin-top:2px; }
+.ct-val small { font-size:11px; font-weight:600; color:#6aa88a; }
+.ct-note { font-size:11px; color:#5a8a74; margin-top:2px; }
+.cardio-log .dd-num-grid { display:grid; grid-template-columns:repeat(5,minmax(0,1fr)); }
+.cardio-log .dd-num-chip { text-align:center; }
+.cardio-rpe-scale { margin-top:6px; font-size:10px; color:#9ab0c8; text-align:center; }
 .dd-num-grid { display:flex; flex-wrap:wrap; gap:6px; }
 .dd-num-chip { flex:none; min-width:34px; padding:6px 4px; }
 .dd-list-col { display:flex; flex-direction:column; gap:6px; }
@@ -809,6 +817,13 @@ function repsRangeFor(target) {
 }
 const RIR_RANGE = Array.from({length: 6}, (_, i) => i);      // 0~5
 const RPE_LABELS = ['쉬움','적당','힘듦','매우힘듦'];
+/* 유산소 항목 — 무게·횟수 대신 목표 자각도 + 할 내용 한 박스 + 운동 후 느낀 자각도(1~10)만 기록.
+   유산소 전용일이든 근력운동 뒤 마무리 유산소든, 그날 유산소 항목을 한 박스로 묶음 (전 회원 공통) */
+const CARDIO_LOG_NAME = '유산소 자각도';
+const CARDIO_DEFAULT_TARGET = { rpe: '4~6', note: '숨은 조금 차지만 짧게 대화는 할 수 있는 정도' };
+const CARDIO_RPE_RANGE = Array.from({length: 10}, (_, i) => i + 1);
+const CARDIO_KEYWORDS = ['유산소','걷기','워킹','조깅','달리기','러닝','런닝','트레드밀','자전거','사이클','줄넘기','산책','등산','인터벌'];
+function isCardioItem(name) { return CARDIO_KEYWORDS.some(k => (name || '').includes(k)); }
 function prKey(name) { return `hm_pr_${currentMemberId}_${encodeURIComponent(name)}`; }
 function getPrData(name) {
   try { return JSON.parse(localStorage.getItem(prKey(name)) || 'null') || { lastWeight: null, weightSetDate: null, history: [] }; }
@@ -889,6 +904,7 @@ function seedDemoHistory(name, targetReps, planWeightStr, calDays) {
 function getTodayExerciseLogs(calDays) {
   const names = new Set();
   (calDays || []).forEach(d => (d.plan || []).forEach(p => names.add(p.name)));
+  if ((calDays || []).some(d => !d.rest && (d.plan || []).some(p => isCardioItem(p.name)))) names.add(CARDIO_LOG_NAME);
   const out = [];
   names.forEach(name => {
     const data = getPrData(name);
@@ -1363,7 +1379,7 @@ function init(data) {
       const dateNum = dayDate ? dayDate.getDate() : '';
       const isToday = dayDate && dayDate.getTime() === today.getTime();
       const workoutShort = d.rest ? '휴식' : (d.workout||'').split('-')[0] || '-';
-      return `<div class="cal-day${d.rest?' rest-day':''}${isToday?' today':''}" data-idx="${i}" data-cal="${calKey}" data-day="${d.day}" data-workout="${d.workout||''}" data-plan='${JSON.stringify(d.plan||[])}' data-note="${(d.note||'').replace(/"/g,'&quot;')}" data-istoday="${isToday?'1':'0'}" data-isrest="${d.rest?'1':'0'}"><div class="cd-weekday">${d.day}</div>${dateNum?`<div class="cd-date">${dateNum}</div>`:''}<div class="cd-workout">${workoutShort}</div><div class="cd-check">✓</div></div>`;
+      return `<div class="cal-day${d.rest?' rest-day':''}${isToday?' today':''}" data-idx="${i}" data-cal="${calKey}" data-day="${d.day}" data-workout="${d.workout||''}" data-plan='${JSON.stringify(d.plan||[])}' data-note="${(d.note||'').replace(/"/g,'&quot;')}" data-target-rpe="${String(d.targetRpe||'').replace(/"/g,'&quot;')}" data-target-rpe-note="${(d.targetRpeNote||'').replace(/"/g,'&quot;')}" data-istoday="${isToday?'1':'0'}" data-isrest="${d.rest?'1':'0'}"><div class="cd-weekday">${d.day}</div>${dateNum?`<div class="cd-date">${dateNum}</div>`:''}<div class="cd-workout">${workoutShort}</div><div class="cd-check">✓</div></div>`;
     }).join('');
     const HR = '<hr style="border:none;border-top:1px solid rgba(160,190,230,0.2);margin:20px 0">';
     return `<div class="week-panel" data-idx="${idx}">
@@ -1498,7 +1514,7 @@ function init(data) {
       if (doneList.length) lines.push(`운동 완료: ${doneList.join(' · ')}`);
       if (prLogs.length) {
         lines.push('오늘 운동 기록:');
-        prLogs.forEach(l => lines.push(`  · ${l.name} — ${l.weight!==''?l.weight+'kg ':''}${l.reps!==''?l.reps+'회 ':''}${l.rpe?'('+l.rpe+') ':''}${l.extraReps!==''?'(+'+l.extraReps+') ':''}${l.note?'— '+l.note:''}`.trim()));
+        prLogs.forEach(l => lines.push(l.name === CARDIO_LOG_NAME ? `  · ${l.name} — ${l.rpe}/10` : `  · ${l.name} — ${l.weight!==''?l.weight+'kg ':''}${l.reps!==''?l.reps+'회 ':''}${l.rpe?'('+l.rpe+') ':''}${l.extraReps!==''?'(+'+l.extraReps+') ':''}${l.note?'— '+l.note:''}`.trim()));
       }
       if (ib) lines.push(`인바디: 체중 ${ib.weight??'—'}kg · 골격근량 ${ib.muscle??'—'}kg · 체지방 ${ib.fat??'—'}%`);
       if (ev) lines.push(`오늘 있었던 일: ${ev.text}`);
@@ -1670,7 +1686,27 @@ function toggleDayDetail(panelIdx, day, workout, plan, note, dayIdx, checked, ca
         <div class="dd-field-body">${bodyHtml}</div>
       </div>`;
     }
-    const rows = plan.map(p => {
+    const strengthPlan = plan.filter(p => !isCardioItem(p.name));
+    const cardioPlan = plan.filter(p => isCardioItem(p.name));
+    let cardioHtml = '';
+    if (cardioPlan.length) {
+      const t = getPrData(CARDIO_LOG_NAME).history.find(h => h.date === todayKey) || {};
+      const tgt = dayEl?.dataset.targetRpe || CARDIO_DEFAULT_TARGET.rpe;
+      const tgtNote = dayEl?.dataset.targetRpeNote || (dayEl?.dataset.targetRpe ? '' : CARDIO_DEFAULT_TARGET.note);
+      const items = cardioPlan.map(p => {
+        const detail = p.weight && p.weight !== '-' ? p.weight : (p.reps && isNaN(p.reps) && p.reps !== '-' ? p.reps : '');
+        return `<div class="plan-row"><span class="plan-name">${p.name}</span>${detail?`<span class="plan-detail">${detail}</span>`:''}</div>`;
+      }).join('');
+      cardioHtml = `<div class="cardio-target"><div class="ct-label">유산소 · 이 정도로 느껴지게 해요</div><div class="ct-val">목표 자각도 ${tgt} <small>/ 10</small></div>${tgtNote?`<div class="ct-note">${tgtNote}</div>`:''}</div>
+      <div class="plan-row-log cardio-log">${items}
+        <div class="dd-field open" data-field="rpe">
+          <div class="dd-field-head" style="cursor:default"><span class="dd-field-label">운동 후 내가 느낀 자각도</span><span class="dd-field-val${t.rpe?'':' placeholder'}">${t.rpe ? t.rpe + ' / 10' : '선택'}</span></div>
+          <div class="dd-field-body"><div class="dd-num-grid">${CARDIO_RPE_RANGE.map(n => `<div class="chip dd-num-chip${String(n)===String(t.rpe)?' on':''}" data-val="${n}">${n}</div>`).join('')}</div>
+          <div class="cardio-rpe-scale">1 아주 쉬움 · 5 적당 · 10 최대로 힘듦</div></div>
+        </div>
+      </div>`;
+    }
+    const rows = strengthPlan.map(p => {
       const pr = getPrData(p.name);
       const t = pr.history.find(h => h.date === todayKey) || {};
       const due = isTestDue(p.name, weekDays);
@@ -1693,9 +1729,20 @@ function toggleDayDetail(panelIdx, day, workout, plan, note, dayIdx, checked, ca
         <textarea class="daily-note pr-note" placeholder="오늘 느낌을 자유롭게 적어보세요 (선택)" rows="1">${t.note ?? ''}</textarea>
       </div>`;
     }).join('');
-    wrap.innerHTML = `<div class="day-detail"><div class="dd-head">${day}요일 · ${workout||'-'}</div>${note?`<div class="plan-note">${note}</div>`:''}${demoBtnHtml}${rows}${doneBtnHtml}</div>`;
+    wrap.innerHTML = `<div class="day-detail"><div class="dd-head">${day}요일 · ${workout||'-'}</div>${note?`<div class="plan-note">${note}</div>`:''}${demoBtnHtml}${rows}${cardioHtml}${doneBtnHtml}</div>`;
 
-    wrap.querySelectorAll('.plan-row-log').forEach(row => {
+    const cardioField = wrap.querySelector('.cardio-log .dd-field');
+    if (cardioField) cardioField.querySelectorAll('.dd-num-chip').forEach(chip => chip.addEventListener('click', () => {
+      const alreadyOn = chip.classList.contains('on');
+      cardioField.querySelectorAll('.dd-num-chip').forEach(c => c.classList.remove('on'));
+      if (!alreadyOn) chip.classList.add('on');
+      const valEl = cardioField.querySelector('.dd-field-val');
+      valEl.textContent = alreadyOn ? '선택' : `${chip.dataset.val} / 10`;
+      valEl.classList.toggle('placeholder', alreadyOn);
+      savePrEntry(CARDIO_LOG_NAME, { rpe: alreadyOn ? '' : chip.dataset.val });
+    }));
+
+    wrap.querySelectorAll('.plan-row-log:not(.cardio-log)').forEach(row => {
       const name = row.dataset.name;
       const target = parseInt(row.dataset.target) || null;
       const noteEl = row.querySelector('.pr-note');
@@ -1760,7 +1807,7 @@ function toggleDayDetail(panelIdx, day, workout, plan, note, dayIdx, checked, ca
 
   const demoBtn = document.getElementById(`day-demo-${panelIdx}`);
   if (demoBtn) demoBtn.addEventListener('click', () => {
-    plan.forEach(p => seedDemoHistory(p.name, p.reps, p.weight, weekDays));
+    plan.filter(p => !isCardioItem(p.name)).forEach(p => seedDemoHistory(p.name, p.reps, p.weight, weekDays));
     wrap.dataset.open = '';
     toggleDayDetail(panelIdx, day, workout, plan, note, dayIdx, checked, calKey, renderCal, dayEl, weekDays);
   });
