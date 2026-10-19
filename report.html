@@ -1259,7 +1259,30 @@ function init(data) {
   /* 운동 기록 찾기 — 운동 이름(예: 데드) 또는 부위(예: 등·하체·밸런스)로 지난 세션 검색 */
   (function renderExerciseSearch() {
     const hist = data.sessionHistory || [];
-    if (!hist.some(h => (h.items || []).length)) return;
+    const norm = t => String(t || '').replace(/\s+/g, '').toLowerCase();
+    /* 세션 기록에 없는 예전 주차(archiveWeeks·weeks)의 운동 피드백도 주 단위로 검색 — 세션 기록으로 이미 덮인 주는 제외 */
+    const coveredDates = new Set(hist.map(h => h.date));
+    const weekHist = [...(data.archiveWeeks || []), ...(data.weeks || [])]
+      .filter(w => !(w.sessionDates || []).length || !(w.sessionDates || []).every(d => coveredDates.has(d)))
+      .map(w => {
+        // 일부 날짜만 세션 기록에 있는 주 — 그 날짜에 이미 나온 운동은 빼서 중복 표시 방지
+        const coveredNames = new Set(hist.filter(h => (w.sessionDates || []).includes(h.date)).flatMap(h => (h.items || []).map(it => norm(it.name))));
+        const byName = {};
+        const sums = w.summaries || (w.summary ? [w.summary] : []);
+        sums.forEach(sm => (sm.items || []).forEach(it => {
+          if (!it.name || it.name.startsWith('─')) return;
+          byName[it.name] = byName[it.name] || { name: it.name, detailText: it.detail || '', feel: '' };
+        }));
+        (w.exercises || []).forEach(e => {
+          if (!e.name) return;
+          const feel = (e.note || '') + (e.next ? `${e.note ? '<br>' : ''}· next: ${e.next}` : '');
+          byName[e.name] = Object.assign(byName[e.name] || { name: e.name, detailText: '' }, { feel });
+        });
+        return { label: `${w.date ? w.date + ' 주' : ''}${w.label ? ` (${w.label})` : ''}`.trim(), items: Object.values(byName).filter(it => !coveredNames.has(norm(it.name))) };
+      })
+      .filter(w => w.items.length)
+      .reverse();
+    if (!hist.some(h => (h.items || []).length) && !weekHist.length) return;
     const CATS = {
       '하체': ['스쿼트','런지','레그프레스','레그컬','레그익스텐션','데드리프트','힙','브릿지','쓰러스트','스텝업','스텝다운','카프','어덕션','어브덕션','스플릿','클램셸','클램쉘','클렘쉘','햄스트링'],
       '등': ['시티드로우','덤벨로우','바벨로우','케이블로우','원암로우','케틀벨로우','인버티드로우','t바로우','풀다운','렛풀','랫풀','풀업','친업','데드리프트','백익스텐션','슈러그','풀오버'],
@@ -1270,8 +1293,8 @@ function init(data) {
       '밸런스': ['보수볼','한발','한다리','밸런스','균형','싱글레그','니업'],
       '유산소': null,  // 유산소는 리포트 공통 판별(isCardioItem) 사용
     };
-    const norm = t => String(t || '').replace(/\s+/g, '').toLowerCase();
     const fmtDetail = it => {
+      if (it.detailText !== undefined) return it.detailText;
       const parts = [];
       const sets = it.sets && it.sets !== '-' ? it.sets : '';
       const reps = it.reps && it.reps !== '-' ? it.reps : '';
@@ -1286,22 +1309,29 @@ function init(data) {
       const q = norm(qRaw).replace(/운동$/, '');
       if (!q) return null;
       const cat = CATS[q];
-      return hist.map(h => {
-        const items = (h.items || []).filter(it => q === '유산소' ? isCardioItem(it.name) : cat ? cat.some(k => norm(it.name).includes(norm(k))) : norm(it.name).includes(q));
+      const match = it => q === '유산소' ? isCardioItem(it.name) : cat ? cat.some(k => norm(it.name).includes(norm(k))) : norm(it.name).includes(q);
+      const weekRes = weekHist.map(w => ({ w, items: w.items.filter(match) })).filter(r => r.items.length);
+      const sessRes = hist.map(h => {
+        const items = (h.items || []).filter(match);
         if (!items.length) return null;
         return { h, items };
       }).filter(Boolean);
+      return { sessRes, weekRes };
     }
     function renderResults(qRaw) {
       const out = document.getElementById('sx-results');
       const res = search(qRaw);
       if (!res) { out.innerHTML = ''; return; }
-      if (!res.length) { out.innerHTML = `<div class="sx-count">'${qRaw.replace(/</g,'&lt;')}' 기록을 찾지 못했어요. 운동 이름 일부(예: 데드)나 부위(예: 등)로 찾아보세요.</div>`; return; }
-      out.innerHTML = `<div class="sx-count">${res.length}번의 수업에서 찾았어요</div>` + res.slice(0, 40).map(({h, items}) =>
-        `<div class="sx-session"><div class="sx-date">${fmtDate(h.date)}</div>${items.map(it => {
-          const det = fmtDetail(it);
-          return `<div class="sx-item"><span class="sx-item-name">${it.name}</span>${det ? `<span class="sx-item-detail">${det}</span>` : ''}${it.feel ? `<div class="sx-feel">${it.feel}</div>` : ''}</div>`;
-        }).join('')}</div>`).join('');
+      const itemHtml = it => {
+        const det = fmtDetail(it);
+        return `<div class="sx-item"><span class="sx-item-name">${it.name}</span>${det ? `<span class="sx-item-detail">${det}</span>` : ''}${it.feel ? `<div class="sx-feel">${it.feel}</div>` : ''}</div>`;
+      };
+      const { sessRes, weekRes } = res;
+      if (!sessRes.length && !weekRes.length) { out.innerHTML = `<div class="sx-count">'${qRaw.replace(/</g,'&lt;')}' 기록을 찾지 못했어요. 운동 이름 일부(예: 데드)나 부위(예: 등)로 찾아보세요.</div>`; return; }
+      out.innerHTML = (sessRes.length ? `<div class="sx-count">${sessRes.length}번의 수업에서 찾았어요</div>` + sessRes.slice(0, 40).map(({h, items}) =>
+        `<div class="sx-session"><div class="sx-date">${fmtDate(h.date)}</div>${items.map(itemHtml).join('')}</div>`).join('') : '')
+        + (weekRes.length ? `<div class="sx-count">예전 기록 (주 단위) · ${weekRes.length}주</div>` + weekRes.slice(0, 30).map(({w, items}) =>
+        `<div class="sx-session"><div class="sx-date">${w.label || '예전 기록'}</div>${items.map(itemHtml).join('')}</div>`).join('') : '');
     }
     const chips = Object.keys(CATS).map(c => `<button type="button" class="sx-chip" data-q="${c}">${c}</button>`).join('');
     document.getElementById('exercise-search-section').innerHTML = collapsible(
@@ -1501,13 +1531,7 @@ function init(data) {
     <button class="wk-arrow" id="wk-next" ${defaultIdx===weeks.length-1?'disabled':''}>›</button>`;
   document.getElementById('wk-prev').addEventListener('click', () => { if (_curIdx > 0) switchWeek(_curIdx - 1); });
   document.getElementById('wk-next').addEventListener('click', () => { if (_curIdx < weeks.length - 1) switchWeek(_curIdx + 1); });
-  /* 스와이프 지원 */
-  let _tx0 = 0;
-  panelEl.addEventListener('touchstart', e => { _tx0 = e.touches[0].clientX; }, { passive: true });
-  panelEl.addEventListener('touchend',   e => {
-    const dx = e.changedTouches[0].clientX - _tx0;
-    if (Math.abs(dx) > 50) { if (dx < 0 && _curIdx < weeks.length-1) switchWeek(_curIdx+1); else if (dx > 0 && _curIdx > 0) switchWeek(_curIdx-1); }
-  });
+  /* 옆으로 밀어서 주차 넘기기는 없앰 — 요일 버튼 누르다 실수로 지난 주로 넘어가는 일이 잦아서, 주차 이동은 ‹ › 버튼으로만 */
   panelEl.innerHTML = weeks.map((w,i) => buildPanel(w,i)).join('');
 
   /* 운동 처방 가이드 + 유산소 강도 가이드 초기화 */
