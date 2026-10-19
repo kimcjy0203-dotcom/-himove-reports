@@ -822,8 +822,9 @@ const RPE_LABELS = ['쉬움','적당','힘듦','매우힘듦'];
 const CARDIO_LOG_NAME = '유산소 자각도';
 const CARDIO_DEFAULT_TARGET = { rpe: '4~6', note: '숨은 조금 차지만 짧게 대화는 할 수 있는 정도' };
 const CARDIO_RPE_RANGE = Array.from({length: 10}, (_, i) => i + 1);
-const CARDIO_KEYWORDS = ['유산소','걷기','워킹','조깅','달리기','러닝','런닝','트레드밀','자전거','사이클','줄넘기','산책','등산','인터벌'];
-function isCardioItem(name) { return CARDIO_KEYWORDS.some(k => (name || '').includes(k)); }
+const CARDIO_KEYWORDS = ['유산소','걷기','워킹','조깅','달리기','러닝','런닝','트레드밀','자전거','사이클','줄넘기','산책','등산','인터벌','천국의 계단','천국의계단','스텝밀'];
+const CARDIO_EXCLUDE = ['런지'];  // '워킹 런지'처럼 근력 운동 이름에 유산소 단어가 섞인 경우 제외
+function isCardioItem(name) { const n = name || ''; return CARDIO_KEYWORDS.some(k => n.includes(k)) && !CARDIO_EXCLUDE.some(k => n.includes(k)); }
 function prKey(name) { return `hm_pr_${currentMemberId}_${encodeURIComponent(name)}`; }
 function getPrData(name) {
   try { return JSON.parse(localStorage.getItem(prKey(name)) || 'null') || { lastWeight: null, weightSetDate: null, history: [] }; }
@@ -1249,7 +1250,7 @@ function init(data) {
     const strip = ['월','화','수','목','금','토','일'].map(d =>
       `<div class="rt-chip${byDay[d]?' on':''}">${d}<span>${byDay[d]?.title?.split('+')[0] || '휴식'}</span></div>`).join('');
     const row = p => {
-      const detail = p.time || (p.reps ? `${p.sets||3}세트 × ${p.reps}회` : `${p.sets||3}세트`);
+      const detail = p.time || ((p.reps ? `${p.sets||3}세트 × ${p.reps}${/^\d+$/.test(String(p.reps)) ? '회' : ''}` : `${p.sets||3}세트`) + (p.weight && p.weight !== '-' ? ` / ${/^\d+(\.\d+)?$/.test(String(p.weight)) ? p.weight + 'kg' : p.weight}` : ''));
       return `<div class="plan-row${p.time?' rt-cardio':''}"><span class="plan-name">${p.name}</span><span class="plan-detail">${detail}</span></div>`;
     };
     const block = (head, b) => `<div class="routine-day-block"><div class="rdb-head">${head}</div>${b.note?`<div class="plan-note" style="margin-top:6px">${b.note}</div>`:''}${(b.plan||[]).map(row).join('')}</div>`;
@@ -1712,9 +1713,12 @@ function toggleDayDetail(panelIdx, day, workout, plan, note, dayIdx, checked, ca
       const due = isTestDue(p.name, weekDays);
       const nextW = due ? suggestedNextWeight(p.name) : null;
       const nameAttr = p.name.replace(/"/g,'&quot;');
+      // 트레이너가 무게를 숫자로 정해둔 운동은 기록 칸에 미리 채워둠 — 회원은 횟수·자각도만 고르면 됨
+      const planW = /^\d+(\.\d+)?\s*(kg)?$/i.test(String(p.weight ?? '').trim()) ? parseFloat(p.weight) : '';
+      const wVal = t.weight !== '' && t.weight != null ? t.weight : planW;
 
-      const weightField = fieldHtml('weight', '무게', t.weight !== '' && t.weight != null ? `${t.weight}kg` : '입력', t.weight === '' || t.weight == null,
-        `<input type="number" step="0.5" inputmode="decimal" class="pr-input dd-weight-input" placeholder="무게 kg" value="${t.weight ?? ''}">`);
+      const weightField = fieldHtml('weight', '무게', wVal !== '' ? `${wVal}kg` : '입력', wVal === '',
+        `<input type="number" step="0.5" inputmode="decimal" class="pr-input dd-weight-input" placeholder="무게 kg" value="${wVal}">`);
       const repsField = fieldHtml('reps', '횟수', t.reps !== '' && t.reps != null ? `${t.reps}회` : '선택', t.reps === '' || t.reps == null,
         `<div class="dd-num-grid">${repsRangeFor(p.reps).map(n => `<div class="chip dd-num-chip${n===t.reps?' on':''}" data-val="${n}">${n}</div>`).join('')}</div>`);
       const rpeField = fieldHtml('rpe', '자각도', t.rpe || '선택', !t.rpe,
@@ -1723,7 +1727,7 @@ function toggleDayDetail(panelIdx, day, workout, plan, note, dayIdx, checked, ca
         `<div class="dd-num-grid">${RIR_RANGE.map(n => `<div class="chip dd-num-chip${n===t.extraReps?' on':''}" data-val="${n}">${n}개</div>`).join('')}</div>`);
 
       return `<div class="plan-row-log" data-name="${nameAttr}" data-target="${p.reps}">
-        <div class="plan-row"><span class="plan-name">${p.name}</span><span class="plan-detail">${p.sets}세트 × ${p.reps}회${p.weight&&p.weight!=='-'?' / '+p.weight:''}</span></div>
+        <div class="plan-row"><span class="plan-name">${p.name}</span><span class="plan-detail">${p.sets}세트 × ${p.reps}${/^\d+$/.test(String(p.reps)) ? '회' : ''}${p.weight&&p.weight!=='-'?' / '+p.weight:''}</span></div>
         ${due ? `<div class="pr-test-badge">🔥 무게를 올려볼 때예요${nextW!=null?` — 다음엔 ${nextW}kg 정도로`:''}</div>` : ''}
         ${weightField}${repsField}${rpeField}${rirField}
         <textarea class="daily-note pr-note" placeholder="오늘 느낌을 자유롭게 적어보세요 (선택)" rows="1">${t.note ?? ''}</textarea>
