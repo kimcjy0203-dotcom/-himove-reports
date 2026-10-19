@@ -182,6 +182,19 @@ tr:last-child td { border-bottom: none; }
 .dd-field.open .dd-field-arrow { transform:rotate(180deg); }
 .dd-field-body { display:none; padding:10px 2px 2px; }
 .dd-field.open .dd-field-body { display:block; }
+.sx-input { width:100%; box-sizing:border-box; padding:10px 12px; border-radius:11px; border:1px solid rgba(160,190,230,0.4); background:rgba(255,255,255,0.6); font-size:16px; font-family:inherit; color:#2a3a50; outline:none; }
+.sx-input:focus { border-color:#5aaae8; }
+.sx-chips { display:flex; flex-wrap:wrap; gap:6px; margin:8px 0 4px; }
+.sx-chip { padding:5px 11px; border-radius:999px; border:1px solid rgba(160,190,230,0.35); background:rgba(255,255,255,0.45); font-size:12px; font-weight:700; color:#6a8aaa; cursor:pointer; font-family:inherit; }
+.sx-chip.on { background:#5aaae8; border-color:#5aaae8; color:#fff; }
+.sx-count { font-size:12px; color:#7a95b8; margin:10px 0 6px; }
+.sx-session { padding:10px 12px; margin-top:8px; border-radius:12px; background:rgba(255,255,255,0.4); border:1px solid rgba(160,190,230,0.25); }
+.sx-date { font-size:12px; font-weight:800; color:#3a6a9a; }
+.sx-note { font-size:11px; color:#7a95b8; margin-top:2px; line-height:1.5; }
+.sx-item { padding-top:8px; }
+.sx-item-name { font-size:13px; font-weight:700; color:#2a3a50; }
+.sx-item-detail { font-size:12px; color:#6a9ac4; font-weight:600; margin-left:6px; }
+.sx-feel { font-size:11px; color:#6a8aaa; line-height:1.6; margin-top:3px; }
 .cardio-target { margin:4px 0 10px; padding:10px 12px; border-radius:12px; background:rgba(58,138,106,0.08); border:1px solid rgba(58,138,106,0.25); }
 .ct-label { font-size:10px; font-weight:700; color:#3a8a6a; letter-spacing:0.5px; }
 .ct-val { font-size:15px; font-weight:800; color:#2a6a50; margin-top:2px; }
@@ -683,6 +696,7 @@ html[data-theme="plum"] .muscle-tag { background:rgba(90,40,130,0.2); border-col
   <div id="event-log-section"></div>
   <div id="notice-section"></div>
   <div id="routine-table-section"></div>
+  <div id="exercise-search-section"></div>
   <div id="report-feedback"></div>
   <div class="week-nav" id="week-nav"></div>
   <div id="week-panels"></div>
@@ -822,8 +836,8 @@ const RPE_LABELS = ['쉬움','적당','힘듦','매우힘듦'];
 const CARDIO_LOG_NAME = '유산소 자각도';
 const CARDIO_DEFAULT_TARGET = { rpe: '4~6', note: '숨은 조금 차지만 짧게 대화는 할 수 있는 정도' };
 const CARDIO_RPE_RANGE = Array.from({length: 10}, (_, i) => i + 1);
-const CARDIO_KEYWORDS = ['유산소','걷기','워킹','조깅','달리기','러닝','런닝','트레드밀','자전거','사이클','줄넘기','산책','등산','인터벌','천국의 계단','천국의계단','스텝밀'];
-const CARDIO_EXCLUDE = ['런지'];  // '워킹 런지'처럼 근력 운동 이름에 유산소 단어가 섞인 경우 제외
+const CARDIO_KEYWORDS = ['유산소','걷기','워킹','조깅','달리기','러닝','런닝','트레드밀','자전거','사이클','줄넘기','산책','등산','인터벌','천국의 계단','천국의계단','스텝밀','바이크'];
+const CARDIO_EXCLUDE = ['런지','매달리기'];  // '워킹 런지'처럼 근력 운동 이름에 유산소 단어가 섞인 경우 제외
 function isCardioItem(name) { const n = name || ''; return CARDIO_KEYWORDS.some(k => n.includes(k)) && !CARDIO_EXCLUDE.some(k => n.includes(k)); }
 function prKey(name) { return `hm_pr_${currentMemberId}_${encodeURIComponent(name)}`; }
 function getPrData(name) {
@@ -1241,6 +1255,69 @@ function init(data) {
       <div class="tool-body${open?'':' hidden'}">${content}</div>
     </div>`;
   }
+
+  /* 운동 기록 찾기 — 운동 이름(예: 데드) 또는 부위(예: 등·하체·밸런스)로 지난 세션 검색 */
+  (function renderExerciseSearch() {
+    const hist = data.sessionHistory || [];
+    if (!hist.some(h => (h.items || []).length)) return;
+    const CATS = {
+      '하체': ['스쿼트','런지','레그프레스','레그컬','레그익스텐션','데드리프트','힙','브릿지','쓰러스트','스텝업','스텝다운','카프','어덕션','어브덕션','스플릿','클램셸','클램쉘','클렘쉘','햄스트링'],
+      '등': ['시티드로우','덤벨로우','바벨로우','케이블로우','원암로우','케틀벨로우','인버티드로우','t바로우','풀다운','렛풀','랫풀','풀업','친업','데드리프트','백익스텐션','슈러그','풀오버'],
+      '가슴': ['벤치프레스','체스트','푸쉬업','푸시업','플라이','펙덱','딥스'],
+      '어깨': ['숄더','레터럴','프론트레이즈','리어델트','페이스풀','오버헤드프레스','밀리터리'],
+      '팔': ['킥백','푸쉬다운','푸시다운','트라이셉스','암컬','바이셉','해머컬','바벨컬','덤벨컬','딥스'],
+      '코어': ['플랭크','데드버그','크런치','버드독','코어','니업','레그레이즈','러시안','마운틴','슈퍼맨'],
+      '밸런스': ['보수볼','한발','한다리','밸런스','균형','싱글레그','니업'],
+      '유산소': null,  // 유산소는 리포트 공통 판별(isCardioItem) 사용
+    };
+    const norm = t => String(t || '').replace(/\s+/g, '').toLowerCase();
+    const fmtDetail = it => {
+      const parts = [];
+      const sets = it.sets && it.sets !== '-' ? it.sets : '';
+      const reps = it.reps && it.reps !== '-' ? it.reps : '';
+      if (sets && reps) parts.push(`${sets}세트 × ${reps}${/^\d+$/.test(String(reps)) ? '회' : ''}`);
+      else if (sets) parts.push(`${sets}세트`);
+      if (it.weight && it.weight !== '-') parts.push(/^[\d.+]+$/.test(String(it.weight)) ? `${it.weight}kg` : it.weight);
+      return parts.join(' / ');
+    };
+    const WD = ['일','월','화','수','목','금','토'];
+    const fmtDate = d => { const [y,m,dd] = d.split('-').map(Number); const dt = new Date(y, m-1, dd); return `${y}.${m}.${dd} (${WD[dt.getDay()]})`; };
+    function search(qRaw) {
+      const q = norm(qRaw).replace(/운동$/, '');
+      if (!q) return null;
+      const cat = CATS[q];
+      return hist.map(h => {
+        const items = (h.items || []).filter(it => q === '유산소' ? isCardioItem(it.name) : cat ? cat.some(k => norm(it.name).includes(norm(k))) : norm(it.name).includes(q));
+        if (!items.length) return null;
+        return { h, items };
+      }).filter(Boolean);
+    }
+    function renderResults(qRaw) {
+      const out = document.getElementById('sx-results');
+      const res = search(qRaw);
+      if (!res) { out.innerHTML = ''; return; }
+      if (!res.length) { out.innerHTML = `<div class="sx-count">'${qRaw.replace(/</g,'&lt;')}' 기록을 찾지 못했어요. 운동 이름 일부(예: 데드)나 부위(예: 등)로 찾아보세요.</div>`; return; }
+      out.innerHTML = `<div class="sx-count">${res.length}번의 수업에서 찾았어요</div>` + res.slice(0, 40).map(({h, items}) =>
+        `<div class="sx-session"><div class="sx-date">${fmtDate(h.date)}</div>${items.map(it => {
+          const det = fmtDetail(it);
+          return `<div class="sx-item"><span class="sx-item-name">${it.name}</span>${det ? `<span class="sx-item-detail">${det}</span>` : ''}${it.feel ? `<div class="sx-feel">${it.feel}</div>` : ''}</div>`;
+        }).join('')}</div>`).join('');
+    }
+    const chips = Object.keys(CATS).map(c => `<button type="button" class="sx-chip" data-q="${c}">${c}</button>`).join('');
+    document.getElementById('exercise-search-section').innerHTML = collapsible(
+      '<span style="display:flex;align-items:center"><span class="req-dot"></span>지난 운동 찾기</span>', 'blue',
+      `<input id="sx-input" class="sx-input" type="search" placeholder="운동 이름(예: 데드) 또는 부위(예: 등)" autocomplete="off"><div class="sx-chips">${chips}</div><div id="sx-results"></div>`);
+    const input = document.getElementById('sx-input');
+    const chipEls = [...document.querySelectorAll('#exercise-search-section .sx-chip')];
+    input.addEventListener('input', () => { chipEls.forEach(c => c.classList.remove('on')); renderResults(input.value); });
+    chipEls.forEach(c => c.addEventListener('click', () => {
+      const on = !c.classList.contains('on');
+      chipEls.forEach(x => x.classList.remove('on'));
+      if (on) c.classList.add('on');
+      input.value = on ? c.dataset.q : '';
+      renderResults(input.value);
+    }));
+  })();
 
   /* 고정 루틴표 — routineTable이 있는 회원만 표시 (요일별 고정 루틴 + 짧은 버전) */
   (function renderRoutineTable() {
