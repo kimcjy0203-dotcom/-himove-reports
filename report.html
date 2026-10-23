@@ -57,6 +57,11 @@ body > * { position: relative; z-index: 1; }
   box-shadow: 0 4px 20px rgba(100,150,230,0.10);
 }
 .card:has(.card-title.gold) { background: #ffffff; border-color: rgba(140,180,230,0.5); }
+.today-bar { width:100%; display:flex; flex-wrap:wrap; align-items:center; justify-content:space-between; gap:4px 10px; margin-bottom:12px; padding:13px 16px; border:none; border-radius:16px; background:linear-gradient(135deg,rgba(90,150,220,0.95),rgba(70,125,200,0.98)); color:#fff; font-size:13px; font-weight:800; font-family:inherit; text-align:left; cursor:pointer; box-shadow:0 6px 20px rgba(80,130,200,0.3); }
+.today-bar b { font-weight:800; }
+.today-bar span { font-size:12px; font-weight:700; opacity:0.9; white-space:nowrap; }
+.today-bar.rest { background:rgba(255,255,255,0.6); color:#6a8aaa; box-shadow:none; border:1px solid rgba(160,190,230,0.3); cursor:default; }
+.day-detail-wrap { scroll-margin-top:72px; }
 .notice-banner {
   background: rgba(255,243,224,0.92); backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px);
   border: 1px solid rgba(230,160,60,0.5); border-radius: 18px; padding: 14px 16px;
@@ -694,6 +699,7 @@ html[data-theme="plum"] .muscle-tag { background:rgba(90,40,130,0.2); border-col
   </div>
   <div class="card" id="goals-card" style="display:none"></div>
   <div id="event-log-section"></div>
+  <div id="today-section"></div>
   <div id="notice-section"></div>
   <div id="routine-table-section"></div>
   <div id="exercise-search-section"></div>
@@ -1672,6 +1678,24 @@ function init(data) {
       toggleDayDetail(panelIdx, day, workout, plan, note, i, checked, calKey, renderCal, this, weekDays);
     }));
   });
+
+  /* 오늘 할 운동 — 리포트를 열면 오늘 기록 칸을 바로 펼치고, 맨 위에 바로가기 버튼 표시 */
+  (function openToday() {
+    const top = document.getElementById('today-section');
+    if (!top || isOT) return;
+    const now = new Date();
+    const label = `${now.getMonth()+1}/${now.getDate()}(${'일월화수목금토'[now.getDay()]})`;
+    const el = document.querySelector(`.week-panel[data-idx="${defaultIdx}"] .cal-day.today`);
+    if (!el) return;
+    if (el.dataset.isrest === '1') { top.innerHTML = `<div class="today-bar rest">📅 오늘 ${label} · 쉬는 날이에요</div>`; return; }
+    el.click();
+    const hasPlan = JSON.parse(el.dataset.plan || '[]').length > 0;
+    top.innerHTML = `<button type="button" class="today-bar" id="today-go">📅 오늘 ${label} · <b class="today-wk"></b><span>${hasPlan ? '횟수·자각도 기록하기 ↓' : '오늘 계획 보기 ↓'}</span></button>`;
+    top.querySelector('.today-wk').textContent = el.dataset.workout || '운동';
+    document.getElementById('today-go').addEventListener('click', () => {
+      document.getElementById(`day-detail-${defaultIdx}`)?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    });
+  })();
 
   /* 바디맵 */
   weeks.forEach((w,idx) => {
