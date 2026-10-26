@@ -528,7 +528,7 @@ function renderWeek(w) {
     }).join('');
   }
   const hasCheckins = Object.keys(checkins).length > 0 || !!wmText;
-  const hasData = w.mainMessage || w.summary?.date || w.summaries?.length || w.memberComment || w.sessionDates?.length || hasCheckins;
+  const hasData = w.mainMessage || w.summary?.date || w.summaries?.length || w.memberComment || w.sessionDates?.length || hasCheckins || w.nextSessionMemo;
 
   const days   = w.weeklyRoutine?.days || [];
   const lesson = days.filter(d => d.workout?.includes('레슨')).length;
