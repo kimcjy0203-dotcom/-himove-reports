@@ -1412,5 +1412,41 @@
         }
       ]
     }
+  ],
+  "monthlySummary": [
+    {
+      "year": 2026,
+      "month": 10,
+      "label": "2026년 10월",
+      "sessions": 4,
+      "bodyChange": {
+        "weight": {
+          "start": null,
+          "end": null,
+          "change": null
+        },
+        "muscle": {
+          "start": null,
+          "end": null,
+          "change": null
+        },
+        "fat": {
+          "start": null,
+          "end": null,
+          "change": null
+        }
+      },
+      "condition": {},
+      "sleep": {},
+      "stress": {},
+      "topExercises": [
+        "고블릿 스쿼트",
+        "레그프레스",
+        "힙쓰러스트",
+        "앉아서 엉덩이 깊은 근육(이상근) 늘리기",
+        "앉아서 허벅지 뒤 늘리기"
+      ],
+      "autoComment": "4회 출석 · 주력 운동: 고블릿 스쿼트, 레그프레스, 힙쓰러스트"
+    }
   ]
 }

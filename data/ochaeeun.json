@@ -1173,6 +1173,40 @@
         "리버스 크런치"
       ],
       "autoComment": "2회 출석 · 주력 운동: 스탠다드 스쿼트, 와이드 스쿼트, 브이 스쿼트"
+    },
+    {
+      "year": 2026,
+      "month": 10,
+      "label": "2026년 10월",
+      "sessions": 1,
+      "bodyChange": {
+        "weight": {
+          "start": null,
+          "end": null,
+          "change": null
+        },
+        "muscle": {
+          "start": null,
+          "end": null,
+          "change": null
+        },
+        "fat": {
+          "start": null,
+          "end": null,
+          "change": null
+        }
+      },
+      "condition": {},
+      "sleep": {},
+      "stress": {},
+      "topExercises": [
+        "스탠다드 스쿼트",
+        "와이드 스쿼트",
+        "브이 스쿼트",
+        "레그프레스",
+        "힙 쓰러스트"
+      ],
+      "autoComment": "1회 출석 · 주력 운동: 스탠다드 스쿼트, 와이드 스쿼트, 브이 스쿼트"
     }
   ],
   "sessionHistory": [
