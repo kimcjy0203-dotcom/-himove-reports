@@ -176,6 +176,9 @@ tr:last-child td { border-bottom: none; }
 .day-demo-btn { width:100%; margin-bottom:12px; padding:9px; border:1px dashed rgba(230,160,60,0.5); border-radius:12px; font-size:11px; font-weight:700; cursor:pointer; background:rgba(255,243,224,0.6); color:#a06a1a; }
 .plan-row-log { padding:9px 0; border-bottom:1px solid rgba(160,190,230,0.15); }
 .plan-row-log:last-child { border-bottom:none; }
+.rec-hint { font-size:12px; font-weight:700; color:#3a7ab8; background:rgba(90,150,220,0.09); border-radius:8px; padding:6px 9px; margin:4px 0 6px; line-height:1.4; }
+.rec-hint small { font-weight:500; color:#8aa4c0; font-size:11px; }
+.rec-scale { font-size:11px; color:#a0b4ca; margin-top:6px; }
 .pr-test-badge { font-size:10px; font-weight:800; color:#c46a2a; background:rgba(240,150,60,0.12); border-radius:8px; padding:3px 8px; display:inline-block; margin-bottom:6px; }
 .dd-field { margin-top:7px; }
 .dd-field:first-of-type { margin-top:8px; }
@@ -456,6 +459,8 @@ html[data-theme="apple"] .countdown-bar-fill { background:linear-gradient(90deg,
 html[data-theme="apple"] .goal-bar-fill { }
 
 /* ─── NAVY ─── */
+html[data-theme="navy"] .rec-hint,html[data-theme="charcoal"] .rec-hint,html[data-theme="forest"] .rec-hint,html[data-theme="plum"] .rec-hint { color:#8ec0f0; background:rgba(90,150,220,0.14); }
+html[data-theme="navy"] .rec-hint small,html[data-theme="charcoal"] .rec-hint small,html[data-theme="forest"] .rec-hint small,html[data-theme="plum"] .rec-hint small,html[data-theme="navy"] .rec-scale,html[data-theme="charcoal"] .rec-scale,html[data-theme="forest"] .rec-scale,html[data-theme="plum"] .rec-scale { color:#6a88aa; }
 html[data-theme="navy"] { background:#0d1b2e; }
 html[data-theme="navy"] body { background:linear-gradient(145deg,#0d1b2e 0%,#162844 60%,#0a1628 100%); color:#c8dcf8; }
 html[data-theme="navy"] .header { background:rgba(8,24,58,0.94); border-color:rgba(50,90,180,0.28); box-shadow:0 4px 30px rgba(0,8,30,0.5); }
@@ -850,11 +855,12 @@ function getPrData(name) {
   try { return JSON.parse(localStorage.getItem(prKey(name)) || 'null') || { lastWeight: null, weightSetDate: null, history: [] }; }
   catch(e) { return { lastWeight: null, weightSetDate: null, history: [] }; }
 }
-function savePrEntry(name, { weight, reps, rpe, extraReps, note, target }) {
+function savePrEntry(name, { weight, reps, rpe, extraReps, note, target, offPlanTarget }) {
   const data = getPrData(name);
   const w = weight !== '' && weight != null ? parseFloat(weight) : null;
   // 이전 기록보다 무게를 올려 입력했으면 그 시점을 새 증량 기준일로 기록
-  if (w != null && (data.lastWeight == null || w > data.lastWeight)) {
+  // 회원이 목표 횟수를 낮춰(예: 8회) 무거운 무게로 한 날은 증량 기준에서 제외
+  if (w != null && !offPlanTarget && (data.lastWeight == null || w > data.lastWeight)) {
     data.lastWeight = w;
     data.weightSetDate = todayKey;
   }
@@ -905,6 +911,59 @@ function suggestedNextWeight(name) {
   const base = getPrData(name).lastWeight;
   if (base == null) return null;
   return roundToPlate(base * (1 + suggestedIncreasePct(name)));
+}
+/* 횟수 기준 추천 무게 — 회원이 실제로 해낸 횟수(+여유 횟수)나 바꾼 목표 횟수에 맞춰 무게를 바로 다시 계산.
+   NSCA 반복횟수-%1RM 표(10회=75%, 12회=67%, 8회=80% …)로 "이 무게로 몇 회"를 다른 횟수의 무게로 환산.
+   기준은 트레이너가 적은 계획 무게와 회원의 가장 최근 기록 중 더 높은 쪽. 어시스트(보조) 운동은
+   보조 무게가 낮을수록 어려워 계산이 반대라 제외. */
+const REP_PCT = {1:100,2:95,3:93,4:90,5:87,6:85,7:83,8:80,9:77,10:75,11:70,12:67,15:65};
+const TARGET_REP_CHOICES = [6, 8, 10, 12, 15];
+function pctForReps(r) {
+  r = Math.max(1, Math.min(30, Math.round(r)));
+  if (REP_PCT[r]) return REP_PCT[r];
+  if (r > 15) return Math.max(50, 65 - (r - 15));   // 16회 이상은 1회당 약 1%씩 감소 (20회≈60%)
+  const lo = Object.keys(REP_PCT).map(Number).filter(k => k < r).pop();
+  const hi = Object.keys(REP_PCT).map(Number).find(k => k > r);
+  return REP_PCT[lo] + (REP_PCT[hi] - REP_PCT[lo]) * (r - lo) / (hi - lo);
+}
+function weightStep(w) { return w >= 20 ? 2.5 : 1; }   // 바벨·머신은 2.5kg, 가벼운 덤벨·케틀벨은 1kg 단위
+function roundWeight(w, ref) { const s = weightStep(ref ?? w); return Math.round(Math.round(w / s) * s * 10) / 10; }
+function isAssistExercise(name, planWeight) { return /어시스트|보조/.test(`${name} ${planWeight ?? ''}`); }
+function numericPlanWeight(w) { return /^\d+(\.\d+)?\s*(kg)?$/i.test(String(w ?? '').trim()) ? parseFloat(w) : null; }
+function getTargetReps(name, planReps) {
+  const o = getPrData(name).targetOverride;   // { reps, planReps } — 트레이너가 계획 횟수를 바꾸면 무시
+  return (o && Number(o.planReps) === parseInt(planReps)) ? Number(o.reps) : parseInt(planReps);
+}
+function setTargetReps(name, reps, planReps) {
+  const data = getPrData(name);
+  if (Number(reps) === parseInt(planReps)) delete data.targetOverride; else data.targetOverride = { reps: Number(reps), planReps: parseInt(planReps) };
+  localStorage.setItem(prKey(name), JSON.stringify(data));
+}
+function recommendWeight(name, planWeight, planReps, target) {
+  if (!target || isAssistExercise(name, planWeight)) return null;
+  const cands = [];
+  const pw = numericPlanWeight(planWeight), pr = parseInt(planReps);
+  if (pw != null && pw > 0 && pr > 0) {
+    cands.push({ w: pr === target ? pw : roundWeight(pw * pctForReps(target) / pctForReps(pr), pw), basis: `계획 ${pw}kg × ${pr}회 기준` });
+  }
+  const last = getPrData(name).history.find(h => h.date !== todayKey && parseFloat(h.weight) > 0 && parseInt(h.reps) > 0);
+  if (last) {
+    const w = parseFloat(last.weight), done = parseInt(last.reps);
+    const extra = Math.min(5, parseInt(last.extraReps) || 0);
+    const eff = done + extra;   // 해낸 횟수 + "몇 개 더 할 수 있었는지"
+    let est = eff === target ? w : roundWeight(w * pctForReps(target) / pctForReps(eff), w);
+    // 같은 횟수 이상을 목표로 할 땐 한 번에 너무 많이 올리지 않게 (지난 무게 +10% 또는 한 단계까지만)
+    // 목표보다 2회 이상 더 할 수 있었을 때만 무게를 올리고, 한 번에 너무 많이 올리지 않게
+    // (지난 무게 +10% 또는 한 단계까지만). 여유가 1개 정도면 같은 무게 유지
+    if (target >= done) {
+      if (eff < target + 2) est = Math.min(est, w);
+      const cap = Math.max(w * 1.1, w + weightStep(w));
+      if (est > cap) est = Math.max(w, Math.floor(cap / weightStep(w)) * weightStep(w));
+    }
+    cands.push({ w: est, basis: `지난 기록 ${w}kg × ${done}회${extra ? ` (여유 ${extra}개)` : ''} 기준` });
+  }
+  if (!cands.length) return null;
+  return cands.reduce((a, b) => (b.w > a.w ? b : a));
 }
 /* 테스트 계정(testmember/ottest) 전용 — 증량 배너가 실제로 뜨는 모습을 바로 보여주기 위해
    지난 두 번의 "잘 해낸 세션"을 가상으로 채워넣는 데모용 함수. 실제 회원에게는 노출되지 않음. */
@@ -1838,9 +1897,18 @@ function toggleDayDetail(panelIdx, day, workout, plan, note, dayIdx, checked, ca
       const due = isTestDue(p.name, weekDays);
       const nextW = due ? suggestedNextWeight(p.name) : null;
       const nameAttr = p.name.replace(/"/g,'&quot;');
-      // 트레이너가 무게를 숫자로 정해둔 운동은 기록 칸에 미리 채워둠 — 회원은 횟수·자각도만 고르면 됨
-      const planW = /^\d+(\.\d+)?\s*(kg)?$/i.test(String(p.weight ?? '').trim()) ? parseFloat(p.weight) : '';
-      const wVal = t.weight !== '' && t.weight != null ? t.weight : planW;
+      // 트레이너가 무게를 숫자로 정해둔 운동은 기록 칸에 미리 채워둠 — 회원은 횟수·자각도만 고르면 됨.
+      // 회원 기록이나 바꾼 목표 횟수가 있으면 그에 맞춰 다시 계산한 추천 무게를 채움
+      const planW = numericPlanWeight(p.weight) ?? '';
+      const canTarget = /^\d+$/.test(String(p.reps)) && !isAssistExercise(p.name, p.weight);
+      const targetReps = canTarget ? getTargetReps(p.name, p.reps) : null;
+      let rec = canTarget ? recommendWeight(p.name, p.weight, p.reps, targetReps) : null;
+      if (rec && nextW != null && targetReps === parseInt(p.reps) && nextW > rec.w) rec = { w: nextW, basis: '증량 시기 도달' };
+      const recW = rec ? rec.w : planW;
+      const wVal = t.weight !== '' && t.weight != null ? t.weight : recW;
+      const recHint = w => (rec ? `💡 목표 ${targetReps}회 → 추천 ${w}kg <small>· ${rec.basis}</small>` : '');
+      const targetField = canTarget ? fieldHtml('target', '목표 횟수', `${targetReps}회`, false,
+        `<div class="dd-num-grid">${[...new Set([...TARGET_REP_CHOICES, parseInt(p.reps), targetReps])].sort((a,b)=>a-b).map(n => `<div class="chip dd-num-chip${n===targetReps?' on':''}" data-val="${n}">${n}회</div>`).join('')}</div><div class="rec-scale">횟수를 바꾸면 그 횟수에 맞는 무게로 바로 바뀌어요</div>`) : '';
 
       const weightField = fieldHtml('weight', '무게', wVal !== '' ? `${wVal}kg` : '입력', wVal === '',
         `<input type="number" step="0.5" inputmode="decimal" class="pr-input dd-weight-input" placeholder="무게 kg" value="${wVal}">`);
@@ -1851,10 +1919,11 @@ function toggleDayDetail(panelIdx, day, workout, plan, note, dayIdx, checked, ca
       const rirField = fieldHtml('rir', '여유 횟수', t.extraReps !== '' && t.extraReps != null ? `${t.extraReps}개` : '선택', t.extraReps === '' || t.extraReps == null,
         `<div class="dd-num-grid">${RIR_RANGE.map(n => `<div class="chip dd-num-chip${n===t.extraReps?' on':''}" data-val="${n}">${n}개</div>`).join('')}</div>`);
 
-      return `<div class="plan-row-log" data-name="${nameAttr}" data-target="${p.reps}">
+      return `<div class="plan-row-log" data-name="${nameAttr}" data-target="${targetReps ?? p.reps}" data-plan-reps="${p.reps}" data-plan-weight="${String(p.weight ?? '').replace(/"/g,'&quot;')}">
         <div class="plan-row"><span class="plan-name">${p.name}</span><span class="plan-detail">${p.sets}세트 × ${p.reps}${/^\d+$/.test(String(p.reps)) ? '회' : ''}${p.weight&&p.weight!=='-'?' / '+p.weight:''}</span></div>
         ${due ? `<div class="pr-test-badge">🔥 무게를 올려볼 때예요${nextW!=null?` — 다음엔 ${nextW}kg 정도로`:''}</div>` : ''}
-        ${weightField}${repsField}${rpeField}${rirField}
+        <div class="rec-hint"${rec ? '' : ' style="display:none"'}>${recHint(recW)}</div>
+        ${targetField}${weightField}${repsField}${rpeField}${rirField}
         <textarea class="daily-note pr-note" placeholder="오늘 느낌을 자유롭게 적어보세요 (선택)" rows="1">${t.note ?? ''}</textarea>
       </div>`;
     }).join('');
@@ -1873,7 +1942,7 @@ function toggleDayDetail(panelIdx, day, workout, plan, note, dayIdx, checked, ca
 
     wrap.querySelectorAll('.plan-row-log:not(.cardio-log)').forEach(row => {
       const name = row.dataset.name;
-      const target = parseInt(row.dataset.target) || null;
+      let target = parseInt(row.dataset.target) || null;
       const noteEl = row.querySelector('.pr-note');
       const weightInput = row.querySelector('.dd-weight-input');
       function currentVal(fieldKey) {
@@ -1888,6 +1957,7 @@ function toggleDayDetail(panelIdx, day, workout, plan, note, dayIdx, checked, ca
           extraReps: currentVal('rir') !== '' ? parseInt(currentVal('rir')) : '',
           note: noteEl.value,
           target,
+          offPlanTarget: row.dataset.planReps !== '' && /^\d+$/.test(row.dataset.planReps) && target !== parseInt(row.dataset.planReps),
         });
       }
       function refreshFieldVal(field, text, placeholder) {
@@ -1908,7 +1978,34 @@ function toggleDayDetail(panelIdx, day, workout, plan, note, dayIdx, checked, ca
         save();
       });
       noteEl.addEventListener('change', save);
-      [...row.querySelectorAll('.dd-field')].filter(f => f.dataset.field !== 'weight').forEach(field => {
+      // 목표 횟수를 바꾸면 그 횟수에 맞는 추천 무게로 무게 칸을 바로 다시 채움
+      const targetFieldEl = [...row.querySelectorAll('.dd-field')].find(f => f.dataset.field === 'target');
+      if (targetFieldEl) targetFieldEl.querySelectorAll('.dd-num-chip').forEach(chip => {
+        chip.addEventListener('click', () => {
+          if (parseInt(chip.dataset.val) === target) { targetFieldEl.classList.remove('open'); return; }
+          targetFieldEl.querySelectorAll('.dd-num-chip').forEach(c => c.classList.remove('on'));
+          chip.classList.add('on');
+          target = parseInt(chip.dataset.val);
+          row.dataset.target = target;
+          setTargetReps(name, target, row.dataset.planReps);
+          refreshFieldVal(targetFieldEl, `${target}회`, false);
+          targetFieldEl.classList.remove('open');
+          let rec = recommendWeight(name, row.dataset.planWeight, row.dataset.planReps, target);
+          const nw = target === parseInt(row.dataset.planReps) && isTestDue(name, weekDays) ? suggestedNextWeight(name) : null;
+          if (rec && nw != null && nw > rec.w) rec = { w: nw, basis: '증량 시기 도달' };
+          const hint = row.querySelector('.rec-hint');
+          if (rec) {
+            hint.innerHTML = `💡 목표 ${target}회 → 추천 ${rec.w}kg <small>· ${rec.basis}</small>`;
+            hint.style.display = '';
+            weightInput.value = rec.w;
+            refreshFieldVal(weightInput.closest('.dd-field'), `${rec.w}kg`, false);
+          } else {
+            hint.style.display = 'none';
+          }
+          if (currentVal('reps') !== '' || currentVal('rpe') || currentVal('rir') !== '' || noteEl.value) save();
+        });
+      });
+      [...row.querySelectorAll('.dd-field')].filter(f => f.dataset.field !== 'weight' && f.dataset.field !== 'target').forEach(field => {
         const suffix = field.dataset.field === 'rir' ? '개' : (field.dataset.field === 'reps' ? '회' : '');
         field.querySelectorAll('.dd-num-chip').forEach(chip => {
           chip.addEventListener('click', () => {
