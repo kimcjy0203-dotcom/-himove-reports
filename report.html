@@ -70,6 +70,13 @@ body > * { position: relative; z-index: 1; }
 }
 .notice-icon { font-size: 18px; flex-shrink: 0; line-height: 1.4; }
 .notice-text { font-size: 13px; line-height: 1.7; color: #7a4a10; font-weight: 500; white-space: pre-line; }
+.notice-body { flex: 1; min-width: 0; }
+.notice-more { margin-top: 10px; border-top: 1px dashed rgba(230,160,60,0.45); padding-top: 8px; }
+.notice-more summary { font-size: 12px; font-weight: 700; color: #b0701a; cursor: pointer; list-style: none; }
+.notice-more summary::-webkit-details-marker { display: none; }
+.notice-more summary::after { content: ' ▾'; }
+.notice-more[open] summary::after { content: ' ▴'; }
+.notice-more .notice-text { display: block; margin-top: 8px; }
 .pr-test-banner { background: rgba(255,243,224,0.92); border: 1px solid rgba(230,160,60,0.5); border-radius: 14px; padding: 10px 14px; margin-bottom: 12px; font-size: 12px; line-height: 1.6; color: #7a4a10; font-weight: 500; }
 .card-title {
   font-size: 13px; font-weight: 700; letter-spacing: 0.5px; color: #7a95b8;
@@ -1031,7 +1038,17 @@ function init(data) {
       }
     }
     if (text) {
-      noticeEl.innerHTML = `<div class="notice-banner"><span class="notice-icon">📢</span><span class="notice-text">${text}</span></div>`;
+      /* 최근 수업 포인트 2개(💪 블록)까지만 보이고, 나머지는 '이전 공지 더보기'로 접어둠 */
+      const SHOW_POINTS = 2;
+      const blocks = text.split(/\n\s*\n/);
+      let cut = blocks.length, seen = 0;
+      for (let i = 0; i < blocks.length; i++) {
+        if (blocks[i].trim().startsWith('💪')) { seen++; if (seen > SHOW_POINTS) { cut = i; break; } }
+      }
+      const shown = blocks.slice(0, cut).join('\n\n');
+      const rest = blocks.slice(cut).join('\n\n');
+      const more = rest.trim() ? `<details class="notice-more"><summary>이전 공지 더보기</summary><div class="notice-text">${rest}</div></details>` : '';
+      noticeEl.innerHTML = `<div class="notice-banner"><span class="notice-icon">📢</span><div class="notice-body"><span class="notice-text">${shown}</span>${more}</div></div>`;
     }
   })();
 
