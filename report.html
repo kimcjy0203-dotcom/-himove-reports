@@ -202,6 +202,25 @@ tr:last-child td { border-bottom: none; }
 .sx-chips { display:flex; flex-wrap:wrap; gap:6px; margin:8px 0 4px; }
 .sx-chip { padding:5px 11px; border-radius:999px; border:1px solid rgba(160,190,230,0.35); background:rgba(255,255,255,0.45); font-size:12px; font-weight:700; color:#6a8aaa; cursor:pointer; font-family:inherit; }
 .sx-chip.on { background:#5aaae8; border-color:#5aaae8; color:#fff; }
+.fl-help { font-size:12px; line-height:1.6; color:#8aa0b8; margin-bottom:10px; }
+.fl-form { display:flex; flex-direction:column; gap:10px; }
+.fl-row { display:flex; flex-direction:column; gap:5px; }
+.fl-two { flex-direction:row; gap:8px; }
+.fl-two > div { flex:1; min-width:0; display:flex; flex-direction:column; gap:5px; }
+.fl-lbl { font-size:11px; font-weight:700; color:#8aa0b8; }
+.fl-ac-wrap { position:relative; }
+.fl-ac { position:absolute; left:0; right:0; top:100%; margin-top:4px; z-index:30; background:#fff; border:1px solid rgba(160,190,230,0.5); border-radius:12px; box-shadow:0 8px 24px rgba(60,100,160,0.18); overflow:hidden; }
+.fl-ac-item { display:block; width:100%; text-align:left; padding:11px 12px; border:none; background:none; font-size:15px; font-family:inherit; color:#2a3a50; cursor:pointer; border-bottom:1px solid rgba(160,190,230,0.15); }
+.fl-ac-item:last-child { border-bottom:none; }
+.fl-ac-item.on, .fl-ac-item:hover { background:rgba(90,170,232,0.12); }
+.fl-last { font-size:12px; color:#5a7a9a; background:rgba(90,170,232,0.08); border-radius:10px; padding:8px 10px; }
+.fl-same { margin-left:6px; padding:3px 9px; border-radius:999px; border:1px solid #5aaae8; background:none; color:#3a8ad0; font-size:11px; font-weight:700; font-family:inherit; cursor:pointer; }
+.fl-feels { margin:0 0 4px; }
+.fl-add { padding:12px; border:none; border-radius:12px; background:linear-gradient(135deg,rgba(80,170,130,0.95),rgba(60,145,110,0.98)); color:#fff; font-size:14px; font-weight:800; font-family:inherit; cursor:pointer; }
+.fl-msg { font-size:12px; font-weight:700; color:#3a8a6a; min-height:1em; }
+.fl-list-title { font-size:12px; font-weight:800; color:#7a95b8; margin:16px 0 6px; }
+.fl-item { position:relative; padding-right:30px; }
+.fl-del { position:absolute; right:0; top:2px; width:26px; height:26px; border:none; border-radius:50%; background:rgba(160,190,230,0.18); color:#8aa0b8; font-size:15px; cursor:pointer; line-height:1; }
 .sx-count { font-size:12px; color:#7a95b8; margin:10px 0 6px; }
 .sx-session { padding:10px 12px; margin-top:8px; border-radius:12px; background:rgba(255,255,255,0.4); border:1px solid rgba(160,190,230,0.25); }
 .sx-date { font-size:12px; font-weight:800; color:#3a6a9a; }
@@ -715,6 +734,7 @@ html[data-theme="plum"] .muscle-tag { background:rgba(90,40,130,0.2); border-col
   <div id="notice-section"></div>
   <div id="routine-table-section"></div>
   <div id="exercise-search-section"></div>
+  <div id="free-log-section"></div>
   <div id="report-feedback"></div>
   <div class="week-nav" id="week-nav"></div>
   <div id="week-panels"></div>
@@ -1431,6 +1451,144 @@ function init(data) {
     }));
   })();
 
+  /* 자유 운동 기록 — data.freeLog 가 true 인 회원만. 휴무일·계획에 없던 날 한 운동을 (종목·무게·횟수·느낀점)으로 간단히 기록.
+     운동 이름은 한 글자·초성(ㄹㅁㄴ)만 쳐도 자동완성. 기록은 이 기기에 저장되고, 오늘 기록은 '트레이너에게 보내기'에 함께 담김 */
+  (function renderFreeLog() {
+    const sec = document.getElementById('free-log-section');
+    if (!sec || !data.freeLog || isOT) return;
+    const KEY = `hm_free_${currentMemberId}`;
+    const esc = s => String(s ?? '').replace(/[&<>"]/g, c => ({ '&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;' }[c]));
+    function load() { try { return JSON.parse(localStorage.getItem(KEY) || '[]'); } catch (e) { return []; } }
+    function store(list) { try { localStorage.setItem(KEY, JSON.stringify(list.slice(0, 300))); return true; } catch (e) { return false; } }
+
+    /* 자동완성 후보: 회원이 배운 운동(수업 기록·루틴) + 자주 하는 기본 운동 + 이전에 직접 적은 운동 */
+    const BASE = ['루마니안 데드리프트','데드리프트','스쿼트','바벨 스쿼트','고블릿 스쿼트','불가리안 스플릿 스쿼트','런지','레그 프레스','레그 익스텐션','레그 컬','힙 쓰러스트','힙 어브덕션','힙 어덕션','브릿지','카프 레이즈','백 익스텐션',
+      '렛풀다운','시티드 로우','해머 시티드 로우','덤벨 로우','원암 덤벨 로우','바벨 로우','케이블 로우','어시스트 풀업','스트레이트 암 풀다운','페이스 풀',
+      '벤치프레스','덤벨 벤치프레스','인클라인 덤벨 프레스','체스트 프레스','펙덱 플라이','푸쉬업','덤벨 숄더 프레스','사이드 레터럴 레이즈','리어 델트 플라이',
+      '바이셉 컬','해머 컬','케이블 푸쉬다운','트라이셉스 킥백','플랭크','사이드 플랭크','데드버그','버드독','크런치','레그 레이즈',
+      '러닝머신','트레드밀 걷기','실내자전거','스텝밀','천국의 계단','로잉머신','줄넘기','장요근 스트레칭','폼롤러'];
+    const clean = n => String(n || '').replace(/\s*\([^)]*\)\s*/g, ' ').replace(/^[①-⑳]\s*/, '').replace(/\s+/g, ' ').trim();
+    function candidates() {
+      const set = new Map();
+      const add = n => { const c = clean(n); if (c && c.length <= 30 && !/[+&]/.test(c) && !c.startsWith('─') && !set.has(c.replace(/\s/g, ''))) set.set(c.replace(/\s/g, ''), c); };
+      load().forEach(e => add(e.name));
+      (data.sessionHistory || []).forEach(h => (h.items || []).forEach(it => add(it.name)));
+      [...(data.archiveWeeks || []), ...(data.weeks || [])].forEach(w => {
+        (w.weeklyRoutine?.days || []).forEach(d => (d.plan || []).forEach(p => add(p.name)));
+        (w.exercises || []).forEach(e => add(e.name));
+      });
+      BASE.forEach(add);
+      return [...set.values()];
+    }
+    /* 한글 자모 분해 — '룸'(ㄹㅜㅁ)으로 '루마니안'(ㄹㅜㅁㅏ…)을, 'ㄹㅁㄴ'으로 초성을 찾음 */
+    const CHO = 'ㄱㄲㄴㄷㄸㄹㅁㅂㅃㅅㅆㅇㅈㅉㅊㅋㅌㅍㅎ', JUNG = 'ㅏㅐㅑㅒㅓㅔㅕㅖㅗㅘㅙㅚㅛㅜㅝㅞㅟㅠㅡㅢㅣ', JONG = ['','ㄱ','ㄲ','ㄳ','ㄴ','ㄵ','ㄶ','ㄷ','ㄹ','ㄺ','ㄻ','ㄼ','ㄽ','ㄾ','ㄿ','ㅀ','ㅁ','ㅂ','ㅄ','ㅅ','ㅆ','ㅇ','ㅈ','ㅊ','ㅋ','ㅌ','ㅍ','ㅎ'];
+    function jamo(s) { let o = ''; for (const ch of String(s).replace(/\s/g, '').toLowerCase()) { const c = ch.charCodeAt(0) - 0xAC00; if (c >= 0 && c < 11172) o += CHO[Math.floor(c / 588)] + JUNG[Math.floor((c % 588) / 28)] + JONG[c % 28]; else o += ch; } return o; }
+    function cho(s) { let o = ''; for (const ch of String(s).replace(/\s/g, '')) { const c = ch.charCodeAt(0) - 0xAC00; o += (c >= 0 && c < 11172) ? CHO[Math.floor(c / 588)] : ch; } return o; }
+    function suggest(q) {
+      const qs = String(q).replace(/\s/g, ''); if (!qs) return [];
+      const qj = jamo(qs), onlyCho = /^[ㄱ-ㅎ]+$/.test(qs);
+      return candidates().map(n => {
+        const nj = jamo(n), words = n.split(' ');
+        let score = -1;
+        if (onlyCho) { const c = cho(n); score = c.startsWith(qs) ? 3 : words.some(w => cho(w).startsWith(qs)) ? 2 : c.includes(qs) ? 1 : -1; }
+        else score = nj.startsWith(qj) ? 3 : words.some(w => jamo(w).startsWith(qj)) ? 2 : (qs.length >= 2 && nj.includes(qj)) ? 1 : -1;
+        return { n, score };
+      }).filter(x => x.score >= 0).sort((a, b) => b.score - a.score || a.n.length - b.n.length).slice(0, 7).map(x => x.n);
+    }
+    function lastOf(name) {
+      const k = name.replace(/\s/g, '');
+      return load().filter(e => e.name.replace(/\s/g, '') === k).sort((a, b) => (b.date + b.t).localeCompare(a.date + a.t))[0] || null;
+    }
+
+    const FEELS = ['가벼웠어요', '딱 좋았어요', '힘들었어요', '통증 있었어요'];
+    const WD = ['일','월','화','수','목','금','토'];
+    const fmtD = d => { const [y, m, dd] = d.split('-').map(Number); return `${m}/${dd} (${WD[new Date(y, m - 1, dd).getDay()]})`; };
+    sec.innerHTML = collapsible('<span style="display:flex;align-items:center"><span class="req-dot"></span>✍️ 휴무일·계획 밖 운동 기록</span>', 'green', `
+      <div class="fl-help">근무 때문에 쉬는 날 운동했거나, 루틴에 없는 운동을 했다면 여기에 적어주세요. 운동 이름은 한 글자나 초성(예: ㄹㅁㄴ)만 쳐도 찾아져요.</div>
+      <div class="fl-form">
+        <div class="fl-row"><label class="fl-lbl">날짜</label><input id="fl-date" class="sx-input fl-date" type="date"></div>
+        <div class="fl-row fl-ac-wrap"><label class="fl-lbl">운동</label><input id="fl-name" class="sx-input" type="text" placeholder="예: 루마니안 데드리프트" autocomplete="off" autocapitalize="off" spellcheck="false"><div id="fl-ac" class="fl-ac" hidden></div></div>
+        <div id="fl-last" class="fl-last" hidden></div>
+        <div class="fl-row fl-two">
+          <div><label class="fl-lbl">무게 (kg)</label><input id="fl-w" class="sx-input" type="number" inputmode="decimal" min="0" step="0.5" placeholder="예: 30 (맨몸은 비움)"></div>
+          <div><label class="fl-lbl">횟수</label><input id="fl-r" class="sx-input" type="text" inputmode="numeric" placeholder="예: 10"></div>
+        </div>
+        <div class="fl-row"><label class="fl-lbl">느낀 점</label>
+          <div class="sx-chips fl-feels">${FEELS.map(f => `<button type="button" class="sx-chip" data-f="${f}">${f}</button>`).join('')}</div>
+          <input id="fl-note" class="sx-input" type="text" placeholder="예: 엉덩이 자극 좋았음, 허리 약간 뻐근" autocomplete="off"></div>
+        <button type="button" id="fl-add" class="fl-add">+ 기록 추가</button>
+        <div id="fl-msg" class="fl-msg" role="status"></div>
+      </div>
+      <div id="fl-list"></div>`);
+
+    const $ = id => document.getElementById(id);
+    const dateEl = $('fl-date'), nameEl = $('fl-name'), ac = $('fl-ac'), wEl = $('fl-w'), rEl = $('fl-r'), noteEl = $('fl-note'), lastEl = $('fl-last');
+    dateEl.value = todayKey; dateEl.max = todayKey;
+    let feel = '', acIdx = -1, acItems = [];
+
+    function showLast() {
+      const l = nameEl.value.trim() ? lastOf(nameEl.value.trim()) : null;
+      if (!l) { lastEl.hidden = true; return; }
+      lastEl.hidden = false;
+      lastEl.innerHTML = `지난번 (${fmtD(l.date)}): ${l.weight !== '' ? esc(l.weight) + 'kg ' : ''}${l.reps !== '' ? esc(l.reps) + '회' : ''}${l.feel ? ' · ' + esc(l.feel) : ''} <button type="button" class="fl-same">같게 채우기</button>`;
+      lastEl.querySelector('.fl-same').onclick = () => { wEl.value = l.weight; rEl.value = l.reps; wEl.focus(); };
+    }
+    function closeAc() { ac.hidden = true; acIdx = -1; }
+    function pick(n) { nameEl.value = n; closeAc(); showLast(); wEl.focus(); }
+    function renderAc() {
+      acItems = suggest(nameEl.value);
+      if (!acItems.length) { closeAc(); return; }
+      ac.innerHTML = acItems.map((n, i) => `<button type="button" class="fl-ac-item${i === acIdx ? ' on' : ''}" data-i="${i}">${esc(n)}</button>`).join('');
+      ac.hidden = false;
+      ac.querySelectorAll('.fl-ac-item').forEach(b => b.addEventListener('mousedown', e => { e.preventDefault(); pick(acItems[+b.dataset.i]); }));
+    }
+    nameEl.addEventListener('input', () => { acIdx = -1; renderAc(); showLast(); });
+    nameEl.addEventListener('focus', renderAc);
+    nameEl.addEventListener('blur', () => setTimeout(closeAc, 120));
+    nameEl.addEventListener('keydown', e => {
+      if (ac.hidden) return;
+      if (e.key === 'ArrowDown') { acIdx = Math.min(acIdx + 1, acItems.length - 1); renderAc(); e.preventDefault(); }
+      else if (e.key === 'ArrowUp') { acIdx = Math.max(acIdx - 1, 0); renderAc(); e.preventDefault(); }
+      else if (e.key === 'Enter' && acIdx >= 0) { pick(acItems[acIdx]); e.preventDefault(); }
+      else if (e.key === 'Escape') closeAc();
+    });
+    sec.querySelectorAll('.fl-feels .sx-chip').forEach(c => c.addEventListener('click', () => {
+      const on = !c.classList.contains('on');
+      sec.querySelectorAll('.fl-feels .sx-chip').forEach(x => x.classList.remove('on'));
+      if (on) c.classList.add('on');
+      feel = on ? c.dataset.f : '';
+    }));
+
+    function renderList() {
+      const list = load();
+      const out = $('fl-list');
+      if (!list.length) { out.innerHTML = ''; return; }
+      const byDate = {};
+      list.forEach((e, i) => { (byDate[e.date] = byDate[e.date] || []).push({ ...e, i }); });
+      const dates = Object.keys(byDate).sort().reverse().slice(0, 14);
+      out.innerHTML = `<div class="fl-list-title">내 기록 (최근 ${dates.length}일)</div>` + dates.map(d => `<div class="sx-session"><div class="sx-date">${fmtD(d)}${d === todayKey ? ' · 오늘' : ''}</div>${
+        byDate[d].map(e => `<div class="sx-item fl-item"><span class="sx-item-name">${esc(e.name)}</span><span class="sx-item-detail">${[e.weight !== '' ? esc(e.weight) + 'kg' : '', e.reps !== '' ? esc(e.reps) + '회' : ''].filter(Boolean).join(' × ')}</span>${(e.feel || e.note) ? `<div class="sx-feel">${[e.feel, e.note].filter(Boolean).map(esc).join(' · ')}</div>` : ''}<button type="button" class="fl-del" data-i="${e.i}" aria-label="삭제">×</button></div>`).join('')
+      }</div>`).join('') + `<div class="fl-help" style="margin-top:8px">오늘 적은 기록은 아래 '오늘 기록 트레이너에게 보내기'를 누르면 함께 전달돼요.</div>`;
+      out.querySelectorAll('.fl-del').forEach(b => b.addEventListener('click', () => {
+        if (!confirm('이 기록을 지울까요?')) return;
+        const l = load(); l.splice(+b.dataset.i, 1); store(l); renderList(); showLast();
+      }));
+    }
+    $('fl-add').addEventListener('click', () => {
+      const msg = $('fl-msg');
+      const name = nameEl.value.trim();
+      if (!name) { msg.textContent = '운동 이름을 적어주세요.'; nameEl.focus(); return; }
+      const entry = { date: dateEl.value || todayKey, name, weight: wEl.value.trim(), reps: rEl.value.trim(), feel, note: noteEl.value.trim(), t: Date.now() };
+      const l = load(); l.unshift(entry);
+      if (!store(l)) { msg.textContent = '이 기기에 저장할 수 없어요. 브라우저 설정(개인정보 보호 모드)을 확인해주세요.'; return; }
+      msg.textContent = `✓ ${name} 기록했어요`;
+      wEl.value = ''; rEl.value = ''; noteEl.value = ''; feel = '';
+      sec.querySelectorAll('.fl-feels .sx-chip').forEach(x => x.classList.remove('on'));
+      renderList(); showLast(); rEl.blur();
+    });
+    renderList();
+  })();
+
   /* 고정 루틴표 — routineTable이 있는 회원만 표시 (요일별 고정 루틴 + 짧은 버전) */
   (function renderRoutineTable() {
     const rt = data.routineTable;
@@ -1693,6 +1851,9 @@ function init(data) {
       const calKey = weekKey ? `hm_${weekKey}_${_curIdx}` : null;
       const checked = calKey ? JSON.parse(localStorage.getItem(calKey) || '[]') : [];
       const doneList = checked.map(di => calDays[di]).filter(d => d && !d.rest).map(d => d.day);
+      let freeLogs = [];
+      if (data.freeLog) { try { freeLogs = JSON.parse(localStorage.getItem(`hm_free_${currentMemberId}`) || '[]').filter(e => e.date === todayKey).reverse(); } catch (e) {} }
+      freeLogs.forEach(e => prLogs.push({ name: e.name, weight: e.weight, reps: e.reps, rpe: '', extraReps: '', note: [e.feel, e.note].filter(Boolean).join(' · '), target: null }));
       if (!prLogs.length && !ib && !ev && !doneList.length) { alert('오늘 기록한 내용이 없어요. 운동을 기록하거나 인바디를 입력해보세요!'); return; }
       const lines = [];
       if (doneList.length) lines.push(`운동 완료: ${doneList.join(' · ')}`);
