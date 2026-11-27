@@ -208,6 +208,10 @@ tr:last-child td { border-bottom: none; }
 .fl-two { flex-direction:row; gap:8px; }
 .fl-two > div { flex:1; min-width:0; display:flex; flex-direction:column; gap:5px; }
 .fl-lbl { font-size:11px; font-weight:700; color:#8aa0b8; }
+.fl-date { -webkit-appearance:none; appearance:none; display:block; width:100%; max-width:100%; min-width:0; text-align:left; min-height:44px; }
+.fl-date::-webkit-date-and-time-value { text-align:left; }
+.fl-rest { font-size:13px; font-weight:700; color:#3a8a6a; background:rgba(80,170,130,0.1); border:1px solid rgba(80,170,130,0.3); border-radius:12px; padding:10px 12px; margin-bottom:10px; line-height:1.5; }
+.cal-day.rest-day.rest-tap { cursor:pointer; }
 .fl-ac-wrap { position:relative; }
 .fl-ac { position:absolute; left:0; right:0; top:100%; margin-top:4px; z-index:30; background:#fff; border:1px solid rgba(160,190,230,0.5); border-radius:12px; box-shadow:0 8px 24px rgba(60,100,160,0.18); overflow:hidden; }
 .fl-ac-item { display:block; width:100%; text-align:left; padding:11px 12px; border:none; background:none; font-size:15px; font-family:inherit; color:#2a3a50; cursor:pointer; border-bottom:1px solid rgba(160,190,230,0.15); }
@@ -1505,6 +1509,7 @@ function init(data) {
     const fmtD = d => { const [y, m, dd] = d.split('-').map(Number); return `${m}/${dd} (${WD[new Date(y, m - 1, dd).getDay()]})`; };
     sec.innerHTML = collapsible('<span style="display:flex;align-items:center"><span class="req-dot"></span>✍️ 휴무일·계획 밖 운동 기록</span>', 'green', `
       <div class="fl-help">근무 때문에 쉬는 날 운동했거나, 루틴에 없는 운동을 했다면 여기에 적어주세요. 운동 이름은 한 글자나 초성(예: ㄹㅁㄴ)만 쳐도 찾아져요.</div>
+      <div id="fl-rest" class="fl-rest" hidden></div>
       <div class="fl-form">
         <div class="fl-row"><label class="fl-lbl">날짜</label><input id="fl-date" class="sx-input fl-date" type="date"></div>
         <div class="fl-row fl-ac-wrap"><label class="fl-lbl">운동</label><input id="fl-name" class="sx-input" type="text" placeholder="예: 루마니안 데드리프트" autocomplete="off" autocapitalize="off" spellcheck="false"><div id="fl-ac" class="fl-ac" hidden></div></div>
@@ -1587,6 +1592,15 @@ function init(data) {
       renderList(); showLast(); rEl.blur();
     });
     renderList();
+    /* 달력의 휴식 날(또는 오늘 쉬는 날 버튼)을 누르면 이 칸을 펼치고 그 날짜로 맞춤 */
+    window.hmOpenFreeLog = function (dateStr, dayName) {
+      const body = sec.querySelector('.tool-body');
+      if (body && body.classList.contains('hidden')) sec.querySelector('.tool-toggle').click();
+      if (dateStr && dateStr <= todayKey) dateEl.value = dateStr;
+      const rb = $('fl-rest');
+      if (dateStr) { rb.hidden = false; rb.innerHTML = `📅 <b>${fmtD(dateStr)}</b> 휴식 날 — 쉬는 날 운동했다면 여기에 적어주세요${dateStr > todayKey ? '<br><span style="font-weight:500">아직 오지 않은 날이라 날짜는 오늘로 두었어요</span>' : ''}`; }
+      sec.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    };
   })();
 
   /* 고정 루틴표 — routineTable이 있는 회원만 표시 (요일별 고정 루틴 + 짧은 버전) */
@@ -1727,7 +1741,7 @@ function init(data) {
       const dateNum = dayDate ? dayDate.getDate() : '';
       const isToday = dayDate && dayDate.getTime() === today.getTime();
       const workoutShort = d.rest ? '휴식' : (d.workout||'').split('-')[0] || '-';
-      return `<div class="cal-day${d.rest?' rest-day':''}${isToday?' today':''}" data-idx="${i}" data-cal="${calKey}" data-day="${d.day}" data-workout="${d.workout||''}" data-plan='${JSON.stringify(d.plan||[])}' data-note="${(d.note||'').replace(/"/g,'&quot;')}" data-target-rpe="${String(d.targetRpe||'').replace(/"/g,'&quot;')}" data-target-rpe-note="${(d.targetRpeNote||'').replace(/"/g,'&quot;')}" data-istoday="${isToday?'1':'0'}" data-isrest="${d.rest?'1':'0'}"><div class="cd-weekday">${d.day}</div>${dateNum?`<div class="cd-date">${dateNum}</div>`:''}<div class="cd-workout">${workoutShort}</div><div class="cd-check">✓</div></div>`;
+      return `<div class="cal-day${d.rest?' rest-day':''}${isToday?' today':''}" data-idx="${i}" data-cal="${calKey}" data-day="${d.day}" data-workout="${d.workout||''}" data-plan='${JSON.stringify(d.plan||[])}' data-note="${(d.note||'').replace(/"/g,'&quot;')}" data-target-rpe="${String(d.targetRpe||'').replace(/"/g,'&quot;')}" data-target-rpe-note="${(d.targetRpeNote||'').replace(/"/g,'&quot;')}" data-istoday="${isToday?'1':'0'}" data-isrest="${d.rest?'1':'0'}" data-date="${dayDate?localDateStr(dayDate):''}"><div class="cd-weekday">${d.day}</div>${dateNum?`<div class="cd-date">${dateNum}</div>`:''}<div class="cd-workout">${workoutShort}</div><div class="cd-check">✓</div></div>`;
     }).join('');
     const HR = '<hr style="border:none;border-top:1px solid rgba(160,190,230,0.2);margin:20px 0">';
     return `<div class="week-panel" data-idx="${idx}">
@@ -1899,6 +1913,13 @@ function init(data) {
 
     const weekDays = [...cal.querySelectorAll('.cal-day')].map(d => ({ rest: d.dataset.isrest === '1', plan: JSON.parse(d.dataset.plan || '[]') }));
 
+    if (data.freeLog && !isOT && window.hmOpenFreeLog) cal.querySelectorAll('.cal-day.rest-day').forEach(el => {
+      el.classList.add('rest-tap');
+      el.addEventListener('click', function(){
+        cal.querySelectorAll('.cal-day').forEach(d => d.classList.toggle('active-day', d === this));
+        window.hmOpenFreeLog(this.dataset.date, this.dataset.day);
+      });
+    });
     cal.querySelectorAll('.cal-day:not(.rest-day)').forEach(el => el.addEventListener('click', function(){
       const i = parseInt(this.dataset.idx);
       if (isOT) {
@@ -1924,7 +1945,13 @@ function init(data) {
     const label = `${now.getMonth()+1}/${now.getDate()}(${'일월화수목금토'[now.getDay()]})`;
     const el = document.querySelector(`.week-panel[data-idx="${defaultIdx}"] .cal-day.today`);
     if (!el) return;
-    if (el.dataset.isrest === '1') { top.innerHTML = `<div class="today-bar rest">📅 오늘 ${label} · 쉬는 날이에요</div>`; return; }
+    if (el.dataset.isrest === '1') {
+      if (data.freeLog && window.hmOpenFreeLog) {
+        top.innerHTML = `<button type="button" class="today-bar rest" id="today-go" style="cursor:pointer">📅 오늘 ${label} · 쉬는 날이에요<span>운동했다면 기록하기 ↓</span></button>`;
+        document.getElementById('today-go').addEventListener('click', () => window.hmOpenFreeLog(el.dataset.date, el.dataset.day));
+      } else top.innerHTML = `<div class="today-bar rest">📅 오늘 ${label} · 쉬는 날이에요</div>`;
+      return;
+    }
     el.click();
     const hasPlan = JSON.parse(el.dataset.plan || '[]').length > 0;
     top.innerHTML = `<button type="button" class="today-bar" id="today-go">📅 오늘 ${label} · <b class="today-wk"></b><span>${hasPlan ? '횟수·자각도 기록하기 ↓' : '오늘 계획 보기 ↓'}</span></button>`;
