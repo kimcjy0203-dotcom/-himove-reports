@@ -900,6 +900,7 @@
     }
   ],
   "상태": "활성",
+  "freeLog": true,
   "monthlySummary": [
     {
       "year": 2026,

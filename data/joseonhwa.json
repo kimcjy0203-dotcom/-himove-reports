@@ -2205,6 +2205,7 @@
     }
   ],
   "상태": "활성",
+  "freeLog": true,
   "sessionHistory": [
     {
       "date": "2026-11-02",

@@ -2966,6 +2966,7 @@
     }
   ],
   "상태": "활성",
+  "freeLog": true,
   "eventLog": [
     {
       "month": "2026-09",

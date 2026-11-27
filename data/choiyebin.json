@@ -2815,5 +2815,6 @@
   ],
   "hideLesson": true,
   "상태": "활성",
+  "freeLog": true,
   "sessionHistory": []
 }

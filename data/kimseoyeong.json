@@ -2333,6 +2333,7 @@
     }
   ],
   "상태": "활성",
+  "freeLog": true,
   "sessionHistory": [
     {
       "date": "2026-08-06",
